@@ -1,6 +1,9 @@
 # context-menu-icons-for-Zen
 Bring the icon of the context menu back to Zen browser
-## Important reminder: This mod is only for users who want to bring back the context menu icons but do not want to install [Nebula](https://github.com/JustAdumbPrsn/Zen-Nebula). I have already integrated this mod into Nebula. Therefore, if you have already installed and are using [Nebula](https://github.com/JustAdumbPrsn/Zen-Nebula), you do not need to install this mod. ## (Personally, I recommend that you give Nebula a try. :) ) 
+### Important reminder: This mod is only for users who want to bring back the context menu icons but do not want to install [Nebula](https://github.com/JustAdumbPrsn/Zen-Nebula). I have already integrated this mod into Nebula. Therefore, if you have already installed and are using [Nebula](https://github.com/JustAdumbPrsn/Zen-Nebula), you do not need to install this mod. ### (Personally, I recommend that you give Nebula a try. :) ) 
+
+## ⚠️⚠️⚠️If you are using Nebula version 2.9:⚠️⚠️⚠️
+You need to restore the sidebar.css file in Nebula to version 2.8. Otherwise, some errors will occur. This is because Zen removed the context menu, and Nebula had to temporarily remove the code related to the icons for supporting the context menu in version 2.9. Therefore, we need to revert these deleted codes. Don't worry. In the next version of Nebula, we will revert these deleted items.
 ## Some preview images of display effects, 和 all the menus have been correctly mapped with icons:
 ![PixPin_2025-06-02_22-10-50](https://github.com/user-attachments/assets/09a2e7dd-2634-4a53-8aa9-4f4490b1362f)
 ![PixPin_2025-06-02_22-10-27](https://github.com/user-attachments/assets/2b86b4cf-d868-46fc-b438-305c4f3537c5)
