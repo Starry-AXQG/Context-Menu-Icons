@@ -8,4 +8,5 @@ Bring the icon of the context menu back to Zen browser
 
 By the way, I couldn't find the original icon of Zen, so I used  [FluentUI](https://github.com/microsoft/fluentui-system-icons) instead.
 In order to ensure a consistent icon style, the icons of the menu have also been replaced accordingly:
+
 ![PixPin_2025-06-02_22-10-33](https://github.com/user-attachments/assets/2d450fdd-5b3b-4ff3-a9e2-823c35e23009)
