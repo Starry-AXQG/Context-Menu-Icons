@@ -1,0 +1,17 @@
+{
+    "id": "context-menu-icons-for-zen",
+    "name": "Context Menu Icons",
+    "description": "Bring the icon of the context menu back to Zen browser ",
+    "homepage": "https://github.com/1247343406/context-menu-icons-for-Zen",
+    "style": "https://raw.githubusercontent.com/1247343406/context-menu-icons-for-Zen/refs/heads/main/userChrome.css",
+    "readme": "https://raw.githubusercontent.com/1247343406/context-menu-icons-for-Zen/refs/heads/main/README.md",
+    "author": "1247343406",
+    "version": "1.0.0",
+    "tags": [
+        "Context Menu",
+        "Icons",
+        "Icon Pack"
+    ],
+    "createdAt": "2025-06-02",
+    "updatedAt": "2025-06-02"
+}
