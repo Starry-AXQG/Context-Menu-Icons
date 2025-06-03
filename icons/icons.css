@@ -1103,3 +1103,12 @@ menuitem > .menu-iconic-text,
     + var(--fp-contextmenu-menuicon-margin-inline)
   ) !important;
 }
+
+/* This is used to temporarily solve the problem where the "historical" icons that Zen has not yet removed overlap with the added custom icons. */
+#appMenuRecentlyClosedTabs,
+#appMenuRecentlyClosedWindows,
+#appMenuSearchHistory,
+#appMenuClearRecentHistory,
+#PanelUI-historyMore{
+	--menu-image: none;
+}
