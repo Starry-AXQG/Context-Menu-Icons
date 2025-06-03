@@ -1064,7 +1064,8 @@ menuitem[id="placesContext_new:separator"] {
 #context-zen-change-workspace-tab{
 	--menu-image: url("move-tab.svg");
 }
-#context_zenSplitTabs{
+#context_zenSplitTabs,
+#context-zenSplitLink{
 	--menu-image: url("split.svg");
 }
 #zenToolbarThemePicker{
