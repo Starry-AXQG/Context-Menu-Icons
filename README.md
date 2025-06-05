@@ -6,7 +6,8 @@
 </div>
 
 <h2 align="center">Bring the icon of the context menu back to Zen browser</h2>
-![PixPin_2025-06-02_22-10-50](https://github.com/user-attachments/assets/09a2e7dd-2634-4a53-8aa9-4f4490b1362f)
+![image](https://github.com/user-attachments/assets/0e939644-34fc-4284-b0de-3c062be2bf3a)
+
 
 ## Important reminder: This mod is only for users who want to bring back the context menu icons but do not want to install [Nebula](https://github.com/JustAdumbPrsn/Zen-Nebula). I have already integrated this mod into Nebula. Therefore, if you have already installed and are using [Nebula](https://github.com/JustAdumbPrsn/Zen-Nebula), you do not need to install this mod. (Personally, I recommend that you give Nebula a try. :) ) 
 # 🚀 Announcement:
