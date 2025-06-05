@@ -11,7 +11,7 @@
 ![PixPin_2025-06-02_22-10-27](https://github.com/user-attachments/assets/2b86b4cf-d868-46fc-b438-305c4f3537c5)
 ![PixPin_2025-06-02_22-09-48](https://github.com/user-attachments/assets/c0461249-4f38-46da-bb25-62f3568a943d)
 
- Some preview images of display effects, all the menus have been correctly mapped with icons
+✨ Some preview images of display effects, all the menus have been correctly mapped with icons
 
 ## Important reminder: This mod is only for users who want to bring back the context menu icons but do not want to install [Nebula](https://github.com/JustAdumbPrsn/Zen-Nebula). I have already integrated this mod into Nebula. Therefore, if you have already installed and are using [Nebula](https://github.com/JustAdumbPrsn/Zen-Nebula), you do not need to install this mod. (Personally, I recommend that you give Nebula a try. :) ) 
 # 🚀 Announcement:
@@ -22,7 +22,7 @@ You need to restore the `sidebar.css` file in Nebula to version 2.8. Otherwise, 
 
 ---
 
-## 🚀 **Installation Guide** (Windows, macOS, 和 Linux)
+## 🔖 **Installation Guide** (Windows, macOS, 和 Linux)
 
 
 1. 📁 **Create the Chrome Folder**
