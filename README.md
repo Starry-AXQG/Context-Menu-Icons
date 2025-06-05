@@ -6,6 +6,7 @@
 </div>
 
 <h2 align="center">Bring the icon of the context menu back to Zen browser</h2>
+
 ![image](https://github.com/user-attachments/assets/0e939644-34fc-4284-b0de-3c062be2bf3a)
 
 
