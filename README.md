@@ -8,8 +8,10 @@
 <h2 align="center">Bring the icon of the context menu back to Zen browser</h2>
 
 ![image](https://github.com/user-attachments/assets/0e939644-34fc-4284-b0de-3c062be2bf3a)
-![PixPin_2025-06-02_22-10-27](https://github.com/user-attachments/assets/2b86b4cf-d868-46fc-b438-305c4f3537c5)
+![PixPin_2025-06-05_12-58-00](https://github.com/user-attachments/assets/bb940cbf-70ad-4705-9805-eff50b945e52)
+
 ![PixPin_2025-06-02_22-09-48](https://github.com/user-attachments/assets/c0461249-4f38-46da-bb25-62f3568a943d)
+![PixPin_2025-06-05_12-56-29](https://github.com/user-attachments/assets/9fe910ac-2736-47e4-b3ef-fc4ed81b796c)
 
 ✨ Some preview images of display effects, all the menus have been correctly mapped with icons
 
@@ -59,3 +61,4 @@ By the way, I couldn't find the original icon of Zen, so I used  [FluentUI](http
 In order to ensure a consistent icon style, the icons of the menu have also been replaced accordingly:
 
 ![PixPin_2025-06-02_22-10-33](https://github.com/user-attachments/assets/2d450fdd-5b3b-4ff3-a9e2-823c35e23009)
+![PixPin_2025-06-05_12-54-55](https://github.com/user-attachments/assets/4d870447-a329-4682-8e5e-b50b53e44627)
