@@ -72,3 +72,5 @@ In order to ensure a consistent icon style, the icons of the menu have also been
 
 ![PixPin_2025-06-02_22-10-33](https://github.com/user-attachments/assets/2d450fdd-5b3b-4ff3-a9e2-823c35e23009)
 ![PixPin_2025-06-05_12-54-55](https://github.com/user-attachments/assets/4d870447-a329-4682-8e5e-b50b53e44627)
+**📚
+If you only want to bring back the icon of the context menu without modifying any other icons, starting from version 1.2, you can set `only-Context-Menu-Icons` 在 `about:confgi`to "true" to undo this change.Although I personally don't like icons with inconsistent styles, someone has already made a suggestion, so I followed it.[issue]([https://github.com/CosmoCreeper/Sine](https://github.com/JustAdumbPrsn/Zen-Nebula/pull/142#issuecomment-2943082241))
