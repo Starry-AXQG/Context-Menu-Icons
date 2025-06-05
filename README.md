@@ -42,6 +42,7 @@ You need to restore the `sidebar.css` file in Nebula to version 2.8. Otherwise, 
      @import "icons/icons.css";
      ```
   no have userChrome.css?
+  
   **Option B-1**
    - 打开 (or create) `userContent.css` and add:
      ```css
