@@ -1,10 +1,38 @@
 [
-
     {
+
         "type": "checkbox",
-        "property": "only-Context-Menu-Icons",
-        "label": "only Context Menu Icons.",
+        "property": "cmi-main__context-menu-icons-only",
+        "label": "only Context Menu Icons (Revert the modifications to the menu icons and toolbar icons)",
         "defaultValue": false
 
     }
+
+    {
+
+        "type": "checkbox",
+        "property": "cmi-extensions__icon--grayscale",
+        "label": "Add grayscale filter to extensions icons of context-menu",
+        "defaultValue": false
+
+    }
+
+    {
+
+        "type": "checkbox",
+        "property": "cmi-bookmarks__item--centered",
+        "label": "Centered Bookmark Bar Items",
+        "defaultValue": false
+
+    }
+
+    {
+
+        "type": "checkbox",
+        "property": "cmi-bookmarks__icon--hide",
+        "label": "Hide the redundant icons in the bookmark toolbar (recommended to enable, which can make the bookmark bar more concise)",
+        "defaultValue": false
+
+    }
+
 ]
