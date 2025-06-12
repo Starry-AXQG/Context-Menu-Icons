@@ -6,7 +6,7 @@
         "label": "only Context Menu Icons (Revert the modifications to the menu icons and toolbar icons)",
         "defaultValue": false
 
-    }
+    },
 
     {
 
@@ -15,7 +15,7 @@
         "label": "Add grayscale filter to extensions icons of context-menu",
         "defaultValue": false
 
-    }
+    },
 
     {
 
@@ -24,7 +24,7 @@
         "label": "Centered Bookmark Bar Items",
         "defaultValue": false
 
-    }
+    },
 
     {
 
