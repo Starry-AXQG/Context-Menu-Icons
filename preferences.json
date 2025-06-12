@@ -21,7 +21,7 @@
 
         "type": "checkbox",
         "property": "cmi-bookmarks__item--centered",
-        "label": "Centered Bookmark Bar Items",
+        "label": "Centered Bookmark Toolbar Items",
         "defaultValue": false
 
     },
