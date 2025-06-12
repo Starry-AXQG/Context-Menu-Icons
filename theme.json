@@ -16,5 +16,6 @@
         "Icon Pack"
     ],
     "createdAt": "2025-06-02",
-    "updatedAt": "2025-06-02"
+    "updatedAt": "2025-06-02",
+    "fork": ["zen", "firefox"]
 }
