@@ -1,4 +1,4 @@
-<h1 align="center">context-menu-icons-for-Zen</h1>
+<h1 align="center">context-menu-icons-for-Zen/Firefox</h1>
 <div align="center">
     <a href="https://zen-browser.app/">
         <img width="120" alt="zen-badge-dark" src="https://github.com/user-attachments/assets/d6ab3ddf-6630-4062-92d0-22497d2a3f9a" />
@@ -17,7 +17,7 @@
 
 ## Important reminder: This mod is only for users who want to bring back the context menu icons but do not want to install [Nebula](https://github.com/JustAdumbPrsn/Zen-Nebula). I have already integrated this mod into Nebula. Therefore, if you have already installed and are using [Nebula](https://github.com/JustAdumbPrsn/Zen-Nebula), you do not need to install this mod. (Personally, I recommend that you give Nebula a try. :) ) 
 # 🚀 Announcement:
-Now, on the Firefox browser v139.0.4 , this mod also works properly.（mod v1.2.1)
+Now, it also supports usage on Firefox.（since mod v1.2.1)
 
  ⚠️⚠️⚠️If you are using Nebula version 2.9:⚠️⚠️⚠️
 You need to restore the `sidebar.css` file in Nebula to version 2.8. Otherwise, some errors will occur.([You can directly obtain the 2.8 version of the file here.](https://github.com/1247343406/context-menu-icons-for-Zen/blob/1fbf240bb748cd7c6e0b370890d5a1d8da1a5d07/Sidebar.css)) This is because Zen removed the context menu, 和 Nebula had to temporarily remove the code related to the icons for supporting the context menu in version 2.9. Therefore, we need to revert these deleted codes. Don't worry. In the next version of Nebula, we will revert these deleted items.In the next version of Nebula, this mod will be directly integrated.
@@ -75,8 +75,20 @@ In order to ensure a consistent icon style, the icons of the menu have also been
 ![PixPin_2025-06-02_22-10-33](https://github.com/user-attachments/assets/2d450fdd-5b3b-4ff3-a9e2-823c35e23009)
 ![PixPin_2025-06-05_12-54-55](https://github.com/user-attachments/assets/4d870447-a329-4682-8e5e-b50b53e44627)
 
-**📚
+## 📚 Preferences 📚
 
-If you only want to bring back the icon of the context menu without modifying any other icons, starting from version 1.2, you can set `only-Context-Menu-Icons` 在 `about:config`to "true" to undo this change.
+***Access `about:config`via the address bar,Search for and add the attribute names given below***
+
+1. `cmi-main__context-menu-icons-only`
+If you only want to bring back the icon of the context menu without modifying any other icons, starting from version 1.2, you can set `cmi-main__context-menu-icons-only` 在 `about:config`to "true" to undo this change.
 
 Although I personally don't like icons with inconsistent styles, someone has already made a suggestion, so I followed it. [issue]([https://github.com/CosmoCreeper/Sine](https://github.com/JustAdumbPrsn/Zen-Nebula/pull/142#issuecomment-2943082241))
+
+2. ·cmi-extensions__icon--grayscale`
+[icons style]Add grayscale filter to extensions icons of context-menu(v1.3.0)
+
+3. `cmi-bookmarks__item--centered`
+[bookmarks]Centered Bookmark Toolbar Items(v1.3.0)
+
+4. `cmi-bookmarks__icon--hide`
+[bookmarks]Hide the redundant icons in the bookmark toolbar (Recommended to enable, which can make the bookmark bar more concise)(v1.3.0)
