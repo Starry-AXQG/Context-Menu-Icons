@@ -3,7 +3,7 @@
 
         "type": "checkbox",
         "property": "cmi-main__context-menu-icons-only",
-        "label": "only Context Menu Icons (Revert the modifications to the menu icons and toolbar icons)",
+        "label": "[Main] only Context Menu Icons (Revert the modifications to the menu icons and toolbar icons)",
         "defaultValue": false
 
     },
@@ -12,7 +12,7 @@
 
         "type": "checkbox",
         "property": "cmi-extensions__icon--grayscale",
-        "label": "Add grayscale filter to extensions icons of context-menu",
+        "label": "[icons style]Add grayscale filter to extensions icons of context-menu",
         "defaultValue": false
 
     },
@@ -21,7 +21,7 @@
 
         "type": "checkbox",
         "property": "cmi-bookmarks__item--centered",
-        "label": "Centered Bookmark Toolbar Items",
+        "label": "[bookmarks]Centered Bookmark Toolbar Items",
         "defaultValue": false
 
     },
@@ -30,7 +30,7 @@
 
         "type": "checkbox",
         "property": "cmi-bookmarks__icon--hide",
-        "label": "Hide the redundant icons in the bookmark toolbar (recommended to enable, which can make the bookmark bar more concise)",
+        "label": "[bookmarks]Hide the redundant icons in the bookmark toolbar (recommended to enable, which can make the bookmark bar more concise)",
         "defaultValue": false
 
     }
