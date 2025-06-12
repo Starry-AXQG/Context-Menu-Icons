@@ -30,7 +30,7 @@
 
         "type": "checkbox",
         "property": "cmi-bookmarks__icon--hide",
-        "label": "[bookmarks]Hide the redundant icons in the bookmark toolbar (recommended to enable, which can make the bookmark bar more concise)",
+        "label": "[bookmarks]Hide the redundant icons in the bookmark toolbar (Recommended to enable, which can make the bookmark bar more concise)",
         "defaultValue": false
 
     }
