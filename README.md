@@ -61,10 +61,12 @@ You need to restore the `sidebar.css` file in Nebula to version 2.8. Otherwise, 
 ***——————————In addition to manual installation, you can also install it directly through Sine.————————————***
 
 **1.First**
-       Instal [Sine](https://github.com/CosmoCreeper/Sine)
+
+Instal [Sine](https://github.com/CosmoCreeper/Sine)
        
 **2.Second**
-   search`Context menu icons`then click on "Install"
+
+search`Context menu icons`then click on "Install"
    
 ![image_20250605130835](https://github.com/user-attachments/assets/bfcefded-71e2-45bc-9aef-0f8c4c47c1d7)
 
