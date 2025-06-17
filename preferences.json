@@ -4,7 +4,7 @@
 
         "type": "checkbox",
         "property": "svg.context-properties.content.enabled",
-        "label": "[Main]enabled CMI (Context-Menu-Icons)",
+        "label": "[Main] enable mod CMI (Context-Menu-Icons)",
         "defaultValue": true
 
     },
@@ -22,7 +22,7 @@
 
         "type": "checkbox",
         "property": "cmi-extensions__icon--grayscale",
-        "label": "[icons style]Add grayscale filter to extensions icons of context-menu",
+        "label": "[icons style] Add grayscale filter to extensions icons of context-menu",
         "defaultValue": false
 
     },
@@ -31,7 +31,7 @@
 
         "type": "checkbox",
         "property": "cmi-bookmarks__item--centered",
-        "label": "[bookmarks]Centered Bookmark Toolbar Items",
+        "label": "[bookmarks] Centered Bookmark Toolbar Items",
         "defaultValue": false
 
     },
@@ -40,7 +40,7 @@
 
         "type": "checkbox",
         "property": "cmi-bookmarks__icon--hide",
-        "label": "[bookmarks]Hide the redundant icons in the bookmark toolbar (Recommended to enable, which can make the bookmark bar more concise)",
+        "label": "[bookmarks] Hide the redundant icons in the bookmark toolbar (Recommended to enable, which can make the bookmark bar more concise)",
         "defaultValue": false
 
     }
