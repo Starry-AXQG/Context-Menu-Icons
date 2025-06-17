@@ -75,13 +75,15 @@ In order to ensure a consistent icon style, the icons of the menu have also been
 
 ***Access `about:config`via the address bar,Search for and add the attribute names given below***
 
+![image_20250617201405](https://github.com/user-attachments/assets/a8d9414d-844c-4526-8242-9a7c408268eb)
+
 1. `cmi-main__context-menu-icons-only`
 
 If you only want to bring back the icon of the context menu without modifying any other icons, starting from version 1.2, you can set `cmi-main__context-menu-icons-only` 在 `about:config`to "true" to undo this change.
 
 Although I personally don't like icons with inconsistent styles, someone has already made a suggestion, so I followed it. [issue]([https://github.com/CosmoCreeper/Sine](https://github.com/JustAdumbPrsn/Zen-Nebula/pull/142#issuecomment-2943082241))
 
-2. ·cmi-extensions__icon--grayscale`
+2. `cmi-extensions__icon--grayscale`
 
 [icons style]Add grayscale filter to extensions icons of context-menu(v1.3.0)
 
