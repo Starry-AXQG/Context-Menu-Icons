@@ -1,3 +1,7 @@
+.subviewbutton {
+	-moz-context-properties: fill, fill-opacity !important;
+	fill: currentColor !important;
+}
 
 @-moz-document url-prefix("chrome:") {
   @-moz-document url-prefix("chrome:") {
