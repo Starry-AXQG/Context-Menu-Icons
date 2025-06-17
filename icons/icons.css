@@ -1,3 +1,5 @@
+@media (-moz-pref("svg.context-properties.content.enabled")) {
+
 .subviewbutton {
 	-moz-context-properties: fill, fill-opacity !important;
 	fill: currentColor !important;
@@ -998,7 +1000,10 @@
     #context_zen-replace-pinned-url-with-current {
     	--menu-image: url("reload.svg");
     }
-    
+
+}    
+
+
   /* Preferences*/  
     
     @media not (-moz-pref("cmi-main__context-menu-icons-only")) {
