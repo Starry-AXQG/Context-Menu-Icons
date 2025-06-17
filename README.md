@@ -15,7 +15,6 @@
 
 ✨ Some preview images of display effects, all the menus have been correctly mapped with icons
 
-## Important reminder: This mod is only for users who want to bring back the context menu icons but do not want to install [Nebula](https://github.com/JustAdumbPrsn/Zen-Nebula). I have already integrated this mod into Nebula. Therefore, if you have already installed and are using [Nebula](https://github.com/JustAdumbPrsn/Zen-Nebula), you do not need to install this mod. (Personally, I recommend that you give Nebula a try. :) ) 
 # 🚀 Announcement:
 Now, it also supports usage on Firefox.（since mod v1.2.1)
 
