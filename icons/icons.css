@@ -5,7 +5,6 @@
 	fill: currentColor !important;
 }
 
-@-moz-document url-prefix("chrome:") {
   @-moz-document url-prefix("chrome:") {
     :root[fxastatus="not_configured"] #fxa-avatar-image {
     	list-style-image: url("account.svg") !important;
@@ -1000,12 +999,12 @@
     #context_zen-replace-pinned-url-with-current {
     	--menu-image: url("reload.svg");
     }
-
-}    
+  }
+   
 
 
   /* Preferences*/  
-    
+    /* only context menu icons mode */
     @media not (-moz-pref("cmi-main__context-menu-icons-only")) {
     
     	#appMenu-downloads-button,
@@ -1135,7 +1134,10 @@
     		list-style-image: url("extension.svg") !important;
     	}
     }
-  
+
+}   
+
+    
     @media (-moz-pref("cmi-extensions__icon--grayscale")){
   
       .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
@@ -1202,5 +1204,5 @@
     #PanelUI-historyMore{
     	--menu-image: none;
     }
-  }
-}
+  
+
