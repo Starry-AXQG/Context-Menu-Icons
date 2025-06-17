@@ -1,4 +1,14 @@
 [
+
+    {
+
+        "type": "checkbox",
+        "property": "svg.context-properties.content.enabled",
+        "label": "[Main]enabled CMI (Context-Menu-Icons)",
+        "defaultValue": true
+
+    },
+
     {
 
         "type": "checkbox",
