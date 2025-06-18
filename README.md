@@ -51,7 +51,12 @@ Now, it also supports usage on Firefox.（since mod v1.2.1)
 
 5. 🔄 **Restart the Browser**
    Reopen Zen to apply the UI changes.
-   
+
+
+*** ⚠️If you are using the Firefox browser and choose to install manually⚠️  ***
+
+you must ensure that in `about:config`, the setting of `svg.context-properties.content.enabled` is set to `true`. This preference is a necessary condition for the mod to function properly. The mod has incorporated the detection of this preference. If you do not do this, the mod will directly refuse to execute.
+
 ***——————————In addition to manual installation, you can also install it directly through Sine.————————————***
 
 **1.First**
