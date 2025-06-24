@@ -298,12 +298,37 @@
     
     #pageAction-panel-bookmark,
     #star-button {
-    	list-style-image: url("bookmark-hollow.svg") !important;
+      
+      /* 做成 16×16 的容器 */
+      width: 16px;
+      height: 16px;
+      
+      /* 插入 SVG，居中不重复 */
+      background-image: url("bookmark-hollow.svg") !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      
+      /* 将图像整体从 14×14 缩放到 16×16 */
+      background-size: 18px 18px !important;
+      
+      /* 保证文本和图标之间有点间距 */
+      padding-inline-start: 20px !important;
+
     }
     
     #pageAction-panel-bookmark[starred],
     #star-button[starred] {
-    	list-style-image: url("bookmark.svg") !important;
+
+      width: 16px;
+      height: 16px;
+      
+      background-image: url("bookmark.svg") !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      
+      background-size: 18px 18px !important;
+      padding-inline-start: 20px !important;
+
     }
     
     #sidebar-box[sidebarcommand="viewTabsSidebar"]
