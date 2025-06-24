@@ -4,18 +4,34 @@
 
         "type": "checkbox",
         "property": "svg.context-properties.content.enabled",
-        "label": "[Main] enable mod CMI (Context-Menu-Icons)",
+        "label": "[Main] Enable the configuration items for critical dependencies(Please make sure it is turned on.)",
         "defaultValue": true
 
     },
 
     {
+        "type": "dropdown",
+        "value": "number",
+        "property": "cmi-main__context-menu-icons-option",
+        "label": "Switch Icon package.",
+        "default": 1,
+        "placeholder": false,
+        "options": [
 
-        "type": "checkbox",
-        "property": "cmi-main__context-menu-icons-only",
-        "label": "[Main] only Context Menu Icons (Revert the modifications to the menu icons and toolbar icons)",
-        "defaultValue": false
+            {
+                "label": "No changes with icons",
+                "value": 0
+            },
+            {
+                "label": "Default(FluentUI)",
+                "value": 1
+            },
+            {
+                "label": "ZenUI",
+                "value": 2
+            }
 
+        ]
     },
 
     {
@@ -26,6 +42,24 @@
         "defaultValue": false
 
     },
+
+    {
+
+        "type": "checkbox",
+        "property": "cmi-extensions__icon--align",
+        "label": "[icons style] Align the icons of the extension with those of CMI(Default: Off. Turning this on will make the context menu more orderly.)",
+        "defaultValue": false
+
+    },  
+
+    {
+
+        "type": "checkbox",
+        "property": "cmi-extensions__text--align",
+        "label": "[text style] Align the text of the extension with those of CMI(Default: Off. Turning this on will make the context menu more orderly.)",
+        "defaultValue": false
+
+    },   
 
     {
 
