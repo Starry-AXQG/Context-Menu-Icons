@@ -1148,11 +1148,6 @@
         }
       }
 
-
-
-
-
-
         /* Align the icons of the extension with those of CMI */
         /* ==== 1. 声明命名空间 & 作用域 ==== */
       @-moz-document url-prefix("chrome://browser/content/browser.xhtml") {
