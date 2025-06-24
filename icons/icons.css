@@ -742,11 +742,11 @@
       
       #context_moveTabToGroup,
       #context_moveTabToNewGroup {
-      	--menu-image: url("moveTabToGroup.svg");
+      	--menu-image: url("TabGroup-add.svg");
       }
       	
       #context_ungroupTab {
-      	--menu-image: url("ungroupTab.svg");
+      	--menu-image: url("TabGroup-remove.svg");
       }
       
       #context-openlinkinusercontext-menu,
