@@ -1,11 +1,14 @@
-  @media (-moz-pref("svg.context-properties.content.enabled")) {
-  
+@media (-moz-pref("svg.context-properties.content.enabled")) {
+
+  /*FluentUI*/
+
+  @media (-moz-pref("cmi-main__context-menu-icons-option", 1)) {
   .subviewbutton {
   	-moz-context-properties: fill, fill-opacity !important;
   	fill: currentColor !important;
   }
   
-    @-moz-document url-prefix("chrome:") {
+
       :root[fxastatus="not_configured"] #fxa-avatar-image {
       	list-style-image: url("account.svg") !important;
       }
@@ -1027,8 +1030,6 @@
   
   
 
-      /* only context menu icons mode */
-      @media not (-moz-pref("cmi-main__context-menu-icons-only")) {
       
       	#appMenu-downloads-button,
       	#appMenu-library-downloads-button {
@@ -1156,10 +1157,16 @@
       	#unified-extensions-button {
       		list-style-image: url("extension.svg") !important;
       	}
-      }
+  }
+
+  /*ZenUI*/
+  @media (-moz-pref("cmi-main__context-menu-icons-option", 2)) {
+
+  }
+
+}  
   
-  }   
-  
+
     /* Preferences*/        
       @media (-moz-pref("cmi-extensions__icon--grayscale")){
     
