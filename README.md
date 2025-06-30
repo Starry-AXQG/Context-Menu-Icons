@@ -79,13 +79,11 @@ you must ensure that in `about:config`, the setting of `svg.context-properties.c
 
 
 ---
-By the way, I couldn't find the original icon of Zen, so I used  [FluentUI](https://github.com/microsoft/fluentui-system-icons) instead.
-In order to ensure a consistent icon style, the icons of the menu have also been replaced accordingly:
 
-![PixPin_2025-06-02_22-10-33](https://github.com/user-attachments/assets/2d450fdd-5b3b-4ff3-a9e2-823c35e23009)
-![PixPin_2025-06-05_12-54-55](https://github.com/user-attachments/assets/4d870447-a329-4682-8e5e-b50b53e44627)
 
 ## 📚 Preferences 📚
+
+（If you use Sine, you can directly manage the preferences of the mod through Sine.)
 
 ***Access `about:config`via the address bar,Search for and add the attribute names given below***
 
