@@ -13,7 +13,7 @@
         "type": "dropdown",
         "value": "number",
         "property": "cmi-main__context-menu-icons-option",
-        "label": "Switch Icon package.(Due to an unknown error, in order to use ZenUI properly, you may need to enable `cmi-extensions__icon--align`or enable"[icons style] Align the icons of the extension with those of CMI"）",
+        "label": "Switch Icon package.",
         "default": 1,
         "placeholder": false,
         "options": [
