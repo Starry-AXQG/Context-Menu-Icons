@@ -1,13 +1,16 @@
-@media (-moz-pref("svg.context-properties.content.enabled")) {
+
 
   /*FluentUI*/
 
   @media (-moz-pref("cmi-main__context-menu-icons-option", 1)) {
+
   .subviewbutton {
   	-moz-context-properties: fill, fill-opacity !important;
   	fill: currentColor !important;
   }
   
+
+
 
       :root[fxastatus="not_configured"] #fxa-avatar-image {
       	list-style-image: url("account.svg") !important;
@@ -299,6 +302,7 @@
       	list-style-image: url("folder.svg") !important;
       }
 
+
        #pageAction-panel-bookmark,
       #star-button {
         
@@ -322,6 +326,7 @@
       #pageAction-panel-bookmark[starred],
       #star-button[starred] {
 
+
         width: 16px;
         height: 16px;
         
@@ -333,6 +338,7 @@
         padding-inline-start: 20px !important;
 
       }
+
 
       #sidebar-box[sidebarcommand="viewTabsSidebar"]
       	> #sidebar-header
@@ -742,11 +748,13 @@
       
       #context_moveTabToGroup,
       #context_moveTabToNewGroup {
+
       	--menu-image: url("TabGroup-add.svg");
       }
       	
       #context_ungroupTab {
       	--menu-image: url("TabGroup-remove.svg");
+
       }
       
       #context-openlinkinusercontext-menu,
@@ -1026,6 +1034,7 @@
       #context_zen-reset-pinned-tab,
       #context_zen-replace-pinned-url-with-current {
       	--menu-image: url("reload.svg");
+
       }
     
     
@@ -1598,6 +1607,7 @@
 }  
   
 
+
     /* Preferences*/        
       @media (-moz-pref("cmi-extensions__icon--grayscale")){
     
@@ -1679,7 +1689,9 @@
         --fp-arrowpanel-menuicon-margin-inline: 14px;
       }
       /*Context Menu*/
+
       @media (-moz-pref("cmi-main__context-menu-icons-option", 1)) {
+
       menu > .menu-iconic-text,
       menuitem > .menu-iconic-text,
       #context-navigation > .menuitem-iconic::after {
@@ -1695,6 +1707,7 @@
           + var(--fp-contextmenu-menuicon-margin-inline)
         ) !important;
       }
+
       }
       @media (-moz-pref("cmi-main__context-menu-icons-option", 2)) {
       menu > .menu-iconic-text,
@@ -1713,6 +1726,7 @@
         ) !important;
       }
       }
+
       /*Main Menu*/  
       .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined) > .toolbarbutton-text,
       .subviewbutton:not(#appMenu-zoom-controls > .subviewbutton) > .toolbarbutton-icon + .toolbarbutton-text,
