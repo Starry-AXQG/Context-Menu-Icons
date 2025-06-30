@@ -12,12 +12,12 @@
     rx="1.5"
     ry="1.5"
     fill="none"
-    stroke="currentColor"
+    stroke="context-fill"
+    stroke-opacity="context-fill-opacity"
     stroke-width="1.001"
   />
   <!-- 播放按钮三角 -->
   <path
     d="M3 9.867v3.265a.24.24 0 0 0 .365.205l2.442-1.492a.405.405 0 0 0 0-.69L3.365 9.661A.24.24 0 0 0 3 9.867z"
-    fill="currentColor"
   />
 </svg>
