@@ -92,6 +92,7 @@ you must ensure that in `about:config`, the setting of `svg.context-properties.c
 
 1. `cmi-main__context-menu-icons-option`
 [Main]This attribute enables you to select the icon package，use numbers to make a selection(v1.4 add)
+
     If you want to use FluentUI：1
 
    
