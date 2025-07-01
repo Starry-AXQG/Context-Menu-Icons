@@ -27,7 +27,7 @@ Now, it also supports usage on Firefox.（since mod v1.2.1)
 
 ---
 
-## 🔖 **Installation Guide** (Windows, macOS, 和 Linux)
+## 🔖 **Installation Guide** (Windows, macOS, and Linux)
 ***—————————— Method One（recommend)： install it directly through Sine ————————————***
 
 (By installing this mod using Sine, you can always receive subsequent updates for this mod.And it is also more convenient to modify the preference settings provided by this mod.)
