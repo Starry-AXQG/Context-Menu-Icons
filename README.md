@@ -35,6 +35,8 @@ Now, it also supports usage on Firefox.（since mod v1.2.1)
 **1.First**
 
 Instal [Sine](https://github.com/CosmoCreeper/Sine)
+
+If you don't know how to install Sine, [please click here to view the installation Guide.](https://github.com/CosmoCreeper/Sine#%EF%B8%8F-installation)
        
 **2.Second**
 
