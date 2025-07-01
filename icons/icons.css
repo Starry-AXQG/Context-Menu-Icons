@@ -1634,41 +1634,134 @@
         --fp-contextmenu-menuitem-padding-inline: 10px;
         --fp-arrowpanel-menuicon-margin-inline: 14px;
       }
+
+      menu > .menu-iconic-text,
+      menuitem > .menu-iconic-text,
+      #context-navigation > .menuitem-iconic::after {
+        padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+      }
+      
       /*Context Menu*/
       @media (-moz-pref("cmi-main__context-menu-icons-option", 1)) {
-      menu > .menu-iconic-text,
-      menuitem > .menu-iconic-text,
-      #context-navigation > .menuitem-iconic::after {
-        padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#toolbar-context-menu
+            > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"],
+                          .in‑menulist, .in‑menulist menuitem, .unified‑nav-current),
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#toolbar-context-menu
+            > menu:not(.menu-iconic, [type="checkbox"], [type="radio"],
+                      .in‑menulist, .in‑menulist menu, .unified‑nav-current),
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#toolbar-context-menu
+            > menucaption
+        {
+          padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+        }
+
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#panelContext-menu
+            > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"],
+                          .in‑menulist, .in‑menulist menuitem, .unified‑nav-current),
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#panelContext-menu
+            > menu:not(.menu-iconic, [type="checkbox"], [type="radio"],
+                      .in‑menulist, .in‑menulist menu, .unified‑nav-current),
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#panelContext-menu
+            > menucaption
+        {
+          padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+        }
+
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#placesContext
+            > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"],
+                          .in‑menulist, .in‑menulist menuitem, .unified‑nav-current),
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#placesContext
+            > menu:not(.menu-iconic, [type="checkbox"], [type="radio"],
+                      .in‑menulist, .in‑menulist menu, .unified‑nav-current),
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#placesContext
+            > menucaption
+        {
+          padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+        }
+
+
+        :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
+        :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
+        :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menucaption {
+          padding-inline-start: calc(
+            var(--fp-contextmenu-menuitem-padding-inline) 
+            + 16px                                 
+            + var(--fp-contextmenu-menuicon-margin-inline)
+          ) !important;
+        }
+
       }
-      
-      :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
-      :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
-      :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menucaption {
-        padding-inline-start: calc(
-          var(--fp-contextmenu-menuitem-padding-inline) 
-          + 16px                                 
-          + var(--fp-contextmenu-menuicon-margin-inline)
-        ) !important;
-      }
-      }
+
       @media (-moz-pref("cmi-main__context-menu-icons-option", 2)) {
-      menu > .menu-iconic-text,
-      menuitem > .menu-iconic-text,
-      #context-navigation > .menuitem-iconic::after {
-        padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#toolbar-context-menu
+            > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"],
+                          .in‑menulist, .in‑menulist menuitem, .unified‑nav-current),
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#toolbar-context-menu
+            > menu:not(.menu-iconic, [type="checkbox"], [type="radio"],
+                      .in‑menulist, .in‑menulist menu, .unified‑nav-current),
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#toolbar-context-menu
+            > menucaption
+        {
+          padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
+        }
+
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#panelContext-menu
+            > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"],
+                          .in‑menulist, .in‑menulist menuitem, .unified‑nav-current),
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#panelContext-menu
+            > menu:not(.menu-iconic, [type="checkbox"], [type="radio"],
+                      .in‑menulist, .in‑menulist menu, .unified‑nav-current),
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#panelContext-menu
+            > menucaption
+        {
+          padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
+        }
+
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#placesContext
+            > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"],
+                          .in‑menulist, .in‑menulist menuitem, .unified‑nav-current),
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#placesContext
+            > menu:not(.menu-iconic, [type="checkbox"], [type="radio"],
+                      .in‑menulist, .in‑menulist menu, .unified‑nav-current),
+        :not(:not(menubar) > menu, #ContentSelectDropdown)
+          > menupopup#placesContext
+            > menucaption
+        {
+          padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
+        }
+
+
+        :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
+        :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
+        :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menucaption {
+          padding-inline-start: calc(
+            var(--fp-contextmenu-menuitem-padding-inline) 
+            + 8px                                 
+            + var(--fp-contextmenu-menuicon-margin-inline)
+          ) !important;
+        }
+
       }
       
-      :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
-      :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
-      :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menucaption {
-        padding-inline-start: calc(
-          var(--fp-contextmenu-menuitem-padding-inline) 
-          + 8px                                 
-          + var(--fp-contextmenu-menuicon-margin-inline)
-        ) !important;
-      }
-      }
       /*Main Menu*/  
       .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined) > .toolbarbutton-text,
       .subviewbutton:not(#appMenu-zoom-controls > .subviewbutton) > .toolbarbutton-icon + .toolbarbutton-text,
