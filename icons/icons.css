@@ -527,12 +527,6 @@
         fill: currentColor !important;
       }
       
-      menu > .menu-iconic-text,
-      menuitem > .menu-iconic-text {
-        padding-inline-start: var(
-          --fp-contextmenu-menuicon-margin-inline
-        ) !important;
-      }
       #context-savepage {
         --menu-image: url("save.svg");
       }
