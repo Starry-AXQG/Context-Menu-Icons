@@ -67,7 +67,7 @@ search`Context menu icons`then click on "Install"
   no have userChrome.css?
   
   **Option B-1**
-   - 打开 (or create) `userContent.css` and add:
+   - open (or create) `userContent.css` and add:
      ```css
      @import "icons/icons.css";
      ```
@@ -77,6 +77,8 @@ search`Context menu icons`then click on "Install"
 5. 🔄 **Restart the Browser**
    Reopen Zen to apply the UI changes.
 
+If you choose to install manually, you will need to perform some simple configuration tasks.
+[Here you can view all the preference settings of CMI.](https://github.com/1247343406/context-menu-icons-for-Zen?tab=readme-ov-file#-preferences-)
 
 *** ⚠️If you are using the Firefox browser and choose to install manually⚠️  ***
 
@@ -92,10 +94,12 @@ you must ensure that in `about:config`, the setting of `svg.context-properties.c
 
 ***Access `about:config`via the address bar,Search for and add the attribute names given below***
 
-![PixPin_2025-07-01_00-03-10](https://github.com/user-attachments/assets/af8fbe28-e9f0-4b01-ad9e-9d0f5db288e9)
+![image_20250702183028](https://github.com/user-attachments/assets/3598eebf-c19d-4e7d-845d-37dd3f231285)
 
 
-1. `cmi-main__context-menu-icons-option`
+
+1. `cmi-main__context-menu-icons-option` (⚠️If you install using the manual method, please be sure to select an icon package in this configuration option.)
+
 [Main]This attribute enables you to select the icon package，use numbers to make a selection(v1.4 add)
 
     If you want to use FluentUI：1
@@ -109,23 +113,30 @@ you must ensure that in `about:config`, the setting of `svg.context-properties.c
 ![图片](https://github.com/user-attachments/assets/d26a2174-8862-46b5-94fe-56c2f7d30aa9)
 
 
-2. `cmi-extensions__icon--grayscale`
+2. `cmi-main__ContextMenu--better`
+
+ Use the better context menu. (v1.5 add)  Demo image:
+
+![图片](https://github.com/user-attachments/assets/e43cfff5-49b7-4990-b243-0821d63eec25)
+
+
+3. `cmi-extensions__icon--grayscale`
 
 [icons style]Add grayscale filter to extensions icons of context-menu(v1.3.0 add)
 
-3.`cmi-extensions__icon--align`
+4.`cmi-extensions__icon--align`
 
 [icons style] Align the icons of the extension with those of CMI(Default: Off. Turning this on will make the context menu more orderly.)(1.4 add)
 
-4.`cmi-extensions__text--align`
+5.`cmi-extensions__text--align`
 
 [text style] Align the text of the extension with those of CMI(Default: Off. Turning this on will make the context menu more orderly.)(v1.4 add)
 
 
-5. `cmi-bookmarks__item--centered`
+6. `cmi-bookmarks__item--centered`
 
 [bookmarks]Centered Bookmark Toolbar Items(v1.3.0 add)
 
-6. `cmi-bookmarks__icon--hide`
+7. `cmi-bookmarks__icon--hide`
 
 [bookmarks]Hide the redundant icons in the bookmark toolbar (Recommended to enable, which can make the bookmark bar more concise)(v1.3.0 add)
