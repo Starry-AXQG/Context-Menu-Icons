@@ -1802,6 +1802,7 @@ menuitem > .menu-iconic-text,
 /*Context Menu*/
 @media (-moz-pref("cmi-main__context-menu-icons-option", 1)) {
 
+  /* 工具栏空白和工具栏图标 */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup#toolbar-context-menu
       > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"],
@@ -1817,6 +1818,7 @@ menuitem > .menu-iconic-text,
     padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
   }
 
+  /* 书签栏 */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup#panelContext-menu
       > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"],
@@ -1843,6 +1845,67 @@ menuitem > .menu-iconic-text,
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup#placesContext
       > menucaption
+  {
+    padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+  }
+
+  /* —— 视频上下文，且当播放或暂停按钮可见时 —— */
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu:has(
+        > menuitem#context-media-play:not([hidden]),
+        > menuitem#context-media-pause:not([hidden])
+      ) {
+    
+    > menuitem#context-take-screenshot,
+    > menuitem#context-inspect-a11y,
+    > menuitem#context-inspect {
+      padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+    }
+  }
+
+  /* 仅对 contentAreaContextMenu 下的指定项目应用左内边距 */
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-media-play,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-media-pause,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-media-mute,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-media-unmute,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-media-playbackrate,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-video-fullscreen,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-leave-dom-fullscreen,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-media-hidecontrols,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-media-showcontrols,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-video-saveimage,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-savevideo,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-copyvideourl,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-sendvideo,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menu#context-media-playbackrate
   {
     padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
   }
@@ -1862,6 +1925,7 @@ menuitem > .menu-iconic-text,
 
 @media (-moz-pref("cmi-main__context-menu-icons-option", 2)) {
 
+  /* 工具栏空白和工具栏图标 */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup#toolbar-context-menu
       > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"],
@@ -1877,6 +1941,7 @@ menuitem > .menu-iconic-text,
     padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
   }
 
+  /* 书签栏 */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup#panelContext-menu
       > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"],
@@ -1903,6 +1968,67 @@ menuitem > .menu-iconic-text,
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup#placesContext
       > menucaption
+  {
+    padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
+  }
+
+  /* —— 视频上下文，且当播放或暂停按钮可见时 —— */
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu:has(
+        > menuitem#context-media-play:not([hidden]),
+        > menuitem#context-media-pause:not([hidden])
+      ) {
+    
+    > menuitem#context-take-screenshot,
+    > menuitem#context-inspect-a11y,
+    > menuitem#context-inspect {
+      padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
+    }
+  }
+
+  /* 仅对 contentAreaContextMenu 下的指定项目应用左内边距 */
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-media-play,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-media-pause,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-media-mute,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-media-unmute,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-media-playbackrate,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-video-fullscreen,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-leave-dom-fullscreen,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-media-hidecontrols,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-media-showcontrols,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-video-saveimage,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-savevideo,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-copyvideourl,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menuitem#context-sendvideo,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu
+      > menu#context-media-playbackrate
   {
     padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
   }
