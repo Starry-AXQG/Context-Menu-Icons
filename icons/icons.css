@@ -1794,52 +1794,6 @@ menuseparator {
     }
 }
 
-/* 使用ZenUI时开启扩展图标对齐 */
-@media (
-  -moz-pref("cmi-extensions__icon--align")
-) and (
-  -moz-pref("cmi-main__context-menu-icons-option", 2)
-) {
-  /* ==== 2. 自定义变量（方便后续统一调整） ==== */
-  :root {
-    /* 图标左边距（图标与左侧边框之间） */
-    --zen-cmenu-icon-margin-inline-start: -1px !important;
-    /* 图标右边距（图标与文字之间） */
-    --zen-cmenu-icon-margin-inline-end: 8px !important;
-    /* 图标上下边距（图标与上下菜单项之间） */
-    --zen-cmenu-icon-margin-block: 2px !important;
-    /* 图标固定尺寸（保证所有图标同高同宽） */
-    --zen-cmenu-icon-size: 16px !important;
-  }
-
-  /* ==== 3. 针对所有上下文菜单项中的图标 ==== */
-  menupopup > menuitem > .menu-icon,
-  menupopup > menu > .menu-icon {
-    /* 固定图标大小 */
-    width: var(--zen-cmenu-icon-size);
-    height: var(--zen-cmenu-icon-size);
-
-    /* 调整外边距：左、右、上下 */
-    margin-inline-start: var(--zen-cmenu-icon-margin-inline-start);
-    margin-inline-end: var(--zen-cmenu-icon-margin-inline-end);
-    margin-block-start: var(--zen-cmenu-icon-margin-block);
-    margin-block-end: var(--zen-cmenu-icon-margin-block);
-
-    /* 内边距保持 0（图标本身不要额外内边距） */
-    padding: 0 !important;
-  }
-
-  /* ==== 4. 文本也向右推进，和图标保持间距一致 ==== */
-  menupopup > menuitem .menu-text,
-  menupopup > menu .menu-text {
-    padding-inline-start: 0 !important; /* 重置可能已有的内边距 */
-    margin-inline-start: 0 !important;  /* 重置可能已有的外边距 */
-    /* 让文字紧贴图标右侧 */
-    padding-inline-start: var(--zen-cmenu-icon-margin-inline-end);
-  }
-}
-
-
 @media (-moz-pref("cmi-bookmarks__icon--hide")){
   toolbarbutton.bookmark-item > .toolbarbutton-icon {
     display: none !important;
