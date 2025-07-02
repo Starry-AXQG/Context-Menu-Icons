@@ -527,12 +527,6 @@
         fill: currentColor !important;
       }
       
-      menu > .menu-iconic-text,
-      menuitem > .menu-iconic-text {
-        padding-inline-start: var(
-          --fp-contextmenu-menuicon-margin-inline
-        ) !important;
-      }
       #context-savepage {
         --menu-image: url("save.svg");
       }
@@ -949,32 +943,7 @@
         width: 24px !important;
       }
       
-      :not(:not(menubar) > menu, #ContentSelectDropdown)
-        > menupopup
-        > menuitem:not(
-          .menuitem-iconic,
-          [type="checkbox"],
-          [type="radio"],
-          .in-menulist,
-          .in-menulist menuitem,
-          .unified-nav-current
-        ),
-      :not(:not(menubar) > menu, #ContentSelectDropdown)
-        > menupopup
-        > menu:not(
-          .menu-iconic,
-          [type="checkbox"],
-          [type="radio"],
-          .in-menulist,
-          .in-menulist menu,
-          .unified-nav-current
-        ),
-      :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menucaption {
-        padding-inline-start: calc(
-          var(--fp-contextmenu-menuitem-padding-inline) + 16px +
-            var(--fp-contextmenu-menuicon-margin-inline)
-        ) !important;
-      }
+      
       /* Special icon for Zen */
       #zen-toolbar-context-tabs-right {
         --menu-image: url("zen-toolbar-context-tabs-right.svg");
@@ -1154,17 +1123,6 @@
         --zen-contextmenu-menuitem-margin: 0px 2px !important;
       }
 
-
-
-      /* PART 2: Adding start inline padding to options, 
-      * For now this also affected items with existing paddings
-      * Like on toolbar context menu, or on extension options
-      * Help me fix this, hit me up on github.com/KiKaraage/ZenMods/issues */
-      .menu-text {
-        @media (-moz-platform: windows) {
-          padding-inline-start: 24px !important;
-        }
-      }   
       
       /* PART 3: Adding icons back to regular context menu options */
       :not(:not(menubar) > menu, #ContentSelectDropdown)
@@ -1202,23 +1160,6 @@
         fill: currentColor !important; 
       }
       
-      /* PART 5: Normalize left padding for options with checkboxes, like Compact Mode options
-      * Still not applied to options like 'Tabs on the right' sadly
-      * Help me fix this, hit me up on github.com/KiKaraage/ZenMods/issues */
-      @media (-moz-platform: windows) {
-
-          menupopup > menuitem[checked='true'] {
-            padding-inline-start: var(--zen-contextmenu-menuicon-margin-inline) !important;
-            > .menu-text {
-              padding: 0 !important;
-            }
-          }
-          menupopup > menuitem[checked='false'] {
-            padding-inline: calc(var(--zen-contextmenu-menuicon-margin-inline) + 0px) !important;
-          }
-        
-      }
-    
 
     /* PART 6: Specifying icons to apply for options in Unified Extensions Menu */
     @media not (-moz-platform: linux) {
@@ -1580,145 +1521,425 @@
 }  
   
 
-    /* Preferences*/        
-      @media (-moz-pref("cmi-extensions__icon--grayscale")){
-    
-        .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
-          fill: var(--arrowpanel-icon-color) !important;
-          filter: grayscale(100%) invert(100%) brightness(150%);
-        }
-      }
+/* Preferences */
+@media (-moz-pref("cmi-main__ContextMenu--better")){
+          
+/* -------------------------- Better Context Menu -------------------------- */
 
-        /* Align the icons of the extension with those of CMI */
-        /* ==== 1. 声明命名空间 & 作用域 ==== */
-      @-moz-document url-prefix("chrome://browser/content/browser.xhtml") {
-        @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-        @media (
-          -moz-pref("cmi-extensions__icon--align")
-        ),
-        (
-          -moz-pref("cmi-main__context-menu-icons-option", 2)
-        ) {
-        /* ==== 2. 自定义变量（方便后续统一调整） ==== */
-        :root {
-          /* 图标左边距（图标与左侧边框之间） */
-          --zen-cmenu-icon-margin-inline-start: 4px !important;
-          /* 图标右边距（图标与文字之间） */
-          --zen-cmenu-icon-margin-inline-end: 8px !important;
-          /* 图标上下边距（图标与上下菜单项之间） */
-          --zen-cmenu-icon-margin-block: 2px !important;
-          /* 图标固定尺寸（保证所有图标同高同宽） */
-          --zen-cmenu-icon-size: 16px !important;
-        }
+/* Base Hover Styling for Menu Items */
+:is(menu, menuitem):hover {
+    border-radius: 12px !important;
+}
 
-        /* ==== 3. 针对所有上下文菜单项中的图标 ==== */
-        menupopup > menuitem > .menu-icon,
-        menupopup > menu > .menu-icon {
-          /* 固定图标大小 */
-          width: var(--zen-cmenu-icon-size);
-          height: var(--zen-cmenu-icon-size);
+/* Hide "New Tab" Option */
+#context_openANewTab {
+    display: none !important;
+}
 
-          /* 调整外边距：左、右、上下 */
-          margin-inline-start: var(--zen-cmenu-icon-margin-inline-start);
-          margin-inline-end: var(--zen-cmenu-icon-margin-inline-end);
-          margin-block-start: var(--zen-cmenu-icon-margin-block);
-          margin-block-end: var(--zen-cmenu-icon-margin-block);
+/* General Context Menu Layout */
+#tabContextMenu {
+    width: 280px !important;
+}
 
-          /* 内边距保持 0（图标本身不要额外内边距） */
-          padding: 0 !important;
-        }
+menuseparator {
+    &:first-of-type {
+        display: none !important;
+    }
 
-        /* ==== 4. 文本也向右推进，和图标保持间距一致 ==== */
-        menupopup > menuitem .menu-text,
-        menupopup > menu .menu-text {
-          padding-inline-start: 0 !important; /* 重置可能已有的内边距 */
-          margin-inline-start: 0 !important;  /* 重置可能已有的外边距 */
-          /* 让文字紧贴图标右侧 */
-          padding-inline-start: var(--zen-cmenu-icon-margin-inline-end);
-        }
-          }
-      }
+    &::before {
+        opacity: 0.3;
+    }
+}
 
-      @media (-moz-pref("cmi-bookmarks__icon--hide")){
-        toolbarbutton.bookmark-item > .toolbarbutton-icon {
-          display: none !important;
+/* Tab Context Menu */
+#tabContextMenu:has(#context_reloadTab:not([hidden])):has(:is(#context_zen-add-essential,
+#context_zen-remove-essential):not([hidden])):has(:is(#context_pinTab, #context_unpinTab, #context_bookmarkTab):not([hidden])) {
+    :nth-child(1 of menuseparator) {
+        display: flex !important;
+        visibility: visible !important;
+        order: -1 !important;
+    }
+
+    #context_reloadTab,
+    :is(#context_zen-add-essential, #context_zen-remove-essential),
+    :is(#context_pinTab, #context_unpinTab),
+    #context_bookmarkTab {
+        order: -999 !important;
+        width: 25% !important;
+        --height: 42px;
+        height: var(--height) !important;
+
+        position: relative;
+        overflow: hidden;
+
+        background-position: center !important;
+        border-radius: 12px !important;
+        transition: box-shadow 0.4s ease-in-out;
+
+        .menu-text {
+            display: none !important;
         }
-      }
-    
-      @media (-moz-pref("cmi-bookmarks__item--centered")){
-        #PlacesToolbarItems {
-          justify-content: center !important; 
+    }
+
+    /* Positioning Each Button */
+    #context_reloadTab {
+        margin-left: 0 !important;
+    }
+
+    :is(#context_pinTab, #context_unpinTab) {
+        margin-left: 25% !important;
+        margin-top: calc(0px - var(--height)) !important;
+    }
+
+    #context_zen-remove-essential {
+        margin-left: 37.5% !important;
+        margin-top: calc(0px - var(--height)) !important;
+    }
+
+    #context_zen-add-essential {
+        margin-left: 50% !important;
+        margin-top: calc(0px - var(--height)) !important;
+    }
+
+    #context_bookmarkTab {
+        margin-left: 75% !important;
+        margin-top: calc(0px - var(--height)) !important;
+    }
+}
+
+
+/* TabGroup Context Menu */
+#tabContextMenu:has(#context_reloadTab:not([hidden])):has(:is(#context_pinTab, #context_unpinTab, #context_bookmarkTab):not([hidden])) {
+    :nth-child(1 of menuseparator) {
+        display: flex !important;
+        visibility: visible !important;
+        order: -1 !important;
+    }
+
+    #context_reloadTab,
+    :is(#context_zen-add-essential, #context_zen-remove-essential),
+    :is(#context_pinTab, #context_unpinTab),
+    #context_bookmarkTab {
+        order: -999 !important;
+        width: 25% !important;
+        --height: 42px;
+        height: var(--height) !important;
+
+        position: relative;
+        overflow: hidden;
+
+        background-position: center !important;
+        border-radius: 12px !important;
+        transition: box-shadow 0.4s ease-in-out;
+
+        .menu-text {
+            display: none !important;
         }
-      }
-    
-      @media (-moz-pref("cmi-bookmarks__icon--hide")){
-        toolbarbutton.bookmark-item > .toolbarbutton-icon {
-          display: none !important;
-        }
-      }
-    
-      
-      /* Shift the text to the right to make room for the custom icon.*/
-      
-      :root {
-        --fp-contextmenu-menuicon-margin-inline: 12px;
-        --fp-contextmenu-menuitem-padding-inline: 10px;
-        --fp-arrowpanel-menuicon-margin-inline: 14px;
-      }
-      /*Context Menu*/
-      @media (-moz-pref("cmi-main__context-menu-icons-option", 1)) {
-      menu > .menu-iconic-text,
-      menuitem > .menu-iconic-text,
-      #context-navigation > .menuitem-iconic::after {
-        padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
-      }
-      
-      :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
-      :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
-      :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menucaption {
-        padding-inline-start: calc(
-          var(--fp-contextmenu-menuitem-padding-inline) 
-          + 16px                                 
-          + var(--fp-contextmenu-menuicon-margin-inline)
-        ) !important;
-      }
-      }
-      @media (-moz-pref("cmi-main__context-menu-icons-option", 2)) {
-      menu > .menu-iconic-text,
-      menuitem > .menu-iconic-text,
-      #context-navigation > .menuitem-iconic::after {
-        padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
-      }
-      
-      :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
-      :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
-      :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menucaption {
-        padding-inline-start: calc(
-          var(--fp-contextmenu-menuitem-padding-inline) 
-          + 8px                                 
-          + var(--fp-contextmenu-menuicon-margin-inline)
-        ) !important;
-      }
-      }
-      /*Main Menu*/  
-      .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined) > .toolbarbutton-text,
-      .subviewbutton:not(#appMenu-zoom-controls > .subviewbutton) > .toolbarbutton-icon + .toolbarbutton-text,
-      #appMenu-fxa-label2 > vbox {
-      
-        padding-inline-start: var(--fp-arrowpanel-menuicon-margin-inline) !important;
-      }
-      
-      #appMenu-zoom-controls > .toolbarbutton-text,
-      #fxa-manage-account-button > vbox,
-      #PanelUI-fxa-menu-syncnow-button > hbox {
-        padding-inline-start: calc(16px + var(--fp-arrowpanel-menuicon-margin-inline)) !important;
-      }
-      
-      /* This is used to temporarily solve the problem where the "historical" icons that Zen has not yet removed overlap with the added custom icons. */
-      #appMenuRecentlyClosedTabs,
-      #appMenuRecentlyClosedWindows,
-      #appMenuSearchHistory,
-      #appMenuClearRecentHistory,
-      #PanelUI-historyMore{
-        --menu-image: none;
-      }
+    }
+
+    /* Positioning Each Button */
+    #context_reloadTab {
+        margin-left: 0 !important;
+    }
+
+    :is(#context_pinTab, #context_unpinTab) {
+        margin-left: 33% !important;
+        margin-top: calc(0px - var(--height)) !important;
+    }
+
+    #context_bookmarkTab {
+        margin-left: 66% !important;
+        margin-top: calc(0px - var(--height)) !important;
+    }
+}
+
+
+
+
+/* -------------------------- Gradient Animation Base -------------------------- */
+#context_reloadTab::before,
+:is(#context_zen-add-essential, #context_zen-remove-essential)::before,
+:is(#context_pinTab, #context_unpinTab)::before,
+#context_bookmarkTab::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border-radius: 12px !important;
+    clip-path: inset(-1 round 12px);
+    pointer-events: none;
+
+    background: linear-gradient(
+        45deg,
+        color-mix(in srgb, var(--zen-primary-color) 5%, black),
+        color-mix(in srgb, var(--zen-primary-color) 20%, black),
+        color-mix(in srgb, var(--zen-primary-color) 50%, black),
+        color-mix(in srgb, var(--zen-primary-color) 90%, black),
+        color-mix(in srgb, var(--zen-primary-color) 50%, black),
+        color-mix(in srgb, var(--zen-primary-color) 15%, black)
+    );
+
+    background-size: 400% 400%;
+    filter: blur(10px) brightness(1);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Hover Activates Gradient Effect */
+#context_reloadTab:hover::before,
+:is(#context_zen-add-essential, #context_zen-remove-essential):hover::before,
+:is(#context_pinTab, #context_unpinTab):hover::before,
+#context_bookmarkTab:hover::before {
+    opacity: 0.5;
+    animation-play-state: running;
+}
+
+@keyframes tab-hover-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+}
+
+
+@media (-moz-pref("cmi-extensions__icon--grayscale")){
+
+  .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+    fill: var(--arrowpanel-icon-color) !important;
+    filter: grayscale(100%) invert(100%) brightness(150%);
+  }
+}
+
+  /* Align the icons of the extension with those of CMI */
+  /* ==== 1. 声明命名空间 & 作用域 ==== */
+@-moz-document url-prefix("chrome://browser/content/browser.xhtml") {
+  @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+  @media (
+    -moz-pref("cmi-extensions__icon--align")
+  ),
+  (
+    -moz-pref("cmi-main__context-menu-icons-option", 2)
+  ) {
+  /* ==== 2. 自定义变量（方便后续统一调整） ==== */
+  :root {
+    /* 图标左边距（图标与左侧边框之间） */
+    --zen-cmenu-icon-margin-inline-start: 4px !important;
+    /* 图标右边距（图标与文字之间） */
+    --zen-cmenu-icon-margin-inline-end: 8px !important;
+    /* 图标上下边距（图标与上下菜单项之间） */
+    --zen-cmenu-icon-margin-block: 2px !important;
+    /* 图标固定尺寸（保证所有图标同高同宽） */
+    --zen-cmenu-icon-size: 16px !important;
+  }
+
+  /* ==== 3. 针对所有上下文菜单项中的图标 ==== */
+  menupopup > menuitem > .menu-icon,
+  menupopup > menu > .menu-icon {
+    /* 固定图标大小 */
+    width: var(--zen-cmenu-icon-size);
+    height: var(--zen-cmenu-icon-size);
+
+    /* 调整外边距：左、右、上下 */
+    margin-inline-start: var(--zen-cmenu-icon-margin-inline-start);
+    margin-inline-end: var(--zen-cmenu-icon-margin-inline-end);
+    margin-block-start: var(--zen-cmenu-icon-margin-block);
+    margin-block-end: var(--zen-cmenu-icon-margin-block);
+
+    /* 内边距保持 0（图标本身不要额外内边距） */
+    padding: 0 !important;
+  }
+
+  /* ==== 4. 文本也向右推进，和图标保持间距一致 ==== */
+  menupopup > menuitem .menu-text,
+  menupopup > menu .menu-text {
+    padding-inline-start: 0 !important; /* 重置可能已有的内边距 */
+    margin-inline-start: 0 !important;  /* 重置可能已有的外边距 */
+    /* 让文字紧贴图标右侧 */
+    padding-inline-start: var(--zen-cmenu-icon-margin-inline-end);
+  }
+    }
+}
+
+@media (-moz-pref("cmi-bookmarks__icon--hide")){
+  toolbarbutton.bookmark-item > .toolbarbutton-icon {
+    display: none !important;
+  }
+}
+
+@media (-moz-pref("cmi-bookmarks__item--centered")){
+  #PlacesToolbarItems {
+    justify-content: center !important; 
+  }
+}
+
+@media (-moz-pref("cmi-bookmarks__icon--hide")){
+  toolbarbutton.bookmark-item > .toolbarbutton-icon {
+    display: none !important;
+  }
+}
+
+
+/* Shift the text to the right to make room for the custom icon.*/
+
+:root {
+  --fp-contextmenu-menuicon-margin-inline: 12px;
+  --fp-contextmenu-menuitem-padding-inline: 10px;
+  --fp-arrowpanel-menuicon-margin-inline: 14px;
+}
+
+menu > .menu-iconic-text,
+menuitem > .menu-iconic-text,
+#context-navigation > .menuitem-iconic::after {
+  padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+}
+
+/*Context Menu*/
+@media (-moz-pref("cmi-main__context-menu-icons-option", 1)) {
+
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#toolbar-context-menu
+      > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"],
+                    .in‑menulist, .in‑menulist menuitem, .unified‑nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#toolbar-context-menu
+      > menu:not(.menu-iconic, [type="checkbox"], [type="radio"],
+                .in‑menulist, .in‑menulist menu, .unified‑nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#toolbar-context-menu
+      > menucaption
+  {
+    padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+  }
+
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#panelContext-menu
+      > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"],
+                    .in‑menulist, .in‑menulist menuitem, .unified‑nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#panelContext-menu
+      > menu:not(.menu-iconic, [type="checkbox"], [type="radio"],
+                .in‑menulist, .in‑menulist menu, .unified‑nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#panelContext-menu
+      > menucaption
+  {
+    padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+  }
+
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#placesContext
+      > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"],
+                    .in‑menulist, .in‑menulist menuitem, .unified‑nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#placesContext
+      > menu:not(.menu-iconic, [type="checkbox"], [type="radio"],
+                .in‑menulist, .in‑menulist menu, .unified‑nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#placesContext
+      > menucaption
+  {
+    padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+  }
+
+
+  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menucaption {
+    padding-inline-start: calc(
+      var(--fp-contextmenu-menuitem-padding-inline) 
+      + 16px                                 
+      + var(--fp-contextmenu-menuicon-margin-inline)
+    ) !important;
+  }
+
+}
+
+@media (-moz-pref("cmi-main__context-menu-icons-option", 2)) {
+
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#toolbar-context-menu
+      > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"],
+                    .in‑menulist, .in‑menulist menuitem, .unified‑nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#toolbar-context-menu
+      > menu:not(.menu-iconic, [type="checkbox"], [type="radio"],
+                .in‑menulist, .in‑menulist menu, .unified‑nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#toolbar-context-menu
+      > menucaption
+  {
+    padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
+  }
+
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#panelContext-menu
+      > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"],
+                    .in‑menulist, .in‑menulist menuitem, .unified‑nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#panelContext-menu
+      > menu:not(.menu-iconic, [type="checkbox"], [type="radio"],
+                .in‑menulist, .in‑menulist menu, .unified‑nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#panelContext-menu
+      > menucaption
+  {
+    padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
+  }
+
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#placesContext
+      > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"],
+                    .in‑menulist, .in‑menulist menuitem, .unified‑nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#placesContext
+      > menu:not(.menu-iconic, [type="checkbox"], [type="radio"],
+                .in‑menulist, .in‑menulist menu, .unified‑nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#placesContext
+      > menucaption
+  {
+    padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
+  }
+
+
+  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menucaption {
+    padding-inline-start: calc(
+      var(--fp-contextmenu-menuitem-padding-inline) 
+      + 8px                                 
+      + var(--fp-contextmenu-menuicon-margin-inline)
+    ) !important;
+  }
+
+}
+
+/*Main Menu*/  
+.widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined) > .toolbarbutton-text,
+.subviewbutton:not(#appMenu-zoom-controls > .subviewbutton) > .toolbarbutton-icon + .toolbarbutton-text,
+#appMenu-fxa-label2 > vbox {
+
+  padding-inline-start: var(--fp-arrowpanel-menuicon-margin-inline) !important;
+}
+
+#appMenu-zoom-controls > .toolbarbutton-text,
+#fxa-manage-account-button > vbox,
+#PanelUI-fxa-menu-syncnow-button > hbox {
+  padding-inline-start: calc(16px + var(--fp-arrowpanel-menuicon-margin-inline)) !important;
+}
+
+/* This is used to temporarily solve the problem where the "historical" icons that Zen has not yet removed overlap with the added custom icons. */
+#appMenuRecentlyClosedTabs,
+#appMenuRecentlyClosedWindows,
+#appMenuSearchHistory,
+#appMenuClearRecentHistory,
+#PanelUI-historyMore{
+  --menu-image: none;
+}
+

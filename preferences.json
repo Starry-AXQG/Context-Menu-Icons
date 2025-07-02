@@ -37,6 +37,15 @@
     {
 
         "type": "checkbox",
+        "property": "cmi-main__ContextMenu--better",
+        "label": "[Contex tMenu style] Use the better context menu",
+        "defaultValue": false
+
+    },
+
+    {
+
+        "type": "checkbox",
         "property": "cmi-extensions__icon--grayscale",
         "label": "[icons style] Add grayscale filter to extensions icons of context-menu",
         "defaultValue": false
