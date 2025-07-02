@@ -24,7 +24,7 @@ ZenUI
 
 # 🚀 Announcement:
 
-If you are using Firefox v140 or Zen v1.14, please use the v1.5 branch. This branch has fixed the known issues.
+If you are using Firefox v140 or Zen v1.14, please use the CMI v1.5.Otherwise, please use v1.4.1
 
 Now, it also supports usage on Firefox.（since mod v1.2.1)
 
