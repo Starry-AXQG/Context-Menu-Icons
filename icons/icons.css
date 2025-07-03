@@ -1905,10 +1905,7 @@ menuitem > .menu-iconic-text,
       > menuitem#context-sendvideo,
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup#contentAreaContextMenu
-      > menu#context-media-playbackrate,
-  :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup#contentAreaContextMenu
-      > menuitem#context-viewvideo
+      > menu#context-media-playbackrate
   {
     padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
   }
@@ -2031,10 +2028,7 @@ menuitem > .menu-iconic-text,
       > menuitem#context-sendvideo,
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup#contentAreaContextMenu
-      > menu#context-media-playbackrate,
-  :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup#contentAreaContextMenu
-      > menuitem#context-viewvideo
+      > menu#context-media-playbackrate
   {
     padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
   }
