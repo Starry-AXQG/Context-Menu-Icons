@@ -1,14 +1,10 @@
 [
-
     {
-
         "type": "checkbox",
         "property": "svg.context-properties.content.enabled",
         "label": "[Main] Enable the configuration items for critical dependencies(Please make sure it is turned on.)",
         "defaultValue": true
-
     },
-
     {
         "type": "dropdown",
         "value": "number",
@@ -17,7 +13,6 @@
         "default": 1,
         "placeholder": false,
         "options": [
-
             {
                 "label": "No changes with icons",
                 "value": 0
@@ -30,62 +25,22 @@
                 "label": "ZenUI",
                 "value": 2
             }
-
         ]
     },
-
     {
-
         "type": "checkbox",
         "property": "cmi-main__ContextMenu--better",
         "label": "[👍 Contex Menu style] Enable better context menu (Default: Off. Recommended to enable to obtain a more concise context menu.)",
         "defaultValue": false
-
     },
-
     {
-
         "type": "checkbox",
         "property": "cmi-extensions__icon--grayscale",
         "label": "[icons style] Add grayscale filter to extensions icons of context-menu",
         "defaultValue": false
-
     },
-
     {
-
         "type": "checkbox",
         "property": "cmi-extensions__icon--align",
         "label": "[👍 icons style] Align the icons of the extension with those of CMI(Default: Off. Recommended to enable to make the context menu more orderly.)",
-        "defaultValue": false
-
-    },  
-
-    {
-
-        "type": "checkbox",
-        "property": "cmi-extensions__text--align",
-        "label": "[text style] Align the text of the extension with those of CMI(Default: Off. Recommended to enable to make the context menu more orderly. ⚠️ This function has been temporarily delete.)"，
-        "defaultValue": false
-
-    },   
-
-    {
-
-        "type": "checkbox",
-        "property": "cmi-bookmarks__item--centered",
-        "label": "[bookmarks] Centered Bookmark Toolbar Items",
-        "defaultValue": false
-
-    },
-
-    {
-
-        "type": "checkbox",
-        "property": "cmi-bookmarks__icon--hide",
-        "label": "[bookmarks] Hide the redundant icons in the bookmark toolbar (Recommended to enable, which can make the bookmark bar more concise)",
-        "defaultValue": false
-
-    }
-
-]
+        "defaultValue
