@@ -1,5 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="context-fill" fill-opacity="context-fill-opacity" viewBox="0 0 32 32">
-  <path d="M20 22h2l-5-12h-2l-5 12h2l1.24-3h5.53Zm-5.93-5 1.82-4.42h.25L18 17Z"/>
-  <path d="M12 28H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v11h-2V6H6v20h6Zm11-.82-2.59-2.59L19 26l4 4 7-7-1.41-1.41L23 27.18z"/>
-  <path fill="none" d="M0 0h32v32H0z"/>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="16" height="16"
+  viewBox="0 0 16 16"
+>
+  <!-- 分别定义深/浅两种主题下图标显色 -->
+  <style>
+
+    @media (prefers-color-scheme: dark) {
+      .icon { fill: #ffffff; }
+    }
+
+    @media (prefers-color-scheme: light) {
+      .icon { fill: #000000; }
+    }
+  </style>
+
+
+  <path
+    class="icon"
+    d="M10.125,11.188h1.062l-2.656-6.375h-1.062l-2.656,6.375h1.062l.659-1.594h2.938l.653,1.594ZM6.975,8.531l.967-2.348h.133l.988,2.348h-2.088Z"
+  />
+  <path
+    class="icon"
+    d="M5.875,14.375h-3.188c-.587,0-1.062-.476-1.062-1.062V2.688c0-.587.476-1.062,1.062-1.062h10.625c.587,0,1.062.476,1.062,1.062v5.844h-1.062V2.688H2.688v10.625h3.188v1.062ZM11.719,13.939l-1.376-1.376-.749.749,2.125,2.125,3.719-3.719-.749-.749-2.97,2.97Z"
+  />
+
+  <!--<path class="icon" d="M-.5-.5h17v17H-.5V-.5Z"/>-->
 </svg>
