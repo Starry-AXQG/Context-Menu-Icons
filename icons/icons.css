@@ -946,7 +946,7 @@
       
       /* Special icon for Zen */
       #zen-toolbar-context-tabs-right {
-        --menu-image: url("zen-toolbar-context-tabs-right.svg");
+        --menu-image: url("tab-right.svg");
       }
       
       #context_zen-add-essential {
