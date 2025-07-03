@@ -1863,6 +1863,27 @@ menuitem > .menu-iconic-text,
     }
   }
 
+   /* —— 拼写上下文：当拼写检查可见时 —— */
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu:has(
+        > menuitem#spell-check-enabled:not([hidden])
+      ) {
+
+    > menuitem#context-undo,
+    > menuitem#context-redo,
+    > menuitem#context-cut,
+    > menuitem#context-copy,
+    > menuitem#context-paste,
+    > menuitem#context-delete,
+    > menuitem#context-selectall,
+    > menu#spell-dictionaries,
+    > menuitem#context-add-engine,    
+    > menuitem#context-inspect-a11y,
+    > menuitem#context-inspect {
+      padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+    }
+  }
+ 
   /* 仅对 contentAreaContextMenu 下的指定项目应用左内边距 */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup#contentAreaContextMenu
@@ -1989,6 +2010,27 @@ menuitem > .menu-iconic-text,
     }
   }
 
+   /* —— 拼写上下文：当拼写检查可见时 —— */
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup#contentAreaContextMenu:has(
+        > menuitem#spell-check-enabled:not([hidden])
+      ) {
+
+    > menuitem#context-undo,
+    > menuitem#context-redo,
+    > menuitem#context-cut,
+    > menuitem#context-copy,
+    > menuitem#context-paste,
+    > menuitem#context-delete,
+    > menuitem#context-selectall,
+    > menu#spell-dictionaries,
+    > menuitem#context-add-engine,    
+    > menuitem#context-inspect-a11y,
+    > menuitem#context-inspect {
+      padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
+    }
+  }
+ 
   /* 仅对 contentAreaContextMenu 下的指定项目应用左内边距 */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup#contentAreaContextMenu
