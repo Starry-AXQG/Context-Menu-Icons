@@ -1802,10 +1802,10 @@ menuitem > .menu-iconic-text,
 /*Context Menu*/
 @media (-moz-pref("cmi-main__context-menu-icons-option", 1)) {
 
-/* 同时作用于 toolbar 和 bookmarks panel 的上下文菜单 */
+/* 独立边距规则 */
 :not(:not(menubar) > menu, #ContentSelectDropdown)
   > :is(
-      menupopup#toolbar-context-menu,
+
       menupopup#panelContext-menu
     )
   > :is(menuitem, menu, menucaption)
@@ -1870,10 +1870,10 @@ menuitem > .menu-iconic-text,
 
 @media (-moz-pref("cmi-main__context-menu-icons-option", 2)) {
 
-/* 同时作用于 toolbar 和 bookmarks panel 的上下文菜单 */
+/* 独立边距规则 */
 :not(:not(menubar) > menu, #ContentSelectDropdown)
   > :is(
-      menupopup#toolbar-context-menu,
+
       menupopup#panelContext-menu
     )
   > :is(menuitem, menu, menucaption)
