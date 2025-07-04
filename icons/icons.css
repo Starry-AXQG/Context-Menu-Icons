@@ -1802,29 +1802,51 @@ menuitem > .menu-iconic-text,
 /*Context Menu*/
 @media (-moz-pref("cmi-main__context-menu-icons-option", 1)) {
 
-  /* 定义一组通用选择器 */
-@layer userChrome {
-  /* 通用排除项 */
-  /*   • 普通 menuitem：排除图标项、复选/单选、已分组、当前高亮
-       • 子菜单 menu：同上
-       • 分组标题 menucaption：不需要排除 */
-  @property --exclude-menu-items {
-    syntax: "string";
-    inherits: false;
-    initial-value: ".menuitem-iconic, [type='checkbox'], [type='radio'], .in-menulist, .in-menulist menuitem, .unified-nav-current";
-  }
+/* 同时作用于 toolbar 和 bookmarks panel 的上下文菜单 */
+:not(:not(menubar) > menu, #ContentSelectDropdown)
+  > :is(
+      menupopup#toolbar-context-menu,
+      menupopup#panelContext-menu
+    )
+  > :is(menuitem, menu, menucaption)
+    :not(
+      .menuitem-iconic,
+      [type="checkbox"],
+      [type="radio"],
+      .in‑menulist,
+      .unified‑nav-current
+    ) {
+  padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+}
 
-  menupopup#toolbar-context-menu,
-  menupopup#panelContext-menu,
-  menupopup#placesContext {
-
-    > menuitem:not(var(--exclude-menu-items)),
-    > menu:not(.menu-iconic, [type='checkbox'], [type='radio'], .in-menulist, .in-menulist menu, .unified-nav-current),
+    /* —— 书签上下文，当其他书签按钮隐藏时 —— */
+  menupopup#placesContext:has(
+    > menuitem#show-other-bookmarks_PersonalToolbar:not([hidden])
+  ) {
+    /*将所有的子项纳入样式规则*/
+    /* 普通菜单项（排除图标项、复选/单选、已分组和高亮项） */
+    > menuitem:not(
+        .menuitem-iconic,
+        [type="checkbox"],
+        [type="radio"],
+        .in-menulist,
+        .in-menulist menuitem,
+        .unified-nav-current
+      ),
+    /* 子菜单容器 */
+    > menu:not(
+        .menu-iconic,
+        [type="checkbox"],
+        [type="radio"],
+        .in-menulist,
+        .in-menulist menu,
+        .unified-nav-current
+      ),
+    /* 分组标题 */
     > menucaption {
       padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
     }
   }
-}
 
    /* —— 视频上下文，当播放或暂停按钮可见时 —— */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
@@ -1890,29 +1912,51 @@ menuitem > .menu-iconic-text,
 
 @media (-moz-pref("cmi-main__context-menu-icons-option", 2)) {
 
-  /* 定义一组通用选择器 */
-@layer userChrome {
-  /* 通用排除项 */
-  /*   • 普通 menuitem：排除图标项、复选/单选、已分组、当前高亮
-       • 子菜单 menu：同上
-       • 分组标题 menucaption：不需要排除 */
-  @property --exclude-menu-items {
-    syntax: "string";
-    inherits: false;
-    initial-value: ".menuitem-iconic, [type='checkbox'], [type='radio'], .in-menulist, .in-menulist menuitem, .unified-nav-current";
-  }
+/* 同时作用于 toolbar 和 bookmarks panel 的上下文菜单 */
+:not(:not(menubar) > menu, #ContentSelectDropdown)
+  > :is(
+      menupopup#toolbar-context-menu,
+      menupopup#panelContext-menu
+    )
+  > :is(menuitem, menu, menucaption)
+    :not(
+      .menuitem-iconic,
+      [type="checkbox"],
+      [type="radio"],
+      .in‑menulist,
+      .unified‑nav-current
+    ) {
+  padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
+}
 
-  menupopup#toolbar-context-menu,
-  menupopup#panelContext-menu,
-  menupopup#placesContext {
-
-    > menuitem:not(var(--exclude-menu-items)),
-    > menu:not(.menu-iconic, [type='checkbox'], [type='radio'], .in-menulist, .in-menulist menu, .unified-nav-current),
+    /* —— 书签上下文，当其他书签按钮隐藏时 —— */
+  menupopup#placesContext:has(
+    > menuitem#show-other-bookmarks_PersonalToolbar:not([hidden])
+  ) {
+    /*将所有的子项纳入样式规则*/
+    /* 普通菜单项（排除图标项、复选/单选、已分组和高亮项） */
+    > menuitem:not(
+        .menuitem-iconic,
+        [type="checkbox"],
+        [type="radio"],
+        .in-menulist,
+        .in-menulist menuitem,
+        .unified-nav-current
+      ),
+    /* 子菜单容器 */
+    > menu:not(
+        .menu-iconic,
+        [type="checkbox"],
+        [type="radio"],
+        .in-menulist,
+        .in-menulist menu,
+        .unified-nav-current
+      ),
+    /* 分组标题 */
     > menucaption {
-      padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+      padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
     }
   }
-}
 
    /* —— 视频上下文，当播放或暂停按钮可见时 —— */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
@@ -1942,7 +1986,7 @@ menuitem > .menu-iconic-text,
       padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
     }
   }
-
+  
    /* —— 拼写上下文：当拼写检查可见时 —— */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup#contentAreaContextMenu:has(
@@ -1998,4 +2042,3 @@ menuitem > .menu-iconic-text,
 #PanelUI-historyMore{
   --menu-image: none;
 }
-
