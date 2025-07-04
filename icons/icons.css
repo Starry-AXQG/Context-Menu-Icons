@@ -1643,12 +1643,12 @@ menuseparator {
     }
 
     :is(#context_pinTab, #context_unpinTab) {
-        margin-left: 33% !important;
+        margin-left: 37.5% !important;
         margin-top: calc(0px - var(--height)) !important;
     }
 
     #context_bookmarkTab {
-        margin-left: 66% !important;
+        margin-left: 75% !important;
         margin-top: calc(0px - var(--height)) !important;
     }
 }
