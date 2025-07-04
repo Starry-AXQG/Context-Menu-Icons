@@ -1819,84 +1819,38 @@ menuitem > .menu-iconic-text,
   padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
 }
 
-    /* —— 书签上下文，当其他书签按钮隐藏时 —— */
+/* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
+:is(
+  /* 书签上下文：当“其他书签”可见 */
   menupopup#placesContext:has(
     > menuitem#show-other-bookmarks_PersonalToolbar:not([hidden])
-  ) {
-    /*将所有的子项纳入样式规则*/
-    /* 普通菜单项（排除图标项、复选/单选、已分组和高亮项） */
-    > menuitem:not(
-        .menuitem-iconic,
-        [type="checkbox"],
-        [type="radio"],
-        .in-menulist,
-        .in-menulist menuitem,
-        .unified-nav-current
-      ),
-    /* 子菜单容器 */
-    > menu:not(
-        .menu-iconic,
-        [type="checkbox"],
-        [type="radio"],
-        .in-menulist,
-        .in-menulist menu,
-        .unified-nav-current
-      ),
-    /* 分组标题 */
-    > menucaption {
-      padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
-    }
+  ),
+  /* 视频上下文：当播放或暂停按钮可见 */
+  menupopup#contentAreaContextMenu:has(
+    > menuitem#context-media-play:not([hidden]),
+    > menuitem#context-media-pause:not([hidden])
+  ),
+  /* 拼写上下文：当拼写检查可见 */
+  menupopup#contentAreaContextMenu:has(
+    > menuitem#spell-check-enabled:not([hidden])
+  )
+) {
+  /* 普通菜单项 & 子菜单容器，排除图标项、复选/单选、已分组和高亮项 */
+  > :is(menuitem, menu):not(
+      .menuitem-iconic,
+      .menu-iconic,
+      [type="checkbox"],
+      [type="radio"],
+      .in-menulist,
+      .in-menulist menuitem,
+      .in-menulist menu,
+      .unified-nav-current
+    ),
+  /* 分组标题 */
+  > menucaption {
+    padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
   }
-
-   /* —— 视频上下文，当播放或暂停按钮可见时 —— */
-  :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup#contentAreaContextMenu:has(
-        > menuitem#context-media-play:not([hidden]),
-        > menuitem#context-media-pause:not([hidden])
-      ) {
-    > menuitem#context-media-play,
-    > menuitem#context-media-pause,
-    > menuitem#context-media-mute,
-    > menuitem#context-media-unmute,
-    > menuitem#context-media-playbackrate,
-    > menuitem#context-video-fullscreen,
-    > menuitem#context-leave-dom-fullscreen,
-    > menuitem#context-media-hidecontrols,
-    > menuitem#context-media-showcontrols,
-    > menuitem#context-video-saveimage,
-    > menuitem#context-savevideo,
-    > menuitem#context-copyvideourl,
-    > menuitem#context-sendvideo,
-    > menu#context-media-playbackrate,
-    > menuitem#context-viewvideo,
-
-    > menuitem#context-take-screenshot,
-    > menuitem#context-inspect-a11y,
-    > menuitem#context-inspect {
-      padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
-    }
-  }
-  
-   /* —— 拼写上下文：当拼写检查可见时 —— */
-  :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup#contentAreaContextMenu:has(
-        > menuitem#spell-check-enabled:not([hidden])
-      ) {
-
-    > menuitem#context-undo,
-    > menuitem#context-redo,
-    > menuitem#context-cut,
-    > menuitem#context-copy,
-    > menuitem#context-paste,
-    > menuitem#context-delete,
-    > menuitem#context-selectall,
-    > menu#spell-dictionaries,
-    > menuitem#context-add-engine,    
-    > menuitem#context-inspect-a11y,
-    > menuitem#context-inspect {
-      padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
-    }
-  }
+}
  
   :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup:not(#downloadsContextMenu) > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
   :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup:not(#downloadsContextMenu) > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
@@ -1929,84 +1883,38 @@ menuitem > .menu-iconic-text,
   padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
 }
 
-    /* —— 书签上下文，当其他书签按钮隐藏时 —— */
+/* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
+:is(
+  /* 书签上下文：当“其他书签”可见 */
   menupopup#placesContext:has(
     > menuitem#show-other-bookmarks_PersonalToolbar:not([hidden])
-  ) {
-    /*将所有的子项纳入样式规则*/
-    /* 普通菜单项（排除图标项、复选/单选、已分组和高亮项） */
-    > menuitem:not(
-        .menuitem-iconic,
-        [type="checkbox"],
-        [type="radio"],
-        .in-menulist,
-        .in-menulist menuitem,
-        .unified-nav-current
-      ),
-    /* 子菜单容器 */
-    > menu:not(
-        .menu-iconic,
-        [type="checkbox"],
-        [type="radio"],
-        .in-menulist,
-        .in-menulist menu,
-        .unified-nav-current
-      ),
-    /* 分组标题 */
-    > menucaption {
-      padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
-    }
+  ),
+  /* 视频上下文：当播放或暂停按钮可见 */
+  menupopup#contentAreaContextMenu:has(
+    > menuitem#context-media-play:not([hidden]),
+    > menuitem#context-media-pause:not([hidden])
+  ),
+  /* 拼写上下文：当拼写检查可见 */
+  menupopup#contentAreaContextMenu:has(
+    > menuitem#spell-check-enabled:not([hidden])
+  )
+) {
+  /* 普通菜单项 & 子菜单容器，排除图标项、复选/单选、已分组和高亮项 */
+  > :is(menuitem, menu):not(
+      .menuitem-iconic,
+      .menu-iconic,
+      [type="checkbox"],
+      [type="radio"],
+      .in-menulist,
+      .in-menulist menuitem,
+      .in-menulist menu,
+      .unified-nav-current
+    ),
+  /* 分组标题 */
+  > menucaption {
+    padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
   }
-
-   /* —— 视频上下文，当播放或暂停按钮可见时 —— */
-  :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup#contentAreaContextMenu:has(
-        > menuitem#context-media-play:not([hidden]),
-        > menuitem#context-media-pause:not([hidden])
-      ) {
-    > menuitem#context-media-play,
-    > menuitem#context-media-pause,
-    > menuitem#context-media-mute,
-    > menuitem#context-media-unmute,
-    > menuitem#context-media-playbackrate,
-    > menuitem#context-video-fullscreen,
-    > menuitem#context-leave-dom-fullscreen,
-    > menuitem#context-media-hidecontrols,
-    > menuitem#context-media-showcontrols,
-    > menuitem#context-video-saveimage,
-    > menuitem#context-savevideo,
-    > menuitem#context-copyvideourl,
-    > menuitem#context-sendvideo,
-    > menu#context-media-playbackrate,
-    > menuitem#context-viewvideo,
-
-    > menuitem#context-take-screenshot,
-    > menuitem#context-inspect-a11y,
-    > menuitem#context-inspect {
-      padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
-    }
-  }
-  
-   /* —— 拼写上下文：当拼写检查可见时 —— */
-  :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup#contentAreaContextMenu:has(
-        > menuitem#spell-check-enabled:not([hidden])
-      ) {
-
-    > menuitem#context-undo,
-    > menuitem#context-redo,
-    > menuitem#context-cut,
-    > menuitem#context-copy,
-    > menuitem#context-paste,
-    > menuitem#context-delete,
-    > menuitem#context-selectall,
-    > menu#spell-dictionaries,
-    > menuitem#context-add-engine,    
-    > menuitem#context-inspect-a11y,
-    > menuitem#context-inspect {
-      padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
-    }
-  }
+}
  
   :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup:not(#downloadsContextMenu) > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
   :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup:not(#downloadsContextMenu) > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
