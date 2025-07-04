@@ -1898,9 +1898,9 @@ menuitem > .menu-iconic-text,
     }
   }
  
-  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
-  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
-  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menucaption {
+  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup:not(#downloadsContextMenu) > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup:not(#downloadsContextMenu) > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup:not(#downloadsContextMenu) > menucaption {
     padding-inline-start: calc(
       var(--fp-contextmenu-menuitem-padding-inline) 
       + 16px                                 
@@ -2008,9 +2008,9 @@ menuitem > .menu-iconic-text,
     }
   }
  
-  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
-  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
-  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menucaption {
+  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup:not(#downloadsContextMenu) > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup:not(#downloadsContextMenu) > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
+  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup:not(#downloadsContextMenu) > menucaption {
     padding-inline-start: calc(
       var(--fp-contextmenu-menuitem-padding-inline) 
       + 8px                                 
