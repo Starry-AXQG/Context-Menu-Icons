@@ -10,7 +10,8 @@
 Demo image:
 FluentUI(left side）, ZenUI(right side)
 
-![PixPin_2025-07-06_20-55-57](https://github.com/user-attachments/assets/d2b0a50f-e7f4-45d3-88c7-30dcb90e203c)
+![PixPin_2025-07-06_21-04-53](https://github.com/user-attachments/assets/c2da0b31-b811-4c32-a245-e888d00562c7)
+
 
 
 ✨ Some preview images of display effects, all the menus have been correctly mapped with icons
