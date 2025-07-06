@@ -7,22 +7,16 @@
 
 <h2 align="center">Bring the icon of the context menu back to Zen/Firefox</h2>
 
-✨Since version 1.4, you can choose from two sets of icon packs: ZenUI or FluentUI （For the Firefox browser, you can only choose FluentUI.）
+Demo image:
+FluentUI(left side）, ZenUI(right side)
 
-FluentUI
-
-![图片](https://github.com/user-attachments/assets/9ab97b1a-8fc7-4b79-b06d-e6249accf0c4)
-![图片](https://github.com/user-attachments/assets/8bf05d10-8154-4af9-b41f-f17b1201f74c)
-
-ZenUI
-
-![图片](https://github.com/user-attachments/assets/0fac45f8-81ae-43fc-948f-cfe750749725)
-![图片](https://github.com/user-attachments/assets/9e4a9492-4318-4f86-83b9-e95d69bf0fea)
+![PixPin_2025-07-06_20-55-57](https://github.com/user-attachments/assets/d2b0a50f-e7f4-45d3-88c7-30dcb90e203c)
 
 
 ✨ Some preview images of display effects, all the menus have been correctly mapped with icons
 
 # 🚀 Announcement:
+✨Since version 1.4, you can choose from two sets of icon packs: ZenUI or FluentUI （For the Firefox browser, you can only choose FluentUI.）
 
 If you are using Firefox v140 or Zen v1.14, please use the CMI v1.5.Otherwise, please use v1.4.1
 
