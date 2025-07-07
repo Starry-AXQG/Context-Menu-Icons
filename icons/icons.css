@@ -1,8 +1,9 @@
 @media (-moz-pref("svg.context-properties.content.enabled")) {
 
   /*FluentUI*/
+  @media (not (-moz-pref("cmi-main__context-menu-icons-option", 0)))
+    and (not (-moz-pref("cmi-main__context-menu-icons-option", 2))) {
 
-  @media (-moz-pref("cmi-main__context-menu-icons-option", 1)) {
   .subviewbutton {
     -moz-context-properties: fill, fill-opacity !important;
     fill: currentColor !important;
