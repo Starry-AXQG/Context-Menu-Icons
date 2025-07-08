@@ -1,19 +1,17 @@
 [
 
     {
-
-        "type": "checkbox",
-        "property": "svg.context-properties.content.enabled",
-        "label": "[Main] Enable the configuration items for critical dependencies(Please make sure it is turned on.)",
-        "defaultValue": true
-
+        "type": "text",
+        "label": "⚙️ Preferences",
+        "margin": "30px 0 15px 0",
+        "size": "25px"
     },
 
     {
         "type": "dropdown",
         "value": "number",
         "property": "cmi-main__context-menu-icons-option",
-        "label": "📚 Switch Icon package.",
+        "label": "📚 Switch Icon package",
         "default": 1,
         "placeholder": false,
         "options": [
@@ -23,7 +21,7 @@
                 "value": 0
             },
             {
-                "label": "Default(FluentUI)",
+                "label": "Default (FluentUI)",
                 "value": 1
             },
             {
@@ -35,11 +33,17 @@
     },
 
     {
+        "type": "separator",
+        "label": "Menu Style",
+        "margin": "25px 0 8px 0"
+    },
+
+    {
 
         "type": "checkbox",
         "property": "cmi-main__ContextMenu--better",
-        "label": "[👍 Contex Menu style] Enable better context menu (Default: Off. Recommended to enable to obtain a more concise context menu.)",
-        "defaultValue": false
+        "label": "✨ Enable Better Context Menu ( Default: ON )",
+        "defaultValue": true
 
     },
 
@@ -47,7 +51,7 @@
 
         "type": "checkbox",
         "property": "cmi-extensions__icon--grayscale",
-        "label": "[icons style] Add grayscale filter to extensions icons of context-menu",
+        "label": "💡 Add grayscale filter to extensions icons of context-menu",
         "defaultValue": false
 
     },
@@ -56,7 +60,7 @@
 
         "type": "checkbox",
         "property": "cmi-extensions__icon--align",
-        "label": "[👍 icons style] Align the icons of the extension with those of CMI(Default: Off. Recommended to enable to make the context menu more orderly.)",
+        "label": "📐 Align extension icons in menu ( Default: Off. Enable to make the context menu more orderly. )",
         "defaultValue": false
 
     },  
@@ -65,16 +69,23 @@
 
         "type": "checkbox",
         "property": "cmi-extensions__text--align",
-        "label": "[text style] Align the text of the extension with those of CMI(Default: Off. Recommended to enable to make the context menu more orderly. ⚠️ This function has been temporarily delete.)",
+        "label": "📐 Align extension texts in menu ( Default: Off. Enable to make the context menu more orderly. ⚠️ This function has been temporarily delete.)",
         "defaultValue": false
 
     },   
 
     {
+        "type": "text",
+        "label": "🧩 Other Settings",
+        "margin": "20px 0 15px 0",
+        "size": "20px"
+    },
+
+    {
 
         "type": "checkbox",
         "property": "cmi-bookmarks__item--centered",
-        "label": "[bookmarks] Centered Bookmark Toolbar Items",
+        "label": "[Bookmark Tool] Center Bookmark Toolbar Items",
         "defaultValue": false
 
     },
@@ -83,9 +94,17 @@
 
         "type": "checkbox",
         "property": "cmi-bookmarks__icon--hide",
-        "label": "[bookmarks] Hide the redundant icons in the bookmark toolbar (Recommended to enable, which can make the bookmark bar more concise)",
+        "label": "[Bookmark Tool] Hidden 📁 Folder Icon ( Enable to make bookmark tool more concise )",
         "defaultValue": false
 
-    }
+    },
 
+    {
+
+        "type": "checkbox",
+        "property": "svg.context-properties.content.enabled",
+        "label": "[Necessary] Enable `svg.context-properties.content.enabled`",
+        "defaultValue": true
+
+    }
 ]
