@@ -1,8 +1,8 @@
 @media (-moz-pref("svg.context-properties.content.enabled")) {
 
   /*FluentUI*/
-  @media (not (-moz-pref("cmi-main__context-menu-icons-option", 0)))
-    and (not (-moz-pref("cmi-main__context-menu-icons-option", 2))) {
+  @media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
+    and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
 
   .subviewbutton {
     -moz-context-properties: fill, fill-opacity !important;
@@ -1110,7 +1110,7 @@
   }
 
   /*ZenUI*/
-  @media (-moz-pref("cmi-main__context-menu-icons-option", 2)) {
+  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
     
     /* Restore back context menu icons pre-1.12.9b */
     /* I'm not guaranteeing there will be icons for future context menu options */
@@ -1523,7 +1523,7 @@
   
 
 /* Preferences */
-@media (-moz-pref("cmi-main__ContextMenu--better")){
+@media not (-moz-pref("cmi-Disable-Better-Context-Menu",true)){
           
 /* -------------------------- Better Context Menu -------------------------- */
 
@@ -1709,7 +1709,7 @@ menuseparator {
 }
 
 
-@media (-moz-pref("cmi-extensions__icon--grayscale")){
+@media (-moz-pref("cmi-Grayscale-Extensions-Icons")){
 
   .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
     fill: var(--arrowpanel-icon-color) !important;
@@ -1722,10 +1722,10 @@ menuseparator {
 @-moz-document url-prefix("chrome://browser/content/browser.xhtml") {
   @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
   @media (
-    -moz-pref("cmi-extensions__icon--align")
+    -moz-pref("cmi-Align-Extension-Icons")
   ),
   (
-    -moz-pref("cmi-main__context-menu-icons-option", 2)
+    -moz-pref("cmi-Switch-Icon-Package", 2)
   ) {
   /* ==== 2. 自定义变量（方便后续统一调整） ==== */
   :root {
@@ -1767,19 +1767,14 @@ menuseparator {
     }
 }
 
-@media (-moz-pref("cmi-bookmarks__icon--hide")){
-  toolbarbutton.bookmark-item > .toolbarbutton-icon {
-    display: none !important;
-  }
-}
 
-@media (-moz-pref("cmi-bookmarks__item--centered")){
+@media (-moz-pref("cmi-Center-Bookmark-Items")){
   #PlacesToolbarItems {
     justify-content: center !important; 
   }
 }
 
-@media (-moz-pref("cmi-bookmarks__icon--hide")){
+@media (-moz-pref("cmi-Hide-Folder-Icon")){
   toolbarbutton.bookmark-item > .toolbarbutton-icon {
     display: none !important;
   }
@@ -1801,7 +1796,7 @@ menuitem > .menu-iconic-text,
 }
 
 /*Context Menu*/
-@media (-moz-pref("cmi-main__context-menu-icons-option", 1)) {
+@media (-moz-pref("cmi-Switch-Icon-Package", 1)) {
 
 /* 独立边距规则 */
 :not(:not(menubar) > menu, #ContentSelectDropdown)
@@ -1870,7 +1865,7 @@ menuitem > .menu-iconic-text,
 
 }
 
-@media (-moz-pref("cmi-main__context-menu-icons-option", 2)) {
+@media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
 
 /* 独立边距规则 */
 :not(:not(menubar) > menu, #ContentSelectDropdown)

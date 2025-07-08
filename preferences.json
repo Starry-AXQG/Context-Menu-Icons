@@ -10,7 +10,7 @@
     {
         "type": "dropdown",
         "value": "number",
-        "property": "cmi-main__context-menu-icons-option",
+        "property": "cmi-Switch-Icon-Package",
         "label": "📚 Switch Icon package",
         "default": 1,
         "placeholder": false,
@@ -41,16 +41,16 @@
     {
 
         "type": "checkbox",
-        "property": "cmi-main__ContextMenu--better",
-        "label": "✨ Enable Better Context Menu ( Default: ON )",
-        "defaultValue": true
+        "property": "cmi-Disable-Better-Context-Menu",
+        "label": "✨ Disable Better Context Menu",
+        "defaultValue": false
 
     },
 
     {
 
         "type": "checkbox",
-        "property": "cmi-extensions__icon--grayscale",
+        "property": "cmi-Grayscale-Extensions-Icons",
         "label": "💡 Add grayscale filter to extensions icons of context-menu",
         "defaultValue": false
 
@@ -59,8 +59,8 @@
     {
 
         "type": "checkbox",
-        "property": "cmi-extensions__icon--align",
-        "label": "📐 Align extension icons in menu ( Default: Off. Enable to make the context menu more orderly. )",
+        "property": "cmi-Align-Extension-Icons",
+        "label": "📐 Align extension icons in menu ( Enable to make the context menu more orderly. )",
         "defaultValue": false
 
     },  
@@ -68,8 +68,8 @@
     {
 
         "type": "checkbox",
-        "property": "cmi-extensions__text--align",
-        "label": "📐 Align extension texts in menu ( Default: Off. Enable to make the context menu more orderly. ⚠️ This function has been temporarily delete.)",
+        "property": "cmi-Align-Extension-Texts",
+        "label": "📐 Align extension texts in menu ( Enable to make the context menu more orderly. ⚠️ This function has been temporarily delete.)",
         "defaultValue": false
 
     },   
@@ -84,7 +84,7 @@
     {
 
         "type": "checkbox",
-        "property": "cmi-bookmarks__item--centered",
+        "property": "cmi-Center-Bookmark-Items",
         "label": "[Bookmark Tool] Center Bookmark Toolbar Items",
         "defaultValue": false
 
@@ -93,7 +93,7 @@
     {
 
         "type": "checkbox",
-        "property": "cmi-bookmarks__icon--hide",
+        "property": "cmi-Hide-Folder-Icon",
         "label": "[Bookmark Tool] Hidden 📁 Folder Icon ( Enable to make bookmark tool more concise )",
         "defaultValue": false
 
@@ -103,7 +103,7 @@
 
         "type": "checkbox",
         "property": "svg.context-properties.content.enabled",
-        "label": "[Necessary] Enable `svg.context-properties.content.enabled`",
+        "label": "( This option verifies dependency configuration. Keep it enabled normally. )",
         "defaultValue": true
 
     }
