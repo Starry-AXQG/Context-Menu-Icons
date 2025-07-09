@@ -121,7 +121,7 @@
 
         "type": "checkbox",
         "property": "svg.context-properties.content.enabled",
-        "label": "( This option verifies dependency configuration. Keep it enabled normally. )",
+        "label": "( This option verifies dependency configuration. Keep it enabled if you want to use CMI normally. )",
         "defaultValue": true
 
     }
