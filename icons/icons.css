@@ -1709,6 +1709,24 @@ menuseparator {
 }
 
 
+/* Hide the inactive items in Context Menu */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@media (-moz-pref("cmi-Hide-Inactive-Items-TabContextMenu")) {
+  #tabContextMenu > menuitem[disabled]:not(:is(
+    #context_zen-add-essential,
+    #context_zen-remove-essential
+  )) {
+    visibility: collapse !important;
+  }
+}
+@media (-moz-pref("cmi-Hide-Inactive-Items-ContentAreaContextMenu")) {
+  #contentAreaContextMenu > menuitem[disabled]
+  {
+    visibility: collapse !important;
+  }
+}
+
+
 @media (-moz-pref("cmi-Grayscale-Extensions-Icons")){
 
   .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {

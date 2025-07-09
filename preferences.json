@@ -42,7 +42,25 @@
 
         "type": "checkbox",
         "property": "cmi-Disable-Better-Context-Menu",
-        "label": "✨ Disable Better Context Menu",
+        "label": "✨ Disable Better-Context-Menu",
+        "defaultValue": false
+
+    },
+
+    {
+
+        "type": "checkbox",
+        "property": "cmi-Hide-Inactive-Items-TabContextMenu",
+        "label": "✂️ Hide the inactive items in tab-Context-Menu (BETA)",
+        "defaultValue": false
+
+    },
+
+    {
+
+        "type": "checkbox",
+        "property": "cmi-Hide-Inactive-Items-ContentAreaContextMenu",
+        "label": "✂️ Hide the inactive items in ContentArea-Context-Menu (BETA)",
         "defaultValue": false
 
     },
