@@ -1846,8 +1846,11 @@ menuitem > .menu-iconic-text,
   ),
   /* 扩展菜单 */
   menupopup#unified-extensions-context-menu:has(
+  /*
     > menuitem#unified-extensions-context-menu-move-widget-up:not([hidden]),
     > menuitem#unified-extensions-context-menu-move-widget-down:not([hidden])
+  */  
+    > menuitem#unified-extensions-context-menu-pin-to-toolbar:not([hidden])
   ),
   /* 当播放或暂停按钮可见 */
   menupopup#contentAreaContextMenu:has(
@@ -1922,8 +1925,11 @@ menuitem > .menu-iconic-text,
   ),
   /* 扩展菜单 */
   menupopup#unified-extensions-context-menu:has(
+  /*
     > menuitem#unified-extensions-context-menu-move-widget-up:not([hidden]),
     > menuitem#unified-extensions-context-menu-move-widget-down:not([hidden])
+  */  
+    > menuitem#unified-extensions-context-menu-pin-to-toolbar:not([hidden])
   ),
   /* 当播放或暂停按钮可见 */
   menupopup#contentAreaContextMenu:has(
