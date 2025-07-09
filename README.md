@@ -117,6 +117,7 @@ If all of the above are confirmed to be correct, after restarting the browser, y
 2. `cmi-Disable-Better-Context-Menu`
 
  Use the better context menu. (v1.5 add)  Demo image:
+ 
 Starting from version 1.7, this preference is enabled by default without any configuration. You can set it to "true" to disable it.
 
 ![图片](https://github.com/user-attachments/assets/e43cfff5-49b7-4990-b243-0821d63eec25)
@@ -127,9 +128,10 @@ Starting from version 1.7, this preference is enabled by default without any con
    ✂️ Hide the inactive items in tab-Context-Menu (BETA)
 
 4. `cmi-Hide-Inactive-Items-ContentAreaContextMenu`
+5. 
    ✂️ Hide the inactive items in ContentArea-Context-Menu (BETA)
    
-5. `cmi-Grayscale-Extensions-Icons`
+6. `cmi-Grayscale-Extensions-Icons`
 
 [icons style]Add grayscale filter to extensions icons of context-menu(v1.3.0 add)
 
