@@ -28,13 +28,16 @@ Now, it also supports usage on Firefox.（since mod v1.2.1)
 ## 🔖 **Installation Guide** (Windows, macOS, and Linux)
 ***—————————— Method One（recommend)： install it directly through Sine ————————————***
 
+<h2>🧭 What is Sine?</h2>
+<p>Sine is a community-driven mod/theme manager for all Firefox-based browsers, designed to be a more efficient, powerful, user-friendly, and compatible alternative to manual installation.</p>
+
 (By installing this mod using Sine, you can always receive subsequent updates for this mod.And it is also more convenient to modify the preference settings provided by this mod.)
 
 **1.First**
 
 Instal [Sine](https://github.com/CosmoCreeper/Sine)
 
-If you don't know how to install Sine, [please click here to view the installation Guide.](https://github.com/CosmoCreeper/Sine#%EF%B8%8F-installation)
+If you don't know how to install Sine, [please click here to view the Sine installation Guide.](https://github.com/CosmoCreeper/Sine#%EF%B8%8F-installation)
        
 **2.Second**
 
@@ -42,7 +45,9 @@ search`Context menu icons`then click on "Install"
    
 ![image_20250605130835](https://github.com/user-attachments/assets/bfcefded-71e2-45bc-9aef-0f8c4c47c1d7)
 
-***—————————— Method Two： install manually ————————————***
+***—————————— Method Two： install manually（not recommend) ————————————***
+（Manual installation requires you to frequently manually replace the files in order to support future updates.)
+
 1. 📁 **Create the Chrome Folder**
    If you haven't already, follow the [Zen Live Editing Guide](https://docs.zen-browser.app/guides/live-editing) to create your `chrome` folder.
 
@@ -79,7 +84,7 @@ If you choose to install manually, you will need to perform some simple configur
 
 you must ensure that in `about:config`, the setting of `svg.context-properties.content.enabled` is set to `true`. This preference is a necessary condition for the mod to function properly. The mod has incorporated the detection of this preference. If you do not do this, the mod will directly refuse to execute.If you use Sine, all these tasks will be completed automatically.
 
-
+If all of the above are confirmed to be correct, after restarting the browser, you should be able to see the changes.
 ---
 
 
@@ -89,11 +94,12 @@ you must ensure that in `about:config`, the setting of `svg.context-properties.c
 
 ***Access `about:config`via the address bar,Search for and add the attribute names given below***
 
-![image_20250702183028](https://github.com/user-attachments/assets/3598eebf-c19d-4e7d-845d-37dd3f231285)
+![图片](https://github.com/user-attachments/assets/a2bdc842-1890-4387-838e-faa3cd42e29b)
 
 
 
-1. `cmi-main__context-menu-icons-option` (⚠️If you install using the manual method, please be sure to select an icon package in this configuration option.)
+
+1. `cmi-Switch-Icon-Package` （Whether you have changed this attribute value or not, the default choice is to use FluentUI）.
 
 [Main]This attribute enables you to select the icon package，use numbers to make a selection(v1.4 add)
 
@@ -108,30 +114,38 @@ you must ensure that in `about:config`, the setting of `svg.context-properties.c
 ![图片](https://github.com/user-attachments/assets/d26a2174-8862-46b5-94fe-56c2f7d30aa9)
 
 
-2. `cmi-main__ContextMenu--better`
+2. `cmi-Disable-Better-Context-Menu`
 
  Use the better context menu. (v1.5 add)  Demo image:
+Starting from version 1.7, this preference is enabled by default without any configuration. You can set it to "true" to disable it.
 
 ![图片](https://github.com/user-attachments/assets/e43cfff5-49b7-4990-b243-0821d63eec25)
 
 
-3. `cmi-extensions__icon--grayscale`
+3. `cmi-Hide-Inactive-Items-TabContextMenu`
+
+   ✂️ Hide the inactive items in tab-Context-Menu (BETA)
+
+4. `cmi-Hide-Inactive-Items-ContentAreaContextMenu`
+   ✂️ Hide the inactive items in ContentArea-Context-Menu (BETA)
+   
+5. `cmi-Grayscale-Extensions-Icons`
 
 [icons style]Add grayscale filter to extensions icons of context-menu(v1.3.0 add)
 
-4.`cmi-extensions__icon--align`
+4.`cmi-Align-Extension-Icons`
 
 [icons style] Align the icons of the extension with those of CMI(Default: Off. Turning this on will make the context menu more orderly.)(1.4 add)
 
-5.`cmi-extensions__text--align`
+5.`cmi-Align-Extension-Texts`
 
 [text style] Align the text of the extension with those of CMI(Default: Off. Turning this on will make the context menu more orderly.)(v1.4 add)
 
 
-6. `cmi-bookmarks__item--centered`
+6. `cmi-Center-Bookmark-Items`
 
 [bookmarks]Centered Bookmark Toolbar Items(v1.3.0 add)
 
-7. `cmi-bookmarks__icon--hide`
+7. `cmi-Hide-Folder-Icon`
 
 [bookmarks]Hide the redundant icons in the bookmark toolbar (Recommended to enable, which can make the bookmark bar more concise)(v1.3.0 add)
