@@ -1817,6 +1817,7 @@ menuitem > .menu-iconic-text,
 
 /* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
 :is(
+  
   /* 书签栏：当其他书签可见 */
   menupopup#placesContext:has(
     > menuitem#show-other-bookmarks_PersonalToolbar:not([hidden])
@@ -1824,7 +1825,12 @@ menuitem > .menu-iconic-text,
   /* 工具栏：当定制可见 */
   menupopup#toolbar-context-menu:has(
     > menuitem#toolbar-context-customize:not([hidden])
-  ),  
+  ),
+  /* 扩展菜单 */
+  menupopup#unified-extensions-context-menu:has(
+    > menuitem#unified-extensions-context-menu-move-widget-up:not([hidden]),
+    > menuitem#unified-extensions-context-menu-move-widget-down:not([hidden])
+  ),
   /* 当播放或暂停按钮可见 */
   menupopup#contentAreaContextMenu:has(
     > menuitem#context-media-play:not([hidden]),
@@ -1833,8 +1839,9 @@ menuitem > .menu-iconic-text,
   /* 当拼写检查或密码可见 */
   menupopup#contentAreaContextMenu:has(
     > menuitem#spell-check-enabled:not([hidden]),
-    > #context-reveal-password:not([hidden])
+    > menuitem#context-reveal-password:not([hidden])
   )
+
 ) {
   /* 普通菜单项 & 子菜单容器，排除图标项、复选/单选、已分组和高亮项 */
   > :is(menuitem, menu):not(
@@ -1886,6 +1893,7 @@ menuitem > .menu-iconic-text,
 
 /* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
 :is(
+  
   /* 书签栏：当其他书签可见 */
   menupopup#placesContext:has(
     > menuitem#show-other-bookmarks_PersonalToolbar:not([hidden])
@@ -1893,7 +1901,12 @@ menuitem > .menu-iconic-text,
   /* 工具栏：当定制可见 */
   menupopup#toolbar-context-menu:has(
     > menuitem#toolbar-context-customize:not([hidden])
-  ),    
+  ),
+  /* 扩展菜单 */
+  menupopup#unified-extensions-context-menu:has(
+    > menuitem#unified-extensions-context-menu-move-widget-up:not([hidden]),
+    > menuitem#unified-extensions-context-menu-move-widget-down:not([hidden])
+  ),
   /* 当播放或暂停按钮可见 */
   menupopup#contentAreaContextMenu:has(
     > menuitem#context-media-play:not([hidden]),
@@ -1902,8 +1915,9 @@ menuitem > .menu-iconic-text,
   /* 当拼写检查或密码可见 */
   menupopup#contentAreaContextMenu:has(
     > menuitem#spell-check-enabled:not([hidden]),
-    > #context-reveal-password:not([hidden])
+    > menuitem#context-reveal-password:not([hidden])
   )
+
 ) {
   /* 普通菜单项 & 子菜单容器，排除图标项、复选/单选、已分组和高亮项 */
   > :is(menuitem, menu):not(
