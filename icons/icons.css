@@ -1610,7 +1610,61 @@ menuseparator {
         margin-top: calc(0px - var(--height)) !important;
     }
 }
+/* Tab Context Menu （multiple tabs are selected)*/
+#tabContextMenu:has(#context_reloadSelectedTabs:not([hidden])):has(:is(#context_zen-add-essential,
+#context_zen-remove-essential):not([hidden])):has(:is(#context_pinSelectedTabs, #context_unpinSelectedTabs, #context_bookmarkSelectedTabs):not([hidden])) {
+    :nth-child(1 of menuseparator) {
+        display: flex !important;
+        visibility: visible !important;
+        order: -1 !important;
+    }
 
+    #context_reloadSelectedTabs,
+    :is(#context_zen-add-essential, #context_zen-remove-essential),
+    :is(#context_pinSelectedTabs, #context_unpinSelectedTabs),
+    #context_bookmarkSelectedTabs {
+        order: -999 !important;
+        width: 25% !important;
+        --height: 42px;
+        height: var(--height) !important;
+
+        position: relative;
+        overflow: hidden;
+
+        background-position: center !important;
+        border-radius: 12px !important;
+        transition: box-shadow 0.4s ease-in-out;
+
+        .menu-text {
+            display: none !important;
+        }
+    }
+
+    /* Positioning Each Button */
+    #context_reloadSelectedTabsb {
+        margin-left: 0 !important;
+    }
+
+    :is(#context_pinSelectedTabs, #context_unpinSelectedTabs) {
+        margin-left: 25% !important;
+        margin-top: calc(0px - var(--height)) !important;
+    }
+
+    #context_zen-remove-essential {
+        margin-left: 37.5% !important;
+        margin-top: calc(0px - var(--height)) !important;
+    }
+
+    #context_zen-add-essential {
+        margin-left: 50% !important;
+        margin-top: calc(0px - var(--height)) !important;
+    }
+
+    #context_bookmarkSelectedTabs {
+        margin-left: 75% !important;
+        margin-top: calc(0px - var(--height)) !important;
+    }
+}
 
 /* TabGroup Context Menu */
 #tabContextMenu:has(#context_reloadTab:not([hidden])):has(:is(#context_pinTab, #context_unpinTab, #context_bookmarkTab):not([hidden])) {
@@ -1657,7 +1711,50 @@ menuseparator {
     }
 }
 
+/* TabGroup Context Menu （multiple tabs are selected)*/
+#tabContextMenu:has(#context_reloadSelectedTabs:not([hidden])):has(:is(#context_pinSelectedTabs, #context_unpinSelectedTabs, #context_bookmarkSelectedTabs):not([hidden])) {
+    :nth-child(1 of menuseparator) {
+        display: flex !important;
+        visibility: visible !important;
+        order: -1 !important;
+    }
 
+    #context_reloadSelectedTabs,
+    :is(#context_zen-add-essential, #context_zen-remove-essential),
+    :is(#context_pinSelectedTabs, #context_unpinSelectedTabs),
+    #context_bookmarkSelectedTabs {
+        order: -999 !important;
+        width: 25% !important;
+        --height: 42px;
+        height: var(--height) !important;
+
+        position: relative;
+        overflow: hidden;
+
+        background-position: center !important;
+        border-radius: 12px !important;
+        transition: box-shadow 0.4s ease-in-out;
+
+        .menu-text {
+            display: none !important;
+        }
+    }
+
+    /* Positioning Each Button */
+    #context_reloadSelectedTabsb {
+        margin-left: 0 !important;
+    }
+
+    :is(#context_pinSelectedTabs, #context_unpinSelectedTabs) {
+        margin-left: 37.5% !important;
+        margin-top: calc(0px - var(--height)) !important;
+    }
+
+    #context_bookmarkSelectedTabs {
+        margin-left: 75% !important;
+        margin-top: calc(0px - var(--height)) !important;
+    }
+}
 
 
 /* -------------------------- Gradient Animation Base -------------------------- */
