@@ -1814,9 +1814,14 @@ menuseparator {
 @media (-moz-pref("cmi-Hide-Inactive-Items-TabContextMenu")) {
   #tabContextMenu > menuitem[disabled]:not(:is(
     #context_zen-add-essential,
-    #context_zen-remove-essential
+    #context_zen-remove-essential,
+    #context_zenSplitTabs
   )) {
     visibility: collapse !important;
+  }
+  #tabContextMenu:has(> menuitem#context_reloadTab:not([hidden]))
+    > menuitem#context_zenSplitTabs {
+      visibility: collapse !important;
   }
 }
 @media (-moz-pref("cmi-Hide-Inactive-Items-ContentAreaContextMenu")) {
