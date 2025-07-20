@@ -990,7 +990,7 @@
       }
     
       #appMenu-translate-button {
-        list-style-image: url("translations.svg") !important;
+        list-style-image: url("translations_l.svg") !important;
       }
     
       #appMenu-zoom-controls {
@@ -1023,12 +1023,12 @@
       }
     
       #appMenu-save-file-button2 {
-        list-style-image: url("save-m.svg") !important;
+        list-style-image: url("save_l.svg") !important;
       }
     
     
       #appMenu-print-button2 {
-        list-style-image: url("print-am.svg") !important;
+        list-style-image: url("print_l.svg") !important;
       }
     
     
