@@ -1057,10 +1057,10 @@
       }
       
       #appMenu-fullscreen-button2 {
-        list-style-image: url("fullscreen.svg") !important;
+        list-style-image: url("fullscreen_l.svg") !important;
       }
       #appMenu-fullscreen-button2[checked] {
-        list-style-image: url("fullscreen-exit.svg") !important;
+        list-style-image: url("fullscreen-exit_l.svg") !important;
       }
     
       #appMenu-bookmarks-button,
