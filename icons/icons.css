@@ -20,15 +20,15 @@
       }
       
       #back-button {
-        list-style-image: url("back.svg") !important;
+        list-style-image: url("arrow-left.svg") !important;
       }
       
       #forward-button {
-        list-style-image: url("forward.svg") !important;
+        list-style-image: url("arrow-right.svg") !important;
       }
       
       #reload-button {
-        list-style-image: url("reload.svg") !important;
+        list-style-image: url("reload_l.svg") !important;
       }
       
       #stop-button,
@@ -1010,7 +1010,7 @@
       }
     
       #appMenu-quit-button2 {
-        list-style-image: url("close.svg") !important;
+        list-style-image: url("close_l.svg") !important;
       }
     
       #appMenu-report-broken-site-button {
