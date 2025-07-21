@@ -1919,7 +1919,8 @@ menuitem > .menu-iconic-text,
 }
 
 /*Context Menu*/
-@media (-moz-pref("cmi-Switch-Icon-Package", 1)) {
+@media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
+  and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
 
 /* 独立边距规则 */
 :not(:not(menubar) > menu, #ContentSelectDropdown)
