@@ -449,7 +449,7 @@
       .midi-sysex-icon,
       .popup-notification-icon[popupid="midi"],
       .popup-notification-icon[popupid="midi-sysex"] {
-        list-style-image: url("midi.svg") !important;
+        list-style-image: url("midi-blocked.svg") !important;
       }
       
       .install-icon {
