@@ -1922,60 +1922,72 @@ menuitem > .menu-iconic-text,
 @media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
   and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
 
-/* 独立边距规则 */
+/* 1. 只排除顶栏菜单和文字选取下拉 */
+/* 2. 排除下载管理器菜单 */
+/* 3. 排除：已勾选的复选/单选、带图标、menulist 内的、unified-nav-current */
 :not(:not(menubar) > menu, #ContentSelectDropdown)
-  > :is(
-
-      menupopup#panelContext-menu
-    )
-  > :is(menuitem, menu, menucaption)
-    :not(
+  > menupopup:not(#downloadsContextMenu)
+  > menuitem:not(
       .menuitem-iconic,
-      [type="checkbox"],
-      [type="radio"],
-      .in‑menulist,
-      .unified‑nav-current
-    ) {
-  padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+      [type="checkbox"][checked="true"],
+      [type="radio"][checked="true"],
+      .in-menulist,
+      .in-menulist menuitem,
+      .unified-nav-current
+    ),
+:not(:not(menubar) > menu, #ContentSelectDropdown)
+  > menupopup:not(#downloadsContextMenu)
+  > menu:not(
+      .menu-iconic,
+      [type="checkbox"][checked="true"],
+      [type="radio"][checked="true"],
+      .in-menulist,
+      .in-menulist menu,
+      .unified-nav-current
+    ),
+:not(:not(menubar) > menu, #ContentSelectDropdown)
+  > menupopup:not(#downloadsContextMenu)
+  > menucaption {
+    padding-inline-start: calc(
+      var(--fp-contextmenu-menuitem-padding-inline)
+      + 16px
+      + var(--fp-contextmenu-menuicon-margin-inline)
+    ) !important;
 }
 
 /* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
 :is(
   
-  /* 书签栏：当其他书签可见 */
+  /* 书签栏 */
   menupopup#placesContext:has(
-    > menuitem#show-other-bookmarks_PersonalToolbar:not([hidden])
+    > menuitem#show-other-bookmarks_PersonalToolbar:is([checked="true"])
   ),
-  /* 工具栏：当定制可见 */
+  /* 工具栏 */
   menupopup#toolbar-context-menu:has(
-    > menuitem#toolbar-context-customize:not([hidden])
+    > menuitem#zen-toolbar-context-tabs-right:is([checked="true"]),
+    > menuitem#toolbar-context-pin-to-toolbar:is([checked="true"])
+
   ),
-  /* 扩展菜单 */
-  menupopup#unified-extensions-context-menu:has(
-  /*
-    > menuitem#unified-extensions-context-menu-move-widget-up:not([hidden]),
-    > menuitem#unified-extensions-context-menu-move-widget-down:not([hidden])
-  */  
-    > menuitem#unified-extensions-context-menu-pin-to-toolbar:not([hidden])
-  ),
-  /* 当播放或暂停按钮可见 */
+  /* 当循环或PIP勾选时 */
   menupopup#contentAreaContextMenu:has(
-    > menuitem#context-media-play:not([hidden]),
-    > menuitem#context-media-pause:not([hidden])
+    > menuitem#context-media-loop:is([checked="true"]),
+    > #context-video-pictureinpicture:is([checked="true"])
   ),
-  /* 当拼写检查或密码可见 */
+  /* 当拼写检查勾选或密码可见 */
   menupopup#contentAreaContextMenu:has(
-    > menuitem#spell-check-enabled:not([hidden]),
+    > menuitem#spell-check-enabled:is([checked="true"])
     > menuitem#context-reveal-password:not([hidden])
   )
 
 ) {
-  /* 普通菜单项 & 子菜单容器，排除图标项、复选/单选、已分组和高亮项 */
+  /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
   > :is(menuitem, menu):not(
       .menuitem-iconic,
       .menu-iconic,
-      [type="checkbox"],
-      [type="radio"],
+
+      [type="checkbox"][checked="true"],
+      [type="radio"][checked="true"],
+
       .in-menulist,
       .in-menulist menuitem,
       .in-menulist menu,
@@ -1983,78 +1995,80 @@ menuitem > .menu-iconic-text,
     ),
   /* 分组标题 */
   > menucaption {
-    padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
+    padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline)  !important;
   }
 }
  
-  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup:not(#downloadsContextMenu) > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
-  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup:not(#downloadsContextMenu) > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
-  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup:not(#downloadsContextMenu) > menucaption {
-    padding-inline-start: calc(
-      var(--fp-contextmenu-menuitem-padding-inline) 
-      + 16px                                 
-      + var(--fp-contextmenu-menuicon-margin-inline)
-    ) !important;
-  }
-
 }
 
 @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
 
-/* 独立边距规则 */
+/* 1. 只排除顶栏菜单和文字选取下拉 */
+/* 2. 排除下载管理器菜单 */
+/* 3. 排除：已勾选的复选/单选、带图标、menulist 内的、unified-nav-current */
 :not(:not(menubar) > menu, #ContentSelectDropdown)
-  > :is(
-
-      menupopup#panelContext-menu
-    )
-  > :is(menuitem, menu, menucaption)
-    :not(
+  > menupopup:not(#downloadsContextMenu)
+  > menuitem:not(
       .menuitem-iconic,
-      [type="checkbox"],
-      [type="radio"],
-      .in‑menulist,
-      .unified‑nav-current
-    ) {
-  padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
+      [type="checkbox"][checked="true"],
+      [type="radio"][checked="true"],
+      .in-menulist,
+      .in-menulist menuitem,
+      .unified-nav-current
+    ),
+:not(:not(menubar) > menu, #ContentSelectDropdown)
+  > menupopup:not(#downloadsContextMenu)
+  > menu:not(
+      .menu-iconic,
+      [type="checkbox"][checked="true"],
+      [type="radio"][checked="true"],
+      .in-menulist,
+      .in-menulist menu,
+      .unified-nav-current
+    ),
+:not(:not(menubar) > menu, #ContentSelectDropdown)
+  > menupopup:not(#downloadsContextMenu)
+  > menucaption {
+    padding-inline-start: calc(
+      var(--fp-contextmenu-menuitem-padding-inline)
+      + 8px
+      + var(--fp-contextmenu-menuicon-margin-inline)
+    ) !important;
 }
 
 /* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
 :is(
   
-  /* 书签栏：当其他书签可见 */
+  /* 书签栏 */
   menupopup#placesContext:has(
-    > menuitem#show-other-bookmarks_PersonalToolbar:not([hidden])
+    > menuitem#show-other-bookmarks_PersonalToolbar:is([checked="true"])
   ),
-  /* 工具栏：当定制可见 */
+  /* 工具栏 */
   menupopup#toolbar-context-menu:has(
-    > menuitem#toolbar-context-customize:not([hidden])
+    > menuitem#zen-toolbar-context-tabs-right:is([checked="true"]),
+    > menuitem#toolbar-context-pin-to-toolbar:is([checked="true"])
+
   ),
-  /* 扩展菜单 */
-  menupopup#unified-extensions-context-menu:has(
-  /*
-    > menuitem#unified-extensions-context-menu-move-widget-up:not([hidden]),
-    > menuitem#unified-extensions-context-menu-move-widget-down:not([hidden])
-  */  
-    > menuitem#unified-extensions-context-menu-pin-to-toolbar:not([hidden])
-  ),
-  /* 当播放或暂停按钮可见 */
+  /* 当循环或PIP勾选时 */
   menupopup#contentAreaContextMenu:has(
-    > menuitem#context-media-play:not([hidden]),
-    > menuitem#context-media-pause:not([hidden])
+    > menuitem#context-media-loop:is([checked="true"]),
+    > #context-video-pictureinpicture:is([checked="true"])
   ),
-  /* 当拼写检查或密码可见 */
+  /* 当拼写检查勾选或密码可见 */
   menupopup#contentAreaContextMenu:has(
-    > menuitem#spell-check-enabled:not([hidden]),
+    > menuitem#spell-check-enabled:is([checked="true"])
     > menuitem#context-reveal-password:not([hidden])
   )
 
 ) {
-  /* 普通菜单项 & 子菜单容器，排除图标项、复选/单选、已分组和高亮项 */
+  /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
   > :is(menuitem, menu):not(
       .menuitem-iconic,
       .menu-iconic,
-      [type="checkbox"],
-      [type="radio"],
+
+      [type="checkbox"][checked="true"],
+      [type="radio"][checked="true"],
+
       .in-menulist,
       .in-menulist menuitem,
       .in-menulist menu,
@@ -2062,19 +2076,9 @@ menuitem > .menu-iconic-text,
     ),
   /* 分组标题 */
   > menucaption {
-    padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) -8px !important;
+    padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline)-8px  !important;
   }
 }
- 
-  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup:not(#downloadsContextMenu) > menuitem:not(.menuitem-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menuitem, .unified-nav-current),
-  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup:not(#downloadsContextMenu) > menu:not(.menu-iconic, [type="checkbox"], [type="radio"], .in-menulist, .in-menulist menu, .unified-nav-current),
-  :not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup:not(#downloadsContextMenu) > menucaption {
-    padding-inline-start: calc(
-      var(--fp-contextmenu-menuitem-padding-inline) 
-      + 8px                                 
-      + var(--fp-contextmenu-menuicon-margin-inline)
-    ) !important;
-  }
 
 }
 
