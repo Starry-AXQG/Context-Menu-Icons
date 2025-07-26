@@ -3,7 +3,7 @@
     "name": "Context Menu Icons",
     "description": "Bring the icon of the context menu back to Zen/Firefox browser ",
     "homepage": "https://github.com/1247343406/context-menu-icons-for-Zen",
-    "image": "https://private-user-images.githubusercontent.com/178773159/462916130-c2da0b31-b811-4c32-a245-e888d00562c7.jpg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTM1MzEzNTgsIm5iZiI6MTc1MzUzMTA1OCwicGF0aCI6Ii8xNzg3NzMxNTkvNDYyOTE2MTMwLWMyZGEwYjMxLWI4MTEtNGMzMi1hMjQ1LWU4ODhkMDA1NjJjNy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNzI2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDcyNlQxMTU3MzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zODQ2MTEwZDkzZDQ1ZTMxOTI5N2UyMTdlM2E1ZmM5MjVjODk2NzdkMzA0MWYwM2VmMmU4YzkyYzE5ZDQzZWViJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.5g7T6Jf04hIzIYbq_8VVtqAICw2lQcdTurX3SjrWDUw",
+    "image": "https://github.com/1247343406/context-menu-icons-for-Zen/blob/main/.asset/Demo%20Image.jpg",
     "style": {
         "chrome": "https://raw.githubusercontent.com/1247343406/context-menu-icons-for-Zen/refs/heads/main/userChrome.css"
     },
