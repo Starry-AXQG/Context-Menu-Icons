@@ -1965,6 +1965,7 @@ menuitem > .menu-iconic-text,
   /* 工具栏 */
   menupopup#toolbar-context-menu:has(
     > menuitem#zen-toolbar-context-tabs-right:is([checked="true"]),
+    > menuitem#zen-context-menu-compact-mode-toggle:is([checked="true"]),
     > menuitem#toolbar-context-pin-to-toolbar:is([checked="true"])
 
   ),
@@ -1973,7 +1974,7 @@ menuitem > .menu-iconic-text,
     > menuitem#context-media-loop:is([checked="true"]),
     > #context-video-pictureinpicture:is([checked="true"])
   ),
-  /* 当拼写检查勾选或密码可见 */
+  /* 当拼写检查勾选 */
   menupopup#contentAreaContextMenu:has(
     > menuitem#spell-check-enabled:is([checked="true"])
   )
@@ -2045,6 +2046,7 @@ menuitem > .menu-iconic-text,
   /* 工具栏 */
   menupopup#toolbar-context-menu:has(
     > menuitem#zen-toolbar-context-tabs-right:is([checked="true"]),
+    > menuitem#zen-context-menu-compact-mode-toggle:is([checked="true"]),
     > menuitem#toolbar-context-pin-to-toolbar:is([checked="true"])
 
   ),
