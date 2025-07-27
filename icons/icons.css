@@ -1926,7 +1926,7 @@ menuitem > .menu-iconic-text,
 /* 2. 排除下载管理器菜单 */
 /* 3. 排除：已勾选的复选/单选、带图标、menulist 内的、unified-nav-current */
 :not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup)
   > menuitem:not(
       .menuitem-iconic,
       [type="checkbox"][checked="true"],
@@ -1936,7 +1936,7 @@ menuitem > .menu-iconic-text,
       .unified-nav-current
     ),
 :not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup)
   > menu:not(
       .menu-iconic,
       [type="checkbox"][checked="true"],
@@ -1946,7 +1946,7 @@ menuitem > .menu-iconic-text,
       .unified-nav-current
     ),
 :not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup)
   > menucaption {
     padding-inline-start: calc(
       var(--fp-contextmenu-menuitem-padding-inline)
@@ -2007,7 +2007,7 @@ menuitem > .menu-iconic-text,
 /* 2. 排除下载管理器菜单 */
 /* 3. 排除：已勾选的复选/单选、带图标、menulist 内的、unified-nav-current */
 :not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup)
   > menuitem:not(
       .menuitem-iconic,
       [type="checkbox"][checked="true"],
@@ -2017,7 +2017,7 @@ menuitem > .menu-iconic-text,
       .unified-nav-current
     ),
 :not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup)
   > menu:not(
       .menu-iconic,
       [type="checkbox"][checked="true"],
@@ -2027,7 +2027,7 @@ menuitem > .menu-iconic-text,
       .unified-nav-current
     ),
 :not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup)
   > menucaption {
     padding-inline-start: calc(
       var(--fp-contextmenu-menuitem-padding-inline)
