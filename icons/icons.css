@@ -1971,8 +1971,8 @@ menuitem > .menu-iconic-text,
   ),
   /* 当循环或PIP勾选时 */
   menupopup#contentAreaContextMenu:has(
-    > menuitem#context-media-loop:is([checked="true"]),
-    > #context-video-pictureinpicture:is([checked="true"])
+    > menuitem#context-media-loop:not([hidden])[checked="true"],
+    > #context-video-pictureinpicture:not([hidden])[checked="true"]
   ),
   /* 当拼写检查勾选 */
   menupopup#contentAreaContextMenu:has(
@@ -2052,8 +2052,8 @@ menuitem > .menu-iconic-text,
   ),
   /* 当循环或PIP勾选时 */
   menupopup#contentAreaContextMenu:has(
-    > menuitem#context-media-loop:is([checked="true"]),
-    > #context-video-pictureinpicture:is([checked="true"])
+    > menuitem#context-media-loop:not([hidden])[checked="true"],
+    > #context-video-pictureinpicture:not([hidden])[checked="true"]
   ),
   /* 当拼写检查勾选 */
   menupopup#contentAreaContextMenu:has(
