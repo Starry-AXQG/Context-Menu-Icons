@@ -1019,7 +1019,7 @@
     
       #appMenu-history-button,
       #appMenu-library-history-button {
-        list-style-image: url("history.svg") !important;
+        list-style-image: url("history_l.svg") !important;
       }
     
       #appMenu-save-file-button2 {
