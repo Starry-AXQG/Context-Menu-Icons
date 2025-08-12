@@ -630,6 +630,11 @@
       #context-searchselect-private {
           --menu-image: url("search-glass.svg");
       }
+
+      #context-add-engine {
+        --menu-image: url("search-add.svg");
+      }
+
       #context-translate-selection {
           --menu-image: url("translations.svg");
       }
