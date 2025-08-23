@@ -9,13 +9,13 @@
     },
     "readme": "https://raw.githubusercontent.com/1247343406/context-menu-icons-for-Zen/refs/heads/main/README.md",
     "author": "1247343406",
-    "version": "1.9.1.3",
+    "version": "1.9.2",
     "tags": [
         "Context Menu",
         "Icons",
         "Icon Pack"
     ],
     "createdAt": "2025-06-02",
-    "updatedAt": "2025-08-22",
+    "updatedAt": "2025-08-23",
     "fork": ["zen", "firefox"]
 }
