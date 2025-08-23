@@ -984,7 +984,8 @@
       #context_zen-replace-pinned-url-with-current {
         --menu-image: url("reload.svg");
       }
-      #zen-context-menu-new-folder {
+      #zen-context-menu-new-folder,
+      #zen-context-menu-new-folder-toolbar {
         --menu-image: url("new-folder.svg");        
       }
     
@@ -1982,6 +1983,9 @@ menuitem > .menu-iconic-text,
   /* 当拼写检查勾选 */
   menupopup#contentAreaContextMenu:has(
     > menuitem#spell-check-enabled:is([checked="true"])
+  ),
+  menupopup#unified-extensions-context-menu:has(
+    > menuitem:is([checked="true"])
   )
 
 ) {
@@ -2063,6 +2067,9 @@ menuitem > .menu-iconic-text,
   /* 当拼写检查勾选 */
   menupopup#contentAreaContextMenu:has(
     > menuitem#spell-check-enabled:is([checked="true"])
+  ),
+  menupopup#unified-extensions-context-menu:has(
+    > menuitem:is([checked="true"])
   )
 
 ) {
