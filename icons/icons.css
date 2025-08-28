@@ -570,9 +570,14 @@
       #placesContext_paste_group {
         --menu-image: url("edit-paste.svg");
       }
+      #placesContext_paste,
+      #context-paste-no-formatting {
+        --menu-image: url("edit-paste.svg");
+      }      
       .textbox-contextmenu menuitem.searchbar-paste-and-search {
         --menu-image: url("edit-paste.svg");
       }
+
       .textbox-contextmenu menuitem.searchbar-clear-history {
         --menu-image: url("edit-delete.svg");
       }
@@ -581,6 +586,11 @@
       #placesContext_cut {
         --menu-image: url("edit-cut.svg");
       }
+
+      #placesContext_open {
+        --menu-image: url("ext-link.svg");
+      }      
+
       #placesContext_sortBy\:name {
           --menu-image: url("sort.svg");
       }
@@ -948,48 +958,8 @@
         height: 24px !important;
         width: 24px !important;
       }
-      
-      
-      /* Special icon for Zen */
-      #zen-toolbar-context-tabs-right {
-        --menu-image: url("tab-right.svg");
-      }
-      
-      #context_zen-add-essential {
-        --menu-image: url("essential-add.svg");
-      }
-      
-      #context_zen-remove-essential {
-        --menu-image: url("essential-remove.svg");
-      }
-      
-      #context-zen-change-workspace-tab {
-        --menu-image: url("move-tab.svg");
-      }
-      #context_zenSplitTabs,
-      #context-zenSplitLink {
-        --menu-image: url("split.svg");
-      }
-      #zenToolbarThemePicker {
-        --menu-image: url("customize.svg");
-      }
-      #zen-context-menu-compact-mode {
-        --menu-image: url("compact-mode.svg");
-      }
-      #placesContext_paste,
-      #context-paste-no-formatting {
-        --menu-image: url("edit-paste.svg");
-      }
-      #context_zen-reset-pinned-tab,
-      #context_zen-replace-pinned-url-with-current {
-        --menu-image: url("reload.svg");
-      }
-      #zen-context-menu-new-folder,
-      #zen-context-menu-new-folder-toolbar {
-        --menu-image: url("new-folder.svg");        
-      }
-    
-    
+
+      /* App Menu */
       #appMenu-downloads-button,
       #appMenu-library-downloads-button {
         list-style-image: url("downloads.svg") !important;
@@ -1000,7 +970,7 @@
       }
     
       #appMenu-zoom-controls {
-        list-style-image: url("plus.svg") !important;
+        list-style-image: url("plus_l.svg") !important;
       }
     
       #appMenu-passwords-button {
@@ -1051,7 +1021,7 @@
       }
     
       #appMenu-zoomEnlarge-button2 {
-        list-style-image: url("plus.svg") !important;
+        list-style-image: url("plus_l.svg") !important;
       }
     
       #appMenu-new-window-button2 {
@@ -1116,6 +1086,114 @@
       #unified-extensions-button {
         list-style-image: url("extension.svg") !important;
       }
+      
+      /* Textbox ContextMenu*/
+      #textbox-contextmenu > menuitem:nth-child(1) {
+        --menu-image: url("edit-undo.svg");
+      }
+      #textbox-contextmenu > menuitem:nth-child(2) {
+        --menu-image: url("edit-redo.svg");
+      }
+      #textbox-contextmenu > menuitem:nth-child(4) {
+        --menu-image: url("edit-cut.svg");
+      }
+      #textbox-contextmenu > menuitem:nth-child(5) {
+        --menu-image: url("edit-copy.svg");
+      }
+      #textbox-contextmenu > menuitem:nth-child(6) {
+        --menu-image: url("edit-paste.svg");
+      }
+      #textbox-contextmenu > menuitem:nth-child(7) {
+        --menu-image: url("edit-delete.svg");
+      }
+      #textbox-contextmenu > menuitem:nth-child(8) {
+        --menu-image: url("edit-select-all.svg");
+      }
+
+      /* —— —— Special icon for Zen —— —— */
+      #zen-toolbar-context-tabs-right {
+        --menu-image: url("tab-right.svg");
+      }
+      
+      #context_zen-add-essential {
+        --menu-image: url("essential-add.svg");
+      }
+      
+      #context_zen-remove-essential {
+        --menu-image: url("essential-remove.svg");
+      }
+      
+      #context-zen-change-workspace-tab {
+        --menu-image: url("move-tab.svg");
+      }
+      #context_zenSplitTabs,
+      #context-zenSplitLink {
+        --menu-image: url("split.svg");
+      }
+      #zenToolbarThemePicker {
+        --menu-image: url("customize.svg");
+      }
+      #zen-context-menu-compact-mode {
+        --menu-image: url("compact-mode.svg");
+      }
+      #context_zen-reset-pinned-tab,
+      #context_zen-replace-pinned-url-with-current {
+        --menu-image: url("reload.svg");
+      }
+      #zen-context-menu-new-folder,
+      #zen-context-menu-new-folder-toolbar {
+        --menu-image: url("new-folder.svg");        
+      }
+    
+    /* zen Workspace */
+      #context_zenEditWorkspace {
+        --menu-image: url("edit.svg");
+      }
+      #context_zenEditWorkspaceIcon {
+        --menu-image: url("image-save.svg");
+      }
+      #context_zenChangeWorkspaceTheme {
+        --menu-image: url("customize.svg");
+      }
+      #context_zenWorkspacesOpenInContainerTab {
+        --menu-image: url("container-tab.svg");
+      }
+      #context_zenReorderWorkspaces {
+        --menu-image: url("sort.svg");
+      }
+      #zenWorkspaceMoreActions > menuitem:nth-child(11) {
+        --menu-image: url("plus.svg");
+      }
+      #context_zenDeleteWorkspace {
+        --menu-image: url("edit-delete.svg");
+      }
+
+    /* zen Folder */
+      #context_zenFolderRename {
+        --menu-image: url("edit.svg");
+      }
+      #context_zenFolderChangeIcon {
+        --menu-image: url("image-save.svg");
+      }
+      #context_zenFolderUnloadAll {
+        --menu-image: url("edit-select-all.svg");
+      }
+      #context_zenFolderNewSubfolder {
+        --menu-image: url("new-folder.svg");
+      }
+      #context_zenFolderUnpack {
+        --menu-image: url("sort.svg");
+      }
+      #context_zenChangeFolderSpace {
+        --menu-image: url("plus.svg");
+      }
+      #context_zenFolderToSpace {
+        --menu-image: url("TabGroup-remove.svg");
+      }
+      #context_zenFolderDelete {
+        --menu-image: url("edit-delete.svg");
+      }
+
   }
 
   /*ZenUI*/
@@ -1924,7 +2002,29 @@ menuitem > .menu-iconic-text,
   padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
 }
 
-/*Context Menu*/
+/* 校正容器标签页菜单 */
+menupopup#new-tab-button-popup,
+menupopup#zenWorkspaceMoreActions menupopup {
+/* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
+> :is(menuitem, menu):not(
+    .menuitem-iconic,
+    .menu-iconic,
+
+    [type="checkbox"][checked="true"],
+    [type="radio"][checked="true"],
+
+    .in-menulist,
+    .in-menulist menuitem,
+    .in-menulist menu,
+    .unified-nav-current
+  ),
+/* 分组标题 */
+> menucaption {
+  padding-inline-start: 34px !important;
+}
+}
+
+/* FluentUI */
 @media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
   and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
 
@@ -1932,7 +2032,7 @@ menuitem > .menu-iconic-text,
 /* 2. 排除下载管理器菜单 */
 /* 3. 排除：已勾选的复选/单选、带图标、menulist 内的、unified-nav-current */
 :not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
   > menuitem:not(
       .menuitem-iconic,
       [type="checkbox"][checked="true"],
@@ -1942,7 +2042,7 @@ menuitem > .menu-iconic-text,
       .unified-nav-current
     ),
 :not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
   > menu:not(
       .menu-iconic,
       [type="checkbox"][checked="true"],
@@ -1952,7 +2052,7 @@ menuitem > .menu-iconic-text,
       .unified-nav-current
     ),
 :not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
   > menucaption {
     padding-inline-start: calc(
       var(--fp-contextmenu-menuitem-padding-inline)
@@ -1966,26 +2066,22 @@ menuitem > .menu-iconic-text,
   
   /* 书签栏 */
   menupopup#placesContext:has(
-    > menuitem#show-other-bookmarks_PersonalToolbar:is([checked="true"])
+    > menuitem:not([hidden])[checked="true"]
   ),
   /* 工具栏 */
   menupopup#toolbar-context-menu:has(
-    > menuitem#zen-toolbar-context-tabs-right:is([checked="true"]),
-    > menuitem#zen-context-menu-compact-mode-toggle:is([checked="true"]),
-    > menuitem#toolbar-context-pin-to-toolbar:is([checked="true"])
-
+    > menuitem:not([hidden])[checked="true"]
   ),
   /* 当循环或PIP勾选时 */
   menupopup#contentAreaContextMenu:has(
-    > menuitem#context-media-loop:not([hidden])[checked="true"],
-    > #context-video-pictureinpicture:not([hidden])[checked="true"]
+    > menuitem:not([hidden])[checked="true"]
   ),
   /* 当拼写检查勾选 */
   menupopup#contentAreaContextMenu:has(
     > menuitem#spell-check-enabled:is([checked="true"])
   ),
   menupopup#unified-extensions-context-menu:has(
-    > menuitem:is([checked="true"])
+    > menuitem:not([hidden])[checked="true"]
   )
 
 ) {
@@ -2007,16 +2103,16 @@ menuitem > .menu-iconic-text,
     padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline)  !important;
   }
 }
- 
 }
 
+/* ZenUI */
 @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
 
 /* 1. 只排除顶栏菜单和文字选取下拉 */
 /* 2. 排除下载管理器菜单 */
 /* 3. 排除：已勾选的复选/单选、带图标、menulist 内的、unified-nav-current */
 :not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
   > menuitem:not(
       .menuitem-iconic,
       [type="checkbox"][checked="true"],
@@ -2026,7 +2122,7 @@ menuitem > .menu-iconic-text,
       .unified-nav-current
     ),
 :not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
   > menu:not(
       .menu-iconic,
       [type="checkbox"][checked="true"],
@@ -2036,7 +2132,7 @@ menuitem > .menu-iconic-text,
       .unified-nav-current
     ),
 :not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
   > menucaption {
     padding-inline-start: calc(
       var(--fp-contextmenu-menuitem-padding-inline)
@@ -2050,26 +2146,22 @@ menuitem > .menu-iconic-text,
   
   /* 书签栏 */
   menupopup#placesContext:has(
-    > menuitem#show-other-bookmarks_PersonalToolbar:is([checked="true"])
+    > menuitem:not([hidden])[checked="true"]
   ),
   /* 工具栏 */
   menupopup#toolbar-context-menu:has(
-    > menuitem#zen-toolbar-context-tabs-right:is([checked="true"]),
-    > menuitem#zen-context-menu-compact-mode-toggle:is([checked="true"]),
-    > menuitem#toolbar-context-pin-to-toolbar:is([checked="true"])
-
+    > menuitem:not([hidden])[checked="true"]
   ),
   /* 当循环或PIP勾选时 */
   menupopup#contentAreaContextMenu:has(
-    > menuitem#context-media-loop:not([hidden])[checked="true"],
-    > #context-video-pictureinpicture:not([hidden])[checked="true"]
+    > menuitem:not([hidden])[checked="true"]
   ),
   /* 当拼写检查勾选 */
   menupopup#contentAreaContextMenu:has(
     > menuitem#spell-check-enabled:is([checked="true"])
   ),
   menupopup#unified-extensions-context-menu:has(
-    > menuitem:is([checked="true"])
+    > menuitem:not([hidden])[checked="true"]
   )
 
 ) {
@@ -2091,7 +2183,6 @@ menuitem > .menu-iconic-text,
     padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline)-8px  !important;
   }
 }
-
 }
 
 /*Main Menu*/  
