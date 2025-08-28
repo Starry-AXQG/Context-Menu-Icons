@@ -35,7 +35,7 @@ Now, it also supports usage on Firefox.（since mod v1.2.1)
 <h2>🧭 What is Sine?</h2>
 <p>Sine is a community-driven mod/theme manager for all Firefox-based browsers, designed to be a more efficient, powerful, user-friendly, and compatible alternative to manual installation.</p>
 
-(By installing this mod using Sine, you can always receive subsequent updates for this mod.And it is also more convenient to modify the preference settings provided by this mod.)
+(By installing this mod using Sine, you can always receive subsequent updates for this mod.And it is also more convenient to modify the preference settings provided by this mod. Due to the frequent updates of this project, we recommend that you install this mod via Sine. This way, you will receive automatic updates.)
 
 **1.First**
 
