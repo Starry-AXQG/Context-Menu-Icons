@@ -1182,7 +1182,7 @@
         --menu-image: url("new-folder.svg");
       }
       #context_zenFolderUnpack {
-        --menu-image: url("sort.svg");
+        --menu-image: url("close-all.svg");
       }
       #context_zenChangeFolderSpace {
         --menu-image: url("plus.svg");
