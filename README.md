@@ -45,9 +45,11 @@ If you don't know how to install Sine, [please click here to view the Sine insta
        
 **2.Second**
 
+![image_20250828183818](https://github.com/user-attachments/assets/4b13b78e-63d6-4247-a3f6-3a4b97192278)
+
 search`Context menu icons`then click on "Install"
    
-![image_20250605130835](https://github.com/user-attachments/assets/bfcefded-71e2-45bc-9aef-0f8c4c47c1d7)
+
 
 ***—————————— Method Two： install manually（not recommend) ————————————***
 （Manual installation requires you to frequently manually replace the files in order to support future updates.)
