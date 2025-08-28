@@ -17,6 +17,10 @@ FluentUI(left side）, ZenUI(right side)
 ✨ Some preview images of display effects, all the menus have been correctly mapped with icons
 
 # 🚀 Announcement:
+This project will undergo frequent and continuous updates to ensure that it remains functional even after browser updates.
+
+Added appropriate icons to the context menus of zenFolderand zenWorkspace(Zen v1.15b)  ✅
+
 ✨Since version 1.4, you can choose from two sets of icon packs: ZenUI or FluentUI （For the Firefox browser, you can only choose FluentUI.）
 
 If you are using Firefox v140 or Zen v1.14, please use the CMI v1.5.Otherwise, please use v1.4.1
