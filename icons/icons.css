@@ -2162,6 +2162,8 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   vertical-align: middle;
 
   background-image: url("checkmark.svg");
+  -moz-context-properties: fill, fill-opacity !important;
+  fill: currentColor !important;
   background-repeat: no-repeat;
   background-size: contain;
   /* 定位到图标所在 x 位置 */
