@@ -2204,7 +2204,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     ),
   /* 分组标题 */
   > menucaption {
-    padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline)  !important;
+    padding-inline-start: 10px !important;
   }
 }
 }
