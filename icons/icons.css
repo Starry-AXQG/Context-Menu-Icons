@@ -1,4 +1,39 @@
 @media (-moz-pref("svg.context-properties.content.enabled")) {
+/* ========== 全局：此规则用来去除原生“√”图标，方便给特殊菜单插入自定义图标 */
+:is(menuitem[type="checkbox"], menuitem[type="radio"]):not([checked="true"]) {
+  /* 背景图转换已有的变量 --menu-image */
+  background-image: var(--menu-image) !important;
+  background-repeat: no-repeat !important;
+  background-position: var(--fp-contextmenu-menuitem-padding-inline, left 1em) center !important;
+  background-size: var(--fp-contextmenu-menuitem-icon-size, 16px) !important;
+
+  /* 让 SVG 能够使用 currentColor */
+  -moz-context-properties: fill, fill-opacity !important;
+  fill: currentColor !important;
+
+
+  padding-inline-start: unset !important;
+  padding-left: unset !important;
+}
+
+/* ========== 隐藏内建占位节点，防止"√"占位显示 ========== */
+:is(menuitem[type="checkbox"], menuitem[type="radio"]) > .menu-icon,
+:is(menuitem[type="checkbox"], menuitem[type="radio"]) > .menu-iconic-left,
+:is(menuitem[type="checkbox"], menuitem[type="radio"]) > .menu-iconic {
+  display: none !important;
+  width: 0 !important;
+  margin-inline-start: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+}
+
+/* ========== 勾选时：移除背景图 ========== */
+:is(menuitem[type="checkbox"], menuitem[type="radio"])[checked="true"] {
+  background-image: none !important;
+  /* 保持不触碰间距 */
+  padding-inline-start: unset !important;
+  padding-left: unset !important;
+}
 
   /*FluentUI*/
   @media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
@@ -463,23 +498,6 @@
         list-style-image: url("extension-blocked.svg") !important;
       }
       
-      /* v1.5
-      .tab-icon-overlay[soundplaying] {
-        list-style-image: url("tab-audio-playing-small.svg") !important;
-      }
-      
-      .tab-icon-overlay[muted] {
-        list-style-image: url("tab-audio-muted-small.svg") !important;
-      }
-      
-      .tab-icon-overlay[activemedia-blocked] {
-        list-style-image: url("tab-audio-blocked-small.svg") !important;
-      }
-      
-      #reader-mode-button > .urlbar-icon {
-        list-style-image: url("reader-mode.svg") !important;
-      }
-      */     
       #unified-extensions-manage-extensions {
         list-style-image: url("manage.svg") !important;
       }
@@ -1135,6 +1153,26 @@
       }
       #zen-context-menu-compact-mode {
         --menu-image: url("compact-mode.svg");
+      }
+      #zen-context-menu-compact-mode menupopup,
+      #zen-context-menu-compact-mode menupopup * {
+        --menu-image: none !important;
+      > :is(menuitem, menu):not(
+          .menuitem-iconic,
+          .menu-iconic,
+
+          [type="checkbox"][checked="true"],
+          [type="radio"][checked="true"],
+
+          .in-menulist,
+          .in-menulist menuitem,
+          .in-menulist menu,
+          .unified-nav-current
+        ),
+      /* 分组标题 */
+      > menucaption {
+        padding-inline-start: 30px !important;
+      }        
       }
       #context_zen-reset-pinned-tab,
       #context_zen-replace-pinned-url-with-current {
@@ -2112,24 +2150,6 @@ menupopup#zenWorkspaceMoreActions menupopup {
 }
 
 
-/* 隐藏 native checkmark 容器（注释其他可能多的备选选择器） */
-
-menuitem[type="checkbox"][checked="true"] > image
-/*
-menuitem[type="checkbox"][checked="true"] .menu-iconic,
-menuitem[type="checkbox"][checked="true"] > .menu-iconic-left,
-menuitem[type="radio"][checked="true"] .menu-iconic,
-menuitem[type="radio"][checked="true"] > image,
-menuitem[type="radio"][checked="true"] > .menu-iconic-left
-*/
-{
-  visibility: hidden !important;
-  width: 0 !important;                /* 防止占位 */
-  margin-inline-start: 0 !important;
-  padding: 0 !important;
-  opacity: 0 !important;              /* 额外保险 */
-}
-
 /* 设置自定义checkmark图标 */
 menupopup > menuitem[type="checkbox"][checked="true"]::before,
 menupopup > menuitem[type="radio"][checked="true"]::before {
@@ -2137,9 +2157,10 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   display: inline-block;
   width: 16px;
   height: 16px;
+  /*
   margin-inline-end: 6px;
   vertical-align: middle;
-
+*/
   background-image: url("checkmark.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -2147,6 +2168,8 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   margin-inline-start: 7px;
   position: relative;
 }
+
+
 
 /* 校正含有 单选/多选 菜单项的文本左边距 */
 :not(:not(menubar) > menu, #ContentSelectDropdown)
@@ -2304,6 +2327,27 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline)-8px  !important;
   }
 }
+/* 设置自定义checkmark图标 */
+menupopup > menuitem[type="checkbox"][checked="true"]::before,
+menupopup > menuitem[type="radio"][checked="true"]::before {
+  content: "" !important;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-inline-end: 6px;
+  vertical-align: middle;
+
+  background-image: url('data:image/svg+xml;utf8,\
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">\
+      <path fill="%23000" d="M20.285 6.709l-11.39 11.39-5.18-5.18 1.414-1.414 3.766 3.766 9.976-9.976z"/>\
+    </svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* 定位到图标所在 x 位置 */
+  margin-inline-start: 5px;
+  position: relative;
+}
+
 }
 
 /*Main Menu*/  
