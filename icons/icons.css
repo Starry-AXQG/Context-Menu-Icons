@@ -2157,15 +2157,15 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   display: inline-block;
   width: 16px;
   height: 16px;
-  /*
-  margin-inline-end: 6px;
+
+  margin-inline-end: 10px;
   vertical-align: middle;
-*/
+
   background-image: url("checkmark.svg");
   background-repeat: no-repeat;
   background-size: contain;
   /* 定位到图标所在 x 位置 */
-  margin-inline-start: 7px;
+  margin-inline-start: 6px;
   position: relative;
 }
 
@@ -2184,7 +2184,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
 :not(:not(menubar) > menu, #ContentSelectDropdown)
   > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
   > menu[type="radio"][checked="true"] {
-  padding-inline-start: 4px !important;
+  padding-inline-start: 6px !important;
 }
 
 
@@ -2350,11 +2350,11 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
 
 }
 
-/*Main Menu*/  
+/*Main Menu*/
+
 .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined) > .toolbarbutton-text,
 .subviewbutton:not(#appMenu-zoom-controls > .subviewbutton) > .toolbarbutton-icon + .toolbarbutton-text,
 #appMenu-fxa-label2 > vbox {
-
   padding-inline-start: var(--fp-arrowpanel-menuicon-margin-inline) !important;
 }
 
