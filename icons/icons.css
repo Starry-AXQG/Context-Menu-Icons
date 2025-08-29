@@ -1087,26 +1087,26 @@
         list-style-image: url("extension.svg") !important;
       }
       
-      /* Textbox ContextMenu*/
-      #textbox-contextmenu > menuitem:nth-child(1) {
+      /* Textbox ContextMenu (2025.8.29 fix)*/
+      menuitem[data-l10n-id="text-action-undo"] {
         --menu-image: url("edit-undo.svg");
       }
-      #textbox-contextmenu > menuitem:nth-child(2) {
+      menuitem[data-l10n-id="text-action-redo"] {
         --menu-image: url("edit-redo.svg");
       }
-      #textbox-contextmenu > menuitem:nth-child(4) {
+      menuitem[data-l10n-id="text-action-cut"] {
         --menu-image: url("edit-cut.svg");
       }
-      #textbox-contextmenu > menuitem:nth-child(5) {
+      menuitem[data-l10n-id="text-action-copy"] {
         --menu-image: url("edit-copy.svg");
       }
-      #textbox-contextmenu > menuitem:nth-child(6) {
+      menuitem[data-l10n-id="text-action-paste"] {
         --menu-image: url("edit-paste.svg");
       }
-      #textbox-contextmenu > menuitem:nth-child(7) {
+      menuitem[data-l10n-id="text-action-delete"] {
         --menu-image: url("edit-delete.svg");
       }
-      #textbox-contextmenu > menuitem:nth-child(8) {
+      menuitem[data-l10n-id="text-action-select-all"] {
         --menu-image: url("edit-select-all.svg");
       }
 
@@ -1161,7 +1161,7 @@
       #context_zenReorderWorkspaces {
         --menu-image: url("sort.svg");
       }
-      #zenWorkspaceMoreActions > menuitem:nth-child(11) {
+      menuitem[data-l10n-id="zen-panel-ui-workspaces-create"] {
         --menu-image: url("plus.svg");
       }
       #context_zenDeleteWorkspace {
@@ -1326,7 +1326,8 @@
       }
       #context-paste,
       .textbox-contextmenu menuitem[cmd*='paste'],
-      #placesContext_paste_group {
+      #placesContext_paste_group,
+      #placesContext_paste {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-paste.svg');
       }
       #context-cut,
@@ -1566,7 +1567,8 @@
       menuitem[id='placesContext_new:bookmark'],
       menuitem[id='placesContext_new:folder'],
       menuitem[id='placesContext_new:separator'],
-      #context_zenEditWorkspace {
+      #zen-context-menu-new-folder,
+      #zen-context-menu-new-folder-toolbar {
         --menu-image: url('chrome://browser/skin/zen-icons/plus.svg');
       }
       #context-savelinktopocket,
@@ -1604,6 +1606,54 @@
         content: 'Plus' !important;
       }
 
+      /* zen Workspace */
+      #context_zenEditWorkspace {
+        --menu-image: url('chrome://browser/skin/zen-icons/edit.svg');
+      }
+      #context_zenEditWorkspaceIcon {
+        --menu-image: url('chrome://browser/skin/zen-icons/canvas.svg');
+      }
+      #context_zenChangeWorkspaceTheme {
+        --menu-image: url('chrome://browser/skin/zen-icons/customize.svg');
+      }
+      #context_zenWorkspacesOpenInContainerTab {
+        --menu-image: url('chrome://browser/skin/zen-icons/tab.svg');
+      }
+      #context_zenReorderWorkspaces {
+        --menu-image: url('chrome://browser/skin/zen-icons/sort.svg');
+      }
+      menuitem[data-l10n-id="zen-panel-ui-workspaces-create"] {
+        --menu-image: url('chrome://browser/skin/zen-icons/plus.svg');
+      }
+      #context_zenDeleteWorkspace {
+        --menu-image: url('chrome://browser/skin/zen-icons/edit-delete.svg');
+      }
+
+    /* zen Folder */
+      #context_zenFolderRename {
+        --menu-image: url('chrome://browser/skin/zen-icons/edit.svg');
+      }
+      #context_zenFolderChangeIcon {
+        --menu-image: url('chrome://browser/skin/zen-icons/canvas.svg');
+      }
+      #context_zenFolderUnloadAll {
+        --menu-image: url('chrome://browser/skin/zen-icons/edit-select-all.svg');
+      }
+      #context_zenFolderNewSubfolder {
+        --menu-image: url('chrome://browser/skin/zen-icons/plus.svg');
+      }
+      #context_zenFolderUnpack {
+        --menu-image: url('chrome://browser/skin/zen-icons/close-all.svg');
+      }
+      #context_zenChangeFolderSpace {
+        --menu-image: url('chrome://browser/skin/zen-icons/plus.svg');
+      }
+      #context_zenFolderToSpace {
+        --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
+      }
+      #context_zenFolderDelete {
+        --menu-image: url('chrome://browser/skin/zen-icons/edit-delete.svg');
+      }
   }
 
 }  
@@ -2061,6 +2111,60 @@ menupopup#zenWorkspaceMoreActions menupopup {
     ) !important;
 }
 
+
+/* 隐藏 native checkmark 容器（注释其他可能多的备选选择器） */
+
+menuitem[type="checkbox"][checked="true"] > image
+/*
+menuitem[type="checkbox"][checked="true"] .menu-iconic,
+menuitem[type="checkbox"][checked="true"] > .menu-iconic-left,
+menuitem[type="radio"][checked="true"] .menu-iconic,
+menuitem[type="radio"][checked="true"] > image,
+menuitem[type="radio"][checked="true"] > .menu-iconic-left
+*/
+{
+  visibility: hidden !important;
+  width: 0 !important;                /* 防止占位 */
+  margin-inline-start: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;              /* 额外保险 */
+}
+
+/* 设置自定义checkmark图标 */
+menupopup > menuitem[type="checkbox"][checked="true"]::before,
+menupopup > menuitem[type="radio"][checked="true"]::before {
+  content: "" !important;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-inline-end: 6px;
+  vertical-align: middle;
+
+  background-image: url("checkmark.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* 定位到图标所在 x 位置 */
+  margin-inline-start: 7px;
+  position: relative;
+}
+
+/* 校正含有 单选/多选 菜单项的文本左边距 */
+:not(:not(menubar) > menu, #ContentSelectDropdown)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+  > menuitem[type="checkbox"][checked="true"],
+:not(:not(menubar) > menu, #ContentSelectDropdown)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+  > menuitem[type="radio"][checked="true"],
+:not(:not(menubar) > menu, #ContentSelectDropdown)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+  > menu[type="checkbox"][checked="true"],
+:not(:not(menubar) > menu, #ContentSelectDropdown)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+  > menu[type="radio"][checked="true"] {
+  padding-inline-start: 4px !important;
+}
+
+
 /* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
 :is(
   
@@ -2140,6 +2244,23 @@ menupopup#zenWorkspaceMoreActions menupopup {
       + var(--fp-contextmenu-menuicon-margin-inline)
     ) !important;
 }
+
+/* 校正含有 单选/多选 菜单项的文本左边距 */
+:not(:not(menubar) > menu, #ContentSelectDropdown)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+  > menuitem[type="checkbox"][checked="true"],
+:not(:not(menubar) > menu, #ContentSelectDropdown)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+  > menuitem[type="radio"][checked="true"],
+:not(:not(menubar) > menu, #ContentSelectDropdown)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+  > menu[type="checkbox"][checked="true"],
+:not(:not(menubar) > menu, #ContentSelectDropdown)
+  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+  > menu[type="radio"][checked="true"] {
+  padding-inline-start: 0px !important;
+}
+
 
 /* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
 :is(
