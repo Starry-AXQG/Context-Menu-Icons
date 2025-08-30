@@ -2105,344 +2105,224 @@ menupopup#zenWorkspaceMoreActions menupopup {
 }
 }
 
-/* FluentUI */
+/* ---------------------------
+  分别为 FluentUI 和 ZenUI 设置边距规则
+  Set margin rules for FluentUI and ZenUI respectively
+   ---------------------------*/
+
+/* FluentUI: cmi-Switch-Icon-Package != 0 && != 2 */
 @media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
   and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
+  :root {
+    /* 用于菜单内边距计算的差值（16px / 8px） */
+    --menuitem-padding-extra: 16px;
 
-/* 1. 只排除顶栏菜单和文字选取下拉 */
-/* 2. 排除下载管理器菜单 */
-/* 3. 排除：已勾选的复选/单选、带图标、menulist 内的、unified-nav-current */
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
-  > menuitem:not(
-      .menuitem-iconic,
-      [type="checkbox"][checked="true"],
-      [type="radio"][checked="true"],
-      .in-menulist,
-      .in-menulist menuitem,
-      .unified-nav-current
-    ),
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
-  > menu:not(
-      .menu-iconic,
-      [type="checkbox"][checked="true"],
-      [type="radio"][checked="true"],
-      .in-menulist,
-      .in-menulist menu,
-      .unified-nav-current
-    ),
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
-  > menucaption {
-    padding-inline-start: calc(
-      var(--fp-contextmenu-menuitem-padding-inline)
-      + 16px
-      + var(--fp-contextmenu-menuicon-margin-inline)
-    ) !important;
-}
+    /* checkmark */
+    --checkmark-width: 16px;
+    --checkmark-height: 16px;
+    --checkmark-margin-end: 10px;
+    --checkmark-margin-start: 6px;
+    --checkmark-bg-image: url("checkmark.svg");
+    --checkmark-mask: none;
+    --checkmark-bg-color: transparent;
+    --checkmark-moz-context: fill, fill-opacity;
+    --checkmark-fill: currentColor;
 
-
-/* 设置自定义checkmark图标 */
-menupopup > menuitem[type="checkbox"][checked="true"]::before,
-menupopup > menuitem[type="radio"][checked="true"]::before {
-  content: "" !important;
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-
-  margin-inline-end: 10px;
-  vertical-align: middle;
-
-  background-image: url("checkmark.svg");
-  -moz-context-properties: fill, fill-opacity !important;
-  fill: currentColor !important;
-  background-repeat: no-repeat;
-  background-size: contain;
-  /* 定位到图标所在 x 位置 */
-  margin-inline-start: 6px;
-  position: relative;
-}
-
-
-/* 校正含有 单选/多选 菜单项的文本左边距 */
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
-  > menuitem[type="checkbox"][checked="true"],
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
-  > menuitem[type="radio"][checked="true"],
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
-  > menu[type="checkbox"][checked="true"],
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
-  > menu[type="radio"][checked="true"] {
-  padding-inline-start: 6px !important;
-}
-
-
-/* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
-:is(
-  
-  /* 书签栏 */
-  menupopup#placesContext:has(
-    > menuitem:not([hidden])[checked="true"]
-  ),
-  /* 工具栏 */
-  menupopup#toolbar-context-menu:has(
-    > menuitem:not([hidden])[checked="true"]
-  ),
-  /* 当循环或PIP勾选时 */
-  menupopup#contentAreaContextMenu:has(
-    > menuitem:not([hidden])[checked="true"]
-  ),
-  /* 当拼写检查勾选 */
-  menupopup#contentAreaContextMenu:has(
-    > menuitem#spell-check-enabled:is([checked="true"])
-  ),
-  menupopup#unified-extensions-context-menu:has(
-    > menuitem:not([hidden])[checked="true"]
-  )
-
-) {
-  /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
-  > :is(menuitem, menu):not(
-      .menuitem-iconic,
-      .menu-iconic,
-
-      [type="checkbox"][checked="true"],
-      [type="radio"][checked="true"],
-
-      .in-menulist,
-      .in-menulist menuitem,
-      .in-menulist menu,
-      .unified-nav-current
-    ),
-  /* 分组标题 */
-  > menucaption {
-    padding-inline-start: 10px !important;
+    /* 对含选中项时的 group / 子菜单 padding 差别 */
+    --group-padding: 10px;
+    --checked-padding: 6px;
+    --submenu-padding: 34px;
   }
 }
 
-/* 如果 context-media-loop 被勾选，则给 context-video-pictureinpicture 的文本增加左内边距 */
-menupopup:has(> menuitem#context-media-loop[type="checkbox"][checked="true"])
-  > menuitem#context-video-pictureinpicture
-  > .menu-text,
-menupopup:has(> menuitem#context-media-loop[type="checkbox"][checked="true"])
-  > menuitem#context-video-pictureinpicture
-  > .menu-highlightable-text {
-  padding-inline-start: 28px !important; /* 增加 28px 占位 */
-  box-sizing: border-box !important;     /* 确保 padding 不破坏宽度计算 */
-}
-
-/* 反过来：如果 context-video-pictureinpicture 被勾选，则给 context-media-loop 加 padding */
-menupopup:has(> menuitem#context-video-pictureinpicture[type="checkbox"][checked="true"])
-  > menuitem#context-media-loop
-  > .menu-text,
-menupopup:has(> menuitem#context-video-pictureinpicture[type="checkbox"][checked="true"])
-  > menuitem#context-media-loop
-  > .menu-highlightable-text {
-  padding-inline-start: 28px !important;
-  box-sizing: border-box !important;
-}
-/* 子菜单文本对齐（Only fix for v1.9.4b) */
-menupopup
-:has(
-menuitem:not([hidden])[type="checkbox"][checked="true"],
-menuitem:not([hidden])[type="radio"][checked="true"]
-) {
-  
-> :is(menuitem, menu):not(
-    .menuitem-iconic,
-    .menu-iconic,
-
-    [type="checkbox"][checked="true"],
-    [type="radio"][checked="true"],
-
-    .in-menulist,
-    .in-menulist menuitem,
-    .in-menulist menu,
-    .unified-nav-current
-  ),
-/* 分组标题 */
-> menucaption {
-  padding-inline-start: 34px !important;
-}
-}
-}
-
-/* ZenUI */
+/* ZenUI: cmi-Switch-Icon-Package == 2 */
 @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
+  :root {
+    --menuitem-padding-extra: 8px;
 
-/* 1. 只排除顶栏菜单和文字选取下拉 */
-/* 2. 排除下载管理器菜单 */
-/* 3. 排除：已勾选的复选/单选、带图标、menulist 内的、unified-nav-current */
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
-  > menuitem:not(
-      .menuitem-iconic,
-      [type="checkbox"][checked="true"],
-      [type="radio"][checked="true"],
-      .in-menulist,
-      .in-menulist menuitem,
-      .unified-nav-current
-    ),
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
-  > menu:not(
-      .menu-iconic,
-      [type="checkbox"][checked="true"],
-      [type="radio"][checked="true"],
-      .in-menulist,
-      .in-menulist menu,
-      .unified-nav-current
-    ),
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
-  > menucaption {
-    padding-inline-start: calc(
-      var(--fp-contextmenu-menuitem-padding-inline)
-      + 8px
-      + var(--fp-contextmenu-menuicon-margin-inline)
-    ) !important;
-}
+    --checkmark-width: 16px;
+    --checkmark-height: 16px;
+    --checkmark-margin-end: 6px;
+    --checkmark-margin-start: 5px;
+    --checkmark-bg-image: none;
+    /* 使用 mask + background-color 随主题变色 */
+    --checkmark-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M20.285 6.709l-11.39 11.39-5.18-5.18 1.414-1.414 3.766 3.766 9.976-9.976z'/></svg>") no-repeat center/contain;
+    --checkmark-bg-color: currentColor;
+    --checkmark-moz-context: none;
+    --checkmark-fill: none;
 
-
-/* 设置自定义checkmark图标 */
-menupopup > menuitem[type="checkbox"][checked="true"]::before,
-menupopup > menuitem[type="radio"][checked="true"]::before {
-  content: "" !important;
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  margin-inline-end: 6px;
-  vertical-align: middle;
-
-  /* 定位到图标所在 x 位置 */
-  margin-inline-start: 5px;
-  position: relative;
-
-  /* 保持继承文本颜色 */
-  color: inherit !important;
-
-  /* 用 currentColor 作为图标“填充色”，使其随文本/主题自动变色 */
-  background-color: currentColor;
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  /* ----------使用 mask（遮罩） + background-color,随主题变色 ---------- */
-  /* SVG 用白色路径作为遮罩区域（白色代表可见区域） */
-  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M20.285 6.709l-11.39 11.39-5.18-5.18 1.414-1.414 3.766 3.766 9.976-9.976z'/></svg>") no-repeat center/contain;
-  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M20.285 6.709l-11.39 11.39-5.18-5.18 1.414-1.414 3.766 3.766 9.976-9.976z'/></svg>") no-repeat center/contain;
-}
-
-/* 校正含有 单选/多选 菜单项的文本左边距 */
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
-  > menuitem[type="checkbox"][checked="true"],
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
-  > menuitem[type="radio"][checked="true"],
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
-  > menu[type="checkbox"][checked="true"],
-:not(:not(menubar) > menu, #ContentSelectDropdown)
-  > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
-  > menu[type="radio"][checked="true"] {
-  padding-inline-start: 0px !important;
-}
-
-
-/* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
-:is(
-  
-  /* 书签栏 */
-  menupopup#placesContext:has(
-    > menuitem:not([hidden])[checked="true"]
-  ),
-  /* 工具栏 */
-  menupopup#toolbar-context-menu:has(
-    > menuitem:not([hidden])[checked="true"]
-  ),
-  /* 当循环或PIP勾选时 */
-  menupopup#contentAreaContextMenu:has(
-    > menuitem:not([hidden])[checked="true"]
-  ),
-  /* 当拼写检查勾选 */
-  menupopup#contentAreaContextMenu:has(
-    > menuitem#spell-check-enabled:is([checked="true"])
-  ),
-  menupopup#unified-extensions-context-menu:has(
-    > menuitem:not([hidden])[checked="true"]
-  )
-
-) {
-  /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
-  > :is(menuitem, menu):not(
-      .menuitem-iconic,
-      .menu-iconic,
-
-      [type="checkbox"][checked="true"],
-      [type="radio"][checked="true"],
-
-      .in-menulist,
-      .in-menulist menuitem,
-      .in-menulist menu,
-      .unified-nav-current
-    ),
-  /* 分组标题 */
-  > menucaption {
-    padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline)-8px  !important;
+    /* group / 子菜单 padding */
+    --group-padding: calc(var(--fp-contextmenu-menuicon-margin-inline) - 8px);
+    --checked-padding: 0px;
+    --submenu-padding: 28px;
   }
 }
 
-/* 如果 context-media-loop 被勾选，则给 context-video-pictureinpicture 的文本增加左内边距 */
-menupopup:has(> menuitem#context-media-loop[type="checkbox"][checked="true"])
-  > menuitem#context-video-pictureinpicture
-  > .menu-text,
-menupopup:has(> menuitem#context-media-loop[type="checkbox"][checked="true"])
-  > menuitem#context-video-pictureinpicture
-  > .menu-highlightable-text {
-  padding-inline-start: 28px !important; /* 增加 28px 占位 */
-  box-sizing: border-box !important;     /* 确保 padding 不破坏宽度计算 */
+/* ---------------------------
+   通用规则：在两种 media 条件下都使用这些选择器，
+   但实际数值来源于上面对应 media 中设定的变量
+   ---------------------------*/
+
+/* 将两种 media 合并，用逗号连接（当任意一个条件成立时应用下列通用样式） */
+@media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
+  and (not (-moz-pref("cmi-Switch-Icon-Package", 2))),
+  (-moz-pref("cmi-Switch-Icon-Package", 2)) {
+
+  /* 1. 只排除顶栏菜单和文字选取下拉
+     2. 排除下载管理器菜单 / create-new / new-tab 弹出
+     3. 排除：已勾选复选/单选、带图标、menulist 内的、unified-nav-current
+  */
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > menuitem:not(
+        .menuitem-iconic,
+        [type="checkbox"][checked="true"],
+        [type="radio"][checked="true"],
+        .in-menulist,
+        .in-menulist menuitem,
+        .unified-nav-current
+      ),
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > menu:not(
+        .menu-iconic,
+        [type="checkbox"][checked="true"],
+        [type="radio"][checked="true"],
+        .in-menulist,
+        .in-menulist menu,
+        .unified-nav-current
+      ),
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > menucaption {
+      padding-inline-start: calc(
+        var(--fp-contextmenu-menuitem-padding-inline)
+        + var(--menuitem-padding-extra)
+        + var(--fp-contextmenu-menuicon-margin-inline)
+      ) !important;
+  }
+
+  /* 设置自定义 checkmark 图标（使用变量：可在两种模式间切换实现方式） */
+  menupopup > menuitem[type="checkbox"][checked="true"]::before,
+  menupopup > menuitem[type="radio"][checked="true"]::before {
+    content: "" !important;
+    display: inline-block;
+    width: var(--checkmark-width);
+    height: var(--checkmark-height);
+
+    margin-inline-end: var(--checkmark-margin-end);
+    vertical-align: middle;
+
+    /* 两种实现共用声明：background-image / mask / background-color 由变量决定 */
+    background-image: var(--checkmark-bg-image);
+    -moz-context-properties: var(--checkmark-moz-context) !important;
+    /* 当使用 SVG fill 时，保留 fill 的回退值 */
+    fill: var(--checkmark-fill, currentColor) !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* 定位到图标所在 x 位置 */
+    margin-inline-start: var(--checkmark-margin-start);
+    position: relative;
+
+    /* mask 与 background-color（若变量为 none，则效果等同于未设置） */
+    -webkit-mask: var(--checkmark-mask, none);
+    mask: var(--checkmark-mask, none);
+    background-color: var(--checkmark-bg-color, transparent);
+  }
+
+  /* 校正含有 单选/多选 菜单项的文本左边距（变量控制数值） */
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > menuitem[type="checkbox"][checked="true"],
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > menuitem[type="radio"][checked="true"],
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > menu[type="checkbox"][checked="true"],
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > menu[type="radio"][checked="true"] {
+    padding-inline-start: var(--checked-padding) !important;
+  }
+
+  /* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
+  :is(
+    /* 书签栏 */
+    menupopup#placesContext:has(> menuitem:not([hidden])[checked="true"]),
+    /* 工具栏 */
+    menupopup#toolbar-context-menu:has(> menuitem:not([hidden])[checked="true"]),
+    /* 当循环或PIP勾选时 */
+    menupopup#contentAreaContextMenu:has(> menuitem:not([hidden])[checked="true"]),
+    /* 当拼写检查勾选 */
+    menupopup#contentAreaContextMenu:has(> menuitem#spell-check-enabled:is([checked="true"])),
+    menupopup#unified-extensions-context-menu:has(> menuitem:not([hidden])[checked="true"])
+  ) {
+    /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
+    > :is(menuitem, menu):not(
+        .menuitem-iconic,
+        .menu-iconic,
+
+        [type="checkbox"][checked="true"],
+        [type="radio"][checked="true"],
+
+        .in-menulist,
+        .in-menulist menuitem,
+        .in-menulist menu,
+        .unified-nav-current
+      ),
+    /* 分组标题 */
+    > menucaption {
+      padding-inline-start: var(--group-padding) !important;
+    }
+  }
+
+  /* 如果 context-media-loop 被勾选，则给 context-video-pictureinpicture 的文本增加左内边距 */
+  menupopup:has(> menuitem#context-media-loop[type="checkbox"][checked="true"])
+    > menuitem#context-video-pictureinpicture
+    > .menu-text,
+  menupopup:has(> menuitem#context-media-loop[type="checkbox"][checked="true"])
+    > menuitem#context-video-pictureinpicture
+    > .menu-highlightable-text {
+    padding-inline-start: 28px !important; /* 增加 28px 占位 */
+    box-sizing: border-box !important;     /* 确保 padding 不破坏宽度计算 */
+  }
+
+  /* 反过来：如果 context-video-pictureinpicture 被勾选，则给 context-media-loop 加 padding */
+  menupopup:has(> menuitem#context-video-pictureinpicture[type="checkbox"][checked="true"])
+    > menuitem#context-media-loop
+    > .menu-text,
+  menupopup:has(> menuitem#context-video-pictureinpicture[type="checkbox"][checked="true"])
+    > menuitem#context-media-loop
+    > .menu-highlightable-text {
+    padding-inline-start: 28px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 子菜单文本对齐（Only fix for v1.9.4b) —— padding 值由变量控制 */
+  menupopup:has(
+      menuitem:not([hidden])[type="checkbox"][checked="true"],
+      menuitem:not([hidden])[type="radio"][checked="true"]
+    ) {
+    > :is(menuitem, menu):not(
+        .menuitem-iconic,
+        .menu-iconic,
+
+        [type="checkbox"][checked="true"],
+        [type="radio"][checked="true"],
+
+        .in-menulist,
+        .in-menulist menuitem,
+        .in-menulist menu,
+        .unified-nav-current
+      ),
+    /* 分组标题 */
+    > menucaption {
+      padding-inline-start: var(--submenu-padding) !important;
+    }
+  }
 }
 
-/* 反过来：如果 context-video-pictureinpicture 被勾选，则给 context-media-loop 加 padding */
-menupopup:has(> menuitem#context-video-pictureinpicture[type="checkbox"][checked="true"])
-  > menuitem#context-media-loop
-  > .menu-text,
-menupopup:has(> menuitem#context-video-pictureinpicture[type="checkbox"][checked="true"])
-  > menuitem#context-media-loop
-  > .menu-highlightable-text {
-  padding-inline-start: 28px !important;
-  box-sizing: border-box !important;
-}
-/* 子菜单文本对齐（Only fix for v1.9.4b) */
-menupopup
-:has(
-menuitem:not([hidden])[type="checkbox"][checked="true"],
-menuitem:not([hidden])[type="radio"][checked="true"]
-) {
-  
-> :is(menuitem, menu):not(
-    .menuitem-iconic,
-    .menu-iconic,
-
-    [type="checkbox"][checked="true"],
-    [type="radio"][checked="true"],
-
-    .in-menulist,
-    .in-menulist menuitem,
-    .in-menulist menu,
-    .unified-nav-current
-  ),
-/* 分组标题 */
-> menucaption {
-  padding-inline-start: 28px !important;
-}
-}
-}
 
 /*Main Menu*/
 .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined) > .toolbarbutton-text,
