@@ -52,36 +52,37 @@ menupopup menupopup * {
     -moz-context-properties: fill, fill-opacity !important;
     fill: currentColor !important;
   }
-      :not(:not(menubar) > menu, #ContentSelectDropdown)
-        > menupopup
-        > menuitem:not(
-          .menuitem-iconic,
-          [type="checkbox"],
-          [type="radio"],
-          .in-menulist,
-          .in-menulist menuitem,
-          .unified-nav-current
-        ),
-      :not(:not(menubar) > menu, #ContentSelectDropdown)
-        > menupopup
-        > menu:not(
-          .menu-iconic,
-          [type="checkbox"],
-          [type="radio"],
-          .in-menulist,
-          .in-menulist menu,
-          .unified-nav-current
-        ),
-      #toggle_toolbar-menubar,
-      #PanelUI-history toolbarbutton,
-      #unified-extensions-context-menu menuitem {
-        background-image: var(--menu-image) !important;
-        background-size: 16px !important;
-        background-position: var(--fp-contextmenu-menuitem-padding-inline) center !important;
-        background-repeat: no-repeat !important;
-        -moz-context-properties: fill, fill-opacity !important;
-        fill: currentColor !important;
-      }  
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup
+    > menuitem:not(
+      .menuitem-iconic,
+      [type="checkbox"],
+      [type="radio"],
+      .in-menulist,
+      .in-menulist menuitem,
+      .unified-nav-current
+    ),
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > menupopup
+    > menu:not(
+      .menu-iconic,
+      [type="checkbox"],
+      [type="radio"],
+      .in-menulist,
+      .in-menulist menu,
+      .unified-nav-current
+    ),
+  #toggle_toolbar-menubar,
+  #PanelUI-history toolbarbutton,
+  #unified-extensions-context-menu menuitem {
+    background-image: var(--menu-image) !important;
+    background-size: 16px !important;
+    background-position: var(--fp-contextmenu-menuitem-padding-inline) center !important;
+    background-repeat: no-repeat !important;
+    -moz-context-properties: fill, fill-opacity !important;
+    fill: currentColor !important;
+  }  
+
 
       :root[fxastatus="not_configured"] #fxa-avatar-image {
         list-style-image: url("account.svg") !important;
@@ -117,8 +118,6 @@ menupopup menupopup * {
       #sidebar-button:-moz-locale-dir(rtl)[positionend] {
         list-style-image: url("sidebars.svg") !important;
       }
-      
-      
       
       #nav-bar-overflow-button {
         list-style-image: url("chevron.svg") !important;
@@ -369,8 +368,6 @@ menupopup menupopup * {
         list-style-image: url("customize.svg") !important;
       }
       
-
-
       #pageAction-panel-bookmark,
       #star-button {
         
@@ -544,7 +541,7 @@ menupopup menupopup * {
       menupopup > menuitem:is([checked="true"], [selected="true"]) .menu-iconic-icon {
         list-style-image: url("checkmark.svg") !important;
       }
-/*   （v1.9.4)    
+  /*   （v1.9.4)    
       #context-video-pictureinpicture:not([checked="true"]) .menu-iconic-icon {
         list-style-image: url("media-pip.svg") !important;
       }
@@ -552,7 +549,7 @@ menupopup menupopup * {
       #context-media-loop:not([checked="true"]) .menu-iconic-icon {
         list-style-image: url("media-loop.svg") !important;
       }
-*/ 
+  */ 
       #context-video-pictureinpicture {
         --menu-image: url("media-pip.svg");
       }   
@@ -560,20 +557,17 @@ menupopup menupopup * {
         --menu-image: url("media-loop.svg");
       }
 
-      
       #context-savepage {
         --menu-image: url("save.svg");
       }
       
       #context-selectall,
-      .textbox-contextmenu menuitem[cmd*="selectAll"],
       #context_selectAllTabs,
       #toolbar-context-selectAllTabs {
         --menu-image: url("edit-select-all.svg");
       }
       
       #context-undo,
-      .textbox-contextmenu menuitem[cmd*="undo"],
       #context_undoCloseTab,
       #toolbar-context-undoCloseTab {
         --menu-image: url("edit-undo.svg");
@@ -586,20 +580,17 @@ menupopup menupopup * {
         --menu-image: url("menu-bar.svg");
       }
       
-      #context-redo,
-      .textbox-contextmenu menuitem[cmd*="redo"] {
+      #context-redo {
         --menu-image: url("edit-redo.svg");
       }
       
       #context-copy,
-      .textbox-contextmenu menuitem[cmd*="copy"],
       .textbox-contextmenu #strip-on-share,
       #placesContext_copy {
         --menu-image: url("edit-copy.svg");
       }
       
       #context-paste,
-      .textbox-contextmenu menuitem[cmd*="paste"],
       #placesContext_paste_group {
         --menu-image: url("edit-paste.svg");
       }
@@ -615,7 +606,6 @@ menupopup menupopup * {
         --menu-image: url("edit-delete.svg");
       }
       #context-cut,
-      .textbox-contextmenu menuitem[cmd*="cut"],
       #placesContext_cut {
         --menu-image: url("edit-cut.svg");
       }
@@ -630,7 +620,6 @@ menupopup menupopup * {
       #context-delete,
       .customize-context-removeExtension,
       .unified-extensions-context-menu-remove-extension,
-      .textbox-contextmenu menuitem[cmd*="delete"],
       menuitem[id="placesContext_deleteBookmark"],
       menuitem[id="placesContext_deleteFolder"],
       menuitem[id="placesContext_delete"],
@@ -1334,13 +1323,13 @@ menupopup menupopup * {
         --menu-image: url('chrome://browser/skin/zen-icons/save.svg');
       }
       #context-selectall,
-      .textbox-contextmenu menuitem[cmd*='selectAll'],
+      menuitem[data-l10n-id="text-action-select-all"],
       #context_selectAllTabs,
       #toolbar-context-selectAllTabs {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-select-all.svg');
       }
       #context-undo,
-      .textbox-contextmenu menuitem[cmd*='undo'],
+      menuitem[data-l10n-id="text-action-undo"],
       #context_undoCloseTab,
       #toolbar-context-undoCloseTab {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-undo.svg');
@@ -1349,31 +1338,31 @@ menupopup menupopup * {
         --menu-image: url('chrome://browser/skin/zen-icons/menu-bar.svg');
       }
       #context-redo,
-      .textbox-contextmenu menuitem[cmd*='redo'] {
+      menuitem[data-l10n-id="text-action-redo"] {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-redo.svg');
       }
       #context-copy,
-      .textbox-contextmenu menuitem[cmd*='copy'],
+      menuitem[data-l10n-id="text-action-copy"],
       .textbox-contextmenu #strip-on-share,
       #placesContext_copy {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-copy.svg');
       }
       #context-paste,
-      .textbox-contextmenu menuitem[cmd*='paste'],
+      menuitem[data-l10n-id="text-action-paste"],
       #placesContext_paste_group,
       #placesContext_paste,
       #context-paste-no-formatting {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-paste.svg');
       }
       #context-cut,
-      .textbox-contextmenu menuitem[cmd*='cut'],
+      menuitem[data-l10n-id="text-action-cut"],
       #placesContext_cut {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-cut.svg');
       }
       #context-delete,
       .customize-context-removeExtension,
       .unified-extensions-context-menu-remove-extension,
-      .textbox-contextmenu menuitem[cmd*='delete'],
+      menuitem[data-l10n-id="text-action-delete"],
       menuitem[id='placesContext_deleteBookmark'],
       menuitem[id='placesContext_deleteFolder'],
       menuitem[id='placesContext_delete'],
