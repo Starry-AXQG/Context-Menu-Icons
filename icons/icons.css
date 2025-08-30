@@ -85,8 +85,7 @@
 
 
    
-      menupopup,
-      menupopup * 
+      menupopup
       :has(
       menuitem:not([hidden])[type="checkbox"][checked="true"],
       menuitem:not([hidden])[type="radio"][checked="true"]
