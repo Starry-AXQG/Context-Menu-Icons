@@ -174,7 +174,7 @@
       }
       
       #spell-check-enabled {
-        list-style-image: url("spell-check.svg") !important;
+        --menu-image: url("spell-check.svg");
       }
       #panic-button {
         list-style-image: url("forget.svg") !important;
