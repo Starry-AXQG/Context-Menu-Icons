@@ -83,6 +83,28 @@
         background-image: none !important;
       }
 
+      #zen-context-menu-compact-mode menupopup,
+      #zen-context-menu-compact-mode menupopup *,
+      #context-media-playbackrate menupopup,
+      #context-media-playbackrate menupopup * {
+        
+      > :is(menuitem, menu):not(
+          .menuitem-iconic,
+          .menu-iconic,
+
+          [type="checkbox"][checked="true"],
+          [type="radio"][checked="true"],
+
+          .in-menulist,
+          .in-menulist menuitem,
+          .in-menulist menu,
+          .unified-nav-current
+        ),
+      /* 分组标题 */
+      > menucaption {
+        padding-inline-start: 34px !important;
+      }        
+      }
 
       :root[fxastatus="not_configured"] #fxa-avatar-image {
         list-style-image: url("account.svg") !important;
@@ -2358,9 +2380,10 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M20.285 6.709l-11.39 11.39-5.18-5.18 1.414-1.414 3.766 3.766 9.976-9.976z'/></svg>") no-repeat center/contain;
   mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M20.285 6.709l-11.39 11.39-5.18-5.18 1.414-1.414 3.766 3.766 9.976-9.976z'/></svg>") no-repeat center/contain;
 }
+}
+
 
 /*Main Menu*/
-
 .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined) > .toolbarbutton-text,
 .subviewbutton:not(#appMenu-zoom-controls > .subviewbutton) > .toolbarbutton-icon + .toolbarbutton-text,
 #appMenu-fxa-label2 > vbox {
