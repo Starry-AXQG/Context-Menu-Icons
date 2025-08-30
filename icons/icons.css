@@ -2258,6 +2258,29 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     padding-inline-start: 10px !important;
   }
 }
+
+/* 如果 context-media-loop 被勾选，则给 context-video-pictureinpicture 的文本增加左内边距 */
+menupopup:has(> menuitem#context-media-loop[type="checkbox"][checked="true"])
+  > menuitem#context-video-pictureinpicture
+  > .menu-text,
+menupopup:has(> menuitem#context-media-loop[type="checkbox"][checked="true"])
+  > menuitem#context-video-pictureinpicture
+  > .menu-highlightable-text {
+  padding-inline-start: 28px !important; /* 增加 28px 占位 */
+  box-sizing: border-box !important;     /* 确保 padding 不破坏宽度计算 */
+}
+
+/* 反过来：如果 context-video-pictureinpicture 被勾选，则给 context-media-loop 加 padding */
+menupopup:has(> menuitem#context-video-pictureinpicture[type="checkbox"][checked="true"])
+  > menuitem#context-media-loop
+  > .menu-text,
+menupopup:has(> menuitem#context-video-pictureinpicture[type="checkbox"][checked="true"])
+  > menuitem#context-media-loop
+  > .menu-highlightable-text {
+  padding-inline-start: 28px !important;
+  box-sizing: border-box !important;
+}
+
 }
 
 /* ZenUI */
