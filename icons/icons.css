@@ -5,7 +5,10 @@
   /* 背景图转换已有的变量 --menu-image */
   background-image: var(--menu-image) !important;
   background-repeat: no-repeat !important;
-  background-position: var(--fp-contextmenu-menuitem-padding-inline, left 1em) center !important;
+  
+  @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {background-position: var(--fp-contextmenu-menuitem-padding-inline, left 1em) center !important;}
+  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {background-position: 5px center !important;}
+  
   background-size: var(--fp-contextmenu-menuitem-icon-size, 16px) !important;
 
   /* 让 SVG 能够使用 currentColor */
@@ -1312,11 +1315,11 @@ menupopup menupopup * {
       #zenToolbarThemePicker {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-theme.svg') !important;
       }
-      #context-video-pictureinpicture:not([checked='true']) .menu-iconic-icon {
-        list-style-image: url('chrome://browser/skin/zen-icons/media-pip.svg') !important;
+      #context-video-pictureinpicture {
+        --menu-image: url('chrome://browser/skin/zen-icons/media-pip.svg') !important;
       }
-      #context-media-loop:not([checked='true']) .menu-iconic-icon {
-        list-style-image: url('chrome://browser/skin/zen-icons/media-loop.svg') !important;
+      #context-media-loop {
+        --menu-image: url('chrome://browser/skin/zen-icons/media-loop.svg') !important;
       }
       
       #context-savepage {
@@ -2393,6 +2396,28 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline)-8px  !important;
   }
 }
+
+/* 如果 context-media-loop 被勾选，则给 context-video-pictureinpicture 的文本增加左内边距 */
+menupopup:has(> menuitem#context-media-loop[type="checkbox"][checked="true"])
+  > menuitem#context-video-pictureinpicture
+  > .menu-text,
+menupopup:has(> menuitem#context-media-loop[type="checkbox"][checked="true"])
+  > menuitem#context-video-pictureinpicture
+  > .menu-highlightable-text {
+  padding-inline-start: 28px !important; /* 增加 28px 占位 */
+  box-sizing: border-box !important;     /* 确保 padding 不破坏宽度计算 */
+}
+
+/* 反过来：如果 context-video-pictureinpicture 被勾选，则给 context-media-loop 加 padding */
+menupopup:has(> menuitem#context-video-pictureinpicture[type="checkbox"][checked="true"])
+  > menuitem#context-media-loop
+  > .menu-text,
+menupopup:has(> menuitem#context-video-pictureinpicture[type="checkbox"][checked="true"])
+  > menuitem#context-media-loop
+  > .menu-highlightable-text {
+  padding-inline-start: 28px !important;
+  box-sizing: border-box !important;
+}
 /* 子菜单文本对齐（Only fix for v1.9.4b) */
 menupopup
 :has(
@@ -2417,7 +2442,7 @@ menuitem:not([hidden])[type="radio"][checked="true"]
   padding-inline-start: 28px !important;
 }
 }
-
+}
 
 /*Main Menu*/
 .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined) > .toolbarbutton-text,
