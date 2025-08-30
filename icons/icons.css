@@ -2184,7 +2184,6 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
 }
 
 
-
 /* 校正含有 单选/多选 菜单项的文本左边距 */
 :not(:not(menubar) > menu, #ContentSelectDropdown)
   > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
@@ -2368,10 +2367,6 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   /* SVG 用白色路径作为遮罩区域（白色代表可见区域） */
   -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M20.285 6.709l-11.39 11.39-5.18-5.18 1.414-1.414 3.766 3.766 9.976-9.976z'/></svg>") no-repeat center/contain;
   mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M20.285 6.709l-11.39 11.39-5.18-5.18 1.414-1.414 3.766 3.766 9.976-9.976z'/></svg>") no-repeat center/contain;
-
-
-
-
 }
 
 /*Main Menu*/
