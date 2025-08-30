@@ -1365,7 +1365,8 @@
       #context-paste,
       .textbox-contextmenu menuitem[cmd*='paste'],
       #placesContext_paste_group,
-      #placesContext_paste {
+      #placesContext_paste,
+      #context-paste-no-formatting {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-paste.svg');
       }
       #context-cut,
@@ -1692,6 +1693,10 @@
       #context_zenFolderDelete {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-delete.svg');
       }
+
+      #zen-toolbar-context-tabs-right {
+        --menu-image: url("chrome://browser/skin/zen-icons/edit-delete.svg");
+      }      
   }
 
 }  
@@ -2336,17 +2341,17 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   display: inline-block;
   width: 16px;
   height: 16px;
-
-  margin-inline-end: 10px;
+  margin-inline-end: 6px;
   vertical-align: middle;
 
-  background-image: url("checkmark.svg");
-  -moz-context-properties: fill, fill-opacity !important;
-  fill: currentColor !important;
+  background-image: url('data:image/svg+xml;utf8,\
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">\
+      <path fill="%23000" d="M20.285 6.709l-11.39 11.39-5.18-5.18 1.414-1.414 3.766 3.766 9.976-9.976z"/>\
+    </svg>');
   background-repeat: no-repeat;
   background-size: contain;
   /* 定位到图标所在 x 位置 */
-  margin-inline-start: 6px;
+  margin-inline-start: 5px;
   position: relative;
 }
 
