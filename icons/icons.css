@@ -36,6 +36,19 @@
   padding-left: unset !important;
 }
 
+/* ====== 可调变量 ====== */
+:root {
+  --checkmark-pad: 32px; /* 未勾选项需要的左内边距 */
+}
+
+/* ====== 当 menupopup 内有已勾选项时，
+         对该 menupopup 中所有未勾选的 menuitem/menu 补位（包含顶层菜单项 & 子菜单项） ====== */
+menupopup:has(
+  menuitem[type="checkbox"][checked="true"],
+  menuitem[type="radio"][checked="true"]
+) :is(menuitem, menu):not([checked="true"]){
+  padding-inline-start: var(--checkmark-pad) !important;
+}
   /*FluentUI*/
   @media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
     and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
@@ -1170,26 +1183,6 @@
         --menu-image: url("compact-mode.svg");
       }
 
-      #zen-context-menu-compact-mode menupopup,
-      #zen-context-menu-compact-mode menupopup * {
-        
-      > :is(menuitem, menu):not(
-          .menuitem-iconic,
-          .menu-iconic,
-
-          [type="checkbox"][checked="true"],
-          [type="radio"][checked="true"],
-
-          .in-menulist,
-          .in-menulist menuitem,
-          .in-menulist menu,
-          .unified-nav-current
-        ),
-      /* 分组标题 */
-      > menucaption {
-        padding-inline-start: 30px !important;
-      }        
-      }
       #context_zen-reset-pinned-tab,
       #context_zen-replace-pinned-url-with-current {
         --menu-image: url("reload.svg");
