@@ -1,5 +1,6 @@
 @media (-moz-pref("svg.context-properties.content.enabled")) {
-/* ========== 全局：此规则用来去除原生“√”图标，方便给特殊菜单插入自定义图标 */
+/* ========== 全局：此规则用来去除原生“√”图标，方便给特殊菜单插入自定义图标,并更容易完成上下文菜单的文本对齐（v1.9.4) */
+/* This rule is used to remove the native "√" icon, making it convenient to insert custom icons for special menus and facilitating the text alignment of context menus. */
 :is(menuitem[type="checkbox"], menuitem[type="radio"]):not([checked="true"]) {
   /* 背景图转换已有的变量 --menu-image */
   background-image: var(--menu-image) !important;
@@ -506,7 +507,7 @@
       menupopup > menuitem:is([checked="true"], [selected="true"]) .menu-iconic-icon {
         list-style-image: url("checkmark.svg") !important;
       }
-      
+/*      
       #context-video-pictureinpicture:not([checked="true"]) .menu-iconic-icon {
         list-style-image: url("media-pip.svg") !important;
       }
@@ -514,7 +515,13 @@
       #context-media-loop:not([checked="true"]) .menu-iconic-icon {
         list-style-image: url("media-loop.svg") !important;
       }
-      
+*/ 
+      #context-video-pictureinpicture {
+        --menu-image: url("media-pip.svg");
+      }   
+      #context-media-loop {
+        --menu-image: url("media-loop.svg");
+      }
       :not(:not(menubar) > menu, #ContentSelectDropdown)
         > menupopup
         > menuitem:not(
@@ -1692,13 +1699,13 @@
       }
       #context_zenFolderDelete {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-delete.svg');
-      }
-
+      }   
+      /*
       #zen-toolbar-context-tabs-right {
-        --menu-image: url("chrome://browser/skin/zen-icons/edit-delete.svg");
-      }      
+        --menu-image: url("chrome://browser/skin/zen-icons/move-tab.svg");
+      }  
+        */ 
   }
-
 }  
   
 
