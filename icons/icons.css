@@ -44,7 +44,44 @@
     -moz-context-properties: fill, fill-opacity !important;
     fill: currentColor !important;
   }
-  
+      :not(:not(menubar) > menu, #ContentSelectDropdown)
+        > menupopup
+        > menuitem:not(
+          .menuitem-iconic,
+          [type="checkbox"],
+          [type="radio"],
+          .in-menulist,
+          .in-menulist menuitem,
+          .unified-nav-current
+        ),
+      :not(:not(menubar) > menu, #ContentSelectDropdown)
+        > menupopup
+        > menu:not(
+          .menu-iconic,
+          [type="checkbox"],
+          [type="radio"],
+          .in-menulist,
+          .in-menulist menu,
+          .unified-nav-current
+        ),
+      #toggle_toolbar-menubar,
+      #PanelUI-history toolbarbutton,
+      #unified-extensions-context-menu menuitem {
+        background-image: var(--menu-image) !important;
+        background-size: 16px !important;
+        background-position: var(--fp-contextmenu-menuitem-padding-inline) center !important;
+        background-repeat: no-repeat !important;
+        -moz-context-properties: fill, fill-opacity !important;
+        fill: currentColor !important;
+      }  
+      /* —— 屏蔽对子菜单项的影响 —— */
+      /* 任意子菜单里的 menuitem / menu 禁止继承图标(v1.9.4) */
+      menupopup menupopup,
+      menupopup menupopup * {
+        --menu-image: initial !important;
+        background-image: none !important;
+      }
+
 
       :root[fxastatus="not_configured"] #fxa-avatar-image {
         list-style-image: url("account.svg") !important;
@@ -522,36 +559,7 @@
       #context-media-loop {
         --menu-image: url("media-loop.svg");
       }
-      :not(:not(menubar) > menu, #ContentSelectDropdown)
-        > menupopup
-        > menuitem:not(
-          .menuitem-iconic,
-          [type="checkbox"],
-          [type="radio"],
-          .in-menulist,
-          .in-menulist menuitem,
-          .unified-nav-current
-        ),
-      :not(:not(menubar) > menu, #ContentSelectDropdown)
-        > menupopup
-        > menu:not(
-          .menu-iconic,
-          [type="checkbox"],
-          [type="radio"],
-          .in-menulist,
-          .in-menulist menu,
-          .unified-nav-current
-        ),
-      #toggle_toolbar-menubar,
-      #PanelUI-history toolbarbutton,
-      #unified-extensions-context-menu menuitem {
-        background-image: var(--menu-image) !important;
-        background-size: 16px !important;
-        background-position: var(--fp-contextmenu-menuitem-padding-inline) center !important;
-        background-repeat: no-repeat !important;
-        -moz-context-properties: fill, fill-opacity !important;
-        fill: currentColor !important;
-      }
+
       
       #context-savepage {
         --menu-image: url("save.svg");
@@ -1161,9 +1169,10 @@
       #zen-context-menu-compact-mode {
         --menu-image: url("compact-mode.svg");
       }
+
       #zen-context-menu-compact-mode menupopup,
       #zen-context-menu-compact-mode menupopup * {
-        --menu-image: none !important;
+        
       > :is(menuitem, menu):not(
           .menuitem-iconic,
           .menu-iconic,
