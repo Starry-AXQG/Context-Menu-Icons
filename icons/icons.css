@@ -2341,6 +2341,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline)-8px  !important;
   }
 }
+
 /* 设置自定义checkmark图标 */
 menupopup > menuitem[type="checkbox"][checked="true"]::before,
 menupopup > menuitem[type="radio"][checked="true"]::before {
@@ -2351,16 +2352,25 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   margin-inline-end: 6px;
   vertical-align: middle;
 
-  background-image: url('data:image/svg+xml;utf8,\
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">\
-      <path fill="%23000" d="M20.285 6.709l-11.39 11.39-5.18-5.18 1.414-1.414 3.766 3.766 9.976-9.976z"/>\
-    </svg>');
-  background-repeat: no-repeat;
-  background-size: contain;
   /* 定位到图标所在 x 位置 */
   margin-inline-start: 5px;
   position: relative;
-}
+
+  /* 保持继承文本颜色 */
+  color: inherit !important;
+
+  /* 用 currentColor 作为图标“填充色”，使其随文本/主题自动变色 */
+  background-color: currentColor;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  /* ----------使用 mask（遮罩） + background-color,随主题变色 ---------- */
+  /* SVG 用白色路径作为遮罩区域（白色代表可见区域） */
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M20.285 6.709l-11.39 11.39-5.18-5.18 1.414-1.414 3.766 3.766 9.976-9.976z'/></svg>") no-repeat center/contain;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M20.285 6.709l-11.39 11.39-5.18-5.18 1.414-1.414 3.766 3.766 9.976-9.976z'/></svg>") no-repeat center/contain;
+
+
+
 
 }
 
