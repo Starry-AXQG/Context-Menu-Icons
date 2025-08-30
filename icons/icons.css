@@ -83,10 +83,14 @@
         background-image: none !important;
       }
 
-      #zen-context-menu-compact-mode menupopup,
-      #zen-context-menu-compact-mode menupopup *,
-      #context-media-playbackrate menupopup,
-      #context-media-playbackrate menupopup * {
+
+   
+      menupopup,
+      menupopup * 
+      :has(
+      menuitem:not([hidden])[type="checkbox"][checked="true"],
+      menuitem:not([hidden])[type="radio"][checked="true"]
+      ) {
         
       > :is(menuitem, menu):not(
           .menuitem-iconic,
