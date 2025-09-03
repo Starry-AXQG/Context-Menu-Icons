@@ -1187,7 +1187,10 @@ menupopup menupopup * {
       #context_zenReorderWorkspaces {
         --menu-image: url("sort.svg");
       }
+      menupopup#zenWorkspaceMoreActions > menuitem[data-l10n-id="zen-panel-ui-workspaces-create"] {
+      /*
       menuitem[data-l10n-id="zen-panel-ui-workspaces-create"] {
+      */
         --menu-image: url("plus.svg");
       }
       #context_zenDeleteWorkspace {
@@ -1649,7 +1652,10 @@ menupopup menupopup * {
       #context_zenReorderWorkspaces {
         --menu-image: url('chrome://browser/skin/zen-icons/sort.svg');
       }
+      menupopup#zenWorkspaceMoreActions > menuitem[data-l10n-id="zen-panel-ui-workspaces-create"] {
+      /*
       menuitem[data-l10n-id="zen-panel-ui-workspaces-create"] {
+      */
         --menu-image: url('chrome://browser/skin/zen-icons/plus.svg');
       }
       #context_zenDeleteWorkspace {
