@@ -2232,16 +2232,16 @@ menupopup#zenWorkspaceMoreActions menupopup {
 
   /* 校正含有 单选/多选 菜单项的文本左边距（变量控制数值） */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > menupopup:not(#zenCreateNewPopup,#new-tab-button-popup)
     > menuitem[type="checkbox"][checked="true"],
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > menupopup:not(#zenCreateNewPopup,#new-tab-button-popup)
     > menuitem[type="radio"][checked="true"],
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > menupopup:not(#zenCreateNewPopup,#new-tab-button-popup)
     > menu[type="checkbox"][checked="true"],
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > menupopup:not(#zenCreateNewPopup,#new-tab-button-popup)
     > menu[type="radio"][checked="true"] {
     padding-inline-start: var(--checked-padding) !important;
   }
@@ -2256,7 +2256,10 @@ menupopup#zenWorkspaceMoreActions menupopup {
     menupopup#contentAreaContextMenu:has(> menuitem:not([hidden])[checked="true"]),
     /* 当拼写检查勾选 */
     menupopup#contentAreaContextMenu:has(> menuitem#spell-check-enabled:is([checked="true"])),
-    menupopup#unified-extensions-context-menu:has(> menuitem:not([hidden])[checked="true"])
+    /* 扩展菜单 */
+    menupopup#unified-extensions-context-menu:has(> menuitem:not([hidden])[checked="true"]),
+    /* 当下载菜单有项目勾选 */
+    menupopup#downloadsContextMenu:has(> menuitem:not([hidden])[checked="true"])
   ) {
     /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
     > :is(menuitem, menu):not(
