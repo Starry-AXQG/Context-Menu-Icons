@@ -2305,15 +2305,16 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   box-sizing: border-box !important;
 }
 
-/* 回退版本（如果菜单层级有嵌套或不是直接子项，使用后代选择器）*/
-menupopup:has(menuitem[type="checkbox"]:not([hidden])[checked="true"])
-  menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
+/* 当某个直接子项 checkbox 被勾选且未隐藏时，给同一层级的其它直接子项 checkbox（未隐藏、未被勾选、且不是父菜单）增加 padding */
+menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
+  > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
   > .menu-text,
-menupopup:has(menuitem[type="checkbox"]:not([hidden])[checked="true"])
-  menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
+menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
+  > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
   > .menu-highlightable-text {
   padding-inline-start: 28px !important;
   box-sizing: border-box !important;
+}ox-sizing: border-box !important;
 }
 
 
