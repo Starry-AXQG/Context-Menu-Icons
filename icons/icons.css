@@ -14,11 +14,12 @@
   /* 让 SVG 能够使用 currentColor */
   -moz-context-properties: fill, fill-opacity !important;
   fill: currentColor !important;
-
-
+/*
   padding-inline-start: unset !important;
   padding-left: unset !important;
+*/
 }
+
 
 /* ========== 隐藏内建占位节点，防止"√"占位显示 ==========（Only fix for v1.9.4b)  */
 :is(menuitem[type="checkbox"], menuitem[type="radio"]) > .menu-icon,
@@ -2238,16 +2239,16 @@ menupopup#zenWorkspaceMoreActions menupopup {
 
   /* 校正含有 单选/多选 菜单项的文本左边距（变量控制数值） */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#zenCreateNewPopup,#new-tab-button-popup)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
     > menuitem[type="checkbox"][checked="true"],
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#zenCreateNewPopup,#new-tab-button-popup)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
     > menuitem[type="radio"][checked="true"],
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#zenCreateNewPopup,#new-tab-button-popup)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
     > menu[type="checkbox"][checked="true"],
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#zenCreateNewPopup,#new-tab-button-popup)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
     > menu[type="radio"][checked="true"] {
     padding-inline-start: var(--checked-padding) !important;
   }
