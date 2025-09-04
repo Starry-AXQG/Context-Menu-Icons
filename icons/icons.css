@@ -2287,27 +2287,35 @@ menupopup#zenWorkspaceMoreActions menupopup {
     }
   }
 
-  /* 如果 context-media-loop 被勾选，则给 context-video-pictureinpicture 的文本增加左内边距 */
-  menupopup:has(> menuitem#context-media-loop[type="checkbox"][checked="true"])
-    > menuitem#context-video-pictureinpicture
-    > .menu-text,
-  menupopup:has(> menuitem#context-media-loop[type="checkbox"][checked="true"])
-    > menuitem#context-video-pictureinpicture
-    > .menu-highlightable-text {
-    padding-inline-start: 28px !important; /* 增加 28px 占位 */
-    box-sizing: border-box !important;     /* 确保 padding 不破坏宽度计算 */
-  }
 
-  /* 反过来：如果 context-video-pictureinpicture 被勾选，则给 context-media-loop 加 padding */
-  menupopup:has(> menuitem#context-video-pictureinpicture[type="checkbox"][checked="true"])
-    > menuitem#context-media-loop
-    > .menu-text,
-  menupopup:has(> menuitem#context-video-pictureinpicture[type="checkbox"][checked="true"])
-    > menuitem#context-media-loop
-    > .menu-highlightable-text {
-    padding-inline-start: 28px !important;
-    box-sizing: border-box !important;
-  }
+/* =========================================================
+   全局：同一 menupopup 中若存在任一未隐藏且已勾选的 checkbox，
+   则对同一 menupopup 中其它未隐藏的 checkbox 菜单项应用 padding(fix for v1.9.4)
+   /* 可选：可以在上面的 menuitem 选择器里加上 :not(.menuitem-iconic) 进行排除“图标样式”的 menuitem（例如 .menuitem-iconic）。也许后面可能需要这个排除（？） */
+   ========================================================= */
+
+/* 严格版本（适用于两者为同一 menupopup 的直接子项）*/
+menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
+  > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
+  > .menu-text,
+menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
+  > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
+  > .menu-highlightable-text {
+  padding-inline-start: 28px !important;
+  box-sizing: border-box !important;
+}
+
+/* 回退版本（如果菜单层级有嵌套或不是直接子项，使用后代选择器）*/
+menupopup:has(menuitem[type="checkbox"]:not([hidden])[checked="true"])
+  menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
+  > .menu-text,
+menupopup:has(menuitem[type="checkbox"]:not([hidden])[checked="true"])
+  menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
+  > .menu-highlightable-text {
+  padding-inline-start: 28px !important;
+  box-sizing: border-box !important;
+}
+
 
   /* 子菜单文本对齐（Only fix for v1.9.4b) —— padding 值由变量控制 */
   menupopup:has(
