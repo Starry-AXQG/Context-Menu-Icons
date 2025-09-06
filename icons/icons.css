@@ -2340,7 +2340,6 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
       padding-inline-start: var(--submenu-padding) !important;
     }
   }
-}
 
 
 /*Main Menu*/
