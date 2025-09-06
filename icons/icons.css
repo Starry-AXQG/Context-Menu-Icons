@@ -645,7 +645,10 @@ menupopup menupopup * {
       }
       
       #context-ask-chat {
-        --menu-image: url("ask-chat.svg");
+        --menu-image: url("AI-chat.svg");
+      }
+      #context-previewlink {
+        --menu-image: url("AI-summarize.svg");
       }
       
       #context-viewsource {
