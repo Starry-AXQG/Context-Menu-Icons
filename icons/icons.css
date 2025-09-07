@@ -1215,10 +1215,10 @@ menupopup menupopup * {
         --menu-image: url("new-folder.svg");
       }
       #context_zenFolderUnpack {
-        --menu-image: url("close-all.svg");
+        --menu-image: url("unpack-folder.svg");
       }
       #context_zenChangeFolderSpace {
-        --menu-image: url("plus.svg");
+        --menu-image: url("move-tab.svg");
       }
       #context_zenFolderToSpace {
         --menu-image: url("TabGroup-remove.svg");
@@ -1683,7 +1683,7 @@ menupopup menupopup * {
         --menu-image: url('chrome://browser/skin/zen-icons/close-all.svg');
       }
       #context_zenChangeFolderSpace {
-        --menu-image: url('chrome://browser/skin/zen-icons/plus.svg');
+        --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
       }
       #context_zenFolderToSpace {
         --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
