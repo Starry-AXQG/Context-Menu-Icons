@@ -2343,7 +2343,7 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
       padding-inline-start: var(--submenu-padding) !important;
     }
   }
-
+}
 
 /*Main Menu*/
 .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined) > .toolbarbutton-text,
