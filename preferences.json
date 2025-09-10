@@ -33,6 +33,28 @@
     },
 
     {
+        "type": "dropdown",
+        "value": "number",
+        "property": "cmi-Switch-PC-platform",
+        "label": "📚 Choose the platform you are on. (If this mod is not functioning properly, you can try changing this option.)",
+        "default": 1,
+        "placeholder": false,
+        "options": [
+
+            {
+                "label": "Windows、MacOS",
+                "value": 1
+            },
+            
+            {
+                "label": "Linux",
+                "value": 2
+            }
+
+        ]
+    },
+
+    {
         "type": "separator",
         "label": "Menu Style",
         "margin": "25px 0 8px 0"
