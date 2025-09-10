@@ -2321,7 +2321,8 @@ menupopup#zenWorkspaceMoreActions menupopup {
       ),
     /* 分组标题 */
     > menucaption {
-      padding-inline-start: calc(var(--group-padding) + 4px) !important;
+      @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) { padding-inline-start: calc(var(--group-padding) + 4px) !important; }
+      @media (-moz-pref("cmi-Switch-Icon-Package", 2)) { padding-inline-start: calc(var(--group-padding) - 4px) !important; }
     }
   }
 }
@@ -2363,7 +2364,10 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden]))
 menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
   > .menu-highlightable-text {
-  padding-inline-start: 24px !important;
+
+  @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) { padding-inline-start: 24px !important; }
+  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) { padding-inline-start: 28px !important; }
+
   box-sizing: border-box !important;
 }
 
@@ -2374,7 +2378,10 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden]))
 menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
   > .menu-highlightable-text {
-  padding-inline-start: 24px !important;
+
+  @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) { padding-inline-start: 24px !important; }
+  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) { padding-inline-start: 28px !important; }
+  
   box-sizing: border-box !important;
 }
 }
