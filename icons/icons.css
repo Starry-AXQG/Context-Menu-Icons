@@ -2343,7 +2343,6 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   box-sizing: border-box !important;
 }
 
-
 /* 当某个直接子项 checkbox 被勾选且未隐藏时，给同一层级的其它直接子项 checkbox（未隐藏、未被勾选、且不是父菜单）增加 padding */
 menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
@@ -2355,6 +2354,7 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   box-sizing: border-box !important;
 }
 }
+
 @media (-moz-platform: linux) {
 /* 严格版本（适用于两者为同一 menupopup 的直接子项）*/
 menupopup:has(> menuitem[type="checkbox"]:not([hidden]))
@@ -2366,7 +2366,6 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   padding-inline-start: 24px !important;
   box-sizing: border-box !important;
 }
-
 
 /* 当某个直接子项 checkbox 被勾选且未隐藏时，给同一层级的其它直接子项 checkbox（未隐藏、未被勾选、且不是父菜单）增加 padding */
 menupopup:has(> menuitem[type="checkbox"]:not([hidden]))
