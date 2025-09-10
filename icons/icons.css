@@ -2330,7 +2330,7 @@ menupopup#zenWorkspaceMoreActions menupopup {
 /* =========================================================
    全局：同一 menupopup 中若存在任一未隐藏且已勾选的 checkbox，
    则对同一 menupopup 中其它未隐藏的 checkbox 菜单项应用 padding(fix for v1.9.4)
-   /* 可选：可以在上面的 menuitem 选择器里加上 :not(.menuitem-iconic) 进行排除“图标样式”的 menuitem（例如 .menuitem-iconic）。也许后面可能需要这个排除（？） */
+   可选：可以在上面的 menuitem 选择器里加上 :not(.menuitem-iconic) 进行排除“图标样式”的 menuitem（例如 .menuitem-iconic）。也许后面可能需要这个排除（？） 
    ========================================================= */
 @media (-moz-pref("cmi-Switch-PC-Platform", 1)) {
 /* 严格版本（适用于两者为同一 menupopup 的直接子项）*/
