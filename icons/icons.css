@@ -2255,7 +2255,7 @@ menupopup#zenWorkspaceMoreActions menupopup {
     > menu[type="radio"][checked="true"] {
     padding-inline-start: var(--checked-padding) !important;
   }
-@media (not(-moz-platform: linux)) {
+@media not all and (-moz-platform: linux) {
   /* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
   :is(
     /* 书签栏 */
@@ -2332,7 +2332,7 @@ menupopup#zenWorkspaceMoreActions menupopup {
    则对同一 menupopup 中其它未隐藏的 checkbox 菜单项应用 padding(fix for v1.9.4)
    /* 可选：可以在上面的 menuitem 选择器里加上 :not(.menuitem-iconic) 进行排除“图标样式”的 menuitem（例如 .menuitem-iconic）。也许后面可能需要这个排除（？） */
    ========================================================= */
-@media (not(-moz-platform: linux)) {
+@media not all and (-moz-platform: linux) {
 /* 严格版本（适用于两者为同一 menupopup 的直接子项）*/
 menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
@@ -2381,7 +2381,7 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
 
   @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) { padding-inline-start: 24px !important; }
   @media (-moz-pref("cmi-Switch-Icon-Package", 2)) { padding-inline-start: 28px !important; }
-  
+
   box-sizing: border-box !important;
 }
 }
