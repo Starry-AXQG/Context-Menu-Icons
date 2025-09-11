@@ -2152,7 +2152,7 @@ menupopup#zenWorkspaceMoreActions menupopup {
 
     --checkmark-width: 16px;
     --checkmark-height: 16px;
-    --checkmark-margin-end: 6px;
+    --checkmark-margin-end: 11px;
     --checkmark-margin-start: 5px;
     --checkmark-bg-image: none;
     /* 使用 mask + background-color 随主题变色 */
