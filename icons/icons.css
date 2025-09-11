@@ -2155,9 +2155,11 @@ menupopup#zenWorkspaceMoreActions menupopup {
     --checkmark-width: 16px;
     --checkmark-height: 16px;
     --checkmark-margin-start: calc(10px + 1px);    
-    --checkmark-margin-start_cover: 5px;    
+    --checkmark-margin-start_cover: 5px;  
     --checkmark-margin-end: 7px;
-    --checkmark-margin-end_cover: 11px;
+    @media (not (-moz-pref("cmi-Switch-PC-Platform", 2))) {--checkmark-margin-end_cover: 11px;}
+    @media (-moz-pref("cmi-Switch-PC-Platform", 2)) {--checkmark-margin-end_cover: 8px;}
+    
     --checkmark-bg-image: none;
     /* 使用 mask + background-color 随主题变色 */
     --checkmark-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M20.285 6.709l-11.39 11.39-5.18-5.18 1.414-1.414 3.766 3.766 9.976-9.976z'/></svg>") no-repeat center/contain;
@@ -2244,7 +2246,7 @@ menupopup#zenWorkspaceMoreActions menupopup {
     background-color: var(--checkmark-bg-color, transparent);
   }
 
-
+@media (not (-moz-pref("cmi-Switch-PC-Platform", 2))) {
   /* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
   :is(
     /* 书签栏 */
@@ -2292,14 +2294,53 @@ menupopup#zenWorkspaceMoreActions menupopup {
       padding-inline-start: var(--group-padding) !important;
     }
   }
+}
+/* Linux */
+@media (-moz-pref("cmi-Switch-PC-Platform", 2)) {
+  /* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
+  :is(
+    /* 书签栏 */
+    menupopup#placesContext:has(> menuitem:not([hidden])[type="checkbox"]),
+    /* 工具栏 */
+    menupopup#toolbar-context-menu:has(> menuitem:not([hidden])[type="checkbox"]),
+    /* 当循环或PIP勾选时 */
+    menupopup#contentAreaContextMenu:has(> menuitem:not([hidden])[type="checkbox"]),
+    /* 当拼写检查勾选 */
+    menupopup#contentAreaContextMenu:has(> menuitem#spell-check-enabled:is([checked="true"])),
+    /* 扩展菜单 */
+    menupopup#unified-extensions-context-menu:has(> menuitem:not([hidden])[type="checkbox"]),
+    /* 当下载菜单有项目勾选 */
+    menupopup#downloadsContextMenu:has(> menuitem:not([hidden])[type="checkbox"])
+  ) {
+    --checkmark-margin-start: var(--checkmark-margin-start_cover);
+    --checkmark-margin-end: var(--checkmark-margin-end_cover);
+    /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
+    > :is(menuitem, menu):not(
+        .menuitem-iconic,
+        .menu-iconic,
 
+        [type="checkbox"][checked="true"],
+        [type="radio"][checked="true"],
+
+        .in-menulist,
+        .in-menulist menuitem,
+        .in-menulist menu,
+        .unified-nav-current
+      ),
+    /* 分组标题 */
+    > menucaption {
+      @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) { padding-inline-start: calc(var(--group-padding) + 4px) !important; }
+      @media (-moz-pref("cmi-Switch-Icon-Package", 2)) { padding-inline-start: calc(var(--group-padding) - 4px) !important; }
+    }
+  }
+}
 
 /* =========================================================
    全局：同一 menupopup 中若存在任一未隐藏且已勾选的 checkbox，
    则对同一 menupopup 中其它未隐藏的 checkbox 菜单项应用 padding(fix for v1.9.4)
-   /* 可选：可以在上面的 menuitem 选择器里加上 :not(.menuitem-iconic) 进行排除“图标样式”的 menuitem（例如 .menuitem-iconic）。也许后面可能需要这个排除（？） */
+   可选：可以在上面的 menuitem 选择器里加上 :not(.menuitem-iconic) 进行排除“图标样式”的 menuitem（例如 .menuitem-iconic）。也许后面可能需要这个排除（？）
    ========================================================= */
-
+@media (not (-moz-pref("cmi-Switch-PC-Platform", 2))) {
 /* 严格版本（适用于两者为同一 menupopup 的直接子项）*/
 menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
@@ -2311,7 +2352,6 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   box-sizing: border-box !important;
 }
 
-
 /* 当某个直接子项 checkbox 被勾选且未隐藏时，给同一层级的其它直接子项 checkbox（未隐藏、未被勾选、且不是父菜单）增加 padding */
 menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
@@ -2321,6 +2361,38 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > .menu-highlightable-text {
   padding-inline-start: 28px !important;
   box-sizing: border-box !important;
+}
+}
+
+/* Linux */
+@media (-moz-pref("cmi-Switch-PC-Platform", 2)) {
+/* 严格版本（适用于两者为同一 menupopup 的直接子项）*/
+menupopup:has(> menuitem[type="checkbox"]:not([hidden]))
+  > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
+  > .menu-text,
+menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
+  > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
+  > .menu-highlightable-text {
+
+  @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) { padding-inline-start: 24px !important; }
+  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) { padding-inline-start: 28px !important; }
+
+  box-sizing: border-box !important;
+}
+
+/* 当某个直接子项 checkbox 被勾选且未隐藏时，给同一层级的其它直接子项 checkbox（未隐藏、未被勾选、且不是父菜单）增加 padding */
+menupopup:has(> menuitem[type="checkbox"]:not([hidden]))
+  > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
+  > .menu-text,
+menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
+  > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
+  > .menu-highlightable-text {
+
+  @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) { padding-inline-start: 24px !important; }
+  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) { padding-inline-start: 28px !important; }
+
+  box-sizing: border-box !important;
+}
 }
 
 
