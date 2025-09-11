@@ -2155,9 +2155,11 @@ menupopup#zenWorkspaceMoreActions menupopup {
     --checkmark-width: 16px;
     --checkmark-height: 16px;
     --checkmark-margin-start: calc(10px + 1px);    
-    --checkmark-margin-start_cover: 5px;    
+    --checkmark-margin-start_cover: 5px;  
     --checkmark-margin-end: 7px;
-    --checkmark-margin-end_cover: 11px;
+    @media (not (-moz-pref("cmi-Switch-PC-Platform", 2))) {--checkmark-margin-end_cover: 11px;}
+    @media (-moz-pref("cmi-Switch-PC-Platform", 2)) {--checkmark-margin-end_cover: 8px;}
+    
     --checkmark-bg-image: none;
     /* 使用 mask + background-color 随主题变色 */
     --checkmark-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M20.285 6.709l-11.39 11.39-5.18-5.18 1.414-1.414 3.766 3.766 9.976-9.976z'/></svg>") no-repeat center/contain;
