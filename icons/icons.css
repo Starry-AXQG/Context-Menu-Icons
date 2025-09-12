@@ -1691,11 +1691,11 @@ menupopup menupopup * {
       #context_zenFolderDelete {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-delete.svg');
       }   
-      /*
+
       #zen-toolbar-context-tabs-right {
-        --menu-image: url("chrome://browser/skin/zen-icons/move-tab.svg");
+        --menu-image: url('chrome://browser/skin/import.svg');
       }  
-        */ 
+
   }
 }  
   
