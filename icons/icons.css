@@ -1600,9 +1600,7 @@ menupopup menupopup * {
       }
       menuitem[id='placesContext_new:bookmark'],
       menuitem[id='placesContext_new:folder'],
-      menuitem[id='placesContext_new:separator'],
-      #zen-context-menu-new-folder,
-      #zen-context-menu-new-folder-toolbar {
+      menuitem[id='placesContext_new:separator'] {
         --menu-image: url('chrome://browser/skin/zen-icons/plus.svg');
       }
       #context-savelinktopocket,
@@ -1654,7 +1652,7 @@ menupopup menupopup * {
         --menu-image: url('chrome://browser/skin/zen-icons/tab.svg');
       }
       #context_zenReorderWorkspaces {
-        --menu-image: url('chrome://browser/skin/zen-icons/sort.svg');
+        --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
       }
       menupopup#zenWorkspaceMoreActions > menuitem[data-l10n-id="zen-panel-ui-workspaces-create"] {
       /*
@@ -1676,8 +1674,10 @@ menupopup menupopup * {
       #context_zenFolderUnloadAll {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-select-all.svg');
       }
+      #zen-context-menu-new-folder,
+      #zen-context-menu-new-folder-toolbar,      
       #context_zenFolderNewSubfolder {
-        --menu-image: url('chrome://browser/skin/zen-icons/plus.svg');
+        --menu-image: url('chrome://browser/skin/zen-icons/folder.svg');
       }
       #context_zenFolderUnpack {
         --menu-image: url('chrome://browser/skin/zen-icons/close-all.svg');
