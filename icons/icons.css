@@ -2171,7 +2171,7 @@ menupopup#zenWorkspaceMoreActions menupopup {
     /* group / 子菜单 padding */
     --group-padding: calc(var(--fp-contextmenu-menuicon-margin-inline) - 8px);
     --checked-padding: 0px;
-    --submenu-padding: 28px;
+    --submenu-padding: 34px;
   }
 }
 
