@@ -790,7 +790,8 @@ menupopup menupopup * {
         --menu-image: url("downloads.svg");
       }
       
-      #spell-add-to-dictionary {
+      #spell-add-to-dictionary,
+      #spell-add-dictionaries {
         --menu-image: url("add-to-dictionary.svg");
       }
       
@@ -1502,7 +1503,8 @@ menupopup menupopup * {
       #context-savelink {
         --menu-image: url('chrome://browser/skin/zen-icons/downloads.svg');
       }
-      #spell-add-to-dictionary {
+      #spell-add-to-dictionary,
+      spell-add-dictionaries {
         --menu-image: url('chrome://browser/skin/zen-icons/add-to-dictionary.svg');
       }
       #manage-saved-logins {
@@ -2398,7 +2400,7 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
 
 
 /* 子菜单文本对齐（Only fix for v1.9.4b) —— padding 值由变量控制 */
-menupopup:has(
+menupopup:not(#spell-dictionaries-menu):has(
     menuitem:not([hidden])[type="checkbox"][checked="true"],
     menuitem:not([hidden])[type="radio"][checked="true"]
   ) {
