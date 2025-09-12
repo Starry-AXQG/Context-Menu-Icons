@@ -143,17 +143,23 @@ Starting from version 1.7, this preference is enabled by default without any con
 
 4.`cmi-Align-Extension-Icons`
 
-[icons style] Align the icons of the extension with those of CMI(Default: Off. Turning this on will make the context menu more orderly.)(1.4 add)
+[Text Style] Align the icons of the extension with those of CMI(Default: Off. Turning this on will make the context menu more orderly.) (1.4 add)
 
 5.`cmi-Align-Extension-Texts`
 
-[text style] Align the text of the extension with those of CMI(Default: Off. Turning this on will make the context menu more orderly.)(v1.4 add)
+[Text Style] Align the text of the extension with those of CMI(Default: Off. Turning this on will make the context menu more orderly.) (v1.4 add)
 
 
 6. `cmi-Center-Bookmark-Items`
 
-[bookmarks]Centered Bookmark Toolbar Items(v1.3.0 add)
+[ Bookmark Toolbar Style ]Centered Bookmark Toolbar Items(v1.3.0 add)
 
 7. `cmi-Hide-Folder-Icon`
 
-[bookmarks]Hide the redundant icons in the bookmark toolbar (Recommended to enable, which can make the bookmark bar more concise)(v1.3.0 add)
+[ Bookmark Toolbar Style ] Hidden Bookmark Folder Icon 📁 ( Enable to make bookmark toolbar more concise )(v1.3.0 add)
+
+8. `cmi-Switch-PC-Platform`
+📚 Choose the platform you are on. 
+Only when you are using this mod on a Linux system, or when this mod is malfunctioning, can you try to modify this preference setting. (v1.9.5 add)
+Windows、MacOS: `1`
+Linux: `2`

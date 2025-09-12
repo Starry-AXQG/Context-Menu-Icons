@@ -73,7 +73,7 @@
 
         "type": "checkbox",
         "property": "cmi-Hide-Inactive-Items-TabContextMenu",
-        "label": "✂️ Hide the inactive items in tab-Context-Menu (BETA)",
+        "label": "✂️ Hide the inactive items in tab-Context-Menu (Enabling this option will make your menu more concise.)",
         "defaultValue": false
 
     },
@@ -125,7 +125,7 @@
 
         "type": "checkbox",
         "property": "cmi-Center-Bookmark-Items",
-        "label": "[Bookmark Tool] Center Bookmark Toolbar Items",
+        "label": "[ Bookmark Toolbar Style ] Center Bookmark Toolbar Items",
         "defaultValue": false
 
     },
@@ -134,7 +134,7 @@
 
         "type": "checkbox",
         "property": "cmi-Hide-Folder-Icon",
-        "label": "[Bookmark Tool] Hidden 📁 Folder Icon ( Enable to make bookmark tool more concise )",
+        "label": "[ Bookmark Toolbar Style ] Hidden Bookmark Folder Icon 📁 ( Enable to make bookmark toolbar more concise )",
         "defaultValue": false
 
     },
