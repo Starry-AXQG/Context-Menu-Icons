@@ -2073,7 +2073,7 @@ menuseparator {
 }
 
 @media (-moz-pref("cmi-Hide-Folder-Icon")){
-  toolbarbutton.bookmark-item > .toolbarbutton-icon {
+  #PlacesToolbarItems > toolbarbutton.bookmark-item > .toolbarbutton-icon {
     display: none !important;
   }
 }
