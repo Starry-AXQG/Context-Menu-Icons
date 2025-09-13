@@ -644,7 +644,8 @@ menupopup menupopup * {
         --menu-image: url("screenshot.svg");
       }
       
-      #context-ask-chat {
+      #context-ask-chat,
+      #context_askChat {
         --menu-image: url("AI-chat.svg");
       }
       #context-previewlink {
