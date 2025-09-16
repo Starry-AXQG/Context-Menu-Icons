@@ -1655,7 +1655,10 @@ menupopup menupopup * {
       .wordmark::after {
         content: 'Plus' !important;
       }
-
+      
+      #placesContext_sortBy\:name {
+        --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
+      }
       /* zen Workspace */
       #context_zenEditWorkspace {
         --menu-image: url('chrome://browser/skin/zen-icons/edit.svg');
