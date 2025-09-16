@@ -617,7 +617,18 @@ menupopup menupopup * {
       #placesContext_open {
         --menu-image: url("ext-link.svg");
       }      
-
+      #placesContext_openContainer\:tabs,
+      .openintabs-menuitem {
+        --menu-image: url("tab.svg");
+      }
+      
+      #placesContext_showInFolder {
+        --menu-image: url("folder-open.svg");
+      }
+      #placesContext_removeTag {
+        --menu-image: url("edit-delete.svg");
+      }
+ 
       #placesContext_sortBy\:name {
           --menu-image: url("sort.svg");
       }
@@ -864,7 +875,8 @@ menupopup menupopup * {
       #toggle_PersonalToolbar,
       #context-bookmarklink,
       #toolbar-context-bookmarkSelectedTab,
-      #toolbar-context-bookmarkSelectedTabs {
+      #toolbar-context-bookmarkSelectedTabs,
+      #placesContext_createBookmark {
         --menu-image: url("bookmark-hollow.svg");
       }
       
@@ -2104,6 +2116,14 @@ menuseparator {
     display: none !important;
   }
 }
+
+@media (-moz-pref("cmi-Hide-OAiT-Item")){
+  .openintabs-menuitem,
+  menuseparator.bookmarks-actions-menuseparator {
+    display: none;
+  }
+}
+
 
 
 /* Shift the text to the right to make room for the custom icon.*/
