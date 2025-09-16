@@ -171,13 +171,6 @@
       "default": "34px",
       "placeholder": "default: 34px"
     },
-    {
-      "type": "string",
-      "property": "cmi-Padding-Non-Checkmark-subitems",
-      "label": "[Global]Non-Checkmark-subitems padding",
-      "default": "28px",
-      "placeholder": "default: 28px"
-    },
 
 {
     "type": "separator",
@@ -249,6 +242,13 @@
       "default": "8px",
       "placeholder": "default: 8px"
     },
+    {
+      "type": "string",
+      "property": "cmi-Padding-Non-Checkmark-subitems_1",
+      "label": "Non-Checkmark-subitems padding",
+      "default": "28px",
+      "placeholder": "default: 28px"
+    },
 
 {
     "type": "separator",
@@ -319,6 +319,13 @@
       "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values..",
       "default": "8px",
       "placeholder": "default: 8px"
+    },
+    {
+      "type": "string",
+      "property": "cmi-Padding-Non-Checkmark-subitems_2",
+      "label": "Non-Checkmark-subitems padding",
+      "default": "24px",
+      "placeholder": "default: 24px"
     },
 
     {
