@@ -103,7 +103,7 @@
         "label": "📐 Align extension icons in menu ( Enable to make the context menu more orderly. )",
         "defaultValue": false
 
-    },  
+    },
 
     {
 
@@ -222,6 +222,21 @@
       "placeholder": "default: 38px"
     },
 
+    {
+      "type": "string",
+      "property": "cmi-Margin-Extensions-start_1",
+      "label": "If this function does not properly align the icons on your device, please try to modify it.",
+      "default": "4px",
+      "placeholder": "default: 4px"
+    },
+    {
+      "type": "string",
+      "property": "cmi-Margin-Extensions-end_1",
+      "label": "If this function does not properly align the icons on your device, please try to modify it.",
+      "default": "8px",
+      "placeholder": "default: 8px"
+    },
+
 {
     "type": "separator",
     "label": "ZenUl",
@@ -253,15 +268,16 @@
       "type": "string",
       "property": "cmi-Margin-Checkmark-end_cover_2",
       "label": "--cmi-Margin-Checkmark-end_cover",
-      "default": "11px",
-      "placeholder": "default on win:11px ; default on linux:8px"
+      "default": "8px",
+      "placeholder": "default:8px"
     },
+
     {
       "type": "string",
       "property": "cmi-Padding-Group_2",
       "label": "--cmi-Padding-Group",
-      "default": "4px",
-      "placeholder": "default: 4px"
+      "default": "6px",
+      "placeholder": "default: 6px"
     },
     {
       "type": "string",
@@ -276,6 +292,20 @@
       "label": "--cmi-Padding-Submenu_cover",
       "default": "38px",
       "placeholder": "default: 38px"
+    },
+    {
+      "type": "string",
+      "property": "cmi-Margin-Extensions-start_2",
+      "label": "If this function does not properly align the icons on your device, please try to modify it.",
+      "default": "-1px",
+      "placeholder": "default: -1px"
+    },
+    {
+      "type": "string",
+      "property": "cmi-Margin-Extensions-end_2",
+      "label": "If this function does not properly align the icons on your device, please try to modify it.",
+      "default": "8px",
+      "placeholder": "default: 8px"
     },
 
     {

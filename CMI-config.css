@@ -13,7 +13,7 @@ However, some of the options are common to both sets of icon packages.
 FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边距数值。但部分选项是两套图标包通用的
 --------------------------- Guide end --------------------------- */
 
-/* -- Part of global -- */
+/* -- Part 1: Global -- */
 /* 1. 校正身份容器的菜单文本 (右键“新建标签页”）*/
 /* 1. Menu text for correcting the container (When you right-click "new tab") */
 :root {
@@ -23,12 +23,7 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
 }
 
 
-/* -- Part of FluentUI -- */
-:root {
-    --checkmark-margin-start: var(--cmi-Custom-Margin-Checkmark-start, 11px) !important;
-}
-
-/* ---------------------------
+/* -- Part 2: FluentUI and ZenUI --
   分别为 FluentUI 和 ZenUI 设置边距规则
   Set margin rules for FluentUI and ZenUI respectively
    ---------------------------*/
@@ -60,6 +55,13 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --group-padding: var(--cmi-Padding-Group_1, 10px);
     --submenu-padding: var(--cmi-Padding-Submenu_1, 34px);
     --submenu-padding_cover: var(--cmi-Padding-Submenu_cover_1, 38px);
+
+/* CMI Preferences: Align the icons of the extensions with those of CMI */
+    /* 图标左边距（图标与左侧边框之间） */
+    --zen-cmenu-icon-margin-inline-start: var(--cmi-Margin-Extensions-start_1, 4px);
+    /* 图标右边距（图标与文字之间） */
+    --zen-cmenu-icon-margin-inline-end: var(--cmi-Margin-Extensions-end_1, 8px);
+
   }
 }
 
@@ -75,8 +77,8 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --checkmark-margin-start_cover: var(--cmi-Margin-Checkmark-start_cover_2, 5px);
 
     --checkmark-margin-end: var(--cmi-Margin-Checkmark-end_2, 7px);
-    @media (not (-moz-pref("cmi-Switch-PC-Platform", 2))) {--checkmark-margin-end_cover: var(--cmi-Margin-Checkmark-end_cover_2, 11px);}
-    @media (-moz-pref("cmi-Switch-PC-Platform", 2)) {--checkmark-margin-end_cover: var(--cmi-Margin-Checkmark-end_cover_2, 8px);}
+
+    --checkmark-margin-end_cover: var(--cmi-Margin-Checkmark-end_cover_2, 8px);
     
     --checkmark-bg-image: none;
     /* 使用 mask + background-color 随主题变色 */
@@ -90,5 +92,11 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
 
     --submenu-padding: var(--cmi-Padding-Submenu_2, 34px);
     --submenu-padding_cover: var(--cmi-Padding-Submenu_cover_2, 38px);
+
+    /* CMI Preferences: Align the icons of the extensions with those of CMI */
+    /* 图标左边距（图标与左侧边框之间） */
+    --zen-cmenu-icon-margin-inline-start: var(--cmi-Margin-Extensions-start_2, -1px);
+    /* 图标右边距（图标与文字之间） */
+    --zen-cmenu-icon-margin-inline-end: var(--cmi-Margin-Extensions-end_2, 8px);
   }
 }

@@ -2051,16 +2051,9 @@ menuseparator {
   @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
   @media (
     -moz-pref("cmi-Align-Extension-Icons")
-  ),
-  (
-    -moz-pref("cmi-Switch-Icon-Package", 2)
   ) {
   /* ==== 2. 自定义变量（方便后续统一调整） ==== */
   :root {
-    /* 图标左边距（图标与左侧边框之间） */
-    --zen-cmenu-icon-margin-inline-start: 4px !important;
-    /* 图标右边距（图标与文字之间） */
-    --zen-cmenu-icon-margin-inline-end: 8px !important;
     /* 图标上下边距（图标与上下菜单项之间） */
     --zen-cmenu-icon-margin-block: 2px !important;
     /* 图标固定尺寸（保证所有图标同高同宽） */
