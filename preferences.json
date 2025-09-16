@@ -268,16 +268,16 @@
       "type": "string",
       "property": "cmi-Margin-Checkmark-end_cover_2",
       "label": "--cmi-Margin-Checkmark-end_cover",
-      "default": "8px",
-      "placeholder": "default:8px"
+      "default": "6px",
+      "placeholder": "default:6px"
     },
 
     {
       "type": "string",
       "property": "cmi-Padding-Group_2",
       "label": "--cmi-Padding-Group",
-      "default": "6px",
-      "placeholder": "default: 6px"
+      "default": "4px",
+      "placeholder": "default: 4px"
     },
     {
       "type": "string",
