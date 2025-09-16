@@ -153,7 +153,7 @@
 },
 {
   "type": "text",
-  "label": "⚠️ When you have removed the mod that causes interference with CMI, but the CMI still shows abnormalities, you can try modifying the following content to correct the margin error of the context menu.",
+  "label": "⚠️ When you have removed the mod that causes interference with CMI, but the CMI still shows abnormalities, you can try modifying the following content to correct the margin error of the context menu. The default values have been tested only for Zen on Windows and Linux platforms.",
   "margin": "15px 0 30px 0",
   "size": "15px"
 },
