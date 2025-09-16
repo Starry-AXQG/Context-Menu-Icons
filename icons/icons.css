@@ -1175,7 +1175,7 @@ menupopup menupopup * {
       }
       #zen-context-menu-new-folder,
       #zen-context-menu-new-folder-toolbar {
-        --menu-image: url("new-folder.svg");        
+        --menu-image: url("folder-add.svg");        
       }
     
     /* zen Workspace */
@@ -1215,19 +1215,32 @@ menupopup menupopup * {
         --menu-image: url("edit-select-all.svg");
       }
       #context_zenFolderNewSubfolder {
-        --menu-image: url("new-folder.svg");
+        --menu-image: url("folder-add.svg");
       }
       #context_zenFolderUnpack {
-        --menu-image: url("unpack-folder.svg");
+        --menu-image: url("folder-unpack.svg");
       }
       #context_zenChangeFolderSpace {
         --menu-image: url("move-tab.svg");
       }
       #context_zenFolderToSpace {
-        --menu-image: url("TabGroup-remove.svg");
+        --menu-image: url("folder_sync_convert.svg");
       }
       #context_zenFolderDelete {
         --menu-image: url("edit-delete.svg");
+      }
+    /* zen Group */
+      .change-group-color {
+        --menu-image: url("color.svg");
+      }
+      .rename-group {
+        --menu-image: url("edit.svg");
+      }
+      .ungroup-tabs {
+        --menu-image: url("folder-unpack.svg");
+      }
+      .convert-group-to-folder {
+        --menu-image: url("folder_sync_convert.svg");
       }
 
   }
@@ -1643,6 +1656,9 @@ menupopup menupopup * {
         content: 'Plus' !important;
       }
 
+      #placesContext_sortBy\:name {
+        --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
+      }
       /* zen Workspace */
       #context_zenEditWorkspace {
         --menu-image: url('chrome://browser/skin/zen-icons/edit.svg');
@@ -1700,7 +1716,19 @@ menupopup menupopup * {
       #zen-toolbar-context-tabs-right {
         --menu-image: url('chrome://browser/skin/import.svg');
       }  
-
+    /* zen Group */
+      .change-group-color {
+        --menu-image: url('chrome://browser/skin/zen-icons/canvas.svg');
+      }
+      .rename-group {
+        --menu-image: url('chrome://browser/skin/zen-icons/edit.svg');
+      }
+      .ungroup-tabs {
+        --menu-image: url('chrome://browser/skin/zen-icons/close-all.svg');
+      }
+      .convert-group-to-folder {
+        --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
+      }
   }
 }  
   
@@ -2026,16 +2054,9 @@ menuseparator {
   @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
   @media (
     -moz-pref("cmi-Align-Extension-Icons")
-  ),
-  (
-    -moz-pref("cmi-Switch-Icon-Package", 2)
   ) {
   /* ==== 2. 自定义变量（方便后续统一调整） ==== */
   :root {
-    /* 图标左边距（图标与左侧边框之间） */
-    --zen-cmenu-icon-margin-inline-start: 4px !important;
-    /* 图标右边距（图标与文字之间） */
-    --zen-cmenu-icon-margin-inline-end: 8px !important;
     /* 图标上下边距（图标与上下菜单项之间） */
     --zen-cmenu-icon-margin-block: 2px !important;
     /* 图标固定尺寸（保证所有图标同高同宽） */
@@ -2117,77 +2138,10 @@ menupopup#zenWorkspaceMoreActions menupopup {
   ),
 /* 分组标题 */
 > menucaption {
-  padding-inline-start: 34px !important;
+  padding-inline-start: var(--container-padding) !important;
 }
 }
 
-/* ---------------------------
-  分别为 FluentUI 和 ZenUI 设置边距规则
-  Set margin rules for FluentUI and ZenUI respectively
-   ---------------------------*/
-
-/* FluentUI: cmi-Switch-Icon-Package != 0 && != 2 */
-@media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
-  and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
-  :root {
-    /* 用于菜单内边距计算的差值（16px / 8px） */
-    --menuitem-padding-extra: 16px;
-
-    /* checkmark */
-    --checkmark-width: 16px;
-    --checkmark-height: 16px;
-
-    --checkmark-margin-start: 11px;
-    --checkmark-margin-start_cover: 11px;   
-
-    --checkmark-margin-end: 7px;
-    --checkmark-margin-end_cover: 11px;
-
-    --checkmark-bg-image: url("checkmark.svg");
-    --checkmark-mask: none;
-    --checkmark-bg-color: transparent;
-    --checkmark-moz-context: fill, fill-opacity;
-    --checkmark-fill: currentColor;
-
-    /* 对含选中项时的 group / 子菜单 padding 差别 */
-    --group-padding: 10px;
-    --checked-padding: 6px;
-    --submenu-padding: 34px;
-
-    --submenu-padding_cover: 38px;
-  }
-}
-
-/* ZenUI: cmi-Switch-Icon-Package == 2 */
-@media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
-  :root {
-    --menuitem-padding-extra: 8px;
-
-    --checkmark-width: 16px;
-    --checkmark-height: 16px;
-    
-    --checkmark-margin-start: calc(10px + 1px);    
-    --checkmark-margin-start_cover: 5px;  
-
-    --checkmark-margin-end: 7px;
-    @media (not (-moz-pref("cmi-Switch-PC-Platform", 2))) {--checkmark-margin-end_cover: 11px;}
-    @media (-moz-pref("cmi-Switch-PC-Platform", 2)) {--checkmark-margin-end_cover: 8px;}
-    
-    --checkmark-bg-image: none;
-    /* 使用 mask + background-color 随主题变色 */
-    --checkmark-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M20.285 6.709l-11.39 11.39-5.18-5.18 1.414-1.414 3.766 3.766 9.976-9.976z'/></svg>") no-repeat center/contain;
-    --checkmark-bg-color: currentColor;
-    --checkmark-moz-context: none;
-    --checkmark-fill: none;
-
-    /* group / 子菜单 padding */
-    --group-padding: calc(var(--fp-contextmenu-menuicon-margin-inline) - 8px);
-    --checked-padding: 0px;
-
-    --submenu-padding: 34px;
-    --submenu-padding_cover: 38px;
-  }
-}
 
 /* ---------------------------
    通用规则：在两种 media 条件下都使用这些选择器，
@@ -2367,7 +2321,7 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
 menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
   > .menu-highlightable-text {
-  padding-inline-start: 28px !important;
+  padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
   box-sizing: border-box !important;
 }
 
@@ -2378,7 +2332,7 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
 menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
   > .menu-highlightable-text {
-  padding-inline-start: 28px !important;
+  padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
   box-sizing: border-box !important;
 }
 }
@@ -2393,8 +2347,8 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
   > .menu-highlightable-text {
 
-  @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) { padding-inline-start: 24px !important; }
-  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) { padding-inline-start: 28px !important; }
+  @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) { padding-inline-start: calc(var(--Non-checkmark-subitems-padding) - 4px) !important; }
+  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) { padding-inline-start: var(--Non-checkmark-subitems-padding) !important; }
 
   box-sizing: border-box !important;
 }
@@ -2407,8 +2361,8 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
   > .menu-highlightable-text {
 
-  @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) { padding-inline-start: 24px !important; }
-  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) { padding-inline-start: 28px !important; }
+  @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) { padding-inline-start: calc(var(--Non-checkmark-subitems-padding) - 4px) !important; }
+  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) { padding-inline-start: var(--Non-checkmark-subitems-padding) !important; }
 
   box-sizing: border-box !important;
 }
