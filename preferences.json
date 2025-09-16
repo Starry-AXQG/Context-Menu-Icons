@@ -151,6 +151,12 @@
   "margin": "15px 0 30px 0",
   "size": "20px"
 },
+{
+  "type": "text",
+  "label": "⚠️ When you have removed the mod that causes interference with CMI, but the CMI still shows abnormalities, you can try modifying the following content to correct the margin error of the context menu.",
+  "margin": "15px 0 30px 0",
+  "size": "15px"
+},
 
 {
     "type": "separator",
@@ -164,6 +170,13 @@
       "label": "[Global]The left margin of the text in the custom container menu",
       "default": "34px",
       "placeholder": "default: 34px"
+    },
+    {
+      "type": "string",
+      "property": "cmi-Padding-Non-Checkmark-subitems",
+      "label": "[Global]Non-Checkmark-subitems padding",
+      "default": "28px",
+      "placeholder": "default: 28px"
     },
 
 {
@@ -290,8 +303,8 @@
       "type": "string",
       "property": "cmi-Padding-Submenu_cover_2",
       "label": "--cmi-Padding-Submenu_cover",
-      "default": "38px",
-      "placeholder": "default: 38px"
+      "default": "27px",
+      "placeholder": "default: 27px"
     },
     {
       "type": "string",

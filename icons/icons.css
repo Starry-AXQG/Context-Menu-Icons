@@ -1655,7 +1655,7 @@ menupopup menupopup * {
       .wordmark::after {
         content: 'Plus' !important;
       }
-      
+
       #placesContext_sortBy\:name {
         --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
       }
@@ -2321,7 +2321,7 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
 menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
   > .menu-highlightable-text {
-  padding-inline-start: 28px !important;
+  padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
   box-sizing: border-box !important;
 }
 
@@ -2332,7 +2332,7 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
 menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
   > .menu-highlightable-text {
-  padding-inline-start: 28px !important;
+  padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
   box-sizing: border-box !important;
 }
 }
@@ -2347,8 +2347,8 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
   > .menu-highlightable-text {
 
-  @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) { padding-inline-start: 24px !important; }
-  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) { padding-inline-start: 28px !important; }
+  @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) { padding-inline-start: calc(var(--Non-checkmark-subitems-padding) - 4px) !important; }
+  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) { padding-inline-start: var(--Non-checkmark-subitems-padding) !important; }
 
   box-sizing: border-box !important;
 }
@@ -2361,8 +2361,8 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
   > .menu-highlightable-text {
 
-  @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) { padding-inline-start: 24px !important; }
-  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) { padding-inline-start: 28px !important; }
+  @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) { padding-inline-start: calc(var(--Non-checkmark-subitems-padding) - 4px) !important; }
+  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) { padding-inline-start: var(--Non-checkmark-subitems-padding) !important; }
 
   box-sizing: border-box !important;
 }

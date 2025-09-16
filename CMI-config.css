@@ -18,8 +18,8 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
 /* 1. Menu text for correcting the container (When you right-click "new tab") */
 :root {
   /* 🌟 If you are using Firefox, changing it to 36px might be more appropriate. */
-  --container-padding: var(--cmi-Custom-Padding-Container, 34px);
-                            
+  --container-padding: var(--cmi-Padding-Container, 34px);
+  --Non-checkmark-subitems-padding: var(--cmi-Padding-Non-Checkmark-subitems, 28px);                   
 }
 
 
@@ -91,7 +91,7 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --group-padding: var(--cmi-Padding-Group_2, 4px);
 
     --submenu-padding: var(--cmi-Padding-Submenu_2, 34px);
-    --submenu-padding_cover: var(--cmi-Padding-Submenu_cover_2, 38px);
+    --submenu-padding_cover: var(--cmi-Padding-Submenu_cover_2, 27px);
 
     /* CMI Preferences: Align the icons of the extensions with those of CMI */
     /* 图标左边距（图标与左侧边框之间） */
