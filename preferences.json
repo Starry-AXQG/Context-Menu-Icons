@@ -225,14 +225,14 @@
     {
       "type": "string",
       "property": "cmi-Margin-Extensions-start_1",
-      "label": "If this function does not properly align the icons on your device, please try to modify it.",
+      "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values..",
       "default": "4px",
       "placeholder": "default: 4px"
     },
     {
       "type": "string",
       "property": "cmi-Margin-Extensions-end_1",
-      "label": "If this function does not properly align the icons on your device, please try to modify it.",
+      "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values.",
       "default": "8px",
       "placeholder": "default: 8px"
     },
@@ -296,14 +296,14 @@
     {
       "type": "string",
       "property": "cmi-Margin-Extensions-start_2",
-      "label": "If this function does not properly align the icons on your device, please try to modify it.",
+      "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values..",
       "default": "-1px",
       "placeholder": "default: -1px"
     },
     {
       "type": "string",
       "property": "cmi-Margin-Extensions-end_2",
-      "label": "If this function does not properly align the icons on your device, please try to modify it.",
+      "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values..",
       "default": "8px",
       "placeholder": "default: 8px"
     },
