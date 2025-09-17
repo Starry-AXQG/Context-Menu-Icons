@@ -269,8 +269,8 @@
       "type": "string",
       "property": "cmi-Margin-Checkmark-start_2",
       "label": "--cmi-Margin-Checkmark-start",
-      "default": "11px",
-      "placeholder": "default: 11px"
+      "default": "6px",
+      "placeholder": "default: 6px"
     },
     {
       "type": "string",

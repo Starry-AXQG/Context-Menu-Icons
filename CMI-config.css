@@ -74,7 +74,7 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --checkmark-width: 16px;
     --checkmark-height: 16px;
     
-    --checkmark-margin-start: var(--cmi-Margin-Checkmark-start_2, 11px);   
+    --checkmark-margin-start: var(--cmi-Margin-Checkmark-start_2, 6px);   
     --checkmark-margin-start_cover: var(--cmi-Margin-Checkmark-start_cover_2, 5px);
 
     --checkmark-margin-end: var(--cmi-Margin-Checkmark-end_2, 7px);
