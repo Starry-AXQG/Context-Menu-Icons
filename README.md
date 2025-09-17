@@ -176,25 +176,29 @@ Linux: `2`
 ## CMI-config file (Only for CMI v2.0 and above)
 ** This content will show you the normal working state of CMI and provide a simple guide to inform you of the differences between the self-repair process and the demonstration images. The default configuration file only ensures that the Zen browser can achieve perfect alignment effect on Windows and Linux platforms.**
 
-1. <img width="350" height="700" alt="image" src="https://github.com/user-attachments/assets/cf581b19-694a-4901-84d3-c6ef93d356b8" />
+1. ---
+<img width="350" height="700" alt="image" src="https://github.com/user-attachments/assets/cf581b19-694a-4901-84d3-c6ef93d356b8" />
 
 Is it different from what you tab menu style? Please enable `cmi-Align-Extension-Icons` and modify the following values.
 
 <img width="2388" height="88" alt="image" src="https://github.com/user-attachments/assets/cd0b1584-bfff-48ec-a3d8-225213608040" />
 
-2.<img width="671" height="170" alt="image" src="https://github.com/user-attachments/assets/78021c8f-3220-49af-a48d-4ec6f21b6fc1" />
+2. ---
+<img width="671" height="170" alt="image" src="https://github.com/user-attachments/assets/78021c8f-3220-49af-a48d-4ec6f21b6fc1" />
 
 Is it different from what you Forward / Backward menu style? Please enable `cmi-Align-Extension-Icons` and modify the following values.
 
 <img width="2388" height="215" alt="image" src="https://github.com/user-attachments/assets/15be89a0-dead-4b0e-95ae-d4bb8b57d8cb" />
 
-3. <img width="497" height="613" alt="image" src="https://github.com/user-attachments/assets/b11c9d60-523a-4f87-8364-b7b93db97531" />
+3. ---
+<img width="497" height="613" alt="image" src="https://github.com/user-attachments/assets/b11c9d60-523a-4f87-8364-b7b93db97531" />
 
 Is it different from what you bookmark menu style? Please:
 
 <img width="2407" height="358" alt="image" src="https://github.com/user-attachments/assets/8c0c8dce-020f-450d-8603-b59411355245" />
 
-4.<img width="472" height="410" alt="image" src="https://github.com/user-attachments/assets/a4adb931-97fd-424d-92b4-cdf040cca4a7" />
+4. ---
+<img width="472" height="410" alt="image" src="https://github.com/user-attachments/assets/a4adb931-97fd-424d-92b4-cdf040cca4a7" />
 
 Are these sub-menus properly aligned? If not, just modify this.
 
