@@ -118,7 +118,9 @@ If all of the above are confirmed to be correct, after restarting the browser, y
 
    If you want to use ZenUI：2
     
-![图片](https://github.com/user-attachments/assets/d26a2174-8862-46b5-94fe-56c2f7d30aa9)
+<img width="226" height="613" alt="image" src="https://github.com/user-attachments/assets/dbea869e-9dda-4605-a7de-b88b6d40f50b" />
+
+
 
 
 2. `cmi-Disable-Better-Context-Menu`
