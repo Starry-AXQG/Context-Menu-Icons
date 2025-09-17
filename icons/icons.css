@@ -2109,16 +2109,27 @@ menuseparator {
     }
 }
 
-
+/*  Preference of Bookmark Toolbar Style */
 @media (-moz-pref("cmi-Center-Bookmark-Items")){
   #PlacesToolbarItems {
     justify-content: center !important; 
   }
 }
-
-@media (-moz-pref("cmi-Hide-Folder-Icon")){
-  #PlacesToolbarItems > toolbarbutton.bookmark-item > .toolbarbutton-icon,
-  #OtherBookmarks > .toolbarbutton-icon {
+/* Hide Folder Icons */
+@media (-moz-pref("cmi-Hide-Folder-Icons")){
+  .bookmark-item[container="true"] .toolbarbutton-icon {
+    display: none;
+  }
+}
+/* Hide Favcons */
+@media (-moz-pref("cmi-Hide-Bookmark-Element", 1)) or (-moz-pref("cmi-Hide-Bookmark-Element", 3)) {
+  .bookmark-item:not([container]) .toolbarbutton-icon {
+    display: none;
+  }
+}
+/* Hide Bookmark Names */
+@media (-moz-pref("cmi-Hide-Bookmark-Element", 2)) or (-moz-pref("cmi-Hide-Bookmark-Element", 3)) {
+  #personal-bookmarks .bookmark-item:not([container]) .toolbarbutton-text {
     display: none !important;
   }
 }

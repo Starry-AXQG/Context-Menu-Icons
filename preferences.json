@@ -73,7 +73,7 @@
 
         "type": "checkbox",
         "property": "cmi-Hide-Inactive-Items-TabContextMenu",
-        "label": "✂️ Hide the inactive items in tab-Context-Menu (Enabling this option will make your menu more concise.)",
+        "label": "✂️ Hide the inactive items in tab-Context-Menu (Enabling to make menu more concise)",
         "defaultValue": false
 
     },
@@ -100,7 +100,7 @@
 
         "type": "checkbox",
         "property": "cmi-Align-Extension-Icons",
-        "label": "📐 Align extension icons in menu ( Enable to make the context menu more orderly. )",
+        "label": "📐 Align extension icons in menu (Enable to make menu more orderly)",
         "defaultValue": false
 
     },
@@ -109,7 +109,7 @@
 
         "type": "checkbox",
         "property": "cmi-Align-Extension-Texts",
-        "label": "📐 Align extension texts in menu ( Enable to make the context menu more orderly. ⚠️ This function has been temporarily delete.)",
+        "label": "📐 Align extension texts in menu (Enable to make menu more orderly. Not available at present)",
         "defaultValue": false
 
     },   
@@ -125,7 +125,7 @@
 
         "type": "checkbox",
         "property": "cmi-Center-Bookmark-Items",
-        "label": "[ Bookmark Toolbar Style ] Center Bookmark Toolbar Items",
+        "label": "[⭐ Bookmark Toolbar Style ] Center bookmark toolbar items",
         "defaultValue": false
 
     },
@@ -133,17 +133,46 @@
     {
 
         "type": "checkbox",
-        "property": "cmi-Hide-Folder-Icon",
-        "label": "[ Bookmark Toolbar Style ] Hidden Bookmark Folder Icon 📁 ( Enable to make bookmark toolbar more concise )",
+        "property": "cmi-Hide-Folder-Icons",
+        "label": "[⭐ Bookmark Toolbar Style ] Hidden bookmark folder icons 📁 ( Enable to make bookmark toolbar more concise )",
         "defaultValue": false
 
     },
 
     {
+        "type": "dropdown",
+        "value": "number",
+        "property": "cmi-Hide-Bookmark-Element",
+        "label": "[⭐ Bookmark Toolbar Style ] Hide the other elements of the bookmark toolbar",
+        "default": 0,
+        "placeholder": false,
+        "options": [
+
+            {
+                "label": "No change",
+                "value": 0
+            },  
+            {
+                "label": "Hide Favcons",
+                "value": 1
+            },           
+            {
+                "label": "Hide Bookmark Names",
+                "value": 2
+            },
+            {
+                "label": "Hide All (not suggest)",
+                "value": 3
+            }
+
+        ]
+    },
+
+    {
 
         "type": "checkbox",
-        "property": "cmi-Hide-OAiT-Item",
-        "label": "[ Bookmark Toolbar Style ] Hidden Bookmark 'Open All in Tabs' menu item( It is recommended to enable this preference to improve the bookmark page. This menu item is rarely used and is not available in most browsers. You can safely enable it. )",
+        "property": "cmi-Hide-OAiT-Items",
+        "label": "[ Bookmark Toolbar Style ] Hidden Bookmark 'Open All in Tabs' menu item (Enable to improve the bookmark page. This menu item is rarely used and is not available in most browsers. You can safely enable it. )",
         "defaultValue": false
 
     },
