@@ -580,6 +580,8 @@ menupopup menupopup * {
       #context_unloadTab {
         --menu-image: url("unloadTab.svg");
       }
+      
+      #viewColumns,
       #toggle_toolbar-menubar {
         --menu-image: url("menu-bar.svg");
       }
@@ -617,8 +619,7 @@ menupopup menupopup * {
       #placesContext_open {
         --menu-image: url("ext-link.svg");
       }      
-      #placesContext_openContainer\:tabs,
-      .openintabs-menuitem {
+      #placesContext_openContainer\:tabs {
         --menu-image: url("tab.svg");
       }
       
@@ -628,7 +629,8 @@ menupopup menupopup * {
       #placesContext_removeTag {
         --menu-image: url("edit-delete.svg");
       }
- 
+      
+      #viewSort,
       #placesContext_sortBy\:name {
           --menu-image: url("sort.svg");
       }
@@ -906,7 +908,10 @@ menupopup menupopup * {
       
       menuitem[id="placesContext_new:bookmark"],
       menuitem[id="placesContext_new:folder"],
-      menuitem[id="placesContext_new:separator"] {
+      menuitem[id="placesContext_new:separator"],
+      #newbookmark,
+      #newfolder,
+      #newseparator {
         --menu-image: url("plus.svg");
       }
       
@@ -928,7 +933,8 @@ menupopup menupopup * {
       }
       
       #context_closeTab,
-      #context_closeDuplicateTabs {
+      #context_closeDuplicateTabs,
+      #orgClose {
         --menu-image: url("close.svg");
       }
       #context_closeTabOptions {
@@ -2180,22 +2186,26 @@ menupopup#zenWorkspaceMoreActions menupopup {
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
     > menuitem:not(
-        .menuitem-iconic,
-        [type="checkbox"][checked="true"],
-        [type="radio"][checked="true"],
-        .in-menulist,
-        .in-menulist menuitem,
-        .unified-nav-current
+      .openintabs-menuitem,
+
+      .menuitem-iconic,
+      [type="checkbox"][checked="true"],
+      [type="radio"][checked="true"],
+      .in-menulist,
+      .in-menulist menuitem,
+      .unified-nav-current
       ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
     > menu:not(
-        .menu-iconic,
-        [type="checkbox"][checked="true"],
-        [type="radio"][checked="true"],
-        .in-menulist,
-        .in-menulist menu,
-        .unified-nav-current
+      .openintabs-menuitem,
+
+      .menu-iconic,
+      [type="checkbox"][checked="true"],
+      [type="radio"][checked="true"],
+      .in-menulist,
+      .in-menulist menu,
+      .unified-nav-current
       ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
@@ -2390,7 +2400,7 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
 
 
 /* 子菜单文本对齐（Only fix for v1.9.4b) —— padding 值由变量控制 */
-menupopup:not(#spell-dictionaries-menu):has(
+menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
     menuitem:not([hidden])[type="checkbox"][checked="true"],
     menuitem:not([hidden])[type="radio"][checked="true"]
   ) {
