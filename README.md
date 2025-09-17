@@ -112,7 +112,8 @@ If all of the above are confirmed to be correct, after restarting the browser, y
     If you want to use FluentUI：1
 
    
-![图片](https://github.com/user-attachments/assets/b28b9cd5-6fad-421e-81bd-0b73a7bba6df)
+<img width="240" height="613" alt="image" src="https://github.com/user-attachments/assets/7efa6b0a-8d4d-4791-a0c4-028b1fe20715" />
+
 
 
    If you want to use ZenUI：2
