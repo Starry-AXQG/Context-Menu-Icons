@@ -239,6 +239,22 @@
 
     {
       "type": "string",
+      "property": "cmi-Padding-Non-Checkmark-subitems_1",
+      "label": "Non-Checkmark-subitems padding",
+      "default": "28px",
+      "placeholder": "default: 28px"
+    },
+
+    {
+      "type": "string",
+      "property": "cmi-Padding-Special-Submenu_1",
+      "label": "special subitems padding",
+      "default": "11px",
+      "placeholder": "default: 11px"
+    },
+
+    {
+      "type": "string",
       "property": "cmi-Margin-Extensions-start_1",
       "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values..",
       "default": "4px",
@@ -251,13 +267,7 @@
       "default": "8px",
       "placeholder": "default: 8px"
     },
-    {
-      "type": "string",
-      "property": "cmi-Padding-Non-Checkmark-subitems_1",
-      "label": "Non-Checkmark-subitems padding",
-      "default": "28px",
-      "placeholder": "default: 28px"
-    },
+
 
 {
     "type": "separator",
@@ -317,6 +327,21 @@
     },
     {
       "type": "string",
+      "property": "cmi-Padding-Non-Checkmark-subitems_2",
+      "label": "Non-Checkmark-subitems padding",
+      "default": "24px",
+      "placeholder": "default: 24px"
+    },
+
+    {
+      "type": "string",
+      "property": "cmi-Padding-Special-Submenu_2",
+      "label": "special subitems padding",
+      "default": "5px",
+      "placeholder": "default: 5px"
+    },
+    {
+      "type": "string",
       "property": "cmi-Margin-Extensions-start_2",
       "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values..",
       "default": "-1px",
@@ -328,13 +353,6 @@
       "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values..",
       "default": "8px",
       "placeholder": "default: 8px"
-    },
-    {
-      "type": "string",
-      "property": "cmi-Padding-Non-Checkmark-subitems_2",
-      "label": "Non-Checkmark-subitems padding",
-      "default": "24px",
-      "placeholder": "default: 24px"
     },
 
     {
