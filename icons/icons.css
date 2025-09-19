@@ -1261,6 +1261,14 @@ menupopup menupopup * {
         --menu-image: url("folder_sync_convert.svg");
       }
 
+
+    /* zen Mods */
+    #quicktabs-context-menuitem {
+      --menu-image: url("ext-link.svg");
+    }
+    #cmi-show-more-menu {
+      --menu-image: url("menu-bar.svg");
+    }
   }
 
   /*ZenUI*/
