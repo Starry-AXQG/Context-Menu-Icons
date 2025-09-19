@@ -1263,7 +1263,8 @@ menupopup menupopup * {
 
 
     /* zen Mods */
-    #quicktabs-context-menuitem {
+    #quicktabs-context-menuitem,
+    #quicktabs-tab-context-menuitem {
       --menu-image: url("ext-link.svg");
     }
     #cmi-show-more-menu {
