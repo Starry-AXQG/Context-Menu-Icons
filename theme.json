@@ -2,14 +2,14 @@
     "id": "context-menu-icons-for-zen",
     "name": "Context Menu Icons",
     "description": "Bring the icon of the context menu back to Zen/Firefox browser ",
-    "homepage": "https://github.com/Starry-AXQG/context-menu-icons-for-Zen",
+    "homepage": "https://github.com/Starry-AXQG/context-menu-icons-for-Zen/tree/Try-to-introduce-JS",
     "image": "https://raw.githubusercontent.com/Starry-AXQG/context-menu-icons-for-Zen/refs/heads/main/.asset/Demo%20Image.jpg",
     "style": {
         "chrome": "https://raw.githubusercontent.com/Starry-AXQG/context-menu-icons-for-Zen/refs/heads/main/userChrome.css"
     },
     "readme": "https://raw.githubusercontent.com/Starry-AXQG/context-menu-icons-for-Zen/refs/heads/main/README.md",
     "author": "Starry-AXQG",
-    "version": "2.0.2",
+    "version": "2.1b",
     "tags": [
         "Context Menu",
         "Icons",
