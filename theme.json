@@ -1,5 +1,6 @@
 {
     "id": "context-menu-icons-for-zen",
+    "js": true,
     "name": "Context Menu Icons",
     "description": "Bring the icon of the context menu back to Zen/Firefox browser ",
     "homepage": "https://github.com/Starry-AXQG/context-menu-icons-for-Zen",
