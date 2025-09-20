@@ -1,52 +1,5 @@
 @media (-moz-pref("svg.context-properties.content.enabled")) {
-/* ========== 全局：此规则用来去除原生“√”图标，方便给特殊菜单插入自定义图标,并更容易完成上下文菜单的文本对齐（v1.9.4 new change) */
-/* This rule is used to remove the native "√" icon, making it convenient to insert custom icons for special menus and facilitating the text alignment of context menus.（v1.9.4) */
-:is(menuitem[type="checkbox"], menuitem[type="radio"]):not([checked="true"]) {
-  /* 背景图转换已有的变量 --menu-image */
-  background-image: var(--menu-image) !important;
-  background-repeat: no-repeat !important;
-  
-  @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {background-position: var(--fp-contextmenu-menuitem-padding-inline, left 1em) center !important;}
-  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {background-position: 5px center !important;}
-  
-  background-size: var(--fp-contextmenu-menuitem-icon-size, 16px) !important;
 
-  /* 让 SVG 能够使用 currentColor */
-  -moz-context-properties: fill, fill-opacity !important;
-  fill: currentColor !important;
-/*
-  padding-inline-start: unset !important;
-  padding-left: unset !important;
-*/
-}
-
-
-/* ========== 隐藏内建占位节点，防止"√"占位显示 ==========（Only fix for v1.9.4b)  */
-:is(menuitem[type="checkbox"], menuitem[type="radio"]) > .menu-icon,
-:is(menuitem[type="checkbox"], menuitem[type="radio"]) > .menu-iconic-left,
-:is(menuitem[type="checkbox"], menuitem[type="radio"]) > .menu-iconic {
-  display: none !important;
-  width: 0 !important;
-  margin-inline-start: 0 !important;
-  padding: 0 !important;
-  opacity: 0 !important;
-}
-
-/* ========== 勾选时：移除背景图 ========== （Only fix for v1.9.4b) */
-:is(menuitem[type="checkbox"], menuitem[type="radio"])[checked="true"] {
-  background-image: none !important;
-  /* 保持不触碰间距 */
-  padding-inline-start: unset !important;
-  padding-left: unset !important;
-}
-
-/* —— 屏蔽对子菜单项的影响 —— */
-/* 任意子菜单里的 menuitem / menu 禁止继承图标（Only fix for v1.9.4b) */
-menupopup menupopup,
-menupopup menupopup * {
-  --menu-image: initial !important;
-  background-image: none !important;
-}
 
   /*FluentUI*/
   @media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
@@ -2198,6 +2151,56 @@ menupopup#zenWorkspaceMoreActions menupopup {
 @media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
   and (not (-moz-pref("cmi-Switch-Icon-Package", 2))),
   (-moz-pref("cmi-Switch-Icon-Package", 2)) {
+/* ========== 全局：此规则用来去除原生“√”图标，方便给特殊菜单插入自定义图标,并更容易完成上下文菜单的文本对齐（v1.9.4 new change) */
+/* This rule is used to remove the native "√" icon, making it convenient to insert custom icons for special menus and facilitating the text alignment of context menus.（v1.9.4) */
+:is(menuitem[type="checkbox"], menuitem[type="radio"]):not([checked="true"]) {
+  /* 背景图转换已有的变量 --menu-image */
+  background-image: var(--menu-image) !important;
+  background-repeat: no-repeat !important;
+  
+  @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {background-position: var(--fp-contextmenu-menuitem-padding-inline, left 1em) center !important;}
+  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {background-position: 5px center !important;}
+  
+  background-size: var(--fp-contextmenu-menuitem-icon-size, 16px) !important;
+
+  /* 让 SVG 能够使用 currentColor */
+  -moz-context-properties: fill, fill-opacity !important;
+  fill: currentColor !important;
+/*
+  padding-inline-start: unset !important;
+  padding-left: unset !important;
+*/
+}
+
+
+/* ========== 隐藏内建占位节点，防止"√"占位显示 ==========（Only fix for v1.9.4b)  */
+:is(menuitem[type="checkbox"], menuitem[type="radio"]) > .menu-icon,
+:is(menuitem[type="checkbox"], menuitem[type="radio"]) > .menu-iconic-left,
+:is(menuitem[type="checkbox"], menuitem[type="radio"]) > .menu-iconic {
+  display: none !important;
+  width: 0 !important;
+  margin-inline-start: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+}
+
+/* ========== 勾选时：移除背景图 ========== （Only fix for v1.9.4b) */
+:is(menuitem[type="checkbox"], menuitem[type="radio"])[checked="true"] {
+  background-image: none !important;
+  /* 保持不触碰间距 */
+  padding-inline-start: unset !important;
+  padding-left: unset !important;
+}
+
+/* —— 屏蔽对子菜单项的影响 —— */
+/* 任意子菜单里的 menuitem / menu 禁止继承图标（Only fix for v1.9.4b) */
+menupopup menupopup,
+menupopup menupopup * {
+  --menu-image: initial !important;
+  background-image: none !important;
+}
+
+
 
   /* 1. 只排除顶栏菜单和文字选取下拉
      2. 排除下载管理器菜单 / create-new / new-tab 弹出
