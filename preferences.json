@@ -72,6 +72,15 @@
     {
 
         "type": "checkbox",
+        "property": "cmi-fold_menu_item-enable",
+        "label": "✨ Enable CMI fold menu JS(see github for guide)",
+        "defaultValue": false
+
+    },
+
+    {
+
+        "type": "checkbox",
         "property": "cmi-Hide-Inactive-Items-TabContextMenu",
         "label": "✂️ Hide the inactive items in tab-Context-Menu (Enabling to make menu more concise)",
         "defaultValue": false
