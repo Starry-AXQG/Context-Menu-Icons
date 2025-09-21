@@ -12,6 +12,9 @@ FluentUI(left side）, ZenUI(right side)
 
 ![PixPin_2025-07-06_21-04-53](https://github.com/user-attachments/assets/c2da0b31-b811-4c32-a245-e888d00562c7)
 
+Demo for CMI-fold-menu-JS:
+
+https://github.com/user-attachments/assets/f8b4e420-0512-4b51-b923-53252b7c6f8a
 
 
 ✨ Some preview images of display effects, all the menus have been correctly mapped with icons
