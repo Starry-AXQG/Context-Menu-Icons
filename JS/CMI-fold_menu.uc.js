@@ -143,7 +143,7 @@
     'es': 'Mostrar más opciones',
     'de': 'Weitere Optionen',
     'fr': 'Afficher plus d’options',
-    'en': 'Show more options'
+    'en': 'Show More Options'
   };
 
   function loadMenuLabelFromCSS() {
