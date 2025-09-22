@@ -10,6 +10,8 @@
     fill: currentColor !important;
   }
   :not(:not(menubar) > menu, #ContentSelectDropdown)
+    > #cmi-show-more-menupopup > menuitem,
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup
     > menuitem:not(
       .menuitem-iconic,
@@ -20,7 +22,7 @@
       .unified-nav-current
     ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup
+    > #cmi-show-more-menupopup, menupopup
     > menu:not(
       .menu-iconic,
       [type="checkbox"],
@@ -31,7 +33,7 @@
     ),
   #toggle_toolbar-menubar,
   #PanelUI-history toolbarbutton,
-  #unified-extensions-context-menu menuitem {
+  #unified-extensions-context-menu {
     background-image: var(--menu-image) !important;
     background-size: 16px !important;
     background-position: var(--fp-contextmenu-menuitem-padding-inline) center !important;
@@ -39,8 +41,7 @@
     -moz-context-properties: fill, fill-opacity !important;
     fill: currentColor !important;
   }  
-
-
+  
       :root[fxastatus="not_configured"] #fxa-avatar-image {
         list-style-image: url("account.svg") !important;
       }
@@ -2222,7 +2223,7 @@ menupopup menupopup * {
      3. 排除：已勾选复选/单选、带图标、menulist 内的、unified-nav-current
   */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > #cmi-show-more-menupopup, menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
     > menuitem:not(
       .openintabs-menuitem,
 
@@ -2234,7 +2235,7 @@ menupopup menupopup * {
       .unified-nav-current
       ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > #cmi-show-more-menupopup, menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
     > menu:not(
       .openintabs-menuitem,
 
@@ -2246,7 +2247,7 @@ menupopup menupopup * {
       .unified-nav-current
       ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > #cmi-show-more-menupopup, menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
     > menucaption {
       padding-inline-start: calc(
         var(--fp-contextmenu-menuitem-padding-inline)
