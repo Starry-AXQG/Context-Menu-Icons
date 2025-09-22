@@ -79,6 +79,14 @@
     },
 
     {
+      "type": "string",
+      "property": "cmi-fold-item-IDs",
+      "label": "Add/Remove/Sort the folded menus(see github for guide)",
+      "default": "",
+      "placeholder": "Can use hotkeys to adding quikly id."
+    },
+
+    {
 
         "type": "checkbox",
         "property": "cmi-Hide-Inactive-Items-TabContextMenu",

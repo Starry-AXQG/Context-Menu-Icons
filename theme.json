@@ -2,7 +2,7 @@
     "id": "context-menu-icons",
     "js": true,
     "name": "Context Menu Icons",
-    "description": "Bring the icon of the context menu back to Zen/Firefox browser ",
+    "description": "Improve the context menu by adding icons, fold menu items and more.",
     "homepage": "https://github.com/Starry-AXQG/Context-Menu-Icons",
     "image": "https://raw.githubusercontent.com/Starry-AXQG/Context-Menu-Icons/refs/heads/main/.asset/Demo%20Image.jpg",
     "style": {

@@ -1598,7 +1598,10 @@
       }
       menuitem[id='placesContext_new:bookmark'],
       menuitem[id='placesContext_new:folder'],
-      menuitem[id='placesContext_new:separator'] {
+      menuitem[id='placesContext_new:separator'],
+      #newbookmark,
+      #newfolder,
+      #newseparator {
         --menu-image: url('chrome://browser/skin/zen-icons/plus.svg');
       }
       #context-savelinktopocket,
@@ -1618,7 +1621,8 @@
         --menu-image: url('chrome://browser/skin/zen-icons/container-tab.svg');
       }
       #context_closeTab,
-      #context_closeDuplicateTabs {
+      #context_closeDuplicateTabs,
+      #orgClose {
         --menu-image: url('chrome://browser/skin/zen-icons/close.svg');
       }
       #context_closeTabOptions {
@@ -1635,7 +1639,9 @@
       .wordmark::after {
         content: 'Plus' !important;
       }
-
+    #placesContext_open {
+      --menu-image: url('chrome://browser/skin/zen-icons/ext-link.svg');
+    }
       #placesContext_sortBy\:name {
         --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
       }
@@ -1709,6 +1715,15 @@
       .convert-group-to-folder {
         --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
       }
+    
+    /* zen Mods */
+    #quicktabs-context-menuitem,
+    #quicktabs-tab-context-menuitem {
+      --menu-image: url('chrome://browser/skin/zen-icons/ext-link.svg');
+    }
+    #cmi-show-more-menu {
+      --menu-image: url('chrome://browser/skin/zen-icons/menu.svg');
+    }    
   }
 }  
   
