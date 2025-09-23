@@ -1,6 +1,15 @@
 @media (-moz-pref("svg.context-properties.content.enabled")) {
 
-
+menuitem.sine-moved,
+menuitem[id$="-sine-clone"],
+menuitem[class*="sine"] {
+    background-image: var(--menu-image) !important;
+    background-size: 16px !important;
+    background-position: var(--fp-contextmenu-menuitem-padding-inline) center !important;
+    background-repeat: no-repeat !important;
+    -moz-context-properties: fill, fill-opacity !important;
+    fill: currentColor !important;
+}
   /*FluentUI*/
   @media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
     and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
@@ -2209,13 +2218,11 @@ menupopup#zenWorkspaceMoreActions menupopup {
 }
 
 /* —— 屏蔽对子菜单项的影响 —— */
-/* 任意子菜单里的 menuitem / menu 禁止继承图标（Only fix for v1.9.4b) */
-menupopup menupopup,
-menupopup menupopup * {
+/* —— 全局：禁止任意子菜单继承图标（适用于多层嵌套） —— */
+menupopup menupopup{
   --menu-image: initial !important;
   background-image: none !important;
 }
-
 
 
   /* 1. 只排除顶栏菜单和文字选取下拉
@@ -2223,7 +2230,7 @@ menupopup menupopup * {
      3. 排除：已勾选复选/单选、带图标、menulist 内的、unified-nav-current
   */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > #cmi-show-more-menupopup, menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
     > menuitem:not(
       .openintabs-menuitem,
 
@@ -2235,7 +2242,7 @@ menupopup menupopup * {
       .unified-nav-current
       ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > #cmi-show-more-menupopup, menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
     > menu:not(
       .openintabs-menuitem,
 
@@ -2247,7 +2254,7 @@ menupopup menupopup * {
       .unified-nav-current
       ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > #cmi-show-more-menupopup, menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup)
     > menucaption {
       padding-inline-start: calc(
         var(--fp-contextmenu-menuitem-padding-inline)
@@ -2255,6 +2262,33 @@ menupopup menupopup * {
         + var(--fp-contextmenu-menuicon-margin-inline)
       ) !important;
   }
+
+
+  #cmi-show-more-menupopup > menuitem:not(
+    .openintabs-menuitem,
+    .menuitem-iconic,
+    [type="checkbox"][checked="true"],
+    [type="radio"][checked="true"],
+    .in-menulist,
+    .in-menulist menuitem,
+    .unified-nav-current
+  ),
+  #cmi-show-more-menupopup > menu:not(
+    .openintabs-menuitem,
+    .menu-iconic,
+    [type="checkbox"][checked="true"],
+    [type="radio"][checked="true"],
+    .in-menulist,
+    .in-menulist menu,
+    .unified-nav-current
+  ),
+  #cmi-show-more-menupopup > menucaption {
+  padding-inline-start: calc(
+    var(--fp-contextmenu-menuitem-padding-inline)
+    + var(--menuitem-padding-extra)
+    + var(--fp-contextmenu-menuicon-margin-inline)
+  ) !important;
+}
 
   /* 设置自定义 checkmark 图标（使用变量：可在两种模式间切换实现方式） */
   menupopup > menuitem[type="checkbox"][checked="true"]::before,
