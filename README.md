@@ -16,6 +16,9 @@ Demo for CMI-fold-menu-JS:
 
 https://github.com/user-attachments/assets/f8b4e420-0512-4b51-b923-53252b7c6f8a
 
+# CMI-fold-menu-JS Guide:
+_The document will be updated soon. Please allow me to take a break for a while._
+_Now all you need to know is that when the Caps Lock key is on, by holding down the Ctrl + Shift + A shortcut keys, you can add or delete the menu items that you want to collapse. More details and additional features will be available soon._
 
 ✨ Some preview images of display effects, all the menus have been correctly mapped with icons
 
