@@ -1204,7 +1204,8 @@ menuitem[class*="sine"] {
       #context_zenChangeFolderSpace {
         --menu-image: url("move-tab.svg");
       }
-      #context_zenFolderToSpace {
+      #context_zenFolderToSpace,
+      #convert-folder-to-group {
         --menu-image: url("folder_sync_convert.svg");
       }
       #context_zenFolderDelete {
@@ -1702,7 +1703,8 @@ menuitem[class*="sine"] {
       #context_zenChangeFolderSpace {
         --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
       }
-      #context_zenFolderToSpace {
+      #context_zenFolderToSpace,
+      #convert-folder-to-group {
         --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
       }
       #context_zenFolderDelete {
