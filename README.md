@@ -16,10 +16,6 @@ Demo for CMI-fold-menu-JS:
 
 https://github.com/user-attachments/assets/f8b4e420-0512-4b51-b923-53252b7c6f8a
 
-# CMI-fold-menu-JS Guide:
-_The document will be updated soon. Please allow me to take a break for a while._
-_Now all you need to know is that when the Caps Lock key is on, by holding down the Ctrl + Shift + A shortcut keys, you can add or delete the menu items that you want to collapse. More details and additional features will be available soon._
-
 ✨ Some preview images of display effects, all the menus have been correctly mapped with icons
 
 # 🚀 Announcement:
@@ -32,6 +28,58 @@ Added appropriate icons to the context menus of zenFolderand zenWorkspace(Zen v1
 If you are using Firefox v140 or Zen v1.14, please use the CMI v1.5.Otherwise, please use v1.4.1
 
 Now, it also supports usage on Firefox.（since mod v1.2.1)
+
+---
+
+## CMI-fold-menu-JS Guide:
+
+###Overview
+In version 2.1, CMI introduced JavaScript code to help users simplify the lengthy context menus. Fold infrequently used context menu items from the page context menu (contentAreaContextMenu) into a single submenu labeled "Show More Options". The goal is to declutter the context menu while preserving full access to folded item
+
+###Key Features
+
+- 🗂️ Fold selected menuitems (by id) into a "Show more options" submenu.
+
+- 📄 Two configuration sources: a CSS variable (--cmi-fold-item-ids) for portable configs, or an about:config string preference (cmi-fold-item-IDs).
+
+- 🖱️ Toggle script enable/disable with pref cmi-fold_menu_item-enable.
+
+- ✏️ Customizable submenu label via CSS var or pref.
+
+- 🌟 Quick-toggle hotkey: while context menu is open and pointer is hovering an item, keep the `CapsLock` key on, and `Ctrl` + `Shift` + `A` to toggle that item's folded/unfolded state (it will be added to or removed from the fold list) 🚀 This hotkey enables you to easily add menu items to the configuration without the need for you to manually copy the IDs of the menu items.
+
+- ⌨️ Holding Shift while opening the context menu temporarily disables folding and hides the "Show more options" item to reveal the original full menu.
+
+-Attempts to preserve moved items' visual appearance (icons/styles) by snapshotting inline styles/attributes where possible.
+
+### Hotkey & Usage
+
+- Toggle hovered item: Keep the `CapsLock` key on, and `Ctrl` + `Shift` + `A` when context menu open and pointer is on a menu item.
+
+- Show full menu temporarily: hold `Shift` while opening context menu.
+
+- Submenu items: for items with submenus, press the hotkey quickly (before the submenu expands) for best results.
+
+  
+### Configuration (For Advanced Users)
+
+#### 1.CSS variable (portable)
+
+Add to CMI-config.css:
+
+`
+:root {
+  --cmi-fold-item-ids: "context-openlink, context-openlinkprivate, context-sendlinktodevice";
+  --cmi-fold-menu-label: "Show more options";
+}
+`
+
+#### 2.about:config (quick edit)
+
+Create a new string pref cmi-fold-item-IDs and set a comma or space separated list of ids, e.g.:
+`
+context-openlink, context-openlinkprivate, context-sendlinktodevice
+`
 
 ---
 
