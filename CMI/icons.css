@@ -1149,7 +1149,8 @@
       #zenToolbarThemePicker {
         --menu-image: url("customize.svg");
       }
-      #zen-context-menu-compact-mode {
+      #zen-context-menu-compact-mode,
+      #zen-context-menu-compact-mode-toggle {
         --menu-image: url("compact-mode.svg");
       }
 
@@ -1585,7 +1586,8 @@
       #context_duplicateTabs {
         --menu-image: url('chrome://browser/skin/zen-icons/duplicate-tab.svg');
       }
-      #zen-context-menu-compact-mode {
+      #zen-context-menu-compact-mode,
+      #zen-context-menu-compact-mode-toggle {
         --menu-image: url('chrome://browser/skin/zen-icons/sidebar.svg');
       }
       #context_bookmarkTab,
