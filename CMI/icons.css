@@ -174,7 +174,8 @@
       }
       
       .search-setting-button > .button-box > .button-icon,
-      .unified-extensions-item-open-menu.subviewbutton {
+      .unified-extensions-item-open-menu.subviewbutton,
+      #preferences-button {
         list-style-image: url("settings.svg") !important;
       }
       
@@ -1085,9 +1086,9 @@
       list-style-image: url("downloads.svg") !important;
       }
     
-      #preferences-button,
+      
       #appMenu-settings-button {
-        list-style-image: url("settings.svg") !important;
+        list-style-image: url("settings_l.svg") !important;
       }
     
     
