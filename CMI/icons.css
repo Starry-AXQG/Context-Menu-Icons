@@ -1,15 +1,6 @@
 @media (-moz-pref("svg.context-properties.content.enabled")) {
 
-menuitem.sine-moved,
-menuitem[id$="-sine-clone"],
-menuitem[class*="sine"] {
-    background-image: var(--menu-image) !important;
-    background-size: 16px !important;
-    background-position: var(--fp-contextmenu-menuitem-padding-inline) center !important;
-    background-repeat: no-repeat !important;
-    -moz-context-properties: fill, fill-opacity !important;
-    fill: currentColor !important;
-}
+
   /*FluentUI*/
   @media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
     and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
@@ -50,7 +41,18 @@ menuitem[class*="sine"] {
     -moz-context-properties: fill, fill-opacity !important;
     fill: currentColor !important;
   }  
-  
+  menuitem.sine-moved,
+  menuitem[id$="-sine-clone"],
+  menuitem[class*="sine"] {
+      background-image: var(--menu-image) !important;
+      background-size: 16px !important;
+      background-position: var(--fp-contextmenu-menuitem-padding-inline) center !important;
+      background-repeat: no-repeat !important;
+      -moz-context-properties: fill, fill-opacity !important;
+      fill: currentColor !important;
+  }  
+
+
       :root[fxastatus="not_configured"] #fxa-avatar-image {
         list-style-image: url("account.svg") !important;
       }
@@ -1239,11 +1241,6 @@ menuitem[class*="sine"] {
   /*ZenUI*/
   @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
     
-    /* Restore back context menu icons pre-1.12.9b */
-    /* I'm not guaranteeing there will be icons for future context menu options */
-    /* Help me contribute on this, hit me up on github.com/KiKaraage/ZenMods/issues */
-
-    /* PART 1: Setting inline padding and margin values */
     :root {
 
         --zen-contextmenu-menuitem-padding-inline: 5px !important;
@@ -1251,8 +1248,7 @@ menuitem[class*="sine"] {
         --zen-contextmenu-menuitem-margin: 0px 2px !important;
       }
 
-      
-      /* PART 3: Adding icons back to regular context menu options */
+      /* Adding icons back to regular context menu options */
       :not(:not(menubar) > menu, #ContentSelectDropdown)
       > menupopup
       > menuitem:not(
@@ -1270,8 +1266,18 @@ menuitem[class*="sine"] {
         -moz-context-properties: fill, fill-opacity !important;
         fill: currentColor !important;
       }
-      
-      /* PART 4: Adding icons back to context menu options that has arrow */
+      menuitem.sine-moved,
+      menuitem[id$="-sine-clone"],
+      menuitem[class*="sine"] {
+        background-image: var(--menu-image) !important;
+        background-size: 16px !important;
+        background-position: var(--zen-contextmenu-menuitem-padding-inline) center !important;
+        background-repeat: no-repeat !important;
+        -moz-context-properties: fill, fill-opacity !important;
+        fill: currentColor !important;
+      }  
+
+      /* Adding icons back to context menu options that has arrow */
       :not(:not(menubar) > menu, #ContentSelectDropdown)
       > menupopup > menu:not(
         .menu-iconic, [type='checkbox'], [type='radio'],
@@ -1289,7 +1295,7 @@ menuitem[class*="sine"] {
       }
       
 
-    /* PART 6: Specifying icons to apply for options in Unified Extensions Menu */
+    /* Specifying icons to apply for options in Unified Extensions Menu */
     @media not (-moz-platform: linux) {
 
         .unified-extensions-context-menu-pin-to-toolbar {
