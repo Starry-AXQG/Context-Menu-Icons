@@ -989,7 +989,8 @@
         list-style-image: url("plus_l.svg") !important;
       }
     
-      #appMenu-passwords-button {
+      #appMenu-passwords-button,
+      #password-notification-icon {
         list-style-image: url("passwords.svg") !important;
       }
     
