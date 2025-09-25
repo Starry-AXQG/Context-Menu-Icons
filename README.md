@@ -264,3 +264,16 @@ Is it different from what you bookmark menu style? Please:
 Are these sub-menus properly aligned? If not, just modify this.
 
 <img width="2412" height="57" alt="image" src="https://github.com/user-attachments/assets/d80786be-d2e6-4f62-83bd-244e0edf1391" />
+
+---
+
+
+## Star History
+
+<a href="https://www.star-history.com/#Starry-AXQG/Context-Menu-Icons&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Starry-AXQG/Context-Menu-Icons&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Starry-AXQG/Context-Menu-Icons&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Starry-AXQG/Context-Menu-Icons&type=Date" />
+ </picture>
+</a>
