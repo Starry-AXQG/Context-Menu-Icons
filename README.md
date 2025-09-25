@@ -267,4 +267,13 @@ Are these sub-menus properly aligned? If not, just modify this.
 
 ---
 
-<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://www.star-history.com/embed?secret=Z2hwX3IxdjVXNlVIQ2ZKMzhLWU9jSGtyV1ZscWIyNU90NDFMOHdLYg==#Starry-AXQG/Context-Menu-Icons&Date" frameBorder="0"></iframe>
+
+## Star History
+
+<a href="https://www.star-history.com/#Starry-AXQG/Context-Menu-Icons&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Starry-AXQG/Context-Menu-Icons&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Starry-AXQG/Context-Menu-Icons&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Starry-AXQG/Context-Menu-Icons&type=Date" />
+ </picture>
+</a>
