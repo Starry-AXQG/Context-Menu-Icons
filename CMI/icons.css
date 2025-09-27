@@ -71,7 +71,7 @@
       }
       
       #reload-button {
-        list-style-image: url("reload_l.svg") !important;
+        list-style-image: url("reload.svg") !important;
       }
       
       #stop-button,
@@ -982,11 +982,11 @@
       }
     
       #appMenu-translate-button {
-        list-style-image: url("translations_l.svg") !important;
+        list-style-image: url("translations.svg") !important;
       }
     
       #appMenu-zoom-controls {
-        list-style-image: url("plus_l.svg") !important;
+        list-style-image: url("plus.svg") !important;
       }
     
       #appMenu-passwords-button,
@@ -1003,7 +1003,7 @@
       }
     
       #appMenu-quit-button2 {
-        list-style-image: url("close_l.svg") !important;
+        list-style-image: url("close.svg") !important;
       }
     
       #appMenu-report-broken-site-button {
@@ -1012,16 +1012,16 @@
     
       #appMenu-history-button,
       #appMenu-library-history-button {
-        list-style-image: url("history_l.svg") !important;
+        list-style-image: url("history.svg") !important;
       }
     
       #appMenu-save-file-button2 {
-        list-style-image: url("save_l.svg") !important;
+        list-style-image: url("save.svg") !important;
       }
     
     
       #appMenu-print-button2 {
-        list-style-image: url("print_l.svg") !important;
+        list-style-image: url("print.svg") !important;
       }
     
     
@@ -1038,7 +1038,7 @@
       }
     
       #appMenu-zoomEnlarge-button2 {
-        list-style-image: url("plus_l.svg") !important;
+        list-style-image: url("plus.svg") !important;
       }
     
       #appMenu-new-window-button2 {
@@ -1050,10 +1050,10 @@
       }
       
       #appMenu-fullscreen-button2 {
-        list-style-image: url("fullscreen_l.svg") !important;
+        list-style-image: url("fullscreen.svg") !important;
       }
       #appMenu-fullscreen-button2[checked] {
-        list-style-image: url("fullscreen-exit_l.svg") !important;
+        list-style-image: url("fullscreen-exit.svg") !important;
       }
     
       #appMenu-bookmarks-button,
@@ -1089,7 +1089,7 @@
     
       
       #appMenu-settings-button {
-        list-style-image: url("settings_l.svg") !important;
+        list-style-image: url("settings.svg") !important;
       }
     
     
