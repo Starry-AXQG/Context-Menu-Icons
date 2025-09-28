@@ -200,7 +200,7 @@
       }
       
       #developer-button {
-        list-style-image: url("developer.svg") !important;
+        list-style-image: url("debug.svg") !important;
       }
       
       #new-window-button {
@@ -504,7 +504,7 @@
       }
       
       #unified-extensions-manage-extensions {
-        list-style-image: url("manage.svg") !important;
+        list-style-image: url("debug.svg") !important;
       }
       
       /* Context Menu Icons */
@@ -859,7 +859,7 @@
       #BMB_bookmarksShowAll,
       .customize-context-manageExtension,
       .unified-extensions-context-menu-manage-extension {
-        --menu-image: url("manage.svg");
+        --menu-image: url("debug.svg");
       }
       #BMB_viewBookmarksSidebar {
         --menu-image: url("sidebars.svg");
@@ -869,7 +869,7 @@
       }
       
       #PanelUI-historyMore {
-        --menu-image: url("manage.svg");
+        --menu-image: url("debug.svg");
       }
       
       menuitem[id="placesContext_new:bookmark"],
