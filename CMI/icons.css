@@ -2139,9 +2139,87 @@ menuseparator {
     display: none;
   }
 }
+/* Auto Hide Bookmark Toolbar */
+/* Incorporated this feature into the CMI in v2.2 */
+/* This was a feature that I had liked on Firefox even before I switched to Zen. 
+However, I found that the implementation method of "Bookmark Toolbar Tweaks" is better. However, it has some bugs and no longer works on the new version of Zen.
+So, I fixed these bugs and improved the visual effects of the original code, making them look more modern and attractive. */
+/* Disabled in the compact mode to prevent conflicts. */
+@media (not (-moz-pref("cmi-Auto-Hide-BookmarkBar", 0))) {
+  @media (not ((-moz-pref("zen.view.compact.hide-toolbar")) and (-moz-pref("zen.view.compact.enable-at-startup"))))  {
+
+  @media (-moz-bool-pref: "cmi-bookmarks-theme-transparent") {
+    #PersonalToolbar:not([customizing]) {
+      background-color: var(--zen-colors-tertiary) !important;
+    }
+  }
+
+  @media (not (-moz-bool-pref: "cmi-bookmarks-theme-transparent")) {
+    #personal-bookmarks toolbarbutton.bookmark-item:not(#OtherBookmarks) {
+      border-radius: 11px !important;
+      background-color: light-dark(rgba(255,255,255,0.45), rgba(0,0,0,0.55)) !important;
+    }
+  }
 
 
+  #personal-bookmarks
+    #PlacesToolbarItems
+    > toolbarbutton.bookmark-item:not(
+      .subviewbutton,
+      [disabled="true"],
+      [open]
+    ):hover {
+      border-radius: 11px !important;
+      scale: 1.05 !important;
+  }
 
+  #personal-bookmarks
+    #PlacesToolbarItems
+    > toolbarbutton.bookmark-item:not(
+      .subviewbutton,
+      [disabled="true"]
+    ):hover:active {
+      border-radius: 11px !important;
+      scale: 1.05 !important;  
+      filter: brightness(1.5);
+  }
+
+  #personal-bookmarks
+    #PlacesToolbarItems
+    > toolbarbutton.bookmark-item[open="true"] {
+      border-radius: 11px !important;
+      scale: 1.05 !important;  
+      filter: brightness(1.5);
+  }
+  
+
+    #PersonalToolbar{
+      position: relative;
+      margin-bottom: calc(0px - var(--urlbar-min-height) + 2px);
+      transform: rotateX(90deg) !important;
+      transform-origin: top;
+      transition: transform 135ms linear !important;
+      z-index: 1;
+    }
+  
+
+  /* Expand the bookmarks toolbar by hovering */
+  @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 1)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
+    #zen-appcontent-navbar-container:hover {
+      #PersonalToolbar {
+        transform: rotateX(0deg) !important;
+      }
+    }
+  }
+
+  /* Expand the bookmarks toolbar when you search */
+  @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 2)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
+    #nav-bar:focus-within + #PersonalToolbar {
+      transform: rotateX(0deg) !important;
+    }
+  }
+}
+}
 /* Shift the text to the right to make room for the custom icon.*/
 
 :root {
