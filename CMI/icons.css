@@ -1395,7 +1395,8 @@
       menuitem[id='placesContext_delete_history'],
       menuitem[id='placesContext_deleteHost'],
       #context_zenDeleteWebPanel,
-      #context_zenDeleteWorkspace {
+      #context_zenDeleteWorkspace,
+      #placesContext_removeTag {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-delete.svg');
       }
       #paste-and-go {
@@ -1495,7 +1496,8 @@
       menuitem[id='placesContext_open:newtab'],
       menuitem[id='placesContext_openLinks:tabs'],
       menuitem[id='placesContext_openBookmarkLinks:tabs'],
-      menuitem[id='placesContext_openBookmarkContainer:tabs'] {
+      menuitem[id='placesContext_openBookmarkContainer:tabs'],
+      #placesContext_openContainer\:tabs {
         --menu-image: url('chrome://browser/skin/zen-icons/tab.svg');
       }
       #context_openANewTab,
@@ -1596,7 +1598,8 @@
       #toggle_PersonalToolbar,
       #context-bookmarklink,
       #toolbar-context-bookmarkSelectedTab,
-      #toolbar-context-bookmarkSelectedTabs {
+      #toolbar-context-bookmarkSelectedTabs,
+      #placesContext_createBookmark {
         --menu-image: url('chrome://browser/skin/zen-icons/bookmark-hollow.svg');
       }
       menuitem[id='placesContext_show_bookmark:info'],
@@ -1704,7 +1707,8 @@
       }
       #zen-context-menu-new-folder,
       #zen-context-menu-new-folder-toolbar,      
-      #context_zenFolderNewSubfolder {
+      #context_zenFolderNewSubfolder,
+      #placesContext_showInFolder {
         --menu-image: url('chrome://browser/skin/zen-icons/folder.svg');
       }
       #context_zenFolderUnpack {
