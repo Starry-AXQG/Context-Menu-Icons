@@ -237,7 +237,7 @@
 },
 {
   "type": "text",
-  "label": "⚠️ The default numerical configuration may not be suitable for all users. If you notice that the context menu is not aligned correctly, please refer to the Github instructions to modify the following options.",
+  "label": "⚠️ The following configuration determines the left margins of the menu items for each section, and adjusts them to achieve the alignment effect. This configuration may need to be modified according to different environments. If you need to make any changes, see github for guide.",
   "margin": "15px 0 30px 0",
   "size": "15px"
 },
@@ -429,7 +429,13 @@
       "default": "8px",
       "placeholder": "default: 8px"
     },
-
+    
+{
+  "type": "separator",
+  "label": "",
+  "margin": "15px 0 15px 0"
+},
+    
     {
 
         "type": "checkbox",
