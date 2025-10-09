@@ -1459,7 +1459,8 @@
       #context-ask-chat {
         --menu-image: url('chrome://browser/skin/trending.svg');
       }
-      #context-translate-selection {
+      #context-translate-selection,
+      #appMenu-translate-button {
         --menu-image: url('chrome://browser/skin/zen-icons/translations.svg');
       }
       #context-viewsource,
