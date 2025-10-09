@@ -230,11 +230,7 @@
       #identity-icon {
         list-style-image: url("info.svg") !important;
       }
-      
-      #identity-box[pageproxystate="valid"].chromeUI #identity-icon {
-        list-style-image: url("firefox.svg") !important;
-      }
-      
+
       #identity-box[pageproxystate="valid"].localResource #identity-icon {
         list-style-image: url("page-portrait.svg") !important;
       }
@@ -276,11 +272,7 @@
       #identity-box[pageproxystate="valid"].httpsOnlyErrorPage #identity-icon {
         list-style-image: url("security-broken.svg") !important;
       }
-      
-      #identity-popup[connection="chrome"] .identity-popup-security-connection {
-        list-style-image: url("firefox.svg") !important;
-      }
-      
+    
       #identity-popup[connection="file"] .identity-popup-security-connection {
         list-style-image: url("page-portrait.svg") !important;
       }
@@ -543,7 +535,8 @@
         --menu-image: url("edit-undo.svg");
       }
       
-      #context_unloadTab {
+      #context_unloadTab,
+      #context_zenUnloadWorkspace {
         --menu-image: url("unloadTab.svg");
       }
       
@@ -1243,7 +1236,6 @@
 
   /*ZenUI*/
   @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
-    
     :root {
 
         --zen-contextmenu-menuitem-padding-inline: 5px !important;
@@ -1326,7 +1318,9 @@
       #context-zenSplitLink {
         --menu-image: url('chrome://browser/skin/zen-icons/split.svg') !important;
       }
-      
+      #context-previewlink {
+      --menu-image: url('chrome://browser/skin/zen-icons/open.svg') !important;
+    }
       #context_zenOpenWorkspace,
       #context_zenOpenWorkspacePanel {
         --menu-image: url('chrome://browser/skin/zen-icons/manage.svg') !important;
@@ -1353,6 +1347,9 @@
       #context_selectAllTabs,
       #toolbar-context-selectAllTabs {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-select-all.svg');
+      }
+      #context-add-engine {
+        --menu-image: url("search-add.svg");
       }
       #context-undo,
       menuitem[data-l10n-id="text-action-undo"],
@@ -1405,6 +1402,9 @@
       #context-print-selection {
         --menu-image: url('chrome://browser/skin/zen-icons/print.svg');
       }
+      #spell-check-enabled {
+        --menu-image: url("chrome://browser/skin/zen-icons/spell-check.svg");
+      }
       #context-take-screenshot {
         --menu-image: url('chrome://browser/skin/zen-icons/screenshot.svg');
       }
@@ -1421,7 +1421,7 @@
         --menu-image: url('chrome://browser/skin/zen-icons/search-glass.svg');
       }
       #context-searchselect-private {
-        --menu-image: url('chrome://browser/skin/privateBrowsing.svg');
+        --menu-image: url('chrome://browser/skin/zen-icons/private-window.svg');
       }
       #context-viewimage {
         --menu-image: url('chrome://browser/skin/zen-icons/image-open.svg');
@@ -1460,7 +1460,7 @@
         --menu-image: url('chrome://browser/skin/trending.svg');
       }
       #context-translate-selection {
-        --menu-image: url('chrome://browser/skin/translations.svg');
+        --menu-image: url('chrome://browser/skin/zen-icons/translations.svg');
       }
       #context-viewsource,
       #context-viewframesource,
@@ -1653,8 +1653,8 @@
         --menu-image: url('chrome://browser/skin/zen-icons/close-all.svg');
       }
       #context_unloadTab,
-      #context_zenTabActions {
-        --menu-image: url('chrome://browser/skin/zen-icons/close-all.svg');
+      #context_zenUnloadWorkspace {
+        --menu-image: url("chrome://browser/skin/zen-icons/close-all.svg");
       }
       .customize-context-reportExtension,
       .unified-extensions-context-menu-report-extension {
@@ -2223,6 +2223,13 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
     }
   }
 }
+}
+
+@media (-moz-pref("cmi-Display-Firefox-Logo")) {
+#identity-popup[connection="chrome"] .identity-popup-security-connection,
+#identity-box[pageproxystate="valid"].chromeUI #identity-icon {
+        list-style-image: url("firefox.svg") !important;
+      }
 }
 /* Shift the text to the right to make room for the custom icon.*/
 
