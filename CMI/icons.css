@@ -1232,6 +1232,9 @@
     #cmi-show-more-menu {
       --menu-image: url("menu-bar.svg");
     }
+    .change-group-icon {
+      --menu-image: url("image-save.svg");
+    }
   }
 
   /*ZenUI*/
@@ -1731,7 +1734,7 @@
       }  
     /* zen Group */
       .change-group-color {
-        --menu-image: url('chrome://browser/skin/zen-icons/canvas.svg');
+        --menu-image: url('chrome://browser/skin/zen-icons/edit-theme.svg');
       }
       .rename-group {
         --menu-image: url('chrome://browser/skin/zen-icons/edit.svg');
@@ -1750,7 +1753,10 @@
     }
     #cmi-show-more-menu {
       --menu-image: url('chrome://browser/skin/zen-icons/menu.svg');
-    }    
+    }
+    .change-group-icon {
+      --menu-image: url('chrome://browser/skin/zen-icons/canvas.svg');
+    }
   }
 }  
   
