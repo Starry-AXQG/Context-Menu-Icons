@@ -1209,7 +1209,7 @@
       #context_zenFolderDelete {
         --menu-image: url("edit-delete.svg");
       }
-    /* zen Group */
+    /* zen Group(Adapt to Advanced-Tag-Groups) */
       .change-group-color {
         --menu-image: url("color.svg");
       }
@@ -1222,6 +1222,9 @@
       .convert-group-to-folder {
         --menu-image: url("folder_sync_convert.svg");
       }
+      .change-group-icon {
+      --menu-image: url("image-save.svg");
+    }
 
 
     /* zen Mods */
@@ -1232,9 +1235,7 @@
     #cmi-show-more-menu {
       --menu-image: url("menu-bar.svg");
     }
-    .change-group-icon {
-      --menu-image: url("image-save.svg");
-    }
+    
   }
 
   /*ZenUI*/
@@ -1732,7 +1733,7 @@
       #zen-toolbar-context-tabs-right {
         --menu-image: url('chrome://browser/skin/import.svg');
       }  
-    /* zen Group */
+    /* zen Group(Adapt to Advanced-Tag-Groups) */
       .change-group-color {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-theme.svg');
       }
@@ -1745,6 +1746,9 @@
       .convert-group-to-folder {
         --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
       }
+      .change-group-icon {
+      --menu-image: url('chrome://browser/skin/zen-icons/canvas.svg');
+     }
     
     /* zen Mods */
     #quicktabs-context-menuitem,
@@ -1754,9 +1758,7 @@
     #cmi-show-more-menu {
       --menu-image: url('chrome://browser/skin/zen-icons/menu.svg');
     }
-    .change-group-icon {
-      --menu-image: url('chrome://browser/skin/zen-icons/canvas.svg');
-    }
+    
   }
 }  
   
