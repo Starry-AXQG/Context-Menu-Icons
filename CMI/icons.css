@@ -2234,7 +2234,7 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
 }
 }
 
-@media (-moz-pref("cmi-Display-Firefox-Logo")) {
+@media (-moz-pref("cmi-Display-Firefox-Logo", true)) or (-moz-pref("cmi-Switch-Icon-Package", 1)) {
 #identity-popup[connection="chrome"] .identity-popup-security-connection,
 #identity-box[pageproxystate="valid"].chromeUI #identity-icon {
         list-style-image: url("firefox.svg") !important;
@@ -2641,7 +2641,7 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
 }
 
 
-/* This is used to temporarily solve the problem where the "historical" icons that Zen has not yet removed overlap with the added custom icons. */
+/* This is used to temporarily solve the problem where the "history" icons that Zen has not yet removed overlap with the added custom icons. */
 #appMenuRecentlyClosedTabs,
 #appMenuRecentlyClosedWindows,
 #appMenuSearchHistory,
