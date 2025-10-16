@@ -60,6 +60,12 @@ In version 2.1, CMI introduced JavaScript code to help users simplify the length
 
 - Submenu items: for items with submenus, press the hotkey quickly (before the submenu expands) for best results.
 
+（
+Demo for CMI-fold-menu-JS:
+
+https://github.com/user-attachments/assets/f8b4e420-0512-4b51-b923-53252b7c6f8a
+
+)
   
 ### Configuration (For Advanced Users)
 
