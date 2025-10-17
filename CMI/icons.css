@@ -1839,12 +1839,13 @@ menuseparator::before {
 }
 
 /* -------------------------- menu separator -------------------------- */
-#tabContextMenu:has(#context_reloadTab:not([hidden])):has(:is(#context_zen-add-essential,#context_zen-remove-essential):not([hidden])):has(:is(#context_pinTab,#context_unpinTab,#context_bookmarkTab):not([hidden])) :nth-child(1 of menuseparator),
-#tabContextMenu:has(#context_reloadSelectedTabs:not([hidden])):has(:is(#context_zen-add-essential,#context_zen-remove-essential):not([hidden])):has(:is(#context_pinSelectedTabs,#context_unpinSelectedTabs,#context_bookmarkSelectedTabs):not([hidden])) :nth-child(1 of menuseparator),
-#tabContextMenu:has(#context_reloadTab:not([hidden])):has(:is(#context_pinTab,#context_unpinTab,#context_bookmarkTab):not([hidden])) :nth-child(1 of menuseparator),
-#tabContextMenu:has(#context_reloadSelectedTabs:not([hidden])):has(:is(#context_pinSelectedTabs,#context_unpinSelectedTabs,#context_bookmarkSelectedTabs):not([hidden])) :nth-child(1 of menuseparator) {
+#tabContextMenu:has(#context_reloadTab:not([hidden])):has(:is(#context_zen-add-essential,#context_zen-remove-essential):not([hidden])):has(:is(#context_pinTab,#context_unpinTab,#context_bookmarkTab):not([hidden])) > :nth-child(1 of menuseparator),
+#tabContextMenu:has(#context_reloadSelectedTabs:not([hidden])):has(:is(#context_zen-add-essential,#context_zen-remove-essential):not([hidden])):has(:is(#context_pinSelectedTabs,#context_unpinSelectedTabs,#context_bookmarkSelectedTabs):not([hidden])) > :nth-child(1 of menuseparator),
+#tabContextMenu:has(#context_reloadTab:not([hidden])):has(:is(#context_pinTab,#context_unpinTab,#context_bookmarkTab):not([hidden])) > :nth-child(1 of menuseparator),
+#tabContextMenu:has(#context_reloadSelectedTabs:not([hidden])):has(:is(#context_pinSelectedTabs,#context_unpinSelectedTabs,#context_bookmarkSelectedTabs):not([hidden])) > :nth-child(1 of menuseparator) {
     display: flex !important;
     visibility: visible !important;   
+    order: -1 !important;  
 }
 
 /* Main rule */
