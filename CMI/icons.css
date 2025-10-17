@@ -1765,9 +1765,14 @@
 
 /* Preferences */
 @media not (-moz-pref("cmi-Disable-Better-Context-Menu",true)){
-          
-/* -------------------------- Better Context Menu -------------------------- */
 
+/* -------------------------- Better Context Menu -------------------------- */
+  
+:root {
+    --tab-action-width: 25%;
+    --tab-action-height: 42px;
+}
+  
 /* Base Hover Styling for Menu Items */
 :is(menu, menuitem):hover {
     border-radius: 12px !important;
@@ -1783,223 +1788,125 @@
     width: 280px !important;
 }
 
-menuseparator {
-    &:first-of-type {
-        display: none !important;
-    }
-
-    &::before {
-        opacity: 0.3;
-    }
+/* menuseparator style */
+menuseparator:first-of-type {
+    display: none !important;
+}
+menuseparator::before {
+    opacity: 0.3;
 }
 
-/* Tab Context Menu */
-#tabContextMenu:has(#context_reloadTab:not([hidden])):has(:is(#context_zen-add-essential,
-#context_zen-remove-essential):not([hidden])):has(:is(#context_pinTab, #context_unpinTab, #context_bookmarkTab):not([hidden])) {
-    :nth-child(1 of menuseparator) {
-        display: flex !important;
-        visibility: visible !important;
-        order: -1 !important;
-    }
-
+/* -------------------------- Tab button style -------------------------- */
+#tabContextMenu :is(
     #context_reloadTab,
-    :is(#context_zen-add-essential, #context_zen-remove-essential),
-    :is(#context_pinTab, #context_unpinTab),
-    #context_bookmarkTab {
-        order: -999 !important;
-        width: 25% !important;
-        --height: 42px;
-        height: var(--height) !important;
+    #context_reloadSelectedTabs,
+    #context_zen-add-essential,
+    #context_zen-remove-essential,
+    #context_pinTab,
+    #context_unpinTab,
+    #context_pinSelectedTabs,
+    #context_unpinSelectedTabs,
+    #context_bookmarkTab,
+    #context_bookmarkSelectedTabs
+) {
+    order: -999 !important;
+    width: var(--tab-action-width) !important;
+    --height: var(--tab-action-height);
+    height: var(--height) !important;
 
-        position: relative;
-        overflow: hidden;
+    position: relative;
+    overflow: hidden;
 
-        background-position: center !important;
-        border-radius: 12px !important;
-        transition: box-shadow 0.4s ease-in-out;
+    background-position: center !important;
+    border-radius: 12px !important;
+    transition: box-shadow 0.4s ease-in-out;
+}
 
-        .menu-text {
-            display: none !important;
-        }
-    }
+/* Hide menu text */
+#tabContextMenu :is(
+    #context_reloadTab,
+    #context_reloadSelectedTabs,
+    #context_zen-add-essential,
+    #context_zen-remove-essential,
+    #context_pinTab,
+    #context_unpinTab,
+    #context_pinSelectedTabs,
+    #context_unpinSelectedTabs,
+    #context_bookmarkTab,
+    #context_bookmarkSelectedTabs
+) .menu-text {
+    display: none !important;
+}
 
-    /* Positioning Each Button */
-    #context_reloadTab {
-        margin-left: 0 !important;
-    }
+/* -------------------------- menu separator -------------------------- */
+#tabContextMenu:has(#context_reloadTab:not([hidden])):has(:is(#context_zen-add-essential,#context_zen-remove-essential):not([hidden])):has(:is(#context_pinTab,#context_unpinTab,#context_bookmarkTab):not([hidden])) :nth-child(1 of menuseparator),
+#tabContextMenu:has(#context_reloadSelectedTabs:not([hidden])):has(:is(#context_zen-add-essential,#context_zen-remove-essential):not([hidden])):has(:is(#context_pinSelectedTabs,#context_unpinSelectedTabs,#context_bookmarkSelectedTabs):not([hidden])) :nth-child(1 of menuseparator),
+#tabContextMenu:has(#context_reloadTab:not([hidden])):has(:is(#context_pinTab,#context_unpinTab,#context_bookmarkTab):not([hidden])) :nth-child(1 of menuseparator),
+#tabContextMenu:has(#context_reloadSelectedTabs:not([hidden])):has(:is(#context_pinSelectedTabs,#context_unpinSelectedTabs,#context_bookmarkSelectedTabs):not([hidden])) :nth-child(1 of menuseparator) {
+    display: flex !important;
+    visibility: visible !important;   
+}
 
+/* Main rule */
+/* 1) 单 Tab（含 zen-add/zen-remove）—— 原始：pin margin-left:25% */
+#tabContextMenu:has(#context_reloadTab:not([hidden])):has(:is(#context_zen-add-essential,#context_zen-remove-essential):not([hidden])):has(:is(#context_pinTab,#context_unpinTab,#context_bookmarkTab):not([hidden])) {
+    /* 单项定位覆盖：保留与原规则一致的 margin */
+    #context_reloadTab { margin-left: 0 !important; }
     :is(#context_pinTab, #context_unpinTab) {
         margin-left: 25% !important;
         margin-top: calc(0px - var(--height)) !important;
     }
-
-    #context_zen-remove-essential {
-        margin-left: 37.5% !important;
-        margin-top: calc(0px - var(--height)) !important;
-    }
-
-    #context_zen-add-essential {
-        margin-left: 50% !important;
-        margin-top: calc(0px - var(--height)) !important;
-    }
-
-    #context_bookmarkTab {
-        margin-left: 75% !important;
-        margin-top: calc(0px - var(--height)) !important;
-    }
+    #context_zen-remove-essential { margin-left: 37.5% !important; margin-top: calc(0px - var(--height)) !important; }
+    #context_zen-add-essential { margin-left: 50% !important; margin-top: calc(0px - var(--height)) !important; }
+    #context_bookmarkTab { margin-left: 75% !important; margin-top: calc(0px - var(--height)) !important; }
 }
-/* Tab Context Menu （multiple tabs are selected)*/
-#tabContextMenu:has(#context_reloadSelectedTabs:not([hidden])):has(:is(#context_zen-add-essential,
-#context_zen-remove-essential):not([hidden])):has(:is(#context_pinSelectedTabs, #context_unpinSelectedTabs, #context_bookmarkSelectedTabs):not([hidden])) {
-    :nth-child(1 of menuseparator) {
-        display: flex !important;
-        visibility: visible !important;
-        order: -1 !important;
-    }
 
-    #context_reloadSelectedTabs,
-    :is(#context_zen-add-essential, #context_zen-remove-essential),
-    :is(#context_pinSelectedTabs, #context_unpinSelectedTabs),
-    #context_bookmarkSelectedTabs {
-        order: -999 !important;
-        width: 25% !important;
-        --height: 42px;
-        height: var(--height) !important;
-
-        position: relative;
-        overflow: hidden;
-
-        background-position: center !important;
-        border-radius: 12px !important;
-        transition: box-shadow 0.4s ease-in-out;
-
-        .menu-text {
-            display: none !important;
-        }
-    }
-
-    /* Positioning Each Button */
-    #context_reloadSelectedTabsb {
-        margin-left: 0 !important;
-    }
-
+/* 2) 多 Tab 选中（含 zen-add/zen-remove）—— 与 1) 等价布局（复用同样的偏移） */
+#tabContextMenu:has(#context_reloadSelectedTabs:not([hidden])):has(:is(#context_zen-add-essential,#context_zen-remove-essential):not([hidden])):has(:is(#context_pinSelectedTabs,#context_unpinSelectedTabs,#context_bookmarkSelectedTabs):not([hidden])) {
+    #context_reloadSelectedTabs { margin-left: 0 !important; }
     :is(#context_pinSelectedTabs, #context_unpinSelectedTabs) {
         margin-left: 25% !important;
         margin-top: calc(0px - var(--height)) !important;
     }
-
-    #context_zen-remove-essential {
-        margin-left: 37.5% !important;
-        margin-top: calc(0px - var(--height)) !important;
-    }
-
-    #context_zen-add-essential {
-        margin-left: 50% !important;
-        margin-top: calc(0px - var(--height)) !important;
-    }
-
-    #context_bookmarkSelectedTabs {
-        margin-left: 75% !important;
-        margin-top: calc(0px - var(--height)) !important;
-    }
+    /* zen-add/zen-remove 使用同一 ID，因此不重复列出 "Selected" 变体 */
+    #context_zen-remove-essential { margin-left: 37.5% !important; margin-top: calc(0px - var(--height)) !important; }
+    #context_zen-add-essential { margin-left: 50% !important; margin-top: calc(0px - var(--height)) !important; }
+    #context_bookmarkSelectedTabs { margin-left: 75% !important; margin-top: calc(0px - var(--height)) !important; }
 }
 
-/* TabGroup Context Menu */
-#tabContextMenu:has(#context_reloadTab:not([hidden])):has(:is(#context_pinTab, #context_unpinTab, #context_bookmarkTab):not([hidden])) {
-    :nth-child(1 of menuseparator) {
-        display: flex !important;
-        visibility: visible !important;
-        order: -1 !important;
-    }
-
-    #context_reloadTab,
-    :is(#context_zen-add-essential, #context_zen-remove-essential),
-    :is(#context_pinTab, #context_unpinTab),
-    #context_bookmarkTab {
-        order: -999 !important;
-        width: 25% !important;
-        --height: 42px;
-        height: var(--height) !important;
-
-        position: relative;
-        overflow: hidden;
-
-        background-position: center !important;
-        border-radius: 12px !important;
-        transition: box-shadow 0.4s ease-in-out;
-
-        .menu-text {
-            display: none !important;
-        }
-    }
-
-    /* Positioning Each Button */
-    #context_reloadTab {
-        margin-left: 0 !important;
-    }
-
+/* 3) TabGroup（不包含 zen-add/zen-remove 在排列时的占位）—— pin margin-left:37.5%（原代码第 3 块） */
+#tabContextMenu:has(#context_reloadTab:not([hidden])):has(:is(#context_pinTab,#context_unpinTab,#context_bookmarkTab):not([hidden])) {
+    #context_reloadTab { margin-left: 0 !important; }
     :is(#context_pinTab, #context_unpinTab) {
         margin-left: 37.5% !important;
         margin-top: calc(0px - var(--height)) !important;
     }
-
-    #context_bookmarkTab {
-        margin-left: 75% !important;
-        margin-top: calc(0px - var(--height)) !important;
-    }
+    #context_bookmarkTab { margin-left: 75% !important; margin-top: calc(0px - var(--height)) !important; }
 }
 
-/* TabGroup Context Menu （multiple tabs are selected)*/
-#tabContextMenu:has(#context_reloadSelectedTabs:not([hidden])):has(:is(#context_pinSelectedTabs, #context_unpinSelectedTabs, #context_bookmarkSelectedTabs):not([hidden])) {
-    :nth-child(1 of menuseparator) {
-        display: flex !important;
-        visibility: visible !important;
-        order: -1 !important;
-    }
-
-    #context_reloadSelectedTabs,
-    :is(#context_zen-add-essential, #context_zen-remove-essential),
-    :is(#context_pinSelectedTabs, #context_unpinSelectedTabs),
-    #context_bookmarkSelectedTabs {
-        order: -999 !important;
-        width: 25% !important;
-        --height: 42px;
-        height: var(--height) !important;
-
-        position: relative;
-        overflow: hidden;
-
-        background-position: center !important;
-        border-radius: 12px !important;
-        transition: box-shadow 0.4s ease-in-out;
-
-        .menu-text {
-            display: none !important;
-        }
-    }
-
-    /* Positioning Each Button */
-    #context_reloadSelectedTabsb {
-        margin-left: 0 !important;
-    }
-
+/* 4) TabGroup 且多选（pinSelected margin-left:37.5%） */
+#tabContextMenu:has(#context_reloadSelectedTabs:not([hidden])):has(:is(#context_pinSelectedTabs,#context_unpinSelectedTabs,#context_bookmarkSelectedTabs):not([hidden])) {
+    #context_reloadSelectedTabs { margin-left: 0 !important; }
     :is(#context_pinSelectedTabs, #context_unpinSelectedTabs) {
         margin-left: 37.5% !important;
         margin-top: calc(0px - var(--height)) !important;
     }
-
-    #context_bookmarkSelectedTabs {
-        margin-left: 75% !important;
-        margin-top: calc(0px - var(--height)) !important;
-    }
+    #context_bookmarkSelectedTabs { margin-left: 75% !important; margin-top: calc(0px - var(--height)) !important; }
 }
 
-
-/* -------------------------- Gradient Animation Base -------------------------- */
-#context_reloadTab::before,
-:is(#context_zen-add-essential, #context_zen-remove-essential)::before,
-:is(#context_pinTab, #context_unpinTab)::before,
-#context_bookmarkTab::before {
+/* -------------------------- Gradient Animation Base（::before & :hover） -------------------------- */
+#tabContextMenu :is(
+    #context_reloadTab,
+    #context_reloadSelectedTabs,
+    #context_zen-add-essential,
+    #context_zen-remove-essential,
+    #context_pinTab,
+    #context_unpinTab,
+    #context_pinSelectedTabs,
+    #context_unpinSelectedTabs,
+    #context_bookmarkTab,
+    #context_bookmarkSelectedTabs
+)::before {
     content: "";
     position: absolute;
     inset: 2px;
@@ -2022,6 +1929,30 @@ menuseparator {
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
 }
+
+/* Hover Activates Gradient Effect */
+#tabContextMenu :is(
+    #context_reloadTab,
+    #context_reloadSelectedTabs,
+    #context_zen-add-essential,
+    #context_zen-remove-essential,
+    #context_pinTab,
+    #context_unpinTab,
+    #context_pinSelectedTabs,
+    #context_unpinSelectedTabs,
+    #context_bookmarkTab,
+    #context_bookmarkSelectedTabs
+):hover::before {
+    opacity: 0.5;
+    animation-play-state: running;
+}
+
+@keyframes tab-hover-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 
 /* Hover Activates Gradient Effect */
 #context_reloadTab:hover::before,
