@@ -1839,14 +1839,27 @@ menuseparator::before {
 }
 
 /* -------------------------- menu separator -------------------------- */
-#tabContextMenu:has(#context_reloadTab:not([hidden])):has(:is(#context_zen-add-essential,#context_zen-remove-essential):not([hidden])):has(:is(#context_pinTab,#context_unpinTab,#context_bookmarkTab):not([hidden])) > :nth-child(1 of menuseparator),
-#tabContextMenu:has(#context_reloadSelectedTabs:not([hidden])):has(:is(#context_zen-add-essential,#context_zen-remove-essential):not([hidden])):has(:is(#context_pinSelectedTabs,#context_unpinSelectedTabs,#context_bookmarkSelectedTabs):not([hidden])) > :nth-child(1 of menuseparator),
-#tabContextMenu:has(#context_reloadTab:not([hidden])):has(:is(#context_pinTab,#context_unpinTab,#context_bookmarkTab):not([hidden])) > :nth-child(1 of menuseparator),
-#tabContextMenu:has(#context_reloadSelectedTabs:not([hidden])):has(:is(#context_pinSelectedTabs,#context_unpinSelectedTabs,#context_bookmarkSelectedTabs):not([hidden])) > :nth-child(1 of menuseparator) {
-    display: flex !important;
-    visibility: visible !important;   
-    order: -1 !important;  
+:where(
+  #tabContextMenu:has(:is(#context_reloadTab, #context_reloadSelectedTabs):not([hidden])):has(:is(
+    #context_pinTab, #context_unpinTab, #context_bookmarkTab,
+    #context_pinSelectedTabs, #context_unpinSelectedTabs, #context_bookmarkSelectedTabs
+  ):not([hidden]))
+) > :nth-child(1 of menuseparator) {
+  display: flex !important;
+  visibility: visible !important;
+  order: -1 !important; /* Only retain the order for direct child elements. */
 }
+
+:where(
+  #tabContextMenu:has(:is(#context_reloadTab, #context_reloadSelectedTabs):not([hidden])):has(:is(
+    #context_pinTab, #context_unpinTab, #context_bookmarkTab,
+    #context_pinSelectedTabs, #context_unpinSelectedTabs, #context_bookmarkSelectedTabs
+  ):not([hidden]))
+) :nth-child(1 of menuseparator) {
+  display: flex !important;
+  visibility: visible !important;
+}
+
 
 /* Main rule */
 /* 1) 单 Tab（含 zen-add/zen-remove）—— 原始：pin margin-left:25% */
@@ -1875,7 +1888,7 @@ menuseparator::before {
     #context_bookmarkSelectedTabs { margin-left: 75% !important; margin-top: calc(0px - var(--height)) !important; }
 }
 
-/* 3) TabGroup（不包含 zen-add/zen-remove 在排列时的占位）—— pin margin-left:37.5%（原代码第 3 块） */
+/* 3) TabGroup（不包含 zen-add/zen-remove 在排列时的占位）—— pin margin-left:37.5% */
 #tabContextMenu:has(#context_reloadTab:not([hidden])):has(:is(#context_pinTab,#context_unpinTab,#context_bookmarkTab):not([hidden])) {
     #context_reloadTab { margin-left: 0 !important; }
     :is(#context_pinTab, #context_unpinTab) {
@@ -2140,7 +2153,7 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
 
     #PersonalToolbar{
       position: relative;
-      margin-bottom: calc(0px - var(--urlbar-min-height) + 2px);
+      margin-bottom: calc(0px - var(--urlbar-min-height));
       transform: rotateX(90deg) !important;
       transform-origin: top;
       transition: transform 135ms linear !important;
