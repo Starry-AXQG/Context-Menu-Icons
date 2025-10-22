@@ -188,7 +188,7 @@
     {
 
         "type": "checkbox",
-        "property": "cmi-Hide-OAiT-Items",
+        "property": "cmi-Hide-OAiT-Item",
         "label": "[Bookmark Toolbar Style] Hidden Bookmark 'Open All in Tabs' menu item (Enable to improve the bookmark page. This menu item is rarely used and is not available in most browsers. You can safely enable it. )",
         "defaultValue": false
 

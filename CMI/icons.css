@@ -51,16 +51,6 @@
       -moz-context-properties: fill, fill-opacity !important;
       fill: currentColor !important;
   }  
-
-
-      :root[fxastatus="not_configured"] #fxa-avatar-image {
-        list-style-image: url("account.svg") !important;
-      }
-      
-      .private-browsing-indicator-icon {
-        list-style-image: url("account-private.svg") !important;
-        border-radius: 100% !important;
-      }
       
       #back-button {
         list-style-image: url("arrow-left.svg") !important;
@@ -333,20 +323,14 @@
       #pageAction-panel-bookmark,
       #star-button {
         
-        /* 做成 16×16 的容器 */
         width: 16px;
         height: 16px;
         
-        /* 插入 SVG，居中不重复 */
         background-image: url("bookmark-hollow.svg") !important;
         background-repeat: no-repeat !important;
         background-position: center !important;
         
-        /* 将图像整体从 14×14 缩放到 16×16 */
-        background-size: 18px 18px !important;
-        
-        /* 保证文本和图标之间有点间距 */
-        padding-inline-start: 20px !important;
+        background-size: 17px 17px !important;
 
       }
       
@@ -360,8 +344,7 @@
         background-repeat: no-repeat !important;
         background-position: center !important;
         
-        background-size: 18px 18px !important;
-        padding-inline-start: 20px !important;
+        background-size: 17px 17px !important;
 
       }
 
@@ -959,13 +942,6 @@
       }
       .unified-extensions-context-menu-move-widget-up {
         --menu-image: url("arrow-up.svg");
-      }
-      .unified-extensions-item
-        .webextension-browser-action.subviewbutton
-        > .toolbarbutton-badge-stack
-        > .toolbarbutton-icon {
-        height: 24px !important;
-        width: 24px !important;
       }
 
       /* App Menu */
