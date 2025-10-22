@@ -2116,6 +2116,7 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
     #personal-bookmarks toolbarbutton.bookmark-item:not(#OtherBookmarks) {
       border-radius: 11px !important;
       background-color: light-dark(rgba(255,255,255,0.45), rgba(0,0,0,0.55)) !important;
+      height: 24px;
     }
   }
 
