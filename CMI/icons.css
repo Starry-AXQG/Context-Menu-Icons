@@ -2096,7 +2096,12 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
     }
   }
 
-
+  /* Adapt for firefox */
+  #navigator-toolbox {
+    z-index: 3 !important;
+    border-bottom: 0 !important;
+  }
+    
   #personal-bookmarks
     #PlacesToolbarItems
     > toolbarbutton.bookmark-item:not(
@@ -2154,7 +2159,7 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
     }
   }
 }
-}
+
 
 @media (-moz-pref("cmi-Display-Firefox-Logo", true)) or (-moz-pref("cmi-Switch-Icon-Package", 1)) {
 #identity-popup[connection="chrome"] .identity-popup-security-connection,
