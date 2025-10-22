@@ -2142,7 +2142,6 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
   @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 1)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
     #nav-bar:hover + #PersonalToolbar,
     #PersonalToolbar:hover {
-      #PersonalToolbar {
         transform: rotateX(0deg) !important;
       }
     }
