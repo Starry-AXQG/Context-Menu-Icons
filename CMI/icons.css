@@ -2138,6 +2138,7 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
   #PersonalToolbar {
     /* 关键：使用绝对定位脱离文档流 */
     position: absolute !important;
+    top: 100% !important;
     left: 0 !important;
     right: 0 !important;
     z-index: 1 !important;
