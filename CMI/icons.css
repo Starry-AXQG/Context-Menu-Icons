@@ -2147,8 +2147,8 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
     transform: translateY(-10px) !important;
     pointer-events: none !important; /* 允许穿透点击到网页 */
     transition:
-      opacity 200ms ease-out,
-      transform 200ms ease-out !important;
+      opacity 300ms ease-out,
+      transform 300ms ease-out !important;
   }
 
   /* 当书签面板展开时，恢复书签面板交互事件 */
@@ -2171,7 +2171,7 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
       pointer-events: auto !important; /* 恢复交互能力 */
       
       /* 添加轻微延迟避免误触发 */
-      transition-delay: 0.2s !important;
+      transition-delay: 0.1s !important;
     }
   }
 }
