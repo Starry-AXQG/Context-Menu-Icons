@@ -2369,7 +2369,9 @@ menupopup menupopup{
     /* 扩展菜单 */
     menupopup#unified-extensions-context-menu:has(> menuitem:not([hidden])[checked="true"]),
     /* 当下载菜单有项目勾选 */
-    menupopup#downloadsContextMenu:has(> menuitem:not([hidden])[checked="true"])
+    menupopup#downloadsContextMenu:has(> menuitem:not([hidden])[checked="true"]),
+    /* 浏览器内置翻译器菜单 */
+    menupopup#full-page-translations-panel-settings-menupopup:has(> menuitem:not([hidden])[checked="true"])
   ) {
     --checkmark-margin-start: var(--checkmark-margin-start_cover);
     --checkmark-margin-end: var(--checkmark-margin-end_cover);
@@ -2420,7 +2422,9 @@ menupopup menupopup{
     /* 扩展菜单 */
     menupopup#unified-extensions-context-menu:has(> menuitem:not([hidden])[type="checkbox"]),
     /* 当下载菜单有项目勾选 */
-    menupopup#downloadsContextMenu:has(> menuitem:not([hidden])[type="checkbox"])
+    menupopup#downloadsContextMenu:has(> menuitem:not([hidden])[type="checkbox"]),
+    /* 浏览器内置翻译器菜单 */
+    menupopup#full-page-translations-panel-settings-menupopup:has(> menuitem:not([hidden])[type="checkbox"])
   ) {
     --checkmark-margin-start: var(--checkmark-margin-start_cover);
     --checkmark-margin-end: var(--checkmark-margin-end_cover);
