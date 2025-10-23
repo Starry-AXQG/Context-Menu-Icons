@@ -2455,7 +2455,7 @@ menupopup menupopup{
    ========================================================= */
 @media (not (-moz-pref("cmi-Switch-PC-Platform", 2))) {
 /* 严格版本（适用于两者为同一 menupopup 的直接子项）*/
-menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
+menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
   > .menu-text,
 menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
@@ -2466,7 +2466,7 @@ menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[t
 }
 
 /* 当某个直接子项 checkbox 被勾选且未隐藏时，给同一层级的其它直接子项 checkbox（未隐藏、未被勾选、且不是父菜单）增加 padding */
-menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
+menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
   > .menu-text,
 menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
@@ -2480,7 +2480,7 @@ menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[t
 /* Linux */
 @media (-moz-pref("cmi-Switch-PC-Platform", 2)) {
 /* 严格版本（适用于两者为同一 menupopup 的直接子项）*/
-menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[type="checkbox"]:not([hidden]))
+menupopup:has(> menuitem[type="checkbox"]:not([hidden]))
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
   > .menu-text,
 menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
@@ -2494,7 +2494,7 @@ menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[t
 }
 
 /* 当某个直接子项 checkbox 被勾选且未隐藏时，给同一层级的其它直接子项 checkbox（未隐藏、未被勾选、且不是父菜单）增加 padding */
-menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[type="checkbox"]:not([hidden]))
+menupopup:has(> menuitem[type="checkbox"]:not([hidden]))
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
   > .menu-text,
 menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
