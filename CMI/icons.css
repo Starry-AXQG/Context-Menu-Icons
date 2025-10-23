@@ -2097,11 +2097,12 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
   }
 
   /* Adapt for firefox */
+  @media (-moz-pref("cmi-AHB-Firefox")) {
   #navigator-toolbox {
     z-index: 3 !important;
     border-bottom: 0 !important;
   }
-    
+  }  
   /* Bookmark bar Style */  
   #personal-bookmarks
     #PlacesToolbarItems
