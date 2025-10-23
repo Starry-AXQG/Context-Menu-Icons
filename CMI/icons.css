@@ -2458,7 +2458,7 @@ menupopup menupopup{
 menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
   > .menu-text,
-menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
+menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
   > .menu-highlightable-text {
   padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
@@ -2469,7 +2469,7 @@ menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[t
 menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
   > .menu-text,
-menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
+menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
   > .menu-highlightable-text {
   padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
@@ -2483,7 +2483,7 @@ menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[t
 menupopup:has(> menuitem[type="checkbox"]:not([hidden]))
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
   > .menu-text,
-menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
+menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
   > .menu-highlightable-text {
 
@@ -2497,7 +2497,7 @@ menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[t
 menupopup:has(> menuitem[type="checkbox"]:not([hidden]))
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
   > .menu-text,
-menupopup:not(#full-page-translations-panel-settings-menupopup):has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
+menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
   > .menu-highlightable-text {
 
