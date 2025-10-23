@@ -2102,6 +2102,7 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
     border-bottom: 0 !important;
   }
     
+  /* Bookmark bar Style */  
   #personal-bookmarks
     #PlacesToolbarItems
     > toolbarbutton.bookmark-item:not(
@@ -2133,24 +2134,47 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
   }
   
 
-    #PersonalToolbar{
-      position: relative;
-      margin-bottom: calc(0px - var(--urlbar-min-height));
-      transform: rotateX(90deg) !important;
-      transform-origin: top;
-      transition: transform 135ms linear !important;
-      z-index: 1;
-    }
+  /* 常态下隐藏书签栏,并禁止书签栏影响网页交互 */
+  #PersonalToolbar {
+    /* 关键：使用绝对定位脱离文档流 */
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1 !important;
   
+     /* 初始隐藏状态 */
+    opacity: 0 !important;
+    transform: translateY(-10px) !important;
+    pointer-events: none !important; /* 允许穿透点击到网页 */
+    transition:
+      opacity 200ms ease-out,
+      transform 200ms ease-out !important;
+  }
 
+  /* 当书签面板展开时，恢复书签面板交互事件 */
+  #PersonalToolbar:has(menupopup[open]),
+  #PersonalToolbar:has(.bookmark-item[open]) ,
+  #nav-bar:hover + #PersonalToolbar,
+  #PersonalToolbar:hover,
+  #PersonalToolbar:focus-within {
+    transform: rotateX(0deg) !important;
+    pointer-events: auto !important;
+  }
+    
+  /* 恢复书签栏 */
   /* Expand the bookmarks toolbar by hovering */
   @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 1)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
     #nav-bar:hover + #PersonalToolbar,
     #PersonalToolbar:hover {
-        transform: rotateX(0deg) !important;
-      }
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      pointer-events: auto !important; /* 恢复交互能力 */
+      
+      /* 添加轻微延迟避免误触发 */
+      transition-delay: 0.2s !important;
     }
   }
+}
 
   /* Expand the bookmarks toolbar when you search */
   @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 2)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
