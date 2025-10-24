@@ -1,5 +1,7 @@
 @media (-moz-pref("svg.context-properties.content.enabled")) {
-
+  #navigator-toolbox {
+    height: calc(100% - (var(--zen-element-separation) * 4.5)) !important;
+  }
 
   /*FluentUI*/
   @media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
@@ -1443,6 +1445,11 @@
       #appMenu-translate-button {
         --menu-image: url('chrome://browser/skin/zen-icons/translations.svg');
       }
+      #translations-button-icon {
+        background-position: center !important; 
+        list-style-image:  url("chrome://browser/skin/zen-icons/translations.svg") !important;      
+      }
+    
       #context-viewsource,
       #context-viewframesource,
       #context-viewpartialsource-selection {
