@@ -1,7 +1,5 @@
 @media (-moz-pref("svg.context-properties.content.enabled")) {
-  #navigator-toolbox {
-    height: calc(100% - (var(--zen-element-separation) * 4.5)) !important;
-  }
+  
 
   /*FluentUI*/
   @media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
@@ -2115,7 +2113,11 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
     z-index: 3 !important;
     border-bottom: 0 !important;
   }
-  }  
+  }
+  /* Adapt for Zen (Since zen v1.17.1) */
+  #navigator-toolbox {
+    height: calc(100% - (var(--zen-element-separation) * 4.5)) !important;
+  }
   /* Bookmark bar Style */  
   #personal-bookmarks
     #PlacesToolbarItems
