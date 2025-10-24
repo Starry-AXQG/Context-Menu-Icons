@@ -2093,13 +2093,13 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
 @media (not (-moz-pref("cmi-Auto-Hide-BookmarkBar", 0))) {
   @media (not ((-moz-pref("zen.view.compact.hide-toolbar")) and (-moz-pref("zen.view.compact.enable-at-startup"))))  {
 
-  @media (-moz-bool-pref: "cmi-bookmarks-theme-transparent") {
+  @media (-moz-pref("cmi-bookmarks-theme-transparent")) {
     #PersonalToolbar:not([customizing]) {
       background-color: var(--zen-colors-tertiary) !important;
     }
   }
 
-  @media (not (-moz-bool-pref: "cmi-bookmarks-theme-transparent")) {
+  @media (not (-moz-pref("cmi-bookmarks-theme-transparent"))) {
     #personal-bookmarks toolbarbutton.bookmark-item:not(#OtherBookmarks) {
       border-radius: 11px !important;
       background-color: light-dark(rgba(255,255,255,0.45), rgba(0,0,0,0.55)) !important;
