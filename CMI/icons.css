@@ -322,7 +322,7 @@
         list-style-image: url("customize.svg") !important;
       }      
       
-      .urlbar-icon {
+      #zen-copy-url-button > .urlbar-icon {
         background-position: center !important; 
         list-style-image:  url("link.svg") !important;
       }
