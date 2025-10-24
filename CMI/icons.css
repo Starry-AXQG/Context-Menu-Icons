@@ -320,44 +320,42 @@
       #overflowMenu-customize-button,
       #appmenu-moreTools-button {
         list-style-image: url("customize.svg") !important;
-      }
+      }      
       
-      #pageAction-panel-bookmark,
-      #star-button {
-        
-        width: 16px;
-        height: 16px;
-        
-        background-image: url("bookmark-hollow.svg") !important;
-        background-repeat: no-repeat !important;
-        background-position: center !important;
-        
-        background-size: 17px 17px !important;
-
+      .urlbar-icon {
+        background-position: center !important; 
+        list-style-image:  url("link.svg") !important;
       }
       #translations-button-icon {
         background-position: center !important; 
         list-style-image:  url("translations.svg") !important;      
       }
-      #zen-site-data-icon-button >image {
-        list-style-image: url("permissions.svg") !important;
-        background-position: center !important;
+      
+      #pageAction-panel-bookmark,
+      #star-button {
+        width: 16px;
+        height: 16px;    
+        background-image: url("bookmark-hollow.svg") !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;     
+        background-size: 17px 17px !important;
       }
 
       #pageAction-panel-bookmark[starred],
       #star-button[starred] {
-
         width: 16px;
-        height: 16px;
-        
+        height: 16px;        
         background-image: url("bookmark.svg") !important;
         background-repeat: no-repeat !important;
-        background-position: center !important;
-        
+        background-position: center !important;        
         background-size: 17px 17px !important;
-
       }
-
+      
+      #zen-site-data-icon-button >image {
+              list-style-image: url("permissions.svg") !important;
+              background-position: center !important;
+      }
+      
       #sidebar-box[sidebarcommand="viewTabsSidebar"]
         > #sidebar-header
         > #sidebar-switcher-target
