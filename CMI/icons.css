@@ -2172,14 +2172,20 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
       transform 300ms ease-out !important;
   }
 
-  /* 当书签面板展开时，恢复书签面板交互事件 */
+  #PersonalToolbar:has([open]),
+  #PersonalToolbar:has([aria-expanded="true"]),
   #PersonalToolbar:has(menupopup[open]),
-  #PersonalToolbar:has(.bookmark-item[open]) ,
+  #PersonalToolbar:has(menu[open]),
+  #PersonalToolbar:has(.bookmark-item[open]),
   #nav-bar:hover + #PersonalToolbar,
   #PersonalToolbar:hover,
   #PersonalToolbar:focus-within {
-    transform: rotateX(0deg) !important;
-    pointer-events: auto !important;
+  /* 同时恢复可见性与交互，兼容 translateY / rotateX 两种动画变换 */
+  opacity: 1 !important;
+  transform: translateY(0) rotateX(0deg) !important;
+  pointer-events: auto !important;
+  /* 立即恢复交互，避免面板在重新进入时失去事件响应 */
+  transition-delay: 0s !important;
   }
     
   /* 恢复书签栏 */
@@ -2200,7 +2206,9 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
   /* Expand the bookmarks toolbar when you search */
   @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 2)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
     #nav-bar:focus-within + #PersonalToolbar {
-      transform: rotateX(0deg) !important;
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      pointer-events: auto !important;
     }
   }
 }
