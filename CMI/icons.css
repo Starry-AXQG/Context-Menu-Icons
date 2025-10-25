@@ -1407,7 +1407,7 @@
         --menu-image: url('chrome://browser/skin/zen-icons/search-glass.svg');
       }
       #context-searchselect-private {
-        --menu-image: url('chrome://browser/skin/zen-icons/private-window.svg');
+        --menu-image: url('chrome://browser/skin/zen-icons/search-glass.svg');
       }
       #context-viewimage {
         --menu-image: url('chrome://browser/skin/zen-icons/image-open.svg');
