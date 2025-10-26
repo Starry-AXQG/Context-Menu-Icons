@@ -10,13 +10,13 @@
     },
     "readme": "https://raw.githubusercontent.com/Starry-AXQG/Context-Menu-Icons/refs/heads/main/README.md",
     "author": "Starry-AXQG",
-    "version": "2.4",
+    "version": "2.4.1",
     "tags": [
         "Context Menu",
         "Icons",
         "Icon Pack"
     ],
     "createdAt": "2025-06-02",
-    "updatedAt": "2025-10-24",
+    "updatedAt": "2025-10-26",
     "fork": ["zen", "firefox"]
 }

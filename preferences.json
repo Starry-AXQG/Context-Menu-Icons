@@ -237,7 +237,7 @@
 },
 {
   "type": "text",
-  "label": "⚠️ The following configuration determines the left margins of the menu items for each section, and adjusts them to achieve the alignment effect. This configuration may need to be modified according to different environments. If you need to make any changes, see github for guide.",
+  "label": "⚠️ The following configuration items are used to ensure that the icon and text of menu items remain consistently aligned in different environments. See github for guide. (The default configuration may vary depending on the operating system, the use of different mod themes (such as Arc 2.0 or Nebula), or the use of different browsers, and thus may not be suitable for all users.) ⚠️",
   "margin": "15px 0 30px 0",
   "size": "15px"
 },
