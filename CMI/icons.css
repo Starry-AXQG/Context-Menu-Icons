@@ -2415,6 +2415,8 @@ menupopup menupopup{
     menupopup#placesContext:has(> menuitem:not([hidden])[checked="true"]),
     /* 工具栏 */
     menupopup#toolbar-context-menu:has(> menuitem:not([hidden])[checked="true"]),
+    /* 标签栏 */
+    menupopup#tabContextMenu:has(> menuitem:not([hidden])[checked="true"]),
     /* 当循环或PIP勾选时 */
     menupopup#contentAreaContextMenu:has(> menuitem:not([hidden])[checked="true"]),
     /* 当拼写检查勾选 */
@@ -2468,6 +2470,8 @@ menupopup menupopup{
     menupopup#placesContext:has(> menuitem:not([hidden])[type="checkbox"]),
     /* 工具栏 */
     menupopup#toolbar-context-menu:has(> menuitem:not([hidden])[type="checkbox"]),
+    /* 标签栏 */
+    menupopup#tabContextMenu:has(> menuitem:not([hidden])[type="checkbox"]),    
     /* 当循环或PIP勾选时 */
     menupopup#contentAreaContextMenu:has(> menuitem:not([hidden])[type="checkbox"]),
     /* 当拼写检查勾选 */
