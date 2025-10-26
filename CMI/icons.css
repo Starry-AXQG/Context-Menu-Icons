@@ -2471,7 +2471,7 @@ menupopup menupopup{
     /* 工具栏 */
     menupopup#toolbar-context-menu:has(> menuitem:not([hidden])[type="checkbox"]),
     /* 标签栏 */
-    menupopup#tabContextMenu:has(> menuitem:not([hidden])[type="checkbox"]),    
+    menupopup#tabContextMenu:has(> menuitem:not([hidden])[type="checkbox"]),
     /* 当循环或PIP勾选时 */
     menupopup#contentAreaContextMenu:has(> menuitem:not([hidden])[type="checkbox"]),
     /* 当拼写检查勾选 */
@@ -2515,36 +2515,39 @@ menupopup menupopup{
    可选：可以在上面的 menuitem 选择器里加上 :not(.menuitem-iconic) 进行排除“图标样式”的 menuitem（例如 .menuitem-iconic）。也许后面可能需要这个排除（？）
    ========================================================= */
 @media (not (-moz-pref("cmi-Switch-PC-Platform", 2))) {
-/* 严格版本（适用于两者为同一 menupopup 的直接子项）*/
-menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
-  > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
-  > .menu-text,
-menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
-  > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
-  > .menu-highlightable-text {
-  padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
-  box-sizing: border-box !important;
+/* 当 menupopup 下有被勾选的 checkbox 或 radio 时，
+给同层级未勾选的 checkbox 子项增加 padding */
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
+> menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
+> .menu-text,
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
+> menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
+> .menu-highlightable-text {
+padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
+box-sizing: border-box !important;
 }
 
-/* 当某个直接子项 checkbox 被勾选且未隐藏时，给同一层级的其它直接子项 checkbox（未隐藏、未被勾选、且不是父菜单）增加 padding */
-menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
-  > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
-  > .menu-text,
-menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
-  > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
-  > .menu-highlightable-text {
-  padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
-  box-sizing: border-box !important;
+
+/* 当 menupopup 下有被勾选的 checkbox 或 radio 时，
+给同层级未勾选且不是父菜单的 checkbox 子项增加 padding */
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
+> menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
+> .menu-text,
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
+> menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
+> .menu-highlightable-text {
+padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
+box-sizing: border-box !important;
 }
 }
 
 /* Linux */
 @media (-moz-pref("cmi-Switch-PC-Platform", 2)) {
 /* 严格版本（适用于两者为同一 menupopup 的直接子项）*/
-menupopup:has(> menuitem[type="checkbox"]:not([hidden]))
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
   > .menu-text,
-menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
+menupopup:has(> menuitem[type="checkbox"]:not([hidden]))
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
   > .menu-highlightable-text {
 
@@ -2555,10 +2558,10 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
 }
 
 /* 当某个直接子项 checkbox 被勾选且未隐藏时，给同一层级的其它直接子项 checkbox（未隐藏、未被勾选、且不是父菜单）增加 padding */
-menupopup:has(> menuitem[type="checkbox"]:not([hidden]))
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
   > .menu-text,
-menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
   > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
   > .menu-highlightable-text {
 
