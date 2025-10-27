@@ -2093,7 +2093,7 @@ However, I found that the implementation method of "Bookmark Toolbar Tweaks" is 
 I fixed these errors and enhanced some of its features, making it more compatible and having a better appearance. */
 
 @media (not (-moz-pref("cmi-Auto-Hide-BookmarkBar", 0))) {
-  /* Disabled in the compact mode to prevent conflicts. */
+  /* Disabled in the compact mode (hide toolbar) to prevent conflicts. */
   @media (not ((-moz-pref("zen.view.compact.hide-toolbar")) and (-moz-pref("zen.view.compact.enable-at-startup"))))  {
   /* Bookmark bar color style */
   @media (-moz-pref("cmi-bookmarks-theme-transparent")) {
