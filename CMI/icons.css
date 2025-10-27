@@ -2084,15 +2084,18 @@ menuseparator::before {
     display: none;
   }
 }
-/* Auto Hide Bookmark Toolbar */
+
+
+/* Auto Hide Bookmark-bar */
 /* Incorporated this feature into the CMI in v2.2 */
 /* This was a feature that I had liked on Firefox even before I switched to Zen. 
 However, I found that the implementation method of "Bookmark Toolbar Tweaks" is better. However, it has some bugs and no longer works on the new version of Zen.
-So, I fixed these bugs and improved the visual effects of the original code, making them look more modern and attractive. */
-/* Disabled in the compact mode to prevent conflicts. */
-@media (not (-moz-pref("cmi-Auto-Hide-BookmarkBar", 0))) {
-  @media (not ((-moz-pref("zen.view.compact.hide-toolbar")) and (-moz-pref("zen.view.compact.enable-at-startup"))))  {
+I fixed these errors and enhanced some of its features, making it more compatible and having a better appearance. */
 
+@media (not (-moz-pref("cmi-Auto-Hide-BookmarkBar", 0))) {
+  /* Disabled in the compact mode to prevent conflicts. */
+  @media (not ((-moz-pref("zen.view.compact.hide-toolbar")) and (-moz-pref("zen.view.compact.enable-at-startup"))))  {
+  /* Bookmark bar color style */
   @media (-moz-pref("cmi-bookmarks-theme-transparent")) {
     #PersonalToolbar:not([customizing]) {
       background-color: var(--zen-colors-tertiary) !important;
@@ -2151,6 +2154,7 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
   
 
   /* 常态下隐藏书签栏,并禁止书签栏影响网页交互 */
+  /* By default, the bookmark bar is hidden and its influence on web page interaction is prevented */
   #PersonalToolbar {
     /* 关键：使用绝对定位脱离文档流 */
     position: absolute !important;
@@ -2189,7 +2193,7 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
   }
     
   /* 恢复书签栏 */
-  /* Expand the bookmarks toolbar by hovering */
+  /* Expand the bookmarks-bar by hovering */
   @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 1)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
     #nav-bar:hover + #PersonalToolbar,
     #PersonalToolbar:hover {
@@ -2203,7 +2207,7 @@ So, I fixed these bugs and improved the visual effects of the original code, mak
   }
 }
 
-  /* Expand the bookmarks toolbar when you search */
+  /* Expand the bookmarks-bar when search */
   @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 2)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
     #nav-bar:focus-within + #PersonalToolbar {
       opacity: 1 !important;
@@ -2484,7 +2488,7 @@ menupopup menupopup{
     /* 当下载菜单有项目勾选 */
     menupopup#downloadsContextMenu:has(> menuitem:not([hidden])[type="checkbox"]),
     /* 浏览器内置翻译器菜单 */
-    menupopup#full-page-translations-panel-settings-menupopup:has(> menuitem:not([hidden])[type="checkbox"]),
+    menupopup#full-page-translations-panel-settings-menupopup:has(> menuitem:not([hidden])[type="checkbox"])，
     /* Chat bot */
     menupopup#chatbot-menupopup:has(> menuitem:not([hidden])[type="checkbox"])
   ) {
