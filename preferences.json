@@ -4,7 +4,7 @@
         "type": "text",
         "label": "⚙️ Preferences",
         "margin": "30px 0 15px 0",
-        "size": "25px"
+        "size": "20px"
     },
 
     {
@@ -56,8 +56,8 @@
 
     {
         "type": "separator",
-        "label": "Menu Style",
-        "margin": "25px 0 8px 0"
+        "label": "📄 Menu Style",
+        "margin": "15px 0 15px 0"
     },
 
     {
@@ -132,17 +132,16 @@
     },   
 
     {
-        "type": "text",
-        "label": "🧩 Other Settings",
-        "margin": "20px 0 15px 0",
-        "size": "20px"
+      "type": "separator",
+      "label": "🔖 Bookmark bar style",
+      "margin": "15px 0 15px 0"
     },
 
     {
 
         "type": "checkbox",
         "property": "cmi-Center-Bookmark-Items",
-        "label": "[⭐ Bookmark Toolbar Style ] Center bookmark toolbar items",
+        "label": "Center bookmark toolbar items",
         "defaultValue": false
 
     },
@@ -151,7 +150,7 @@
 
         "type": "checkbox",
         "property": "cmi-Hide-Folder-Icons",
-        "label": "[⭐ Bookmark Toolbar Style ] Hidden bookmark folder icons 📁 ( Enable to make bookmark toolbar more concise )",
+        "label": "Hidden bookmark folder icons 📁 ( Enable to make bookmark toolbar more concise )",
         "defaultValue": false
 
     },
@@ -160,7 +159,7 @@
         "type": "dropdown",
         "value": "number",
         "property": "cmi-Hide-Bookmark-Element",
-        "label": "[⭐ Bookmark Toolbar Style ] Hide the other elements of the bookmark toolbar",
+        "label": "Hide the other elements of the bookmark toolbar",
         "default": 0,
         "placeholder": false,
         "options": [
@@ -189,7 +188,7 @@
 
         "type": "checkbox",
         "property": "cmi-Hide-OAiT-Item",
-        "label": "[Bookmark Toolbar Style] Hidden Bookmark 'Open All in Tabs' menu item (Enable to improve the bookmark page. This menu item is rarely used and is not available in most browsers. You can safely enable it. )",
+        "label": "Hidden Bookmark 'Open All in Tabs' menu item (Enable to improve the bookmark page. This menu item is rarely used and is not available in most browsers. You can safely enable it. )",
         "defaultValue": false
 
     },
@@ -198,7 +197,7 @@
     "type": "dropdown",
     "value": "number",
     "property": "cmi-Auto-Hide-BookmarkBar",
-    "label": "[Bookmark Toolbar Style] Automatically hide the bookmark bar ",
+    "label": "Automatically hide the bookmark bar ",
     "default": 0,
     "placeholder": false,
     "options": [
