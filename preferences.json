@@ -318,6 +318,13 @@
       "default": "28px",
       "placeholder": "default: 28px"
     },
+    {
+      "type": "string",
+      "property": "cmi-Padding-Non-Checkmark-subitems_cover_1",
+      "label": "Non-Checkmark-subitems padding",
+      "default": "24px",
+      "placeholder": "default: 24px"
+    },    
 
     {
       "type": "string",
