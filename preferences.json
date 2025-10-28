@@ -236,7 +236,7 @@
 },
 {
   "type": "text",
-  "label": "⚠️ The following configuration items are used to ensure that the icon and text of menu items remain consistently aligned in different environments. See github for guide. (The default configuration may vary depending on the operating system, the use of different mod themes (such as Arc 2.0 or Nebula), or the use of different browsers, and thus may not be suitable for all users.) ⚠️",
+  "label": "⚠️ The following configuration items are used to ensure that the icon and text of menu items remain consistently aligned in different environments. See github for guide. (The default configuration may vary depending on the operating system, the use of different mod themes (such as Arc 2.0 or Nebula), or the use of different browsers, and thus may not be suitable for all users.) Clearing the input box to view the default values provided by CMI. '/' indicates the default values of whether to enable 'Align extension icons in menu' before and after it.⚠️",
   "margin": "15px 0 30px 0",
   "size": "15px"
 },
@@ -251,8 +251,8 @@
       "type": "string",
       "property": "cmi-Padding-Container",
       "label": "[Global]The left margin of the text in the custom container menu",
-      "default": "34px",
-      "placeholder": "default: 34px"
+      "default": "30px",
+      "placeholder": "default: 30px/34px"
     },
 
 {
@@ -265,15 +265,15 @@
       "type": "string",
       "property": "cmi-Margin-Checkmark-start_1",
       "label": "--cmi-Margin-Checkmark-start",
-      "default": "11px",
-      "placeholder": "default: 11px"
+      "default": "7px",
+      "placeholder": "default: 7px/11px"
     },
     {
       "type": "string",
       "property": "cmi-Margin-Checkmark-start_cover_1",
       "label": "--cmi-Margin-Checkmark-start_cover",
-      "default": "11px",
-      "placeholder": "default: 11px"
+      "default": "7px",
+      "placeholder": "default: 7px/11px"
     },
     {
       "type": "string",
@@ -286,8 +286,8 @@
       "type": "string",
       "property": "cmi-Margin-Checkmark-end_cover_1",
       "label": "--cmi-Margin-Checkmark-end_cover",
-      "default": "11px",
-      "placeholder": "default: 11px"
+      "default": "7px",
+      "placeholder": "default: 7px/11px"
     },
     {
       "type": "string",
@@ -315,8 +315,8 @@
       "type": "string",
       "property": "cmi-Padding-Non-Checkmark-subitems_1",
       "label": "Non-Checkmark-subitems padding",
-      "default": "28px",
-      "placeholder": "default: 28px"
+      "default": "24px",
+      "placeholder": "default: 24px/28px"
     },
 
     {
@@ -331,8 +331,8 @@
       "type": "string",
       "property": "cmi-Margin-Extensions-start_1",
       "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values..",
-      "default": "4px",
-      "placeholder": "default: 4px"
+      "default": "5px",
+      "placeholder": "default: 5px"
     },
     {
       "type": "string",
@@ -353,15 +353,15 @@
       "type": "string",
       "property": "cmi-Margin-Checkmark-start_2",
       "label": "--cmi-Margin-Checkmark-start",
-      "default": "6px",
-      "placeholder": "default: 6px"
+      "default": "7px",
+      "placeholder": "default: 7px"
     },
     {
       "type": "string",
       "property": "cmi-Margin-Checkmark-start_cover_2",
       "label": "--cmi-Margin-Checkmark-start_cover",
       "default": "5px",
-      "placeholder": "default: 5px"
+      "placeholder": "default: 6px"
     },
     {
       "type": "string",
@@ -389,8 +389,8 @@
       "type": "string",
       "property": "cmi-Padding-Submenu_2",
       "label": "--cmi-Padding-Submenu",
-      "default": "34px",
-      "placeholder": "default: 34px"
+      "default": "30px",
+      "placeholder": "default: 30px"
     },
     {
       "type": "string",
