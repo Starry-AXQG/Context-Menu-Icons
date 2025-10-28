@@ -2322,7 +2322,7 @@ menupopup menupopup{
 }
 
 
-  /* 1. 只排除顶栏菜单和文字选取下拉
+  /* 1. 排除顶栏菜单和文字选取下拉
      2. 排除下载管理器菜单 / create-new / new-tab 弹出
      3. 排除：已勾选复选/单选、带图标、menulist 内的、unified-nav-current
   */
@@ -2526,10 +2526,10 @@ menupopup menupopup{
 @media (not (-moz-pref("cmi-Switch-PC-Platform", 2))) {
 /* 当 menupopup 下有被勾选的 checkbox 或 radio 时，
 给同层级未勾选的 checkbox 子项增加 padding */
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
+menupopup:not(#zen-context-menu-compact-mode > menupopup):has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
 > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"])
 > .menu-text,
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
+menupopup:not(#zen-context-menu-compact-mode > menupopup):has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
 > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"])
 > .menu-highlightable-text {
 padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
@@ -2539,10 +2539,10 @@ box-sizing: border-box !important;
 
 /* 当 menupopup 下有被勾选的 checkbox 或 radio 时，
 给同层级未勾选且不是父菜单的 checkbox 子项增加 padding */
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
+menupopup:not(#zen-context-menu-compact-mode > menupopup):has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
 > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
 > .menu-text,
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
+menupopup:not(#zen-context-menu-compact-mode > menupopup):has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
 > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
 > .menu-highlightable-text {
 padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
@@ -2554,10 +2554,10 @@ box-sizing: border-box !important;
 @media (-moz-pref("cmi-Switch-PC-Platform", 2)) {
 /* 当 menupopup 下有被勾选的 checkbox 或 radio 时，
 给同层级未勾选的 checkbox 子项增加 padding */
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
+menupopup:not(#zen-context-menu-compact-mode > menupopup):has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
 > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"])
 > .menu-text,
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
+menupopup:not(#zen-context-menu-compact-mode > menupopup):has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
 > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"])
 > .menu-highlightable-text {
 padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
@@ -2567,10 +2567,10 @@ box-sizing: border-box !important;
 
 /* 当 menupopup 下有被勾选的 checkbox 或 radio 时，
 给同层级未勾选且不是父菜单的 checkbox 子项增加 padding */
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
+menupopup:not(#zen-context-menu-compact-mode > menupopup):has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
 > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
 > .menu-text,
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
+menupopup:not(#zen-context-menu-compact-mode > menupopup):has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
 > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
 > .menu-highlightable-text {
 padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
