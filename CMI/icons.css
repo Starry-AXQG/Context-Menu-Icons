@@ -2169,8 +2169,8 @@ I fixed these errors and enhanced some of its features, making it more compatibl
       transform: rotateX(90deg) !important;
       transform-origin: top;
       transition: 
-        opacity 200ms ease-out,
-        transform 200ms ease-out !important;
+        opacity 250ms ease-out,
+        transform 250ms ease-out !important;
       z-index: 1;
     }
   
