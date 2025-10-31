@@ -2124,7 +2124,6 @@ I fixed these errors and enhanced some of its features, making it more compatibl
     height: calc(100% - (var(--zen-element-separation) * 4.5)) !important;
   }
   }
-  
   /* Bookmark bar Style */  
   #personal-bookmarks
     #PlacesToolbarItems
@@ -2311,7 +2310,7 @@ menupopup menupopup{
      3. 排除：已勾选复选/单选、带图标、menulist 内的、unified-nav-current
   */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu)
     > menuitem:not(
       .openintabs-menuitem,
 
@@ -2323,7 +2322,7 @@ menupopup menupopup{
       .unified-nav-current
       ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu)
     > menu:not(
       .openintabs-menuitem,
 
@@ -2335,7 +2334,7 @@ menupopup menupopup{
       .unified-nav-current
       ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu)
     > menucaption {
       padding-inline-start: calc(
         var(--fp-contextmenu-menuitem-padding-inline)
