@@ -55,6 +55,28 @@
     },
 
     {
+        "type": "dropdown",
+        "value": "number",
+        "property": "cmi-Switch-Gecko-Branch",
+        "label": "📚 Are you using Firefox? ",
+        "default": 1,
+        "placeholder": false,
+        "options": [
+
+            {
+                "label": "Zen",
+                "value": 1
+            },
+            
+            {
+                "label": "Firefox",
+                "value": 0
+            }
+
+        ]
+    },    
+
+    {
         "type": "separator",
         "label": "📄 Menu Style",
         "margin": "15px 0 15px 0"
