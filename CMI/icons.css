@@ -2022,16 +2022,24 @@ menuseparator::before {
     }
   }
 
-@media (-moz-pref("zen.view.window.scheme", 2)), (-moz-pref("browser.theme.toolbar-theme", 2)) {
+@media (-moz-pref("zen.view.window.scheme", 2)) {
   :root[zen-theme="dark"] .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
-    fill: var(--arrowpanel-icon-color) !important;
     filter: var(--grayscale-filter-dark);
   }
   :root[zen-theme="light"] .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
-    fill: var(--arrowpanel-icon-color) !important;
     filter: var(--grayscale-filter-light);
   }
 }
+
+@media (-moz-pref("browser.theme.toolbar-theme", 2)) and (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
+  :root[zen-theme="dark"] .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+    filter: var(--grayscale-filter-dark);
+  }
+  :root[zen-theme="light"] .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+    filter: var(--grayscale-filter-light);
+  }
+}
+
 }
   
 
@@ -2137,7 +2145,7 @@ I fixed these errors and enhanced some of its features, making it more compatibl
   }
 
   /* Adapt for firefox */
-  @media (-moz-pref("cmi-AHB-Firefox")) {
+  @media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
   #navigator-toolbox {
     z-index: 3 !important;
  /* border-bottom: 0 !important; */
@@ -2184,9 +2192,9 @@ I fixed these errors and enhanced some of its features, making it more compatibl
   /* 常态下隐藏书签栏,并避免书签栏影响网页交互 */
     #PersonalToolbar {   
       position: absolute;
-    @media (-moz-pref("cmi-AHB-Firefox")) {
+    @media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
       top: 100% !important; 
-    }      
+    }
       left: 0 !important;
       right: 0 !important;
       opacity: 0 !important; /* 非刚需了但是可以做过渡动画 */
