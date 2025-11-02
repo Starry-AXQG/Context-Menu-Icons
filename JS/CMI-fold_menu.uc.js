@@ -207,33 +207,21 @@
 })();
 
 // Obtain the status of the theme
-(async () => {
-  const { Services } = globalThis || window;
-  let scheme;
+(() => {
+  let timeoutId;
 
-  try {
-    scheme = Services.prefs.getIntPref("zen.view.window.scheme", 2);
-  } catch (e1) {
-    try {
-      scheme = Services.prefs.getIntPref("browser.theme.toolbar-theme", 2);
-    } catch (e2) {
-      console.warn("⚠️ Unable to obtain the theme preferences: `zen.view.window.scheme` or `browser.theme.toolbar-theme`");
-      scheme = 2;
-    }
-  }
+  const updateTheme = () => {
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('zen-theme', isDark ? 'dark' : 'light');
+  };
 
-  let isDark = false;
+  const debouncedUpdate = () => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(updateTheme, 150); // Debounce for 150ms
+  };
 
-  if (scheme === 0) isDark = true;
-  else if (scheme === 1) isDark = false;
-  else if (scheme === 2) {
-    isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  }
+  updateTheme();
 
-  document.documentElement.setAttribute("zen-theme", isDark ? "dark" : "light");
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  mediaQuery.addEventListener('change', debouncedUpdate);
 })();
-// Dynamic monitoring
-window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", e => {
-  const dark = e.matches;
-  document.documentElement.setAttribute("zen-theme", dark ? "dark" : "light");
-});

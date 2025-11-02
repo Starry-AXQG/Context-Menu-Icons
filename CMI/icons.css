@@ -2003,28 +2003,31 @@ menuseparator::before {
 
 
 @media (-moz-pref("cmi-Grayscale-Extensions-Icons")) {
-:root {
-  --grayscale-filter-dark: grayscale(100%) invert(100%) brightness(125%);
-  --grayscale-filter-light: grayscale(100%) invert(0%) brightness(100%);
-}
+  :root {
+    --grayscale-filter-dark: grayscale(100%) invert(100%) brightness(125%);
+    --grayscale-filter-light: grayscale(100%) invert(0%) brightness(100%);
+  }
+  /* Dark */
+  @media (-moz-pref("zen.view.window.scheme", 0)), (-moz-pref("browser.theme.toolbar-theme", 0)) {
+    .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+      fill: var(--arrowpanel-icon-color) !important;
+      filter: var(--grayscale-filter-dark);
+    }
+  }
+  /* Light */
+  @media (-moz-pref("zen.view.window.scheme", 1)), (-moz-pref("browser.theme.toolbar-theme", 1)) {
+    .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+      fill: var(--arrowpanel-icon-color) !important;
+      filter: var(--grayscale-filter-light);
+    }
+  }
 
-:root[zen-theme="dark"] .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
-  fill: var(--arrowpanel-icon-color) !important;
-  filter: var(--grayscale-filter-dark);
-}
-:root[zen-theme="light"] .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
-  fill: var(--arrowpanel-icon-color) !important;
-  filter: var(--grayscale-filter-light);
-}
-
-@media (-moz-pref("zen.view.window.scheme", 0)), (-moz-pref("browser.theme.toolbar-theme", 0)) {
-  .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+@media (-moz-pref("zen.view.window.scheme", 2)), (-moz-pref("browser.theme.toolbar-theme", 2)) {
+  :root[zen-theme="dark"] .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
     fill: var(--arrowpanel-icon-color) !important;
     filter: var(--grayscale-filter-dark);
   }
-}
-@media (-moz-pref("zen.view.window.scheme", 1)), (-moz-pref("browser.theme.toolbar-theme", 1)) {
-  .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+  :root[zen-theme="light"] .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
     fill: var(--arrowpanel-icon-color) !important;
     filter: var(--grayscale-filter-light);
   }
