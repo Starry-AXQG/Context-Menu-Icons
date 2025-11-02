@@ -2024,18 +2024,22 @@ menuseparator::before {
 
 @media (-moz-pref("zen.view.window.scheme", 2)) {
   :root[zen-theme="dark"] .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+    fill: var(--arrowpanel-icon-color) !important;
     filter: var(--grayscale-filter-dark);
   }
   :root[zen-theme="light"] .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+    fill: var(--arrowpanel-icon-color) !important;
     filter: var(--grayscale-filter-light);
   }
 }
 
 @media (-moz-pref("browser.theme.toolbar-theme", 2)) and (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
   :root[zen-theme="dark"] .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+    fill: var(--arrowpanel-icon-color) !important;
     filter: var(--grayscale-filter-dark);
   }
   :root[zen-theme="light"] .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+    fill: var(--arrowpanel-icon-color) !important;
     filter: var(--grayscale-filter-light);
   }
 }
