@@ -2435,7 +2435,7 @@ menupopup menupopup{
     background-color: var(--checkmark-bg-color, transparent);
   }
 
-@media (not (-moz-pref("cmi-Switch-PC-Platform", 2))) {
+@media not (-moz-platform: linux) {
   /* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
   :is(
     /* 书签栏 */
@@ -2493,7 +2493,7 @@ menupopup menupopup{
 }
 
 /* Linux */
-@media (-moz-pref("cmi-Switch-PC-Platform", 2)) {
+@media (-moz-platform: linux) {
   /* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
   :is(
     /* 书签栏 */
@@ -2543,7 +2543,7 @@ menupopup menupopup{
    则对同一 menupopup 中其它未隐藏的 checkbox 菜单项应用 padding(fix for v1.9.4)
    可选：可以在上面的 menuitem 选择器里加上 :not(.menuitem-iconic) 进行排除“图标样式”的 menuitem（例如 .menuitem-iconic）。也许后面可能需要这个排除（？）
    ========================================================= */
-@media (not (-moz-pref("cmi-Switch-PC-Platform", 2))) {
+@media not (-moz-platform: linux) {
 /* 当 menupopup 下有被勾选的 checkbox 时，
 给同层级未勾选的 checkbox 子项增加 padding */
 menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
@@ -2580,7 +2580,7 @@ menupopup#unified-extensions-context-menu:has(> menuitem:is([type="checkbox"], [
 }
 }
 /* Linux */
-@media (-moz-pref("cmi-Switch-PC-Platform", 2)) {
+@media (-moz-platform: linux) {
 /* 当 menupopup 下有未被隐藏的 checkbox、radio 时，
 给同层级未勾选的 checkbox 子项增加 padding */
 menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
