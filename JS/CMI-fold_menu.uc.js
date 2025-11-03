@@ -205,3 +205,33 @@
   window.addEventListener('unload', () => {}, { once: true });
 
 })();
+
+// Obtain the status of the theme
+(() => {
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  let timeoutId = null;
+  let currentIsDark = mediaQuery.matches;
+
+  const apply = (isDark) => {
+    if (isDark === currentIsDark) return; // Skip if no change 
+    currentIsDark = isDark;
+    document.documentElement.setAttribute('zen-theme', isDark ? 'dark' : 'light');
+  };
+
+  const debouncedHandler = () => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => apply(mediaQuery.matches), 150);
+  };
+
+  apply(mediaQuery.matches);
+  mediaQuery.addEventListener('change', debouncedHandler);
+
+  // Auto clean
+  const cleanup = () => {
+    mediaQuery.removeEventListener('change', debouncedHandler);
+    window.removeEventListener('focus', focusHandler);
+    clearTimeout(timeoutId);
+  };
+  window.addEventListener('pagehide', cleanup, { once: true });
+})();
+
