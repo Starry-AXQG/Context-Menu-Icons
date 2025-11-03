@@ -205,3 +205,23 @@
   window.addEventListener('unload', () => {}, { once: true });
 
 })();
+
+// Obtain the status of the theme
+(() => {
+  let timeoutId;
+
+  const updateTheme = () => {
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('zen-theme', isDark ? 'dark' : 'light');
+  };
+
+  const debouncedUpdate = () => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(updateTheme, 150); // Debounce for 150ms
+  };
+
+  updateTheme();
+
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  mediaQuery.addEventListener('change', debouncedUpdate);
+})();
