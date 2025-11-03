@@ -2002,13 +2002,50 @@ menuseparator::before {
 }
 
 
-@media (-moz-pref("cmi-Grayscale-Extensions-Icons")){
+@media (-moz-pref("cmi-Grayscale-Extensions-Icons")) {
+  :root {
+    --grayscale-filter-dark: grayscale(100%) invert(100%) brightness(125%);
+    --grayscale-filter-light: grayscale(100%) invert(0%) brightness(100%);
+  }
+  /* Dark */
+  @media (-moz-pref("zen.view.window.scheme", 0)), (-moz-pref("browser.theme.toolbar-theme", 0)) {
+    .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+      fill: var(--arrowpanel-icon-color) !important;
+      filter: var(--grayscale-filter-dark);
+    }
+  }
+  /* Light */
+  @media (-moz-pref("zen.view.window.scheme", 1)), (-moz-pref("browser.theme.toolbar-theme", 1)) {
+    .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+      fill: var(--arrowpanel-icon-color) !important;
+      filter: var(--grayscale-filter-light);
+    }
+  }
 
-  .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+@media (-moz-pref("zen.view.window.scheme", 2)) {
+  :root[zen-theme="dark"] .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
     fill: var(--arrowpanel-icon-color) !important;
-    filter: grayscale(100%) invert(100%) brightness(150%);
+    filter: var(--grayscale-filter-dark);
+  }
+  :root[zen-theme="light"] .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+    fill: var(--arrowpanel-icon-color) !important;
+    filter: var(--grayscale-filter-light);
   }
 }
+
+@media (-moz-pref("browser.theme.toolbar-theme", 2)) and (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
+  :root[zen-theme="dark"] .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+    fill: var(--arrowpanel-icon-color) !important;
+    filter: var(--grayscale-filter-dark);
+  }
+  :root[zen-theme="light"] .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+    fill: var(--arrowpanel-icon-color) !important;
+    filter: var(--grayscale-filter-light);
+  }
+}
+
+}
+  
 
   /* Align the icons of the extension with those of CMI */
   /* ==== 1. 声明命名空间 & 作用域 ==== */
@@ -2112,10 +2149,10 @@ I fixed these errors and enhanced some of its features, making it more compatibl
   }
 
   /* Adapt for firefox */
-  @media (-moz-pref("cmi-AHB-Firefox")) {
+  @media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
   #navigator-toolbox {
     z-index: 3 !important;
-    border-bottom: 0 !important;
+ /* border-bottom: 0 !important; */
   }
   }
   /* Adapt for Zen (Since zen v1.17.1) */
@@ -2156,70 +2193,53 @@ I fixed these errors and enhanced some of its features, making it more compatibl
   }
   
 
-  /* 常态下隐藏书签栏,并禁止书签栏影响网页交互 */
-  /* By default, the bookmark bar is hidden and its influence on web page interaction is prevented */
-  #PersonalToolbar {
-    /* 关键：使用绝对定位脱离文档流 */
-    position: absolute !important;
-
-  @media (-moz-pref("cmi-AHB-Firefox")) {
-    top: 100% !important; 
-  }      
-    
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 1 !important;
+  /* 常态下隐藏书签栏,并避免书签栏影响网页交互 */
+    #PersonalToolbar {   
+      position: absolute;
+    @media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
+      top: 100% !important; 
+    }
+      left: 0 !important;
+      right: 0 !important;
+      opacity: 0 !important; /* 非刚需了但是可以做过渡动画 */
+      transform: rotateX(90deg) !important;
+      transform-origin: top;
+      transition: 
+        opacity 250ms ease-out,
+        transform 250ms ease-out !important;
+      z-index: 1;
+    }
   
-     /* 初始隐藏状态 */
-    opacity: 0 !important;
-    transform: translateY(-10px) !important;
-    pointer-events: none !important; /* 允许穿透点击到网页 */
-    transition:
-      opacity 300ms ease-out,
-      transform 300ms ease-out !important;
-  }
-
   #PersonalToolbar:has([open]),
   #PersonalToolbar:has([aria-expanded="true"]),
   #PersonalToolbar:has(menupopup[open]),
   #PersonalToolbar:has(menu[open]),
   #PersonalToolbar:has(.bookmark-item[open]),
-  #nav-bar:hover + #PersonalToolbar,
-  #PersonalToolbar:hover,
   #PersonalToolbar:focus-within {
-  /* 同时恢复可见性与交互，兼容 translateY / rotateX 两种动画变换 */
-  opacity: 1 !important;
-  transform: translateY(0) rotateX(0deg) !important;
-  pointer-events: auto !important;
-  /* 立即恢复交互，避免面板在重新进入时失去事件响应 */
-  transition-delay: 0s !important;
+    opacity: 1 !important;
+    transform: translateY(0) rotateX(0deg) !important;
   }
-    
-  /* 恢复书签栏 */
-  /* Expand the bookmarks-bar by hovering */
+  
+  /* Expand the bookmarks toolbar by hovering */
   @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 1)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
     #nav-bar:hover + #PersonalToolbar,
     #PersonalToolbar:hover {
       opacity: 1 !important;
-      transform: translateY(0) !important;
-      pointer-events: auto !important; /* 恢复交互能力 */
-      
-      /* 添加轻微延迟避免误触发 */
-      transition-delay: 0.1s !important;
+      transform: rotateX(0deg) !important;
+      }
     }
   }
-}
 
-  /* Expand the bookmarks-bar when search */
+  /* Expand the bookmarks toolbar when you search */
   @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 2)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
     #nav-bar:focus-within + #PersonalToolbar {
       opacity: 1 !important;
-      transform: translateY(0) !important;
-      pointer-events: auto !important;
+      transform: rotateX(0deg) !important;
     }
   }
 }
 }
+
 
 @media (-moz-pref("cmi-Display-Firefox-Logo", true)) or (-moz-pref("cmi-Switch-Icon-Package", 1)) {
 #identity-popup[connection="chrome"] .identity-popup-security-connection,
@@ -2327,7 +2347,7 @@ menupopup menupopup{
      3. 排除：已勾选复选/单选、带图标、menulist 内的、unified-nav-current
   */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu)
     > menuitem:not(
       .openintabs-menuitem,
 
@@ -2339,7 +2359,7 @@ menupopup menupopup{
       .unified-nav-current
       ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu)
     > menu:not(
       .openintabs-menuitem,
 
@@ -2351,7 +2371,7 @@ menupopup menupopup{
       .unified-nav-current
       ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu)
     > menucaption {
       padding-inline-start: calc(
         var(--fp-contextmenu-menuitem-padding-inline)
