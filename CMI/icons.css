@@ -2579,6 +2579,7 @@ menupopup#unified-extensions-context-menu:has(> menuitem:is([type="checkbox"], [
   box-sizing: border-box !important;
 }
 }
+}
 /* Linux */
 @media (-moz-platform: linux) {
 /* 当 menupopup 下有未被隐藏的 checkbox、radio 时，
@@ -2651,7 +2652,7 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
     padding-inline-start: var(--special-submenu-padding) !important;
   }
 }
-}
+
 
 /*Main Menu*/
 .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined) > .toolbarbutton-text,
