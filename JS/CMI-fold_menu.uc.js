@@ -206,22 +206,57 @@
 
 })();
 
-// Obtain the status of the theme
+// Listen to system color scheme changes with debounce and automatic cleanup
 (() => {
+  // Prevent double-installation in SPA environments
+  if (window.__zenThemeListenerInstalled) return;
+  window.__zenThemeListenerInstalled = true;
+
   let timeoutId;
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
   const updateTheme = () => {
-    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.setAttribute('zen-theme', isDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('zen-theme', mediaQuery.matches ? 'dark' : 'light');
   };
 
   const debouncedUpdate = () => {
     clearTimeout(timeoutId);
-    timeoutId = setTimeout(updateTheme, 150); // Debounce for 150ms
+    timeoutId = setTimeout(updateTheme, 150); // 150ms debounce
   };
 
+  // Initial set
   updateTheme();
 
-  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  // Add listener
   mediaQuery.addEventListener('change', debouncedUpdate);
+
+  // Visibility handler (uses cleanup when page becomes hidden)
+  const visibilityHandler = () => {
+    if (document.visibilityState === 'hidden') cleanup();
+  };
+
+  // Cleanup function: remove listeners and clear timers
+  function cleanup() {
+    if (!window.__zenThemeListenerInstalled) return;
+    try {
+      mediaQuery.removeEventListener('change', debouncedUpdate);
+    } catch (e) {
+      // ignore if already removed or not supported
+    }
+    clearTimeout(timeoutId);
+
+    window.removeEventListener('beforeunload', cleanup);
+    document.removeEventListener('visibilitychange', visibilityHandler);
+
+    window.__zenThemeListenerInstalled = false;
+    try { delete window.__cleanupZenTheme; } catch (e) {}
+  }
+
+  // Auto-cleanup hooks
+  window.addEventListener('beforeunload', cleanup);
+  document.addEventListener('visibilitychange', visibilityHandler);
+
+  // Expose manual cleanup for SPA lifecycle management
+  window.__cleanupZenTheme = cleanup;
 })();
+
