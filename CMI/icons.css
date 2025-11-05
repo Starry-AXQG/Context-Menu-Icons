@@ -1134,6 +1134,9 @@
         --menu-image: url("compact-mode.svg");
       }
 
+      #zen-toggle-compact-mode {
+        list-style-image: url("compact-mode.svg") !important;
+      }
       #context_zen-reset-pinned-tab,
       #context_zen-replace-pinned-url-with-current {
         --menu-image: url("reload.svg");
