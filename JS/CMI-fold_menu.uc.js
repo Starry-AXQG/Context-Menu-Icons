@@ -208,55 +208,99 @@
 
 // Listen to system color scheme changes with debounce and automatic cleanup
 (() => {
-  // Prevent double-installation in SPA environments
-  if (window.__zenThemeListenerInstalled) return;
-  window.__zenThemeListenerInstalled = true;
+  // Prevent multiple managers from being registered in SPA environments
+  if (window.__zenThemeManagerRegistered) return;
+  window.__zenThemeManagerRegistered = true;
 
-  let timeoutId;
-  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  const MQ = '(prefers-color-scheme: dark)';
+  let mediaQuery = null;
+  let timeoutId = null;
 
-  const updateTheme = () => {
+  // Internal update
+  function updateThemeImmediate() {
+    if (!mediaQuery) mediaQuery = window.matchMedia(MQ);
     document.documentElement.setAttribute('zen-theme', mediaQuery.matches ? 'dark' : 'light');
-  };
-
-  const debouncedUpdate = () => {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(updateTheme, 150); // 150ms debounce
-  };
-
-  // Initial set
-  updateTheme();
-
-  // Add listener
-  mediaQuery.addEventListener('change', debouncedUpdate);
-
-  // Visibility handler (uses cleanup when page becomes hidden)
-  const visibilityHandler = () => {
-    if (document.visibilityState === 'hidden') cleanup();
-  };
-
-  // Cleanup function: remove listeners and clear timers
-  function cleanup() {
-    if (!window.__zenThemeListenerInstalled) return;
-    try {
-      mediaQuery.removeEventListener('change', debouncedUpdate);
-    } catch (e) {
-      // ignore if already removed or not supported
-    }
-    clearTimeout(timeoutId);
-
-    window.removeEventListener('beforeunload', cleanup);
-    document.removeEventListener('visibilitychange', visibilityHandler);
-
-    window.__zenThemeListenerInstalled = false;
-    try { delete window.__cleanupZenTheme; } catch (e) {}
   }
 
-  // Auto-cleanup hooks
+  // Debounced update used for media query events
+  function debouncedUpdate() {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      updateThemeImmediate();
+    }, 150);
+  }
+
+  // Install media query listener
+  function installListener() {
+    if (!mediaQuery) mediaQuery = window.matchMedia(MQ);
+    // avoid double-binding by checking a flag
+    if (mediaQuery.__zenBound) return;
+
+    try {
+      if (typeof mediaQuery.addEventListener === 'function') {
+        mediaQuery.addEventListener('change', debouncedUpdate);
+      } else if (typeof mediaQuery.addListener === 'function') {
+        mediaQuery.addListener(debouncedUpdate);
+      }
+    } catch (e) {
+      // ignore
+    }
+
+    mediaQuery.__zenBound = true;
+  }
+
+  // Remove media query listener
+  function removeListener() {
+    if (!mediaQuery || !mediaQuery.__zenBound) return;
+    try {
+      if (typeof mediaQuery.removeEventListener === 'function') {
+        mediaQuery.removeEventListener('change', debouncedUpdate);
+      } else if (typeof mediaQuery.removeListener === 'function') {
+        mediaQuery.removeListener(debouncedUpdate);
+      }
+    } catch (e) {
+      // ignore
+    }
+    mediaQuery.__zenBound = false;
+    clearTimeout(timeoutId);
+  }
+
+  // Cleanup that removes listeners but keeps manager registered
+  function cleanup() {
+    removeListener();
+  }
+
+  // Visibility handler: uninstall when hidden, reinstall + immediate check when visible
+  function visibilityHandler() {
+    try {
+      if (document.visibilityState === 'hidden') {
+        removeListener();
+      } else if (document.visibilityState === 'visible') {
+        // reinstall listener and force immediate sync to catch missed changes
+        installListener();
+        updateThemeImmediate();
+      }
+    } catch (e) {
+      // ignore
+    }
+  }
+
+  // Ensure listeners for visibility and unload are present once
   window.addEventListener('beforeunload', cleanup);
   document.addEventListener('visibilitychange', visibilityHandler);
 
-  // Expose manual cleanup for SPA lifecycle management
-  window.__cleanupZenTheme = cleanup;
-})();
+  // Expose manual controls for SPA lifecycle
+  window.__installZenTheme = function () {
+    installListener();
+    updateThemeImmediate();
+  };
+  window.__cleanupZenTheme = function () {
+    cleanup();
+  };
 
+  // Initial behavior: if visible -> install; if hidden -> don't install (will install on visible)
+  if (document.visibilityState === 'visible') {
+    installListener();
+    updateThemeImmediate();
+  }
+})();
