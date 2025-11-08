@@ -1221,6 +1221,9 @@
     #quicktabs-tab-context-menuitem {
       --menu-image: url("ext-link.svg");
     }
+    #quicksearch-context-menuitem {
+      --menu-image: url("search-glass.svg");
+    }      
     #cmi-show-more-menu {
       --menu-image: url("menu-bar.svg");
     }
@@ -1748,6 +1751,9 @@
     #quicktabs-context-menuitem,
     #quicktabs-tab-context-menuitem {
       --menu-image: url('chrome://browser/skin/zen-icons/ext-link.svg');
+    }
+    #quicksearch-context-menuitem {
+      --menu-image: url('chrome://browser/skin/zen-icons/search-glass.svg');
     }
     #cmi-show-more-menu {
       --menu-image: url('chrome://browser/skin/zen-icons/menu.svg');
