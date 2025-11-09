@@ -2213,7 +2213,7 @@ I fixed these errors and enhanced some of its features, making it more compatibl
       left: 0 !important;
       right: 0 !important;
       opacity: 0 !important; /* 非刚需了但是可以做过渡动画 */
-      transform: rotateX(90deg) !important;
+      transform: translateY(-10px) !important;
       transform-origin: top;
       transition: 
         opacity 250ms ease-out,
