@@ -1345,8 +1345,8 @@
         --menu-image: url('chrome://browser/skin/zen-icons/edit-select-all.svg');
       }
       #context-add-engine {
-        --menu-image: url("search-add.svg");
-      }
+        --menu-image: url('zen-search.svg');
+    }
       #context-undo,
       menuitem[data-l10n-id="text-action-undo"],
       #context_undoCloseTab,
