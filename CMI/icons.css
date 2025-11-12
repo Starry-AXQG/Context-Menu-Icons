@@ -1,5 +1,5 @@
 @media (-moz-pref("svg.context-properties.content.enabled")) {
-  
+
 
   /*FluentUI*/
   @media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
@@ -331,31 +331,21 @@
       
       #pageAction-panel-bookmark,
       #star-button {
-        width: 16px;
-        height: 16px;    
-        background-image: url("bookmark-hollow.svg") !important;
-        background-repeat: no-repeat !important;
-        background-position: center !important;     
-        background-size: 17px 17px !important;
+        list-style-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNyIgaGVpZ2h0PSIxNyIgdmlld0JveD0iMCAwIDE2IDE2IiBmaWxsPSJjb250ZXh0LWZpbGwiIGZpbGwtb3BhY2l0eT0iY29udGV4dC1maWxsLW9wYWNpdHkiPjxwYXRoIGQ9Ik04LjAwMTMsMS4xNzg4Yy0uMzQtLjAwMjYtLjY1MTIuMTkwNC0uNzk5OS40OTYxbC0xLjcxOTEsMy40ODU1LTMuODQ0NS41NTg1Yy0uNDg2OC4wNzA3LS44MjQyLjUyMjctLjc1MzUsMS4wMDk1LjAyODEuMTkzNi4xMTkyLjM3MjUuMjU5MS41MDkybDIuNzgxOCwyLjcxMjMtLjY1NTYsMy44MzAyYy0uMDgyMy40ODUuMjQ0Mi45NDQ5LjcyOTMsMS4wMjcxLjE5MjEuMDMyNi4zODk3LjAwMTMuNTYyMy0uMDg5MmwzLjQ0MDEtMS44MDczLDMuNDM3NCwxLjgwODJjLjQzNTYuMjI4Ni45NzQxLjA2MDcsMS4yMDI2LS4zNzQ5LjA5MTEtLjE3MzcuMTIyNC0uMzcyNS4wODg5LS41NjU4bC0uNjU1Ni0zLjgyOTMsMi43ODE4LTIuNzEyM2MuMzUyLS4zNDM3LjM1ODctLjkwNzYuMDE1MS0xLjI1OTYtLjEzNjUtLjEzOTgtLjMxNTItLjIzMDktLjUwODUtLjI1OTFsLTMuODQ0NS0uNTU4NS0xLjcxOTEtMy40ODQ2Yy0uMTQ4NC0uMzA1OS0uNDU5OS0uNDk4Ny0uNzk5OS0uNDk1M2wuMDAxOC0uMDAwOVpNOC4wMDEzLDIuMDY5NWwxLjcxOTEsMy40ODI4Yy4xMy4yNjM3LjM3OTUuNDQ1NC42Njk4LjQ4ODFsMy44NDYyLjU2MDMtMi43ODM2LDIuNzEwNWMtLjIxMDIuMjA0OS0uMzA1NS41MDA2LS4yNTU2Ljc4OTJsLjY1NzQsMy44MzAyLTMuNDM4My0xLjgwODJjLS4yNTk5LS4xMzY1LS41NzAzLS4xMzY1LS44MzAyLDBsLTMuNDM4MywxLjgwODIuNjU2NS0zLjgzMDJjLjA0OTUtLjI4OTEtLjA0NjEtLjU4NC0uMjU1Ni0uNzg5MmwtMi43ODE4LTIuNzEwNSwzLjg0NDUtLjU2MTJjLjI4OTctLjA0MTkuNTQwMy0uMjIzOC42Njk4LS40ODYzbDEuNzItMy40ODM3WiIvPjwvc3ZnPg==") !important;
       }
 
       #pageAction-panel-bookmark[starred],
       #star-button[starred] {
-        width: 16px;
-        height: 16px;        
-        background-image: url("bookmark.svg") !important;
-        background-repeat: no-repeat !important;
-        background-position: center !important;        
-        background-size: 17px 17px !important;
+        list-style-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2217%22%20height%3D%2217%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22context-fill%22%20fill-opacity%3D%22context-fill-opacity%22%3E%3Cpath%20d%3D%22M8.0013%2C1.1788c-.34-.0026-.6512.1904-.7999.4961l-1.7191%2C3.4855-3.8445.5585c-.4868.0707-.8242.5227-.7535%2C1.0095.0281.1936.1192.3725.2591.5092l2.7818%2C2.7123-.6556%2C3.8302c-.0823.485.2442.9449.7293%2C1.0271.1921.0326.3897.0013.5623-.0892l3.4401-1.8073%2C3.4374%2C1.8082c.4356.2286.9741.0607%2C1.2026-.3749.0911-.1737.1224-.3725.0889-.5658l-.6556-3.8293%2C2.7818-2.7123c.352-.3437.3587-.9076.0151-1.2596-.1365-.1398-.3152-.2309-.5085-.2591l-3.8445-.5585-1.7191-3.4846c-.1484-.3059-.4599-.4987-.7999-.4953l.0018-.0009Z%22%2F%3E%3C%2Fsvg%3E") !important;
       }
       
-      #zen-site-data-icon-button >image {
-              list-style-image: url("permissions.svg") !important;
-              background-position: center !important;
+      #zen-site-data-icon-button >image { 
+        list-style-image: url("permissions.svg") !important;
+        background-position: center !important;
       }
       #zen-site-data-icon-button:is([starred],:active,:hover:active, [open])  >image {
-              list-style-image: url("permissions-fill.svg") !important;
-              background-position: center !important;
+        list-style-image: url("permissions-fill.svg") !important;
+        background-position: center !important;
       }
       
       #sidebar-box[sidebarcommand="viewTabsSidebar"]
