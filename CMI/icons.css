@@ -1306,9 +1306,13 @@
       #context-zenSplitLink {
         --menu-image: url('chrome://browser/skin/zen-icons/split.svg') !important;
       }
+      #context-ask-chat,
+      #context_askChat {
+        --menu-image: url("chrome://browser/skin/trending.svg") !important;
+      }
       #context-previewlink {
       --menu-image: url('chrome://browser/skin/zen-icons/open.svg') !important;
-    }
+      }
       #context_zenOpenWorkspace,
       #context_zenOpenWorkspacePanel {
         --menu-image: url('chrome://browser/skin/zen-icons/manage.svg') !important;
