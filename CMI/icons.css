@@ -1293,7 +1293,7 @@
       }
     
 
-    /* PART 7:  Specifying icons to apply for other context menu options */
+    /* Specifying icons to apply for other context menu options */
     /* Use icons from Zen icon directory - chrome://browser/skin/zen-icons/ */
     /* Use icons from Firefox icon directory - chrome://browser/skin/ */
     
@@ -2256,8 +2256,12 @@ I fixed these errors and enhanced some of its features, making it more compatibl
         list-style-image: url("firefox.svg") !important;
       }
 }
-/* Shift the text to the right to make room for the custom icon.*/
 
+/* ---------------------------
+   Shift the text to the right to make room for the custom icon.
+   ---------------------------*/
+@media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) {
+/* Part 1 of global rule */
 :root {
   --fp-contextmenu-menuicon-margin-inline: 12px;
   --fp-contextmenu-menuitem-padding-inline: 10px;
@@ -2294,16 +2298,10 @@ menupopup#zenWorkspaceMoreActions menupopup {
 
 
 /* ---------------------------
-   通用规则：在两种 media 条件下都使用这些选择器，
-   但实际数值来源于上面对应 media 中设定的变量
+   Part 2 of global rule : checkbox
    ---------------------------*/
-
-/* 将两种 media 合并，用逗号连接（当任意一个条件成立时应用下列通用样式） */
-@media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
-  and (not (-moz-pref("cmi-Switch-Icon-Package", 2))),
-  (-moz-pref("cmi-Switch-Icon-Package", 2)) {
-/* ========== 全局：此规则用来去除原生“√”图标，方便给特殊菜单插入自定义图标,并更容易完成上下文菜单的文本对齐（v1.9.4 new change) */
-/* This rule is used to remove the native "√" icon, making it convenient to insert custom icons for special menus and facilitating the text alignment of context menus.（v1.9.4) */
+/* 此规则用来去除原生“√”图标，方便给特殊菜单插入自定义图标,并更容易完成上下文菜单的文本对齐（v1.9.4 new change) 
+This rule is used to remove the native "√" icon, making it convenient to insert custom icons for special menus and facilitating the text alignment of context menus.（v1.9.4) */
 :is(menuitem[type="checkbox"], menuitem[type="radio"]):not([checked="true"]) {
   /* 背景图转换已有的变量 --menu-image */
   background-image: var(--menu-image) !important;
@@ -2350,6 +2348,37 @@ menupopup menupopup{
   background-image: none !important;
 }
 
+/* 设置自定义 checkmark 图标（使用变量：可在两种模式间切换实现方式） */
+menupopup > menuitem[type="checkbox"][checked="true"]::before,
+menupopup > menuitem[type="radio"][checked="true"]::before {
+  content: "" !important;
+  display: inline-block;
+  width: var(--checkmark-width);
+  height: var(--checkmark-height);
+
+  margin-inline-end: var(--checkmark-margin-end);
+  vertical-align: middle;
+
+  /* 两种实现共用声明：background-image / mask / background-color 由变量决定 */
+  background-image: var(--checkmark-bg-image);
+  -moz-context-properties: var(--checkmark-moz-context) !important;
+  /* 当使用 SVG fill 时，保留 fill 的回退值 */
+  fill: var(--checkmark-fill, currentColor) !important;
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* 定位到图标所在 x 位置 */
+  margin-inline-start: var(--checkmark-margin-start);
+  position: relative;
+
+  /* mask 与 background-color（若变量为 none，则效果等同于未设置） */
+  -webkit-mask: var(--checkmark-mask, none);
+  mask: var(--checkmark-mask, none);
+  background-color: var(--checkmark-bg-color, transparent);
+}
+
+/* ---------------------------
+   🌟 Part 3 of global rule
+   ---------------------------*/
 
   /* 1. 排除顶栏菜单和文字选取下拉
      2. 排除下载管理器菜单 / create-new / new-tab 弹出
@@ -2416,33 +2445,9 @@ menupopup menupopup{
   ) !important;
 }
 
-  /* 设置自定义 checkmark 图标（使用变量：可在两种模式间切换实现方式） */
-  menupopup > menuitem[type="checkbox"][checked="true"]::before,
-  menupopup > menuitem[type="radio"][checked="true"]::before {
-    content: "" !important;
-    display: inline-block;
-    width: var(--checkmark-width);
-    height: var(--checkmark-height);
-
-    margin-inline-end: var(--checkmark-margin-end);
-    vertical-align: middle;
-
-    /* 两种实现共用声明：background-image / mask / background-color 由变量决定 */
-    background-image: var(--checkmark-bg-image);
-    -moz-context-properties: var(--checkmark-moz-context) !important;
-    /* 当使用 SVG fill 时，保留 fill 的回退值 */
-    fill: var(--checkmark-fill, currentColor) !important;
-    background-repeat: no-repeat;
-    background-size: contain;
-    /* 定位到图标所在 x 位置 */
-    margin-inline-start: var(--checkmark-margin-start);
-    position: relative;
-
-    /* mask 与 background-color（若变量为 none，则效果等同于未设置） */
-    -webkit-mask: var(--checkmark-mask, none);
-    mask: var(--checkmark-mask, none);
-    background-color: var(--checkmark-bg-color, transparent);
-  }
+/* ---------------------------
+   🌟 Part 4 of global rule : special rules
+   ---------------------------*/
 
 @media not (-moz-platform: linux) {
   /* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
@@ -2523,7 +2528,8 @@ menupopup menupopup{
     /* 浏览器内置翻译器菜单 */
     menupopup#full-page-translations-panel-settings-menupopup:has(> menuitem:not([hidden])[type="checkbox"])，
     /* Chat bot */
-    menupopup#chatbot-menupopup:has(> menuitem:not([hidden])[type="checkbox"])
+    menupopup#chatbot-menupopup:has(> menuitem:not([hidden])[type="checkbox"]),
+    menupopup#sidebar-history-menu:has(> menuitem:not([hidden])[checked="true"])
   ) {
     --checkmark-margin-start: var(--checkmark-margin-start_cover);
     --checkmark-margin-end: var(--checkmark-margin-end_cover);
@@ -2548,11 +2554,16 @@ menupopup menupopup{
   }
 }
 
+
 /* =========================================================
+
+   🌟 Part 5 of global rule : special rules for checkbox
+
    全局：同一 menupopup 中若存在任一未隐藏且已勾选的 checkbox，
    则对同一 menupopup 中其它未隐藏的 checkbox 菜单项应用 padding(fix for v1.9.4)
    可选：可以在上面的 menuitem 选择器里加上 :not(.menuitem-iconic) 进行排除“图标样式”的 menuitem（例如 .menuitem-iconic）。也许后面可能需要这个排除（？）
    ========================================================= */
+
 @media not (-moz-platform: linux) {
 /* 当 menupopup 下有被勾选的 checkbox 时，
 给同层级未勾选的 checkbox 子项增加 padding */
@@ -2662,7 +2673,7 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
     padding-inline-start: var(--special-submenu-padding) !important;
   }
 }
-
+}
 
 /*Main Menu*/
 .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined) > .toolbarbutton-text,
