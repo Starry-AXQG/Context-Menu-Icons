@@ -2464,7 +2464,8 @@ menupopup menupopup{
     /* 浏览器内置翻译器菜单 */
     menupopup#full-page-translations-panel-settings-menupopup:has(> menuitem:not([hidden])[checked="true"]),
     /* Chat bot */
-    menupopup#chatbot-menupopup:has(> menuitem:not([hidden])[checked="true"])
+    menupopup#chatbot-menupopup:has(> menuitem:not([hidden])[checked="true"]),
+    menupopup#sidebar-history-menu:has(> menuitem:not([hidden])[checked="true"])
   ) {
     --checkmark-margin-start: var(--checkmark-margin-start_cover);
     --checkmark-margin-end: var(--checkmark-margin-end_cover);
