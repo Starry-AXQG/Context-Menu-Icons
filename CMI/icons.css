@@ -1740,6 +1740,11 @@
       #zen-toolbar-context-tabs-right {
         --menu-image: url('chrome://browser/skin/import.svg');
       }  
+    
+    /* App Menu Icons */
+    #appmenu-developer-tools-view > toolbarbutton:nth-child(1) {
+      list-style-image: url('chrome://browser/skin/zen-icons/developer.svg') !important;
+    }
     /* zen Group(Adapt to Advanced-Tag-Groups) */
       .change-group-color {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-theme.svg');
@@ -2691,25 +2696,44 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
 }
 }
 
-/*Main Menu*/
-.widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined) > .toolbarbutton-text,
-.subviewbutton:not(#appMenu-zoom-controls > .subviewbutton) > .toolbarbutton-icon + .toolbarbutton-text,
-#appMenu-fxa-label2 > vbox {
+
+/* App Menu */
+.addon-banner-item,
+.panel-banner-item {
+  margin: 2px 4px 2px !important;
+  padding-inline: 4px 12px !important;
+  padding-block: var(--arrowpanel-menuitem-padding-block) !important;
+  border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+}
+
+#appMenu-fxa-label2 label,
+#PanelUI-fxa-menu-syncnow-button label {
+  margin-block: 0 !important;
+}
+
+.widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined)>.toolbarbutton-text,
+.subviewbutton:not(#appMenu-zoom-controls > .subviewbutton)>.toolbarbutton-icon+.toolbarbutton-text,
+#appMenu-fxa-label2>vbox {
   padding-inline-start: var(--fp-arrowpanel-menuicon-margin-inline) !important;
 }
 
-#appMenu-zoom-controls > .toolbarbutton-text,
-#fxa-manage-account-button > vbox,
-#PanelUI-fxa-menu-syncnow-button > hbox {
+/* special case menuitems with no icons */
+#appMenu-zoom-controls>.toolbarbutton-text,
+#fxa-manage-account-button>vbox,
+#PanelUI-fxa-menu-syncnow-button>hbox {
   padding-inline-start: calc(16px + var(--fp-arrowpanel-menuicon-margin-inline)) !important;
 }
 
+.subviewbutton>.toolbarbutton-icon {
+  width: 16px !important;
+}
 
-/* This is used to temporarily solve the problem where the "history" icons that Zen has not yet removed overlap with the added custom icons. */
-#appMenuRecentlyClosedTabs,
-#appMenuRecentlyClosedWindows,
-#appMenuSearchHistory,
-#appMenuClearRecentHistory,
-#PanelUI-historyMore{
-  --menu-image: none;
+@media (not (-moz-pref("cmi-Switch-Gecko-Branch", 0))) {
+  #appMenuRecentlyClosedTabs,
+  #appMenuRecentlyClosedWindows,
+  #appMenuSearchHistory,
+  #appMenuClearRecentHistory,
+  #PanelUI-historyMore{
+    --menu-image: none;
+  }
 }
