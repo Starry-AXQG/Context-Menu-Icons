@@ -1791,7 +1791,7 @@
       list-style-image: url('chrome://browser/skin/zen-icons/inspect.svg') !important;
     }    
     #appmenu-developer-tools-view > toolbarbutton:nth-child(6) {
-      list-style-image: url('chrome://browser/skin/zen-icons/inspect.svg') !important;
+      list-style-image: url('chrome://browser/skin/zen-icons/edit-cut.svg') !important;
     }       
     #appmenu-developer-tools-view > toolbarbutton:nth-child(7) {
       list-style-image: url('chrome://browser/skin/zen-icons/edit-theme.svg') !important;
@@ -2364,6 +2364,9 @@ I fixed these errors and enhanced some of its features, making it more compatibl
   --fp-contextmenu-menuicon-margin-inline: 12px;
   --fp-contextmenu-menuitem-padding-inline: 10px;
   --fp-arrowpanel-menuicon-margin-inline: 14px;
+  
+  --arrowpanel-menuitem-padding-block: 6px !important;
+  --arrowpanel-menuitem-padding-inline: 10px !important;
 }
 
 menu > .menu-iconic-text,
@@ -2785,27 +2788,27 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
 
 #appMenu-fxa-label2 label,
 #PanelUI-fxa-menu-syncnow-button label {
-  margin-block: 0 !important;
+  margin-block: 0 ;
 }
 
 .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined)>.toolbarbutton-text,
 .subviewbutton:not(#appMenu-zoom-controls > .subviewbutton)>.toolbarbutton-icon+.toolbarbutton-text,
 #appMenu-fxa-label2>vbox {
-  padding-inline-start: var(--fp-arrowpanel-menuicon-margin-inline) !important;
+  padding-inline-start: var(--fp-arrowpanel-menuicon-margin-inline);
 }
 
 /* special case menuitems with no icons */
 #appMenu-zoom-controls>.toolbarbutton-text,
 #fxa-manage-account-button>vbox,
 #PanelUI-fxa-menu-syncnow-button>hbox {
-  padding-inline-start: calc(16px + var(--fp-arrowpanel-menuicon-margin-inline)) !important;
+  padding-inline-start: calc(16px + var(--fp-arrowpanel-menuicon-margin-inline));
 }
 
 .subviewbutton>.toolbarbutton-icon {
-  width: 16px !important;
+  width: 16px ;
 }
 
-@media (not (-moz-pref("cmi-Switch-Gecko-Branch", 0))) {
+@media (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
   #appMenuRecentlyClosedTabs,
   #appMenuRecentlyClosedWindows,
   #appMenuSearchHistory,
