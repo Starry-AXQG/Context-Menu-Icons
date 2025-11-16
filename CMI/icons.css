@@ -482,6 +482,22 @@
         list-style-image: url("debug.svg") !important;
       }
       
+      /* reload/stop animation */
+      #stop-reload-button[animate]
+        > #reload-button[displaystop]
+        + #stop-button 
+        > .toolbarbutton-animatable-box
+        > .toolbarbutton-animatable-image {
+        background-image: url("reload-to-stop.svg") !important;
+      }
+
+      #stop-reload-button[animate]
+        > #reload-button
+        > .toolbarbutton-animatable-box
+        > .toolbarbutton-animatable-image {
+        background-image: url("stop-to-reload.svg") !important;
+      }   
+
       /* Context Menu Icons */
       menupopup > menuitem:is([checked="true"], [selected="true"]) .menu-iconic-icon {
         list-style-image: url("checkmark.svg") !important;
