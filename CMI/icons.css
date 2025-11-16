@@ -1742,15 +1742,57 @@
       }  
     
     /* App Menu Icons */
+    #fxa-manage-account-button {
+      background-image: url('chrome://browser/skin/fxa/avatar-empty.svg') !important;
+      background-repeat: no-repeat !important;
+
+      background-size: 16px !important;
+      background-position: 14px center !important;
+
+      -moz-context-properties: fill, fill-opacity !important;
+      fill: currentColor !important;
+    }
+
+    #PanelUI-fxa-menu-syncnow-button {
+      background-image: url('chrome://browser/skin/zen-icons/media-loop.svg') !important;
+      background-repeat: no-repeat !important;
+
+      background-size: 16px !important;
+      background-position: 14px center !important;
+
+      -moz-context-properties: fill, fill-opacity !important;
+      fill: currentColor !important;
+    }
+    #PanelUI-fxa-menu-connect-device-button {
+      list-style-image: url('chrome://browser/skin/zen-icons/link.svg') !important;
+    }
+    #PanelUI-fxa-menu-sendtab-button {
+      list-style-image: url('chrome://browser/skin/zen-icons/send-to-device.svg') !important;
+    }
+    #PanelUI-fxa-menu-sync-prefs-button {
+      list-style-image: url('chrome://browser/skin/zen-icons/settings.svg') !important;
+    }
+    #PanelUI-fxa-menu-account-signout-button {
+      list-style-image: url('chrome://browser/skin/import.svg') !important;
+    }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(1) {
       list-style-image: url('chrome://browser/skin/zen-icons/developer.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(2) {
-      list-style-image: url('chrome://global/skin/icons/performance.svg') !important;
+      list-style-image: url('chrome://browser/skin/zen-icons/media-speed.svg');
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(3) {
       list-style-image: url('chrome://global/skin/icons/developer.svg') !important;
-    }           
+    }
+    #appmenu-developer-tools-view > toolbarbutton:nth-child(4) {
+      list-style-image: url('chrome://browser/skin/zen-icons/permissions.svg') !important;
+    }
+    #appmenu-developer-tools-view > toolbarbutton:nth-child(5) {
+      list-style-image: url('chrome://browser/skin/zen-icons/inspect.svg') !important;
+    }    
+    #appmenu-developer-tools-view > toolbarbutton:nth-child(6) {
+      list-style-image: url('chrome://browser/skin/zen-icons/inspect.svg') !important;
+    }       
     #appmenu-developer-tools-view > toolbarbutton:nth-child(7) {
       list-style-image: url('chrome://browser/skin/zen-icons/edit-theme.svg') !important;
     }        
@@ -1764,6 +1806,12 @@
     
     #appMenu_feedbackPage {
       list-style-image: url('chrome://browser/skin/zen-icons/share.svg') !important;
+    }
+    #appMenu_helpSafeMode {
+      list-style-image: url('chrome://browser/skin/zen-icons/search-page.svg') !important;
+    }
+    #appMenu_troubleShooting {
+      list-style-image: url('chrome://browser/skin/zen-icons/menu.svg') !important;
     }
     #appMenu_menu_HelpPopup_reportPhishingtoolmenu {
       list-style-image: url('chrome://browser/skin/zen-icons/security-broken.svg') !important;
