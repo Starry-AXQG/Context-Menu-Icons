@@ -1489,7 +1489,6 @@
       }
       #context-openlinkintab,
       #context-openlinkincontainertab,
-      #context_zenWorkspacesOpenInContainerTab,
       #context_zenWebPanelContextInContainer,
       menuitem[id='placesContext_open:newtab'],
       menuitem[id='placesContext_openLinks:tabs'],
@@ -1679,7 +1678,7 @@
         --menu-image: url('chrome://browser/skin/zen-icons/customize.svg');
       }
       #context_zenWorkspacesOpenInContainerTab {
-        --menu-image: url('chrome://browser/skin/zen-icons/tab.svg');
+        --menu-image: url('chrome://browser/skin/zen-icons/container-tab.svg');
       }
       #context_zenReorderWorkspaces {
         --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
