@@ -481,8 +481,9 @@
       #unified-extensions-manage-extensions {
         list-style-image: url("debug.svg") !important;
       }
-      
+    
       /* reload/stop animation */
+    @media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {    
       #stop-reload-button[animate]
         > #reload-button[displaystop]
         + #stop-button 
@@ -490,7 +491,7 @@
         > .toolbarbutton-animatable-image {
         background-image: url("reload-to-stop.svg") !important;
       }
-
+    }
       #stop-reload-button[animate]
         > #reload-button
         > .toolbarbutton-animatable-box
