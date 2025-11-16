@@ -2803,9 +2803,11 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
 #PanelUI-fxa-menu-syncnow-button>hbox {
   padding-inline-start: calc(16px + var(--fp-arrowpanel-menuicon-margin-inline));
 }
-
-
-
+/* Icons Size
+.subviewbutton>.toolbarbutton-icon {
+  width: 16px ;
+}
+*/
 @media (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
   #appMenuRecentlyClosedTabs,
   #appMenuRecentlyClosedWindows,
