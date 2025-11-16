@@ -1779,10 +1779,10 @@
       list-style-image: url('chrome://browser/skin/zen-icons/developer.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(2) {
-      list-style-image: url('chrome://browser/skin/zen-icons/media-speed.svg');
+      list-style-image: url('chrome://browser/skin/zen-icons/media-speed.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(3) {
-      list-style-image: url('chrome://global/skin/icons/developer.svg') !important;
+      list-style-image: url('chrome://browser/skin/zen-icons/tool-profiler.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(4) {
       list-style-image: url('chrome://browser/skin/zen-icons/permissions.svg') !important;
