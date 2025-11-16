@@ -2805,7 +2805,7 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
 }
 
 .subviewbutton>.toolbarbutton-icon {
-  width: 16px ;
+  width: 17px ;
 }
 
 @media (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
