@@ -961,7 +961,7 @@
         --menu-image: url("arrow-up.svg");
       }
 
-      /* App Menu */
+      /* FluentUI: App Menu Icons */
       #appMenu-downloads-button,
       #appMenu-library-downloads-button {
         list-style-image: url("downloads.svg") !important;
@@ -1050,35 +1050,16 @@
       #appMenu-new-tab-button2 {
         list-style-image: url("new-tab-image.svg") !important;
       }
-    
-      #appMenuRecentlyClosedTabs {
-        --menu-image: url("container-tab.svg");
-      }
-    
-      #appMenuClearRecentHistory {
-        --menu-image: url("edit-delete.svg");
-      }
-    
-      #appMenuRecentlyClosedWindows {
-        --menu-image: url("window.svg");
-      }
-    
-      #appMenuSearchHistory {
-        --menu-image: url("search-glass.svg");
-      }
-    
-    
+
       #downloads-button,
       #downloads-indicator-anchor {
       list-style-image: url("downloads.svg") !important;
       }
-    
       
       #appMenu-settings-button {
         list-style-image: url("settings.svg") !important;
       }
-    
-    
+
       #library-button {
         list-style-image: url("library.svg") !important;
       }
@@ -1089,7 +1070,115 @@
       #unified-extensions-button {
         list-style-image: url("extension.svg") !important;
       }
-      
+   
+    /* Account */  
+    #fxa-manage-account-button {
+      background-image: url('chrome://browser/skin/fxa/avatar-empty.svg') !important;
+      background-repeat: no-repeat !important;
+
+      background-size: 16px !important;
+      background-position: 14px center !important;
+
+      -moz-context-properties: fill, fill-opacity !important;
+      fill: currentColor !important;
+    }
+    #PanelUI-fxa-menu-syncnow-button {
+      background-image: url('chrome://browser/skin/zen-icons/media-loop.svg') !important;
+      background-repeat: no-repeat !important;
+
+      background-size: 16px !important;
+      background-position: 14px center !important;
+
+      -moz-context-properties: fill, fill-opacity !important;
+      fill: currentColor !important;
+    }
+    #PanelUI-fxa-menu-connect-device-button {
+      list-style-image: url('chrome://browser/skin/zen-icons/link.svg') !important;
+    }
+    #PanelUI-fxa-menu-sendtab-button {
+      list-style-image: url('chrome://browser/skin/zen-icons/send-to-device.svg') !important;
+    }
+    #PanelUI-fxa-menu-sync-prefs-button {
+      list-style-image: url('chrome://browser/skin/zen-icons/settings.svg') !important;
+    }
+    #PanelUI-fxa-menu-account-signout-button {
+      list-style-image: url('chrome://browser/skin/import.svg') !important;
+    }
+
+
+    #panelMenuBookmarkThisPage {
+      list-style-image: url("bookmark-hollow.svg") !important;
+    }
+    #panelMenu_searchBookmarks {
+      list-style-image: url("search-glass.svg") !important;
+    }
+    #panelMenu_viewBookmarksToolbar {
+      list-style-image: url("bookmark-star-on-tray.svg") !important;
+    }
+
+    #appMenuRecentlyClosedTabs {
+      list-style-image: url("container-tab.svg") !important;
+    }
+    #appMenuRecentlyClosedWindows {
+      list-style-image: url("window.svg") !important;
+    }    
+    #appMenuSearchHistory {
+      list-style-image: url("search-glass.svg") !important;
+    }
+    #appMenuClearRecentHistory {
+      list-style-image: url("edit-delete.svg") !important;
+    }
+
+    /* Tools */
+    #appmenu-developer-tools-view > toolbarbutton:nth-child(1) {
+      list-style-image: url('chrome://browser/skin/zen-icons/developer.svg') !important;
+    }
+    #appmenu-developer-tools-view > toolbarbutton:nth-child(2) {
+      list-style-image: url('chrome://browser/skin/zen-icons/media-speed.svg') !important;
+    }
+    #appmenu-developer-tools-view > toolbarbutton:nth-child(3) {
+      list-style-image: url('chrome://browser/skin/zen-icons/tool-profiler.svg') !important;
+    }
+    #appmenu-developer-tools-view > toolbarbutton:nth-child(4) {
+      list-style-image: url('chrome://browser/skin/zen-icons/permissions.svg') !important;
+    }
+    #appmenu-developer-tools-view > toolbarbutton:nth-child(5) {
+      list-style-image: url('chrome://browser/skin/zen-icons/inspect.svg') !important;
+    }    
+    #appmenu-developer-tools-view > toolbarbutton:nth-child(6) {
+      list-style-image: url('chrome://browser/skin/zen-icons/edit-cut.svg') !important;
+    }       
+    #appmenu-developer-tools-view > toolbarbutton:nth-child(7) {
+      list-style-image: url('chrome://browser/skin/zen-icons/edit-theme.svg') !important;
+    }        
+    #appmenu-developer-tools-view > toolbarbutton:nth-child(8) {
+      list-style-image: url('chrome://browser/skin/zen-icons/source-code.svg') !important;
+    }    
+    #appmenu-developer-tools-view > toolbarbutton:nth-child(9) {
+      list-style-image: url('chrome://browser/skin/zen-icons/extension.svg') !important;
+    }
+    
+    
+    #appMenu_feedbackPage {
+      list-style-image: url('chrome://browser/skin/zen-icons/share.svg') !important;
+    }
+    #appMenu_helpSafeMode {
+      list-style-image: url('chrome://browser/skin/zen-icons/search-page.svg') !important;
+    }
+    #appMenu_troubleShooting {
+      list-style-image: url('chrome://browser/skin/zen-icons/info.svg') !important;
+    }
+    #appMenu_menu_HelpPopup_reportPhishingtoolmenu {
+      list-style-image: url('chrome://browser/skin/zen-icons/security-broken.svg') !important;
+    }
+    #appMenu_helpSwitchDevice {
+      list-style-image: url('chrome://browser/skin/zen-icons/send-to-device.svg');
+    }
+    #appMenu_aboutName {
+      list-style-image: url('chrome://browser/skin/zen-icons/help.svg') !important;
+    }      
+
+
       /* Textbox ContextMenu (2025.8.29 fix)*/
       menuitem[data-l10n-id="text-action-undo"] {
         --menu-image: url("edit-undo.svg");
@@ -1741,7 +1830,7 @@
         --menu-image: url('chrome://browser/skin/import.svg');
       }  
     
-    /* App Menu Icons */
+    /* ZenUI: App Menu Icons */
     #fxa-manage-account-button {
       background-image: url('chrome://browser/skin/fxa/avatar-empty.svg') !important;
       background-repeat: no-repeat !important;
@@ -1822,6 +1911,7 @@
     #appMenu_aboutName {
       list-style-image: url('chrome://browser/skin/zen-icons/help.svg') !important;
     }
+
     /* zen Group(Adapt to Advanced-Tag-Groups) */
       .change-group-color {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-theme.svg');
@@ -2777,7 +2867,7 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
 }
 
 
-/* App Menu */
+/* App Menu Margin*/
 .addon-banner-item,
 .panel-banner-item {
   margin: 2px 4px 2px !important;
