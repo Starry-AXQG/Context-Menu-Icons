@@ -2804,9 +2804,7 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
   padding-inline-start: calc(16px + var(--fp-arrowpanel-menuicon-margin-inline));
 }
 
-.subviewbutton>.toolbarbutton-icon {
-  width: 17px ;
-}
+
 
 @media (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
   #appMenuRecentlyClosedTabs,
