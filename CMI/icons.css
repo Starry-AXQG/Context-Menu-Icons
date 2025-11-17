@@ -1416,7 +1416,8 @@
       #context_askChat {
         --menu-image: url("chrome://browser/skin/trending.svg") !important;
       }
-      #context-previewlink {
+      #context-previewlink,
+      #context-zenOpenLinkInGlance{
       --menu-image: url('chrome://browser/skin/zen-icons/open.svg') !important;
       }
       #context_zenOpenWorkspace,
@@ -1764,9 +1765,11 @@
       .unified-extensions-context-menu-report-extension {
         --menu-image: url('chrome://browser/skin/zen-icons/report.svg');
       }
+    /*
       .wordmark::after {
         content: 'Plus' !important;
       }
+    */
     #placesContext_open {
       --menu-image: url('chrome://browser/skin/zen-icons/ext-link.svg');
     }
@@ -2020,10 +2023,6 @@ menuseparator::before {
     #context_bookmarkSelectedTabs
 ) .menu-text {
     display: none !important;
-}
-menuitem#context_zen-add-essential[badge]::after {
-  display: none !important;
-  content: "" !important;
 }
 
 /* -------------------------- menu separator -------------------------- */
