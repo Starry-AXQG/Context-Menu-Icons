@@ -1162,22 +1162,22 @@
     
     
     #appMenu_feedbackPage {
-      list-style-image: url('chrome://browser/skin/zen-icons/share.svg') !important;
+      list-style-image: url('share.svg') !important;
     }
     #appMenu_helpSafeMode {
-      list-style-image: url('chrome://browser/skin/zen-icons/search-page.svg') !important;
+      list-style-image: url('search-page.svg') !important;
     }
     #appMenu_troubleShooting {
-      list-style-image: url('chrome://browser/skin/zen-icons/info.svg') !important;
+      list-style-image: url('info.svg') !important;
     }
     #appMenu_menu_HelpPopup_reportPhishingtoolmenu {
-      list-style-image: url('chrome://browser/skin/zen-icons/security-broken.svg') !important;
+      list-style-image: url('report.svg') !important;
     }
     #appMenu_helpSwitchDevice {
-      list-style-image: url('chrome://browser/skin/zen-icons/send-to-device.svg');
+      list-style-image: url('send-to-device.svg');
     }
     #appMenu_aboutName {
-      list-style-image: url('chrome://browser/skin/zen-icons/help.svg') !important;
+      list-style-image: url('help.svg') !important;
     }      
 
 
