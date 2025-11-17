@@ -2028,6 +2028,10 @@ menuseparator::before {
 ) .menu-text {
     display: none !important;
 }
+menuitem#context_zen-add-essential[badge]::after {
+  display: none !important;
+  content: "" !important;
+}
 
 /* -------------------------- menu separator -------------------------- */
 :where(
