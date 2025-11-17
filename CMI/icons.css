@@ -190,7 +190,7 @@
       }
       
       #developer-button {
-        list-style-image: url("debug.svg") !important;
+        list-style-image: url("developer.svg") !important;
       }
       
       #new-window-button {
@@ -479,7 +479,7 @@
       }
       
       #unified-extensions-manage-extensions {
-        list-style-image: url("debug.svg") !important;
+        list-style-image: url("developer.svg") !important;
       }
     
       /* reload/stop animation */
@@ -854,7 +854,7 @@
       #BMB_bookmarksShowAll,
       .customize-context-manageExtension,
       .unified-extensions-context-menu-manage-extension {
-        --menu-image: url("debug.svg");
+        --menu-image: url("developer.svg");
       }
       #BMB_viewBookmarksSidebar {
         --menu-image: url("sidebars.svg");
@@ -864,7 +864,7 @@
       }
       
       #PanelUI-historyMore {
-        --menu-image: url("debug.svg");
+        --menu-image: url("developer.svg");
       }
       
       menuitem[id="placesContext_new:bookmark"],
@@ -1079,29 +1079,29 @@
       background-repeat: no-repeat !important;
 
       background-size: 16px !important;
-      background-position: 14px center !important;
+      background-position: 10px center !important;
 
       -moz-context-properties: fill, fill-opacity !important;
       fill: currentColor !important;
     }
     #PanelUI-fxa-menu-syncnow-button {
-      background-image: url('chrome://browser/skin/zen-icons/media-loop.svg') !important;
+      background-image: url('media-loop.svg') !important;
       background-repeat: no-repeat !important;
 
       background-size: 16px !important;
-      background-position: 14px center !important;
+      background-position: 10px center !important;
 
       -moz-context-properties: fill, fill-opacity !important;
       fill: currentColor !important;
     }
     #PanelUI-fxa-menu-connect-device-button {
-      list-style-image: url('chrome://browser/skin/zen-icons/link.svg') !important;
+      list-style-image: url('link.svg') !important;
     }
     #PanelUI-fxa-menu-sendtab-button {
-      list-style-image: url('chrome://browser/skin/zen-icons/send-to-device.svg') !important;
+      list-style-image: url('send-to-device.svg') !important;
     }
     #PanelUI-fxa-menu-sync-prefs-button {
-      list-style-image: url('chrome://browser/skin/zen-icons/settings.svg') !important;
+      list-style-image: url('settings.svg') !important;
     }
     #PanelUI-fxa-menu-account-signout-button {
       list-style-image: url('chrome://browser/skin/import.svg') !important;
@@ -1133,31 +1133,31 @@
 
     /* Tools */
     #appmenu-developer-tools-view > toolbarbutton:nth-child(1) {
-      list-style-image: url('chrome://browser/skin/zen-icons/developer.svg') !important;
+      list-style-image: url('developer.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(2) {
-      list-style-image: url('chrome://browser/skin/zen-icons/media-speed.svg') !important;
+      list-style-image: url('media-speed.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(3) {
-      list-style-image: url('chrome://browser/skin/zen-icons/tool-profiler.svg') !important;
+      list-style-image: url('developer.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(4) {
-      list-style-image: url('chrome://browser/skin/zen-icons/permissions.svg') !important;
+      list-style-image: url('permissions.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(5) {
-      list-style-image: url('chrome://browser/skin/zen-icons/inspect.svg') !important;
+      list-style-image: url('inspect.svg') !important;
     }    
     #appmenu-developer-tools-view > toolbarbutton:nth-child(6) {
-      list-style-image: url('chrome://browser/skin/zen-icons/edit-cut.svg') !important;
+      list-style-image: url('edit-cut.svg') !important;
     }       
     #appmenu-developer-tools-view > toolbarbutton:nth-child(7) {
-      list-style-image: url('chrome://browser/skin/zen-icons/edit-theme.svg') !important;
+      list-style-image: url('color.svg') !important;
     }        
     #appmenu-developer-tools-view > toolbarbutton:nth-child(8) {
-      list-style-image: url('chrome://browser/skin/zen-icons/source-code.svg') !important;
+      list-style-image: url('source-code.svg') !important;
     }    
     #appmenu-developer-tools-view > toolbarbutton:nth-child(9) {
-      list-style-image: url('chrome://browser/skin/zen-icons/extension.svg') !important;
+      list-style-image: url('extension.svg') !important;
     }
     
     
