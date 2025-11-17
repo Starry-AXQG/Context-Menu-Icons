@@ -206,7 +206,7 @@
 
 })();
 
-// Listen to system color scheme changes with debounce and automatic cleanup
+// 🧩 Listen to system color scheme changes with debounce and automatic cleanup
 (() => {
   // Prevent multiple managers from being registered in SPA environments
   if (window.__zenThemeManagerRegistered) return;
@@ -303,4 +303,135 @@
     installListener();
     updateThemeImmediate();
   }
+})();
+
+
+// 🧩 Remove #context_zen-add-essential badge in zen v1.17.7 above
+(function () {
+  const PREF = "cmi-Disable-Better-Context-Menu";
+  const SELECTOR = "#context_zen-add-essential";
+
+  if (typeof Services === "undefined" || !Services.prefs) {
+    console.error("This script must run in a chrome context (Browser Toolbox / Browser Console). Services.prefs not found.");
+    return;
+  }
+
+  let mo = null;
+  let prefObserver = null;
+
+  function removeBadgeFrom(el) {
+    try {
+      if (!el) return;
+      if (el.hasAttribute && el.hasAttribute("badge")) {
+        el.removeAttribute("badge");
+        console.log("Removed badge from", el);
+      }
+    } catch (e) {
+      console.error("removeBadgeFrom error", e);
+    }
+  }
+
+  function createAndStartMO() {
+    if (mo) return;
+    // MutationObserver：Monitor the addition of new nodes and changes in attributes
+    mo = new MutationObserver((mutations) => {
+      for (const m of mutations) {
+        if (m.type === "attributes" && m.target && m.attributeName === "badge") {
+          removeBadgeFrom(m.target);
+        }
+        if (m.type === "childList") {
+          for (const n of m.addedNodes) {
+            if (n.nodeType === 1) {
+              if (n.matches && n.matches(SELECTOR)) removeBadgeFrom(n);
+              const found = n.querySelector && n.querySelector(SELECTOR);
+              if (found) removeBadgeFrom(found);
+            }
+          }
+        }
+      }
+    });
+
+    // Try it immediately once
+    try { removeBadgeFrom(document.querySelector(SELECTOR)); } catch (e) { /* ignore */ }
+
+    mo.observe(document, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["badge"],
+    });
+
+    console.log("Badge remover started (MutationObserver active).");
+  }
+
+  function stopAndDisconnectMO() {
+    if (!mo) return;
+    try { mo.disconnect(); } catch (e) { /* ignore */ }
+    mo = null;
+    console.log("Badge remover stopped (MutationObserver disconnected).");
+  }
+
+  // Determine whether to enable removal
+  function checkPrefAndApply() {
+    let val = false;
+    try {
+      val = Services.prefs.getBoolPref(PREF);
+
+    } catch (e) {
+   
+      console.warn(`Could not read pref "${PREF}" (treating as false / enabled).`, e && e.message);
+      val = false;
+    }
+
+    if (val === false) {
+      createAndStartMO();
+    } else {
+      stopAndDisconnectMO();
+    }
+  }
+
+  // Register the pref listener to respond to preference changes
+  prefObserver = {
+    observe(subject, topic, data) {
+      if (topic === "nsPref:changed" && data === PREF) {
+        console.log(`Pref ${PREF} changed — re-evaluating...`);
+        checkPrefAndApply();
+      }
+    }
+  };
+
+  try {
+    Services.prefs.addObserver(PREF, prefObserver);
+  } catch (e) {
+    console.warn("Failed to add pref observer; pref changes won't be monitored.", e && e.message);
+    prefObserver = null;
+  }
+
+  checkPrefAndApply();
+
+  // Expose the control and cleanup interfaces globally to facilitate manual stopping/removal of the listeners.
+  window.__badgeRemover = {
+    stop() { stopAndDisconnectMO(); },
+    start() { createAndStartMO(); },
+    removePrefObserver() {
+      if (prefObserver) {
+        try { Services.prefs.removeObserver(PREF, prefObserver); } catch (e) { /* ignore */ }
+        prefObserver = null;
+        console.log("Pref observer removed.");
+      } else {
+        console.log("No pref observer to remove.");
+      }
+    },
+    destroy() {
+      stopAndDisconnectMO();
+      if (prefObserver) {
+        try { Services.prefs.removeObserver(PREF, prefObserver); } catch (e) { /* ignore */ }
+        prefObserver = null;
+      }
+      try { delete window.__badgeRemover; } catch (e) { /* ignore */ }
+      console.log("Badge remover destroyed.");
+    }
+  };
+
+  console.log("Setup complete. Use window.__badgeRemover.destroy() to fully remove.");
 })();
