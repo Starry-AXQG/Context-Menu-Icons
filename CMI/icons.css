@@ -680,6 +680,8 @@
       #context-copyimage,
       #context-copyvideourl,
       #context-copylink,
+      #context-copy-link-to-highlight,
+      #context-copy-clean-link-to-highlight,      
       #context-stripOnShareLink,
       #context-pdfjs-copy {
         --menu-image: url("link.svg");
@@ -1547,6 +1549,8 @@
       #context-copyimage,
       #context-copyvideourl,
       #context-copylink,
+      #context-copy-link-to-highlight,
+      #context-copy-clean-link-to-highlight,
       #context-stripOnShareLink,
       #context_zenOpenNewTabWebPanel,
       #context-pdfjs-copy {
