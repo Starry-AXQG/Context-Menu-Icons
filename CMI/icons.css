@@ -2582,11 +2582,11 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
    🌟 Part 3 of global rule
    ---------------------------*/
 
-  /* 1. 排除顶栏菜单和文字选取下拉
+  /* 1. 排除顶栏菜单和文字选取下拉，v2.5.1新增排除开发者工具箱
      2. 排除下载管理器菜单 / create-new / new-tab 弹出
      3. 排除：已勾选复选/单选、带图标、menulist 内的、unified-nav-current
   */
-  :not(:not(menubar) > menu, #ContentSelectDropdown)
+  :not(:not(menubar) > menu, #ContentSelectDropdown,#mainPopupSet)
     > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu)
     > menuitem:not(
       .openintabs-menuitem,
@@ -2598,7 +2598,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
       .in-menulist menuitem,
       .unified-nav-current
       ),
-  :not(:not(menubar) > menu, #ContentSelectDropdown)
+  :not(:not(menubar) > menu, #ContentSelectDropdown,#mainPopupSet)
     > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu)
     > menu:not(
       .openintabs-menuitem,
@@ -2610,7 +2610,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
       .in-menulist menu,
       .unified-nav-current
       ),
-  :not(:not(menubar) > menu, #ContentSelectDropdown)
+  :not(:not(menubar) > menu, #ContentSelectDropdown,#mainPopupSet)
     > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu)
     > menucaption {
       padding-inline-start: calc(
@@ -2833,7 +2833,7 @@ box-sizing: border-box !important;
 
 
 /* 子菜单文本对齐（Only fix for v1.9.4b) —— padding 值由变量控制 */
-menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
+menupopup:not(#mainPopupSet > menupopup,#spell-dictionaries-menu,#viewColumns > menupopup):has(
     menuitem:not([hidden])[type="checkbox"][checked="true"],
     menuitem:not([hidden])[type="radio"][checked="true"]
   ) {
