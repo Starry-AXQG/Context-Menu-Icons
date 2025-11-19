@@ -1969,8 +1969,9 @@
     border-radius: 12px !important;
 }
 
-/* Hide "New Tab" Option */
-#context_openANewTab {
+/* Hide "New Tab" and "New Folder" Option */
+#context_openANewTab,
+#zen-context-menu-new-folder {
     display: none !important;
 }
 
