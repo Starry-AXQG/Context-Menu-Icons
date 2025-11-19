@@ -9,7 +9,7 @@
     -moz-context-properties: fill, fill-opacity !important;
     fill: currentColor !important;
   }
-  
+
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > #cmi-show-more-menupopup, #cmi-show-more-menupopup-tab > menuitem,
   :not(:not(menubar) > menu, #ContentSelectDropdown)
@@ -576,7 +576,9 @@
         --menu-image: url("edit-cut.svg");
       }
 
-      #placesContext_open {
+      #placesContext_open,
+      #context-openlinkincurrent,
+      #context-zenOpenLinkInGlance {
         --menu-image: url("ext-link.svg");
       }      
       #placesContext_openContainer\:tabs {
@@ -686,9 +688,6 @@
       #context-stripOnShareLink,
       #context-pdfjs-copy {
         --menu-image: url("link.svg");
-      }
-      #context-openlinkincurrent {
-        --menu-image: url("ext-link.svg");
       }
       
       #context-viewsource,
@@ -1421,7 +1420,7 @@
         --menu-image: url("chrome://browser/skin/trending.svg") !important;
       }
       #context-previewlink,
-      #context-zenOpenLinkInGlance{
+      #context-zenOpenLinkInGlance {
       --menu-image: url('chrome://browser/skin/zen-icons/open.svg') !important;
       }
       #context_zenOpenWorkspace,
@@ -1776,9 +1775,9 @@
         content: 'Plus' !important;
       }
     */
-    #placesContext_open {
-      --menu-image: url('chrome://browser/skin/zen-icons/ext-link.svg');
-    }
+      #placesContext_open {
+        --menu-image: url('chrome://browser/skin/zen-icons/ext-link.svg');
+      }
       #placesContext_sortBy\:name {
         --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
       }
