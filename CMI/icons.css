@@ -10,7 +10,7 @@
     fill: currentColor !important;
   }
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > #cmi-show-more-menupopup > menuitem,
+    > #cmi-show-more-menupopup, #cmi-show-more-menupopup-tab > menuitem,
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup
     > menuitem:not(
@@ -22,7 +22,7 @@
       .unified-nav-current
     ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > #cmi-show-more-menupopup, menupopup
+    > #cmi-show-more-menupopup, #cmi-show-more-menupopup-tab, menupopup
     > menu:not(
       .menu-iconic,
       [type="checkbox"],
@@ -1315,7 +1315,8 @@
 
 
     /* zen Mods */
-    #cmi-show-more-menu {
+    #cmi-show-more-menu,
+    #cmi-show-more-menu-tab {
       --menu-image: url("menu-bar.svg");
     }
     #quicktabs-context-menuitem,
@@ -1937,7 +1938,8 @@
      }
     
     /* zen Mods */
-    #cmi-show-more-menu {
+    #cmi-show-more-menu,
+    #cmi-show-more-menu-tab {
       --menu-image: url('chrome://browser/skin/zen-icons/menu.svg');
     }
     #quicktabs-context-menuitem,
@@ -2621,7 +2623,8 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   }
 
 
-  #cmi-show-more-menupopup > menuitem:not(
+  #cmi-show-more-menupopup,
+  #cmi-show-more-menupopup-tab > menuitem:not(
     .openintabs-menuitem,
     .menuitem-iconic,
     [type="checkbox"][checked="true"],
@@ -2630,7 +2633,8 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     .in-menulist menuitem,
     .unified-nav-current
   ),
-  #cmi-show-more-menupopup > menu:not(
+  #cmi-show-more-menupopup,
+  #cmi-show-more-menupopup-tab > menu:not(
     .openintabs-menuitem,
     .menu-iconic,
     [type="checkbox"][checked="true"],
@@ -2639,7 +2643,8 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     .in-menulist menu,
     .unified-nav-current
   ),
-  #cmi-show-more-menupopup > menucaption {
+  #cmi-show-more-menupopup,
+  #cmi-show-more-menupopup-tab > menucaption {
   padding-inline-start: calc(
     var(--fp-contextmenu-menuitem-padding-inline)
     + var(--menuitem-padding-extra)

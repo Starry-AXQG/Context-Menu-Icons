@@ -147,7 +147,7 @@
   };
 
   function loadMenuLabelFromCSS() {
-    try { const cs = getComputedStyle(document.documentElement); if (!cs) return null; let raw = cs.getPropertyValue(CSS_VAR_LABEL); if (!raw) return null; raw = raw.trim(); if (!raw) return null; if ((raw.startsWith('"') && raw.endsWith('"')) || (raw.startsWith("'") && raw.endsWith("'"))) raw = raw.slice(1, -1).trim(); return raw || null; } catch (e) { console.warn('[more-menu] loadMenuLabelFromCSS failed', e); return null; }
+    try { const cs = getComputedStyle(document.documentElement); if (!cs) return null; let raw = cs.getPropertyValue(CSS_VAR_LABEL); if (!raw) return null; raw = raw.trim(); if (!raw) return null; if ((raw.startsWith('"') && raw.endsWith('"')) || (raw.startsWith("'" ) && raw.endsWith("'" ))) raw = raw.slice(1, -1).trim(); return raw || null; } catch (e) { console.warn('[more-menu] loadMenuLabelFromCSS failed', e); return null; }
   }
 
   function loadMenuLabelFromPref() {
@@ -192,9 +192,37 @@
 
   function restoreItems() { MOVE_IDS.forEach(id => restoreItemById(id)); if (skipMoveThisOpen) { try { const more = document.getElementById(MORE_MENU_ID); if (more && more.parentNode) { more.style.display = 'none'; } } catch (e) { console.warn(e); } } }
 
-  function initOnce() { const target = document.getElementById(TARGET_MENU_ID); if (!target) { log('target menu not found yet (will retry on later events)'); return; } const menupopup = (target.nodeName && target.nodeName.toLowerCase() === 'menupopup') ? target : (target.querySelector && (target.querySelector('menupopup') || target)); if (!menupopup) { log('no menupopup available'); return; } targetMenupopup = menupopup; try { CURRENT_MENU_LABEL = loadMenuLabel(); } catch (e) {} try { loadMoveIdsFromCSSVar(); } catch (e) {} try { loadMoveIdsFromPref(); } catch (e) {} setTimeout(() => { try { loadMoveIdsFromCSSVar(); } catch (e) {} }, 300); observeLabelPrefChanges(); try { moveItems(menupopup); } catch (e) { console.error(e); } const observer = new MutationObserver(muts => { for (const m of muts) { if (m.type === 'childList' && (m.addedNodes && m.addedNodes.length)) { if (restoredForThisOpen) continue; moveItems(menupopup); } } }); try { observer.observe(menupopup, { childList: true, subtree: true }); log('mutation observer attached'); } catch (e) { console.warn('[more-menu] failed to attach observer, will rely on one-shot move', e); } try { menupopup.addEventListener('popupshowing', () => { if (skipMoveThisOpen) { restoreItems(); restoredForThisOpen = true; } }); menupopup.addEventListener('popuphidden', () => { if (restoredForThisOpen) { setTimeout(() => { try { moveItems(menupopup); } catch (e) { console.error(e); } try { const more = document.getElementById(MORE_MENU_ID); if (more && more.parentNode) { more.style.display = ''; } } catch (e) {} restoredForThisOpen = false; skipMoveThisOpen = false; }, 50); } }); } catch (e) { console.warn('[more-menu] popup event hookup failed', e); } attachQuickAddHandlers(menupopup); log('more-menu initialized'); }
+  function initOnce() {
+    const target = document.getElementById(TARGET_MENU_ID);
+    if (!target) { log('target menu not found yet (will retry on later events)'); return; }
+    const menupopup = (target.nodeName && target.nodeName.toLowerCase() === 'menupopup') ? target : (target.querySelector && (target.querySelector('menupopup') || target));
+    if (!menupopup) { log('no menupopup available'); return; }
+    targetMenupopup = menupopup;
+    try { CURRENT_MENU_LABEL = loadMenuLabel(); } catch (e) {}
+    try { loadMoveIdsFromCSSVar(); } catch (e) {}
+    try { loadMoveIdsFromPref(); } catch (e) {}
+    setTimeout(() => { try { loadMoveIdsFromCSSVar(); } catch (e) {} }, 300);
+    observeLabelPrefChanges();
+    try { moveItems(menupopup); } catch (e) { console.error(e); }
+    const observer = new MutationObserver(muts => {
+      for (const m of muts) {
+        if (m.type === 'childList' && (m.addedNodes && m.addedNodes.length)) {
+          if (restoredForThisOpen) continue;
+          moveItems(menupopup);
+        }
+      }
+    });
+    try { observer.observe(menupopup, { childList: true, subtree: true }); log('mutation observer attached'); } catch (e) { console.warn('[more-menu] failed to attach observer, will rely on one-shot move', e); }
+    try {
+      menupopup.addEventListener('popupshowing', () => { if (skipMoveThisOpen) { restoreItems(); restoredForThisOpen = true; } });
+      menupopup.addEventListener('popuphidden', () => { if (restoredForThisOpen) { setTimeout(() => { try { moveItems(menupopup); } catch (e) { console.error(e); } try { const more = document.getElementById(MORE_MENU_ID); if (more && more.parentNode) { more.style.display = ''; } } catch (e) {} restoredForThisOpen = false; skipMoveThisOpen = false; }, 50); } });
+    } catch (e) { console.warn('[more-menu] popup event hookup failed', e); }
+    attachQuickAddHandlers(menupopup);
+    log('more-menu initialized');
+  }
 
-  let lastHoveredMenuItem = null; let contextOpen = false; function onMenuPointerOver(e) { const t = e.target; if (!t) return; const nodeName = (t.nodeName || '').toLowerCase(); if (nodeName === 'menuitem' || nodeName === 'menu' || (t.getAttribute && t.getAttribute('role') === 'menuitem')) { lastHoveredMenuItem = t; } }
+  let lastHoveredMenuItem = null; let contextOpen = false;
+  function onMenuPointerOver(e) { const t = e.target; if (!t) return; const nodeName = (t.nodeName || '').toLowerCase(); if (nodeName === 'menuitem' || nodeName === 'menu' || (t.getAttribute && t.getAttribute('role') === 'menuitem')) { lastHoveredMenuItem = t; } }
   function isMagicCombo(e) { try { return e.ctrlKey && e.shiftKey && e.key && e.key.toLowerCase() === 'a' && e.getModifierState && e.getModifierState('CapsLock'); } catch (e) { return false; } }
   function onKeyDown(e) { try { if (!contextOpen) return; if (!isMagicCombo(e)) return; e.preventDefault(); e.stopPropagation(); const el = lastHoveredMenuItem; const id = extractIdFromElement(el); if (!id) { console.warn('[more-menu] hovered item has no valid id; cannot add'); return; } const ok = appendIdToPrefAndMemory(id); if (ok) console.log('[more-menu] success: toggled', id); else console.log('[more-menu] failed to toggle', id); } catch (ex) { console.error('[more-menu] onKeyDown error', ex); } }
   function attachQuickAddHandlers(menupopup) { if (!menupopup) return; menupopup.addEventListener('pointerover', onMenuPointerOver, true); menupopup.addEventListener('pointerenter', onMenuPointerOver, true); menupopup.addEventListener('popupshowing', () => { contextOpen = true; lastHoveredMenuItem = null; }); menupopup.addEventListener('popuphidden', () => { contextOpen = false; lastHoveredMenuItem = null; }); document.addEventListener('keydown', onKeyDown, true); window.addEventListener('unload', () => { try { menupopup.removeEventListener('pointerover', onMenuPointerOver, true); } catch(e){} try { menupopup.removeEventListener('pointerenter', onMenuPointerOver, true); } catch(e){} try { document.removeEventListener('keydown', onKeyDown, true); } catch(e){} }, { once: true }); }
@@ -202,6 +230,227 @@
   if (!isFeatureEnabled()) { log('[more-menu] disabled by pref', PREF_ENABLE_NAME); return; }
   if (document.readyState === 'complete' || document.readyState === 'interactive') { setTimeout(initOnce, 200); } else { window.addEventListener('load', () => setTimeout(initOnce, 200), { once: true }); }
   try { document.addEventListener('contextmenu', function (e) { try { skipMoveThisOpen = !!e.shiftKey; if (skipMoveThisOpen && targetMenupopup) { restoreItems(); restoredForThisOpen = true; log('Shift held: restoring original menu for this open'); } } catch (err) { console.error(err); } }, true); } catch (e) { console.warn('[more-menu] failed to attach contextmenu listener', e); }
+  window.addEventListener('unload', () => {}, { once: true });
+
+})();
+
+
+// 🧩 tabContextMenu 
+// Enable: cmi-fold_tab_menu_item-enable
+// pref: cmi-fold-tab-item-IDs
+// -----------------------------
+(function () {
+  "use strict";
+
+  const TARGET_MENU_ID_TAB = "tabContextMenu";
+  let MOVE_IDS_TAB = [];
+  const MORE_MENU_ID_TAB = "cmi-show-more-menu-tab";
+  const MORE_POPUP_ID_TAB = "cmi-show-more-menupopup-tab";
+
+  const PREF_NAME_TAB = "cmi-fold-tab-item-IDs";
+  const PREF_ENABLE_NAME_TAB = "cmi-fold_tab_menu_item-enable";
+  const PREF_LABEL_NAME_TAB = "cmi-fold-tab-menu-label";
+  const CSS_VAR_IDS_TAB = "--cmi-fold-tab-item-ids";
+  const CSS_VAR_LABEL_TAB = "--cmi-fold-tab-menu-label";
+
+  const originalPositions_TAB = new Map();
+  const cloneSuffix_TAB = "-sine-clone-tab";
+  let targetMenupopup_TAB = null;
+  let skipMoveThisOpen_TAB = false;
+  let restoredForThisOpen_TAB = false;
+  let CURRENT_MENU_LABEL_TAB = null;
+
+  function createXUL_TAB(tag) { return (document.createXULElement ? document.createXULElement(tag) : document.createElement(tag)); }
+  function log_TAB(...args) { try { console.debug("[more-menu-tab]", ...args); } catch (e) {} }
+
+  function isFeatureEnabled_TAB() {
+    try { if (typeof Components !== 'undefined' && Components.utils) { try { Components.utils.import && Components.utils.import('resource://gre/modules/Services.jsm'); } catch (e) {} } } catch (e) {}
+    try { if (typeof Services !== 'undefined' && Services.prefs) { try { return !!Services.prefs.getBoolPref(PREF_ENABLE_NAME_TAB, false); } catch (e) { return false; } } } catch (e) {}
+    return false;
+  }
+
+  function normalizeIdString_TAB(s) {
+    if (!s) return "";
+    s = String(s);
+    s = s.replace(/^\s*['\"]|['\"]\s*$/g, "");
+    s = s.replace(/[\u200B-\u200D\uFEFF\u00A0\t\n\r\f]/g, "");
+    return s.trim();
+  }
+  const ID_VALID_RE_TAB = /^[A-Za-z0-9_.:\-]+$/;
+  function isValidIdCandidate_TAB(s) { if (!s) return false; s = normalizeIdString_TAB(s); if (s.length < 2) return false; return ID_VALID_RE_TAB.test(s); }
+
+  function extractIdFromElement_TAB(el) {
+    if (!el) return null;
+    try {
+      if (el.id) { const id0 = normalizeIdString_TAB(el.id); if (isValidIdCandidate_TAB(id0)) return id0; }
+      const attrsToTry = ['anonid', 'command', 'data-id', 'data-item-id', 'data-command'];
+      for (const a of attrsToTry) {
+        const v = el.getAttribute && el.getAttribute(a);
+        if (v) { const vv = normalizeIdString_TAB(v); if (isValidIdCandidate_TAB(vv)) return vv; }
+      }
+      let p = el.parentNode;
+      while (p) {
+        if (p.id) { const pid = normalizeIdString_TAB(p.id); if (isValidIdCandidate_TAB(pid)) return pid; }
+        p = p.parentNode;
+      }
+      const labelish = el.getAttribute && (el.getAttribute('anonid') || el.getAttribute('label') || el.getAttribute('value'));
+      if (labelish) { const lab = normalizeIdString_TAB(labelish); if (isValidIdCandidate_TAB(lab)) return lab; }
+    } catch (e) { console.warn('[more-menu-tab] extractIdFromElement error', e); }
+    return null;
+  }
+
+  function parsePrefStringToArray_TAB(raw) {
+    if (!raw) return [];
+    raw = normalizeIdString_TAB(raw);
+    if (!raw) return [];
+    const parts = raw.split(/[,\s]+/).map(s => normalizeIdString_TAB(s)).filter(Boolean);
+    const cleaned = parts.map(s => s.replace(/^#/, '')).filter(Boolean);
+    const seen = new Set();
+    const out = [];
+    for (const p of cleaned) { if (!seen.has(p)) { seen.add(p); out.push(p); } }
+    return out;
+  }
+  function arrayToPrefString_TAB(arr) { if (!Array.isArray(arr)) return ''; return arr.map(s => normalizeIdString_TAB(s).replace(/^#/, '')).filter(Boolean).join(', '); }
+
+  function readPrefArray_TAB() {
+    try { if (typeof Services !== 'undefined' && Services.prefs) { try { const raw = Services.prefs.getCharPref(PREF_NAME_TAB); return parsePrefStringToArray_TAB(raw); } catch (e) { return []; } } } catch (e) {}
+    return [];
+  }
+  function writePrefArray_TAB(arr) {
+    try { if (typeof Services !== 'undefined' && Services.prefs) { const v = arrayToPrefString_TAB(arr); Services.prefs.setCharPref(PREF_NAME_TAB, v); log_TAB('wrote pref', PREF_NAME_TAB, v); return true; } } catch (e) { console.error('[more-menu-tab] writePrefArray failed', e); }
+    return false;
+  }
+
+  function appendIdToPrefAndMemory_TAB(id) {
+    try {
+      const clean = normalizeIdString_TAB(id).replace(/^#/, '');
+      if (!isValidIdCandidate_TAB(clean)) { console.warn('[more-menu-tab] rejected invalid id candidate:', id, '->', clean); return false; }
+
+      let arr = readPrefArray_TAB();
+      if (!arr.length && Array.isArray(MOVE_IDS_TAB) && MOVE_IDS_TAB.length) arr = MOVE_IDS_TAB.slice();
+
+      const existingIndex = arr.indexOf(clean);
+      if (existingIndex !== -1) {
+        arr.splice(existingIndex, 1);
+        const ok = writePrefArray_TAB(arr);
+        if (ok) {
+          const memIdx = MOVE_IDS_TAB.indexOf(clean);
+          if (memIdx !== -1) MOVE_IDS_TAB.splice(memIdx, 1);
+          try {
+            restoreItemById_TAB(clean);
+            const more = document.getElementById(MORE_MENU_ID_TAB);
+            if (more && more.parentNode) {
+              const popup = more.querySelector('menupopup');
+              if (popup) {
+                const children = Array.from(popup.children).filter(n => n && n.id && !n.id.endsWith(cloneSuffix_TAB));
+                if (children.length === 0) { try { more.style.display = 'none'; } catch (e) {} }
+              }
+            }
+          } catch (e) { console.warn('[more-menu-tab] restore after removal failed', e); }
+          console.info('[more-menu-tab] removed id from pref:', clean, 'new value:', arrayToPrefString_TAB(arr));
+          return true;
+        } else { console.error('[more-menu-tab] failed to write pref while removing', clean); return false; }
+      }
+
+      if (arr.includes(clean)) { log_TAB('[more-menu-tab] id already present (after re-check):', clean); return true; }
+      arr.push(clean);
+      const ok = writePrefArray_TAB(arr);
+      if (ok) {
+        if (!MOVE_IDS_TAB.includes(clean)) MOVE_IDS_TAB.push(clean);
+        console.info('[more-menu-tab] added id to pref:', clean, 'new value:', arrayToPrefString_TAB(arr));
+        return true;
+      }
+    } catch (e) { console.error('[more-menu-tab] appendIdToPrefAndMemory error', e); }
+    return false;
+  }
+
+  const DEFAULT_LABELS_TAB = {
+    'zh-CN': '显示更多选项',
+    'zh-TW': '顯示更多選項',
+    'ja': 'その他のオプションを表示',
+    'es': 'Mostrar más opciones',
+    'de': 'Weitere Optionen',
+    'fr': 'Afficher plus d’options',
+    'en': 'Show More Options'
+  };
+
+  function loadMenuLabelFromCSS_TAB() {
+    try { const cs = getComputedStyle(document.documentElement); if (!cs) return null; let raw = cs.getPropertyValue(CSS_VAR_LABEL_TAB); if (!raw) return null; raw = raw.trim(); if (!raw) return null; if ((raw.startsWith('"') && raw.endsWith('"')) || (raw.startsWith("'" ) && raw.endsWith("'" ))) raw = raw.slice(1, -1).trim(); return raw || null; } catch (e) { console.warn('[more-menu-tab] loadMenuLabelFromCSS failed', e); return null; }
+  }
+
+  function loadMenuLabelFromPref_TAB() {
+    try { if (typeof Components !== 'undefined' && Components.utils) { try { Components.utils.import && Components.utils.import('resource://gre/modules/Services.jsm'); } catch (e) {} } } catch (e) {}
+    try { if (typeof Services !== 'undefined' && Services.prefs) { try { const raw = Services.prefs.getCharPref(PREF_LABEL_NAME_TAB, '').trim(); if (raw) return raw; } catch (e) {} } } catch (e) {}
+    return null;
+  }
+
+  function defaultLabelByLocale_TAB() { try { const lang = (navigator.language || 'en').toLowerCase(); for (const k of Object.keys(DEFAULT_LABELS_TAB)) { if (lang.startsWith(k.toLowerCase())) return DEFAULT_LABELS_TAB[k]; } } catch (e) {} return DEFAULT_LABELS_TAB['en']; }
+  function loadMenuLabel_TAB() { let label = loadMenuLabelFromCSS_TAB(); if (label) return label; label = loadMenuLabelFromPref_TAB(); if (label) return label; return defaultLabelByLocale_TAB(); }
+
+  function observeLabelPrefChanges_TAB() {
+    try { if (typeof Services === 'undefined') { Components.utils.import && Components.utils.import('resource://gre/modules/Services.jsm'); } } catch (e) {}
+    try {
+      if (typeof Services !== 'undefined' && Services.prefs && Services.prefs.addObserver) {
+        const observer = { observe(subject, topic, data) { try { const newLabel = loadMenuLabelFromPref_TAB() || loadMenuLabelFromCSS_TAB() || defaultLabelByLocale_TAB(); if (newLabel && newLabel !== CURRENT_MENU_LABEL_TAB) { CURRENT_MENU_LABEL_TAB = newLabel; const more = document.getElementById(MORE_MENU_ID_TAB); if (more) { try { more.setAttribute('label', CURRENT_MENU_LABEL_TAB); } catch (e) {} } } } catch (e) { console.warn('[more-menu-tab] pref observer error', e); } } };
+        Services.prefs.addObserver(PREF_LABEL_NAME_TAB, observer, false);
+        window.addEventListener('unload', () => { try { Services.prefs.removeObserver(PREF_LABEL_NAME_TAB, observer); } catch (e) {} }, { once: true });
+      }
+    } catch (e) { console.warn('[more-menu-tab] could not attach pref observer for label', e); }
+  }
+
+  function parseIdList_TAB(raw) { if (!raw) return []; raw = normalizeIdString_TAB(raw); if (!raw) return []; const parts = raw.split(/[,\s]+/).map(s => s.trim()).filter(Boolean); return parts.map(s => s.replace(/^#/, '')); }
+  function loadMoveIdsFromCSSVar_TAB() { try { const cs = getComputedStyle(document.documentElement); if (!cs) return; let raw = cs.getPropertyValue(CSS_VAR_IDS_TAB); if (!raw) return; const ids = parseIdList_TAB(raw); if (ids.length) { MOVE_IDS_TAB = ids; log_TAB('loaded MOVE_IDS from CSS var:', MOVE_IDS_TAB); } } catch (e) { console.warn('[more-menu-tab] failed to read CSS var', CSS_VAR_IDS_TAB, e); } }
+  function loadMoveIdsFromPref_TAB() { try { if (typeof Components !== 'undefined' && Components.utils) { try { Components.utils.import && Components.utils.import('resource://gre/modules/Services.jsm'); } catch (e) {} } } catch (e) {} try { if (typeof Services !== 'undefined' && Services.prefs) { const arr = readPrefArray_TAB(); if (arr.length) { MOVE_IDS_TAB = arr; log_TAB('loaded MOVE_IDS from pref:', MOVE_IDS_TAB); } } } catch (e) { console.warn('[more-menu-tab] failed to read pref', PREF_NAME_TAB, e); } }
+
+  function recordOriginal_TAB(el) { if (!el || !el.id) return; if (originalPositions_TAB.has(el.id)) return; try { originalPositions_TAB.set(el.id, { parent: el.parentNode, nextSibling: el.nextSibling }); log_TAB('recorded original for', el.id); } catch (e) {} }
+
+  function ensureMoreMenu_TAB(menupopup) {
+    let existing = document.getElementById(MORE_MENU_ID_TAB);
+    if (existing && menupopup.contains(existing)) return existing;
+    if (existing && existing.parentNode && existing.parentNode !== menupopup) { try { existing.parentNode.removeChild(existing); } catch (e) {} existing = null; }
+    if (existing) return existing;
+    try { const menu = createXUL_TAB('menu'); menu.id = MORE_MENU_ID_TAB; menu.setAttribute('label', CURRENT_MENU_LABEL_TAB || loadMenuLabel_TAB()); menu.setAttribute('anonid', 'cmi-show-more-menu-tab'); const popup = createXUL_TAB('menupopup'); popup.id = MORE_POPUP_ID_TAB; menu.appendChild(popup); menupopup.appendChild(menu); log_TAB('created more menu (tab)'); return menu; } catch (e) { console.error('[more-menu-tab] create failed:', e); return null; }
+  }
+
+  function moveItemById_TAB(id, menupopup, allowClone = true) { const moreMenu = ensureMoreMenu_TAB(menupopup); if (!moreMenu) return false; const morePopup = moreMenu.querySelector('menupopup'); if (!morePopup) return false; const el = document.getElementById(id); if (!el) return false; if (morePopup.contains(el)) return true; recordOriginal_TAB(el); try { morePopup.appendChild(el); el.classList && el.classList.add('sine-moved'); log_TAB('moved', id); return true; } catch (e) { if (!allowClone) return false; try { const clone = el.cloneNode(true); if (clone.id) clone.id = clone.id + cloneSuffix_TAB; morePopup.appendChild(clone); try { el.style.display = ''; el.classList && el.classList.add('sine-hidden-original'); } catch (ex) {} log_TAB('cloned and hid original', id); return true; } catch (ex) { console.error('[more-menu-tab] clone failed for', id, ex); return false; } } }
+
+  function moveItems_TAB(menupopup) { const moreMenu = document.getElementById(MORE_MENU_ID_TAB) || ensureMoreMenu_TAB(menupopup); if (moreMenu) { try { moreMenu.style.display = ''; } catch (e) {} } MOVE_IDS_TAB.forEach(id => moveItemById_TAB(id, menupopup, true)); }
+
+  function restoreItemById_TAB(id) { const info = originalPositions_TAB.get(id); if (!info) return false; let el = document.getElementById(id); try { const clone = document.getElementById(id + cloneSuffix_TAB); if (clone && clone.parentNode) { clone.parentNode.removeChild(clone); } if (!el) { return false; } if (el.parentNode === info.parent) return true; try { info.parent.insertBefore(el, info.nextSibling); try { el.style.display = ''; el.classList && el.classList.remove('sine-hidden-original'); } catch (e) {} el.classList && el.classList.remove('sine-moved'); log_TAB('restored', id); return true; } catch (e) { console.error('[more-menu-tab] restore failed for', id, e); return false; } } catch (e) { console.error(e); return false; } }
+
+  function restoreItems_TAB() { MOVE_IDS_TAB.forEach(id => restoreItemById_TAB(id)); if (skipMoveThisOpen_TAB) { try { const more = document.getElementById(MORE_MENU_ID_TAB); if (more && more.parentNode) { more.style.display = 'none'; } } catch (e) { console.warn(e); } } }
+
+  function initOnce_TAB() {
+    const target = document.getElementById(TARGET_MENU_ID_TAB);
+    if (!target) { log_TAB('target menu not found yet (will retry on later events)'); return; }
+    const menupopup = (target.nodeName && target.nodeName.toLowerCase() === 'menupopup') ? target : (target.querySelector && (target.querySelector('menupopup') || target));
+    if (!menupopup) { log_TAB('no menupopup available'); return; }
+    targetMenupopup_TAB = menupopup;
+    try { CURRENT_MENU_LABEL_TAB = loadMenuLabel_TAB(); } catch (e) {}
+    try { loadMoveIdsFromCSSVar_TAB(); } catch (e) {}
+    try { loadMoveIdsFromPref_TAB(); } catch (e) {}
+    setTimeout(() => { try { loadMoveIdsFromCSSVar_TAB(); } catch (e) {} }, 300);
+    observeLabelPrefChanges_TAB();
+    try { moveItems_TAB(menupopup); } catch (e) { console.error(e); }
+    const observer = new MutationObserver(muts => { for (const m of muts) { if (m.type === 'childList' && (m.addedNodes && m.addedNodes.length)) { if (restoredForThisOpen_TAB) continue; moveItems_TAB(menupopup); } } });
+    try { observer.observe(menupopup, { childList: true, subtree: true }); log_TAB('mutation observer attached'); } catch (e) { console.warn('[more-menu-tab] failed to attach observer, will rely on one-shot move', e); }
+    try {
+      menupopup.addEventListener('popupshowing', () => { if (skipMoveThisOpen_TAB) { restoreItems_TAB(); restoredForThisOpen_TAB = true; } });
+      menupopup.addEventListener('popuphidden', () => { if (restoredForThisOpen_TAB) { setTimeout(() => { try { moveItems_TAB(menupopup); } catch (e) { console.error(e); } try { const more = document.getElementById(MORE_MENU_ID_TAB); if (more && more.parentNode) { more.style.display = ''; } } catch (e) {} restoredForThisOpen_TAB = false; skipMoveThisOpen_TAB = false; }, 50); } });
+    } catch (e) { console.warn('[more-menu-tab] popup event hookup failed', e); }
+    attachQuickAddHandlers_TAB(menupopup);
+    log_TAB('more-menu-tab initialized');
+  }
+
+  let lastHoveredMenuItem_TAB = null; let contextOpen_TAB = false;
+  function onMenuPointerOver_TAB(e) { const t = e.target; if (!t) return; const nodeName = (t.nodeName || '').toLowerCase(); if (nodeName === 'menuitem' || nodeName === 'menu' || (t.getAttribute && t.getAttribute('role') === 'menuitem')) { lastHoveredMenuItem_TAB = t; } }
+  function isMagicCombo_TAB(e) { try { return e.ctrlKey && e.shiftKey && e.key && e.key.toLowerCase() === 'a' && e.getModifierState && e.getModifierState('CapsLock'); } catch (e) { return false; } }
+  function onKeyDown_TAB(e) { try { if (!contextOpen_TAB) return; if (!isMagicCombo_TAB(e)) return; e.preventDefault(); e.stopPropagation(); const el = lastHoveredMenuItem_TAB; const id = extractIdFromElement_TAB(el); if (!id) { console.warn('[more-menu-tab] hovered item has no valid id; cannot add'); return; } const ok = appendIdToPrefAndMemory_TAB(id); if (ok) console.log('[more-menu-tab] success: toggled', id); else console.log('[more-menu-tab] failed to toggle', id); } catch (ex) { console.error('[more-menu-tab] onKeyDown error', ex); } }
+  function attachQuickAddHandlers_TAB(menupopup) { if (!menupopup) return; menupopup.addEventListener('pointerover', onMenuPointerOver_TAB, true); menupopup.addEventListener('pointerenter', onMenuPointerOver_TAB, true); menupopup.addEventListener('popupshowing', () => { contextOpen_TAB = true; lastHoveredMenuItem_TAB = null; }); menupopup.addEventListener('popuphidden', () => { contextOpen_TAB = false; lastHoveredMenuItem_TAB = null; }); document.addEventListener('keydown', onKeyDown_TAB, true); window.addEventListener('unload', () => { try { menupopup.removeEventListener('pointerover', onMenuPointerOver_TAB, true); } catch(e){} try { menupopup.removeEventListener('pointerenter', onMenuPointerOver_TAB, true); } catch(e){} try { document.removeEventListener('keydown', onKeyDown_TAB, true); } catch(e){} }, { once: true }); }
+
+  if (!isFeatureEnabled_TAB()) { log_TAB('[more-menu-tab] disabled by pref', PREF_ENABLE_NAME_TAB); return; }
+  if (document.readyState === 'complete' || document.readyState === 'interactive') { setTimeout(initOnce_TAB, 200); } else { window.addEventListener('load', () => setTimeout(initOnce_TAB, 200), { once: true }); }
+  try { document.addEventListener('contextmenu', function (e) { try { skipMoveThisOpen_TAB = !!e.shiftKey; if (skipMoveThisOpen_TAB && targetMenupopup_TAB) { restoreItems_TAB(); restoredForThisOpen_TAB = true; log_TAB('Shift held: restoring original menu for this open'); } } catch (err) { console.error(err); } }, true); } catch (e) { console.warn('[more-menu-tab] failed to attach contextmenu listener', e); }
   window.addEventListener('unload', () => {}, { once: true });
 
 })();
