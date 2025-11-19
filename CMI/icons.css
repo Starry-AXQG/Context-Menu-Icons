@@ -9,6 +9,7 @@
     -moz-context-properties: fill, fill-opacity !important;
     fill: currentColor !important;
   }
+  
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > #cmi-show-more-menupopup, #cmi-show-more-menupopup-tab > menuitem,
   :not(:not(menubar) > menu, #ContentSelectDropdown)
@@ -2622,9 +2623,10 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
       ) !important;
   }
 
-
+  :is(
   #cmi-show-more-menupopup,
-  #cmi-show-more-menupopup-tab > menuitem:not(
+  #cmi-show-more-menupopup-tab
+  ) > menuitem:not(
     .openintabs-menuitem,
     .menuitem-iconic,
     [type="checkbox"][checked="true"],
@@ -2633,8 +2635,10 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     .in-menulist menuitem,
     .unified-nav-current
   ),
+  :is(
   #cmi-show-more-menupopup,
-  #cmi-show-more-menupopup-tab > menu:not(
+  #cmi-show-more-menupopup-tab
+  ) > menu:not(
     .openintabs-menuitem,
     .menu-iconic,
     [type="checkbox"][checked="true"],
@@ -2643,8 +2647,10 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     .in-menulist menu,
     .unified-nav-current
   ),
+  :is(
   #cmi-show-more-menupopup,
-  #cmi-show-more-menupopup-tab > menucaption {
+  #cmi-show-more-menupopup-tab
+  ) > menucaption {
   padding-inline-start: calc(
     var(--fp-contextmenu-menuitem-padding-inline)
     + var(--menuitem-padding-extra)
