@@ -558,24 +558,16 @@
   const nav = document.getElementById('nav-bar');
   const toolbar = document.getElementById('PersonalToolbar');
   const body = document.body || document.documentElement;
-  let dragging = false;
-  let pointerOver = false;
   let hideTimer = null;
-  const HIDE_DELAY = 80;              // ms,avoid shaking.
+  const HIDE_DELAY = 80; // ms
 
-  function updateVisibility() {
-
-    if (dragging || pointerOver) {
-      clearTimeout(hideTimer);
-      body.classList.add('show-bookmarks');
-    } else {
-      // Delay hiding to avoid flickering caused by rapid switching.
-      clearTimeout(hideTimer);
-      hideTimer = setTimeout(() => body.classList.remove('show-bookmarks'), HIDE_DELAY);
-    }
+  function showBookmarks(on) {
+    clearTimeout(hideTimer);
+    if (on) body.classList.add('show-bookmarks');
+    else hideTimer = setTimeout(() => body.classList.remove('show-bookmarks'), HIDE_DELAY);
   }
 
-  function isPointOverNavOrToolbar(x, y) {
+  function pointIsOverNavOrToolbar(x, y) {
     try {
       const el = document.elementFromPoint(x, y);
       if (!el) return false;
@@ -587,68 +579,23 @@
     return false;
   }
 
-  // ---- Drag events ----
-  window.addEventListener('dragenter', (e) => {
-    dragging = true;
-    if (isPointOverNavOrToolbar(e.clientX, e.clientY)) pointerOver = true;
-    updateVisibility();
-  }, { passive: true });
-
-  window.addEventListener('dragover', (e) => {
-    dragging = true;
-    // When dragging and moving, determine whether the mouse coordinates are on the nav or toolbar.
-    pointerOver = isPointOverNavOrToolbar(e.clientX, e.clientY);
-    updateVisibility();
-  }, { passive: true });
-
-  window.addEventListener('dragleave', (e) => {
-    setTimeout(() => {
-      // Only when no subsequent dragover event occurs, is it marked as non-dragging.
-      dragging = false;
-      updateVisibility();
-    }, 50);
-  }, { passive: true });
-
-  window.addEventListener('drop', () => {
-    dragging = false;
-    updateVisibility();
-  }, { passive: true });
-
-  window.addEventListener('dragend', () => {
-    dragging = false;
-    updateVisibility();
-  }, { passive: true });
-
-  // ---- Pointer enter/leave for normal mouse interaction ----
-  function onPointerEnter() {
-    pointerOver = true;
-    updateVisibility();
-  }
-  function onPointerLeave() {
-    pointerOver = false;
-    // Delay hiding to avoid jitter
-    updateVisibility();
-  }
+  function onEnter() { showBookmarks(true); }
+  function onLeave() { showBookmarks(false); }
 
   if (nav) {
-    nav.addEventListener('pointerenter', onPointerEnter);
-    nav.addEventListener('pointerleave', onPointerLeave);
+    nav.addEventListener('pointerenter', onEnter);
+    nav.addEventListener('pointerleave', onLeave);
   }
   if (toolbar) {
-    toolbar.addEventListener('pointerenter', onPointerEnter);
-    toolbar.addEventListener('pointerleave', onPointerLeave);
+    toolbar.addEventListener('pointerenter', onEnter);
+    toolbar.addEventListener('pointerleave', onLeave);
   }
 
-  // clean
-  window.addEventListener('unload', () => {
-    body.classList.remove('show-bookmarks');
-    if (nav) {
-      nav.removeEventListener('pointerenter', onPointerEnter);
-      nav.removeEventListener('pointerleave', onPointerLeave);
-    }
-    if (toolbar) {
-      toolbar.removeEventListener('pointerenter', onPointerEnter);
-      toolbar.removeEventListener('pointerleave', onPointerLeave);
-    }
-  });
+  window.addEventListener('dragover', (e) => {
+    if (pointIsOverNavOrToolbar(e.clientX, e.clientY)) showBookmarks(true);
+    else showBookmarks(false);
+  }, { passive: true });
+
+  // Cleanup: Remove the class when the page is unloaded.
+  window.addEventListener('unload', () => body.classList.remove('show-bookmarks'));
 })();
