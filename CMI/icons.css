@@ -2849,7 +2849,7 @@ menupopup#unified-extensions-context-menu:has(> menuitem:is([type="checkbox"], [
     ),
   /* 分组标题 */
   > menucaption {
-    padding-inline-start: var(--special-submenu-padding) !important;
+    padding-inline-start: calc(var(--special-submenu-padding) - 5px) !important;
   }
 }
 
@@ -2870,7 +2870,7 @@ menupopup#unified-extensions-context-menu:has(> menuitem:is([type="checkbox"], [
       .unified-nav-current
     ),
   > menucaption {
-    padding-inline-start: calc(1px + var(--submenu-padding_cover)) !important;
+    padding-inline-start: calc( var(--submenu-padding_cover) - 4px) !important;
   }
 }
 }
