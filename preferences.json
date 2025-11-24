@@ -361,7 +361,7 @@
       "property": "cmi-Margin-Checkmark-start_cover_2",
       "label": "--cmi-Margin-Checkmark-start_cover",
       "default": "5px",
-      "placeholder": "default: 6px"
+      "placeholder": "default: 5px"
     },
     {
       "type": "string",

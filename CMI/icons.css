@@ -1409,6 +1409,7 @@
       #context_zenSplitTabs {
         --menu-image: url('chrome://browser/skin/zen-icons/sidebars-right.svg') !important;
       }
+      #viewSort,
       #context-zen-change-workspace-tab {
         --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg') !important;
       }
@@ -1938,6 +1939,7 @@
      }
     
     /* zen Mods */
+    #viewColumns,
     #cmi-show-more-menu,
     #cmi-show-more-menu-tab {
       --menu-image: url('chrome://browser/skin/zen-icons/menu.svg');
@@ -2858,7 +2860,7 @@ box-sizing: border-box !important;
 
 
 /* 子菜单文本对齐（Only fix for v1.9.4b) —— padding 值由变量控制 */
-menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
+menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menupopup):has(
     menuitem:not([hidden])[type="checkbox"][checked="true"],
     menuitem:not([hidden])[type="radio"][checked="true"]
   ) {
@@ -2900,8 +2902,27 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
     padding-inline-start: var(--special-submenu-padding) !important;
   }
 }
-}
 
+#viewSort > menupopup:has(
+  menuitem:not([hidden])[type="checkbox"][checked="true"],
+  menuitem:not([hidden])[type="radio"][checked="true"]
+) {
+    > :is(menuitem, menu):not(
+      .menuitem-iconic,
+      .menu-iconic,
+
+      [type="checkbox"][checked="true"],
+      [type="radio"][checked="true"],
+
+      .in-menulist,
+      .in-menulist menuitem,
+      .in-menulist menu,
+      .unified-nav-current
+    ),
+  > menucaption {
+    padding-inline-start: calc(1px + var(--submenu-padding_cover)) !important;
+  }
+}
 
 /* App Menu Margin*/
 .addon-banner-item,
@@ -2942,4 +2963,5 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
   #PanelUI-historyMore{
     --menu-image: none !important;
   }
+}
 }
