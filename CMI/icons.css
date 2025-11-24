@@ -2829,59 +2829,9 @@ menupopup#unified-extensions-context-menu:has(> menuitem:is([type="checkbox"], [
   box-sizing: border-box !important;
 }
 }
-}
-/* Linux */
-@media (-moz-platform: linux) {
-/* 当 menupopup 下有未被隐藏的 checkbox、radio 时，
-给同层级未勾选的 checkbox 子项增加 padding */
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
-> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"])
-> .menu-text,
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
-> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"])
-> .menu-highlightable-text {
-padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
-box-sizing: border-box !important;
-}
 
 
-/* 当 menupopup 下有未被隐藏的 checkbox、radio 时，
-给同层级未勾选且不是父菜单的 checkbox 子项增加 padding */
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
-> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
-> .menu-text,
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
-> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
-> .menu-highlightable-text {
-padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
-box-sizing: border-box !important;
-}
-}
-
-
-/* 子菜单文本对齐（Only fix for v1.9.4b) —— padding 值由变量控制 */
-menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menupopup):has(
-    menuitem:not([hidden])[type="checkbox"][checked="true"],
-    menuitem:not([hidden])[type="radio"][checked="true"]
-  ) {
-  > :is(menuitem, menu):not(
-      .menuitem-iconic,
-      .menu-iconic,
-
-      [type="checkbox"][checked="true"],
-      [type="radio"][checked="true"],
-
-      .in-menulist,
-      .in-menulist menuitem,
-      .in-menulist menu,
-      .unified-nav-current
-    ),
-  /* 分组标题 */
-  > menucaption {
-    padding-inline-start: var(--submenu-padding) !important;
-  }
-}
-#spell-dictionaries-menu,#viewColumns > menupopup:has(
+#viewColumns > menupopup:has(
   menuitem:not([hidden])[type="checkbox"][checked="true"],
   menuitem:not([hidden])[type="radio"][checked="true"]
 ) {
@@ -2923,8 +2873,83 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menu
     padding-inline-start: calc(1px + var(--submenu-padding_cover)) !important;
   }
 }
+}
+/* Linux */
+@media (-moz-platform: linux) {
+/* 当 menupopup 下有未被隐藏的 checkbox、radio 时，
+给同层级未勾选的 checkbox 子项增加 padding */
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
+> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"])
+> .menu-text,
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
+> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"])
+> .menu-highlightable-text {
+padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
+box-sizing: border-box !important;
+}
 
-/* App Menu Margin*/
+
+/* 当 menupopup 下有未被隐藏的 checkbox、radio 时，
+给同层级未勾选且不是父菜单的 checkbox 子项增加 padding */
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
+> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
+> .menu-text,
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
+> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
+> .menu-highlightable-text {
+padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
+box-sizing: border-box !important;
+}
+}
+
+
+/* 子菜单文本对齐(Only fix for v1.9.4b)
+   When there are checkbox/radio in sub-menu, add a left margin to other sub-menus.*/
+menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menupopup):has(
+    menuitem:not([hidden])[type="checkbox"][checked="true"],
+    menuitem:not([hidden])[type="radio"][checked="true"]
+  ) {
+  > :is(menuitem, menu):not(
+      .menuitem-iconic,
+      .menu-iconic,
+
+      [type="checkbox"][checked="true"],
+      [type="radio"][checked="true"],
+
+      .in-menulist,
+      .in-menulist menuitem,
+      .in-menulist menu,
+      .unified-nav-current
+    ),
+  /* 分组标题 */
+  > menucaption {
+    padding-inline-start: var(--submenu-padding) !important;
+  }
+}
+/* Special sub-menu: spell check */
+#spell-dictionaries-menu:has(
+  menuitem:not([hidden])[type="checkbox"][checked="true"],
+  menuitem:not([hidden])[type="radio"][checked="true"]
+) {
+    > :is(menuitem, menu):not(
+      .menuitem-iconic,
+      .menu-iconic,
+
+      [type="checkbox"][checked="true"],
+      [type="radio"][checked="true"],
+
+      .in-menulist,
+      .in-menulist menuitem,
+      .in-menulist menu,
+      .unified-nav-current
+    ),
+  > menucaption {
+    padding-inline-start: var(--special-submenu-padding) !important;
+  }
+}
+
+
+/* App Menu Margin */
 .addon-banner-item,
 .panel-banner-item {
   margin: 2px 4px 2px !important;
