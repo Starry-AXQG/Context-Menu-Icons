@@ -901,8 +901,8 @@
       #context_closeTabOptions {
         --menu-image: url("close-all.svg");
       }
-      .customize-context-reportExtension,
-      .unified-extensions-context-menu-report-extension {
+      #toolbar-context-report-extension,
+      #unified-extensions-context-menu-report-extension {
         --menu-image: url("report.svg");
       }
       
@@ -1499,6 +1499,11 @@
       #placesContext_removeTag {
         --menu-image: url('chrome://browser/skin/zen-icons/edit-delete.svg');
       }
+      #toolbar-context-report-extension,
+      #unified-extensions-context-menu-report-extension {
+        --menu-image: url('chrome://browser/skin/zen-icons/security-broken.svg');
+      }
+
       #paste-and-go {
         --menu-image: url('chrome://browser/skin/zen-icons/paste-and-go.svg');
       }
