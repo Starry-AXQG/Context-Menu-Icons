@@ -1530,7 +1530,7 @@
         --menu-image: url('zen-icons/image-open.svg');
       }
       #context-viewimageinfo {
-        --menu-image: url('zen-icons/info.svg');
+        --menu-image: url('chrome://browser/skin/zen-icons/info.svg');
       }
       #context-saveimage,
       #context-video-saveimage {
@@ -1769,7 +1769,7 @@
       }
       .customize-context-reportExtension,
       .unified-extensions-context-menu-report-extension {
-        --menu-image: url('zen-icons/report.svg');
+        --menu-image: url('chrome://browser/skin/zen-icons/security-broken.svg');
       }
     /*
       .wordmark::after {
@@ -1874,7 +1874,7 @@
       list-style-image: url('chrome://browser/skin/import.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(1) {
-      list-style-image: url('zen-icons/developer.svg') !important;
+      list-style-image: url('chrome://browser/skin/zen-icons/developer.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(2) {
       list-style-image: url('zen-icons/media-speed.svg') !important;
@@ -1909,10 +1909,10 @@
       list-style-image: url('zen-icons/search-page.svg') !important;
     }
     #appMenu_troubleShooting {
-      list-style-image: url('zen-icons/info.svg') !important;
+      list-style-image: url('chrome://browser/skin/zen-icons/info.svg') !important;
     }
     #appMenu_menu_HelpPopup_reportPhishingtoolmenu {
-      list-style-image: url('zen-icons/security-broken.svg') !important;
+      list-style-image: url('chrome://browser/skin/zen-icons/security-broken.svg') !important;
     }
     #appMenu_helpSwitchDevice {
       list-style-image: url('zen-icons/send-to-device.svg');
