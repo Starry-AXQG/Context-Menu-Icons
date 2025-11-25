@@ -1581,7 +1581,7 @@
       #context-sendimage,
       #context-sendvideo,
       #context-sendaudio {
-        --menu-image: url('chrome://browser/skin/zen-icons/mail.svg');
+        --menu-image: url('zen-icons/mail.svg');
       }
       #context-setDesktopBackground,
       .viewCustomizeToolbar {
