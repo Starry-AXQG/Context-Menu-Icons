@@ -9,8 +9,9 @@
     -moz-context-properties: fill, fill-opacity !important;
     fill: currentColor !important;
   }
+
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > #cmi-show-more-menupopup > menuitem,
+    > #cmi-show-more-menupopup, #cmi-show-more-menupopup-tab > menuitem,
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup
     > menuitem:not(
@@ -22,7 +23,7 @@
       .unified-nav-current
     ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > #cmi-show-more-menupopup, menupopup
+    > #cmi-show-more-menupopup, #cmi-show-more-menupopup-tab, menupopup
     > menu:not(
       .menu-iconic,
       [type="checkbox"],
@@ -575,7 +576,9 @@
         --menu-image: url("edit-cut.svg");
       }
 
-      #placesContext_open {
+      #placesContext_open,
+      #context-openlinkincurrent,
+      #context-zenOpenLinkInGlance {
         --menu-image: url("ext-link.svg");
       }      
       #placesContext_openContainer\:tabs {
@@ -685,9 +688,6 @@
       #context-stripOnShareLink,
       #context-pdfjs-copy {
         --menu-image: url("link.svg");
-      }
-      #context-openlinkincurrent {
-        --menu-image: url("ext-link.svg");
       }
       
       #context-viewsource,
@@ -1315,7 +1315,8 @@
 
 
     /* zen Mods */
-    #cmi-show-more-menu {
+    #cmi-show-more-menu,
+    #cmi-show-more-menu-tab {
       --menu-image: url("menu-bar.svg");
     }
     #quicktabs-context-menuitem,
@@ -1390,64 +1391,65 @@
     @media not (-moz-platform: linux) {
 
         .unified-extensions-context-menu-pin-to-toolbar {
-          --menu-image: url('chrome://browser/skin/zen-icons/pin.svg');
+          --menu-image: url('zen-icons/pin.svg');
         }
       }
       .unified-extensions-context-menu-move-widget-down {
-        --menu-image: url('chrome://browser/skin/zen-icons/arrow-down.svg');
+        --menu-image: url('zen-icons/arrow-down.svg');
       }
       .unified-extensions-context-menu-move-widget-up {
-        --menu-image: url('chrome://browser/skin/zen-icons/arrow-up.svg');
+        --menu-image: url('zen-icons/arrow-up.svg');
       }
     
 
     /* Specifying icons to apply for other context menu options */
-    /* Use icons from Zen icon directory - chrome://browser/skin/zen-icons/ */
+    /* Use icons from Zen icon directory - zen-icons/ */
     /* Use icons from Firefox icon directory - chrome://browser/skin/ */
     
       #context_zenSplitTabs {
-        --menu-image: url('chrome://browser/skin/zen-icons/sidebars-right.svg') !important;
+        --menu-image: url('zen-icons/sidebars-right.svg') !important;
       }
+      #viewSort,
       #context-zen-change-workspace-tab {
-        --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg') !important;
+        --menu-image: url('zen-icons/move-tab.svg') !important;
       }
       #context-zenSplitLink {
-        --menu-image: url('chrome://browser/skin/zen-icons/split.svg') !important;
+        --menu-image: url('zen-icons/split.svg') !important;
       }
       #context-ask-chat,
       #context_askChat {
         --menu-image: url("chrome://browser/skin/trending.svg") !important;
       }
       #context-previewlink,
-      #context-zenOpenLinkInGlance{
-      --menu-image: url('chrome://browser/skin/zen-icons/open.svg') !important;
+      #context-zenOpenLinkInGlance {
+      --menu-image: url('zen-icons/open.svg') !important;
       }
       #context_zenOpenWorkspace,
       #context_zenOpenWorkspacePanel {
-        --menu-image: url('chrome://browser/skin/zen-icons/manage.svg') !important;
+        --menu-image: url('zen-icons/manage.svg') !important;
       }
       #context_zenEditWorkspaceIcon {
-        --menu-image: url('chrome://browser/skin/zen-icons/canvas.svg') !important;
+        --menu-image: url('zen-icons/canvas.svg') !important;
       }
       .zenToolbarThemePicker,
       #zenToolbarThemePicker {
-        --menu-image: url('chrome://browser/skin/zen-icons/edit-theme.svg') !important;
+        --menu-image: url('zen-icons/edit-theme.svg') !important;
       }
       #context-video-pictureinpicture {
-        --menu-image: url('chrome://browser/skin/zen-icons/media-pip.svg') !important;
+        --menu-image: url('zen-icons/media-pip.svg') !important;
       }
       #context-media-loop {
-        --menu-image: url('chrome://browser/skin/zen-icons/media-loop.svg') !important;
+        --menu-image: url('zen-icons/media-loop.svg') !important;
       }
       
       #context-savepage {
-        --menu-image: url('chrome://browser/skin/zen-icons/save.svg');
+        --menu-image: url('zen-icons/save.svg');
       }
       #context-selectall,
       menuitem[data-l10n-id="text-action-select-all"],
       #context_selectAllTabs,
       #toolbar-context-selectAllTabs {
-        --menu-image: url('chrome://browser/skin/zen-icons/edit-select-all.svg');
+        --menu-image: url('zen-icons/edit-select-all.svg');
       }
       #context-add-engine {
         --menu-image: url('zen-search.svg');
@@ -1456,32 +1458,32 @@
       menuitem[data-l10n-id="text-action-undo"],
       #context_undoCloseTab,
       #toolbar-context-undoCloseTab {
-        --menu-image: url('chrome://browser/skin/zen-icons/edit-undo.svg');
+        --menu-image: url('zen-icons/edit-undo.svg');
       }
       #toggle_toolbar-menubar {
-        --menu-image: url('chrome://browser/skin/zen-icons/menu-bar.svg');
+        --menu-image: url('zen-icons/menu-bar.svg');
       }
       #context-redo,
       menuitem[data-l10n-id="text-action-redo"] {
-        --menu-image: url('chrome://browser/skin/zen-icons/edit-redo.svg');
+        --menu-image: url('zen-icons/edit-redo.svg');
       }
       #context-copy,
       menuitem[data-l10n-id="text-action-copy"],
       .textbox-contextmenu #strip-on-share,
       #placesContext_copy {
-        --menu-image: url('chrome://browser/skin/zen-icons/edit-copy.svg');
+        --menu-image: url('zen-icons/edit-copy.svg');
       }
       #context-paste,
       menuitem[data-l10n-id="text-action-paste"],
       #placesContext_paste_group,
       #placesContext_paste,
       #context-paste-no-formatting {
-        --menu-image: url('chrome://browser/skin/zen-icons/edit-paste.svg');
+        --menu-image: url('zen-icons/edit-paste.svg');
       }
       #context-cut,
       menuitem[data-l10n-id="text-action-cut"],
       #placesContext_cut {
-        --menu-image: url('chrome://browser/skin/zen-icons/edit-cut.svg');
+        --menu-image: url('zen-icons/edit-cut.svg');
       }
       #context-delete,
       .customize-context-removeExtension,
@@ -1495,56 +1497,56 @@
       #context_zenDeleteWebPanel,
       #context_zenDeleteWorkspace,
       #placesContext_removeTag {
-        --menu-image: url('chrome://browser/skin/zen-icons/edit-delete.svg');
+        --menu-image: url('zen-icons/edit-delete.svg');
       }
       #paste-and-go {
-        --menu-image: url('chrome://browser/skin/zen-icons/paste-and-go.svg');
+        --menu-image: url('zen-icons/paste-and-go.svg');
       }
       #context-print-selection {
-        --menu-image: url('chrome://browser/skin/zen-icons/print.svg');
+        --menu-image: url('zen-icons/print.svg');
       }
       #spell-check-enabled {
-        --menu-image: url("chrome://browser/skin/zen-icons/spell-check.svg");
+        --menu-image: url("zen-icons/spell-check.svg");
       }
       #context-take-screenshot {
-        --menu-image: url('chrome://browser/skin/zen-icons/screenshot.svg');
+        --menu-image: url('zen-icons/screenshot.svg');
       }
       #context-viewsource {
-        --menu-image: url('chrome://browser/skin/zen-icons/source-code.svg');
+        --menu-image: url('zen-icons/source-code.svg');
       }
       #context-inspect-a11y {
-        --menu-image: url('chrome://browser/skin/zen-icons/accessibility.svg');
+        --menu-image: url('zen-icons/accessibility.svg');
       }
       #context-inspect {
-        --menu-image: url('chrome://browser/skin/zen-icons/inspect.svg');
+        --menu-image: url('zen-icons/inspect.svg');
       }
       #context-searchselect {
-        --menu-image: url('chrome://browser/skin/zen-icons/search-glass.svg');
+        --menu-image: url('zen-icons/search-glass.svg');
       }
       #context-searchselect-private {
-        --menu-image: url('chrome://browser/skin/zen-icons/search-glass.svg');
+        --menu-image: url('zen-icons/search-glass.svg');
       }
       #context-viewimage {
-        --menu-image: url('chrome://browser/skin/zen-icons/image-open.svg');
+        --menu-image: url('zen-icons/image-open.svg');
       }
       #context-viewimageinfo {
-        --menu-image: url('chrome://browser/skin/zen-icons/info.svg');
+        --menu-image: url('zen-icons/info.svg');
       }
       #context-saveimage,
       #context-video-saveimage {
-        --menu-image: url('chrome://browser/skin/zen-icons/image-save.svg');
+        --menu-image: url('zen-icons/image-save.svg');
       }
       #context-savevideo {
-        --menu-image: url('chrome://browser/skin/zen-icons/video-save.svg');
+        --menu-image: url('zen-icons/video-save.svg');
       }
       #context-viewvideo {
-        --menu-image: url('chrome://browser/skin/zen-icons/video-open.svg');
+        --menu-image: url('zen-icons/video-open.svg');
       }
       #context-saveaudio {
-        --menu-image: url('chrome://browser/skin/zen-icons/audio-save.svg');
+        --menu-image: url('zen-icons/audio-save.svg');
       }
       #context-copyimage-contents {
-        --menu-image: url('chrome://browser/skin/zen-icons/image-copy.svg');
+        --menu-image: url('zen-icons/image-copy.svg');
       }
       #context-copyimage,
       #context-copyvideourl,
@@ -1554,36 +1556,36 @@
       #context-stripOnShareLink,
       #context_zenOpenNewTabWebPanel,
       #context-pdfjs-copy {
-        --menu-image: url('chrome://browser/skin/zen-icons/link.svg');
+        --menu-image: url('zen-icons/link.svg');
       }
       #context-openlinkincurrent {
-        --menu-image: url('chrome://browser/skin/zen-icons/ext-link.svg');
+        --menu-image: url('zen-icons/ext-link.svg');
       }
       #context-ask-chat {
         --menu-image: url('chrome://browser/skin/trending.svg');
       }
       #context-translate-selection,
       #appMenu-translate-button {
-        --menu-image: url('chrome://browser/skin/zen-icons/translations.svg');
+        --menu-image: url('zen-icons/translations.svg');
       }
       #translations-button-icon {
         background-position: center !important; 
-        list-style-image:  url("chrome://browser/skin/zen-icons/translations.svg") !important;      
+        list-style-image:  url("zen-icons/translations.svg") !important;      
       }
     
       #context-viewsource,
       #context-viewframesource,
       #context-viewpartialsource-selection {
-        --menu-image: url('chrome://browser/skin/zen-icons/source-code.svg');
+        --menu-image: url('zen-icons/source-code.svg');
       }
       #context-sendimage,
       #context-sendvideo,
       #context-sendaudio {
-        --menu-image: url('chrome://browser/skin/zen-icons/mail.svg');
+        --menu-image: url('zen-icons/mail.svg');
       }
       #context-setDesktopBackground,
       .viewCustomizeToolbar {
-        --menu-image: url('chrome://browser/skin/zen-icons/customize.svg');
+        --menu-image: url('zen-icons/customize.svg');
       }
       #context-reloadimage,
       #context_reloadTab,
@@ -1591,12 +1593,12 @@
       #toolbar-context-reloadSelectedTab,
       #toolbar-context-reloadSelectedTabs,
       #context_zen-reset-pinned-tab {
-        --menu-image: url('chrome://browser/skin/zen-icons/reload.svg');
+        --menu-image: url('zen-icons/reload.svg');
       }
       #context-sendlinktodevice,
       #context_sendTabToDevice,
       #context-sendpagetodevice {
-        --menu-image: url('chrome://browser/skin/zen-icons/send-to-device.svg');
+        --menu-image: url('zen-icons/send-to-device.svg');
       }
       #context-openlinkintab,
       #context-openlinkincontainertab,
@@ -1606,69 +1608,69 @@
       menuitem[id='placesContext_openBookmarkLinks:tabs'],
       menuitem[id='placesContext_openBookmarkContainer:tabs'],
       #placesContext_openContainer\:tabs {
-        --menu-image: url('chrome://browser/skin/zen-icons/tab.svg');
+        --menu-image: url('zen-icons/tab.svg');
       }
       #context_openANewTab,
       #toolbar-context-openANewTab {
-        --menu-image: url('chrome://browser/skin/zen-icons/new-tab-image.svg');
+        --menu-image: url('zen-icons/new-tab-image.svg');
       }
       #context-openlinkinusercontext-menu,
       menu[id='placesContext_open:newcontainertab'],
       menu[id='placesContext_openContainer:tabs'] {
-        --menu-image: url('chrome://browser/skin/zen-icons/container-tab.svg');
+        --menu-image: url('zen-icons/container-tab.svg');
       }
       #context-openlink,
       menuitem[id='placesContext_open:newwindow'] {
-        --menu-image: url('chrome://browser/skin/zen-icons/window.svg');
+        --menu-image: url('zen-icons/window.svg');
       }
       #context-openlinkprivate,
       menuitem[id='placesContext_open:newprivatewindow'] {
-        --menu-image: url('chrome://browser/skin/zen-icons/private-window.svg');
+        --menu-image: url('zen-icons/private-window.svg');
       }
       #context-savelink {
-        --menu-image: url('chrome://browser/skin/zen-icons/downloads.svg');
+        --menu-image: url('zen-icons/downloads.svg');
       }
       #spell-add-to-dictionary,
       #spell-add-dictionaries,
       #spell-dictionaries {
-        --menu-image: url('chrome://browser/skin/zen-icons/add-to-dictionary.svg');
+        --menu-image: url('zen-icons/add-to-dictionary.svg');
       }
       #manage-saved-logins {
-        --menu-image: url('chrome://browser/skin/zen-icons/passwords.svg');
+        --menu-image: url('zen-icons/passwords.svg');
       }
       #context-media-play,
       #context_playTab,
       #context_playSelectedTabs {
-        --menu-image: url('chrome://browser/skin/zen-icons/media-play.svg');
+        --menu-image: url('zen-icons/media-play.svg');
       }
       #context-media-pause {
-        --menu-image: url('chrome://browser/skin/zen-icons/media-pause.svg');
+        --menu-image: url('zen-icons/media-pause.svg');
       }
       #context-media-mute,
       #context_toggleMuteTab,
       #context_toggleMuteSelectedTabs,
       #context_zenToggleMuteWebPanel {
-        --menu-image: url('chrome://browser/skin/zen-icons/media-mute.svg');
+        --menu-image: url('zen-icons/media-mute.svg');
       }
       #context-media-unmute,
       #context_toggleMuteTab[muted],
       #context_toggleMuteSelectedTabs[muted],
       #context_zenToggleMuteWebPanel[muted] {
-        --menu-image: url('chrome://browser/skin/zen-icons/media-unmute.svg');
+        --menu-image: url('zen-icons/media-unmute.svg');
       }
       #context-media-playbackrate {
-        --menu-image: url('chrome://browser/skin/zen-icons/media-speed.svg');
+        --menu-image: url('zen-icons/media-speed.svg');
       }
       #context-video-fullscreen {
-        --menu-image: url('chrome://browser/skin/zen-icons/fullscreen.svg');
+        --menu-image: url('zen-icons/fullscreen.svg');
       }
       #context-leave-dom-fullscreen,
       menuitem[contexttype='fullscreen'][label*='Exit'] {
-        --menu-image: url('chrome://browser/skin/zen-icons/fullscreen-exit.svg');
+        --menu-image: url('zen-icons/fullscreen-exit.svg');
       }
       #context-media-hidecontrols,
       #context-media-showcontrols {
-        --menu-image: url('chrome://browser/skin/zen-icons/permissions.svg');
+        --menu-image: url('zen-icons/permissions.svg');
       }
       #context_pinTab,
       #context_unpinTab,
@@ -1676,30 +1678,30 @@
       #context_unpinSelectedTabs,
       .customize-context-moveToPanel,
       #context_zen-replace-pinned-url-with-current {
-        --menu-image: url('chrome://browser/skin/zen-icons/pin.svg');
+        --menu-image: url('zen-icons/pin.svg');
       }
       #context_zen-add-essential {
-        --menu-image: url('chrome://browser/skin/zen-icons/essential-add.svg');
+        --menu-image: url('zen-icons/essential-add.svg');
       }
       #context_zen-remove-essential {
-        --menu-image: url('chrome://browser/skin/zen-icons/essential-remove.svg');
+        --menu-image: url('zen-icons/essential-remove.svg');
       }
       .customize-context-removeFromToolbar {
-        --menu-image: url('chrome://browser/skin/zen-icons/unpin.svg');
+        --menu-image: url('zen-icons/unpin.svg');
       }
       #zen-sidebar-web-panel-pinned[pinned='true'] {
-        list-style-image: url('chrome://browser/skin/zen-icons/pin.svg') !important;
+        list-style-image: url('zen-icons/pin.svg') !important;
       }
       #zen-sidebar-web-panel-pinned {
-        list-style-image: url('chrome://browser/skin/zen-icons/unpin.svg') !important;
+        list-style-image: url('zen-icons/unpin.svg') !important;
       }
       #context_duplicateTab,
       #context_duplicateTabs {
-        --menu-image: url('chrome://browser/skin/zen-icons/duplicate-tab.svg');
+        --menu-image: url('zen-icons/duplicate-tab.svg');
       }
       #zen-context-menu-compact-mode,
       #zen-context-menu-compact-mode-toggle {
-        --menu-image: url('chrome://browser/skin/zen-icons/sidebar.svg');
+        --menu-image: url('zen-icons/sidebar.svg');
       }
       #context_bookmarkTab,
       #context_bookmarkSelectedTabs,
@@ -1708,25 +1710,25 @@
       #toolbar-context-bookmarkSelectedTab,
       #toolbar-context-bookmarkSelectedTabs,
       #placesContext_createBookmark {
-        --menu-image: url('chrome://browser/skin/zen-icons/bookmark-hollow.svg');
+        --menu-image: url('zen-icons/bookmark-hollow.svg');
       }
       menuitem[id='placesContext_show_bookmark:info'],
       menuitem[id='placesContext_show_folder:info'],
       menuitem[id='placesContext_show:info'] {
-        --menu-image: url('chrome://browser/skin/zen-icons/edit.svg');
+        --menu-image: url('zen-icons/edit.svg');
       }
       menuitem[id='placesContext_showAllBookmarks'],
       #BMB_bookmarksShowAllTop,
       #BMB_bookmarksShowAll,
       .customize-context-manageExtension,
       .unified-extensions-context-menu-manage-extension {
-        --menu-image: url('chrome://browser/skin/zen-icons/manage.svg');
+        --menu-image: url('zen-icons/manage.svg');
       }
       #BMB_viewBookmarksSidebar {
         --menu-image: url('chrome://browser/skin/sidebars.svg');
       }
       #BMB_searchBookmarks {
-        --menu-image: url('chrome://browser/skin/zen-icons/search-page.svg');
+        --menu-image: url('zen-icons/search-page.svg');
       }
       menuitem[id='placesContext_new:bookmark'],
       menuitem[id='placesContext_new:folder'],
@@ -1734,31 +1736,31 @@
       #newbookmark,
       #newfolder,
       #newseparator {
-        --menu-image: url('chrome://browser/skin/zen-icons/plus.svg');
+        --menu-image: url('zen-icons/plus.svg');
       }
       #context-savelinktopocket,
       #context-pocket {
-        --menu-image: url('chrome://browser/skin/zen-icons/pocket-outline.svg');
+        --menu-image: url('zen-icons/pocket-outline.svg');
       }
       #context_ungroupTab,
       #context_moveTabOptions {
-        --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
+        --menu-image: url('zen-icons/move-tab.svg');
       }
       .share-tab-url-item {
-        --menu-image: url('chrome://browser/skin/zen-icons/share.svg');
+        --menu-image: url('zen-icons/share.svg');
       }
       #context_moveTabToNewGroup,
       #context_moveTabToGroup,
       #context_reopenInContainer {
-        --menu-image: url('chrome://browser/skin/zen-icons/container-tab.svg');
+        --menu-image: url('zen-icons/container-tab.svg');
       }
       #context_closeTab,
       #context_closeDuplicateTabs,
       #orgClose {
-        --menu-image: url('chrome://browser/skin/zen-icons/close.svg');
+        --menu-image: url('zen-icons/close.svg');
       }
       #context_closeTabOptions {
-        --menu-image: url('chrome://browser/skin/zen-icons/close-all.svg');
+        --menu-image: url('zen-icons/close-all.svg');
       }
       #context_unloadTab,
       #context_zenUnloadWorkspace,
@@ -1767,70 +1769,70 @@
       }
       .customize-context-reportExtension,
       .unified-extensions-context-menu-report-extension {
-        --menu-image: url('chrome://browser/skin/zen-icons/report.svg');
+        --menu-image: url('zen-icons/report.svg');
       }
     /*
       .wordmark::after {
         content: 'Plus' !important;
       }
     */
-    #placesContext_open {
-      --menu-image: url('chrome://browser/skin/zen-icons/ext-link.svg');
-    }
+      #placesContext_open {
+        --menu-image: url('zen-icons/ext-link.svg');
+      }
       #placesContext_sortBy\:name {
-        --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
+        --menu-image: url('zen-icons/move-tab.svg');
       }
       /* zen Workspace */
       #context_zenEditWorkspace {
-        --menu-image: url('chrome://browser/skin/zen-icons/edit.svg');
+        --menu-image: url('zen-icons/edit.svg');
       }
       #context_zenEditWorkspaceIcon {
-        --menu-image: url('chrome://browser/skin/zen-icons/canvas.svg');
+        --menu-image: url('zen-icons/canvas.svg');
       }
       #context_zenChangeWorkspaceTheme {
-        --menu-image: url('chrome://browser/skin/zen-icons/customize.svg');
+        --menu-image: url('zen-icons/customize.svg');
       }
       #context_zenWorkspacesOpenInContainerTab {
-        --menu-image: url('chrome://browser/skin/zen-icons/container-tab.svg');
+        --menu-image: url('zen-icons/container-tab.svg');
       }
       #context_zenReorderWorkspaces {
-        --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
+        --menu-image: url('zen-icons/move-tab.svg');
       }
       menupopup#zenWorkspaceMoreActions > menuitem[data-l10n-id="zen-panel-ui-workspaces-create"] {
       /*
       menuitem[data-l10n-id="zen-panel-ui-workspaces-create"] {
       */
-        --menu-image: url('chrome://browser/skin/zen-icons/plus.svg');
+        --menu-image: url('zen-icons/plus.svg');
       }
       #context_zenDeleteWorkspace {
-        --menu-image: url('chrome://browser/skin/zen-icons/edit-delete.svg');
+        --menu-image: url('zen-icons/edit-delete.svg');
       }
 
     /* zen Folder */
       #context_zenFolderRename {
-        --menu-image: url('chrome://browser/skin/zen-icons/edit.svg');
+        --menu-image: url('zen-icons/edit.svg');
       }
       #context_zenFolderChangeIcon {
-        --menu-image: url('chrome://browser/skin/zen-icons/canvas.svg');
+        --menu-image: url('zen-icons/canvas.svg');
       }
       #zen-context-menu-new-folder,
       #zen-context-menu-new-folder-toolbar,      
       #context_zenFolderNewSubfolder,
       #placesContext_showInFolder {
-        --menu-image: url('chrome://browser/skin/zen-icons/folder.svg');
+        --menu-image: url('zen-icons/folder.svg');
       }
       #context_zenFolderUnpack {
-        --menu-image: url('chrome://browser/skin/zen-icons/close-all.svg');
+        --menu-image: url('zen-icons/close-all.svg');
       }
       #context_zenChangeFolderSpace {
-        --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
+        --menu-image: url('zen-icons/move-tab.svg');
       }
       #context_zenFolderToSpace,
       #convert-folder-to-group {
-        --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
+        --menu-image: url('zen-icons/move-tab.svg');
       }
       #context_zenFolderDelete {
-        --menu-image: url('chrome://browser/skin/zen-icons/edit-delete.svg');
+        --menu-image: url('zen-icons/edit-delete.svg');
       }   
 
       #zen-toolbar-context-tabs-right {
@@ -1850,7 +1852,7 @@
     }
 
     #PanelUI-fxa-menu-syncnow-button {
-      background-image: url('chrome://browser/skin/zen-icons/media-loop.svg') !important;
+      background-image: url('zen-icons/media-loop.svg') !important;
       background-repeat: no-repeat !important;
 
       background-size: 16px !important;
@@ -1860,95 +1862,97 @@
       fill: currentColor !important;
     }
     #PanelUI-fxa-menu-connect-device-button {
-      list-style-image: url('chrome://browser/skin/zen-icons/link.svg') !important;
+      list-style-image: url('zen-icons/link.svg') !important;
     }
     #PanelUI-fxa-menu-sendtab-button {
-      list-style-image: url('chrome://browser/skin/zen-icons/send-to-device.svg') !important;
+      list-style-image: url('zen-icons/send-to-device.svg') !important;
     }
     #PanelUI-fxa-menu-sync-prefs-button {
-      list-style-image: url('chrome://browser/skin/zen-icons/settings.svg') !important;
+      list-style-image: url('zen-icons/settings.svg') !important;
     }
     #PanelUI-fxa-menu-account-signout-button {
       list-style-image: url('chrome://browser/skin/import.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(1) {
-      list-style-image: url('chrome://browser/skin/zen-icons/developer.svg') !important;
+      list-style-image: url('zen-icons/developer.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(2) {
-      list-style-image: url('chrome://browser/skin/zen-icons/media-speed.svg') !important;
+      list-style-image: url('zen-icons/media-speed.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(3) {
-      list-style-image: url('chrome://browser/skin/zen-icons/tool-profiler.svg') !important;
+      list-style-image: url('zen-icons/tool-profiler.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(4) {
-      list-style-image: url('chrome://browser/skin/zen-icons/permissions.svg') !important;
+      list-style-image: url('zen-icons/permissions.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(5) {
-      list-style-image: url('chrome://browser/skin/zen-icons/inspect.svg') !important;
+      list-style-image: url('zen-icons/inspect.svg') !important;
     }    
     #appmenu-developer-tools-view > toolbarbutton:nth-child(6) {
-      list-style-image: url('chrome://browser/skin/zen-icons/edit-cut.svg') !important;
+      list-style-image: url('zen-icons/edit-cut.svg') !important;
     }       
     #appmenu-developer-tools-view > toolbarbutton:nth-child(7) {
-      list-style-image: url('chrome://browser/skin/zen-icons/edit-theme.svg') !important;
+      list-style-image: url('zen-icons/edit-theme.svg') !important;
     }        
     #appmenu-developer-tools-view > toolbarbutton:nth-child(8) {
-      list-style-image: url('chrome://browser/skin/zen-icons/source-code.svg') !important;
+      list-style-image: url('zen-icons/source-code.svg') !important;
     }    
     #appmenu-developer-tools-view > toolbarbutton:nth-child(9) {
-      list-style-image: url('chrome://browser/skin/zen-icons/extension.svg') !important;
+      list-style-image: url('zen-icons/extension.svg') !important;
     }
     
     
     #appMenu_feedbackPage {
-      list-style-image: url('chrome://browser/skin/zen-icons/share.svg') !important;
+      list-style-image: url('zen-icons/share.svg') !important;
     }
     #appMenu_helpSafeMode {
-      list-style-image: url('chrome://browser/skin/zen-icons/search-page.svg') !important;
+      list-style-image: url('zen-icons/search-page.svg') !important;
     }
     #appMenu_troubleShooting {
-      list-style-image: url('chrome://browser/skin/zen-icons/info.svg') !important;
+      list-style-image: url('zen-icons/info.svg') !important;
     }
     #appMenu_menu_HelpPopup_reportPhishingtoolmenu {
-      list-style-image: url('chrome://browser/skin/zen-icons/security-broken.svg') !important;
+      list-style-image: url('zen-icons/security-broken.svg') !important;
     }
     #appMenu_helpSwitchDevice {
-      list-style-image: url('chrome://browser/skin/zen-icons/send-to-device.svg');
+      list-style-image: url('zen-icons/send-to-device.svg');
     }
     #appMenu_aboutName {
-      list-style-image: url('chrome://browser/skin/zen-icons/help.svg') !important;
+      list-style-image: url('zen-icons/help.svg') !important;
     }
 
     /* zen Group(Adapt to Advanced-Tag-Groups) */
       .change-group-color {
-        --menu-image: url('chrome://browser/skin/zen-icons/edit-theme.svg');
+        --menu-image: url('zen-icons/edit-theme.svg');
       }
       .rename-group {
-        --menu-image: url('chrome://browser/skin/zen-icons/edit.svg');
+        --menu-image: url('zen-icons/edit.svg');
       }
       .ungroup-tabs {
-        --menu-image: url('chrome://browser/skin/zen-icons/close-all.svg');
+        --menu-image: url('zen-icons/close-all.svg');
       }
       .convert-group-to-folder {
-        --menu-image: url('chrome://browser/skin/zen-icons/move-tab.svg');
+        --menu-image: url('zen-icons/move-tab.svg');
       }
       .change-group-icon {
-      --menu-image: url('chrome://browser/skin/zen-icons/canvas.svg');
+      --menu-image: url('zen-icons/canvas.svg');
      }
     
     /* zen Mods */
-    #cmi-show-more-menu {
-      --menu-image: url('chrome://browser/skin/zen-icons/menu.svg');
+    #viewColumns,
+    #cmi-show-more-menu,
+    #cmi-show-more-menu-tab {
+      --menu-image: url('zen-icons/menu.svg');
     }
     #quicktabs-context-menuitem,
     #quicktabs-tab-context-menuitem {
-      --menu-image: url('chrome://browser/skin/zen-icons/ext-link.svg');
+      --menu-image: url('zen-icons/ext-link.svg');
     }
     #quicksearch-context-menuitem {
-      --menu-image: url('chrome://browser/skin/zen-icons/search-glass.svg');
+      --menu-image: url('zen-icons/search-glass.svg');
     }    
     #context_renameTab {
-      --menu-image: url('chrome://browser/skin/zen-icons/edit.svg');
+      --menu-image: url('zen-icons/edit.svg');
     }
   }
 }
@@ -2409,7 +2413,7 @@ I fixed these errors and enhanced some of its features, making it more compatibl
     }
       left: 0 !important;
       right: 0 !important;
-      opacity: 0 !important; /* 非刚需了但是可以做过渡动画 */
+      opacity: 0 !important;
       transform: rotateX(90deg) !important;
       transform-origin: top;
       transition: 
@@ -2417,7 +2421,8 @@ I fixed these errors and enhanced some of its features, making it more compatibl
         transform 250ms ease-out !important;
       z-index: 1;
     }
-  
+
+
   #PersonalToolbar:has([open]),
   #PersonalToolbar:has([aria-expanded="true"]),
   #PersonalToolbar:has(menupopup[open]),
@@ -2427,7 +2432,18 @@ I fixed these errors and enhanced some of its features, making it more compatibl
     opacity: 1 !important;
     transform: translateY(0) rotateX(0deg) !important;
   }
-  
+
+  /* Display when drop link */
+  #zen-appcontent-navbar-wrapper[zen-has-hover="true"] #PersonalToolbar {
+    opacity: 1 !important;
+    transform: translateY(0) rotateX(0deg) !important;
+  }
+@media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
+  body.show-bookmarks #PersonalToolbar {
+    opacity: 1 !important;
+    transform: translateY(0) rotateX(0deg) !important;
+  }
+}
   /* Expand the bookmarks toolbar by hovering */
   @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 1)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
     #nav-bar:hover + #PersonalToolbar,
@@ -2620,8 +2636,10 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
       ) !important;
   }
 
-
-  #cmi-show-more-menupopup > menuitem:not(
+  :is(
+  #cmi-show-more-menupopup,
+  #cmi-show-more-menupopup-tab
+  ) > menuitem:not(
     .openintabs-menuitem,
     .menuitem-iconic,
     [type="checkbox"][checked="true"],
@@ -2630,7 +2648,10 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     .in-menulist menuitem,
     .unified-nav-current
   ),
-  #cmi-show-more-menupopup > menu:not(
+  :is(
+  #cmi-show-more-menupopup,
+  #cmi-show-more-menupopup-tab
+  ) > menu:not(
     .openintabs-menuitem,
     .menu-iconic,
     [type="checkbox"][checked="true"],
@@ -2639,7 +2660,10 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     .in-menulist menu,
     .unified-nav-current
   ),
-  #cmi-show-more-menupopup > menucaption {
+  :is(
+  #cmi-show-more-menupopup,
+  #cmi-show-more-menupopup-tab
+  ) > menucaption {
   padding-inline-start: calc(
     var(--fp-contextmenu-menuitem-padding-inline)
     + var(--menuitem-padding-extra)
@@ -2673,7 +2697,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     /* Chat bot */
     menupopup#chatbot-menupopup:has(> menuitem:not([hidden])[checked="true"]),
     menupopup#sidebar-history-menu:has(> menuitem:not([hidden])[checked="true"]),
-    #mainPopupSet>menupopup:has(> menuitem:not([hidden])[checked="true"])
+    #mainPopupSet > menupopup:nth-child(98):has(> menuitem:not([hidden])[checked="true"])
   
   ) {
     --checkmark-margin-start: var(--checkmark-margin-start_cover);
@@ -2734,7 +2758,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     /* Chat bot */
     menupopup#chatbot-menupopup:has(> menuitem:not([hidden])[type="checkbox"]),
     menupopup#sidebar-history-menu:has(> menuitem:not([hidden])[checked="true"]),
-    #mainPopupSet>menupopup:has(> menuitem:not([hidden])[checked="true"])
+    #mainPopupSet > menupopup:nth-child(98):has(> menuitem:not([hidden])[checked="true"])
   ) {
     --checkmark-margin-start: var(--checkmark-margin-start_cover);
     --checkmark-margin-end: var(--checkmark-margin-end_cover);
@@ -2805,7 +2829,53 @@ menupopup#unified-extensions-context-menu:has(> menuitem:is([type="checkbox"], [
   box-sizing: border-box !important;
 }
 }
+
+/* Special Margins in Library Views */
+
+  #viewColumns > menupopup:has(
+  menuitem:not([hidden])[type="checkbox"][checked="true"],
+  menuitem:not([hidden])[type="radio"][checked="true"]
+) {
+    > :is(menuitem, menu):not(
+      .menuitem-iconic,
+      .menu-iconic,
+
+      [type="checkbox"][checked="true"],
+      [type="radio"][checked="true"],
+
+      .in-menulist,
+      .in-menulist menuitem,
+      .in-menulist menu,
+      .unified-nav-current
+    ),
+  /* 分组标题 */
+  > menucaption {
+    padding-inline-start: var(--padding-viewColumns) !important;
+  }
 }
+
+#viewSort > menupopup:has(
+  menuitem:not([hidden])[type="checkbox"][checked="true"],
+  menuitem:not([hidden])[type="radio"][checked="true"]
+) {
+    > :is(menuitem, menu):not(
+      .menuitem-iconic,
+      .menu-iconic,
+
+      [type="checkbox"][checked="true"],
+      [type="radio"][checked="true"],
+
+      .in-menulist,
+      .in-menulist menuitem,
+      .in-menulist menu,
+      .unified-nav-current
+    ),
+  > menucaption {
+    padding-inline-start: var(--padding-viewSort) !important;
+  }
+}
+}
+
 /* Linux */
 @media (-moz-platform: linux) {
 /* 当 menupopup 下有未被隐藏的 checkbox、radio 时，
@@ -2835,8 +2905,9 @@ box-sizing: border-box !important;
 }
 
 
-/* 子菜单文本对齐（Only fix for v1.9.4b) —— padding 值由变量控制 */
-menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
+/* 子菜单文本对齐(Only fix for v1.9.4b)
+   When there are checkbox/radio in sub-menu, add a left margin to other sub-menus.*/
+menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menupopup):has(
     menuitem:not([hidden])[type="checkbox"][checked="true"],
     menuitem:not([hidden])[type="radio"][checked="true"]
   ) {
@@ -2857,7 +2928,8 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
     padding-inline-start: var(--submenu-padding) !important;
   }
 }
-#spell-dictionaries-menu,#viewColumns > menupopup:has(
+/* Special sub-menu: spell check */
+#spell-dictionaries-menu:has(
   menuitem:not([hidden])[type="checkbox"][checked="true"],
   menuitem:not([hidden])[type="radio"][checked="true"]
 ) {
@@ -2873,15 +2945,13 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
       .in-menulist menu,
       .unified-nav-current
     ),
-  /* 分组标题 */
   > menucaption {
     padding-inline-start: var(--special-submenu-padding) !important;
   }
 }
-}
 
 
-/* App Menu Margin*/
+/* App Menu Margin */
 .addon-banner-item,
 .panel-banner-item {
   margin: 2px 4px 2px !important;
@@ -2920,4 +2990,5 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup):has(
   #PanelUI-historyMore{
     --menu-image: none !important;
   }
+}
 }

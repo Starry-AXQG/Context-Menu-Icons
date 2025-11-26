@@ -69,6 +69,10 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     /* 图标右边距（图标与文字之间） */
     --zen-cmenu-icon-margin-inline-end: var(--cmi-Margin-Extensions-end_1, 8px);
 
+
+/* Special Margins in Library Views */
+    --padding-viewColumns: 6px;
+    --padding-viewSort: var(--submenu-padding);
   }
 }
 
@@ -107,5 +111,9 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --zen-cmenu-icon-margin-inline-start: var(--cmi-Margin-Extensions-start_2, -1px);
     /* 图标右边距（图标与文字之间） */
     --zen-cmenu-icon-margin-inline-end: var(--cmi-Margin-Extensions-end_2, 8px);
+
+    /* Special Margins in Library Views */
+    --padding-viewColumns: 6px;
+    --padding-viewSort: 29px;
   }
 }
