@@ -639,7 +639,8 @@
         --menu-image: url("inspect.svg");
       }
       
-      #context-searchselect {
+      #context-searchselect,
+      #context-visual-search {
         --menu-image: url("search-glass.svg");
       }
       #context-searchselect-private {
@@ -1520,7 +1521,8 @@
       #context-inspect {
         --menu-image: url('zen-icons/inspect.svg');
       }
-      #context-searchselect {
+      #context-searchselect,
+      #context-visual-search {
         --menu-image: url('zen-icons/search-glass.svg');
       }
       #context-searchselect-private {
