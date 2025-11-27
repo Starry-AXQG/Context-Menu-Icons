@@ -1583,7 +1583,10 @@
       #context-sendimage,
       #context-sendvideo,
       #context-sendaudio {
+        /* 💾
         --menu-image: url('zen-icons/mail.svg');
+        */
+        --menu-image: url('zen-icons/share.svg');
       }
       #context-setDesktopBackground,
       .viewCustomizeToolbar {
