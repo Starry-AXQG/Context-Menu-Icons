@@ -598,6 +598,7 @@
       }
       #context-delete,
       .customize-context-removeExtension,
+      #pageActionContextMenuRemoveExtension,
       .unified-extensions-context-menu-remove-extension,
       menuitem[id="placesContext_deleteBookmark"],
       menuitem[id="placesContext_deleteFolder"],
@@ -854,6 +855,7 @@
       #BMB_bookmarksShowAllTop,
       #BMB_bookmarksShowAll,
       .customize-context-manageExtension,
+      #pageActionContextMenuManageExtension,
       .unified-extensions-context-menu-manage-extension {
         --menu-image: url("developer.svg");
       }
@@ -1488,6 +1490,7 @@
       }
       #context-delete,
       .customize-context-removeExtension,
+      #pageActionContextMenuRemoveExtension,
       .unified-extensions-context-menu-remove-extension,
       menuitem[data-l10n-id="text-action-delete"],
       menuitem[id='placesContext_deleteBookmark'],
@@ -1726,6 +1729,7 @@
       #BMB_bookmarksShowAllTop,
       #BMB_bookmarksShowAll,
       .customize-context-manageExtension,
+      #pageActionContextMenuManageExtension,
       .unified-extensions-context-menu-manage-extension {
         --menu-image: url('zen-icons/manage.svg');
       }
