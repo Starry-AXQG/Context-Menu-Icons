@@ -2189,7 +2189,7 @@ menuitem#context_zen-add-essential[badge]::after {
 
 }
 
-@media (-moz-pref("cmi-fold_menu_item-enable)) {
+@media (-moz-pref("cmi-fold_menu_item-enable")) {
   #context-inspect + menuseparator {
       display: none;
   }
