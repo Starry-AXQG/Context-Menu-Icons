@@ -1,6 +1,5 @@
 @media (-moz-pref("svg.context-properties.content.enabled")) {
 
-
   /*FluentUI*/
   @media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
     and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
@@ -2190,6 +2189,11 @@ menuitem#context_zen-add-essential[badge]::after {
 
 }
 
+@media (-moz-pref("cmi-fold_menu_item-enable)) {
+  #context-inspect + menuseparator {
+      display: none;
+  }
+}
 
 /* Hide the inactive items in Context Menu */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
