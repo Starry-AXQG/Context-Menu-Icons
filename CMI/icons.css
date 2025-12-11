@@ -1315,7 +1315,6 @@
       --menu-image: url("image-save.svg");
     }
 
-
     /* zen Mods */
     #cmi-show-more-menu,
     #cmi-show-more-menu-tab {
@@ -1332,6 +1331,7 @@
       --menu-image: url("edit.svg");
     }
   }
+
 
   /*ZenUI*/
   @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
@@ -1964,7 +1964,8 @@
     }
   }
 }
-  
+
+
 
 /* Preferences */
 @media not (-moz-pref("cmi-Disable-Better-Context-Menu",true)){
@@ -2477,7 +2478,8 @@ I fixed these errors and enhanced some of its features, making it more compatibl
 }
 }
 
-
+/* Other Preferences */
+/* Replace the default Firefox logo with a custom one in the identity popup and identity box. */
 @media (-moz-pref("cmi-Display-Firefox-Logo", true)) or (-moz-pref("cmi-Switch-Icon-Package", 1)) {
 #identity-popup[connection="chrome"] .identity-popup-security-connection,
 #identity-box[pageproxystate="valid"].chromeUI #identity-icon {
@@ -2485,9 +2487,24 @@ I fixed these errors and enhanced some of its features, making it more compatibl
       }
 }
 
-/* ---------------------------
-   Shift the text to the right to make room for the custom icon.
-   ---------------------------*/
+/* Restore the button located on the right side of the address bar that is used to initiate the search. */
+@media (-moz-pref("cmi-Restore-Search-Button", true)) {
+  #urlbar-go-button {
+    display: flex !important;
+    order: 99 !important;
+    height: 30px !important;
+    width: 30px !important;
+  }
+  #urlbar {
+    &:not([open]) #urlbar-go-button {
+      display: none !important;
+    }
+  }
+}
+
+
+
+/* ========================= Global Rule for Context Menu Icons ========================= */
 @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) {
 /* Part 1 of global rule */
 :root {
