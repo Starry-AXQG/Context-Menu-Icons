@@ -1837,7 +1837,7 @@
       }
       #context_zenFolderToSpace,
       #convert-folder-to-group {
-        --menu-image: url('zen-icons/move-tab.svg');
+        --menu-image: url('zen-icons/edit-redo.svg');
       }
       #context_zenFolderDelete {
         --menu-image: url('zen-icons/edit-delete.svg');
@@ -1940,7 +1940,7 @@
         --menu-image: url('zen-icons/close-all.svg');
       }
       .convert-group-to-folder {
-        --menu-image: url('zen-icons/move-tab.svg');
+        --menu-image: url('zen-icons/edit-redo.svg');
       }
       .change-group-icon {
       --menu-image: url('zen-icons/canvas.svg');
