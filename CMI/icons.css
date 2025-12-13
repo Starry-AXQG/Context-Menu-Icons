@@ -1454,7 +1454,7 @@
         --menu-image: url('zen-icons/edit-select-all.svg');
       }
       #context-add-engine {
-        --menu-image: url('zen-search.svg');
+        --menu-image: url('zen-icons/search-add.svg');
     }
       #context-undo,
       menuitem[data-l10n-id="text-action-undo"],
@@ -1750,10 +1750,13 @@
       #context-pocket {
         --menu-image: url('zen-icons/pocket-outline.svg');
       }
-      #context_ungroupTab,
+      
       #context_moveTabOptions {
         --menu-image: url('zen-icons/move-tab.svg');
       }
+    #context_ungroupTab {
+      --menu-image: url('zen-icons/remove-tab.svg');
+    }
       .share-tab-url-item {
         --menu-image: url('zen-icons/share.svg');
       }
