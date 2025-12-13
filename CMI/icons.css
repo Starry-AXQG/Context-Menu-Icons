@@ -2067,7 +2067,10 @@ menuitem#context_zen-add-essential[badge]::after {
   display: flex !important;
   visibility: visible !important;
 }
-
+/* Re-hide the Separator located in the submenu of `Move Tab` */
+menuseparator#moveTabSeparator {
+  display: none !important;
+}
 
 /* Main rule */
 /* 1) 单 Tab（含 zen-add/zen-remove）—— 原始：pin margin-left:25% */
