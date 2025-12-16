@@ -1340,6 +1340,8 @@
         --zen-contextmenu-menuitem-padding-inline: 5px !important;
         --zen-contextmenu-menuicon-margin-inline: 3px !important;
         --zen-contextmenu-menuitem-margin: 0px 2px !important;
+      
+        --zen-unload-icon: url("data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22context-fill%22%20fill-opacity%3D%22context-fill-opacity%22%3E%3Cpath%20d%3D%22M5.154%2C2.633c.3755-.1748.8216-.012.9964.3635.1748.3755.012.8216-.3635.9964-1.8371.855-3.0367%2C2.6987-3.0367%2C4.7598%2C0%2C2.898%2C2.3504%2C5.2473%2C5.2498%2C5.2473s5.2498-2.3494%2C5.2498-5.2473c0-2.0569-1.1946-3.8974-3.0259-4.7548-.3751-.1756-.5368-.6221-.3613-.9972.1756-.3751.6221-.5368.9972-.3612%2C2.3537%2C1.102%2C3.8899%2C3.4688%2C3.8899%2C6.1132%2C0%2C3.7265-3.022%2C6.7473-6.7498%2C6.7473S1.2502%2C12.4793%2C1.2502%2C8.7527c0-2.65%2C1.5426-5.0208%2C3.9037-6.1197ZM8%2C.5c.3846%2C0%2C.7016.2895.7449.6625l.005.0875v5.2509c0%2C.4142-.3358.75-.75.75-.3846%2C0-.7016-.2895-.7449-.6625l-.005-.0875V1.25c0-.4142.3358-.75.75-.75Z%22%2F%3E%3C%2Fsvg%3E");
       }
 
       /* Adding icons back to regular context menu options */
@@ -1776,7 +1778,7 @@
       #context_unloadTab,
       #context_zenUnloadWorkspace,
       #context_zenFolderUnloadAll {
-        --menu-image: url("data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22context-fill%22%20fill-opacity%3D%22context-fill-opacity%22%3E%3Cpath%20d%3D%22M5.154%2C2.633c.3755-.1748.8216-.012.9964.3635.1748.3755.012.8216-.3635.9964-1.8371.855-3.0367%2C2.6987-3.0367%2C4.7598%2C0%2C2.898%2C2.3504%2C5.2473%2C5.2498%2C5.2473s5.2498-2.3494%2C5.2498-5.2473c0-2.0569-1.1946-3.8974-3.0259-4.7548-.3751-.1756-.5368-.6221-.3613-.9972.1756-.3751.6221-.5368.9972-.3612%2C2.3537%2C1.102%2C3.8899%2C3.4688%2C3.8899%2C6.1132%2C0%2C3.7265-3.022%2C6.7473-6.7498%2C6.7473S1.2502%2C12.4793%2C1.2502%2C8.7527c0-2.65%2C1.5426-5.0208%2C3.9037-6.1197ZM8%2C.5c.3846%2C0%2C.7016.2895.7449.6625l.005.0875v5.2509c0%2C.4142-.3358.75-.75.75-.3846%2C0-.7016-.2895-.7449-.6625l-.005-.0875V1.25c0-.4142.3358-.75.75-.75Z%22%2F%3E%3C%2Fsvg%3E");
+        --menu-image: var(--zen-unload-icon);
       }
       .customize-context-reportExtension,
       .unified-extensions-context-menu-report-extension {
@@ -1884,6 +1886,19 @@
     #PanelUI-fxa-menu-account-signout-button {
       list-style-image: url('chrome://browser/skin/import.svg') !important;
     }
+    toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"] {
+      background-image: url('') !important;
+      background-repeat: no-repeat !important;
+
+      background-size: 16px !important;
+      background-position: 10px center !important;
+
+      -moz-context-properties: fill, fill-opacity !important;
+      fill: currentColor !important;
+      
+    }
+    
+    
     #appmenu-developer-tools-view > toolbarbutton:nth-child(1) {
       list-style-image: url('zen-icons/developer.svg') !important;
     }
