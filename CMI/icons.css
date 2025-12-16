@@ -3043,7 +3043,7 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menu
 }
 
 
-/* App Menu Margin */
+/* App Menu Margin for Firefox */
 .addon-banner-item,
 .panel-banner-item {
   margin: 2px 4px 2px !important;
@@ -3058,7 +3058,9 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menu
 }
 
 .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined)>.toolbarbutton-text,
-.subviewbutton:not(#appMenu-zoom-controls > .subviewbutton,toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"],toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"])>.toolbarbutton-icon+.toolbarbutton-text,
+.subviewbutton:not(#appMenu-zoom-controls > .subviewbutton,
+toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"],toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"] /* 💾 */
+)>.toolbarbutton-icon+.toolbarbutton-text,
 #appMenu-fxa-label2>vbox {
   padding-inline-start: var(--fp-arrowpanel-menuicon-margin-inline) !important;
 }
