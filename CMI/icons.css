@@ -1887,7 +1887,7 @@
       list-style-image: url('chrome://browser/skin/import.svg') !important;
     }
     toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"] {
-      background-image: url('') !important;
+      background-image: var(--zen-unload-icon);
       background-repeat: no-repeat !important;
 
       background-size: 16px !important;
