@@ -3058,9 +3058,9 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menu
 }
 
 .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined)>.toolbarbutton-text,
-.subviewbutton:not(#appMenu-zoom-controls > .subviewbutton)>.toolbarbutton-icon+.toolbarbutton-text,
+.subviewbutton:not(#appMenu-zoom-controls > .subviewbutton,toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"],toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"])>.toolbarbutton-icon+.toolbarbutton-text,
 #appMenu-fxa-label2>vbox {
-  padding-inline-start: var(--fp-arrowpanel-menuicon-margin-inline) ;
+  padding-inline-start: var(--fp-arrowpanel-menuicon-margin-inline) !important;
 }
 
 /* special case menuitems with no icons */
