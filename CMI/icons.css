@@ -1108,7 +1108,33 @@
     #PanelUI-fxa-menu-account-signout-button {
       list-style-image: url('chrome://browser/skin/import.svg') !important;
     }
+    toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"] {
+      background-image: url('unloadTab.svg') !important;
+      background-repeat: no-repeat !important;
 
+      background-size: 16px !important;
+      background-position: 14px center !important;
+
+      -moz-context-properties: fill, fill-opacity !important;
+      fill: currentColor !important;
+      
+    }
+    
+    toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"] {
+      background-image: url('menu.svg') !important;
+      background-repeat: no-repeat !important;
+
+      background-size: 16px !important;
+      background-position: 14px center !important;
+
+      -moz-context-properties: fill, fill-opacity !important;
+      fill: currentColor !important;
+    }
+    :is(toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"],
+     toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"])
+    >.toolbarbutton-icon+.toolbarbutton-text {
+      padding-inline-start: 36px !important;
+    }
 
     #panelMenuBookmarkThisPage {
       list-style-image: url("bookmark-hollow.svg") !important;
@@ -1891,13 +1917,28 @@
       background-repeat: no-repeat !important;
 
       background-size: 16px !important;
-      background-position: 10px center !important;
+      background-position: 14px center !important;
 
       -moz-context-properties: fill, fill-opacity !important;
       fill: currentColor !important;
       
     }
     
+    toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"] {
+      background-image: url('zen-icons/menu.svg') !important;
+      background-repeat: no-repeat !important;
+
+      background-size: 16px !important;
+      background-position: 14px center !important;
+
+      -moz-context-properties: fill, fill-opacity !important;
+      fill: currentColor !important;
+    }
+    :is(toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"],
+     toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"])
+    >.toolbarbutton-icon+.toolbarbutton-text {
+      padding-inline-start: 36px !important;
+    }
     
     #appmenu-developer-tools-view > toolbarbutton:nth-child(1) {
       list-style-image: url('zen-icons/developer.svg') !important;
@@ -3019,7 +3060,7 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menu
 .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined)>.toolbarbutton-text,
 .subviewbutton:not(#appMenu-zoom-controls > .subviewbutton)>.toolbarbutton-icon+.toolbarbutton-text,
 #appMenu-fxa-label2>vbox {
-  padding-inline-start: var(--fp-arrowpanel-menuicon-margin-inline) !important;
+  padding-inline-start: var(--fp-arrowpanel-menuicon-margin-inline) ;
 }
 
 /* special case menuitems with no icons */
