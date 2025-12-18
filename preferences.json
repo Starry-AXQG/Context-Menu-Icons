@@ -70,14 +70,14 @@
     {
         "type": "checkbox",
         "property": "cmi-fold_menu_item-enable",
-        "label": "✨ Enable CMI fold menu JS(see github for guide)",
+        "label": "✨ Enable CMI fold menu JS(see github for function guide)",
         "defaultValue": false
     },
 
     {
       "type": "string",
       "property": "cmi-fold-item-IDs",
-      "label": "🛠️ Add/Remove/Sort the folded menu items(see github for guide)",
+      "label": "🛠️ Add/Remove/Sort the folded menu items",
       "default": "",
       "placeholder": "Can use hotkeys to adding quikly id."
     },
