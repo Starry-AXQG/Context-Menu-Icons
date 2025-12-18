@@ -126,14 +126,14 @@
     {
         "type": "checkbox",
         "property": "cmi-Center-Bookmark-Items",
-        "label": "Center bookmark toolbar items",
+        "label": "📏 Center bookmark toolbar items",
         "defaultValue": false
     },
 
     {
         "type": "checkbox",
         "property": "cmi-Hide-Folder-Icons",
-        "label": "Hidden bookmark folder icons 📁 ( Enable to make bookmark toolbar more concise )",
+        "label": "📁 Hidden bookmark folder icons (Enable to make bookmark toolbar more concise)",
         "defaultValue": false
     },
 
@@ -141,7 +141,7 @@
         "type": "dropdown",
         "value": "number",
         "property": "cmi-Hide-Bookmark-Element",
-        "label": "Hide the other elements of the bookmark toolbar",
+        "label": "👁️ Hide the other elements of the bookmark toolbar",
         "default": 0,
         "placeholder": false,
         "options": [
@@ -168,7 +168,7 @@
     {
         "type": "checkbox",
         "property": "cmi-Hide-OAiT-Item",
-        "label": "Hidden Bookmark 'Open All in Tabs' menu item (Enable to improve the bookmark page. This menu item is rarely used and is not available in most browsers. You can safely enable it. )",
+        "label": "👁️ Hidden 'Open All in Tabs' item in Bookmark page (Enable to improve the bookmark page. This menu item is rarely used and is not available in most browsers. You can safely enable it. )",
         "defaultValue": false
 
     },
@@ -177,7 +177,7 @@
     "type": "dropdown",
     "value": "number",
     "property": "cmi-Auto-Hide-BookmarkBar",
-    "label": "Automatically hide the bookmark bar ",
+    "label": "✨ Automatically hide the bookmark bar ",
     "default": 0,
     "placeholder": false,
     "options": [
@@ -210,7 +210,7 @@
   {
       "type": "checkbox",
       "property": "cmi-Restore-Search-Button",
-      "label": "Restore the button located on the right side of the address bar that is used to initiate the search function ( It's hidden by default Zen. Enable it if you need it. )",
+      "label": "🔍 Restore the button located on the right side of the address bar that is used to initiate the search function ( It's hidden by default Zen. Enable it if you need it. )",
       "defaultValue": false
   },
 
