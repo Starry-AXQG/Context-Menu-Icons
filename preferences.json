@@ -255,80 +255,80 @@
 
     {
       "type": "string",
-      "property": "cmi-Margin-Checkmark-start_1",
-      "label": "--cmi-Margin-Checkmark-start",
+      "property": "cmi-checkmark-margin-left_1",
+      "label": "The left margin of the checkmark icon in normal circumstances",
       "default": "7px",
       "placeholder": "default: 7px/11px"
     },
     {
       "type": "string",
-      "property": "cmi-Margin-Checkmark-start_cover_1",
-      "label": "--cmi-Margin-Checkmark-start_cover",
+      "property": "cmi-checkmark-margin-left_cover_1",
+      "label": "The left margin of the checkmark icon after the menu item is checked",
       "default": "7px",
       "placeholder": "default: 7px/11px"
     },
     {
       "type": "string",
-      "property": "cmi-Margin-Checkmark-end_1",
-      "label": "--cmi-Margin-Checkmark-end",
+      "property": "cmi-checkmark-margin-right_1",
+      "label": "The right margin of the checkmark icon in normal circumstances",
       "default": "7px",
       "placeholder": "default: 7px"
     },
     {
       "type": "string",
-      "property": "cmi-Margin-Checkmark-end_cover_1",
-      "label": "--cmi-Margin-Checkmark-end_cover",
+      "property": "cmi-checkmark-margin-right_cover_1",
+      "label": "The right margin of the checkmark icon after the menu item is checked",
       "default": "7px",
       "placeholder": "default: 7px/11px"
     },
     {
       "type": "string",
-      "property": "cmi-Padding-Group_1",
-      "label": "--cmi-Padding-Group",
+      "property": "cmi-group-padding_1",
+      "label": "When the context menu items have a \"checkmark\" item selected, reset the left margin of the menu text to align it.",
       "default": "10px",
       "placeholder": "default: 10px"
     },
     {
       "type": "string",
-      "property": "cmi-Padding-Submenu_1",
-      "label": "--cmi-Padding-Submenu",
+      "property": "cmi-submenu-padding_1",
+      "label": "The padding of most sub-menu items",
       "default": "34px",
       "placeholder": "default: 34px"
     },
     {
       "type": "string",
-      "property": "cmi-Padding-Submenu_cover_1",
-      "label": "--cmi-Padding-Submenu_cover",
+      "property": "cmi-submenu-padding_cover_1",
+      "label": "The padding of most sub-menu items after the menu item is checked",
       "default": "38px",
       "placeholder": "default: 38px"
     },
 
     {
       "type": "string",
-      "property": "cmi-Padding-Non-Checkmark-subitems_1",
-      "label": "Non-Checkmark-subitems padding",
-      "default": "24px",
-      "placeholder": "default: 24px/28px"
-    },
-
-    {
-      "type": "string",
-      "property": "cmi-Padding-Special-Submenu_1",
-      "label": "special subitems padding",
+      "property": "cmi-special-submenu-padding_1",
+      "label": "Very few special sub-menu items padding: ",
       "default": "11px",
       "placeholder": "default: 11px"
     },
 
     {
       "type": "string",
-      "property": "cmi-Margin-Extensions-start_1",
+      "property": "cmi-non-checkmark-subitems-padding_1",
+      "label": "When a checkmark item is selected among the context menu items, the margins of the other unselected menu items will be adjusted accordingly.",
+      "default": "24px",
+      "placeholder": "default: 24px/28px"
+    },
+
+    {
+      "type": "string",
+      "property": "cmi-extensions-margin-left_1",
       "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values..",
       "default": "5px",
       "placeholder": "default: 5px"
     },
     {
       "type": "string",
-      "property": "cmi-Margin-Extensions-end_1",
+      "property": "cmi-extensions-margin-right_1",
       "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values.",
       "default": "8px",
       "placeholder": "default: 8px"
@@ -343,79 +343,81 @@
 
     {
       "type": "string",
-      "property": "cmi-Margin-Checkmark-start_2",
-      "label": "--cmi-Margin-Checkmark-start",
+      "property": "cmi-checkmark-margin-left_2",
+      "label": "The left margin of the checkmark icon in normal circumstances",
       "default": "5px",
       "placeholder": "default: 5px"
     },
     {
       "type": "string",
-      "property": "cmi-Margin-Checkmark-start_cover_2",
-      "label": "--cmi-Margin-Checkmark-start_cover",
+      "property": "cmi-checkmark-margin-left_cover_2",
+      "label": "The left margin of the checkmark icon after the menu item is checked",
       "default": "5px",
       "placeholder": "default: 5px"
     },
     {
       "type": "string",
-      "property": "cmi-Margin-Checkmark-end_2",
-      "label": "--cmi-Margin-Checkmark-end",
+      "property": "cmi-checkmark-margin-right_2",
+      "label": "The right margin of the checkmark icon in normal circumstances",
       "default": "8px",
       "placeholder": "default: 8px"
     },
     {
       "type": "string",
-      "property": "cmi-Margin-Checkmark-end_cover_2",
-      "label": "--cmi-Margin-Checkmark-end_cover",
+      "property": "cmi-checkmark-margin-right_cover_2",
+      "label": "The right margin of the checkmark icon after the menu item is checked",
       "default": "6px",
       "placeholder": "default:6px"
     },
 
     {
       "type": "string",
-      "property": "cmi-Padding-Group_2",
-      "label": "--cmi-Padding-Group",
+      "property": "cmi-group-padding_2",
+      "label": "When the context menu items have a \"checkmark\" item selected, reset the left margin of the menu text to align it.",
       "default": "4px",
       "placeholder": "default: 4px"
     },
     {
       "type": "string",
-      "property": "cmi-Padding-Submenu_2",
-      "label": "--cmi-Padding-Submenu",
+      "property": "cmi-submenu-padding_2",
+      "label": "The padding of most sub-menu items",
       "default": "30px",
       "placeholder": "default: 30px"
     },
     {
       "type": "string",
-      "property": "cmi-Padding-Submenu_cover_2",
-      "label": "--cmi-Padding-Submenu_cover",
+      "property": "cmi-submenu-padding_cover_2",
+      "label": "The padding of most sub-menu items after the menu item is checked",
       "default": "27px",
       "placeholder": "default: 27px"
     },
+
     {
       "type": "string",
-      "property": "cmi-Padding-Non-Checkmark-subitems_2",
-      "label": "Non-Checkmark-subitems padding",
+      "property": "cmi-special-submenu-padding_2",
+      "label": "Very few special sub-menu items padding: ",
+      "default": "5px",
+      "placeholder": "default: 5px"
+    },
+
+    {
+      "type": "string",
+      "property": "cmi-non-checkmark-subitems-padding_2",
+      "label": "When a checkmark item is selected among the context menu items, the margins of the other unselected menu items will be adjusted accordingly.",
       "default": "24px",
       "placeholder": "default: 24px"
     },
 
     {
       "type": "string",
-      "property": "cmi-Padding-Special-Submenu_2",
-      "label": "special subitems padding",
-      "default": "5px",
-      "placeholder": "default: 5px"
-    },
-    {
-      "type": "string",
-      "property": "cmi-Margin-Extensions-start_2",
+      "property": "cmi-extensions-margin-left_2",
       "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values..",
       "default": "-1px",
       "placeholder": "default: -1px"
     },
     {
       "type": "string",
-      "property": "cmi-Margin-Extensions-end_2",
+      "property": "cmi-extensions-margin-right_2",
       "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values..",
       "default": "8px",
       "placeholder": "default: 8px"
