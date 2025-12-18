@@ -228,7 +228,7 @@
 },
 {
   "type": "text",
-  "label": "⚠️ The following configuration items are used to ensure that the icon and text of menu items remain consistently aligned in different environments. See github for guide. (The default configuration may vary depending on the operating system, the use of different mod themes (such as Arc 2.0 or Nebula), or the use of different browsers, and thus may not be suitable for all users.) Clearing the input box to view the default values provided by CMI. '/' indicates the default values of whether to enable 'Align extension icons in menu' before and after it.⚠️",
+  "label": "⚠️1.The settings below are sensitive​ and should not be changed casually unless you know what you are doing. You should only modify them if you encounter any alignment issues with context menu items​ and have consulted the guidance on Github. 2.The default settings work well for most users. However, in rare cases, CMI's display might be affected slightly by certain add-ons, different operating systems, or other Firefox variants. 3.To see the default values provided by CMI, clear the text input box. You may see two default numbers separated by a \"/\". These represent CMI's recommended values before and after​ enabling the Align extension icons in menufeature.⚠️",
   "margin": "15px 0 30px 0",
   "size": "15px"
 },
