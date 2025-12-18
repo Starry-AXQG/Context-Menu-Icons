@@ -337,7 +337,7 @@
 
 {
     "type": "separator",
-    "label": "ZenUl",
+    "label": "ZenUI",
     "margin": "25px 0 8px 0"
 },    
 
@@ -345,8 +345,8 @@
       "type": "string",
       "property": "cmi-Margin-Checkmark-start_2",
       "label": "--cmi-Margin-Checkmark-start",
-      "default": "7px",
-      "placeholder": "default: 7px"
+      "default": "5px",
+      "placeholder": "default: 5px"
     },
     {
       "type": "string",
@@ -359,8 +359,8 @@
       "type": "string",
       "property": "cmi-Margin-Checkmark-end_2",
       "label": "--cmi-Margin-Checkmark-end",
-      "default": "7px",
-      "placeholder": "default: 7px"
+      "default": "8px",
+      "placeholder": "default: 8px"
     },
     {
       "type": "string",
