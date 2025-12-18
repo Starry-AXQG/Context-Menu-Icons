@@ -77,7 +77,7 @@
     {
       "type": "string",
       "property": "cmi-fold-item-IDs",
-      "label": "Add/Remove/Sort the folded menus(see github for guide)",
+      "label": "🛠️ Add/Remove/Sort the folded menu items(see github for guide)",
       "default": "",
       "placeholder": "Can use hotkeys to adding quikly id."
     },
@@ -106,8 +106,8 @@
     {
         "type": "checkbox",
         "property": "cmi-Align-Extension-Icons",
-        "label": "📐 Align extension icons in menu (Enable to make menu more orderly)",
-        "defaultValue": false
+        "label": "📐 Align extension icons in menu (Recommended to enable it so that  the elements of menu can be aligned)",
+        "defaultValue": true
     },
 
     {
@@ -228,7 +228,7 @@
 },
 {
   "type": "text",
-  "label": "⚠️⚠️⚠️ \n1.The settings below are sensitive​ and should not be changed casually unless you know what you are doing. You should only modify them if you encounter any alignment issues with context menu items​ and have consulted the guidance on Github. \n 2.The default settings work well for most users. However, in rare cases, CMI's display might be affected slightly by certain add-ons, different operating systems, or other Firefox variants. \n 3.To see the default values provided by CMI, clear the text input box. You may see two default numbers separated by a \"/\". These represent CMI's recommended values before and after​ enabling the Align extension icons in menufeature. \n ⚠️⚠️⚠️",
+  "label": "⚠️⚠️⚠️ \n1.The settings below are sensitive​ and should not be changed casually unless you know what you are doing. You should only modify them if you encounter any alignment issues with context menu items​ and have consulted the guidance on Github. \n 2.The default settings work well for most users. However, in rare cases, CMI's display might be affected slightly by certain add-ons, different operating systems, or other Firefox variants. \n 3.To see the default values provided by CMI, clear the text input box. You may see two default numbers separated by a \"/\". These represent CMI's recommended values before and after​ enabling the `Align extension icons in menu` feature. \n ⚠️⚠️⚠️",
   "margin": "15px 0 30px 0",
   "size": "15px"
 },
@@ -243,7 +243,7 @@
       "type": "string",
       "property": "cmi-Padding-Container",
       "label": "[Global]The left margin of the text in the custom container menu",
-      "default": "30px",
+      "default": "34px",
       "placeholder": "default: 30px/34px"
     },
 
@@ -257,14 +257,14 @@
       "type": "string",
       "property": "cmi-checkmark-margin-left_1",
       "label": "The left margin of the checkmark icon in normal circumstances",
-      "default": "7px",
+      "default": "11px",
       "placeholder": "default: 7px/11px"
     },
     {
       "type": "string",
       "property": "cmi-checkmark-margin-left_cover_1",
       "label": "The left margin of the checkmark icon after the menu item is checked",
-      "default": "7px",
+      "default": "11px",
       "placeholder": "default: 7px/11px"
     },
     {
@@ -278,7 +278,7 @@
       "type": "string",
       "property": "cmi-checkmark-margin-right_cover_1",
       "label": "The right margin of the checkmark icon after the menu item is checked",
-      "default": "7px",
+      "default": "11px",
       "placeholder": "default: 7px/11px"
     },
     {
@@ -315,7 +315,7 @@
       "type": "string",
       "property": "cmi-non-checkmark-subitems-padding_1",
       "label": "When a checkmark item is selected among the context menu items, the margins of the other unselected menu items will be adjusted accordingly.",
-      "default": "24px",
+      "default": "28px",
       "placeholder": "default: 24px/28px"
     },
 
