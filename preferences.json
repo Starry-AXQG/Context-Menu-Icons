@@ -228,7 +228,7 @@
 },
 {
   "type": "text",
-  "label": "⚠️1.The settings below are sensitive​ and should not be changed casually unless you know what you are doing. You should only modify them if you encounter any alignment issues with context menu items​ and have consulted the guidance on Github. 2.The default settings work well for most users. However, in rare cases, CMI's display might be affected slightly by certain add-ons, different operating systems, or other Firefox variants. 3.To see the default values provided by CMI, clear the text input box. You may see two default numbers separated by a \"/\". These represent CMI's recommended values before and after​ enabling the Align extension icons in menufeature.⚠️",
+  "label": "⚠️⚠️⚠️ \n1.The settings below are sensitive​ and should not be changed casually unless you know what you are doing. You should only modify them if you encounter any alignment issues with context menu items​ and have consulted the guidance on Github. \n 2.The default settings work well for most users. However, in rare cases, CMI's display might be affected slightly by certain add-ons, different operating systems, or other Firefox variants. \n 3.To see the default values provided by CMI, clear the text input box. You may see two default numbers separated by a \"/\". These represent CMI's recommended values before and after​ enabling the Align extension icons in menufeature. \n ⚠️⚠️⚠️",
   "margin": "15px 0 30px 0",
   "size": "15px"
 },
