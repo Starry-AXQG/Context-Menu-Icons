@@ -242,7 +242,7 @@
     {
       "type": "string",
       "property": "cmi-Padding-Container",
-      "label": "[Global]The left margin of the text in the custom container menu",
+      "label": "[Global]The left margin of the text in the Menu of Container-Tabs",
       "default": "34px",
       "placeholder": "default: 30px/34px"
     },
