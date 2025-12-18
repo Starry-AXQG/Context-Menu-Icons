@@ -2358,8 +2358,8 @@ menuseparator#moveTabSeparator {
     height: var(--zen-cmenu-icon-size);
 
     /* 调整外边距：左、右、上下 */
-    margin-inline-start: var(--zen-cmenu-icon-margin-inline-start);
-    margin-inline-end: var(--zen-cmenu-icon-margin-inline-end);
+    margin-inline-start: var(--zen-extensions-margin-left);
+    margin-inline-end: var(--zen-extensions-margin-right);
     margin-block-start: var(--zen-cmenu-icon-margin-block);
     margin-block-end: var(--zen-cmenu-icon-margin-block);
 
@@ -2373,7 +2373,7 @@ menuseparator#moveTabSeparator {
     padding-inline-start: 0 !important; /* 重置可能已有的内边距 */
     margin-inline-start: 0 !important;  /* 重置可能已有的外边距 */
     /* 让文字紧贴图标右侧 */
-    padding-inline-start: var(--zen-cmenu-icon-margin-inline-end);
+    padding-inline-start: var(--zen-extensions-margin-right);
   }
     }
 }
@@ -2666,7 +2666,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   width: var(--checkmark-width);
   height: var(--checkmark-height);
 
-  margin-inline-end: var(--checkmark-margin-end);
+  margin-inline-end: var(--checkmark-margin-right);
   vertical-align: middle;
 
   /* 两种实现共用声明：background-image / mask / background-color 由变量决定 */
@@ -2677,7 +2677,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   background-repeat: no-repeat;
   background-size: contain;
   /* 定位到图标所在 x 位置 */
-  margin-inline-start: var(--checkmark-margin-start);
+  margin-inline-start: var(--checkmark-margin-left);
   position: relative;
 
   /* mask 与 background-color（若变量为 none，则效果等同于未设置） */
@@ -2792,8 +2792,8 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     #mainPopupSet > menupopup:nth-child(98):has(> menuitem:not([hidden])[checked="true"])
   
   ) {
-    --checkmark-margin-start: var(--checkmark-margin-start_cover);
-    --checkmark-margin-end: var(--checkmark-margin-end_cover);
+    --checkmark-margin-left: var(--checkmark-margin-left_cover);
+    --checkmark-margin-right: var(--checkmark-margin-right_cover);
     --submenu-padding: var(--submenu-padding_cover);
     /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
     > :is(menuitem, menu):not(
@@ -2852,8 +2852,8 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     menupopup#sidebar-history-menu:has(> menuitem:not([hidden])[checked="true"]),
     #mainPopupSet > menupopup:nth-child(98):has(> menuitem:not([hidden])[checked="true"])
   ) {
-    --checkmark-margin-start: var(--checkmark-margin-start_cover);
-    --checkmark-margin-end: var(--checkmark-margin-end_cover);
+    --checkmark-margin-left: var(--checkmark-margin-left_cover);
+    --checkmark-margin-right: var(--checkmark-margin-right_cover);
     --submenu-padding: var(--submenu-padding_cover);
     /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
     > :is(menuitem, menu):not(
