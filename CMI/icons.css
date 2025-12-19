@@ -1325,7 +1325,7 @@
         --menu-image: url("edit-delete.svg");
       }
 
-      /* Menu of Container-Tabs */
+      /* Container-Tabs Menu */
       menuitem[command="Browser:NewUserContextTab"] {
         --menu-image: url('new-tab-image.svg');
       }
@@ -1334,20 +1334,20 @@
       }
 
     /* zen Group(Adapt to Advanced-Tag-Groups) */
-      .change-group-color {
-        --menu-image: url("color.svg");
-      }
-      .rename-group {
-        --menu-image: url("edit.svg");
-      }
-      .ungroup-tabs {
-        --menu-image: url("folder-unpack.svg");
-      }
-      .convert-group-to-folder {
-        --menu-image: url("folder_sync_convert.svg");
-      }
-      .change-group-icon {
-      --menu-image: url("image-save.svg");
+    .change-group-color {
+      --menu-image: url("color.svg");
+    }
+    .rename-group {
+      --menu-image: url("edit.svg");
+    }
+    .ungroup-tabs {
+      --menu-image: url("folder-unpack.svg");
+    }
+    .convert-group-to-folder {
+      --menu-image: url("folder_sync_convert.svg");
+    }
+    .change-group-icon {
+    --menu-image: url("image-save.svg");
     }
 
     /* zen Mods */
@@ -1830,6 +1830,121 @@
       #placesContext_sortBy\:name {
         --menu-image: url('zen-icons/move-tab.svg');
       }
+
+
+      /* ZenUI: App Menu Icons */
+      #appMenu-new-tab-button2 {
+        list-style-image: url('zen-icons/tab.svg') !important;
+      }
+      #fxa-manage-account-button {
+        background-image: url('chrome://browser/skin/fxa/avatar-empty.svg') !important;
+        background-repeat: no-repeat !important;
+
+        background-size: 16px !important;
+        background-position: 10px center !important;
+
+        -moz-context-properties: fill, fill-opacity !important;
+        fill: currentColor !important;
+      }
+
+      #PanelUI-fxa-menu-syncnow-button {
+        background-image: url('zen-icons/media-loop.svg') !important;
+        background-repeat: no-repeat !important;
+
+        background-size: 16px !important;
+        background-position: 11px center !important;
+
+        -moz-context-properties: fill, fill-opacity !important;
+        fill: currentColor !important;
+      }
+      #PanelUI-fxa-menu-connect-device-button {
+        list-style-image: url('zen-icons/link.svg') !important;
+      }
+      #PanelUI-fxa-menu-sendtab-button {
+        list-style-image: url('zen-icons/send-to-device.svg') !important;
+      }
+      #PanelUI-fxa-menu-sync-prefs-button {
+        list-style-image: url('zen-icons/settings.svg') !important;
+      }
+      #PanelUI-fxa-menu-account-signout-button {
+        list-style-image: url('chrome://browser/skin/import.svg') !important;
+      }
+      toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"] {
+        background-image: var(--zen-unload-icon);
+        background-repeat: no-repeat !important;
+
+        background-size: 16px !important;
+        background-position: 14px center !important;
+
+        -moz-context-properties: fill, fill-opacity !important;
+        fill: currentColor !important;
+        
+      }
+      
+      toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"] {
+        background-image: url('zen-icons/menu.svg') !important;
+        background-repeat: no-repeat !important;
+
+        background-size: 16px !important;
+        background-position: 14px center !important;
+
+        -moz-context-properties: fill, fill-opacity !important;
+        fill: currentColor !important;
+      }
+      :is(toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"],
+        toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"])
+      >.toolbarbutton-icon+.toolbarbutton-text {
+        padding-inline-start: 36px !important;
+      }
+      
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(1) {
+        list-style-image: url('zen-icons/developer.svg') !important;
+      }
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(2) {
+        list-style-image: url('zen-icons/media-speed.svg') !important;
+      }
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(3) {
+        list-style-image: url('zen-icons/tool-profiler.svg') !important;
+      }
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(4) {
+        list-style-image: url('zen-icons/permissions.svg') !important;
+      }
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(5) {
+        list-style-image: url('zen-icons/inspect.svg') !important;
+      }    
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(6) {
+        list-style-image: url('zen-icons/edit-cut.svg') !important;
+      }       
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(7) {
+        list-style-image: url('zen-icons/edit-theme.svg') !important;
+      }        
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(8) {
+        list-style-image: url('zen-icons/source-code.svg') !important;
+      }    
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(9) {
+        list-style-image: url('zen-icons/extension.svg') !important;
+      }
+      
+      
+      #appMenu_feedbackPage {
+        list-style-image: url('zen-icons/share.svg') !important;
+      }
+      #appMenu_helpSafeMode {
+        list-style-image: url('zen-icons/search-page.svg') !important;
+      }
+      #appMenu_troubleShooting {
+        list-style-image: url('zen-icons/info.svg') !important;
+      }
+      #appMenu_menu_HelpPopup_reportPhishingtoolmenu {
+        list-style-image: url('zen-icons/security-broken.svg') !important;
+      }
+      #appMenu_helpSwitchDevice {
+        list-style-image: url('zen-icons/send-to-device.svg');
+      }
+      #appMenu_aboutName {
+        list-style-image: url('zen-icons/help.svg') !important;
+      }
+      
       /* zen Workspace */
       #context_zenEditWorkspace {
         --menu-image: url('zen-icons/edit.svg');
@@ -1857,150 +1972,38 @@
       }
 
     /* zen Folder */
-      #context_zenFolderRename {
-        --menu-image: url('zen-icons/edit.svg');
-      }
-      #context_zenFolderChangeIcon {
-        --menu-image: url('zen-icons/canvas.svg');
-      }
-      #zen-context-menu-new-folder,
-      #zen-context-menu-new-folder-toolbar,      
-      #context_zenFolderNewSubfolder,
-      #placesContext_showInFolder {
-        --menu-image: url('zen-icons/folder.svg');
-      }
-      #context_zenFolderUnpack {
-        --menu-image: url('zen-icons/close-all.svg');
-      }
-      #context_zenChangeFolderSpace {
-        --menu-image: url('zen-icons/move-tab.svg');
-      }
-      #context_zenFolderToSpace,
-      #convert-folder-to-group {
-        --menu-image: url('zen-icons/edit-redo.svg');
-      }
-      #context_zenFolderDelete {
-        --menu-image: url('zen-icons/edit-delete.svg');
-      }   
+    #context_zenFolderRename {
+      --menu-image: url('zen-icons/edit.svg');
+    }
+    #context_zenFolderChangeIcon {
+      --menu-image: url('zen-icons/canvas.svg');
+    }
+    #zen-context-menu-new-folder,
+    #zen-context-menu-new-folder-toolbar,      
+    #context_zenFolderNewSubfolder,
+    #placesContext_showInFolder {
+      --menu-image: url('zen-icons/folder.svg');
+    }
+    #context_zenFolderUnpack {
+      --menu-image: url('zen-icons/close-all.svg');
+    }
+    #context_zenChangeFolderSpace {
+      --menu-image: url('zen-icons/move-tab.svg');
+    }
+    #context_zenFolderToSpace,
+    #convert-folder-to-group {
+      --menu-image: url('zen-icons/edit-redo.svg');
+    }
+    #context_zenFolderDelete {
+      --menu-image: url('zen-icons/edit-delete.svg');
+    }   
 
-      #zen-toolbar-context-tabs-right {
-        --menu-image: url('chrome://browser/skin/import.svg');
-      }  
-    
-    /* ZenUI: App Menu Icons */
-    #appMenu-new-tab-button2 {
-      list-style-image: url('zen-icons/tab.svg') !important;
-    }
-    #fxa-manage-account-button {
-      background-image: url('chrome://browser/skin/fxa/avatar-empty.svg') !important;
-      background-repeat: no-repeat !important;
-
-      background-size: 16px !important;
-      background-position: 10px center !important;
-
-      -moz-context-properties: fill, fill-opacity !important;
-      fill: currentColor !important;
-    }
-
-    #PanelUI-fxa-menu-syncnow-button {
-      background-image: url('zen-icons/media-loop.svg') !important;
-      background-repeat: no-repeat !important;
-
-      background-size: 16px !important;
-      background-position: 11px center !important;
-
-      -moz-context-properties: fill, fill-opacity !important;
-      fill: currentColor !important;
-    }
-    #PanelUI-fxa-menu-connect-device-button {
-      list-style-image: url('zen-icons/link.svg') !important;
-    }
-    #PanelUI-fxa-menu-sendtab-button {
-      list-style-image: url('zen-icons/send-to-device.svg') !important;
-    }
-    #PanelUI-fxa-menu-sync-prefs-button {
-      list-style-image: url('zen-icons/settings.svg') !important;
-    }
-    #PanelUI-fxa-menu-account-signout-button {
-      list-style-image: url('chrome://browser/skin/import.svg') !important;
-    }
-    toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"] {
-      background-image: var(--zen-unload-icon);
-      background-repeat: no-repeat !important;
-
-      background-size: 16px !important;
-      background-position: 14px center !important;
-
-      -moz-context-properties: fill, fill-opacity !important;
-      fill: currentColor !important;
-      
-    }
-    
-    toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"] {
-      background-image: url('zen-icons/menu.svg') !important;
-      background-repeat: no-repeat !important;
-
-      background-size: 16px !important;
-      background-position: 14px center !important;
-
-      -moz-context-properties: fill, fill-opacity !important;
-      fill: currentColor !important;
-    }
-    :is(toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"],
-     toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"])
-    >.toolbarbutton-icon+.toolbarbutton-text {
-      padding-inline-start: 36px !important;
-    }
-    
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(1) {
-      list-style-image: url('zen-icons/developer.svg') !important;
-    }
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(2) {
-      list-style-image: url('zen-icons/media-speed.svg') !important;
-    }
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(3) {
-      list-style-image: url('zen-icons/tool-profiler.svg') !important;
-    }
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(4) {
-      list-style-image: url('zen-icons/permissions.svg') !important;
-    }
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(5) {
-      list-style-image: url('zen-icons/inspect.svg') !important;
-    }    
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(6) {
-      list-style-image: url('zen-icons/edit-cut.svg') !important;
-    }       
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(7) {
-      list-style-image: url('zen-icons/edit-theme.svg') !important;
-    }        
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(8) {
-      list-style-image: url('zen-icons/source-code.svg') !important;
-    }    
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(9) {
-      list-style-image: url('zen-icons/extension.svg') !important;
-    }
+    #zen-toolbar-context-tabs-right {
+      --menu-image: url('chrome://browser/skin/import.svg');
+    }  
     
     
-    #appMenu_feedbackPage {
-      list-style-image: url('zen-icons/share.svg') !important;
-    }
-    #appMenu_helpSafeMode {
-      list-style-image: url('zen-icons/search-page.svg') !important;
-    }
-    #appMenu_troubleShooting {
-      list-style-image: url('zen-icons/info.svg') !important;
-    }
-    #appMenu_menu_HelpPopup_reportPhishingtoolmenu {
-      list-style-image: url('zen-icons/security-broken.svg') !important;
-    }
-    #appMenu_helpSwitchDevice {
-      list-style-image: url('zen-icons/send-to-device.svg');
-    }
-    #appMenu_aboutName {
-      list-style-image: url('zen-icons/help.svg') !important;
-    }
-    
-    /* Menu of Container-Tabs */
+    /* Container-Tabs Menu */
     menuitem[command="Browser:NewUserContextTab"] {
       --menu-image: url('zen-icons/tab.svg');
     }
@@ -2009,21 +2012,21 @@
     }
     
     /* zen Group(Adapt to Advanced-Tag-Groups) */
-      .change-group-color {
-        --menu-image: url('zen-icons/edit-theme.svg');
-      }
-      .rename-group {
-        --menu-image: url('zen-icons/edit.svg');
-      }
-      .ungroup-tabs {
-        --menu-image: url('zen-icons/close-all.svg');
-      }
-      .convert-group-to-folder {
-        --menu-image: url('zen-icons/edit-redo.svg');
-      }
-      .change-group-icon {
-      --menu-image: url('zen-icons/canvas.svg');
-     }
+    .change-group-color {
+      --menu-image: url('zen-icons/edit-theme.svg');
+    }
+    .rename-group {
+      --menu-image: url('zen-icons/edit.svg');
+    }
+    .ungroup-tabs {
+      --menu-image: url('zen-icons/close-all.svg');
+    }
+    .convert-group-to-folder {
+      --menu-image: url('zen-icons/edit-redo.svg');
+    }
+    .change-group-icon {
+    --menu-image: url('zen-icons/canvas.svg');
+    }
     
     /* zen Mods */
     #viewColumns,
