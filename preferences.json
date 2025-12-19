@@ -70,7 +70,7 @@
     {
         "type": "checkbox",
         "property": "cmi-fold_menu_item-enable",
-        "label": "✨ Enable CMI fold menu JS(see github for function guide)",
+        "label": "✨ Enable CMI fold menu JS. [This will enable you to easily fold the menu items you don't want by hotkey. (see github for more function guide)]",
         "defaultValue": false
     },
 
