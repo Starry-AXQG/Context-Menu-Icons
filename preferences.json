@@ -121,8 +121,8 @@
         "type": "string",
         "value": "string",
         "property": "cmi-menuseparator-opacity",
-        "label": "opacity of menu separator (Value range: 0~1, default: 0.45)",
-        "default": 0.45
+        "label": "Opacity of menu separator (Value range: 0~1, default: 0.5)",
+        "default": 0.5
     },
 
     {
