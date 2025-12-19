@@ -1326,6 +1326,7 @@
       }
 
       /* Container-Tabs Menu */
+      menuitem[data-l10n-id="user-context-none"],
       menuitem[command="Browser:NewUserContextTab"] {
         --menu-image: url('new-tab-image.svg');
       }
@@ -2004,6 +2005,7 @@
     
     
     /* Container-Tabs Menu */
+    menuitem[data-l10n-id="user-context-none"],
     menuitem[command="Browser:NewUserContextTab"] {
       --menu-image: url('zen-icons/tab.svg');
     }
