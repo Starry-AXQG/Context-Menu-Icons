@@ -1324,6 +1324,15 @@
       #context_zenFolderDelete {
         --menu-image: url("edit-delete.svg");
       }
+
+      /* Menu of Container-Tabs */
+      menuitem[command="Browser:NewUserContextTab"] {
+        --menu-image: url('tab.svg');
+      }
+      menuitem[command="Browser:OpenAboutContainers"] {
+        --menu-image: url('manage.svg');
+      }
+
     /* zen Group(Adapt to Advanced-Tag-Groups) */
       .change-group-color {
         --menu-image: url("color.svg");
@@ -1987,7 +1996,15 @@
     #appMenu_aboutName {
       list-style-image: url('zen-icons/help.svg') !important;
     }
-
+    
+    /* Menu of Container-Tabs */
+    menuitem[command="Browser:NewUserContextTab"] {
+      --menu-image: url('zen-icons/tab.svg');
+    }
+    menuitem[command="Browser:OpenAboutContainers"] {
+      --menu-image: url('zen-icons/manage.svg');
+    }
+    
     /* zen Group(Adapt to Advanced-Tag-Groups) */
       .change-group-color {
         --menu-image: url('zen-icons/edit-theme.svg');
