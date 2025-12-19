@@ -1327,7 +1327,7 @@
 
       /* Menu of Container-Tabs */
       menuitem[command="Browser:NewUserContextTab"] {
-        --menu-image: url('tab.svg');
+        --menu-image: url('new-tab-image.svg');
       }
       menuitem[command="Browser:OpenAboutContainers"] {
         --menu-image: url('manage.svg');
