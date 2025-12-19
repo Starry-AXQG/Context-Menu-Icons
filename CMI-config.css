@@ -19,7 +19,7 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
 :root {
   /* 🌟 If you are using Firefox, changing it to 36px might be more appropriate. */
   --container-padding: var(--cmi-Padding-Container, 34px);
-
+  --menuseparator-opacity: var(--cmi-menuseparator-opacity, 0.45);
   /* 🌟 cmi fold menu item ids
   --cmi-fold-item-ids:
   */

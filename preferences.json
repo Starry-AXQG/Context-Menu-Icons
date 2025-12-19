@@ -115,7 +115,15 @@
         "property": "cmi-Align-Extension-Texts",
         "label": "📐 Align extension texts in menu (Enable to make menu more orderly. Not available at present)",
         "defaultValue": false
-    },   
+    },
+
+    {
+        "type": "string",
+        "value": "string",
+        "property": "cmi-menuseparator-opacity",
+        "label": "opacity of menu separator (Value range: 0~1, default: 0.45)",
+        "default": 0.45
+    },
 
     {
       "type": "separator",
