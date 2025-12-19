@@ -1888,6 +1888,9 @@
       }  
     
     /* ZenUI: App Menu Icons */
+    #appMenu-new-tab-button2 {
+      list-style-image: url('zen-icons/tab.svg') !important;
+    }
     #fxa-manage-account-button {
       background-image: url('chrome://browser/skin/fxa/avatar-empty.svg') !important;
       background-repeat: no-repeat !important;
