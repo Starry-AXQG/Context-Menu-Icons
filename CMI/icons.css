@@ -190,7 +190,7 @@
       }
       
       #developer-button {
-        list-style-image: url("developer.svg") !important;
+        list-style-image: url("manage.svg") !important;
       }
       
       #new-window-button {
@@ -479,7 +479,7 @@
       }
       
       #unified-extensions-manage-extensions {
-        list-style-image: url("developer.svg") !important;
+        list-style-image: url("manage.svg") !important;
       }
     
       /* reload/stop animation */
@@ -856,7 +856,7 @@
       .customize-context-manageExtension,
       #pageActionContextMenuManageExtension,
       .unified-extensions-context-menu-manage-extension {
-        --menu-image: url("developer.svg");
+        --menu-image: url("manage.svg");
       }
       #BMB_viewBookmarksSidebar {
         --menu-image: url("sidebars.svg");
@@ -866,7 +866,7 @@
       }
       
       #PanelUI-historyMore {
-        --menu-image: url("developer.svg");
+        --menu-image: url("manage.svg");
       }
       
       menuitem[id="placesContext_new:bookmark"],
@@ -1161,13 +1161,13 @@
 
     /* Tools */
     #appmenu-developer-tools-view > toolbarbutton:nth-child(1) {
-      list-style-image: url('developer.svg') !important;
+      list-style-image: url('manage.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(2) {
       list-style-image: url('media-speed.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(3) {
-      list-style-image: url('developer.svg') !important;
+      list-style-image: url('manage.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(4) {
       list-style-image: url('permissions.svg') !important;
