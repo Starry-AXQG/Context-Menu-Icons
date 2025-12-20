@@ -2601,9 +2601,10 @@ menuitem > .menu-iconic-text,
   padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
 }
 
-/* 校正容器标签页菜单 */
+/* 校正容器标签页(Container-Tabs)菜单 */
 menupopup#new-tab-button-popup,
-menupopup#zenWorkspaceMoreActions menupopup {
+menupopup#zenWorkspaceMoreActions menupopup,
+menupopup#context_reopenInContainerPopupMenu {
 /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
 > :is(menuitem, menu):not(
     .menuitem-iconic,
