@@ -1834,7 +1834,9 @@
 
 
       /* ZenUI: App Menu Icons */
-      #appMenu-new-window-button2 {
+      #new-window-button,
+      #appMenu-new-window-button2,
+      #appMenuRecentlyClosedWindows {
         list-style-image: url("zen-icons/window.svg") !important;
       }
       #fxa-manage-account-button {
