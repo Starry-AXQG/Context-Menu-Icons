@@ -106,7 +106,7 @@
     {
         "type": "checkbox",
         "property": "cmi-Align-Extension-Icons",
-        "label": "📐 Align extension icons in menu (Default enables the alignment of the elements in the context menu.)",
+        "label": "📐 Align extension icons in menu (Defaultly enable to alignment of the elements in the context menu.)",
         "defaultValue": true
     },
 
