@@ -1326,7 +1326,12 @@
       }
 
       /* Container-Tabs Menu */
-      menuitem[data-l10n-id="user-context-none"],
+      menuitem[data-l10n-id="user-context-none"] {
+        background-image: url('new-tab-image.svg') !important;
+        background-repeat: no-repeat !important;
+        background-size: 16px !important;
+        background-position: 11px center !important;
+      }
       menuitem[command="Browser:NewUserContextTab"] {
         --menu-image: url('new-tab-image.svg');
       }
@@ -2007,7 +2012,12 @@
     
     
     /* Container-Tabs Menu */
-    menuitem[data-l10n-id="user-context-none"],
+    menuitem[data-l10n-id="user-context-none"] {
+        background-image: url('zen-icons/tab.svg') !important;
+        background-repeat: no-repeat !important;
+        background-size: 16px !important;
+        background-position: 5px center !important;
+    }
     menuitem[command="Browser:NewUserContextTab"] {
       --menu-image: url('zen-icons/tab.svg');
     }
