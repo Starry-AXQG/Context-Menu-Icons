@@ -1834,6 +1834,9 @@
 
 
       /* ZenUI: App Menu Icons */
+      #appMenu-new-window-button2 {
+        list-style-image: url("zen-icons/window.svg") !important;
+      }
       #fxa-manage-account-button {
         background-image: url('chrome://browser/skin/fxa/avatar-empty.svg') !important;
         background-repeat: no-repeat !important;
