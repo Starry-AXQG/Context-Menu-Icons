@@ -454,6 +454,7 @@
 
 })();
 
+
 // 🧩 Listen to system color scheme changes with debounce and automatic cleanup
 (() => {
   // Prevent multiple managers from being registered in SPA environments
@@ -553,6 +554,7 @@
   }
 })();
 
+
 // 🧩 Drop link event
 (() => {
   const nav = document.getElementById('nav-bar');
@@ -560,6 +562,10 @@
   const body = document.body || document.documentElement;
   let hideTimer = null;
   const HIDE_DELAY = 80; // ms
+
+  // State used to keep drag lifecycle and avoid repeated work
+  let isDragging = false;
+  let lastOver = false;
 
   function showBookmarks(on) {
     clearTimeout(hideTimer);
@@ -574,7 +580,7 @@
       if (nav && (nav === el || nav.contains(el))) return true;
       if (toolbar && (toolbar === el || toolbar.contains(el))) return true;
     } catch (e) {
-
+      // ignore errors from elementFromPoint
     }
     return false;
   }
@@ -591,10 +597,79 @@
     toolbar.addEventListener('pointerleave', onLeave);
   }
 
+  // Track the drag lifecycle so we can force-hide when a drag finishes
+  document.addEventListener('dragstart', () => {
+    isDragging = true;
+    lastOver = false; // reset
+  }, true);
+
+  function endDragHide() {
+    isDragging = false;
+    lastOver = false;
+    showBookmarks(false);
+  }
+
+  document.addEventListener('dragend', endDragHide, true);
+  window.addEventListener('drop', endDragHide, true);
+
+  // dragover: use elementFromPoint to check whether the pointer is over nav/toolbar
   window.addEventListener('dragover', (e) => {
-    if (pointIsOverNavOrToolbar(e.clientX, e.clientY)) showBookmarks(true);
+    // Some platforms may provide negative or zero coords; guard them.
+    const x = e.clientX || 0;
+    const y = e.clientY || 0;
+    const over = pointIsOverNavOrToolbar(x, y);
+    if (over !== lastOver) {
+      showBookmarks(over);
+      lastOver = over;
+    }
+  });
+
+  // If the drag leaves the window entirely, a 'dragleave' with no relatedTarget may fire.
+  // In that case, hide bookmarks immediately.
+  window.addEventListener('dragleave', (e) => {
+    if (isDragging && !e.relatedTarget) {
+      lastOver = false;
+      showBookmarks(false);
+    }
+  });
+
+  // --- Touch / tap support ---
+  function onGlobalPointerDown(e) {
+    // while dragging we let drag logic own the visibility
+    if (isDragging) return;
+    const x = (typeof e.clientX === 'number') ? e.clientX : 0;
+    const y = (typeof e.clientY === 'number') ? e.clientY : 0;
+    const over = pointIsOverNavOrToolbar(x, y);
+    // If tapped inside nav/toolbar -> show; else hide immediately
+    if (over) showBookmarks(true);
     else showBookmarks(false);
-  }, { passive: true });
+  }
+
+  // Use capture so we see the event before other handlers may stopPropagation
+  window.addEventListener('pointerdown', onGlobalPointerDown, true);
+  // Some older/edge platforms may send touchstart without pointer events
+  window.addEventListener('touchstart', onGlobalPointerDown, true);
+
+  // Accessibility: also respond to focus changes (keyboard navigation)
+  window.addEventListener('focusin', (e) => {
+    try {
+      const target = e.target;
+      if (nav && (nav === target || nav.contains(target)) || toolbar && (toolbar === target || toolbar.contains(target))) {
+        showBookmarks(true);
+      }
+    } catch (err) {}
+  });
+  window.addEventListener('focusout', (e) => {
+    // If focus moved outside nav/toolbar, hide
+    try {
+      const related = e.relatedTarget;
+      if (!related || !(nav.contains(related) || toolbar.contains(related))) {
+        showBookmarks(false);
+      }
+    } catch (err) {
+      showBookmarks(false);
+    }
+  });
 
   // Cleanup: Remove the class when the page is unloaded.
   window.addEventListener('unload', () => body.classList.remove('show-bookmarks'));
