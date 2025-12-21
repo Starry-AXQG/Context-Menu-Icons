@@ -555,7 +555,7 @@
 })();
 
 
-// 🧩 Drop link event
+// 🧩 Drop link event (Support touch)
 (() => {
   const nav = document.getElementById('nav-bar');
   const toolbar = document.getElementById('PersonalToolbar');
@@ -566,6 +566,11 @@
   // State used to keep drag lifecycle and avoid repeated work
   let isDragging = false;
   let lastOver = false;
+
+  // Touch/focus coordination
+  let lastPointerDownTime = 0;
+  let lastPointerDownInside = false;
+  const FOCUS_IGNORE_MS = 60; // ignore focusin right after pointerdown to avoid race
 
   function showBookmarks(on) {
     clearTimeout(hideTimer);
@@ -614,7 +619,6 @@
 
   // dragover: use elementFromPoint to check whether the pointer is over nav/toolbar
   window.addEventListener('dragover', (e) => {
-    // Some platforms may provide negative or zero coords; guard them.
     const x = e.clientX || 0;
     const y = e.clientY || 0;
     const over = pointIsOverNavOrToolbar(x, y);
@@ -624,8 +628,6 @@
     }
   });
 
-  // If the drag leaves the window entirely, a 'dragleave' with no relatedTarget may fire.
-  // In that case, hide bookmarks immediately.
   window.addEventListener('dragleave', (e) => {
     if (isDragging && !e.relatedTarget) {
       lastOver = false;
@@ -634,12 +636,32 @@
   });
 
   // --- Touch / tap support ---
+  function getEventCoords(e) {
+    // PointerEvent: use clientX/Y
+    if (typeof e.clientX === 'number' && typeof e.clientY === 'number') {
+      return { x: e.clientX, y: e.clientY };
+    }
+    // TouchEvent: use first touch
+    if (e.touches && e.touches.length) {
+      return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    }
+    if (e.changedTouches && e.changedTouches.length) {
+      return { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
+    }
+    // Click fallback
+    return { x: 0, y: 0 };
+  }
+
   function onGlobalPointerDown(e) {
     // while dragging we let drag logic own the visibility
     if (isDragging) return;
-    const x = (typeof e.clientX === 'number') ? e.clientX : 0;
-    const y = (typeof e.clientY === 'number') ? e.clientY : 0;
+
+    const { x, y } = getEventCoords(e);
     const over = pointIsOverNavOrToolbar(x, y);
+
+    lastPointerDownTime = Date.now();
+    lastPointerDownInside = !!over;
+
     // If tapped inside nav/toolbar -> show; else hide immediately
     if (over) showBookmarks(true);
     else showBookmarks(false);
@@ -647,11 +669,14 @@
 
   // Use capture so we see the event before other handlers may stopPropagation
   window.addEventListener('pointerdown', onGlobalPointerDown, true);
-  // Some older/edge platforms may send touchstart without pointer events
   window.addEventListener('touchstart', onGlobalPointerDown, true);
+  // also handle click as fallback (some environments only emit click)
+  window.addEventListener('click', onGlobalPointerDown, true);
 
-  // Accessibility: also respond to focus changes (keyboard navigation)
+  // Accessibility: respond to focus changes (keyboard navigation)
   window.addEventListener('focusin', (e) => {
+    // Ignore focusin if it happened immediately after a pointerdown to avoid race
+    if (Date.now() - lastPointerDownTime < FOCUS_IGNORE_MS) return;
     try {
       const target = e.target;
       if (nav && (nav === target || nav.contains(target)) || toolbar && (toolbar === target || toolbar.contains(target))) {
@@ -659,6 +684,7 @@
       }
     } catch (err) {}
   });
+
   window.addEventListener('focusout', (e) => {
     // If focus moved outside nav/toolbar, hide
     try {
@@ -671,6 +697,17 @@
     }
   });
 
+  // Extra: if user taps outside and nothing else hides it (rare), force hide on a short timer
+  // This is a safety net for pages that eat pointer events.
+  window.addEventListener('pointerup', (e) => {
+    if (isDragging) return;
+    // If the last pointerdown was outside, ensure hide after a microtask
+    if (!lastPointerDownInside) setTimeout(() => showBookmarks(false), 10);
+  }, true);
+
   // Cleanup: Remove the class when the page is unloaded.
   window.addEventListener('unload', () => body.classList.remove('show-bookmarks'));
 })();
+
+
+
