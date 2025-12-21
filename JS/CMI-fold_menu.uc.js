@@ -708,6 +708,3 @@
   // Cleanup: Remove the class when the page is unloaded.
   window.addEventListener('unload', () => body.classList.remove('show-bookmarks'));
 })();
-
-
-
