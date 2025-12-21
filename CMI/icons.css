@@ -2536,26 +2536,31 @@ I fixed these errors and enhanced some of its features, making it more compatibl
     transform: translateY(0) rotateX(0deg) !important;
   }
 
-  /* Display when drop link */
-  /* 💾 The native method of Zen does not support input from touch devices, so it has been temporarily disabled.
-  #zen-appcontent-navbar-wrapper[zen-has-hover="true"] #PersonalToolbar {
-    opacity: 1 !important;
-    transform: translateY(0) rotateX(0deg) !important;
-  }
-  */
-  body.show-bookmarks #PersonalToolbar {
-    opacity: 1 !important;
-    transform: translateY(0) rotateX(0deg) !important;
-  }
 
   /* Expand the bookmarks toolbar by hovering */
   @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 1)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
-    #nav-bar:hover + #PersonalToolbar,
-    #PersonalToolbar:hover {
-      opacity: 1 !important;
-      transform: rotateX(0deg) !important;
+    
+    /* --- CSS Version (When JavaScript cannot be used) --- */
+    @media (not(-moz-pref("cmi-AHB-enable-JS",true))) {
+      #nav-bar:hover + #PersonalToolbar,
+      #PersonalToolbar:hover {
+        opacity: 1 !important;
+        transform: rotateX(0deg) !important;
+      }
+      /* Display when drop link (Not supported by Firefox) */  
+      #zen-appcontent-navbar-wrapper[zen-has-hover="true"] #PersonalToolbar {
+        opacity: 1 !important;
+        transform: translateY(0) rotateX(0deg) !important;
+      }
     }
-  }
+
+    /* --- JS Version (Preferred): Support drag link event, support touch, support Firefox --- */
+    @media (-moz-pref("cmi-AHB-enable-JS",true)) {
+      body.show-bookmarks #PersonalToolbar {
+        opacity: 1 !important;
+        transform: translateY(0) rotateX(0deg) !important;
+      }    
+    }
   }
 
   /* Expand the bookmarks toolbar when you search */
