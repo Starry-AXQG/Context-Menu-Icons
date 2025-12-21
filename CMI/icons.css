@@ -2541,7 +2541,7 @@ I fixed these errors and enhanced some of its features, making it more compatibl
   @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 1)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
     
     /* --- CSS Version (When JavaScript cannot be used) --- */
-    @media (not(-moz-pref("cmi-AHB-enable-JS",true))) {
+    @media (not (-moz-pref("cmi-AHB-enable-JS",true))) {
       #nav-bar:hover + #PersonalToolbar,
       #PersonalToolbar:hover {
         opacity: 1 !important;
