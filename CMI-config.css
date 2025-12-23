@@ -56,9 +56,6 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --checkmark-moz-context: fill, fill-opacity;
     --checkmark-fill: currentColor;
 
-    /* 对含选中项时的 group / 子菜单 padding 差别 */
-    --group-padding: var(--cmi-group-padding_1, 10px);
-
     --submenu-padding: var(--cmi-submenu-padding_1, 34px);
     --submenu-padding_cover: var(--cmi-submenu-padding_cover_1, 38px);
     --special-submenu-padding: var(--cmi-special-submenu-padding_1, 11px);
@@ -98,9 +95,6 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --checkmark-bg-color: currentColor;
     --checkmark-moz-context: none;
     --checkmark-fill: none;
-
-    /* group / 子菜单 padding */
-    --group-padding: var(--cmi-group-padding_2, 4px);
 
     --submenu-padding: var(--cmi-submenu-padding_2, 34px);
     --submenu-padding_cover: var(--cmi-submenu-padding_cover_2, 27px);

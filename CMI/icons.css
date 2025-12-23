@@ -2656,7 +2656,7 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   background-repeat: no-repeat !important;
   
   @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {background-position: var(--fp-contextmenu-menuitem-padding-inline, left 1em) center !important;}
-  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {background-position: 5px center !important;}
+  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {background-position: var(--zen-contextmenu-menuitem-padding-inline) center !important;}
   
   background-size: var(--fp-contextmenu-menuitem-icon-size, 16px) !important;
 
