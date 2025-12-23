@@ -103,20 +103,6 @@
   },
 
   {
-    "type": "checkbox",
-    "property": "cmi-Align-Extension-Icons",
-    "label": "📐 Align extension icons in menu (Defaultly enable to alignment of the elements in the context menu.)",
-    "defaultValue": true
-  },
-
-  {
-    "type": "checkbox",
-    "property": "cmi-Align-Extension-Texts",
-    "label": "📐 Align extension texts in menu (Enable to make menu more orderly. Not available at present)",
-    "defaultValue": false
-  },
-
-  {
     "type": "string",
     "value": "string",
     "property": "cmi-menuseparator-opacity",
@@ -259,8 +245,8 @@
     "type": "string",
     "property": "cmi-Padding-Container",
     "label": "[Global]The left margin of the text in the Menu of Container-Tabs",
-    "default": "34px",
-    "placeholder": "default: 30px/34px"
+    "default": "30px",
+    "placeholder": "default: 30px"
   },
 
 {
@@ -273,71 +259,57 @@
     "type": "string",
     "property": "cmi-checkmark-margin-left_1",
     "label": "The left margin of the checkmark icon in normal circumstances",
-    "default": "11px",
-    "placeholder": "default: 7px/11px"
+    "default": "6px",
+    "placeholder": "default: 6px"
   },
   {
     "type": "string",
     "property": "cmi-checkmark-margin-left_cover_1",
     "label": "The left margin of the checkmark icon after the menu item is checked",
-    "default": "11px",
-    "placeholder": "default: 7px/11px"
+    "default": "8px",
+    "placeholder": "default: 8px"
   },
   {
     "type": "string",
     "property": "cmi-checkmark-margin-right_1",
     "label": "The right margin of the checkmark icon in normal circumstances",
-    "default": "7px",
-    "placeholder": "default: 7px"
+    "default": "8px",
+    "placeholder": "default: 8px"
   },
   {
     "type": "string",
     "property": "cmi-checkmark-margin-right_cover_1",
     "label": "The right margin of the checkmark icon after the menu item is checked",
-    "default": "11px",
-    "placeholder": "default: 7px/11px"
+    "default": "10px",
+    "placeholder": "default: 10px"
   },
   {
     "type": "string",
     "property": "cmi-submenu-padding_1",
     "label": "The padding of most sub-menu items",
-    "default": "34px",
-    "placeholder": "default: 34px"
+    "default": "30px",
+    "placeholder": "default: 30px"
   },
   {
     "type": "string",
     "property": "cmi-submenu-padding_cover_1",
     "label": "The padding of most sub-menu items after the menu item is checked",
-    "default": "38px",
-    "placeholder": "default: 38px"
+    "default": "34px",
+    "placeholder": "default: 34px"
   },
   {
     "type": "string",
     "property": "cmi-special-submenu-padding_1",
     "label": "Very few special sub-menu items padding: ",
-    "default": "11px",
-    "placeholder": "default: 11px"
+    "default": "12px",
+    "placeholder": "default: 12px"
   },
   {
     "type": "string",
     "property": "cmi-non-checkmark-subitems-padding_1",
     "label": "When a checkmark item is selected among the context menu items, the margins of the other unselected menu items will be adjusted accordingly.",
-    "default": "28px",
-    "placeholder": "default: 24px/28px"
-  },
-  {
-    "type": "string",
-    "property": "cmi-extensions-margin-left_1",
-    "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values..",
-    "default": "5px",
-    "placeholder": "default: 5px"
-  },
-  {
-    "type": "string",
-    "property": "cmi-extensions-margin-right_1",
-    "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values.",
-    "default": "8px",
-    "placeholder": "default: 8px"
+    "default": "24px",
+    "placeholder": "default: 24px"
   },
 
 {
@@ -350,15 +322,15 @@
     "type": "string",
     "property": "cmi-checkmark-margin-left_2",
     "label": "The left margin of the checkmark icon in normal circumstances",
-    "default": "5px",
-    "placeholder": "default: 5px"
+    "default": "6px",
+    "placeholder": "default: 6px"
   },
   {
     "type": "string",
     "property": "cmi-checkmark-margin-left_cover_2",
     "label": "The left margin of the checkmark icon after the menu item is checked",
-    "default": "5px",
-    "placeholder": "default: 5px"
+    "default": "6px",
+    "placeholder": "default: 6px"
   },
   {
     "type": "string",
@@ -371,8 +343,8 @@
     "type": "string",
     "property": "cmi-checkmark-margin-right_cover_2",
     "label": "The right margin of the checkmark icon after the menu item is checked",
-    "default": "6px",
-    "placeholder": "default:6px"
+    "default": "8px",
+    "placeholder": "default: 8px"
   },
   {
     "type": "string",
@@ -385,15 +357,15 @@
     "type": "string",
     "property": "cmi-submenu-padding_cover_2",
     "label": "The padding of most sub-menu items after the menu item is checked",
-    "default": "27px",
-    "placeholder": "default: 27px"
+    "default": "30px",
+    "placeholder": "default: 30px"
   },
   {
     "type": "string",
     "property": "cmi-special-submenu-padding_2",
     "label": "Very few special sub-menu items padding: ",
-    "default": "5px",
-    "placeholder": "default: 5px"
+    "default": "6px",
+    "placeholder": "default: 6px"
   },
   {
     "type": "string",
@@ -402,33 +374,18 @@
     "default": "24px",
     "placeholder": "default: 24px"
   },
-  {
-    "type": "string",
-    "property": "cmi-extensions-margin-left_2",
-    "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values..",
-    "default": "-1px",
-    "placeholder": "default: -1px"
-  },
-  {
-    "type": "string",
-    "property": "cmi-extensions-margin-right_2",
-    "label": "[Align extension icons in menu]If the extensions icon of the context menu is not aligned properly with the icon inserted by CMI, please try to modify the following values..",
-    "default": "8px",
-    "placeholder": "default: 8px"
-  },
-    
+
 {
   "type": "separator",
   "label": "",
   "margin": "15px 0 15px 0"
 },
-    
+
   {
 
     "type": "checkbox",
     "property": "svg.context-properties.content.enabled",
     "label": "( This option is merely verifies dependency configuration. Keep it enabled if you want to use CMI normally. )",
     "defaultValue": true
-
   }
 ]
