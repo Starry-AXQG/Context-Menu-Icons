@@ -14,16 +14,18 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
 --------------------------- Guide end --------------------------- */
 
 /* -- Part 1: Global -- */
-/* 1. 校正身份容器的菜单文本 (右键“新建标签页”）*/
+/* 1. 校正身份容器的菜单文本 (右键“新建标签页”时弹出的菜单)*/
 /* 1. Menu text for correcting the container (When you right-click "new tab") */
 :root {
-  /* 🌟 If you are using Firefox, changing it to 36px might be more appropriate. */
-  --container-padding: var(--cmi-Padding-Container, 34px);
+
+  --container-padding: var(--cmi-Padding-Container, 30px);
   --menuseparator-opacity: var(--cmi-menuseparator-opacity, 0.5);
-  /* 🌟 cmi fold menu item ids
+
+  /* ☑️ Optional: cmi fold menu item ids
   --cmi-fold-item-ids:
   */
-  /* fold menu label 
+
+  /* ☑️ Optional: fold menu label 
   --cmi-fold-menu-label:
   */
 }
@@ -61,11 +63,11 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --special-submenu-padding: var(--cmi-special-submenu-padding_1, 12px);
     --Non-checkmark-subitems-padding: var(--cmi-non-checkmark-subitems-padding_1, 24px);
 
-/* CMI Preferences: Align the icons of the extensions with those of CMI */
-    /* 图标左边距（图标与左侧边框之间） */
-    --zen-extensions-margin-left: var(--cmi-extensions-margin-left_1, 4px);
-    /* 图标右边距（图标与文字之间） */
-    --zen-extensions-margin-right: var(--cmi-extensions-margin-right_1, 8px);
+/* ☑️ Optional: Advanced customization */
+    /* The leftmargin of icons from browser extensions */
+    --cmi-extension-icon-leftmargin: var(--cmi-extension-icon-leftmargin_1, 4px);
+    /* The position of the menu text */
+    --cmi-menu-text-leftmargin: var(--cmi-menu-text-leftmargin_1, 8px);
 
 
 /* Special Margins in Library Views */
@@ -101,11 +103,11 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --special-submenu-padding: var(--cmi-special-submenu-padding_2, 6px);
     --Non-checkmark-subitems-padding: var(--cmi-non-checkmark-subitems-padding_2, 24px);
 
-    /* CMI Preferences: Align the icons of the extensions with those of CMI */
-    /* 图标左边距（图标与左侧边框之间） */
-    --zen-extensions-margin-left: var(--cmi-extensions-margin-left_2, -1px);
-    /* 图标右边距（图标与文字之间） */
-    --zen-extensions-margin-right: var(--cmi-extensions-margin-right_2, 8px);
+/* ☑️ Optional: Advanced customization */
+    /* The leftmargin of icons from browser extensions */
+    --cmi-extension-icon-leftmargin: var(--cmi-extension-icon-leftmargin_2, 0px);
+    /* The position of the menu text */
+    --cmi-menu-text-leftmargin: var(--cmi-menu-text-leftmargin_2, 8px);
 
     /* Special Margins in Library Views */
     --padding-viewColumns: 6px;
