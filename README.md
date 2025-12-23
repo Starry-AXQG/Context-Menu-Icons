@@ -5,7 +5,7 @@
     </a>
 </div>
 
-<h2 align="center">Bring the icon of the context menu back to Zen/Firefox</h2>
+<h2 align="center">Improve the context menu by adding icons,fold menu items and more. Support Firefox/Zen</h2>
 
 Demo image:
 FluentUI(left side）, ZenUI(right side)
