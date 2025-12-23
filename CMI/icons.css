@@ -1366,7 +1366,6 @@
   /*ZenUI*/
   @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
     :root {
-
         --zen-contextmenu-menuitem-padding-inline: 6px !important;
         --zen-contextmenu-menuicon-margin-inline: 3px !important;
         --zen-contextmenu-menuitem-margin: 0px 2px !important;
@@ -2361,49 +2360,6 @@ menuitem#context_zen-add-essential[badge]::after {
 }
   
 
-  /* Align the icons of the extension with those of CMI */
-  /* ==== 1. 声明命名空间 & 作用域 ==== */
-@-moz-document url-prefix("chrome://browser/content/browser.xhtml") {
-  @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-  @media (
-    -moz-pref("cmi-Align-Extension-Icons")
-  ) {
-  /* ==== 2. 自定义变量（方便后续统一调整） ==== */
-  :root {
-    /* 图标上下边距（图标与上下菜单项之间） */
-    --zen-cmenu-icon-margin-block: 2px !important;
-    /* 图标固定尺寸（保证所有图标同高同宽） */
-    --zen-cmenu-icon-size: 16px !important;
-  }
-
-  /* ==== 3. 针对所有上下文菜单项中的图标 ==== */
-  menupopup > menuitem > .menu-icon,
-  menupopup > menu > .menu-icon {
-    /* 固定图标大小 */
-    width: var(--zen-cmenu-icon-size);
-    height: var(--zen-cmenu-icon-size);
-
-    /* 调整外边距：左、右、上下 */
-    margin-inline-start: var(--zen-extensions-margin-left);
-    margin-inline-end: var(--zen-extensions-margin-right);
-    margin-block-start: var(--zen-cmenu-icon-margin-block);
-    margin-block-end: var(--zen-cmenu-icon-margin-block);
-
-    /* 内边距保持 0（图标本身不要额外内边距） */
-    padding: 0 !important;
-  }
-
-  /* ==== 4. 文本也向右推进，和图标保持间距一致 ==== */
-  menupopup > menuitem .menu-text,
-  menupopup > menu .menu-text {
-    padding-inline-start: 0 !important; /* 重置可能已有的内边距 */
-    margin-inline-start: 0 !important;  /* 重置可能已有的外边距 */
-    /* 让文字紧贴图标右侧 */
-    padding-inline-start: var(--zen-extensions-margin-right);
-  }
-    }
-}
-
 /*  Preference of Bookmark Toolbar Style */
 @media (-moz-pref("cmi-Center-Bookmark-Items")){
   #PlacesToolbarItems {
@@ -3087,38 +3043,41 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menu
 
 
 /* App Menu Margin for Firefox */
-.addon-banner-item,
-.panel-banner-item {
-  margin: 2px 4px 2px !important;
-  padding-inline: 4px 12px !important;
-  padding-block: var(--arrowpanel-menuitem-padding-block) !important;
-  border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+@media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
+  .addon-banner-item,
+  .panel-banner-item {
+    margin: 2px 4px 2px !important;
+    padding-inline: 4px 12px !important;
+    padding-block: var(--arrowpanel-menuitem-padding-block) !important;
+    border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+  }
+
+  #appMenu-fxa-label2 label,
+  #PanelUI-fxa-menu-syncnow-button label {
+    margin-block: 0 !important;
+  }
+
+  .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined)>.toolbarbutton-text,
+  .subviewbutton:not(#appMenu-zoom-controls > .subviewbutton,
+  toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"],toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"] /* 💾 */
+  )>.toolbarbutton-icon+.toolbarbutton-text,
+  #appMenu-fxa-label2>vbox {
+    padding-inline-start: var(--fp-arrowpanel-menuicon-margin-inline) !important;
+  }
+
+  /* special case menuitems with no icons */
+  #appMenu-zoom-controls>.toolbarbutton-text,
+  #fxa-manage-account-button>vbox,
+  #PanelUI-fxa-menu-syncnow-button>hbox {
+    padding-inline-start: calc(16px + var(--fp-arrowpanel-menuicon-margin-inline)) !important;
+  }
+  /* Icons Size
+  .subviewbutton>.toolbarbutton-icon {
+    width: 16px ;
+  }
+  */
 }
 
-#appMenu-fxa-label2 label,
-#PanelUI-fxa-menu-syncnow-button label {
-  margin-block: 0 !important;
-}
-
-.widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined)>.toolbarbutton-text,
-.subviewbutton:not(#appMenu-zoom-controls > .subviewbutton,
-toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"],toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"] /* 💾 */
-)>.toolbarbutton-icon+.toolbarbutton-text,
-#appMenu-fxa-label2>vbox {
-  padding-inline-start: var(--fp-arrowpanel-menuicon-margin-inline) !important;
-}
-
-/* special case menuitems with no icons */
-#appMenu-zoom-controls>.toolbarbutton-text,
-#fxa-manage-account-button>vbox,
-#PanelUI-fxa-menu-syncnow-button>hbox {
-  padding-inline-start: calc(16px + var(--fp-arrowpanel-menuicon-margin-inline)) !important;
-}
-/* Icons Size
-.subviewbutton>.toolbarbutton-icon {
-  width: 16px ;
-}
-*/
 @media (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
   #appMenuRecentlyClosedTabs,
   #appMenuRecentlyClosedWindows,
