@@ -316,15 +316,15 @@
     "type": "string",
     "property": "cmi-extension-icon-leftmargin_1",
     "label": "☑️ Optional: Advanced customization - The left margin of icons from browser extension in context menu",
-    "default": "24px",
-    "placeholder": "default: 24px"
+    "default": "0px",
+    "placeholder": "default: 0px(Disbale)"
   },
   {
     "type": "string",
     "property": "cmi-menu-text-leftmargin_1",
     "label": "☑️ Optional: Advanced customization - The left margin of menu text in context menu(This will simultaneously modify the margin rules that have already been in effect for CMI. You can re-adjust the margin rules of CMI)",
-    "default": "24px",
-    "placeholder": "default: 24px"
+    "default": "0px",
+    "placeholder": "default: 0px(Disbale)"
   },
 
 {
@@ -393,15 +393,15 @@
     "type": "string",
     "property": "cmi-extension-icon-leftmargin_2",
     "label": "☑️ Optional: Advanced customization - The left margin of icons from browser extension in context menu",
-    "default": "24px",
-    "placeholder": "default: 24px"
+    "default": "0px",
+    "placeholder": "default: 0px(Disbale)"
   },
   {
     "type": "string",
     "property": "cmi-menu-text-leftmargin_2",
     "label": "☑️ Optional: Advanced customization - The left margin of menu text in context menu(This will simultaneously modify the margin rules that have already been in effect for CMI. You can re-adjust the margin rules of CMI)",
-    "default": "24px",
-    "placeholder": "default: 24px"
+    "default": "0px",
+    "placeholder": "default: 0px(Disbale)"
   },
 {
   "type": "separator",

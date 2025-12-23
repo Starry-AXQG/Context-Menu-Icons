@@ -3095,9 +3095,6 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menu
 /* Easily change the positions of the icons in the context menu, as well as the location of the menu text (the distance between the text and the icons) */
 @-moz-document url-prefix("chrome://browser/content/browser.xhtml") {
   @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-  @media (
-    -moz-pref("cmi-Align-Extension-Icons")
-  ) {
   :root {
     /* Icon top and bottom margin */
     --zen-cmenu-icon-margin-block: 2px !important;
@@ -3132,4 +3129,3 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menu
     padding-inline-start: var(--cmi-menu-text-leftmargin) !important;
   }
   }
-}
