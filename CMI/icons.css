@@ -3129,7 +3129,7 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menu
     padding-inline-start: 0 !important; /* Reset the possible padding */
     margin-inline-start: 0 !important;  /* Reset the possible margin */
     /* The position of the menu text */
-    padding-inline-start: var(--cmi-menu-text-leftmargin);
+    padding-inline-start: var(--cmi-menu-text-leftmargin) !important;
   }
   }
 }
