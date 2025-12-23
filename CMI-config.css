@@ -44,11 +44,11 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --checkmark-width: 16px;
     --checkmark-height: 16px;
 
-    --checkmark-margin-left: var(--cmi-checkmark-margin-left_1, 11px);
-    --checkmark-margin-left_cover: var(--cmi-checkmark-margin-left_cover_1, 11px);
+    --checkmark-margin-left: var(--cmi-checkmark-margin-left_1, 6px);
+    --checkmark-margin-left_cover: var(--cmi-checkmark-margin-left_cover_1, 8px);
 
-    --checkmark-margin-right: var(--cmi-checkmark-margin-right_1, 7px);
-    --checkmark-margin-right_cover: var(--cmi-checkmark-margin-right_cover_1, 11px);
+    --checkmark-margin-right: var(--cmi-checkmark-margin-right_1, 8px);
+    --checkmark-margin-right_cover: var(--cmi-checkmark-margin-right_cover_1, 10px);
 
     --checkmark-bg-image: url("checkmark.svg");
     --checkmark-mask: none;
@@ -56,10 +56,10 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --checkmark-moz-context: fill, fill-opacity;
     --checkmark-fill: currentColor;
 
-    --submenu-padding: var(--cmi-submenu-padding_1, 34px);
-    --submenu-padding_cover: var(--cmi-submenu-padding_cover_1, 38px);
-    --special-submenu-padding: var(--cmi-special-submenu-padding_1, 11px);
-    --Non-checkmark-subitems-padding: var(--cmi-non-checkmark-subitems-padding_1, 28px);
+    --submenu-padding: var(--cmi-submenu-padding_1, 30px);
+    --submenu-padding_cover: var(--cmi-submenu-padding_cover_1, 34px);
+    --special-submenu-padding: var(--cmi-special-submenu-padding_1, 12px);
+    --Non-checkmark-subitems-padding: var(--cmi-non-checkmark-subitems-padding_1, 24px);
 
 /* CMI Preferences: Align the icons of the extensions with those of CMI */
     /* 图标左边距（图标与左侧边框之间） */
@@ -82,8 +82,8 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --checkmark-width: 16px;
     --checkmark-height: 16px;
 
-    --checkmark-margin-left: var(--cmi-checkmark-margin-left_2, 5px);
-    --checkmark-margin-left_cover: var(--cmi-checkmark-margin-left_cover_2, 5px);
+    --checkmark-margin-left: var(--cmi-checkmark-margin-left_2, 6px);
+    --checkmark-margin-left_cover: var(--cmi-checkmark-margin-left_cover_2, 6px);
 
     --checkmark-margin-right: var(--cmi-checkmark-margin-right_2, 8px);
 
@@ -96,9 +96,9 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --checkmark-moz-context: none;
     --checkmark-fill: none;
 
-    --submenu-padding: var(--cmi-submenu-padding_2, 34px);
-    --submenu-padding_cover: var(--cmi-submenu-padding_cover_2, 27px);
-    --special-submenu-padding: var(--cmi-special-submenu-padding_2, 5px);
+    --submenu-padding: var(--cmi-submenu-padding_2, 30px);
+    --submenu-padding_cover: var(--cmi-submenu-padding_cover_2, 30px);
+    --special-submenu-padding: var(--cmi-special-submenu-padding_2, 6px);
     --Non-checkmark-subitems-padding: var(--cmi-non-checkmark-subitems-padding_2, 24px);
 
     /* CMI Preferences: Align the icons of the extensions with those of CMI */
