@@ -2601,12 +2601,18 @@ I fixed these errors and enhanced some of its features, making it more compatibl
 @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) {
 /* Part 1 of global rule */
 :root {
+  --fp-contextmenu-menuicon-margin-inline: 10px;
+  --fp-contextmenu-menuitem-padding-inline: 6px;
+@media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
   --fp-contextmenu-menuicon-margin-inline: 12px;
   --fp-contextmenu-menuitem-padding-inline: 10px;
-  --fp-arrowpanel-menuicon-margin-inline: 14px;
-  
+}
   --arrowpanel-menuitem-padding-block: 6px !important;
+
+  /*
+  --fp-arrowpanel-menuicon-margin-inline: 14px;
   --arrowpanel-menuitem-padding-inline: 10px !important;
+  */
 }
 
 menu > .menu-iconic-text,
