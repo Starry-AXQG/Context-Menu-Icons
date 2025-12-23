@@ -2563,13 +2563,13 @@ I fixed these errors and enhanced some of its features, making it more compatibl
   --fp-contextmenu-menuicon-margin-inline: 8px;
   --fp-contextmenu-menuitem-padding-inline: 6px;
   --group-padding: var(--fp-contextmenu-menuicon-margin-inline);
-  
-  --arrowpanel-menuitem-padding-block: 6px !important;
-  --fp-arrowpanel-menuicon-margin-inline: 14px;
-  --arrowpanel-menuitem-padding-inline: 10px !important;
 }
 
-
+  --fp-arrowpanel-menuicon-margin-inline: 14px;
+  --arrowpanel-menuitem-border-radius: 4px !important;
+  --arrowpanel-menuitem-padding-block: 6px !important;
+  --arrowpanel-menuitem-padding-inline: 10px !important;
+  
 @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
   --fp-contextmenu-menuicon-margin-inline: 12px;
   --fp-contextmenu-menuitem-padding-inline: 10px;
@@ -3043,7 +3043,6 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menu
 
 
 /* App Menu Margin for Firefox */
-@media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
   .addon-banner-item,
   .panel-banner-item {
     margin: 2px 4px 2px !important;
@@ -3076,7 +3075,7 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menu
     width: 16px ;
   }
   */
-}
+
 
 @media (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
   #appMenuRecentlyClosedTabs,
