@@ -2608,11 +2608,9 @@ I fixed these errors and enhanced some of its features, making it more compatibl
   --fp-contextmenu-menuitem-padding-inline: 10px;
 }
   --arrowpanel-menuitem-padding-block: 6px !important;
-
-  /*
   --fp-arrowpanel-menuicon-margin-inline: 14px;
   --arrowpanel-menuitem-padding-inline: 10px !important;
-  */
+
 }
 
 menu > .menu-iconic-text,
