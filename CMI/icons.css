@@ -2402,131 +2402,133 @@ I fixed these errors and enhanced some of its features, making it more compatibl
 @media (not (-moz-pref("cmi-Auto-Hide-BookmarkBar", 0))) {
   @media (not ((-moz-pref("zen.view.use-single-toolbar")))) {
   /* Disabled in the compact mode (hide toolbar) to prevent conflicts. */
-  @media (not ((-moz-pref("zen.view.compact.hide-toolbar")) and (-moz-pref("zen.view.compact.enable-at-startup")))) {
-  /* Bookmark bar color style */
-  @media (-moz-pref("cmi-bookmarks-theme-transparent")) {
-    #PersonalToolbar:not([customizing]) {
-      background-color: var(--zen-colors-tertiary) !important;
+    @media (not ((-moz-pref("zen.view.compact.hide-toolbar")) and (-moz-pref("zen.view.compact.enable-at-startup")))) {
+    /* Bookmark bar color style */
+    @media (-moz-pref("cmi-bookmarks-theme-transparent")) {
+      #PersonalToolbar:not([customizing]) {
+        background-color: var(--zen-colors-tertiary) !important;
+      }
     }
-  }
 
-  @media (not (-moz-pref("cmi-bookmarks-theme-transparent"))) {
-    #personal-bookmarks toolbarbutton.bookmark-item:not(#OtherBookmarks) {
-      border-radius: 11px !important;
-      background-color: light-dark(rgba(255,255,255,0.45), rgba(0,0,0,0.55)) !important;
-      height: 24px;
+    @media (not (-moz-pref("cmi-bookmarks-theme-transparent"))) {
+      #personal-bookmarks toolbarbutton.bookmark-item:not(#OtherBookmarks) {
+        border-radius: 11px !important;
+        background-color: light-dark(rgba(255,255,255,0.45), rgba(0,0,0,0.55)) !important;
+        height: 24px;
+      }
     }
-  }
 
-  /* Adapt for firefox */
-  @media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
-  #navigator-toolbox {
-    z-index: 3 !important;
- /* border-bottom: 0 !important; */
-  }
-  }
-  /* Adapt for Zen (Since zen v1.17.1) */
-  @media (-moz-pref("zen.view.compact.enable-at-startup")) {
-  #navigator-toolbox {
-    height: calc(100% - (var(--zen-element-separation) * 4.5)) !important;
-  }
-  }
-  /* Bookmark bar Style */  
-  #personal-bookmarks
-    #PlacesToolbarItems
-    > toolbarbutton.bookmark-item:not(
-      .subviewbutton,
-      [disabled="true"],
-      [open]
-    ):hover {
-      border-radius: 11px !important;
-      scale: 1.05 !important;
-  }
-
-  #personal-bookmarks
-    #PlacesToolbarItems
-    > toolbarbutton.bookmark-item:not(
-      .subviewbutton,
-      [disabled="true"]
-    ):hover:active {
-      border-radius: 11px !important;
-      scale: 1.05 !important;  
-      filter: brightness(1.5);
-  }
-
-  #personal-bookmarks
-    #PlacesToolbarItems
-    > toolbarbutton.bookmark-item[open="true"] {
-      border-radius: 11px !important;
-      scale: 1.05 !important;  
-      filter: brightness(1.5);
-  }
-  
-
-  /* 常态下隐藏书签栏,并避免书签栏影响网页交互 */
-    #PersonalToolbar {   
-      position: absolute;
+    /* Adapt for firefox */
     @media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
-      top: 100% !important; 
+    #navigator-toolbox {
+      z-index: 3 !important;
+  /* border-bottom: 0 !important; */
     }
-      left: 0 !important;
-      right: 0 !important;
-      opacity: 0 !important;
-      transform: rotateX(90deg) !important;
-      transform-origin: top;
-      transition: 
-        opacity 250ms ease-out,
-        transform 250ms ease-out !important;
-      z-index: 1;
+    }
+    /* Adapt for Zen (Since zen v1.17.1) */
+    @media (-moz-pref("zen.view.compact.enable-at-startup")) {
+    #navigator-toolbox {
+      height: calc(100% - (var(--zen-element-separation) * 4.5)) !important;
+    }
+    }
+    /* Bookmark bar Style */  
+    #personal-bookmarks
+      #PlacesToolbarItems
+      > toolbarbutton.bookmark-item:not(
+        .subviewbutton,
+        [disabled="true"],
+        [open]
+      ):hover {
+        border-radius: 11px !important;
+        scale: 1.05 !important;
     }
 
+    #personal-bookmarks
+      #PlacesToolbarItems
+      > toolbarbutton.bookmark-item:not(
+        .subviewbutton,
+        [disabled="true"]
+      ):hover:active {
+        border-radius: 11px !important;
+        scale: 1.05 !important;  
+        filter: brightness(1.5);
+    }
 
-  #PersonalToolbar:has([open]),
-  #PersonalToolbar:has([aria-expanded="true"]),
-  #PersonalToolbar:has(menupopup[open]),
-  #PersonalToolbar:has(menu[open]),
-  #PersonalToolbar:has(.bookmark-item[open]),
-  #PersonalToolbar:focus-within {
-    opacity: 1 !important;
-    transform: translateY(0) rotateX(0deg) !important;
-  }
-
-
-  /* Expand the bookmarks toolbar by hovering */
-  @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 1)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
+    #personal-bookmarks
+      #PlacesToolbarItems
+      > toolbarbutton.bookmark-item[open="true"] {
+        border-radius: 11px !important;
+        scale: 1.05 !important;  
+        filter: brightness(1.5);
+    }
     
-    /* --- CSS Version (When JavaScript cannot be used) --- */
-    @media (not (-moz-pref("cmi-AHB-enable-JS",true))) {
-      #nav-bar:hover + #PersonalToolbar,
-      #PersonalToolbar:hover {
+
+    /* 常态下隐藏书签栏,并避免书签栏影响网页交互 */
+      #PersonalToolbar {   
+        position: absolute;
+      @media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
+        top: 100% !important; 
+      }
+        left: 0 !important;
+        right: 0 !important;
+        opacity: 0 !important;
+        transform: rotateX(90deg) !important;
+        transform-origin: top;
+        transition: 
+          opacity 250ms ease-out,
+          transform 250ms ease-out !important;
+        z-index: 1;
+      }
+
+
+    #PersonalToolbar:has([open]),
+    #PersonalToolbar:has([aria-expanded="true"]),
+    #PersonalToolbar:has(menupopup[open]),
+    #PersonalToolbar:has(menu[open]),
+    #PersonalToolbar:has(.bookmark-item[open]),
+    #PersonalToolbar:focus-within {
+      opacity: 1 !important;
+      transform: translateY(0) rotateX(0deg) !important;
+    }
+
+
+    /* Expand the bookmarks toolbar by hovering */
+    @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 1)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
+      
+      /* --- CSS Version (When JavaScript cannot be used) --- */
+      @media (not (-moz-pref("cmi-AHB-enable-JS",true))) {
+        #nav-bar:hover + #PersonalToolbar,
+        #PersonalToolbar:hover {
+          opacity: 1 !important;
+          transform: rotateX(0deg) !important;
+        }
+        /* Display when drop link (Only supports Zen, does not support Firefox) */  
+        #zen-appcontent-navbar-wrapper[zen-has-hover="true"] #PersonalToolbar {
+          opacity: 1 !important;
+          transform: translateY(0) rotateX(0deg) !important;
+        }
+      }
+
+      /* --- JS Version (Preferred): Support drag link event, support touch, support Firefox --- */
+      @media (-moz-pref("cmi-AHB-enable-JS",true)) {
+        body.show-bookmarks #PersonalToolbar {
+          opacity: 1 !important;
+          transform: translateY(0) rotateX(0deg) !important;
+        }    
+      }
+    }
+    }
+    /* Expand the bookmarks toolbar when you search */
+    @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 2)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
+      #nav-bar:focus-within + #PersonalToolbar {
         opacity: 1 !important;
         transform: rotateX(0deg) !important;
       }
-      /* Display when drop link (Only supports Zen, does not support Firefox) */  
-      #zen-appcontent-navbar-wrapper[zen-has-hover="true"] #PersonalToolbar {
-        opacity: 1 !important;
-        transform: translateY(0) rotateX(0deg) !important;
-      }
     }
-
-    /* --- JS Version (Preferred): Support drag link event, support touch, support Firefox --- */
-    @media (-moz-pref("cmi-AHB-enable-JS",true)) {
-      body.show-bookmarks #PersonalToolbar {
-        opacity: 1 !important;
-        transform: translateY(0) rotateX(0deg) !important;
-      }    
-    }
-  }
-
-  /* Expand the bookmarks toolbar when you search */
-  @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 2)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
-    #nav-bar:focus-within + #PersonalToolbar {
-      opacity: 1 !important;
-      transform: rotateX(0deg) !important;
-    }
+    
   }
 }
-}
+
 
 /* Other Preferences */
 /* Replace the default Firefox logo with a custom one in the identity popup and identity box. */
