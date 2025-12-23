@@ -299,13 +299,6 @@
   },
   {
     "type": "string",
-    "property": "cmi-group-padding_1",
-    "label": "When the context menu items have a \"checkmark\" item selected, reset the left margin of the menu text to align it.",
-    "default": "10px",
-    "placeholder": "default: 10px"
-  },
-  {
-    "type": "string",
     "property": "cmi-submenu-padding_1",
     "label": "The padding of most sub-menu items",
     "default": "34px",
@@ -380,13 +373,6 @@
     "label": "The right margin of the checkmark icon after the menu item is checked",
     "default": "6px",
     "placeholder": "default:6px"
-  },
-  {
-    "type": "string",
-    "property": "cmi-group-padding_2",
-    "label": "When the context menu items have a \"checkmark\" item selected, reset the left margin of the menu text to align it.",
-    "default": "4px",
-    "placeholder": "default: 4px"
   },
   {
     "type": "string",
