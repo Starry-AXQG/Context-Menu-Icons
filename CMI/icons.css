@@ -3094,6 +3094,7 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menu
 /* Optional: Advanced customization (Force the relocation of the icons from the extensions) */
 /* Easily change the positions of the icons in the context menu, as well as the location of the menu text (the distance between the text and the icons) */
 @-moz-document url-prefix("chrome://browser/content/browser.xhtml") {
+  
   @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
   :root {
     /* Icon top and bottom margin */
@@ -3128,4 +3129,5 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menu
     /* The position of the menu text */
     padding-inline-start: var(--cmi-menu-text-leftmargin) !important;
   }
-  }
+
+}
