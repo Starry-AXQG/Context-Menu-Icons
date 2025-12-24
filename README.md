@@ -7,18 +7,28 @@
 
 <h2 align="center">Improve the context menu by adding icons,fold menu items and more. Support Firefox/Zen</h2>
 
-Demo image:
-FluentUI(left side）, ZenUI(right side)
+# Main function:
+	- 🖼️ Add icons: Add appropriate icons to the context menu of the browser to make it easier to use
+	- 🖊️️️ Optimize the style: Optimize the style of the tab-Context-Menu to make it look more modern and concise.
+	- ✅️ Automatically manage menu items, allowing you to have them automatically hidden when they are unavailable.
+	- 📚 Fold menu items: Easily manage the menu items you don't frequently use and fold them to a place where you don't want to see them.
+## In conclusion, we hope that you will be able to obtain a highly customizable and clean, simple context menu.
+
+## Additional preference settings:
+	- 📏 Center bookmark toolbar items
+	- 👁️ Hidden unnecessary elements of bookmark-bar 
+	- ✨ Automatically hide the bookmark bar (Enhanced through JS, it is applicable to various scenarios.)
+
+Demo image ( Support two sets of linear icons with different styles. FluentUI left, ZenUI right):
 
 ![PixPin_2025-07-06_21-04-53](https://github.com/user-attachments/assets/c2da0b31-b811-4c32-a245-e888d00562c7)
 
-Demo for CMI-fold-menu-JS:
+Demo for CMI-fold-menu-JS (Fold the unnecessary menu items like the context menu in Windows 11 for ease of use):
 
 https://github.com/user-attachments/assets/f8b4e420-0512-4b51-b923-53252b7c6f8a
 
-✨ Some preview images of display effects, all the menus have been correctly mapped with icons
 
-# 🚀 Announcement:
+# 📢 Announcement:
 This project will undergo frequent and continuous updates to ensure that it remains functional even after browser updates.
 
 Added appropriate icons to the context menus of zenFolderand zenWorkspace(Zen v1.15b)  ✅
@@ -31,7 +41,7 @@ Now, it also supports usage on Firefox.（since mod v1.2.1)
 
 ---
 
-## CMI-fold-menu-JS Guide:
+## 📖 CMI-fold-menu-JS Guide:
 
 ### Overview
 In version 2.1, CMI introduced JavaScript code to help users simplify the lengthy context menus. Fold infrequently used context menu items from the page context menu (contentAreaContextMenu) into a single submenu labeled "Show More Options". The goal is to declutter the context menu while preserving full access to folded item
@@ -118,7 +128,7 @@ search`Context menu icons`then click on "Install"
    
 
 
-***Method Two： install manually（not recommend)***
+***Method Two： install manually（not recommend, not support advanced functions of CMI)***
 （Manual installation requires you to frequently manually replace the files in order to support future updates.)
 
 1. 📁 **Create the Chrome Folder**
@@ -126,32 +136,14 @@ search`Context menu icons`then click on "Install"
 
 2. 📦 **Download the Mod(Choose any one of the following download methods.)**
    - Download the files from the repository (click "Code",then click"Download ZIP")
-   - Download the file from the [latest release](https://github.com/1247343406/context-menu-icons-for-Zen/releases).
-   - Extract it and paste the `icons` folder inside your `chrome` directory.
+   - Download the file from the [latest release](https://github.com/Starry-AXQG/context-menu-icons-for-Zen/releases).
+   - Move all the files in the compressed package to the `chrome` folder.
 
-4. 🧩 **Apply the Mod**
-   You have two options:
-
-   **Option A** – *Manual Import*
-   - Open your `userChrome.css` and add:
-     ```css
-     @import "icons/icons.css";
-     ```
-  no have userChrome.css?
-  
-  **Option B-1**
-   - open (or create) `userContent.css` and add:
-     ```css
-     @import "icons/icons.css";
-     ```
-   **Option B-2** – *Use Provided Files*
-   - Use the `userChrome.css`  files provided in the ZIP and paste them directly into your `chrome` folder.
-
-5. 🔄 **Restart the Browser**
-   Reopen Zen to apply the UI changes.
+3. 🔄 **Restart the Browser**
+   Reopen browser to apply the UI changes.
 
 If you choose to install manually, you will need to perform some simple configuration tasks.
-[Here you can view all the preference settings of CMI.](https://github.com/1247343406/context-menu-icons-for-Zen?tab=readme-ov-file#-preferences-)
+[Here you can view all the preference settings of CMI.](https://github.com/Starry-AXQG/context-menu-icons-for-Zen?tab=readme-ov-file#-preferences-)
 
 *** ⚠️If you are using the Firefox browser and choose to install manually⚠️  ***
 
@@ -161,9 +153,10 @@ If all of the above are confirmed to be correct, after restarting the browser, y
 ---
 
 
-## 📚 Preferences 📚
+## ⚙️ Preference settings
 
-（If you use Sine, you can directly manage the preferences of the mod through Sine.)
+   - If you use Sine, you can directly manage the preferences of the mod through Sine.
+   - The following instructions are applicable only to users who perform the installation manually.
 
 ***Access `about:config`via the address bar,Search for and add the attribute names given below***
 
@@ -171,26 +164,30 @@ If all of the above are confirmed to be correct, after restarting the browser, y
 
 
 
-
 1. `cmi-Switch-Icon-Package` （Whether you have changed this attribute value or not, the default choice is to use FluentUI）.
 
-[Main]This attribute enables you to select the icon package，use numbers to make a selection(v1.4 add)
+This attribute enables you to select the icon package，use numbers to make a selection(v1.4 add)
 
-    If you want to use FluentUI：1
+   - If you want to use FluentUI：1
 
    
 <img width="240" height="613" alt="image" src="https://github.com/user-attachments/assets/7efa6b0a-8d4d-4791-a0c4-028b1fe20715" />
 
 
 
-   If you want to use ZenUI：2
+   - If you want to use ZenUI：2
     
 <img width="226" height="613" alt="image" src="https://github.com/user-attachments/assets/dbea869e-9dda-4605-a7de-b88b6d40f50b" />
 
 
 
+2. `cmi-Switch-Gecko-Branch`
 
-2. `cmi-Disable-Better-Context-Menu`
+   - Indicate the browser you are using.
+   - If you are using Firefox, please set it to `0`,If you neglect this configuration, then an anomaly is almost inevitable.
+   - If you use Zen, you don't need to do anything.
+
+3. `cmi-Disable-Better-Context-Menu`
 
  Use the better context menu. (v1.5 add)  Demo image:
  
@@ -201,24 +198,15 @@ Starting from version 1.7, this preference is enabled by default without any con
 
 3. `cmi-Hide-Inactive-Items-TabContextMenu`
 
-   ✂️ Hide the inactive items in tab-Context-Menu (BETA)
+   ✂️ Hide the inactive items in tab-Context-Menu
 
 4. `cmi-Hide-Inactive-Items-ContentAreaContextMenu`
-5. 
+
    ✂️ Hide the inactive items in ContentArea-Context-Menu (BETA)
    
-6. `cmi-Grayscale-Extensions-Icons`
+5. `cmi-Grayscale-Extensions-Icons`
 
 [icons style]Add grayscale filter to extensions icons of context-menu(v1.3.0 add)
-
-4.`cmi-Align-Extension-Icons`
-
-[Text Style] Align the icons of the extension with those of CMI(Default: Off. Turning this on will make the context menu more orderly.) (1.4 add)
-
-5.`cmi-Align-Extension-Texts`
-
-[Text Style] Align the text of the extension with those of CMI(Default: Off. Turning this on will make the context menu more orderly.) (v1.4 add)
-
 
 6. `cmi-Center-Bookmark-Items`
 
@@ -228,48 +216,49 @@ Starting from version 1.7, this preference is enabled by default without any con
 
 [ Bookmark Toolbar Style ] Hidden Bookmark Folder Icon 📁 ( Enable to make bookmark toolbar more concise )(v1.3.0 add)
 
-8. `cmi-Switch-PC-Platform`
-📚 Choose the platform you are on. 
-Only when you are using this mod on a Linux system, or when this mod is malfunctioning, can you try to modify this preference setting. (v1.9.5 add)
-Windows、MacOS: `1`
-Linux: `2`
+8. `cmi-Hide-Bookmark-Element`
+
+[ Bookmark Toolbar Style ] Hide the other elements of the bookmark toolbar
+
+	- 0: No change
+	- 1: Hide Favcons
+	- 2: Hide Bookmark Names
+	- 3: Hide All (not suggest)
 
 9. `cmi-Hide-OAiT-Item`
     Hide "Open All in Tab" menu item
 <img width="641" height="452" alt="image" src="https://github.com/user-attachments/assets/089331e9-3896-46b1-8784-31fb7c69f799" />
 
+10. `cmi-Auto-Hide-BookmarkBar`
+
+Enable the function of automatically hiding bookmarks
+
+	- 0: Disable
+	- 1: Display while hover the toolbar
+	- 2: Display while search
+	- 3: Display in both cases
+
 ---
 
-## CMI-config file (Only for CMI v2.0 and above)
-** This content will show you the normal working state of CMI and provide a simple guide to inform you of the differences between the self-repair process and the demonstration images. The default configuration file only ensures that the Zen browser can achieve perfect alignment effect on Windows and Linux platforms.**
+## 📏 Customize the margin of the context menu
 
-1. ---
-<img width="350" height="700" alt="image" src="https://github.com/user-attachments/assets/cf581b19-694a-4901-84d3-c6ef93d356b8" />
+1. ---	Global ---
 
-Is it different from what you tab menu style? Please enable `cmi-Align-Extension-Icons` and modify the following values.
+`cmi-Padding-Container`
 
-<img width="2388" height="88" alt="image" src="https://github.com/user-attachments/assets/cd0b1584-bfff-48ec-a3d8-225213608040" />
+
 
 2. ---
-<img width="671" height="170" alt="image" src="https://github.com/user-attachments/assets/78021c8f-3220-49af-a48d-4ec6f21b6fc1" />
 
-Is it different from what you Forward / Backward menu style? Please enable `cmi-Align-Extension-Icons` and modify the following values.
 
-<img width="2388" height="215" alt="image" src="https://github.com/user-attachments/assets/15be89a0-dead-4b0e-95ae-d4bb8b57d8cb" />
 
 3. ---
-<img width="497" height="613" alt="image" src="https://github.com/user-attachments/assets/b11c9d60-523a-4f87-8364-b7b93db97531" />
 
-Is it different from what you bookmark menu style? Please:
 
-<img width="2407" height="358" alt="image" src="https://github.com/user-attachments/assets/8c0c8dce-020f-450d-8603-b59411355245" />
 
 4. ---
-<img width="472" height="410" alt="image" src="https://github.com/user-attachments/assets/a4adb931-97fd-424d-92b4-cdf040cca4a7" />
 
-Are these sub-menus properly aligned? If not, just modify this.
 
-<img width="2412" height="57" alt="image" src="https://github.com/user-attachments/assets/d80786be-d2e6-4f62-83bd-244e0edf1391" />
 
 ---
 
