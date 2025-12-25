@@ -7,15 +7,17 @@
 
 <h2 align="center">Improve the context menu by adding icons,fold menu items and more. Support Firefox/Zen</h2>
 
-# Main function:
+## Main function:
 	- 🖼️ Add icons: Add appropriate icons to the context menu of the browser to make it easier to use
 	- 🖊️️️ Optimize the style: Optimize the style of the tab-Context-Menu to make it look more modern and concise.
 	- ✅️ Automatically manage menu items, allowing you to have them automatically hidden when they are unavailable.
 	- 📚 Fold menu items: Easily manage the menu items you don't frequently use and fold them to a place where you don't want to see them.
-# Additional preference settings:
+## Additional preference settings:
 	- 📏 Center bookmark toolbar items
 	- 👁️ Hidden unnecessary elements of bookmark-bar 
 	- ✨ Automatically hide the bookmark bar (Enhanced through JS, it is applicable to various scenarios.)
+
+---
 
 Demo image ( Support two sets of linear icons with different styles. FluentUI left, ZenUI right):
 
@@ -74,8 +76,8 @@ Demo for CMI-fold-menu-JS:
 https://github.com/user-attachments/assets/f8b4e420-0512-4b51-b923-53252b7c6f8a
 
 )
-  
-### Configuration (For Advanced Users)
+
+### 🛠️ Configuration (For Advanced Users)
 
 #### 1.CSS variable (portable)
 
@@ -84,15 +86,11 @@ Add to CMI-config.css:
 ```
 :root {
   --cmi-fold-item-ids: "context-openlink, context-openlinkprivate, context-sendlinktodevice";	/* Add menu item ids */
- ```
----
 
-```
   --cmi-fold-menu-label: "Show more options"; /*Cover the "Show more options" text (This mod has built-in localization for common languages. However, if you are not satisfied with the localization of the script, or if your language is not included in the localization, you can manually specify the displayed text here. */)
+}
 ```  
 
-}
-`
 
 #### 2.about:config (quick edit)
 
@@ -146,17 +144,17 @@ search`Context menu icons`then click on "Install"
 If you choose to install manually, you will need to perform some simple configuration tasks.
 [Here you can view all the preference settings of CMI.](https://github.com/Starry-AXQG/context-menu-icons-for-Zen?tab=readme-ov-file#-preferences-)
 
-*** ⚠️If you are using the Firefox browser and choose to install manually⚠️  ***
+***⚠️If you are using the Firefox browser and choose to install manually⚠***
 
 you must ensure that in `about:config`, the setting of `svg.context-properties.content.enabled` is set to `true`. This preference is a necessary condition for the mod to function properly. The mod has incorporated the detection of this preference. If you do not do this, the mod will directly refuse to execute.If you use Sine, all these tasks will be completed automatically.
 
 If all of the above are confirmed to be correct, after restarting the browser, you should be able to see the changes.
----
 
+---
 
 ## ⚙️ Preference settings
 
-   - If you use Sine, you can directly manage the preferences of the mod through Sine.
+   - If you use Sine, you can directly manage all the preferences of the mod through Sine.
    - The following instructions are applicable only to users who perform the installation manually.
 
 ***Access `about:config`via the address bar,Search for and add the attribute names given below***
@@ -243,27 +241,42 @@ Enable the function of automatically hiding bookmarks
 
 ## 📏 Customize the margin of the context menu
 
-1. ---	Global ---
+***These settings are usually regarded as an advanced optional option. The default settings already meet the needs of the majority of people.***
 
-`cmi-Padding-Container`
+***Therefore, these more extensive settings are more suitable for users who wish to make more detailed adjustments to the context menu.***
 
+###
 
+Global(No matter which set of icon packages you choose)
 
-2. ---
+1. The left margin of the text in the Menu of Container-Tabs: `cmi-Padding-Container`
 
+###
 
+Single(From here on, all the settings allow you to make separate configurations for each of the two icon packs.Please replace `x` with number 1 or 2. 1:FluentUl, 2:ZenUI)
 
-3. ---
+- 2. The left margin of the checkmark icon in normal circumstances: `cmi-checkmark-margin-left_x`
 
+- 3. The left margin of the checkmark icon after the menu item is checked: `cmi-checkmark-margin-left_cover_x`
 
+- 4. The right margin of the checkmark icon in normal circumstances: `cmi-checkmark-margin-right_x`
 
-4. ---
+- 5. The right margin of the checkmark icon after the menu item is checked: `cmi-checkmark-margin-right_cover_x`
 
+- 6. The padding of most sub-menu items: `cmi-submenu-padding_x`
 
+- 7. The padding of most sub-menu items after the menu item is checked: `cmi-submenu-padding_cover_x`
 
----
+- 8. Very few special sub-menu items padding: `cmi-special-submenu-padding_x`
 
+- 9. When a checkmark item is selected among the context menu items, the margins of the other unselected menu items will be adjusted accordingly: `cmi-non-checkmark-subitems-padding_x`
 
+- 10. Optional: Advanced customization - The left margin of icons from browser extension in context menu: `cmi-extension-icon-leftmargin_x`
+
+- 11. Optional: Advanced customization - The left margin of menu text in context menu: `cmi-menu-text-leftmargin_x`
+
+ (This will simultaneously modify the margin rules that have already been in effect for CMI. You can re-adjust the margin rules of CMI
+ 
 ## Star History
 
 <a href="https://www.star-history.com/#Starry-AXQG/Context-Menu-Icons&Date">
