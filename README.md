@@ -249,31 +249,31 @@ Enable the function of automatically hiding bookmarks
 
 Global(No matter which set of icon packages you choose)
 
-1. The left margin of the text in the Menu of Container-Tabs: `cmi-Padding-Container`
+  1.The left margin of the text in the Menu of Container-Tabs: `cmi-Padding-Container`
 
 ###
 
 Single(From here on, all the settings allow you to make separate configurations for each of the two icon packs.Please replace `x` with number 1 or 2. 1:FluentUl, 2:ZenUI)
 
-- 2. The left margin of the checkmark icon in normal circumstances: `cmi-checkmark-margin-left_x`
+- 2.The left margin of the checkmark icon in normal circumstances: `cmi-checkmark-margin-left_x`
 
-- 3. The left margin of the checkmark icon after the menu item is checked: `cmi-checkmark-margin-left_cover_x`
+- 3.The left margin of the checkmark icon after the menu item is checked: `cmi-checkmark-margin-left_cover_x`
 
-- 4. The right margin of the checkmark icon in normal circumstances: `cmi-checkmark-margin-right_x`
+- 4.The right margin of the checkmark icon in normal circumstances: `cmi-checkmark-margin-right_x`
 
-- 5. The right margin of the checkmark icon after the menu item is checked: `cmi-checkmark-margin-right_cover_x`
+- 5.The right margin of the checkmark icon after the menu item is checked: `cmi-checkmark-margin-right_cover_x`
 
-- 6. The padding of most sub-menu items: `cmi-submenu-padding_x`
+- 6.The padding of most sub-menu items: `cmi-submenu-padding_x`
 
-- 7. The padding of most sub-menu items after the menu item is checked: `cmi-submenu-padding_cover_x`
+- 7.The padding of most sub-menu items after the menu item is checked: `cmi-submenu-padding_cover_x`
 
-- 8. Very few special sub-menu items padding: `cmi-special-submenu-padding_x`
+- 8.Very few special sub-menu items padding: `cmi-special-submenu-padding_x`
 
-- 9. When a checkmark item is selected among the context menu items, the margins of the other unselected menu items will be adjusted accordingly: `cmi-non-checkmark-subitems-padding_x`
+- 9.When a checkmark item is selected among the context menu items, the margins of the other unselected menu items will be adjusted accordingly: `cmi-non-checkmark-subitems-padding_x`
 
-- 10. Optional: Advanced customization - The left margin of icons from browser extension in context menu: `cmi-extension-icon-leftmargin_x`
+- 10.Optional: Advanced customization - The left margin of icons from browser extension in context menu: `cmi-extension-icon-leftmargin_x`
 
-- 11. Optional: Advanced customization - The left margin of menu text in context menu: `cmi-menu-text-leftmargin_x`
+- 11.Optional: Advanced customization - The left margin of menu text in context menu: `cmi-menu-text-leftmargin_x`
 
  (This will simultaneously modify the margin rules that have already been in effect for CMI. You can re-adjust the margin rules of CMI
  
