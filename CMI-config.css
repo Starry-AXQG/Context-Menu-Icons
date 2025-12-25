@@ -14,16 +14,18 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
 --------------------------- Guide end --------------------------- */
 
 /* -- Part 1: Global -- */
-/* 1. 校正身份容器的菜单文本 (右键“新建标签页”）*/
+/* 1. 校正身份容器的菜单文本 (右键“新建标签页”时弹出的菜单)*/
 /* 1. Menu text for correcting the container (When you right-click "new tab") */
 :root {
-  /* 🌟 If you are using Firefox, changing it to 36px might be more appropriate. */
-  --container-padding: var(--cmi-Padding-Container, 34px);
 
-  /* 🌟 cmi fold menu item ids
+  --container-padding: var(--cmi-Padding-Container, 30px);
+  --menuseparator-opacity: var(--cmi-menuseparator-opacity, 0.5);
+
+  /* ☑️ Optional: cmi fold menu item ids
   --cmi-fold-item-ids:
   */
-  /* fold menu label 
+
+  /* ☑️ Optional: fold menu label 
   --cmi-fold-menu-label:
   */
 }
@@ -44,11 +46,11 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --checkmark-width: 16px;
     --checkmark-height: 16px;
 
-    --checkmark-margin-start: var(--cmi-Margin-Checkmark-start_1, 11px);
-    --checkmark-margin-start_cover: var(--cmi-Margin-Checkmark-start_cover_1, 11px);
+    --checkmark-margin-left: var(--cmi-checkmark-margin-left_1, 6px);
+    --checkmark-margin-left_cover: var(--cmi-checkmark-margin-left_cover_1, 8px);
 
-    --checkmark-margin-end: var(--cmi-Margin-Checkmark-end_1, 7px);
-    --checkmark-margin-end_cover: var(--cmi-Margin-Checkmark-end_cover_1, 11px);
+    --checkmark-margin-right: var(--cmi-checkmark-margin-right_1, 8px);
+    --checkmark-margin-right_cover: var(--cmi-checkmark-margin-right_cover_1, 10px);
 
     --checkmark-bg-image: url("checkmark.svg");
     --checkmark-mask: none;
@@ -56,18 +58,16 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --checkmark-moz-context: fill, fill-opacity;
     --checkmark-fill: currentColor;
 
-    /* 对含选中项时的 group / 子菜单 padding 差别 */
-    --group-padding: var(--cmi-Padding-Group_1, 10px);
-    --submenu-padding: var(--cmi-Padding-Submenu_1, 34px);
-    --submenu-padding_cover: var(--cmi-Padding-Submenu_cover_1, 38px);
-    --special-submenu-padding: var(--cmi-Padding-Special-Submenu_1, 11px);
-    --Non-checkmark-subitems-padding: var(--cmi-Padding-Non-Checkmark-subitems_1, 28px);
+    --submenu-padding: var(--cmi-submenu-padding_1, 30px);
+    --submenu-padding_cover: var(--cmi-submenu-padding_cover_1, 34px);
+    --special-submenu-padding: var(--cmi-special-submenu-padding_1, 12px);
+    --Non-checkmark-subitems-padding: var(--cmi-non-checkmark-subitems-padding_1, 24px);
 
-/* CMI Preferences: Align the icons of the extensions with those of CMI */
-    /* 图标左边距（图标与左侧边框之间） */
-    --zen-cmenu-icon-margin-inline-start: var(--cmi-Margin-Extensions-start_1, 4px);
-    /* 图标右边距（图标与文字之间） */
-    --zen-cmenu-icon-margin-inline-end: var(--cmi-Margin-Extensions-end_1, 8px);
+/* ☑️ Optional: Advanced customization */
+    /* The leftmargin of icons from browser extensions */
+    --cmi-extension-icon-leftmargin: var(--cmi-extension-icon-leftmargin_1, 0px);
+    /* The position of the menu text */
+    --cmi-menu-text-leftmargin: var(--cmi-menu-text-leftmargin_1, 0px);
 
 
 /* Special Margins in Library Views */
@@ -83,13 +83,13 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
 
     --checkmark-width: 16px;
     --checkmark-height: 16px;
-    
-    --checkmark-margin-start: var(--cmi-Margin-Checkmark-start_2, 5px);   
-    --checkmark-margin-start_cover: var(--cmi-Margin-Checkmark-start_cover_2, 5px);
 
-    --checkmark-margin-end: var(--cmi-Margin-Checkmark-end_2, 8px);
+    --checkmark-margin-left: var(--cmi-checkmark-margin-left_2, 6px);
+    --checkmark-margin-left_cover: var(--cmi-checkmark-margin-left_cover_2, 6px);
 
-    --checkmark-margin-end_cover: var(--cmi-Margin-Checkmark-end_cover_2, 8px);
+    --checkmark-margin-right: var(--cmi-checkmark-margin-right_2, 8px);
+
+    --checkmark-margin-right_cover: var(--cmi-checkmark-margin-right_cover_2, 8px);
     
     --checkmark-bg-image: none;
     /* 使用 mask + background-color 随主题变色 */
@@ -98,19 +98,16 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --checkmark-moz-context: none;
     --checkmark-fill: none;
 
-    /* group / 子菜单 padding */
-    --group-padding: var(--cmi-Padding-Group_2, 4px);
+    --submenu-padding: var(--cmi-submenu-padding_2, 30px);
+    --submenu-padding_cover: var(--cmi-submenu-padding_cover_2, 30px);
+    --special-submenu-padding: var(--cmi-special-submenu-padding_2, 6px);
+    --Non-checkmark-subitems-padding: var(--cmi-non-checkmark-subitems-padding_2, 24px);
 
-    --submenu-padding: var(--cmi-Padding-Submenu_2, 34px);
-    --submenu-padding_cover: var(--cmi-Padding-Submenu_cover_2, 27px);
-    --special-submenu-padding: var(--cmi-Padding-Special-Submenu_2, 5px);
-    --Non-checkmark-subitems-padding: var(--cmi-Padding-Non-Checkmark-subitems_2, 24px);
-
-    /* CMI Preferences: Align the icons of the extensions with those of CMI */
-    /* 图标左边距（图标与左侧边框之间） */
-    --zen-cmenu-icon-margin-inline-start: var(--cmi-Margin-Extensions-start_2, -1px);
-    /* 图标右边距（图标与文字之间） */
-    --zen-cmenu-icon-margin-inline-end: var(--cmi-Margin-Extensions-end_2, 8px);
+/* ☑️ Optional: Advanced customization */
+    /* The leftmargin of icons from browser extensions */
+    --cmi-extension-icon-leftmargin: var(--cmi-extension-icon-leftmargin_2, 0px);
+    /* The position of the menu text */
+    --cmi-menu-text-leftmargin: var(--cmi-menu-text-leftmargin_2, 0px);
 
     /* Special Margins in Library Views */
     --padding-viewColumns: 6px;

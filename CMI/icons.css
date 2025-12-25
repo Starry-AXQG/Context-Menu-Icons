@@ -63,9 +63,8 @@
       #reload-button {
         list-style-image: url("reload.svg") !important;
       }
-      
-      #stop-button,
-      .close-icon {
+      .close-icon,
+      #stop-button {
         list-style-image: url("close.svg") !important;
       }
       
@@ -105,7 +104,6 @@
         > .urlbarView-no-wrap
         > .urlbarView-favicon,
       #urlbar-engine-one-off-item-history,
-      #sidebar-switcher-history,
       #sidebar-box[sidebarcommand="viewHistorySidebar"]
         > #sidebar-header
         > #sidebar-switcher-target
@@ -190,7 +188,7 @@
       }
       
       #developer-button {
-        list-style-image: url("developer.svg") !important;
+        list-style-image: url("manage.svg") !important;
       }
       
       #new-window-button {
@@ -208,7 +206,6 @@
       }
       
       #bookmarks-menu-button,
-      #sidebar-switcher-bookmarks,
       #sidebar-box[sidebarcommand="viewBookmarksSidebar"]
         > #sidebar-header
         > #sidebar-switcher-target
@@ -351,8 +348,7 @@
       #sidebar-box[sidebarcommand="viewTabsSidebar"]
         > #sidebar-header
         > #sidebar-switcher-target
-        > #sidebar-icon,
-      #sidebar-switcher-tabs {
+        > #sidebar-icon {
         list-style-image: url("send-to-device.svg") !important;
       }
       
@@ -479,7 +475,7 @@
       }
       
       #unified-extensions-manage-extensions {
-        list-style-image: url("developer.svg") !important;
+        list-style-image: url("manage.svg") !important;
       }
     
       /* reload/stop animation */
@@ -856,7 +852,7 @@
       .customize-context-manageExtension,
       #pageActionContextMenuManageExtension,
       .unified-extensions-context-menu-manage-extension {
-        --menu-image: url("developer.svg");
+        --menu-image: url("manage.svg");
       }
       #BMB_viewBookmarksSidebar {
         --menu-image: url("sidebars.svg");
@@ -866,7 +862,7 @@
       }
       
       #PanelUI-historyMore {
-        --menu-image: url("developer.svg");
+        --menu-image: url("manage.svg");
       }
       
       menuitem[id="placesContext_new:bookmark"],
@@ -897,7 +893,8 @@
       
       #context_closeTab,
       #context_closeDuplicateTabs,
-      #orgClose {
+      #orgClose,
+      #sidebar-menu-close {
         --menu-image: url("close.svg");
       }
       #context_closeTabOptions {
@@ -964,93 +961,84 @@
       .unified-extensions-context-menu-move-widget-up {
         --menu-image: url("arrow-up.svg");
       }
-
+      /* FluentUI: Sidebar Menu Icons */
+      #sidebar-switcher-bookmarks {
+        --menu-image: url("bookmark-star-on-tray.svg");
+      }
+      #sidebar-switcher-history {
+        --menu-image: url("history.svg");
+      }
+      #sidebar-switcher-tabs {
+        --menu-image: url("send-to-device.svg");
+      }
+      #sidebar-switcher-megalist {
+        --menu-image: url("passwords.svg");
+      }
       /* FluentUI: App Menu Icons */
       #appMenu-downloads-button,
       #appMenu-library-downloads-button {
         list-style-image: url("downloads.svg") !important;
-      }
-    
+      } 
       #appMenu-translate-button {
         list-style-image: url("translations.svg") !important;
-      }
-    
+      }  
       #appMenu-zoom-controls {
         list-style-image: url("plus.svg") !important;
-      }
-    
+      }   
       #appMenu-passwords-button,
       #password-notification-icon {
         list-style-image: url("passwords.svg") !important;
-      }
-    
+      }   
       #appMenu-more-button2 {
         list-style-image: url("menu.svg") !important;
-      }
-    
+      }   
       #appMenu-help-button2 {
         list-style-image: url("help.svg") !important;
-      }
-    
+      }   
       #appMenu-quit-button2 {
         list-style-image: url("close.svg") !important;
       }
-    
       #appMenu-report-broken-site-button {
         list-style-image: url("report.svg") !important;
-      }
-    
+      } 
       #appMenu-history-button,
       #appMenu-library-history-button {
         list-style-image: url("history.svg") !important;
-      }
-    
+      }   
       #appMenu-save-file-button2 {
         list-style-image: url("save.svg") !important;
       }
-    
-    
       #appMenu-print-button2 {
         list-style-image: url("print.svg") !important;
       }
-    
-    
       #appMenu-find-button2 {
         list-style-image: url("search-page.svg") !important;
-      }
-    
+      }   
       #appMenu-extensions-themes-button {
         list-style-image: url("extension.svg") !important;
-      }
-    
+      }   
       #appMenu-zoomReduce-button2 {
         list-style-image: url("zoom-out.svg") !important;
-      }
-    
+      }    
       #appMenu-zoomEnlarge-button2 {
         list-style-image: url("plus.svg") !important;
-      }
-    
+      }    
       #appMenu-new-window-button2 {
         list-style-image: url("window.svg") !important;
-      }
-    
+      }    
       #appMenu-new-private-window-button2 {
         list-style-image: url("private-window.svg") !important;
-      }
-      
+      }     
       #appMenu-fullscreen-button2 {
         list-style-image: url("fullscreen.svg") !important;
       }
       #appMenu-fullscreen-button2[checked] {
         list-style-image: url("fullscreen-exit.svg") !important;
-      }
-    
+      }   
       #appMenu-bookmarks-button,
       #appMenu-library-bookmarks-button {
         list-style-image: url("bookmark-star-on-tray.svg") !important;
-      }
-    
+      }   
       #appMenu-new-tab-button2 {
         list-style-image: url("new-tab-image.svg") !important;
       }
@@ -1161,13 +1149,13 @@
 
     /* Tools */
     #appmenu-developer-tools-view > toolbarbutton:nth-child(1) {
-      list-style-image: url('developer.svg') !important;
+      list-style-image: url('manage.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(2) {
       list-style-image: url('media-speed.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(3) {
-      list-style-image: url('developer.svg') !important;
+      list-style-image: url('manage.svg') !important;
     }
     #appmenu-developer-tools-view > toolbarbutton:nth-child(4) {
       list-style-image: url('permissions.svg') !important;
@@ -1233,7 +1221,8 @@
       }
 
       /* —— —— Special icon for Zen —— —— */
-      #zen-toolbar-context-tabs-right {
+      #zen-toolbar-context-tabs-right,
+      #sidebar-reverse-position {
         --menu-image: url("tab-right.svg");
       }
       
@@ -1324,21 +1313,36 @@
       #context_zenFolderDelete {
         --menu-image: url("edit-delete.svg");
       }
+
+      /* Container-Tabs Menu */
+      menuitem[data-l10n-id="user-context-none"] {
+        background-image: url('new-tab-image.svg') !important;
+        background-repeat: no-repeat !important;
+        background-size: 16px !important;
+        background-position: 11px center !important;
+      }
+      menuitem[command="Browser:NewUserContextTab"] {
+        --menu-image: url('new-tab-image.svg');
+      }
+      menuitem[command="Browser:OpenAboutContainers"] {
+        --menu-image: url('manage.svg');
+      }
+
     /* zen Group(Adapt to Advanced-Tag-Groups) */
-      .change-group-color {
-        --menu-image: url("color.svg");
-      }
-      .rename-group {
-        --menu-image: url("edit.svg");
-      }
-      .ungroup-tabs {
-        --menu-image: url("folder-unpack.svg");
-      }
-      .convert-group-to-folder {
-        --menu-image: url("folder_sync_convert.svg");
-      }
-      .change-group-icon {
-      --menu-image: url("image-save.svg");
+    .change-group-color {
+      --menu-image: url("color.svg");
+    }
+    .rename-group {
+      --menu-image: url("edit.svg");
+    }
+    .ungroup-tabs {
+      --menu-image: url("folder-unpack.svg");
+    }
+    .convert-group-to-folder {
+      --menu-image: url("folder_sync_convert.svg");
+    }
+    .change-group-icon {
+    --menu-image: url("image-save.svg");
     }
 
     /* zen Mods */
@@ -1362,11 +1366,11 @@
   /*ZenUI*/
   @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
     :root {
-
-        --zen-contextmenu-menuitem-padding-inline: 5px !important;
+        --zen-contextmenu-menuitem-padding-inline: 6px !important;
         --zen-contextmenu-menuicon-margin-inline: 3px !important;
         --zen-contextmenu-menuitem-margin: 0px 2px !important;
-      
+        --group-padding: var(--zen-contextmenu-menuitem-padding-inline);
+
         --zen-unload-icon: url("data:image/svg+xml;utf8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22context-fill%22%20fill-opacity%3D%22context-fill-opacity%22%3E%3Cpath%20d%3D%22M5.154%2C2.633c.3755-.1748.8216-.012.9964.3635.1748.3755.012.8216-.3635.9964-1.8371.855-3.0367%2C2.6987-3.0367%2C4.7598%2C0%2C2.898%2C2.3504%2C5.2473%2C5.2498%2C5.2473s5.2498-2.3494%2C5.2498-5.2473c0-2.0569-1.1946-3.8974-3.0259-4.7548-.3751-.1756-.5368-.6221-.3613-.9972.1756-.3751.6221-.5368.9972-.3612%2C2.3537%2C1.102%2C3.8899%2C3.4688%2C3.8899%2C6.1132%2C0%2C3.7265-3.022%2C6.7473-6.7498%2C6.7473S1.2502%2C12.4793%2C1.2502%2C8.7527c0-2.65%2C1.5426-5.0208%2C3.9037-6.1197ZM8%2C.5c.3846%2C0%2C.7016.2895.7449.6625l.005.0875v5.2509c0%2C.4142-.3358.75-.75.75-.3846%2C0-.7016-.2895-.7449-.6625l-.005-.0875V1.25c0-.4142.3358-.75.75-.75Z%22%2F%3E%3C%2Fsvg%3E");
       }
 
@@ -1632,7 +1636,8 @@
       }
       #context-sendlinktodevice,
       #context_sendTabToDevice,
-      #context-sendpagetodevice {
+      #context-sendpagetodevice,
+      #sidebar-switcher-tabs {
         --menu-image: url('zen-icons/send-to-device.svg');
       }
       #context-openlinkintab,
@@ -1670,7 +1675,8 @@
       #spell-dictionaries {
         --menu-image: url('zen-icons/add-to-dictionary.svg');
       }
-      #manage-saved-logins {
+      #manage-saved-logins,
+      #sidebar-switcher-megalist {
         --menu-image: url('zen-icons/passwords.svg');
       }
       #context-media-play,
@@ -1747,6 +1753,12 @@
       #placesContext_createBookmark {
         --menu-image: url('zen-icons/bookmark-hollow.svg');
       }
+      #sidebar-switcher-bookmarks {
+        --menu-image: url('zen-icons/bookmark-star-on-tray.svg');
+      }
+      #sidebar-switcher-history {
+        --menu-image: url('zen-icons/history.svg');
+      }
       menuitem[id='placesContext_show_bookmark:info'],
       menuitem[id='placesContext_show_folder:info'],
       menuitem[id='placesContext_show:info'] {
@@ -1782,9 +1794,9 @@
       #context_moveTabOptions {
         --menu-image: url('zen-icons/move-tab.svg');
       }
-    #context_ungroupTab {
-      --menu-image: url('zen-icons/remove-tab.svg');
-    }
+      #context_ungroupTab {
+        --menu-image: url('zen-icons/remove-tab.svg');
+      }
       .share-tab-url-item {
         --menu-image: url('zen-icons/share.svg');
       }
@@ -1795,7 +1807,8 @@
       }
       #context_closeTab,
       #context_closeDuplicateTabs,
-      #orgClose {
+      #orgClose,
+      #sidebar-menu-close {
         --menu-image: url('zen-icons/close.svg');
       }
       #context_closeTabOptions {
@@ -1821,6 +1834,123 @@
       #placesContext_sortBy\:name {
         --menu-image: url('zen-icons/move-tab.svg');
       }
+
+
+      /* ZenUI: App Menu Icons */
+      #new-window-button,
+      #appMenu-new-window-button2,
+      #appMenuRecentlyClosedWindows {
+        list-style-image: url("zen-icons/window.svg") !important;
+      }
+      #fxa-manage-account-button {
+        background-image: url('chrome://browser/skin/fxa/avatar-empty.svg') !important;
+        background-repeat: no-repeat !important;
+
+        background-size: 16px !important;
+        background-position: 10px center !important;
+
+        -moz-context-properties: fill, fill-opacity !important;
+        fill: currentColor !important;
+      }
+
+      #PanelUI-fxa-menu-syncnow-button {
+        background-image: url('zen-icons/media-loop.svg') !important;
+        background-repeat: no-repeat !important;
+
+        background-size: 16px !important;
+        background-position: 11px center !important;
+
+        -moz-context-properties: fill, fill-opacity !important;
+        fill: currentColor !important;
+      }
+      #PanelUI-fxa-menu-connect-device-button {
+        list-style-image: url('zen-icons/link.svg') !important;
+      }
+      #PanelUI-fxa-menu-sendtab-button {
+        list-style-image: url('zen-icons/send-to-device.svg') !important;
+      }
+      #PanelUI-fxa-menu-sync-prefs-button {
+        list-style-image: url('zen-icons/settings.svg') !important;
+      }
+      #PanelUI-fxa-menu-account-signout-button {
+        list-style-image: url('chrome://browser/skin/import.svg') !important;
+      }
+      toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"] {
+        background-image: var(--zen-unload-icon);
+        background-repeat: no-repeat !important;
+
+        background-size: 16px !important;
+        background-position: 14px center !important;
+
+        -moz-context-properties: fill, fill-opacity !important;
+        fill: currentColor !important;
+        
+      }
+      
+      toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"] {
+        background-image: url('zen-icons/menu.svg') !important;
+        background-repeat: no-repeat !important;
+
+        background-size: 16px !important;
+        background-position: 14px center !important;
+
+        -moz-context-properties: fill, fill-opacity !important;
+        fill: currentColor !important;
+      }
+      :is(toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"],
+        toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"])
+      >.toolbarbutton-icon+.toolbarbutton-text {
+        padding-inline-start: 36px !important;
+      }
+      
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(1) {
+        list-style-image: url('zen-icons/developer.svg') !important;
+      }
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(2) {
+        list-style-image: url('zen-icons/media-speed.svg') !important;
+      }
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(3) {
+        list-style-image: url('zen-icons/tool-profiler.svg') !important;
+      }
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(4) {
+        list-style-image: url('zen-icons/permissions.svg') !important;
+      }
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(5) {
+        list-style-image: url('zen-icons/inspect.svg') !important;
+      }    
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(6) {
+        list-style-image: url('zen-icons/edit-cut.svg') !important;
+      }       
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(7) {
+        list-style-image: url('zen-icons/edit-theme.svg') !important;
+      }        
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(8) {
+        list-style-image: url('zen-icons/source-code.svg') !important;
+      }    
+      #appmenu-developer-tools-view > toolbarbutton:nth-child(9) {
+        list-style-image: url('zen-icons/extension.svg') !important;
+      }
+      
+      
+      #appMenu_feedbackPage {
+        list-style-image: url('zen-icons/share.svg') !important;
+      }
+      #appMenu_helpSafeMode {
+        list-style-image: url('zen-icons/search-page.svg') !important;
+      }
+      #appMenu_troubleShooting {
+        list-style-image: url('zen-icons/info.svg') !important;
+      }
+      #appMenu_menu_HelpPopup_reportPhishingtoolmenu {
+        list-style-image: url('zen-icons/security-broken.svg') !important;
+      }
+      #appMenu_helpSwitchDevice {
+        list-style-image: url('zen-icons/send-to-device.svg');
+      }
+      #appMenu_aboutName {
+        list-style-image: url('zen-icons/help.svg') !important;
+      }
+      
       /* zen Workspace */
       #context_zenEditWorkspace {
         --menu-image: url('zen-icons/edit.svg');
@@ -1848,162 +1978,67 @@
       }
 
     /* zen Folder */
-      #context_zenFolderRename {
-        --menu-image: url('zen-icons/edit.svg');
-      }
-      #context_zenFolderChangeIcon {
-        --menu-image: url('zen-icons/canvas.svg');
-      }
-      #zen-context-menu-new-folder,
-      #zen-context-menu-new-folder-toolbar,      
-      #context_zenFolderNewSubfolder,
-      #placesContext_showInFolder {
-        --menu-image: url('zen-icons/folder.svg');
-      }
-      #context_zenFolderUnpack {
-        --menu-image: url('zen-icons/close-all.svg');
-      }
-      #context_zenChangeFolderSpace {
-        --menu-image: url('zen-icons/move-tab.svg');
-      }
-      #context_zenFolderToSpace,
-      #convert-folder-to-group {
-        --menu-image: url('zen-icons/edit-redo.svg');
-      }
-      #context_zenFolderDelete {
-        --menu-image: url('zen-icons/edit-delete.svg');
-      }   
-
-      #zen-toolbar-context-tabs-right {
-        --menu-image: url('chrome://browser/skin/import.svg');
-      }  
-    
-    /* ZenUI: App Menu Icons */
-    #fxa-manage-account-button {
-      background-image: url('chrome://browser/skin/fxa/avatar-empty.svg') !important;
-      background-repeat: no-repeat !important;
-
-      background-size: 16px !important;
-      background-position: 10px center !important;
-
-      -moz-context-properties: fill, fill-opacity !important;
-      fill: currentColor !important;
+    #context_zenFolderRename {
+      --menu-image: url('zen-icons/edit.svg');
     }
-
-    #PanelUI-fxa-menu-syncnow-button {
-      background-image: url('zen-icons/media-loop.svg') !important;
-      background-repeat: no-repeat !important;
-
-      background-size: 16px !important;
-      background-position: 11px center !important;
-
-      -moz-context-properties: fill, fill-opacity !important;
-      fill: currentColor !important;
-    }
-    #PanelUI-fxa-menu-connect-device-button {
-      list-style-image: url('zen-icons/link.svg') !important;
-    }
-    #PanelUI-fxa-menu-sendtab-button {
-      list-style-image: url('zen-icons/send-to-device.svg') !important;
-    }
-    #PanelUI-fxa-menu-sync-prefs-button {
-      list-style-image: url('zen-icons/settings.svg') !important;
-    }
-    #PanelUI-fxa-menu-account-signout-button {
-      list-style-image: url('chrome://browser/skin/import.svg') !important;
-    }
-    toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"] {
-      background-image: var(--zen-unload-icon);
-      background-repeat: no-repeat !important;
-
-      background-size: 16px !important;
-      background-position: 14px center !important;
-
-      -moz-context-properties: fill, fill-opacity !important;
-      fill: currentColor !important;
-      
-    }
-    
-    toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"] {
-      background-image: url('zen-icons/menu.svg') !important;
-      background-repeat: no-repeat !important;
-
-      background-size: 16px !important;
-      background-position: 14px center !important;
-
-      -moz-context-properties: fill, fill-opacity !important;
-      fill: currentColor !important;
-    }
-    :is(toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"],
-     toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"])
-    >.toolbarbutton-icon+.toolbarbutton-text {
-      padding-inline-start: 36px !important;
-    }
-    
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(1) {
-      list-style-image: url('zen-icons/developer.svg') !important;
-    }
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(2) {
-      list-style-image: url('zen-icons/media-speed.svg') !important;
-    }
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(3) {
-      list-style-image: url('zen-icons/tool-profiler.svg') !important;
-    }
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(4) {
-      list-style-image: url('zen-icons/permissions.svg') !important;
-    }
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(5) {
-      list-style-image: url('zen-icons/inspect.svg') !important;
-    }    
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(6) {
-      list-style-image: url('zen-icons/edit-cut.svg') !important;
-    }       
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(7) {
-      list-style-image: url('zen-icons/edit-theme.svg') !important;
-    }        
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(8) {
-      list-style-image: url('zen-icons/source-code.svg') !important;
-    }    
-    #appmenu-developer-tools-view > toolbarbutton:nth-child(9) {
-      list-style-image: url('zen-icons/extension.svg') !important;
-    }
-    
-    
-    #appMenu_feedbackPage {
-      list-style-image: url('zen-icons/share.svg') !important;
-    }
-    #appMenu_helpSafeMode {
-      list-style-image: url('zen-icons/search-page.svg') !important;
-    }
-    #appMenu_troubleShooting {
-      list-style-image: url('zen-icons/info.svg') !important;
-    }
-    #appMenu_menu_HelpPopup_reportPhishingtoolmenu {
-      list-style-image: url('zen-icons/security-broken.svg') !important;
-    }
-    #appMenu_helpSwitchDevice {
-      list-style-image: url('zen-icons/send-to-device.svg');
-    }
-    #appMenu_aboutName {
-      list-style-image: url('zen-icons/help.svg') !important;
-    }
-
-    /* zen Group(Adapt to Advanced-Tag-Groups) */
-      .change-group-color {
-        --menu-image: url('zen-icons/edit-theme.svg');
-      }
-      .rename-group {
-        --menu-image: url('zen-icons/edit.svg');
-      }
-      .ungroup-tabs {
-        --menu-image: url('zen-icons/close-all.svg');
-      }
-      .convert-group-to-folder {
-        --menu-image: url('zen-icons/edit-redo.svg');
-      }
-      .change-group-icon {
+    #context_zenFolderChangeIcon {
       --menu-image: url('zen-icons/canvas.svg');
-     }
+    }
+    #zen-context-menu-new-folder,
+    #zen-context-menu-new-folder-toolbar,      
+    #context_zenFolderNewSubfolder,
+    #placesContext_showInFolder {
+      --menu-image: url('zen-icons/folder.svg');
+    }
+    #context_zenFolderUnpack {
+      --menu-image: url('zen-icons/close-all.svg');
+    }
+    #context_zenChangeFolderSpace {
+      --menu-image: url('zen-icons/move-tab.svg');
+    }
+    #context_zenFolderToSpace,
+    #convert-folder-to-group {
+      --menu-image: url('zen-icons/edit-redo.svg');
+    }
+    #context_zenFolderDelete {
+      --menu-image: url('zen-icons/edit-delete.svg');
+    }   
+    #sidebar-reverse-position,
+    #zen-toolbar-context-tabs-right {
+      --menu-image: url('chrome://browser/skin/import.svg');
+    }  
+    
+    
+    /* Container-Tabs Menu */
+    menuitem[data-l10n-id="user-context-none"] {
+        background-image: url('zen-icons/tab.svg') !important;
+        background-repeat: no-repeat !important;
+        background-size: 16px !important;
+        background-position: 5px center !important;
+    }
+    menuitem[command="Browser:NewUserContextTab"] {
+      --menu-image: url('zen-icons/tab.svg');
+    }
+    menuitem[command="Browser:OpenAboutContainers"] {
+      --menu-image: url('zen-icons/manage.svg');
+    }
+    
+    /* zen Group(Adapt to Advanced-Tag-Groups) */
+    .change-group-color {
+      --menu-image: url('zen-icons/edit-theme.svg');
+    }
+    .rename-group {
+      --menu-image: url('zen-icons/edit.svg');
+    }
+    .ungroup-tabs {
+      --menu-image: url('zen-icons/close-all.svg');
+    }
+    .convert-group-to-folder {
+      --menu-image: url('zen-icons/edit-redo.svg');
+    }
+    .change-group-icon {
+    --menu-image: url('zen-icons/canvas.svg');
+    }
     
     /* zen Mods */
     #viewColumns,
@@ -2052,11 +2087,13 @@
 }
 
 /* menuseparator style */
+/* 💾
 menuseparator:first-of-type {
     display: none !important;
 }
+*/
 menuseparator::before {
-    opacity: 0.3;
+    opacity: var(--menuseparator-opacity);
 }
 
 /* -------------------------- Tab button style -------------------------- */
@@ -2117,19 +2154,7 @@ menuitem#context_zen-add-essential[badge]::after {
   order: -1 !important; /* Only retain the order for direct child elements. */
 }
 
-:where(
-  #tabContextMenu:has(:is(#context_reloadTab, #context_reloadSelectedTabs):not([hidden])):has(:is(
-    #context_pinTab, #context_unpinTab, #context_bookmarkTab,
-    #context_pinSelectedTabs, #context_unpinSelectedTabs, #context_bookmarkSelectedTabs
-  ):not([hidden]))
-) :nth-child(1 of menuseparator) {
-  display: flex !important;
-  visibility: visible !important;
-}
-/* Re-hide the Separator located in the submenu of `Move Tab` */
-menuseparator#moveTabSeparator {
-  display: none !important;
-}
+
 
 /* Main rule */
 /* 1) 单 Tab（含 zen-add/zen-remove）—— 原始：pin margin-left:25% */
@@ -2262,7 +2287,7 @@ menuseparator#moveTabSeparator {
 }
 
 @media (-moz-pref("cmi-fold_menu_item-enable")) {
-  #context-inspect + menuseparator {
+  menuitem#context-inspect + menuseparator {
       display: none;
   }
 }
@@ -2335,49 +2360,6 @@ menuseparator#moveTabSeparator {
 }
   
 
-  /* Align the icons of the extension with those of CMI */
-  /* ==== 1. 声明命名空间 & 作用域 ==== */
-@-moz-document url-prefix("chrome://browser/content/browser.xhtml") {
-  @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-  @media (
-    -moz-pref("cmi-Align-Extension-Icons")
-  ) {
-  /* ==== 2. 自定义变量（方便后续统一调整） ==== */
-  :root {
-    /* 图标上下边距（图标与上下菜单项之间） */
-    --zen-cmenu-icon-margin-block: 2px !important;
-    /* 图标固定尺寸（保证所有图标同高同宽） */
-    --zen-cmenu-icon-size: 16px !important;
-  }
-
-  /* ==== 3. 针对所有上下文菜单项中的图标 ==== */
-  menupopup > menuitem > .menu-icon,
-  menupopup > menu > .menu-icon {
-    /* 固定图标大小 */
-    width: var(--zen-cmenu-icon-size);
-    height: var(--zen-cmenu-icon-size);
-
-    /* 调整外边距：左、右、上下 */
-    margin-inline-start: var(--zen-cmenu-icon-margin-inline-start);
-    margin-inline-end: var(--zen-cmenu-icon-margin-inline-end);
-    margin-block-start: var(--zen-cmenu-icon-margin-block);
-    margin-block-end: var(--zen-cmenu-icon-margin-block);
-
-    /* 内边距保持 0（图标本身不要额外内边距） */
-    padding: 0 !important;
-  }
-
-  /* ==== 4. 文本也向右推进，和图标保持间距一致 ==== */
-  menupopup > menuitem .menu-text,
-  menupopup > menu .menu-text {
-    padding-inline-start: 0 !important; /* 重置可能已有的内边距 */
-    margin-inline-start: 0 !important;  /* 重置可能已有的外边距 */
-    /* 让文字紧贴图标右侧 */
-    padding-inline-start: var(--zen-cmenu-icon-margin-inline-end);
-  }
-    }
-}
-
 /*  Preference of Bookmark Toolbar Style */
 @media (-moz-pref("cmi-Center-Bookmark-Items")){
   #PlacesToolbarItems {
@@ -2420,125 +2402,136 @@ I fixed these errors and enhanced some of its features, making it more compatibl
 @media (not (-moz-pref("cmi-Auto-Hide-BookmarkBar", 0))) {
   @media (not ((-moz-pref("zen.view.use-single-toolbar")))) {
   /* Disabled in the compact mode (hide toolbar) to prevent conflicts. */
-  @media (not ((-moz-pref("zen.view.compact.hide-toolbar")) and (-moz-pref("zen.view.compact.enable-at-startup")))) {
-  /* Bookmark bar color style */
-  @media (-moz-pref("cmi-bookmarks-theme-transparent")) {
-    #PersonalToolbar:not([customizing]) {
-      background-color: var(--zen-colors-tertiary) !important;
-    }
-  }
-
-  @media (not (-moz-pref("cmi-bookmarks-theme-transparent"))) {
-    #personal-bookmarks toolbarbutton.bookmark-item:not(#OtherBookmarks) {
-      border-radius: 11px !important;
-      background-color: light-dark(rgba(255,255,255,0.45), rgba(0,0,0,0.55)) !important;
-      height: 24px;
-    }
-  }
-
-  /* Adapt for firefox */
-  @media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
-  #navigator-toolbox {
-    z-index: 3 !important;
- /* border-bottom: 0 !important; */
-  }
-  }
-  /* Adapt for Zen (Since zen v1.17.1) */
-  @media (-moz-pref("zen.view.compact.enable-at-startup")) {
-  #navigator-toolbox {
-    height: calc(100% - (var(--zen-element-separation) * 4.5)) !important;
-  }
-  }
-  /* Bookmark bar Style */  
-  #personal-bookmarks
-    #PlacesToolbarItems
-    > toolbarbutton.bookmark-item:not(
-      .subviewbutton,
-      [disabled="true"],
-      [open]
-    ):hover {
-      border-radius: 11px !important;
-      scale: 1.05 !important;
-  }
-
-  #personal-bookmarks
-    #PlacesToolbarItems
-    > toolbarbutton.bookmark-item:not(
-      .subviewbutton,
-      [disabled="true"]
-    ):hover:active {
-      border-radius: 11px !important;
-      scale: 1.05 !important;  
-      filter: brightness(1.5);
-  }
-
-  #personal-bookmarks
-    #PlacesToolbarItems
-    > toolbarbutton.bookmark-item[open="true"] {
-      border-radius: 11px !important;
-      scale: 1.05 !important;  
-      filter: brightness(1.5);
-  }
-  
-
-  /* 常态下隐藏书签栏,并避免书签栏影响网页交互 */
-    #PersonalToolbar {   
-      position: absolute;
-    @media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
-      top: 100% !important; 
-    }
-      left: 0 !important;
-      right: 0 !important;
-      opacity: 0 !important;
-      transform: rotateX(90deg) !important;
-      transform-origin: top;
-      transition: 
-        opacity 250ms ease-out,
-        transform 250ms ease-out !important;
-      z-index: 1;
-    }
-
-
-  #PersonalToolbar:has([open]),
-  #PersonalToolbar:has([aria-expanded="true"]),
-  #PersonalToolbar:has(menupopup[open]),
-  #PersonalToolbar:has(menu[open]),
-  #PersonalToolbar:has(.bookmark-item[open]),
-  #PersonalToolbar:focus-within {
-    opacity: 1 !important;
-    transform: translateY(0) rotateX(0deg) !important;
-  }
-
-  /* Display when drop link */
-  #zen-appcontent-navbar-wrapper[zen-has-hover="true"] #PersonalToolbar {
-    opacity: 1 !important;
-    transform: translateY(0) rotateX(0deg) !important;
-  }
-@media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
-  body.show-bookmarks #PersonalToolbar {
-    opacity: 1 !important;
-    transform: translateY(0) rotateX(0deg) !important;
-  }
-}
-  /* Expand the bookmarks toolbar by hovering */
-  @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 1)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
-    #nav-bar:hover + #PersonalToolbar,
-    #PersonalToolbar:hover {
-      opacity: 1 !important;
-      transform: rotateX(0deg) !important;
+    @media (not ((-moz-pref("zen.view.compact.hide-toolbar")) and (-moz-pref("zen.view.compact.enable-at-startup")))) {
+    /* Bookmark bar color style */
+    @media (-moz-pref("cmi-bookmarks-theme-transparent")) {
+      #PersonalToolbar:not([customizing]) {
+        background-color: var(--zen-colors-tertiary) !important;
       }
     }
-  }
 
-  /* Expand the bookmarks toolbar when you search */
-  @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 2)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
-    #nav-bar:focus-within + #PersonalToolbar {
-      opacity: 1 !important;
-      transform: rotateX(0deg) !important;
+    @media (not (-moz-pref("cmi-bookmarks-theme-transparent"))) {
+      #personal-bookmarks toolbarbutton.bookmark-item:not(#OtherBookmarks) {
+        border-radius: 11px !important;
+        background-color: light-dark(rgba(255,255,255,0.45), rgba(0,0,0,0.55)) !important;
+        height: 24px;
+      }
     }
+
+    /* Adapt for firefox */
+    @media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
+    #navigator-toolbox {
+      z-index: 3 !important;
+  /* border-bottom: 0 !important; */
+    }
+    }
+    /* Adapt for Zen (Since zen v1.17.1) */
+    @media (-moz-pref("zen.view.compact.enable-at-startup")) {
+    #navigator-toolbox {
+      height: calc(100% - (var(--zen-element-separation) * 4.5)) !important;
+    }
+    }
+    /* Bookmark bar Style */  
+    #personal-bookmarks
+      #PlacesToolbarItems
+      > toolbarbutton.bookmark-item:not(
+        .subviewbutton,
+        [disabled="true"],
+        [open]
+      ):hover {
+        border-radius: 11px !important;
+        scale: 1.05 !important;
+    }
+
+    #personal-bookmarks
+      #PlacesToolbarItems
+      > toolbarbutton.bookmark-item:not(
+        .subviewbutton,
+        [disabled="true"]
+      ):hover:active {
+        border-radius: 11px !important;
+        scale: 1.05 !important;  
+        filter: brightness(1.5);
+    }
+
+    #personal-bookmarks
+      #PlacesToolbarItems
+      > toolbarbutton.bookmark-item[open="true"] {
+        border-radius: 11px !important;
+        scale: 1.05 !important;  
+        filter: brightness(1.5);
+    }
+    
+
+    /* 常态下隐藏书签栏,并避免书签栏影响网页交互 */
+      #PersonalToolbar {   
+        position: absolute;
+      @media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
+        top: 100% !important; 
+      }
+        left: 0 !important;
+        right: 0 !important;
+        opacity: 0 !important;
+        transform: rotateX(90deg) !important;
+        transform-origin: top;
+        transition: 
+          opacity 250ms ease-out,
+          transform 250ms ease-out !important;
+        z-index: 1;
+      }
+
+
+    #PersonalToolbar:has([open]),
+    #PersonalToolbar:has([aria-expanded="true"]),
+    #PersonalToolbar:has(menupopup[open]),
+    #PersonalToolbar:has(menu[open]),
+    #PersonalToolbar:has(.bookmark-item[open]),
+    #PersonalToolbar:focus-within {
+      opacity: 1 !important;
+      transform: translateY(0) rotateX(0deg) !important;
+    }
+
+
+    /* Expand the bookmarks toolbar by hovering */
+    @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 1)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
+      #browser:has(#zen-sidebar-top-buttons:hover) #PersonalToolbar {
+        opacity: 1 !important;
+        transform: rotateX(0deg) !important;
+      }
+      /* --- CSS Version (When JavaScript cannot be used) --- */
+      @media (not (-moz-pref("cmi-AHB-enable-JS",true))) {
+        #nav-bar:hover + #PersonalToolbar,
+        #PersonalToolbar:hover {
+          opacity: 1 !important;
+          transform: rotateX(0deg) !important;
+        }
+        /* Display when drop link (Only supports Zen, does not support Firefox) */  
+        #zen-appcontent-navbar-wrapper[zen-has-hover="true"] #PersonalToolbar {
+          opacity: 1 !important;
+          transform: translateY(0) rotateX(0deg) !important;
+        }
+      }
+
+      /* --- JS Version (Preferred): Support drag link event, support touch, support Firefox --- */
+      @media (-moz-pref("cmi-AHB-enable-JS",true)) {
+        body.show-bookmarks #PersonalToolbar {
+          opacity: 1 !important;
+          transform: translateY(0) rotateX(0deg) !important;
+        }    
+      }
+    }
+    }
+    /* Expand the bookmarks toolbar when you search */
+    @media (-moz-pref("cmi-Auto-Hide-BookmarkBar", 2)) or (-moz-pref("cmi-Auto-Hide-BookmarkBar", 3)) {
+      #nav-bar:focus-within + #PersonalToolbar {
+        opacity: 1 !important;
+        transform: rotateX(0deg) !important;
+      }
+    }
+    
   }
 }
-}
+
 
 /* Other Preferences */
 /* Replace the default Firefox logo with a custom one in the identity popup and identity box. */
@@ -2570,12 +2563,22 @@ I fixed these errors and enhanced some of its features, making it more compatibl
 @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) {
 /* Part 1 of global rule */
 :root {
-  --fp-contextmenu-menuicon-margin-inline: 12px;
-  --fp-contextmenu-menuitem-padding-inline: 10px;
+  /* FluentUI */
+@media (-moz-pref("cmi-Switch-Icon-Package", 1)) {
+  --fp-contextmenu-menuicon-margin-inline: 8px;
+  --fp-contextmenu-menuitem-padding-inline: 6px;
+  --group-padding: var(--fp-contextmenu-menuicon-margin-inline);
+}
+
   --fp-arrowpanel-menuicon-margin-inline: 14px;
-  
+  --arrowpanel-menuitem-border-radius: 4px !important;
   --arrowpanel-menuitem-padding-block: 6px !important;
   --arrowpanel-menuitem-padding-inline: 10px !important;
+  
+@media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
+  --fp-contextmenu-menuicon-margin-inline: 12px;
+  --fp-contextmenu-menuitem-padding-inline: 10px;
+}  
 }
 
 menu > .menu-iconic-text,
@@ -2584,9 +2587,10 @@ menuitem > .menu-iconic-text,
   padding-inline-start: var(--fp-contextmenu-menuicon-margin-inline) !important;
 }
 
-/* 校正容器标签页菜单 */
+/* 校正容器标签页(Container-Tabs)菜单 */
 menupopup#new-tab-button-popup,
-menupopup#zenWorkspaceMoreActions menupopup {
+menupopup#zenWorkspaceMoreActions menupopup,
+menupopup#context_reopenInContainerPopupMenu {
 /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
 > :is(menuitem, menu):not(
     .menuitem-iconic,
@@ -2618,7 +2622,7 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   background-repeat: no-repeat !important;
   
   @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {background-position: var(--fp-contextmenu-menuitem-padding-inline, left 1em) center !important;}
-  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {background-position: 5px center !important;}
+  @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {background-position: var(--zen-contextmenu-menuitem-padding-inline) center !important;}
   
   background-size: var(--fp-contextmenu-menuitem-icon-size, 16px) !important;
 
@@ -2666,7 +2670,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   width: var(--checkmark-width);
   height: var(--checkmark-height);
 
-  margin-inline-end: var(--checkmark-margin-end);
+  margin-inline-end: var(--checkmark-margin-right);
   vertical-align: middle;
 
   /* 两种实现共用声明：background-image / mask / background-color 由变量决定 */
@@ -2677,7 +2681,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   background-repeat: no-repeat;
   background-size: contain;
   /* 定位到图标所在 x 位置 */
-  margin-inline-start: var(--checkmark-margin-start);
+  margin-inline-start: var(--checkmark-margin-left);
   position: relative;
 
   /* mask 与 background-color（若变量为 none，则效果等同于未设置） */
@@ -2792,8 +2796,8 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     #mainPopupSet > menupopup:nth-child(98):has(> menuitem:not([hidden])[checked="true"])
   
   ) {
-    --checkmark-margin-start: var(--checkmark-margin-start_cover);
-    --checkmark-margin-end: var(--checkmark-margin-end_cover);
+    --checkmark-margin-left: var(--checkmark-margin-left_cover);
+    --checkmark-margin-right: var(--checkmark-margin-right_cover);
     --submenu-padding: var(--submenu-padding_cover);
     /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
     > :is(menuitem, menu):not(
@@ -2852,8 +2856,8 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     menupopup#sidebar-history-menu:has(> menuitem:not([hidden])[checked="true"]),
     #mainPopupSet > menupopup:nth-child(98):has(> menuitem:not([hidden])[checked="true"])
   ) {
-    --checkmark-margin-start: var(--checkmark-margin-start_cover);
-    --checkmark-margin-end: var(--checkmark-margin-end_cover);
+    --checkmark-margin-left: var(--checkmark-margin-left_cover);
+    --checkmark-margin-right: var(--checkmark-margin-right_cover);
     --submenu-padding: var(--submenu-padding_cover);
     /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
     > :is(menuitem, menu):not(
@@ -3044,38 +3048,40 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menu
 
 
 /* App Menu Margin for Firefox */
-.addon-banner-item,
-.panel-banner-item {
-  margin: 2px 4px 2px !important;
-  padding-inline: 4px 12px !important;
-  padding-block: var(--arrowpanel-menuitem-padding-block) !important;
-  border-radius: var(--arrowpanel-menuitem-border-radius) !important;
-}
+  .addon-banner-item,
+  .panel-banner-item {
+    margin: 2px 4px 2px !important;
+    padding-inline: 4px 12px !important;
+    padding-block: var(--arrowpanel-menuitem-padding-block) !important;
+    border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+  }
 
-#appMenu-fxa-label2 label,
-#PanelUI-fxa-menu-syncnow-button label {
-  margin-block: 0 !important;
-}
+  #appMenu-fxa-label2 label,
+  #PanelUI-fxa-menu-syncnow-button label {
+    margin-block: 0 !important;
+  }
 
-.widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined)>.toolbarbutton-text,
-.subviewbutton:not(#appMenu-zoom-controls > .subviewbutton,
-toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"],toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"] /* 💾 */
-)>.toolbarbutton-icon+.toolbarbutton-text,
-#appMenu-fxa-label2>vbox {
-  padding-inline-start: var(--fp-arrowpanel-menuicon-margin-inline) !important;
-}
+  .widget-overflow-list .toolbarbutton-1:not(.toolbarbutton-combined)>.toolbarbutton-text,
+  .subviewbutton:not(#appMenu-zoom-controls > .subviewbutton,
+  toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"],toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"] /* 💾 */
+  )>.toolbarbutton-icon+.toolbarbutton-text,
+  #appMenu-fxa-label2>vbox {
+    padding-inline-start: var(--fp-arrowpanel-menuicon-margin-inline) !important;
+  }
 
-/* special case menuitems with no icons */
-#appMenu-zoom-controls>.toolbarbutton-text,
-#fxa-manage-account-button>vbox,
-#PanelUI-fxa-menu-syncnow-button>hbox {
-  padding-inline-start: calc(16px + var(--fp-arrowpanel-menuicon-margin-inline)) !important;
-}
-/* Icons Size
-.subviewbutton>.toolbarbutton-icon {
-  width: 16px ;
-}
-*/
+  /* special case menuitems with no icons */
+  #appMenu-zoom-controls>.toolbarbutton-text,
+  #fxa-manage-account-button>vbox,
+  #PanelUI-fxa-menu-syncnow-button>hbox {
+    padding-inline-start: calc(16px + var(--fp-arrowpanel-menuicon-margin-inline)) !important;
+  }
+  /* Icons Size
+  .subviewbutton>.toolbarbutton-icon {
+    width: 16px ;
+  }
+  */
+
+
 @media (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
   #appMenuRecentlyClosedTabs,
   #appMenuRecentlyClosedWindows,
@@ -3085,4 +3091,46 @@ toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"],toolbarbutton[data-l1
     --menu-image: none !important;
   }
 }
+}
+
+
+/* Optional: Advanced customization (Force the relocation of the icons from the extensions) */
+/* Easily change the positions of the icons in the context menu, as well as the location of the menu text (the distance between the text and the icons) */
+@-moz-document url-prefix("chrome://browser/content/browser.xhtml") {
+  
+  @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+  :root {
+    /* Icon top and bottom margin */
+    --zen-cmenu-icon-margin-block: 2px !important;
+    /* Icons size */
+    --zen-cmenu-icon-size: 16px !important;
+  }
+
+  /* ==== For all the icons in the context menus (mainly for the icons from the extensions, and then revert to the style of the CMI icons later ==== */
+  menupopup > menuitem > .menu-icon,
+  menupopup > menu > .menu-icon {
+    /* Size */
+    width: var(--zen-cmenu-icon-size);
+    height: var(--zen-cmenu-icon-size);
+
+    /* Adjust the position of the extension icons (left margin) */
+    margin-inline-start: var(--cmi-extension-icon-leftmargin);
+
+    margin-inline-end: var(--zen-extensions-margin-right);
+    margin-block-start: var(--zen-cmenu-icon-margin-block);
+    margin-block-end: var(--zen-cmenu-icon-margin-block);
+
+    /* Reset the possible padding */
+    padding: 0 !important;
+  }
+
+  /* ==== Force all text within context menus that contain expansions to move to the right ( After that, the margin rules of CMI can be used for correction.) ==== */
+  menupopup > menuitem .menu-text,
+  menupopup > menu .menu-text {
+    padding-inline-start: 0 !important; /* Reset the possible padding */
+    margin-inline-start: 0 !important;  /* Reset the possible margin */
+    /* The position of the menu text */
+    padding-inline-start: var(--cmi-menu-text-leftmargin) !important;
+  }
+
 }
