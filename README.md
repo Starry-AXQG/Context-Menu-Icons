@@ -12,9 +12,7 @@
 	- 🖊️️️ Optimize the style: Optimize the style of the tab-Context-Menu to make it look more modern and concise.
 	- ✅️ Automatically manage menu items, allowing you to have them automatically hidden when they are unavailable.
 	- 📚 Fold menu items: Easily manage the menu items you don't frequently use and fold them to a place where you don't want to see them.
-## In conclusion, we hope that you will be able to obtain a highly customizable and clean, simple context menu.
-
-## Additional preference settings:
+# Additional preference settings:
 	- 📏 Center bookmark toolbar items
 	- 👁️ Hidden unnecessary elements of bookmark-bar 
 	- ✨ Automatically hide the bookmark bar (Enhanced through JS, it is applicable to various scenarios.)
