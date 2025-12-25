@@ -81,22 +81,25 @@ https://github.com/user-attachments/assets/f8b4e420-0512-4b51-b923-53252b7c6f8a
 
 Add to CMI-config.css:
 
-`
+```
 :root {
-  --cmi-fold-item-ids: "context-openlink, context-openlinkprivate, context-sendlinktodevice";/* Add menu item ids */
-  
-  --cmi-fold-menu-label: "Show more options"; 
-  
-/*Cover the "Show more options" text (This mod has built-in localization for common languages. However, if you are not satisfied with the localization of the script, or if your language is not included in the localization, you can manually specify the displayed text here. */)
+  --cmi-fold-item-ids: "context-openlink, context-openlinkprivate, context-sendlinktodevice";	/* Add menu item ids */
+ ```
+---
+
+```
+  --cmi-fold-menu-label: "Show more options"; /*Cover the "Show more options" text (This mod has built-in localization for common languages. However, if you are not satisfied with the localization of the script, or if your language is not included in the localization, you can manually specify the displayed text here. */)
+```  
+
 }
 `
 
 #### 2.about:config (quick edit)
 
 1.Create a new string pref `cmi-fold-item-IDs` and set a comma or space separated list of ids, e.g.:
-`
+```
 context-openlink, context-openlinkprivate, context-sendlinktodevice
-`
+```
 
 2. `cmi-fold-menu-label`
 
