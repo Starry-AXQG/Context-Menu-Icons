@@ -230,7 +230,7 @@
 },
 {
   "type": "text",
-  "label": "⚠️⚠️⚠️ \n 1. The settings below are sensitive​ and should not be changed casually unless you know what you are doing. \n You should only modify them if you encounter any alignment issues with context menu items​ and have consulted the guidance on Github. \n 2. The default settings work well for most users. However, in rare cases, CMI's display might be affected slightly by other Sine Mods, different operating systems, or other Firefox variants. \n 3. To see the default values provided by CMI, clear the text input box. \n You may see two default numbers separated by a \"/\". These represent CMI's recommended values before and after​ enabling the `📐 Align extension icons in menu` feature. \n ⚠️⚠️⚠️",
+  "label": "⚠️ 1. The following settings are used to adjust the default margin rules of CMI. \n You'd better make the modifications after fully understanding them. If necessary, you can revert to the default settings or request help from Github. \n 2. The default settings work well for most users. However, CMI's display might be affected slightly by other Sine Mods, different operating systems, or other Firefox variants. \n 3. To see the default values provided by CMI, clear the text input box.",
   "margin": "15px 0 30px 0",
   "size": "15px"
 },
