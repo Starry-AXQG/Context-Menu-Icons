@@ -2072,8 +2072,8 @@
 }
   
 /* Base Hover Styling for Menu Items */
-:is(menu, menuitem):hover {
-    border-radius: 12px !important;
+:is(menu, menuitem) {
+    border-radius: 10px !important;
 }
 
 /* Hide "New Tab" Option */
