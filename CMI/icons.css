@@ -576,9 +576,6 @@
       #context-zenOpenLinkInGlance {
         --menu-image: url("ext-link.svg");
       }      
-      #placesContext_openContainer\:tabs {
-        --menu-image: url("tab.svg");
-      }
       
       #placesContext_showInFolder {
         --menu-image: url("folder-open.svg");
@@ -724,7 +721,9 @@
       menuitem[id="placesContext_open:newtab"],
       menuitem[id="placesContext_openLinks:tabs"],
       menuitem[id="placesContext_openBookmarkLinks:tabs"],
-      menuitem[id="placesContext_openBookmarkContainer:tabs"] {
+      menuitem[id="placesContext_openBookmarkContainer:tabs"],
+      #placesContext_openContainer\:tabs,
+      .openintabs-menuitem {
         --menu-image: url("tab.svg");
       }
       
@@ -1647,7 +1646,8 @@
       menuitem[id='placesContext_openLinks:tabs'],
       menuitem[id='placesContext_openBookmarkLinks:tabs'],
       menuitem[id='placesContext_openBookmarkContainer:tabs'],
-      #placesContext_openContainer\:tabs {
+      #placesContext_openContainer\:tabs,
+      .openintabs-menuitem {
         --menu-image: url('zen-icons/tab.svg');
       }
       #context_openANewTab,
@@ -2701,8 +2701,6 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu)
     > menuitem:not(
-      .openintabs-menuitem,
-
       .menuitem-iconic,
       [type="checkbox"][checked="true"],
       [type="radio"][checked="true"],
