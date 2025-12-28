@@ -25,8 +25,7 @@ Demo image ( Support two sets of linear icons with different styles. FluentUI le
 
 Demo for CMI-fold-menu-JS (Fold the unnecessary menu items like the context menu in Windows 11 for ease of use):
 
-https://github.com/user-attachments/assets/f8b4e420-0512-4b51-b923-53252b7c6f8a
-
+https://github.com/user-attachments/assets/c64dfaef-c7a3-4834-a6c7-d98365218d43
 
 # 📢 Announcement:
 This project will undergo frequent and continuous updates to ensure that it remains functional even after browser updates.
@@ -73,7 +72,7 @@ In version 2.1, CMI introduced JavaScript code to help users simplify the length
 （
 Demo for CMI-fold-menu-JS:
 
-https://github.com/user-attachments/assets/f8b4e420-0512-4b51-b923-53252b7c6f8a
+https://github.com/user-attachments/assets/c64dfaef-c7a3-4834-a6c7-d98365218d43
 
 )
 
