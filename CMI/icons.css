@@ -1261,10 +1261,12 @@
       }
     
     /* zen Workspace */
-      #context_zenEditWorkspace {
+      #context_zenEditWorkspace,
+      #context_zen-edit-tab-title {
         --menu-image: url("edit.svg");
       }
-      #context_zenEditWorkspaceIcon {
+      #context_zenEditWorkspaceIcon,
+      #context_zen-edit-tab-icon {
         --menu-image: url("image-save.svg");
       }
       #context_zenChangeWorkspaceTheme {
@@ -1460,9 +1462,6 @@
       #context_zenOpenWorkspace,
       #context_zenOpenWorkspacePanel {
         --menu-image: url('zen-icons/manage.svg') !important;
-      }
-      #context_zenEditWorkspaceIcon {
-        --menu-image: url('zen-icons/canvas.svg') !important;
       }
       .zenToolbarThemePicker,
       #zenToolbarThemePicker {
@@ -1952,10 +1951,12 @@
       }
       
       /* zen Workspace */
-      #context_zenEditWorkspace {
+      #context_zenEditWorkspace,
+      #context_zen-edit-tab-title {
         --menu-image: url('zen-icons/edit.svg');
       }
-      #context_zenEditWorkspaceIcon {
+      #context_zenEditWorkspaceIcon,
+      #context_zen-edit-tab-icon {
         --menu-image: url('zen-icons/canvas.svg');
       }
       #context_zenChangeWorkspaceTheme {
