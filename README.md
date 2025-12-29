@@ -36,7 +36,7 @@ Added appropriate icons to the context menus of zenFolderand zenWorkspace(Zen v1
 
 If you are using Firefox v140 or Zen v1.14, please use the CMI v1.5.Otherwise, please use v1.4.1
 
-Now, it also supports usage on Firefox.（since mod v1.2.1)
+Now, it also supports usage on Firefox.(since mod v1.2.1)
 
 ---
 
@@ -69,12 +69,12 @@ In version 2.1, CMI introduced JavaScript code to help users simplify the length
 
 - Submenu items: for items with submenus, press the hotkey quickly (before the submenu expands) for best results.
 
-（
+
 Demo for CMI-fold-menu-JS:
 
 https://github.com/user-attachments/assets/c64dfaef-c7a3-4834-a6c7-d98365218d43
 
-)
+
 
 ### 🛠️ Configuration (For Advanced Users)
 
