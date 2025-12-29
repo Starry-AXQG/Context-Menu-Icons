@@ -2,7 +2,7 @@
     "id": "context-menu-icons",
     "js": true,
     "name": "Context Menu Icons",
-    "description": "Improve the context menu by adding icons, fold menu items and more.",
+    "description": "Improve your context menu by adding icons, folding redundant menu items, and more",
     "homepage": "https://github.com/Starry-AXQG/Context-Menu-Icons",
     "image": "https://raw.githubusercontent.com/Starry-AXQG/Context-Menu-Icons/refs/heads/main/.asset/Demo%20Image.jpg",
     "style": {
