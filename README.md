@@ -5,7 +5,7 @@
     </a>
 </div>
 
-<h2 align="center">Improve the context menu by adding icons,fold menu items and more. Support Firefox/Zen</h2>
+<h2 align="center">Improve your context menu by adding icons, folding redundant menu items, and more. Support Firefox/Zen</h2>
 
 ## Main function:
 	- 🖼️ Add icons: Add appropriate icons to the context menu of the browser to make it easier to use
