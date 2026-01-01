@@ -2792,7 +2792,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     /* Chat bot */
     menupopup#chatbot-menupopup:has(> menuitem:not([hidden])[checked="true"]),
     menupopup#sidebar-history-menu:has(> menuitem:not([hidden])[checked="true"]),
-    #mainPopupSet > menupopup:nth-child(98):has(> menuitem:not([hidden])[checked="true"])
+    #mainPopupSet > menupopup:has(> menuitem:not([hidden])[checked="true"])
   
   ) {
     --checkmark-margin-left: var(--checkmark-margin-left_cover);
