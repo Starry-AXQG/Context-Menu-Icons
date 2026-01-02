@@ -102,6 +102,15 @@ context-openlink, context-openlinkprivate, context-sendlinktodevice
 
 Cover the "Show more options" text (This mod has built-in localization for common languages. However, if you are not satisfied with the localization of the script, or if your language is not included in the localization, you can manually specify the displayed text here.
 
+
+3.✨ `cmi-fold_tab_menu_item-enable`
+4. 
+Enable the function of the folding tab menu:
+⚠️：
+Please manually enable it through , as it may not be necessary for all users.
+Please do not attempt to collapse the "share" menu item, as it has no ID and thus may cause errors.
+If an error has occurred, please go to your user profile, locate the prefs.js file, search for cmi-fold-tab-item-IDs, and delete that line. Then restart your browser.
+
 ---
 
 ## 🔖 **Installation Guide** (Windows, macOS, and Linux)
