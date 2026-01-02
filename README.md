@@ -104,11 +104,11 @@ Cover the "Show more options" text (This mod has built-in localization for commo
 
 
 3.✨ `cmi-fold_tab_menu_item-enable`
-4. 
+
 Enable the function of the folding tab menu:
 ⚠️：
-Please manually enable it through , as it may not be necessary for all users.
-Please do not attempt to collapse the "share" menu item, as it has no ID and thus may cause errors.
+Please manually enable it through , as it may not be necessary for all users. \n
+Please do not attempt to collapse the "share" menu item, as it has no ID and thus may cause errors. \n
 If an error has occurred, please go to your user profile, locate the prefs.js file, search for cmi-fold-tab-item-IDs, and delete that line. Then restart your browser.
 
 ---
