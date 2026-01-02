@@ -2429,7 +2429,7 @@ I fixed these errors and enhanced some of its features, making it more compatibl
     /* Adapt for Zen (Since zen v1.17.1) */
     @media (-moz-pref("zen.view.compact.enable-at-startup")) {
     #navigator-toolbox {
-      height: calc(100% - (var(--zen-element-separation) * 4.5)) !important;
+      height: calc(100% - (var(--zen-element-separation) * 5)) !important;
     }
     }
     /* Bookmark bar Style */  
@@ -2792,7 +2792,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     /* Chat bot */
     menupopup#chatbot-menupopup:has(> menuitem:not([hidden])[checked="true"]),
     menupopup#sidebar-history-menu:has(> menuitem:not([hidden])[checked="true"]),
-    #mainPopupSet > menupopup:nth-child(98):has(> menuitem:not([hidden])[checked="true"])
+    #mainPopupSet > menupopup:has(> menuitem:not([hidden])[checked="true"])
   
   ) {
     --checkmark-margin-left: var(--checkmark-margin-left_cover);
