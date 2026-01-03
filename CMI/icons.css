@@ -2825,7 +2825,6 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   ) {
     --checkmark-margin-left: var(--checkmark-margin-left_cover);
     --checkmark-margin-right: var(--checkmark-margin-right_cover);
-    --submenu-padding: var(--submenu-padding_cover);
     /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
     > :is(menuitem, menu):not(
         .menuitem-iconic,
@@ -2885,7 +2884,6 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   ) {
     --checkmark-margin-left: var(--checkmark-margin-left_cover);
     --checkmark-margin-right: var(--checkmark-margin-right_cover);
-    --submenu-padding: var(--submenu-padding_cover);
     /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
     > :is(menuitem, menu):not(
         .menuitem-iconic,

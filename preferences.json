@@ -285,27 +285,6 @@
   },
   {
     "type": "string",
-    "property": "cmi-submenu-padding_1",
-    "label": "The padding of most sub-menu items",
-    "default": "30px",
-    "placeholder": "default: 30px"
-  },
-  {
-    "type": "string",
-    "property": "cmi-submenu-padding_cover_1",
-    "label": "The padding of most sub-menu items after the menu item is checked",
-    "default": "34px",
-    "placeholder": "default: 34px"
-  },
-  {
-    "type": "string",
-    "property": "cmi-special-submenu-padding_1",
-    "label": "Very few special sub-menu items padding: ",
-    "default": "8px",
-    "placeholder": "default: 8px"
-  },
-  {
-    "type": "string",
     "property": "cmi-non-checkmark-subitems-padding_1",
     "label": "When a checkmark item is selected among the context menu items, the margins of the other unselected menu items will be adjusted accordingly.",
     "default": "24px",
@@ -360,27 +339,6 @@
     "label": "The right margin of the checkmark icon after the menu item is checked",
     "default": "8px",
     "placeholder": "default: 8px"
-  },
-  {
-    "type": "string",
-    "property": "cmi-submenu-padding_2",
-    "label": "The padding of most sub-menu items",
-    "default": "30px",
-    "placeholder": "default: 30px"
-  },
-  {
-    "type": "string",
-    "property": "cmi-submenu-padding_cover_2",
-    "label": "The padding of most sub-menu items after the menu item is checked",
-    "default": "30px",
-    "placeholder": "default: 30px"
-  },
-  {
-    "type": "string",
-    "property": "cmi-special-submenu-padding_2",
-    "label": "Very few special sub-menu items padding: ",
-    "default": "6px",
-    "placeholder": "default: 6px"
   },
   {
     "type": "string",
