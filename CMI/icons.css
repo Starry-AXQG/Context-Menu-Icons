@@ -2881,7 +2881,6 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     /* 浏览器内置翻译器菜单 */
     menupopup#full-page-translations-panel-settings-menupopup:has(> menuitem:not([hidden])[type="checkbox"])，
     /* Chat bot */
-    menupopup#chatbot-menupopup:has(> menuitem:not([hidden])[type="checkbox"]),
     menupopup#chatbot-menupopup:has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"])),
     menupopup#sidebar-history-menu:has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"])),
     #mainPopupSet > menupopup:has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"]))
@@ -2973,29 +2972,6 @@ menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
 padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
 box-sizing: border-box !important;
 }
-}
-
-
-/* Special sub-menu: spell check */
-#spell-dictionaries-menu:has(
-  menuitem:not([hidden])[type="checkbox"][checked="true"],
-  menuitem:not([hidden])[type="radio"][checked="true"]
-) {
-    > :is(menuitem, menu):not(
-      .menuitem-iconic,
-      .menu-iconic,
-
-      [type="checkbox"][checked="true"],
-      [type="radio"][checked="true"],
-
-      .in-menulist,
-      .in-menulist menuitem,
-      .in-menulist menu,
-      .unified-nav-current
-    ),
-  > menucaption {
-    padding-inline-start: var(--special-submenu-padding) !important;
-  }
 }
 
 
