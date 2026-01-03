@@ -1552,7 +1552,7 @@
         --menu-image: url("zen-icons/spell-check.svg");
       }
       #context-take-screenshot,
-      #node-menu-screenshotnode{
+      #node-menu-screenshotnode {
         --menu-image: url('zen-icons/screenshot.svg');
       }
       #context-viewsource {
