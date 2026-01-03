@@ -931,16 +931,7 @@
         padding-inline-start: calc(var(--fp-enabled, 0) * 16px);
         margin-inline-end: calc(var(--fp-enabled, 0) * 8px);
       }
-      
-      #PanelUI-fxa .panel-header > h1 > span::before {
-        --header-image: var(--avatar-image-url);
-        --fp-enabled: 1;
-        transform: scale(1.25);
-        border-radius: 99px;
-        display: inline-block;
-        height: 16px;
-      }
-      
+        
       #PanelUI-bookmarks .panel-header > h1 > span::before {
         --header-image: url("bookmark-star-on-tray.svg");
         --fp-enabled: 1;
