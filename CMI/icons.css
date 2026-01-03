@@ -2642,12 +2642,10 @@ menupopup#context_reopenInContainerPopupMenu {
 }
 
 
-/* ---------------------------
-   Part 2 of global rule : checkbox
-   ---------------------------*/
+/* --- Part 2 of global rule : checkbox ---*/
 /* 此规则用来去除原生“√”图标，方便给特殊菜单插入自定义图标,并更容易完成上下文菜单的文本对齐（v1.9.4 new change) 
 This rule is used to remove the native "√" icon, making it convenient to insert custom icons for special menus and facilitating the text alignment of context menus.（v1.9.4) */
-:is(menuitem[type="checkbox"], menuitem[type="radio"]):not([checked="true"]) {
+menuitem:is([type="checkbox"], [type="radio"]):not([checked="true"]) {
   /* 背景图转换已有的变量 --menu-image */
   background-image: var(--menu-image) !important;
   background-repeat: no-repeat !important;
