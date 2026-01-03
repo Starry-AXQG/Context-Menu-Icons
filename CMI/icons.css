@@ -2926,7 +2926,7 @@ menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
 menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
 > menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
 > .menu-highlightable-text {
-padding-inline-start: calc(var(--Non-checkmark-subitems-padding) + 4px) !important;
+padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
 box-sizing: border-box !important;
 }
 
