@@ -60,7 +60,7 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
 
     --submenu-padding: var(--cmi-submenu-padding_1, 30px);
     --submenu-padding_cover: var(--cmi-submenu-padding_cover_1, 34px);
-    --special-submenu-padding: var(--cmi-special-submenu-padding_1, 10px);
+    --special-submenu-padding: var(--cmi-special-submenu-padding_1, 8px);
     --Non-checkmark-subitems-padding: var(--cmi-non-checkmark-subitems-padding_1, 24px);
 
 /* ☑️ Optional: Advanced customization */
