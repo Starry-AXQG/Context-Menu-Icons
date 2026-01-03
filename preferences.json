@@ -301,8 +301,8 @@
     "type": "string",
     "property": "cmi-special-submenu-padding_1",
     "label": "Very few special sub-menu items padding: ",
-    "default": "12px",
-    "placeholder": "default: 12px"
+    "default": "10px",
+    "placeholder": "default: 10px"
   },
   {
     "type": "string",
