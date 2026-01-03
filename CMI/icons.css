@@ -1496,14 +1496,21 @@
         --menu-image: url('zen-icons/menu-bar.svg');
       }
       #context-redo,
-      menuitem[data-l10n-id="text-action-redo"] {
+      menuitem[data-l10n-id="text-action-redo"],
+      #node-menu-scrollnodeintoview,
+      #cMenu_findAgain,
+      #se-menu-gotoLine {
         --menu-image: url('zen-icons/edit-redo.svg');
       }
       #context-copy,
       menuitem[data-l10n-id="text-action-copy"],
       .textbox-contextmenu #strip-on-share,
       #placesContext_copy,
-      menu:has(#node-menu-copyinner) {
+      menu:has(#node-menu-copyinner),
+      #context-copyurl,
+      #console-menu-copy,
+      #console-menu-copy-object,
+      #console-menu-export-clipboard {
         --menu-image: url('zen-icons/edit-copy.svg');
       }
       #context-paste,
@@ -1545,7 +1552,7 @@
         --menu-image: url("zen-icons/spell-check.svg");
       }
       #context-take-screenshot,
-      #node-menu-screenshotnode {
+      #node-menu-screenshotnode{
         --menu-image: url('zen-icons/screenshot.svg');
       }
       #context-viewsource {
@@ -1650,7 +1657,8 @@
       menuitem[id='placesContext_openBookmarkLinks:tabs'],
       menuitem[id='placesContext_openBookmarkContainer:tabs'],
       #placesContext_openContainer\:tabs,
-      .openintabs-menuitem {
+      .openintabs-menuitem,
+      #context-openlinknewtab {
         --menu-image: url('zen-icons/tab.svg');
       }
       #context_openANewTab,
@@ -1740,7 +1748,8 @@
         list-style-image: url('zen-icons/unpin.svg') !important;
       }
       #context_duplicateTab,
-      #context_duplicateTabs {
+      #context_duplicateTabs,
+      #node-menu-duplicatenode {
         --menu-image: url('zen-icons/duplicate-tab.svg');
       }
       #zen-context-menu-compact-mode,
@@ -1779,7 +1788,8 @@
       #BMB_viewBookmarksSidebar {
         --menu-image: url('chrome://browser/skin/sidebars.svg');
       }
-      #BMB_searchBookmarks {
+      #BMB_searchBookmarks,
+      #se-menu-find {
         --menu-image: url('zen-icons/search-page.svg');
       }
       menuitem[id='placesContext_new:bookmark'],
@@ -1787,7 +1797,8 @@
       menuitem[id='placesContext_new:separator'],
       #newbookmark,
       #newfolder,
-      #newseparator {
+      #newseparator,
+      #node-menu-add {
         --menu-image: url('zen-icons/plus.svg');
       }
       #context-savelinktopocket,
