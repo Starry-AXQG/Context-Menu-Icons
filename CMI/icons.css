@@ -2882,8 +2882,9 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     menupopup#full-page-translations-panel-settings-menupopup:has(> menuitem:not([hidden])[type="checkbox"])，
     /* Chat bot */
     menupopup#chatbot-menupopup:has(> menuitem:not([hidden])[type="checkbox"]),
-    menupopup#sidebar-history-menu:has(> menuitem:not([hidden])[checked="true"]),
-    #mainPopupSet > menupopup:nth-child(98):has(> menuitem:not([hidden])[checked="true"])
+    menupopup#chatbot-menupopup:has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"])),
+    menupopup#sidebar-history-menu:has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"])),
+    #mainPopupSet > menupopup:has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"]))
   ) {
     --checkmark-margin-left: var(--checkmark-margin-left_cover);
     --checkmark-margin-right: var(--checkmark-margin-right_cover);
@@ -2931,44 +2932,20 @@ padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
 box-sizing: border-box !important;
 }
 
-
-/* 当 menupopup 下有被勾选的 checkbox 时，
-给同层级未勾选且不是父菜单的 checkbox 子项增加 padding */
-menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
-> menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
+/* 当 menupopup 下有被勾选的 checkbox、radio 时，
+给同层级未勾选且不是父菜单的 checkbox、radio 子项增加 padding */
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
+> :is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
 > .menu-text,
-menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
-> menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
+> :is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
 > .menu-highlightable-text {
 padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
 box-sizing: border-box !important;
 }
 
-  
-/* 当 menupopup 下有被勾选的 radio 时，
-给同层级未勾选且不是父菜单的 checkbox 子项增加 padding */
-menupopup:has(> menuitem[type="radio"]:not([hidden])[checked="true"])
-> menuitem[type="radio"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
-> .menu-text,
-menupopup:has(> menuitem[type="radio"]:not([hidden])[checked="true"])
-> menuitem[type="radio"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
-> .menu-highlightable-text {
-padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
-box-sizing: border-box !important;
-}  
-  
-menupopup#unified-extensions-context-menu:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"]) {
-  > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
-  > .menu-text,
-  menupopup#unified-extensions-context-menu:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
-  > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
-  > .menu-highlightable-text {
-  padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
-  box-sizing: border-box !important;
-}
 }
 
-}
 
 /* Linux */
 @media (-moz-platform: linux) {
@@ -2986,12 +2963,12 @@ box-sizing: border-box !important;
 
 
 /* 当 menupopup 下有未被隐藏的 checkbox、radio 时，
-给同层级未勾选且不是父菜单的 checkbox 子项增加 padding */
+给同层级未勾选且不是父菜单的 checkbox、radio 子项增加 padding */
 menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
-> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
+> :is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
 > .menu-text,
 menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
-> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
+> :is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
 > .menu-highlightable-text {
 padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
 box-sizing: border-box !important;
