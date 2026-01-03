@@ -1502,14 +1502,16 @@
       #context-copy,
       menuitem[data-l10n-id="text-action-copy"],
       .textbox-contextmenu #strip-on-share,
-      #placesContext_copy {
+      #placesContext_copy,
+      menu:has(#node-menu-copyinner) {
         --menu-image: url('zen-icons/edit-copy.svg');
       }
       #context-paste,
       menuitem[data-l10n-id="text-action-paste"],
       #placesContext_paste_group,
       #placesContext_paste,
-      #context-paste-no-formatting {
+      #context-paste-no-formatting,
+      menu:has(#node-menu-pasteinnerhtml) {
         --menu-image: url('zen-icons/edit-paste.svg');
       }
       #context-cut,
@@ -1529,7 +1531,8 @@
       menuitem[id='placesContext_deleteHost'],
       #context_zenDeleteWebPanel,
       #context_zenDeleteWorkspace,
-      #placesContext_removeTag {
+      #placesContext_removeTag,
+      #node-menu-delete {
         --menu-image: url('zen-icons/edit-delete.svg');
       }
       #paste-and-go {
@@ -1541,7 +1544,8 @@
       #spell-check-enabled {
         --menu-image: url("zen-icons/spell-check.svg");
       }
-      #context-take-screenshot {
+      #context-take-screenshot,
+      #node-menu-screenshotnode {
         --menu-image: url('zen-icons/screenshot.svg');
       }
       #context-viewsource {
@@ -1760,7 +1764,8 @@
       }
       menuitem[id='placesContext_show_bookmark:info'],
       menuitem[id='placesContext_show_folder:info'],
-      menuitem[id='placesContext_show:info'] {
+      menuitem[id='placesContext_show:info'],
+      #node-menu-edithtml {
         --menu-image: url('zen-icons/edit.svg');
       }
       menuitem[id='placesContext_showAllBookmarks'],
