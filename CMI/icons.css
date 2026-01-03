@@ -59,7 +59,13 @@
       #forward-button {
         list-style-image: url("arrow-right.svg") !important;
       }
-      
+      #node-menu-scrollnodeintoview,
+      #cMenu_findAgain {
+        --menu-image: url("arrow-down.svg");
+      }
+      #se-menu-gotoLine {
+        --menu-image: url("arrow-right.svg");
+      }
       #reload-button {
         list-style-image: url("reload.svg") !important;
       }
@@ -548,7 +554,11 @@
       #context-copy,
       .textbox-contextmenu #strip-on-share,
       #placesContext_copy,
-      menu:has(#node-menu-copyinner) {
+      menu:has(#node-menu-copyinner),
+      #context-copyurl,
+      #console-menu-copy,
+      #console-menu-copy-object,
+      #console-menu-export-clipboard {
         --menu-image: url("edit-copy.svg");
       }
       
@@ -723,7 +733,8 @@
       menuitem[id="placesContext_openBookmarkLinks:tabs"],
       menuitem[id="placesContext_openBookmarkContainer:tabs"],
       #placesContext_openContainer\:tabs,
-      .openintabs-menuitem {
+      .openintabs-menuitem,
+      #context-openlinknewtab {
         --menu-image: url("tab.svg");
       }
       
@@ -857,7 +868,8 @@
       #BMB_viewBookmarksSidebar {
         --menu-image: url("sidebars.svg");
       }
-      #BMB_searchBookmarks {
+      #BMB_searchBookmarks,
+      #se-menu-find {
         --menu-image: url("search-page.svg");
       }
       
@@ -870,7 +882,8 @@
       menuitem[id="placesContext_new:separator"],
       #newbookmark,
       #newfolder,
-      #newseparator {
+      #newseparator,
+      #node-menu-add {
         --menu-image: url("plus.svg");
       }
       
