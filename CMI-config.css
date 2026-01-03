@@ -71,7 +71,7 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
 
 
 /* Special Margins in Library Views */
-    --padding-viewColumns: 6px;
+    --padding-viewColumns: 11px;
     --padding-viewSort: var(--submenu-padding);
   }
 }
@@ -110,7 +110,7 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --cmi-menu-text-leftmargin: var(--cmi-menu-text-leftmargin_2, 0px);
 
     /* Special Margins in Library Views */
-    --padding-viewColumns: 6px;
-    --padding-viewSort: 29px;
+    --padding-viewColumns: 11px;
+    --padding-viewSort: 30px;
   }
 }
