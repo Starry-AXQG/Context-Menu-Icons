@@ -305,6 +305,20 @@
     "default": "0px",
     "placeholder": "default: 0px(Disbale)"
   },
+  {
+    "type": "string",
+    "property": "cmi-fluentui-icons-leftmargin",
+    "label": "☑️ Optional: Advanced customization - The left margin of FluentUI icons in context menu",
+    "default": "6px",
+    "placeholder": "default: 6px"
+  },
+  {
+    "type": "string",
+    "property": "cmi-fluentui-text-leftmargin",
+    "label": "☑️ Optional: Advanced customization - The left margin of FluentUI menu text in context menu",
+    "default": "8px",
+    "placeholder": "default: 8px"
+  },
 
 {
     "type": "separator",
@@ -360,6 +374,20 @@
     "label": "☑️ Optional: Advanced customization - The left margin of menu text in context menu(This will simultaneously modify the margin rules that have already been in effect for CMI. You can re-adjust the margin rules of CMI)",
     "default": "0px",
     "placeholder": "default: 0px(Disbale)"
+  },
+  {
+    "type": "string",
+    "property": "cmi-zenui-icons-leftmargin",
+    "label": "☑️ Optional: Advanced customization - The left margin of ZenUI icons in context menu",
+    "default": "6px",
+    "placeholder": "default: 6px"
+  },
+  {
+    "type": "string",
+    "property": "cmi-zenui-text-leftmargin",
+    "label": "☑️ Optional: Advanced customization - The left margin of ZenUI menu text in context menu",
+    "default": "12px",
+    "placeholder": "default: 12px"
   },
 {
   "type": "separator",

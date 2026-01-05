@@ -65,6 +65,10 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --cmi-extension-icon-leftmargin: var(--cmi-extension-icon-leftmargin_1, 0px);
     /* The position of the menu text */
     --cmi-menu-text-leftmargin: var(--cmi-menu-text-leftmargin_1, 0px);
+
+    /* The leftmargin of FluentUI icons/text */
+    --fluentui-icons-leftmargin: var(--cmi-fluentui-icons-leftmargin, 6px);
+    --fluentui-text-leftmargin: var(--cmi-fluentui-text-leftmargin, 8px);
   }
 }
 
@@ -96,5 +100,8 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --cmi-extension-icon-leftmargin: var(--cmi-extension-icon-leftmargin_2, 0px);
     /* The position of the menu text */
     --cmi-menu-text-leftmargin: var(--cmi-menu-text-leftmargin_2, 0px);
+
+    --zenui-icons-leftmargin: var(--cmi-zenui-icons-leftmargin, 6px);
+    --zenui-text-leftmargin: var(--cmi-zenui-text-leftmargin, 12px);
   }
 }
