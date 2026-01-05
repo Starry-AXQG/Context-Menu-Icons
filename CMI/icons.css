@@ -3013,29 +3013,31 @@ box-sizing: border-box !important;
 /* Optional: Advanced customization (Force the relocation of the icons from the extensions) */
 /* Easily change the positions of the icons in the context menu, as well as the location of the menu text (the distance between the text and the icons) */
 @-moz-document url-prefix("chrome://browser/content/browser.xhtml") {
-  
   @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+  /*
   :root {
-    /* Icon top and bottom margin */
-    --zen-cmenu-icon-margin-block: 2px !important;
-    /* Icons size */
+    Icon top and bottom margin
+    --zen-cmenu-icon-margin-block: 2px !important; 
+    Icons size 
     --zen-cmenu-icon-size: 16px !important;
   }
-
+ */
   /* ==== For all the icons in the context menus (mainly for the icons from the extensions, and then revert to the style of the CMI icons later ==== */
   menupopup > menuitem > .menu-icon,
   menupopup > menu > .menu-icon {
-    /* Size */
+    /* Size 
     width: var(--zen-cmenu-icon-size);
     height: var(--zen-cmenu-icon-size);
-
+    */
     /* Adjust the position of the extension icons (left margin) */
     margin-inline-start: var(--cmi-extension-icon-leftmargin);
 
     margin-inline-end: var(--zen-extensions-margin-right);
+    /*
     margin-block-start: var(--zen-cmenu-icon-margin-block);
     margin-block-end: var(--zen-cmenu-icon-margin-block);
-
+    */
+    
     /* Reset the possible padding */
     padding: 0 !important;
   }
