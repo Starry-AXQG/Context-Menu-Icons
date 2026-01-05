@@ -1484,7 +1484,9 @@
       #context-video-pictureinpicture {
         --menu-image: url('zen-icons/media-pip.svg') !important;
       }
-      #context-media-loop {
+      #context-media-loop,
+      #request-list-context-resend-only,
+      #request-list-context-edit-resend {
         --menu-image: url('zen-icons/media-loop.svg') !important;
       }
       
@@ -1520,11 +1522,13 @@
       menuitem[data-l10n-id="text-action-copy"],
       .textbox-contextmenu #strip-on-share,
       #placesContext_copy,
-      menu:has(#node-menu-copyinner),
+      menu:has(#node-menu-copyinner,#request-list-context-copy-url),
       #context-copyurl,
       #console-menu-copy,
       #console-menu-copy-object,
-      #console-menu-export-clipboard {
+      #console-menu-export-clipboard,
+      #node-menu-copy-source-url,
+      #node-menu-copy-to-clipboard {
         --menu-image: url('zen-icons/edit-copy.svg');
       }
       #context-paste,
@@ -1672,7 +1676,8 @@
       menuitem[id='placesContext_openBookmarkContainer:tabs'],
       #placesContext_openContainer\:tabs,
       .openintabs-menuitem,
-      #context-openlinknewtab {
+      #context-openlinknewtab,
+      #request-list-context-newtab {
         --menu-image: url('zen-icons/tab.svg');
       }
       #context_openANewTab,
@@ -1692,7 +1697,10 @@
       menuitem[id='placesContext_open:newprivatewindow'] {
         --menu-image: url('zen-icons/private-window.svg');
       }
-      #context-savelink {
+      #context-savelink,
+      #request-list-context-save-as-har,
+      #request-list-context-save-all-as-har,
+      #request-list-context-save-response-as {
         --menu-image: url('zen-icons/downloads.svg');
       }
       #spell-add-to-dictionary,
@@ -1724,7 +1732,8 @@
       #context_zenToggleMuteWebPanel[muted] {
         --menu-image: url('zen-icons/media-unmute.svg');
       }
-      #context-media-playbackrate {
+      #context-media-playbackrate,
+      #request-list-context-perf {
         --menu-image: url('zen-icons/media-speed.svg');
       }
       #context-video-fullscreen {
