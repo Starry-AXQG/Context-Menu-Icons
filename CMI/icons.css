@@ -1528,7 +1528,8 @@
       #console-menu-copy-object,
       #console-menu-export-clipboard,
       #node-menu-copy-source-url,
-      #node-menu-copy-to-clipboard {
+      #node-menu-copy-to-clipboard,
+      #variable-view-popup-copy {
         --menu-image: url('zen-icons/edit-copy.svg');
       }
       #context-paste,
@@ -1557,7 +1558,13 @@
       #context_zenDeleteWebPanel,
       #context_zenDeleteWorkspace,
       #placesContext_removeTag,
-      #node-menu-delete {
+      #node-menu-delete,
+      #storage-table-popup-delete,
+      #storage-table-popup-delete-all-from,
+      #storage-table-popup-delete-all,
+      #storage-table-popup-delete-all-session-cookies,
+      #storage-tree-popup-delete-all,
+      #storage-tree-popup-delete-all-session-cookies {
         --menu-image: url('zen-icons/edit-delete.svg');
       }
       #paste-and-go {
@@ -1579,7 +1586,8 @@
       #context-inspect-a11y {
         --menu-image: url('zen-icons/accessibility.svg');
       }
-      #context-inspect {
+      #context-inspect,
+      #request-list-context-use-as-fetch {
         --menu-image: url('zen-icons/inspect.svg');
       }
       #context-searchselect,
