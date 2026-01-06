@@ -918,69 +918,6 @@
         --menu-image: url("report.svg");
       }
       
-      .panel-header > h1 {
-        text-align: left;
-        margin-left: 8px !important;
-      }
-      
-      .panel-header > h1 > span::before {
-        content: "";
-        background: var(--header-image, none) center / 16px no-repeat;
-        -moz-context-properties: fill, fill-opacity;
-        fill: currentColor;
-        padding-inline-start: calc(var(--fp-enabled, 0) * 16px);
-        margin-inline-end: calc(var(--fp-enabled, 0) * 8px);
-      }
-      
-      #PanelUI-fxa .panel-header > h1 > span::before {
-        --header-image: var(--avatar-image-url);
-        --fp-enabled: 1;
-        transform: scale(1.25);
-        border-radius: 99px;
-        display: inline-block;
-        height: 16px;
-      }
-      
-      #PanelUI-bookmarks .panel-header > h1 > span::before {
-        --header-image: url("bookmark-star-on-tray.svg");
-        --fp-enabled: 1;
-      }
-      
-      #PanelUI-history .panel-header > h1 > span::before {
-        --header-image: url("history.svg");
-        --fp-enabled: 1;
-      }
-      #appmenu-moreTools .panel-header > h1 > span::before {
-        --header-image: url("menu.svg");
-        --fp-enabled: 1;
-      }  
-      #report-broken-site-popup-mainView .panel-header > h1 > span::before {
-        --header-image: url("report.svg");
-        --fp-enabled: 1;
-      }    
-      #PanelUI-helpView .panel-header > h1 > span::before {
-        --header-image: url("help.svg");
-        --fp-enabled: 1;
-      }
-      
-      #appMenu-libraryView .panel-header > h1 > span::before {
-        --header-image: url("library.svg");
-        --fp-enabled: 1;
-      }
-      
-      #unified-extensions-panel .panel-header > h1 > span::before {
-        --header-image: url("extension.svg");
-        --fp-enabled: 1;
-      }
-      .unified-extensions-context-menu-pin-to-toolbar {
-        --menu-image: url("pin.svg");
-      }
-      .unified-extensions-context-menu-move-widget-down {
-        --menu-image: url("arrow-down.svg");
-      }
-      .unified-extensions-context-menu-move-widget-up {
-        --menu-image: url("arrow-up.svg");
-      }
       /* FluentUI: Sidebar Menu Icons */
       #sidebar-switcher-bookmarks {
         --menu-image: url("bookmark-star-on-tray.svg");
@@ -1214,8 +1151,79 @@
     }
     #appMenu_aboutName {
       list-style-image: url('help.svg') !important;
-    }      
-
+    }
+    /* Panel Header Icons */
+    .panel-header > h1 {
+      text-align: left;
+      margin-left: 8px !important;
+    }
+    
+    .panel-header > h1 > span::before {
+      content: "";
+      background: var(--header-image, none) center / 16px no-repeat;
+      -moz-context-properties: fill, fill-opacity;
+      fill: currentColor;
+      padding-inline-start: calc(var(--fp-enabled, 0) * 16px);
+      margin-inline-end: calc(var(--fp-enabled, 0) * 8px);
+    }
+    
+    #PanelUI-fxa .panel-header > h1 > span::before {
+      --header-image: var(--avatar-image-url);
+      --fp-enabled: 1;
+      transform: scale(1.25);
+      border-radius: 99px;
+      display: inline-block;
+      height: 16px;
+    }
+    #appMenu-fxa-label2::before {
+      content: '';
+      display: -moz-box;
+      height: 16px;
+      width: 16px;
+      background: var(--avatar-image-url) 0/16px;
+      scale: 1.25;
+      border-radius: 99px;
+    }
+    #PanelUI-bookmarks .panel-header > h1 > span::before {
+      --header-image: url("bookmark-star-on-tray.svg");
+      --fp-enabled: 1;
+    }
+    
+    #PanelUI-history .panel-header > h1 > span::before {
+      --header-image: url("history.svg");
+      --fp-enabled: 1;
+    }
+    #appmenu-moreTools .panel-header > h1 > span::before {
+      --header-image: url("menu.svg");
+      --fp-enabled: 1;
+    }
+    #report-broken-site-popup-mainView .panel-header > h1 > span::before {
+      --header-image: url("report.svg");
+      --fp-enabled: 1;
+    }
+    #PanelUI-helpView .panel-header > h1 > span::before {
+      --header-image: url("help.svg");
+      --fp-enabled: 1;
+    }
+    
+    #appMenu-libraryView .panel-header > h1 > span::before {
+      --header-image: url("library.svg");
+      --fp-enabled: 1;
+    }
+    
+    #unified-extensions-panel .panel-header > h1 > span::before {
+      --header-image: url("extension.svg");
+      --fp-enabled: 1;
+    }
+    .unified-extensions-context-menu-pin-to-toolbar {
+      --menu-image: url("pin.svg");
+    }
+    .unified-extensions-context-menu-move-widget-down {
+      --menu-image: url("arrow-down.svg");
+    }
+    .unified-extensions-context-menu-move-widget-up {
+      --menu-image: url("arrow-up.svg");
+    }
 
       /* Textbox ContextMenu (2025.8.29 fix)*/
       menuitem[data-l10n-id="text-action-undo"] {
@@ -1508,7 +1516,7 @@
       }
       #context-add-engine {
         --menu-image: url('zen-icons/search-add.svg');
-    }
+      }
       #context-undo,
       menuitem[data-l10n-id="text-action-undo"],
       #context_undoCloseTab,
@@ -2003,7 +2011,12 @@
       #appMenu_aboutName {
         list-style-image: url('zen-icons/help.svg') !important;
       }
-      
+    /* Panel Header Icons */    
+    #appmenu-moreTools .panel-header > h1 > span::before {
+      --header-image: url("zen-icons/menu.svg");
+      --fp-enabled: 1;
+    }
+
       /* zen Workspace */
       #context_zenEditWorkspace,
       #context_zen-edit-tab-title {
