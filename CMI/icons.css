@@ -950,7 +950,14 @@
         --header-image: url("history.svg");
         --fp-enabled: 1;
       }
-      
+      #appmenu-moreTools .panel-header > h1 > span::before {
+        --header-image: url("menu.svg");
+        --fp-enabled: 1;
+      }  
+      #report-broken-site-popup-mainView .panel-header > h1 > span::before {
+        --header-image: url("report.svg");
+        --fp-enabled: 1;
+      }    
       #PanelUI-helpView .panel-header > h1 > span::before {
         --header-image: url("help.svg");
         --fp-enabled: 1;
