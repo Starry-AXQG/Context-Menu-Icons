@@ -2012,7 +2012,7 @@
       }
     /* Panel Header Icons */    
     #appmenu-moreTools .panel-header > h1 > span::before {
-      --header-image: url("zen-icons/menu.svg");
+      --header-image: url('chrome://browser/skin/zen-icons/menu.svg');
       --fp-enabled: 1;
     }
 
