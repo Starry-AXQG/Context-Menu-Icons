@@ -517,7 +517,9 @@
       #context-video-pictureinpicture {
         --menu-image: url("media-pip.svg");
       }   
-      #context-media-loop {
+      #context-media-loop,
+      #request-list-context-resend-only,
+      #request-list-context-edit-resend {
         --menu-image: url("media-loop.svg");
       }
 
@@ -554,11 +556,13 @@
       #context-copy,
       .textbox-contextmenu #strip-on-share,
       #placesContext_copy,
-      menu:has(#node-menu-copyinner),
+      menu:has(#node-menu-copyinner,#request-list-context-copy-url),
       #context-copyurl,
       #console-menu-copy,
       #console-menu-copy-object,
-      #console-menu-export-clipboard {
+      #console-menu-export-clipboard,
+      #node-menu-copy-source-url,
+      #node-menu-copy-to-clipboard {
         --menu-image: url("edit-copy.svg");
       }
       
@@ -605,7 +609,13 @@
       menuitem[id="placesContext_deleteHost"],
       .textbox-contextmenu menuitem.searchbar-clear-history,
       #placesContext_removeTag,
-      #node-menu-delet {
+      #node-menu-delete,
+      #storage-table-popup-delete,
+      #storage-table-popup-delete-all-from,
+      #storage-table-popup-delete-all,
+      #storage-table-popup-delete-all-session-cookies,
+      #storage-tree-popup-delete-all,
+      #storage-tree-popup-delete-all-session-cookies {
         --menu-image: url("edit-delete.svg");
       }
       
@@ -638,7 +648,8 @@
         --menu-image: url("accessibility.svg");
       }
       
-      #context-inspect {
+      #context-inspect,
+      #request-list-context-use-as-fetch {
         --menu-image: url("inspect.svg");
       }
       
@@ -734,7 +745,8 @@
       menuitem[id="placesContext_openBookmarkContainer:tabs"],
       #placesContext_openContainer\:tabs,
       .openintabs-menuitem,
-      #context-openlinknewtab {
+      #context-openlinknewtab,
+      #request-list-context-newtab {
         --menu-image: url("tab.svg");
       }
       
@@ -768,7 +780,10 @@
         --menu-image: url("private-window.svg");
       }
       
-      #context-savelink {
+      #context-savelink,
+      #request-list-context-save-as-har,
+      #request-list-context-save-all-as-har,
+      #request-list-context-save-response-as {
         --menu-image: url("downloads.svg");
       }
       
@@ -804,7 +819,9 @@
         --menu-image: url("media-unmute.svg");
       }
       
-      #context-media-playbackrate {
+      #context-media-playbackrate,
+      #context-media-playbackrate,
+      #request-list-context-perf {
         --menu-image: url("media-speed.svg");
       }
       
