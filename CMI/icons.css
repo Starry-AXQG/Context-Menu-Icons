@@ -59,7 +59,13 @@
       #forward-button {
         list-style-image: url("arrow-right.svg") !important;
       }
-      
+      #node-menu-scrollnodeintoview,
+      #cMenu_findAgain {
+        --menu-image: url("arrow-down.svg");
+      }
+      #se-menu-gotoLine {
+        --menu-image: url("arrow-right.svg");
+      }
       #reload-button {
         list-style-image: url("reload.svg") !important;
       }
@@ -511,7 +517,9 @@
       #context-video-pictureinpicture {
         --menu-image: url("media-pip.svg");
       }   
-      #context-media-loop {
+      #context-media-loop,
+      #request-list-context-resend-only,
+      #request-list-context-edit-resend {
         --menu-image: url("media-loop.svg");
       }
 
@@ -547,7 +555,15 @@
       
       #context-copy,
       .textbox-contextmenu #strip-on-share,
-      #placesContext_copy {
+      #placesContext_copy,
+      menu:has(#node-menu-copyinner,#request-list-context-copy-url),
+      #context-copyurl,
+      #console-menu-copy,
+      #console-menu-copy-object,
+      #console-menu-export-clipboard,
+      #node-menu-copy-source-url,
+      #node-menu-copy-to-clipboard,
+      #variable-view-popup-copy {
         --menu-image: url("edit-copy.svg");
       }
       
@@ -556,16 +572,14 @@
         --menu-image: url("edit-paste.svg");
       }
       #placesContext_paste,
-      #context-paste-no-formatting {
+      #context-paste-no-formatting,
+      menu:has(#node-menu-pasteinnerhtml) {
         --menu-image: url("edit-paste.svg");
       }      
       .textbox-contextmenu menuitem.searchbar-paste-and-search {
         --menu-image: url("edit-paste.svg");
       }
 
-      .textbox-contextmenu menuitem.searchbar-clear-history {
-        --menu-image: url("edit-delete.svg");
-      }
       #context-cut,
       #placesContext_cut {
         --menu-image: url("edit-cut.svg");
@@ -580,10 +594,7 @@
       #placesContext_showInFolder {
         --menu-image: url("folder-open.svg");
       }
-      #placesContext_removeTag {
-        --menu-image: url("edit-delete.svg");
-      }
-      
+
       #viewSort,
       #placesContext_sortBy\:name {
           --menu-image: url("sort.svg");
@@ -596,7 +607,16 @@
       menuitem[id="placesContext_deleteFolder"],
       menuitem[id="placesContext_delete"],
       menuitem[id="placesContext_delete_history"],
-      menuitem[id="placesContext_deleteHost"] {
+      menuitem[id="placesContext_deleteHost"],
+      .textbox-contextmenu menuitem.searchbar-clear-history,
+      #placesContext_removeTag,
+      #node-menu-delete,
+      #storage-table-popup-delete,
+      #storage-table-popup-delete-all-from,
+      #storage-table-popup-delete-all,
+      #storage-table-popup-delete-all-session-cookies,
+      #storage-tree-popup-delete-all,
+      #storage-tree-popup-delete-all-session-cookies {
         --menu-image: url("edit-delete.svg");
       }
       
@@ -608,7 +628,8 @@
         --menu-image: url("print.svg");
       }
       
-      #context-take-screenshot {
+      #context-take-screenshot,
+      #node-menu-screenshotnode {
         --menu-image: url("screenshot.svg");
       }
       
@@ -628,7 +649,8 @@
         --menu-image: url("accessibility.svg");
       }
       
-      #context-inspect {
+      #context-inspect,
+      #request-list-context-use-as-fetch {
         --menu-image: url("inspect.svg");
       }
       
@@ -723,7 +745,9 @@
       menuitem[id="placesContext_openBookmarkLinks:tabs"],
       menuitem[id="placesContext_openBookmarkContainer:tabs"],
       #placesContext_openContainer\:tabs,
-      .openintabs-menuitem {
+      .openintabs-menuitem,
+      #context-openlinknewtab,
+      #request-list-context-newtab {
         --menu-image: url("tab.svg");
       }
       
@@ -757,7 +781,10 @@
         --menu-image: url("private-window.svg");
       }
       
-      #context-savelink {
+      #context-savelink,
+      #request-list-context-save-as-har,
+      #request-list-context-save-all-as-har,
+      #request-list-context-save-response-as {
         --menu-image: url("downloads.svg");
       }
       
@@ -793,7 +820,9 @@
         --menu-image: url("media-unmute.svg");
       }
       
-      #context-media-playbackrate {
+      #context-media-playbackrate,
+      #context-media-playbackrate,
+      #request-list-context-perf {
         --menu-image: url("media-speed.svg");
       }
       
@@ -841,7 +870,8 @@
       
       menuitem[id="placesContext_show_bookmark:info"],
       menuitem[id="placesContext_show_folder:info"],
-      menuitem[id="placesContext_show:info"] {
+      menuitem[id="placesContext_show:info"],
+      #node-menu-edithtml {
         --menu-image: url("edit.svg");
       }
       
@@ -856,7 +886,8 @@
       #BMB_viewBookmarksSidebar {
         --menu-image: url("sidebars.svg");
       }
-      #BMB_searchBookmarks {
+      #BMB_searchBookmarks,
+      #se-menu-find {
         --menu-image: url("search-page.svg");
       }
       
@@ -869,7 +900,8 @@
       menuitem[id="placesContext_new:separator"],
       #newbookmark,
       #newfolder,
-      #newseparator {
+      #newseparator,
+      #node-menu-add {
         --menu-image: url("plus.svg");
       }
       
@@ -904,62 +936,6 @@
         --menu-image: url("report.svg");
       }
       
-      .panel-header > h1 {
-        text-align: left;
-        margin-left: 8px !important;
-      }
-      
-      .panel-header > h1 > span::before {
-        content: "";
-        background: var(--header-image, none) center / 16px no-repeat;
-        -moz-context-properties: fill, fill-opacity;
-        fill: currentColor;
-        padding-inline-start: calc(var(--fp-enabled, 0) * 16px);
-        margin-inline-end: calc(var(--fp-enabled, 0) * 8px);
-      }
-      
-      #PanelUI-fxa .panel-header > h1 > span::before {
-        --header-image: var(--avatar-image-url);
-        --fp-enabled: 1;
-        transform: scale(1.25);
-        border-radius: 99px;
-        display: inline-block;
-        height: 16px;
-      }
-      
-      #PanelUI-bookmarks .panel-header > h1 > span::before {
-        --header-image: url("bookmark-star-on-tray.svg");
-        --fp-enabled: 1;
-      }
-      
-      #PanelUI-history .panel-header > h1 > span::before {
-        --header-image: url("history.svg");
-        --fp-enabled: 1;
-      }
-      
-      #PanelUI-helpView .panel-header > h1 > span::before {
-        --header-image: url("help.svg");
-        --fp-enabled: 1;
-      }
-      
-      #appMenu-libraryView .panel-header > h1 > span::before {
-        --header-image: url("library.svg");
-        --fp-enabled: 1;
-      }
-      
-      #unified-extensions-panel .panel-header > h1 > span::before {
-        --header-image: url("extension.svg");
-        --fp-enabled: 1;
-      }
-      .unified-extensions-context-menu-pin-to-toolbar {
-        --menu-image: url("pin.svg");
-      }
-      .unified-extensions-context-menu-move-widget-down {
-        --menu-image: url("arrow-down.svg");
-      }
-      .unified-extensions-context-menu-move-widget-up {
-        --menu-image: url("arrow-up.svg");
-      }
       /* FluentUI: Sidebar Menu Icons */
       #sidebar-switcher-bookmarks {
         --menu-image: url("bookmark-star-on-tray.svg");
@@ -1193,8 +1169,79 @@
     }
     #appMenu_aboutName {
       list-style-image: url('help.svg') !important;
-    }      
-
+    }
+    /* Panel Header Icons */
+    .panel-header > h1 {
+      text-align: left;
+      margin-left: 8px !important;
+    }
+    
+    .panel-header > h1 > span::before {
+      content: "";
+      background: var(--header-image, none) center / 16px no-repeat;
+      -moz-context-properties: fill, fill-opacity;
+      fill: currentColor;
+      padding-inline-start: calc(var(--fp-enabled, 0) * 16px);
+      margin-inline-end: calc(var(--fp-enabled, 0) * 8px);
+    }
+    
+    #PanelUI-fxa .panel-header > h1 > span::before {
+      --header-image: var(--avatar-image-url);
+      --fp-enabled: 1;
+      transform: scale(1.25);
+      border-radius: 99px;
+      display: inline-block;
+      height: 16px;
+    }
+    #appMenu-fxa-label2::before {
+      content: '';
+      display: -moz-box;
+      height: 16px;
+      width: 16px;
+      background: var(--avatar-image-url) 0/16px;
+      scale: 1.25;
+      border-radius: 99px;
+    }
+    #PanelUI-bookmarks .panel-header > h1 > span::before {
+      --header-image: url("bookmark-star-on-tray.svg");
+      --fp-enabled: 1;
+    }
+    
+    #PanelUI-history .panel-header > h1 > span::before {
+      --header-image: url("history.svg");
+      --fp-enabled: 1;
+    }
+    #appmenu-moreTools .panel-header > h1 > span::before {
+      --header-image: url("menu.svg");
+      --fp-enabled: 1;
+    }
+    #report-broken-site-popup-mainView .panel-header > h1 > span::before {
+      --header-image: url("report.svg");
+      --fp-enabled: 1;
+    }
+    #PanelUI-helpView .panel-header > h1 > span::before {
+      --header-image: url("help.svg");
+      --fp-enabled: 1;
+    }
+    
+    #appMenu-libraryView .panel-header > h1 > span::before {
+      --header-image: url("library.svg");
+      --fp-enabled: 1;
+    }
+    
+    #unified-extensions-panel .panel-header > h1 > span::before {
+      --header-image: url("extension.svg");
+      --fp-enabled: 1;
+    }
+    .unified-extensions-context-menu-pin-to-toolbar {
+      --menu-image: url("pin.svg");
+    }
+    .unified-extensions-context-menu-move-widget-down {
+      --menu-image: url("arrow-down.svg");
+    }
+    .unified-extensions-context-menu-move-widget-up {
+      --menu-image: url("arrow-up.svg");
+    }
 
       /* Textbox ContextMenu (2025.8.29 fix)*/
       menuitem[data-l10n-id="text-action-undo"] {
@@ -1367,7 +1414,7 @@
   /*ZenUI*/
   @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
     :root {
-        --zen-contextmenu-menuitem-padding-inline: 6px !important;
+        --zen-contextmenu-menuitem-padding-inline: var(--zenui-icons-leftmargin) !important;
         --zen-contextmenu-menuicon-margin-inline: 3px !important;
         --zen-contextmenu-menuitem-margin: 0px 2px !important;
         --group-padding: var(--zen-contextmenu-menuitem-padding-inline);
@@ -1424,10 +1471,9 @@
 
     /* Specifying icons to apply for options in Unified Extensions Menu */
     @media not (-moz-platform: linux) {
-
-        .unified-extensions-context-menu-pin-to-toolbar {
-          --menu-image: url('zen-icons/pin.svg');
-        }
+      .unified-extensions-context-menu-pin-to-toolbar {
+        --menu-image: url('zen-icons/pin.svg');
+      }
       }
       .unified-extensions-context-menu-move-widget-down {
         --menu-image: url('zen-icons/arrow-down.svg');
@@ -1470,7 +1516,9 @@
       #context-video-pictureinpicture {
         --menu-image: url('zen-icons/media-pip.svg') !important;
       }
-      #context-media-loop {
+      #context-media-loop,
+      #request-list-context-resend-only,
+      #request-list-context-edit-resend {
         --menu-image: url('zen-icons/media-loop.svg') !important;
       }
       
@@ -1485,7 +1533,7 @@
       }
       #context-add-engine {
         --menu-image: url('zen-icons/search-add.svg');
-    }
+      }
       #context-undo,
       menuitem[data-l10n-id="text-action-undo"],
       #context_undoCloseTab,
@@ -1496,20 +1544,32 @@
         --menu-image: url('zen-icons/menu-bar.svg');
       }
       #context-redo,
-      menuitem[data-l10n-id="text-action-redo"] {
+      menuitem[data-l10n-id="text-action-redo"],
+      #node-menu-scrollnodeintoview,
+      #cMenu_findAgain,
+      #se-menu-gotoLine {
         --menu-image: url('zen-icons/edit-redo.svg');
       }
       #context-copy,
       menuitem[data-l10n-id="text-action-copy"],
       .textbox-contextmenu #strip-on-share,
-      #placesContext_copy {
+      #placesContext_copy,
+      menu:has(#node-menu-copyinner,#request-list-context-copy-url),
+      #context-copyurl,
+      #console-menu-copy,
+      #console-menu-copy-object,
+      #console-menu-export-clipboard,
+      #node-menu-copy-source-url,
+      #node-menu-copy-to-clipboard,
+      #variable-view-popup-copy {
         --menu-image: url('zen-icons/edit-copy.svg');
       }
       #context-paste,
       menuitem[data-l10n-id="text-action-paste"],
       #placesContext_paste_group,
       #placesContext_paste,
-      #context-paste-no-formatting {
+      #context-paste-no-formatting,
+      menu:has(#node-menu-pasteinnerhtml) {
         --menu-image: url('zen-icons/edit-paste.svg');
       }
       #context-cut,
@@ -1529,7 +1589,14 @@
       menuitem[id='placesContext_deleteHost'],
       #context_zenDeleteWebPanel,
       #context_zenDeleteWorkspace,
-      #placesContext_removeTag {
+      #placesContext_removeTag,
+      #node-menu-delete,
+      #storage-table-popup-delete,
+      #storage-table-popup-delete-all-from,
+      #storage-table-popup-delete-all,
+      #storage-table-popup-delete-all-session-cookies,
+      #storage-tree-popup-delete-all,
+      #storage-tree-popup-delete-all-session-cookies {
         --menu-image: url('zen-icons/edit-delete.svg');
       }
       #paste-and-go {
@@ -1541,7 +1608,8 @@
       #spell-check-enabled {
         --menu-image: url("zen-icons/spell-check.svg");
       }
-      #context-take-screenshot {
+      #context-take-screenshot,
+      #node-menu-screenshotnode {
         --menu-image: url('zen-icons/screenshot.svg');
       }
       #context-viewsource {
@@ -1550,7 +1618,8 @@
       #context-inspect-a11y {
         --menu-image: url('zen-icons/accessibility.svg');
       }
-      #context-inspect {
+      #context-inspect,
+      #request-list-context-use-as-fetch {
         --menu-image: url('zen-icons/inspect.svg');
       }
       #context-searchselect,
@@ -1646,7 +1715,9 @@
       menuitem[id='placesContext_openBookmarkLinks:tabs'],
       menuitem[id='placesContext_openBookmarkContainer:tabs'],
       #placesContext_openContainer\:tabs,
-      .openintabs-menuitem {
+      .openintabs-menuitem,
+      #context-openlinknewtab,
+      #request-list-context-newtab {
         --menu-image: url('zen-icons/tab.svg');
       }
       #context_openANewTab,
@@ -1666,7 +1737,10 @@
       menuitem[id='placesContext_open:newprivatewindow'] {
         --menu-image: url('zen-icons/private-window.svg');
       }
-      #context-savelink {
+      #context-savelink,
+      #request-list-context-save-as-har,
+      #request-list-context-save-all-as-har,
+      #request-list-context-save-response-as {
         --menu-image: url('zen-icons/downloads.svg');
       }
       #spell-add-to-dictionary,
@@ -1698,7 +1772,8 @@
       #context_zenToggleMuteWebPanel[muted] {
         --menu-image: url('zen-icons/media-unmute.svg');
       }
-      #context-media-playbackrate {
+      #context-media-playbackrate,
+      #request-list-context-perf {
         --menu-image: url('zen-icons/media-speed.svg');
       }
       #context-video-fullscreen {
@@ -1736,7 +1811,8 @@
         list-style-image: url('zen-icons/unpin.svg') !important;
       }
       #context_duplicateTab,
-      #context_duplicateTabs {
+      #context_duplicateTabs,
+      #node-menu-duplicatenode {
         --menu-image: url('zen-icons/duplicate-tab.svg');
       }
       #zen-context-menu-compact-mode,
@@ -1760,7 +1836,8 @@
       }
       menuitem[id='placesContext_show_bookmark:info'],
       menuitem[id='placesContext_show_folder:info'],
-      menuitem[id='placesContext_show:info'] {
+      menuitem[id='placesContext_show:info'],
+      #node-menu-edithtml {
         --menu-image: url('zen-icons/edit.svg');
       }
       menuitem[id='placesContext_showAllBookmarks'],
@@ -1774,7 +1851,8 @@
       #BMB_viewBookmarksSidebar {
         --menu-image: url('chrome://browser/skin/sidebars.svg');
       }
-      #BMB_searchBookmarks {
+      #BMB_searchBookmarks,
+      #se-menu-find {
         --menu-image: url('zen-icons/search-page.svg');
       }
       menuitem[id='placesContext_new:bookmark'],
@@ -1782,7 +1860,8 @@
       menuitem[id='placesContext_new:separator'],
       #newbookmark,
       #newfolder,
-      #newseparator {
+      #newseparator,
+      #node-menu-add {
         --menu-image: url('zen-icons/plus.svg');
       }
       #context-savelinktopocket,
@@ -1949,7 +2028,12 @@
       #appMenu_aboutName {
         list-style-image: url('zen-icons/help.svg') !important;
       }
-      
+    /* Panel Header Icons */    
+    #appmenu-moreTools .panel-header > h1 > span::before {
+      --header-image: url('chrome://browser/skin/zen-icons/menu.svg');
+      --fp-enabled: 1;
+    }
+
       /* zen Workspace */
       #context_zenEditWorkspace,
       #context_zen-edit-tab-title {
@@ -2566,8 +2650,9 @@ I fixed these errors and enhanced some of its features, making it more compatibl
 :root {
   /* FluentUI */
 @media (-moz-pref("cmi-Switch-Icon-Package", 1)) {
-  --fp-contextmenu-menuicon-margin-inline: 8px;
-  --fp-contextmenu-menuitem-padding-inline: 6px;
+  --fp-contextmenu-menuitem-padding-inline: var(--fluentui-icons-leftmargin);
+  --fp-contextmenu-menuicon-margin-inline: var(--fluentui-text-leftmargin);
+  
   --group-padding: var(--fp-contextmenu-menuicon-margin-inline);
 }
 
@@ -2577,8 +2662,8 @@ I fixed these errors and enhanced some of its features, making it more compatibl
   --arrowpanel-menuitem-padding-inline: 10px !important;
   
 @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
-  --fp-contextmenu-menuicon-margin-inline: 12px;
   --fp-contextmenu-menuitem-padding-inline: 10px;
+  --fp-contextmenu-menuicon-margin-inline: var(--zenui-text-leftmargin);
 }  
 }
 
@@ -2612,12 +2697,10 @@ menupopup#context_reopenInContainerPopupMenu {
 }
 
 
-/* ---------------------------
-   Part 2 of global rule : checkbox
-   ---------------------------*/
+/* --- Part 2 of global rule : checkbox ---*/
 /* 此规则用来去除原生“√”图标，方便给特殊菜单插入自定义图标,并更容易完成上下文菜单的文本对齐（v1.9.4 new change) 
 This rule is used to remove the native "√" icon, making it convenient to insert custom icons for special menus and facilitating the text alignment of context menus.（v1.9.4) */
-:is(menuitem[type="checkbox"], menuitem[type="radio"]):not([checked="true"]) {
+menuitem:is([type="checkbox"], [type="radio"]):not([checked="true"]) {
   /* 背景图转换已有的变量 --menu-image */
   background-image: var(--menu-image) !important;
   background-repeat: no-repeat !important;
@@ -2797,7 +2880,6 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   ) {
     --checkmark-margin-left: var(--checkmark-margin-left_cover);
     --checkmark-margin-right: var(--checkmark-margin-right_cover);
-    --submenu-padding: var(--submenu-padding_cover);
     /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
     > :is(menuitem, menu):not(
         .menuitem-iconic,
@@ -2851,13 +2933,12 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     /* 浏览器内置翻译器菜单 */
     menupopup#full-page-translations-panel-settings-menupopup:has(> menuitem:not([hidden])[type="checkbox"])，
     /* Chat bot */
-    menupopup#chatbot-menupopup:has(> menuitem:not([hidden])[type="checkbox"]),
-    menupopup#sidebar-history-menu:has(> menuitem:not([hidden])[checked="true"]),
-    #mainPopupSet > menupopup:nth-child(98):has(> menuitem:not([hidden])[checked="true"])
+    menupopup#chatbot-menupopup:has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"])),
+    menupopup#sidebar-history-menu:has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"])),
+    #mainPopupSet > menupopup:has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"]))
   ) {
     --checkmark-margin-left: var(--checkmark-margin-left_cover);
     --checkmark-margin-right: var(--checkmark-margin-right_cover);
-    --submenu-padding: var(--submenu-padding_cover);
     /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
     > :is(menuitem, menu):not(
         .menuitem-iconic,
@@ -2889,105 +2970,25 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
    ========================================================= */
 
 @media not (-moz-platform: linux) {
-/* 当 menupopup 下有被勾选的 checkbox 时，
-给同层级未勾选的 checkbox 子项增加 padding */
-menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
-> menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
+
+/* 当 menupopup 下有被勾选的 checkbox、radio 时，
+给同层级未勾选且不是父菜单的 checkbox、radio 子项增加 padding */
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
+> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
 > .menu-text,
-menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
-> menuitem[type="checkbox"]:not([hidden]):not([checked="true"])
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
+> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
 > .menu-highlightable-text {
 padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
 box-sizing: border-box !important;
 }
-
-
-/* 当 menupopup 下有被勾选的 checkbox 时，
-给同层级未勾选且不是父菜单的 checkbox 子项增加 padding */
-menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
-> menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
-> .menu-text,
-menupopup:has(> menuitem[type="checkbox"]:not([hidden])[checked="true"])
-> menuitem[type="checkbox"]:not([hidden]):not([checked="true"]):not(:has(menupopup))
-> .menu-highlightable-text {
-padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
-box-sizing: border-box !important;
 }
 
-menupopup#unified-extensions-context-menu:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"]) {
-  > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
-  > .menu-text,
-  menupopup#unified-extensions-context-menu:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
-  > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
-  > .menu-highlightable-text {
-  padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
-  box-sizing: border-box !important;
-}
-}
-
-/* Special Margins in Library Views */
-
-  #viewColumns > menupopup:has(
-  menuitem:not([hidden])[type="checkbox"][checked="true"],
-  menuitem:not([hidden])[type="radio"][checked="true"]
-) {
-    > :is(menuitem, menu):not(
-      .menuitem-iconic,
-      .menu-iconic,
-
-      [type="checkbox"][checked="true"],
-      [type="radio"][checked="true"],
-
-      .in-menulist,
-      .in-menulist menuitem,
-      .in-menulist menu,
-      .unified-nav-current
-    ),
-  /* 分组标题 */
-  > menucaption {
-    padding-inline-start: var(--padding-viewColumns) !important;
-  }
-}
-
-#viewSort > menupopup:has(
-  menuitem:not([hidden])[type="checkbox"][checked="true"],
-  menuitem:not([hidden])[type="radio"][checked="true"]
-) {
-    > :is(menuitem, menu):not(
-      .menuitem-iconic,
-      .menu-iconic,
-
-      [type="checkbox"][checked="true"],
-      [type="radio"][checked="true"],
-
-      .in-menulist,
-      .in-menulist menuitem,
-      .in-menulist menu,
-      .unified-nav-current
-    ),
-  > menucaption {
-    padding-inline-start: var(--padding-viewSort) !important;
-  }
-}
-}
 
 /* Linux */
 @media (-moz-platform: linux) {
 /* 当 menupopup 下有未被隐藏的 checkbox、radio 时，
-给同层级未勾选的 checkbox 子项增加 padding */
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
-> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"])
-> .menu-text,
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
-> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"])
-> .menu-highlightable-text {
-padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
-box-sizing: border-box !important;
-}
-
-
-/* 当 menupopup 下有未被隐藏的 checkbox、radio 时，
-给同层级未勾选且不是父菜单的 checkbox 子项增加 padding */
+给同层级未勾选且不是父菜单的 checkbox、radio 子项增加 padding */
 menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
 > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
 > .menu-text,
@@ -2997,52 +2998,6 @@ menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
 padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
 box-sizing: border-box !important;
 }
-}
-
-
-/* 子菜单文本对齐(Only fix for v1.9.4b)
-   When there are checkbox/radio in sub-menu, add a left margin to other sub-menus.*/
-menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menupopup):has(
-    menuitem:not([hidden])[type="checkbox"][checked="true"],
-    menuitem:not([hidden])[type="radio"][checked="true"]
-  ) {
-  > :is(menuitem, menu):not(
-      .menuitem-iconic,
-      .menu-iconic,
-
-      [type="checkbox"][checked="true"],
-      [type="radio"][checked="true"],
-
-      .in-menulist,
-      .in-menulist menuitem,
-      .in-menulist menu,
-      .unified-nav-current
-    ),
-  /* 分组标题 */
-  > menucaption {
-    padding-inline-start: var(--submenu-padding) !important;
-  }
-}
-/* Special sub-menu: spell check */
-#spell-dictionaries-menu:has(
-  menuitem:not([hidden])[type="checkbox"][checked="true"],
-  menuitem:not([hidden])[type="radio"][checked="true"]
-) {
-    > :is(menuitem, menu):not(
-      .menuitem-iconic,
-      .menu-iconic,
-
-      [type="checkbox"][checked="true"],
-      [type="radio"][checked="true"],
-
-      .in-menulist,
-      .in-menulist menuitem,
-      .in-menulist menu,
-      .unified-nav-current
-    ),
-  > menucaption {
-    padding-inline-start: var(--special-submenu-padding) !important;
-  }
 }
 
 
@@ -3096,28 +3051,30 @@ menupopup:not(#spell-dictionaries-menu,#viewColumns > menupopup,#viewSort > menu
 /* Optional: Advanced customization (Force the relocation of the icons from the extensions) */
 /* Easily change the positions of the icons in the context menu, as well as the location of the menu text (the distance between the text and the icons) */
 @-moz-document url-prefix("chrome://browser/content/browser.xhtml") {
-  
   @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+  /*
   :root {
-    /* Icon top and bottom margin */
-    --zen-cmenu-icon-margin-block: 2px !important;
-    /* Icons size */
+    Icon top and bottom margin
+    --zen-cmenu-icon-margin-block: 2px !important; 
+    Icons size 
     --zen-cmenu-icon-size: 16px !important;
   }
-
+ */
   /* ==== For all the icons in the context menus (mainly for the icons from the extensions, and then revert to the style of the CMI icons later ==== */
   menupopup > menuitem > .menu-icon,
   menupopup > menu > .menu-icon {
-    /* Size */
+    /* Size 
     width: var(--zen-cmenu-icon-size);
     height: var(--zen-cmenu-icon-size);
-
+    */
     /* Adjust the position of the extension icons (left margin) */
     margin-inline-start: var(--cmi-extension-icon-leftmargin);
 
     margin-inline-end: var(--zen-extensions-margin-right);
+    /*
     margin-block-start: var(--zen-cmenu-icon-margin-block);
     margin-block-end: var(--zen-cmenu-icon-margin-block);
+    */
 
     /* Reset the possible padding */
     padding: 0 !important;

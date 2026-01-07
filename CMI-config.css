@@ -58,9 +58,6 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --checkmark-moz-context: fill, fill-opacity;
     --checkmark-fill: currentColor;
 
-    --submenu-padding: var(--cmi-submenu-padding_1, 30px);
-    --submenu-padding_cover: var(--cmi-submenu-padding_cover_1, 34px);
-    --special-submenu-padding: var(--cmi-special-submenu-padding_1, 12px);
     --Non-checkmark-subitems-padding: var(--cmi-non-checkmark-subitems-padding_1, 24px);
 
 /* ☑️ Optional: Advanced customization */
@@ -69,10 +66,9 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     /* The position of the menu text */
     --cmi-menu-text-leftmargin: var(--cmi-menu-text-leftmargin_1, 0px);
 
-
-/* Special Margins in Library Views */
-    --padding-viewColumns: 6px;
-    --padding-viewSort: var(--submenu-padding);
+/* ☑️ Optional: The leftmargin of FluentUI icons/text */
+    --fluentui-icons-leftmargin: var(--cmi-fluentui-icons-leftmargin, 6px);
+    --fluentui-text-leftmargin: var(--cmi-fluentui-text-leftmargin, 8px);
   }
 }
 
@@ -88,7 +84,6 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --checkmark-margin-left_cover: var(--cmi-checkmark-margin-left_cover_2, 6px);
 
     --checkmark-margin-right: var(--cmi-checkmark-margin-right_2, 8px);
-
     --checkmark-margin-right_cover: var(--cmi-checkmark-margin-right_cover_2, 8px);
     
     --checkmark-bg-image: none;
@@ -98,9 +93,6 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --checkmark-moz-context: none;
     --checkmark-fill: none;
 
-    --submenu-padding: var(--cmi-submenu-padding_2, 30px);
-    --submenu-padding_cover: var(--cmi-submenu-padding_cover_2, 30px);
-    --special-submenu-padding: var(--cmi-special-submenu-padding_2, 6px);
     --Non-checkmark-subitems-padding: var(--cmi-non-checkmark-subitems-padding_2, 24px);
 
 /* ☑️ Optional: Advanced customization */
@@ -109,8 +101,8 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     /* The position of the menu text */
     --cmi-menu-text-leftmargin: var(--cmi-menu-text-leftmargin_2, 0px);
 
-    /* Special Margins in Library Views */
-    --padding-viewColumns: 6px;
-    --padding-viewSort: 29px;
+/* ☑️ Optional: The leftmargin of ZenUI icons/text */
+    --zenui-icons-leftmargin: var(--cmi-zenui-icons-leftmargin, 6px);
+    --zenui-text-leftmargin: var(--cmi-zenui-text-leftmargin, 12px);
   }
 }
