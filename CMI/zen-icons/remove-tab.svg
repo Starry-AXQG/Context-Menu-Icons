@@ -1,12 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 18 18">
-<g stroke-linecap="round" stroke-width="1.5" fill="none" stroke="context-fill" stroke-opacity="context-fill-opacity" stroke-linejoin="round" class="nc-icon-wrapper">
-  <polyline points="14.75 11.75 17.2 14.25 14.75 16.75"/>
-  <path d="M17.25,14.25h-5"/>
-
+<svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" viewBox="0 0 18 18"><g stroke-linecap="round" stroke-width="1.5" fill="none" stroke="context-fill" stroke-opacity="context-fill-opacity" stroke-linejoin="round" class="nc-icon-wrapper">
+  <polyline points="14.5 12 16.75 14.25 14.5 16.5"/>
+  <path d="M16.75,14.25h-4.5"/>
   <path d="M6.75,2.75h7c1.105,0,2,.895,2,2v1.5"/>
   <line x1="11.25" y1="2.75" x2="11.25" y2="6.25"/>
   <path d="M15.75,9.461v-3.211H6.75v-3.5h-2.5c-1.105,0-2,.895-2,2v8.5c0,1.105.895,2,2,2h5.711"/>
-  <path d="M12.25,14.25"/>
   <path d="M17.25,14.25"/>
-  </g>
-</svg>
+</g></svg>
