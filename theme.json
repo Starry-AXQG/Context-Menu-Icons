@@ -6,8 +6,9 @@
     "homepage": "https://github.com/Starry-AXQG/Context-Menu-Icons",
     "image": "https://raw.githubusercontent.com/Starry-AXQG/Context-Menu-Icons/refs/heads/main/.asset/Demo%20Image.jpg",
     "style": {
-        "chrome": "https://raw.githubusercontent.com/Starry-AXQG/Context-Menu-Icons/refs/heads/main/userChrome.css"
+        "chrome": "userChrome.css"
     },
+    "preferences": "preferences.json",
     "readme": "https://raw.githubusercontent.com/Starry-AXQG/Context-Menu-Icons/refs/heads/main/README.md",
     "author": "Starry-AXQG",
     "version": "2.7.1",
