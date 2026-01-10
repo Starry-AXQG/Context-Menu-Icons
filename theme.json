@@ -8,6 +8,15 @@
     "style": {
         "chrome": "userChrome.css"
     },
+    "scripts": {
+        "JS/CMI-fold_menu.uc.js": {
+            "name": "CMI Folding Menu",
+            "description": "Adds the ability to fold the context menu.",
+            "include": [
+                "chrome://browser/content/browser.xhtml"
+            ]
+        }
+    },
     "preferences": "preferences.json",
     "readme": "https://raw.githubusercontent.com/Starry-AXQG/Context-Menu-Icons/refs/heads/main/README.md",
     "author": "Starry-AXQG",
