@@ -11,7 +11,7 @@
     "value": "number",
     "property": "cmi-Switch-Icon-Package",
     "label": "📚 Switch Icon package",
-    "default": 1,
+    "defaultValue": 1,
     "placeholder": false,
     "options": [
 
@@ -36,7 +36,7 @@
     "value": "number",
     "property": "cmi-Switch-Gecko-Branch",
     "label": "📚 Are you using Firefox? ",
-    "default": 1,
+    "defaultValue": 1,
     "placeholder": false,
     "options": [
 
@@ -77,7 +77,7 @@
     "type": "string",
     "property": "cmi-fold-item-IDs",
     "label": "🛠️ Add/Remove/Sort the folded menu items",
-    "default": "",
+    "defaultValue": "",
     "placeholder": "Can use hotkeys to adding quikly id."
   },
 
@@ -107,7 +107,7 @@
     "value": "string",
     "property": "cmi-menuseparator-opacity",
     "label": "Opacity of menu separator (Value range: 0~1, default: 0.5)",
-    "default": "0.5"
+    "defaultValue": "0.5"
   },
 
 {
@@ -135,7 +135,7 @@
     "value": "number",
     "property": "cmi-Hide-Bookmark-Element",
     "label": "👁️ Hide the other elements of the bookmark toolbar",
-    "default": 0,
+    "defaultValue": 0,
     "placeholder": false,
     "options": [
 
@@ -172,7 +172,7 @@
     "value": "number",
     "property": "cmi-Auto-Hide-BookmarkBar",
     "label": "✨ Automatically hide the bookmark bar ",
-    "default": 0,
+    "defaultValue": 0,
     "placeholder": false,
     "options": [
 
@@ -245,7 +245,7 @@
     "type": "string",
     "property": "cmi-Padding-Container",
     "label": "[Global]The left margin of the text in the Menu of Container-Tabs",
-    "default": "30px",
+    "defaultValue": "30px",
     "placeholder": "default: 30px"
   },
 
@@ -259,35 +259,35 @@
     "type": "string",
     "property": "cmi-checkmark-margin-left_1",
     "label": "The left margin of the checkmark icon in normal circumstances",
-    "default": "6px",
+    "defaultValue": "6px",
     "placeholder": "default: 6px"
   },
   {
     "type": "string",
     "property": "cmi-checkmark-margin-left_cover_1",
     "label": "The left margin of the checkmark icon after the menu item is checked",
-    "default": "8px",
+    "defaultValue": "8px",
     "placeholder": "default: 8px"
   },
   {
     "type": "string",
     "property": "cmi-checkmark-margin-right_1",
     "label": "The right margin of the checkmark icon in normal circumstances",
-    "default": "8px",
+    "defaultValue": "8px",
     "placeholder": "default: 8px"
   },
   {
     "type": "string",
     "property": "cmi-checkmark-margin-right_cover_1",
     "label": "The right margin of the checkmark icon after the menu item is checked",
-    "default": "10px",
+    "defaultValue": "10px",
     "placeholder": "default: 10px"
   },
   {
     "type": "string",
     "property": "cmi-non-checkmark-subitems-padding_1",
     "label": "When a checkmark item is selected among the context menu items, the margins of the other unselected menu items will be adjusted accordingly.",
-    "default": "24px",
+    "defaultValue": "24px",
     "placeholder": "default: 24px"
   },
 
@@ -295,28 +295,28 @@
     "type": "string",
     "property": "cmi-extension-icon-leftmargin_1",
     "label": "☑️ Optional: Advanced customization - The left margin of icons from browser extension in context menu",
-    "default": "0px",
+    "defaultValue": "0px",
     "placeholder": "default: 0px(Disbale)"
   },
   {
     "type": "string",
     "property": "cmi-menu-text-leftmargin_1",
     "label": "☑️ Optional: Advanced customization - The left margin of menu text in context menu(This will simultaneously modify the margin rules that have already been in effect for CMI. You can re-adjust the margin rules of CMI)",
-    "default": "0px",
+    "defaultValue": "0px",
     "placeholder": "default: 0px(Disbale)"
   },
   {
     "type": "string",
     "property": "cmi-fluentui-icons-leftmargin",
     "label": "☑️ Optional: Advanced customization - The left margin of FluentUI icons in context menu",
-    "default": "6px",
+    "defaultValue": "6px",
     "placeholder": "default: 6px"
   },
   {
     "type": "string",
     "property": "cmi-fluentui-text-leftmargin",
     "label": "☑️ Optional: Advanced customization - The left margin of FluentUI menu text in context menu",
-    "default": "8px",
+    "defaultValue": "8px",
     "placeholder": "default: 8px"
   },
 
@@ -330,63 +330,63 @@
     "type": "string",
     "property": "cmi-checkmark-margin-left_2",
     "label": "The left margin of the checkmark icon in normal circumstances",
-    "default": "6px",
+    "defaultValue": "6px",
     "placeholder": "default: 6px"
   },
   {
     "type": "string",
     "property": "cmi-checkmark-margin-left_cover_2",
     "label": "The left margin of the checkmark icon after the menu item is checked",
-    "default": "6px",
+    "defaultValue": "6px",
     "placeholder": "default: 6px"
   },
   {
     "type": "string",
     "property": "cmi-checkmark-margin-right_2",
     "label": "The right margin of the checkmark icon in normal circumstances",
-    "default": "8px",
+    "defaultValue": "8px",
     "placeholder": "default: 8px"
   },
   {
     "type": "string",
     "property": "cmi-checkmark-margin-right_cover_2",
     "label": "The right margin of the checkmark icon after the menu item is checked",
-    "default": "8px",
+    "defaultValue": "8px",
     "placeholder": "default: 8px"
   },
   {
     "type": "string",
     "property": "cmi-non-checkmark-subitems-padding_2",
     "label": "When a checkmark item is selected among the context menu items, the margins of the other unselected menu items will be adjusted accordingly.",
-    "default": "24px",
+    "defaultValue": "24px",
     "placeholder": "default: 24px"
   },
   {
     "type": "string",
     "property": "cmi-extension-icon-leftmargin_2",
     "label": "☑️ Optional: Advanced customization - The left margin of icons from browser extension in context menu",
-    "default": "0px",
+    "defaultValue": "0px",
     "placeholder": "default: 0px(Disbale)"
   },
   {
     "type": "string",
     "property": "cmi-menu-text-leftmargin_2",
     "label": "☑️ Optional: Advanced customization - The left margin of menu text in context menu(This will simultaneously modify the margin rules that have already been in effect for CMI. You can re-adjust the margin rules of CMI)",
-    "default": "0px",
+    "defaultValue": "0px",
     "placeholder": "default: 0px(Disbale)"
   },
   {
     "type": "string",
     "property": "cmi-zenui-icons-leftmargin",
     "label": "☑️ Optional: Advanced customization - The left margin of ZenUI icons in context menu",
-    "default": "6px",
+    "defaultValue": "6px",
     "placeholder": "default: 6px"
   },
   {
     "type": "string",
     "property": "cmi-zenui-text-leftmargin",
     "label": "☑️ Optional: Advanced customization - The left margin of ZenUI menu text in context menu",
-    "default": "12px",
+    "defaultValue": "12px",
     "placeholder": "default: 12px"
   },
 {
