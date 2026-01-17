@@ -2783,7 +2783,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
      3. 排除：已勾选复选/单选、带图标、menulist 内的、unified-nav-current
   */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"])
     > menuitem:not(
       .menuitem-iconic,
       [type="checkbox"][checked="true"],
@@ -2793,7 +2793,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
       .unified-nav-current
       ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"])
     > menu:not(
       .openintabs-menuitem,
 
@@ -2805,7 +2805,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
       .unified-nav-current
       ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu)
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"])
     > menucaption {
       padding-inline-start: calc(
         var(--fp-contextmenu-menuitem-padding-inline)
