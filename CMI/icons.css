@@ -1911,11 +1911,40 @@
 
 
       /* ZenUI: App Menu Icons */
+      #appMenu-new-tab-button2 {
+        list-style-image: url("zen-icons/new-tab-image.svg") !important;
+      }
+      #new-window-button,
+      #appMenu-new-window-button2,
+      #appMenu-new-zen-unsynced-window-button {
+        list-style-image: url("zen-icons/window.svg") !important;
+      }
+      #appMenu-new-private-window-button2,
+      #PanelUI-zen-profiles-privateWin {
+        list-style-image: url("zen-icons/private-window.svg") !important;
+      }
+      #appMenu-passwords-button,
+      #password-notification-icon,
+      #PopupAutoComplete > richlistbox > richlistitem[originaltype="generatedPassword"] > .two-line-wrapper > .ac-site-icon,
+      #PopupAutoComplete > richlistbox > richlistitem[originaltype="loginWithOrigin"] > .two-line-wrapper > .ac-site-icon,
+      #PopupAutoComplete > richlistbox > richlistitem[originaltype="login"] > .ac-site-icon {
+        list-style-image: url("zen-icons/passwords.svg") !important;
+      }
+ 
+      .identity-popup-security-connection,
+      #appMenu-report-broken-site-button {
+        list-style-image: url("zen-icons/security-broken.svg") !important;
+      }
+      #appMenu-help-button2 {
+        list-style-image: url("zen-icons/help.svg") !important;
+      }    
+    /*
       #new-window-button,
       #appMenu-new-window-button2,
       #appMenuRecentlyClosedWindows {
         list-style-image: url("zen-icons/window.svg") !important;
       }
+    */
       #fxa-manage-account-button {
         background-image: url('chrome://browser/skin/fxa/avatar-empty.svg') !important;
         background-repeat: no-repeat !important;
