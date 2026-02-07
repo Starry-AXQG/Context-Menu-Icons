@@ -2825,7 +2825,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
      2. 排除下载管理器菜单 / create-new / new-tab 弹出
      3. 排除：已勾选复选/单选、带图标、menulist 内的、unified-nav-current
   */
-  :not(:not(menubar) > menu, #ContentSelectDropdown,#sidebar-search-container)
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"],#viewButton > menupopup:nth-child(1))
     > menuitem:not(
       .menuitem-iconic,
@@ -2835,7 +2835,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
       .in-menulist menuitem,
       .unified-nav-current
       ),
-  :not(:not(menubar) > menu, #ContentSelectDropdown,#sidebar-search-container)
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"],#viewButton > menupopup:nth-child(1))
     > menu:not(
       .openintabs-menuitem,
@@ -2847,7 +2847,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
       .in-menulist menu,
       .unified-nav-current
       ),
-  :not(:not(menubar) > menu, #ContentSelectDropdown,#sidebar-search-container)
+  :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"],#viewButton > menupopup:nth-child(1))
     > menucaption {
       padding-inline-start: calc(
