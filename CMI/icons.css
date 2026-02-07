@@ -1937,7 +1937,8 @@
       }
       #appMenu-help-button2 {
         list-style-image: url("zen-icons/help.svg") !important;
-      }    
+      }
+
     /*
       #new-window-button,
       #appMenu-new-window-button2,
@@ -2053,10 +2054,27 @@
       #appMenu_aboutName {
         list-style-image: url('zen-icons/help.svg') !important;
       }
+    
     /* Panel Header Icons */    
+    .panel-header > h1 > span::before {
+      content: "";
+      background: var(--header-image, none) center / 16px no-repeat;
+      -moz-context-properties: fill, fill-opacity;
+      fill: currentColor;
+      padding-inline-start: calc(var(--fp-enabled, 0) * 16px);
+      margin-inline-end: calc(var(--fp-enabled, 0) * 8px);
+    }
     #appmenu-moreTools .panel-header > h1 > span::before {
       --header-image: url('chrome://browser/skin/zen-icons/menu.svg');
       --fp-enabled: 1;
+    }
+    #PanelUI-helpView .panel-header > h1 > span::before {
+      content: "";
+      background: url('zen-icons/help.svg') center / 16px no-repeat !important;
+      -moz-context-properties: fill, fill-opacity;
+      fill: currentColor;
+      padding-inline-start: calc(var(--fp-enabled, 0) * 16px);
+      margin-inline-end: calc(var(--fp-enabled, 0) * 8px);
     }
 
       /* zen Workspace */
