@@ -1911,11 +1911,41 @@
 
 
       /* ZenUI: App Menu Icons */
+      #appMenu-new-tab-button2 {
+        list-style-image: url("zen-icons/new-tab-image.svg") !important;
+      }
+      #new-window-button,
+      #appMenu-new-window-button2,
+      #appMenu-new-zen-unsynced-window-button {
+        list-style-image: url("zen-icons/window.svg") !important;
+      }
+      #appMenu-new-private-window-button2,
+      #PanelUI-zen-profiles-privateWin {
+        list-style-image: url("zen-icons/private-window.svg") !important;
+      }
+      #appMenu-passwords-button,
+      #password-notification-icon,
+      #PopupAutoComplete > richlistbox > richlistitem[originaltype="generatedPassword"] > .two-line-wrapper > .ac-site-icon,
+      #PopupAutoComplete > richlistbox > richlistitem[originaltype="loginWithOrigin"] > .two-line-wrapper > .ac-site-icon,
+      #PopupAutoComplete > richlistbox > richlistitem[originaltype="login"] > .ac-site-icon {
+        list-style-image: url("zen-icons/passwords.svg") !important;
+      }
+ 
+      .identity-popup-security-connection,
+      #appMenu-report-broken-site-button {
+        list-style-image: url("zen-icons/security-broken.svg") !important;
+      }
+      #appMenu-help-button2 {
+        list-style-image: url("zen-icons/help.svg") !important;
+      }
+
+    /*
       #new-window-button,
       #appMenu-new-window-button2,
       #appMenuRecentlyClosedWindows {
         list-style-image: url("zen-icons/window.svg") !important;
       }
+    */
       #fxa-manage-account-button {
         background-image: url('chrome://browser/skin/fxa/avatar-empty.svg') !important;
         background-repeat: no-repeat !important;
@@ -2024,10 +2054,27 @@
       #appMenu_aboutName {
         list-style-image: url('zen-icons/help.svg') !important;
       }
+    
     /* Panel Header Icons */    
+    .panel-header > h1 > span::before {
+      content: "";
+      background: var(--header-image, none) center / 16px no-repeat;
+      -moz-context-properties: fill, fill-opacity;
+      fill: currentColor;
+      padding-inline-start: calc(var(--fp-enabled, 0) * 16px);
+      margin-inline-end: calc(var(--fp-enabled, 0) * 8px);
+    }
     #appmenu-moreTools .panel-header > h1 > span::before {
       --header-image: url('chrome://browser/skin/zen-icons/menu.svg');
       --fp-enabled: 1;
+    }
+    #PanelUI-helpView .panel-header > h1 > span::before {
+      content: "";
+      background: url('zen-icons/help.svg') center / 16px no-repeat !important;
+      -moz-context-properties: fill, fill-opacity;
+      fill: currentColor;
+      padding-inline-start: calc(var(--fp-enabled, 0) * 16px);
+      margin-inline-end: calc(var(--fp-enabled, 0) * 8px);
     }
 
       /* zen Workspace */
@@ -2779,7 +2826,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
      3. 排除：已勾选复选/单选、带图标、menulist 内的、unified-nav-current
   */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"])
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"],#viewButton > menupopup:nth-child(1))
     > menuitem:not(
       .menuitem-iconic,
       [type="checkbox"][checked="true"],
@@ -2789,7 +2836,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
       .unified-nav-current
       ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"])
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"],#viewButton > menupopup:nth-child(1))
     > menu:not(
       .openintabs-menuitem,
 
@@ -2801,7 +2848,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
       .unified-nav-current
       ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"])
+    > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"],#viewButton > menupopup:nth-child(1))
     > menucaption {
       padding-inline-start: calc(
         var(--fp-contextmenu-menuitem-padding-inline)
