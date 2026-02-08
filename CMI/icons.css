@@ -1914,6 +1914,11 @@
       #appMenu-new-tab-button2 {
         list-style-image: url("zen-icons/new-tab-image.svg") !important;
       }
+      .tab-icon-image[src="chrome://branding/content/icon32.png"],
+      .tab-icon-image[src="chrome://browser/skin/privatebrowsing/favicon.svg"]
+      {
+        content: url("zen-icons/new-tab-image.svg") !important;
+      }    
       #new-window-button,
       #appMenu-new-window-button2,
       #appMenu-new-zen-unsynced-window-button {
