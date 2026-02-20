@@ -998,7 +998,8 @@
       #appMenu-zoomEnlarge-button2 {
         list-style-image: url("plus.svg") !important;
       }    
-      #appMenu-new-window-button2 {
+      #appMenu-new-window-button2,
+      #appMenu-new-zen-unsynced-window-button {
         list-style-image: url("window.svg") !important;
       }    
       #appMenu-new-private-window-button2 {
