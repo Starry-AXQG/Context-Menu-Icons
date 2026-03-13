@@ -1094,11 +1094,18 @@
       -moz-context-properties: fill, fill-opacity !important;
       fill: currentColor !important;
     }
+    /* The padding is different for these two buttons, so we need to set it separately and use !important to override the inline styles. */
     :is(toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"],
      toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"])
     >.toolbarbutton-icon+.toolbarbutton-text {
       padding-inline-start: 36px !important;
     }
+    :is(toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"],
+     toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"]):hover
+    >.toolbarbutton-icon+.toolbarbutton-text {
+      padding-inline-start: 36px !important;
+    }      
+    /* Account END*/
 
     #panelMenuBookmarkThisPage {
       list-style-image: url("bookmark-hollow.svg") !important;
@@ -2012,6 +2019,12 @@
       >.toolbarbutton-icon+.toolbarbutton-text {
         padding-inline-start: 36px !important;
       }
+      :is(toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"],
+        toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"]):hover
+      >.toolbarbutton-icon+.toolbarbutton-text {
+        padding-inline-start: 36px !important;
+      }
+      /* Account END*/
       
       #appmenu-developer-tools-view > toolbarbutton:nth-child(1) {
         list-style-image: url('zen-icons/developer.svg') !important;
