@@ -2025,7 +2025,7 @@
         padding-inline-start: 36px !important;
       }
       /* Account END*/
-      
+
       #appmenu-developer-tools-view > toolbarbutton:nth-child(1) {
         list-style-image: url('zen-icons/developer.svg') !important;
       }
@@ -2219,7 +2219,7 @@
 }
   
 /* Base Hover Styling for Menu Items */
-:is(menu, menuitem) {
+:is(menu, menuitem, toolbarbutton) {
     border-radius: 10px !important;
 }
 
