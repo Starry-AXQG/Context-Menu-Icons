@@ -2537,7 +2537,7 @@ menuitem#context_zen-add-essential[badge]::after {
 }
 
 @media (-moz-pref("cmi-Hide-OAiT-Item")){
-  .openintabs-menuitem,
+  menuitem.openintabs-menuitem,
   menuseparator.bookmarks-actions-menuseparator {
     display: none;
   }
