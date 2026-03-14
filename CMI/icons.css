@@ -2433,9 +2433,13 @@ menuitem#context_zen-add-essential[badge]::after {
 
 }
 
+/* If enanle CMI fold menu JS, the separator before the cmi-show-more-menu will be hidden. */
 @media (-moz-pref("cmi-fold_menu_item-enable")) {
-  menuitem#context-inspect + menuseparator {
-      display: none;
+  menuseparator:not([hidden]):has(~ menu#cmi-show-more-menu) {
+    display: none;
+  }
+  menuseparator:not([hidden]):has(~ menuseparator:not([hidden]) ~ menu#cmi-show-more-menu) {
+    display: initial;
   }
 }
 
