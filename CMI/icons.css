@@ -502,15 +502,15 @@
       }
     }
       /* Context Menu Icons */
-      menupopup > menuitem:is([checked="true"], [selected="true"]) .menu-iconic-icon {
+      menupopup > menuitem:is([checked], [selected]) .menu-iconic-icon {
         list-style-image: url("checkmark.svg") !important;
       }
   /*   （v1.9.4)    
-      #context-video-pictureinpicture:not([checked="true"]) .menu-iconic-icon {
+      #context-video-pictureinpicture:not([checked]) .menu-iconic-icon {
         list-style-image: url("media-pip.svg") !important;
       }
       
-      #context-media-loop:not([checked="true"]) .menu-iconic-icon {
+      #context-media-loop:not([checked]) .menu-iconic-icon {
         list-style-image: url("media-loop.svg") !important;
       }
   */ 
@@ -540,7 +540,9 @@
       }
       
       #context_unloadTab,
-      #context_zenUnloadWorkspace {
+      #context_zenUnloadWorkspace,
+      #context_zenFolderUnloadAll,
+      #context_zenUnloadAllOtherWorkspace {
         --menu-image: url("unloadTab.svg");
       }
       
@@ -1350,9 +1352,6 @@
       #context_zenFolderChangeIcon {
         --menu-image: url("image-save.svg");
       }
-      #context_zenFolderUnloadAll {
-        --menu-image: url("edit-select-all.svg");
-      }
       #context_zenFolderNewSubfolder {
         --menu-image: url("folder-add.svg");
       }
@@ -1898,7 +1897,8 @@
       }
       #context_unloadTab,
       #context_zenUnloadWorkspace,
-      #context_zenFolderUnloadAll {
+      #context_zenFolderUnloadAll,
+      #context_zenUnloadAllOtherWorkspace {
         --menu-image: var(--zen-unload-icon);
       }
       .customize-context-reportExtension,
@@ -2519,7 +2519,7 @@ menuitem#context_zen-add-essential[badge]::after {
 }
 /* Hide Folder Icons */
 @media (-moz-pref("cmi-Hide-Folder-Icons")){
-  .bookmark-item[container="true"] .toolbarbutton-icon {
+  .bookmark-item[container] .toolbarbutton-icon {
     display: none;
   }
 }
@@ -2587,7 +2587,7 @@ I fixed these errors and enhanced some of its features, making it more compatibl
       #PlacesToolbarItems
       > toolbarbutton.bookmark-item:not(
         .subviewbutton,
-        [disabled="true"],
+        [disabled],
         [open]
       ):hover {
         border-radius: 11px !important;
@@ -2598,7 +2598,7 @@ I fixed these errors and enhanced some of its features, making it more compatibl
       #PlacesToolbarItems
       > toolbarbutton.bookmark-item:not(
         .subviewbutton,
-        [disabled="true"]
+        [disabled]
       ):hover:active {
         border-radius: 11px !important;
         scale: 1.05 !important;  
@@ -2607,7 +2607,7 @@ I fixed these errors and enhanced some of its features, making it more compatibl
 
     #personal-bookmarks
       #PlacesToolbarItems
-      > toolbarbutton.bookmark-item[open="true"] {
+      > toolbarbutton.bookmark-item[open] {
         border-radius: 11px !important;
         scale: 1.05 !important;  
         filter: brightness(1.5);
@@ -2633,7 +2633,7 @@ I fixed these errors and enhanced some of its features, making it more compatibl
 
 
     #PersonalToolbar:has([open]),
-    #PersonalToolbar:has([aria-expanded="true"]),
+    #PersonalToolbar:has([aria-expanded]),
     #PersonalToolbar:has(menupopup[open]),
     #PersonalToolbar:has(menu[open]),
     #PersonalToolbar:has(.bookmark-item[open]),
@@ -2657,7 +2657,7 @@ I fixed these errors and enhanced some of its features, making it more compatibl
           transform: rotateX(0deg) !important;
         }
         /* Display when drop link (Only supports Zen, does not support Firefox) */  
-        #zen-appcontent-navbar-wrapper[zen-has-hover="true"] #PersonalToolbar {
+        #zen-appcontent-navbar-wrapper[zen-has-hover] #PersonalToolbar {
           opacity: 1 !important;
           transform: translateY(0) rotateX(0deg) !important;
         }
@@ -2748,8 +2748,8 @@ menupopup#context_reopenInContainerPopupMenu {
     .menuitem-iconic,
     .menu-iconic,
 
-    [type="checkbox"][checked="true"],
-    [type="radio"][checked="true"],
+    [type="checkbox"][checked],
+    [type="radio"][checked],
 
     .in-menulist,
     .in-menulist menuitem,
@@ -2766,7 +2766,7 @@ menupopup#context_reopenInContainerPopupMenu {
 /* --- Part 2 of global rule : checkbox ---*/
 /* 此规则用来去除原生“√”图标，方便给特殊菜单插入自定义图标,并更容易完成上下文菜单的文本对齐（v1.9.4 new change) 
 This rule is used to remove the native "√" icon, making it convenient to insert custom icons for special menus and facilitating the text alignment of context menus.（v1.9.4) */
-menuitem:is([type="checkbox"], [type="radio"]):not([checked="true"]) {
+menuitem:is([type="checkbox"], [type="radio"]):not([checked]) {
   /* 背景图转换已有的变量 --menu-image */
   background-image: var(--menu-image) !important;
   background-repeat: no-repeat !important;
@@ -2798,7 +2798,7 @@ menuitem:is([type="checkbox"], [type="radio"]):not([checked="true"]) {
 }
 
 /* ========== 勾选时：移除背景图 ========== （Only fix for v1.9.4b) */
-:is(menuitem[type="checkbox"], menuitem[type="radio"])[checked="true"] {
+:is(menuitem[type="checkbox"], menuitem[type="radio"])[checked] {
   background-image: none !important;
   /* 保持不触碰间距 */
   padding-inline-start: unset !important;
@@ -2813,8 +2813,8 @@ menupopup menupopup{
 }
 
 /* 设置自定义 checkmark 图标（使用变量：可在两种模式间切换实现方式） */
-menupopup > menuitem[type="checkbox"][checked="true"]::before,
-menupopup > menuitem[type="radio"][checked="true"]::before {
+menupopup > menuitem[type="checkbox"][checked]::before,
+menupopup > menuitem[type="radio"][checked]::before {
   content: "" !important;
   display: inline-block;
   width: var(--checkmark-width);
@@ -2852,8 +2852,8 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     > menupopup:not(#downloadsContextMenu,#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"],#viewButton > menupopup:nth-child(1))
     > menuitem:not(
       .menuitem-iconic,
-      [type="checkbox"][checked="true"],
-      [type="radio"][checked="true"],
+      [type="checkbox"][checked],
+      [type="radio"][checked],
       .in-menulist,
       .in-menulist menuitem,
       .unified-nav-current
@@ -2864,8 +2864,8 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
       .openintabs-menuitem,
 
       .menu-iconic,
-      [type="checkbox"][checked="true"],
-      [type="radio"][checked="true"],
+      [type="checkbox"][checked],
+      [type="radio"][checked],
       .in-menulist,
       .in-menulist menu,
       .unified-nav-current
@@ -2886,8 +2886,8 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   ) > menuitem:not(
     .openintabs-menuitem,
     .menuitem-iconic,
-    [type="checkbox"][checked="true"],
-    [type="radio"][checked="true"],
+    [type="checkbox"][checked],
+    [type="radio"][checked],
     .in-menulist,
     .in-menulist menuitem,
     .unified-nav-current
@@ -2898,8 +2898,8 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   ) > menu:not(
     .openintabs-menuitem,
     .menu-iconic,
-    [type="checkbox"][checked="true"],
-    [type="radio"][checked="true"],
+    [type="checkbox"][checked],
+    [type="radio"][checked],
     .in-menulist,
     .in-menulist menu,
     .unified-nav-current
@@ -2923,25 +2923,25 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
   /* —— 当满足以下任意条件时，给所有子项统一添加内边距 —— */
   :is(
     /* 书签栏 */
-    menupopup#placesContext:has(> menuitem:not([hidden])[checked="true"]),
+    menupopup#placesContext:has(> menuitem:not([hidden])[checked]),
     /* 工具栏 */
-    menupopup#toolbar-context-menu:has(> menuitem:not([hidden])[checked="true"]),
+    menupopup#toolbar-context-menu:has(> menuitem:not([hidden])[checked]),
     /* 标签栏 */
-    menupopup#tabContextMenu:has(> menuitem:not([hidden])[checked="true"]),
+    menupopup#tabContextMenu:has(> menuitem:not([hidden])[checked]),
     /* 当循环或PIP勾选时 */
-    menupopup#contentAreaContextMenu:has(> menuitem:not([hidden])[checked="true"]),
+    menupopup#contentAreaContextMenu:has(> menuitem:not([hidden])[checked]),
     /* 当拼写检查勾选 */
-    menupopup#contentAreaContextMenu:has(> menuitem#spell-check-enabled:is([checked="true"])),
+    menupopup#contentAreaContextMenu:has(> menuitem#spell-check-enabled:is([checked])),
     /* 扩展菜单 */
-    menupopup#unified-extensions-context-menu:has(> menuitem:not([hidden])[checked="true"]),
+    menupopup#unified-extensions-context-menu:has(> menuitem:not([hidden])[checked]),
     /* 当下载菜单有项目勾选 */
-    menupopup#downloadsContextMenu:has(> menuitem:not([hidden])[checked="true"]),
+    menupopup#downloadsContextMenu:has(> menuitem:not([hidden])[checked]),
     /* 浏览器内置翻译器菜单 */
-    menupopup#full-page-translations-panel-settings-menupopup:has(> menuitem:not([hidden])[checked="true"]),
+    menupopup#full-page-translations-panel-settings-menupopup:has(> menuitem:not([hidden])[checked]),
     /* Chat bot */
-    menupopup#chatbot-menupopup:has(> menuitem:not([hidden])[checked="true"]),
-    menupopup#sidebar-history-menu:has(> menuitem:not([hidden])[checked="true"]),
-    #mainPopupSet > menupopup:has(> menuitem:not([hidden])[checked="true"])
+    menupopup#chatbot-menupopup:has(> menuitem:not([hidden])[checked]),
+    menupopup#sidebar-history-menu:has(> menuitem:not([hidden])[checked]),
+    #mainPopupSet > menupopup:has(> menuitem:not([hidden])[checked])
   
   ) {
     --checkmark-margin-left: var(--checkmark-margin-left_cover);
@@ -2951,8 +2951,8 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
         .menuitem-iconic,
         .menu-iconic,
 
-        [type="checkbox"][checked="true"],
-        [type="radio"][checked="true"],
+        [type="checkbox"][checked],
+        [type="radio"][checked],
 
         .in-menulist,
         .in-menulist menuitem,
@@ -2963,8 +2963,8 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
         .menuitem-iconic,
         .menu-iconic,
 
-        [type="checkbox"][checked="true"],
-        [type="radio"][checked="true"],
+        [type="checkbox"][checked],
+        [type="radio"][checked],
 
         .in-menulist,
         .in-menulist menuitem,
@@ -2991,7 +2991,7 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
     /* 当循环或PIP勾选时 */
     menupopup#contentAreaContextMenu:has(> menuitem:not([hidden])[type="checkbox"]),
     /* 当拼写检查勾选 */
-    menupopup#contentAreaContextMenu:has(> menuitem#spell-check-enabled:is([checked="true"])),
+    menupopup#contentAreaContextMenu:has(> menuitem#spell-check-enabled:is([checked])),
     /* 扩展菜单 */
     menupopup#unified-extensions-context-menu:has(> menuitem:not([hidden])[type="checkbox"]),
     /* 当下载菜单有项目勾选 */
@@ -3010,8 +3010,8 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
         .menuitem-iconic,
         .menu-iconic,
 
-        [type="checkbox"][checked="true"],
-        [type="radio"][checked="true"],
+        [type="checkbox"][checked],
+        [type="radio"][checked],
 
         .in-menulist,
         .in-menulist menuitem,
@@ -3039,11 +3039,11 @@ menupopup > menuitem[type="radio"][checked="true"]::before {
 
 /* 当 menupopup 下有被勾选的 checkbox、radio 时，
 给同层级未勾选且不是父菜单的 checkbox、radio 子项增加 padding */
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
-> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked])
+> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
 > .menu-text,
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked="true"])
-> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
+menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked])
+> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
 > .menu-highlightable-text {
 padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
 box-sizing: border-box !important;
@@ -3056,10 +3056,10 @@ box-sizing: border-box !important;
 /* 当 menupopup 下有未被隐藏的 checkbox、radio 时，
 给同层级未勾选且不是父菜单的 checkbox、radio 子项增加 padding */
 menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
-> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
+> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
 > .menu-text,
 menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
-> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked="true"]):not(:has(menupopup))
+> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
 > .menu-highlightable-text {
 padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
 box-sizing: border-box !important;
