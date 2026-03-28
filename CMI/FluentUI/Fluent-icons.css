@@ -4,13 +4,10 @@
     and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
 
   .subviewbutton {
-    background-image: var(--menu-image) !important;
-    background-size: 16px !important;
-    background-position: var(--zen-contextmenu-menuitem-padding-inline) center !important;
-    background-repeat: no-repeat !important;
     -moz-context-properties: fill, fill-opacity !important;
     fill: currentColor !important;
   }
+
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > #cmi-show-more-menupopup, #cmi-show-more-menupopup-tab > menuitem,
   :not(:not(menubar) > menu, #ContentSelectDropdown)
