@@ -1032,10 +1032,13 @@
       #context-ask-chat {
         --menu-image: url('chrome://browser/skin/trending.svg');
       }
+      @media (not(-moz-pref("cmi-Switch-Gecko-Branch", 0))) {
       #context-translate-selection,
       #appMenu-translate-button {
         --menu-image: url('translations.svg');
       }
+      }
+      
       #translations-button-icon {
         background-position: center !important; 
         list-style-image:  url("translations.svg") !important;      
