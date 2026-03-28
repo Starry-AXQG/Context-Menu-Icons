@@ -1,7 +1,10 @@
-
 /* ========================= Global Rule for Context Menu Icons (CMI) ========================= */
 @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) {
-/* Part 1 of global rule */
+
+/* ---------------------------
+   🌟 Part 1 of global rule
+   ---------------------------*/
+   
 :root {
   /* FluentUI */
 @media (-moz-pref("cmi-Switch-Icon-Package", 1)) {
@@ -52,11 +55,8 @@ menupopup#context_reopenInContainerPopupMenu {
 }
 
 
-
-
-
 /* ---------------------------
-   🌟 Part 3 of global rule
+   🌟 Part 2 of global rule
    ---------------------------*/
 
   /* 1. 排除顶栏菜单和文字选取下拉
@@ -131,7 +131,7 @@ menupopup#context_reopenInContainerPopupMenu {
 }
 
 /* ---------------------------
-   🌟 Part 4 of global rule : special rules
+   🌟 Part 3 of global rule : special rules
    ---------------------------*/
 
 @media not (-moz-platform: linux) {
@@ -245,7 +245,7 @@ menupopup#context_reopenInContainerPopupMenu {
 
 /* =========================================================
 
-   🌟 Part 5 of global rule : special rules for checkbox
+   🌟 Part 4 of global rule : special rules for checkbox
 
    全局：同一 menupopup 中若存在任一未隐藏且已勾选的 checkbox，
    则对同一 menupopup 中其它未隐藏的 checkbox 菜单项应用 padding(fix for v1.9.4)
