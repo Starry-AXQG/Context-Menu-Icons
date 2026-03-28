@@ -1,5 +1,5 @@
 
-/* ========================= Global Rule for Context Menu Icons ========================= */
+/* ========================= Global Rule for Context Menu Icons (CMI) ========================= */
 @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) {
 /* Part 1 of global rule */
 :root {

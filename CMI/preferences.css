@@ -1,5 +1,17 @@
+/* Preferences of CMI */
 
-/* Preferences */
+/* 1.If enanle CMI fold menu JS, the separator before the cmi-show-more-menu will be hidden. */
+@media (-moz-pref("cmi-fold_menu_item-enable")) {
+  menuseparator:not([hidden]):has(~ menu#cmi-show-more-menu) {
+    display: none;
+  }
+  menuseparator:not([hidden]):has(~ menuseparator:not([hidden]) ~ menu#cmi-show-more-menu) {
+    display: initial;
+  }
+}
+
+
+/* 2. Better Context Menu */
 @media not (-moz-pref("cmi-Disable-Better-Context-Menu",true)){
 
 /* -------------------------- Better Context Menu -------------------------- */
@@ -224,17 +236,8 @@ menuitem#context_zen-add-essential[badge]::after {
 
 }
 
-/* If enanle CMI fold menu JS, the separator before the cmi-show-more-menu will be hidden. */
-@media (-moz-pref("cmi-fold_menu_item-enable")) {
-  menuseparator:not([hidden]):has(~ menu#cmi-show-more-menu) {
-    display: none;
-  }
-  menuseparator:not([hidden]):has(~ menuseparator:not([hidden]) ~ menu#cmi-show-more-menu) {
-    display: initial;
-  }
-}
 
-/* Hide the inactive items in Context Menu */
+/* 3. Hide the inactive items in Context Menu */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @media (-moz-pref("cmi-Hide-Inactive-Items-TabContextMenu")) {
   #tabContextMenu > menuitem[disabled]:not(:is(
@@ -249,6 +252,7 @@ menuitem#context_zen-add-essential[badge]::after {
       visibility: collapse !important;
   }
 }
+
 @media (-moz-pref("cmi-Hide-Inactive-Items-ContentAreaContextMenu")) {
   #contentAreaContextMenu > menuitem[disabled]
   {
