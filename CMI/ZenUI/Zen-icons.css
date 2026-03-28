@@ -41,12 +41,36 @@
   #unified-extensions-context-menu {
     background-image: var(--menu-image) !important;
     background-size: 16px !important;
-    background-position: var(--fp-contextmenu-menuitem-padding-inline) center !important;
+    background-position: var(--zen-contextmenu-menuitem-padding-inline) center !important;
     background-repeat: no-repeat !important;
     -moz-context-properties: fill, fill-opacity !important;
     fill: currentColor !important;
-  }
+  }  
+  menuitem.sine-moved,
+  menuitem[id$="-sine-clone"],
+  menuitem[class*="sine"] {
+      background-image: var(--menu-image) !important;
+      background-size: 16px !important;
+      background-position: var(--zen-contextmenu-menuitem-padding-inline) center !important;
+      background-repeat: no-repeat !important;
+      -moz-context-properties: fill, fill-opacity !important;
+      fill: currentColor !important;
+  } 
 
+
+  
+@media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
+
+      
+      .subviewbutton {
+        background-image: var(--menu-image) !important;
+        background-size: 16px !important;
+        background-position: var(--zen-contextmenu-menuitem-padding-inline) center !important;
+        background-repeat: no-repeat !important;
+        -moz-context-properties: fill, fill-opacity !important;
+        fill: currentColor !important;
+      }
+    
 .private-browsing-indicator-icon {
   list-style-image: url("account-private.svg") !important;
   border-radius: 100% !important;
@@ -806,66 +830,9 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+}
     
 
-  :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > #cmi-show-more-menupopup, #cmi-show-more-menupopup-tab > menuitem,
-  :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup
-    > menuitem:not(
-      .menuitem-iconic,
-      [type="checkbox"],
-      [type="radio"],
-      .in-menulist,
-      .in-menulist menuitem,
-      .unified-nav-current
-    ),
-  :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > #cmi-show-more-menupopup, #cmi-show-more-menupopup-tab, menupopup
-    > menu:not(
-      .menu-iconic,
-      [type="checkbox"],
-      [type="radio"],
-      .in-menulist,
-      .in-menulist menu,
-      .unified-nav-current
-    ),
-  #toggle_toolbar-menubar,
-  #PanelUI-history toolbarbutton,
-  #unified-extensions-context-menu {
-    background-image: var(--menu-image) !important;
-    background-size: 16px !important;
-    background-position: var(--zen-contextmenu-menuitem-padding-inline) center !important;
-    background-repeat: no-repeat !important;
-    -moz-context-properties: fill, fill-opacity !important;
-    fill: currentColor !important;
-  }  
-  menuitem.sine-moved,
-  menuitem[id$="-sine-clone"],
-  menuitem[class*="sine"] {
-      background-image: var(--menu-image) !important;
-      background-size: 16px !important;
-      background-position: var(--zen-contextmenu-menuitem-padding-inline) center !important;
-      background-repeat: no-repeat !important;
-      -moz-context-properties: fill, fill-opacity !important;
-      fill: currentColor !important;
-  } 
 
     /* Specifying icons to apply for options in Unified Extensions Menu */
     @media not (-moz-platform: linux) {
