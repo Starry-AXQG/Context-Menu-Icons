@@ -101,33 +101,7 @@ menupopup menupopup{
   background-image: none !important;
 }
 
-/* 设置自定义 checkmark 图标（使用变量：可在两种模式间切换实现方式） */
-menupopup > menuitem[type="checkbox"][checked]::before,
-menupopup > menuitem[type="radio"][checked]::before {
-  content: "" !important;
-  display: inline-block;
-  width: var(--checkmark-width);
-  height: var(--checkmark-height);
 
-  margin-inline-end: var(--checkmark-margin-right);
-  vertical-align: middle;
-
-  /* 两种实现共用声明：background-image / mask / background-color 由变量决定 */
-  background-image: var(--checkmark-bg-image);
-  -moz-context-properties: var(--checkmark-moz-context) !important;
-  /* 当使用 SVG fill 时，保留 fill 的回退值 */
-  fill: var(--checkmark-fill, currentColor) !important;
-  background-repeat: no-repeat;
-  background-size: contain;
-  /* 定位到图标所在 x 位置 */
-  margin-inline-start: var(--checkmark-margin-left);
-  position: relative;
-
-  /* mask 与 background-color（若变量为 none，则效果等同于未设置） */
-  -webkit-mask: var(--checkmark-mask, none);
-  mask: var(--checkmark-mask, none);
-  background-color: var(--checkmark-bg-color, transparent);
-}
 
 /* ---------------------------
    🌟 Part 3 of global rule

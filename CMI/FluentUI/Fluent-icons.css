@@ -1,7 +1,34 @@
-
-  /*FluentUI*/
+/*FluentUI*/
   @media (not (-moz-pref("cmi-Switch-Icon-Package", 0)))
     and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
+
+
+/* 设置自定义 checkmark 图标 */
+menupopup > menuitem[type="checkbox"][checked]::before,
+menupopup > menuitem[type="radio"][checked]::before {
+  content: "" !important;
+  display: inline-block;
+  width: var(--checkmark-width);
+  height: var(--checkmark-height);
+
+  margin-inline-end: var(--checkmark-margin-right);
+  vertical-align: middle;
+
+  background-image: url("checkmark.svg");
+  -moz-context-properties: fill, fill-opacity !important;
+
+  fill: currentColor !important;
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* 定位到图标所在 x 位置 */
+  margin-inline-start: var(--checkmark-margin-left);
+  position: relative;
+
+  background-color: transparent;
+}
+
+
+
 .subview-subheader,
 panelview .toolbarbutton-1,
 .subviewbutton,
