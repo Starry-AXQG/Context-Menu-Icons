@@ -2941,7 +2941,8 @@ menupopup > menuitem[type="radio"][checked]::before {
     /* Chat bot */
     menupopup#chatbot-menupopup:has(> menuitem:not([hidden])[checked]),
     menupopup#sidebar-history-menu:has(> menuitem:not([hidden])[checked]),
-    #mainPopupSet > menupopup:has(> menuitem:not([hidden])[checked])
+    #mainPopupSet > menupopup:has(> menuitem:not([hidden])[checked]),
+    #table-widget-column-select:has(> menuitem:not([hidden])[checked])
   
   ) {
     --checkmark-margin-left: var(--checkmark-margin-left_cover);
@@ -3001,7 +3002,8 @@ menupopup > menuitem[type="radio"][checked]::before {
     /* Chat bot */
     menupopup#chatbot-menupopup:has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"])),
     menupopup#sidebar-history-menu:has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"])),
-    #mainPopupSet > menupopup:has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"]))
+    #mainPopupSet > menupopup:has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"])),
+    #table-widget-column-select:has(> menuitem:not([hidden])[checked])
   ) {
     --checkmark-margin-left: var(--checkmark-margin-left_cover);
     --checkmark-margin-right: var(--checkmark-margin-right_cover);
