@@ -1,2 +1,9 @@
-@import "CMI/icons.css";
+@import "CMI/FluentUI/Fluent-icons.css";
+
+@import "CMI/ZenUI/Zen-icons.css";
+
+@import "CMI/global.css";
+
+@import "CMI/preferences.css";
+
 @import "CMI-config.css";
