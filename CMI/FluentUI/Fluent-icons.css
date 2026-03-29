@@ -1263,7 +1263,7 @@ panelview .toolbarbutton-1,
       list-style-image: url('help.svg') !important;
     }
     /* Panel Header Icons */
-    .panel-header > h1 {
+    /* .panel-header > h1 {
       text-align: left;
       margin-left: 8px !important;
     }
@@ -1284,7 +1284,7 @@ panelview .toolbarbutton-1,
       border-radius: 99px;
       display: inline-block;
       height: 16px;
-    }
+    } */
     #appMenu-fxa-label2::before {
       content: '';
       display: -moz-box;
