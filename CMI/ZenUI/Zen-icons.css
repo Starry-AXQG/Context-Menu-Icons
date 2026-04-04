@@ -1574,7 +1574,8 @@ menupopup > menuitem[type="radio"][checked]::before {
       --menu-image: url('canvas.svg');
     }
     #zen-context-menu-new-folder,
-    #zen-context-menu-new-folder-toolbar,      
+    #zen-context-menu-new-folder-toolbar,
+    #zen-panel-ui-live-folder-create,
     #context_zenFolderNewSubfolder,
     #placesContext_showInFolder {
       --menu-image: url('folder.svg');

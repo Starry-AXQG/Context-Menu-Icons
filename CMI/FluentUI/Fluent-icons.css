@@ -1395,7 +1395,8 @@ panelview .toolbarbutton-1,
         --menu-image: url("reload.svg");
       }
       #zen-context-menu-new-folder,
-      #zen-context-menu-new-folder-toolbar {
+      #zen-context-menu-new-folder-toolbar,
+      #zen-panel-ui-live-folder-create {
         --menu-image: url("folder-add.svg");        
       }
     
