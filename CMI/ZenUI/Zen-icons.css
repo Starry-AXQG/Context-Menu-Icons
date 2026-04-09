@@ -1128,11 +1128,9 @@ menupopup > menuitem[type="radio"][checked]::before {
       }
       #context-sendimage,
       #context-sendvideo,
-      #context-sendaudio {
-        /* 💾
+      #context-sendaudio { 
         --menu-image: url('mail.svg');
-        */
-        --menu-image: url('share.svg');
+    /*  --menu-image: url('share.svg'); */
       }
       #context-setDesktopBackground,
       .viewCustomizeToolbar {
