@@ -156,7 +156,7 @@ menupopup#context_reopenInContainerPopupMenu {
     /* Chat bot */
     menupopup#chatbot-menupopup:has(> menuitem:not([hidden])[checked]),
     menupopup#sidebar-history-menu:has(> menuitem:not([hidden])[checked]),
-    #mainPopupSet > menupopup:has(> menuitem:not([hidden])[checked]),
+    #mainPopupSet > menupopup:not(#backForwardMenu):has(> menuitem:not([hidden])[checked]),
     #table-widget-column-select:has(> menuitem:not([hidden])[checked])
   
   ) {
@@ -217,7 +217,7 @@ menupopup#context_reopenInContainerPopupMenu {
     /* Chat bot */
     menupopup#chatbot-menupopup:has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"])),
     menupopup#sidebar-history-menu:has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"])),
-    #mainPopupSet > menupopup:has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"])),
+    #mainPopupSet > menupopup:not(#backForwardMenu):has(> menuitem:not([hidden]):is([type="checkbox"], [type="radio"])),
     #table-widget-column-select:has(> menuitem:not([hidden])[checked])
   ) {
     --checkmark-margin-left: var(--checkmark-margin-left_cover);
