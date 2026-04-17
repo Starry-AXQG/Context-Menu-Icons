@@ -43,7 +43,7 @@ Now, it also supports usage on Firefox.(since mod v1.2.1)
 ## 📖 CMI-fold-menu-JS Guide:
 
 ### Overview
-In version 2.1, CMI introduced JavaScript code to help users simplify the lengthy context menus. Fold infrequently used context menu items from the page context menu (contentAreaContextMenu) into a single submenu labeled "Show More Options". The goal is to declutter the context menu while preserving full access to folded item
+In CMI [v2.1](https://github.com/Starry-AXQG/Context-Menu-Icons/releases/tag/v2.1), CMI introduced JavaScript code to help users simplify the lengthy context menus. Fold infrequently used context menu items from the page context menu (contentAreaContextMenu) into a single submenu labeled "Show More Options". The goal is to declutter the context menu while preserving full access to folded item
 
 ### Key Features
 
