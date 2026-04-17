@@ -49,9 +49,9 @@ In CMI [v2.1](https://github.com/Starry-AXQG/Context-Menu-Icons/releases/tag/v2.
 
 - 🗂️ Fold selected menuitems (by id) into a "Show more options" submenu.
 
-- 📄 Two configuration sources: a CSS variable (--cmi-fold-item-ids) for portable configs, or an about:config string preference (cmi-fold-item-IDs).
+- 📄 Two configuration sources: a CSS variable (--cmi-fold-item-ids) for portable configs, or an `about:config` string preference (cmi-fold-item-IDs).
 
-- 🖱️ Toggle script enable/disable with pref cmi-fold_menu_item-enable.
+- 🖱️ Toggle script enable/disable with pref `cmi-fold_menu_item-enable` in `about:config`.
 
 - ✏️ Customizable submenu label via CSS var or pref.
 
