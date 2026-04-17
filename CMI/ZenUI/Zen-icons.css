@@ -1187,8 +1187,10 @@ menupopup > menuitem[type="radio"][checked]::before {
       #spell-dictionaries {
         --menu-image: url('add-to-dictionary.svg');
       }
+      #fill-login,
       #manage-saved-logins,
-      #sidebar-switcher-megalist {
+      #sidebar-switcher-megalist,
+      #fill-login-generated-password {
         --menu-image: url('passwords.svg');
       }
       #context-media-play,
