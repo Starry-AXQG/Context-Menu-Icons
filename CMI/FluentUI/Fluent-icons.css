@@ -716,7 +716,9 @@ panelview .toolbarbutton-1,
       #node-menu-screenshotnode {
         --menu-image: url("screenshot.svg");
       }
-      
+      #frame {
+        --menu-image: url("info.svg");
+      }
       #context-ask-chat,
       #context_askChat {
         --menu-image: url("AI-chat.svg");
@@ -878,8 +880,11 @@ panelview .toolbarbutton-1,
         --menu-image: url("add-to-dictionary.svg");
       }
       
-      #manage-saved-logins {
-        --menu-image: url("passwords.svg");
+      #fill-login,
+      #manage-saved-logins,
+      #sidebar-switcher-megalist,
+      #fill-login-generated-password {
+        --menu-image: url('passwords.svg');
       }
       
       #context-media-play,

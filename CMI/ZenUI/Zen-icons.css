@@ -1048,7 +1048,7 @@ menupopup > menuitem[type="radio"][checked]::before {
         --menu-image: url('screenshot.svg');
       }
     #frame {
-      --menu-image: url("chrome://browser/skin/zen-icons/developer.svg");
+      --menu-image: url("info.svg");
     }
       #context-viewsource {
         --menu-image: url('source-code.svg');
