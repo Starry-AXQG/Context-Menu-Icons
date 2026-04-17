@@ -232,14 +232,6 @@ menupopup > menuitem[type="radio"][checked]::before {
   list-style-image: url("plus.svg") !important;
 }
 
-#appMenu-passwords-button,
-#password-notification-icon,
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="generatedPassword"] > .two-line-wrapper > .ac-site-icon,
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="loginWithOrigin"] > .two-line-wrapper > .ac-site-icon,
-#PopupAutoComplete > richlistbox > richlistitem[originaltype="login"] > .ac-site-icon {
-  list-style-image: url("passwords.svg") !important;
-}
-
 #nav-bar-overflow-button {
   list-style-image: url("chevron.svg") !important;
 
@@ -1055,6 +1047,9 @@ menupopup > menuitem[type="radio"][checked]::before {
       #node-menu-screenshotnode {
         --menu-image: url('screenshot.svg');
       }
+    #frame {
+      --menu-image: url("chrome://browser/skin/zen-icons/developer.svg");
+    }
       #context-viewsource {
         --menu-image: url('source-code.svg');
       }
