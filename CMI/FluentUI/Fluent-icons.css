@@ -847,7 +847,8 @@ panelview .toolbarbutton-1,
         --menu-image: url("TabGroup-add.svg");
       }
         
-      #context_ungroupTab {
+      #context_ungroupTab,
+      #context_zenMoveToFolder {
         --menu-image: url("TabGroup-remove.svg");
       }
       

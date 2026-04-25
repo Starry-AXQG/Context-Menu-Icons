@@ -1313,7 +1313,8 @@ menupopup > menuitem[type="radio"][checked]::before {
       #context_moveTabOptions {
         --menu-image: url('move-tab.svg');
       }
-      #context_ungroupTab {
+      #context_ungroupTab,
+      #context_zenMoveToFolder {
         --menu-image: url('remove-tab.svg');
       }
       .share-tab-url-item {
