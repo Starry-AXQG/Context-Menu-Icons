@@ -284,12 +284,12 @@ menuitem#context_zen-add-essential[badge]::after {
   }
 /* Auto Adapt theme for zen */
 @media (-moz-pref("zen.view.window.scheme", 2)) {
-  :root[zen-theme="dark"]:not(#context-back,#context-forward,#context-reload,#context-stop,#context-bookmarkpage) 
+  :root[zen-theme="dark"] :not(#context-back,#context-forward,#context-reload,#context-stop,#context-bookmarkpage) 
   > .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
     fill: var(--arrowpanel-icon-color) !important;
     filter: var(--grayscale-filter-dark);
   }
-  :root[zen-theme="light"]:not(#context-back,#context-forward,#context-reload,#context-stop,#context-bookmarkpage) 
+  :root[zen-theme="light"] :not(#context-back,#context-forward,#context-reload,#context-stop,#context-bookmarkpage) 
   > .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
     fill: var(--arrowpanel-icon-color) !important;
     filter: var(--grayscale-filter-light);
@@ -297,12 +297,12 @@ menuitem#context_zen-add-essential[badge]::after {
 }
 /* Auto Adapt theme for firefox */
 @media (-moz-pref("browser.theme.toolbar-theme", 2)) and (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
-  :root[zen-theme="dark"]:not(#context-back,#context-forward,#context-reload,#context-stop,#context-bookmarkpage) 
+  :root[zen-theme="dark"] :not(#context-back,#context-forward,#context-reload,#context-stop,#context-bookmarkpage) 
   > .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
     fill: var(--arrowpanel-icon-color) !important;
     filter: var(--grayscale-filter-dark);
   }
-  :root[zen-theme="light"]:not(#context-back,#context-forward,#context-reload,#context-stop,#context-bookmarkpage) 
+  :root[zen-theme="light"] :not(#context-back,#context-forward,#context-reload,#context-stop,#context-bookmarkpage) 
   > .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
     fill: var(--arrowpanel-icon-color) !important;
     filter: var(--grayscale-filter-light);
