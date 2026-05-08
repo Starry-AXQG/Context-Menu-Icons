@@ -355,6 +355,10 @@ I fixed these errors and enhanced some of its features, making it more compatibl
   @media (not ((-moz-pref("zen.view.use-single-toolbar")))) {
   /* Disabled in the compact mode (hide toolbar) to prevent conflicts. */
     @media (not ((-moz-pref("zen.view.compact.hide-toolbar")) and (-moz-pref("zen.view.compact.enable-at-startup")))) {
+    /* Hide ctrlTab menu item */
+      #ctrlTab-showAll {
+        display: none;
+      }
     /* Bookmark bar color style */
     @media (-moz-pref("cmi-bookmarks-theme-transparent")) {
       #PersonalToolbar:not([customizing]) {
