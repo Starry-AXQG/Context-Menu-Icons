@@ -421,12 +421,12 @@ I fixed these errors and enhanced some of its features, making it more compatibl
 
     /* 常态下隐藏书签栏,并避免书签栏影响网页交互 */
       #PersonalToolbar {   
-        position: absolute;
+        position: relative;
+        margin-bottom: -32px;
       @media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
         top: 40px !important; 
       }
-        left: 0 !important;
-        right: 0 !important;
+
         opacity: 0 !important;
         transform: rotateX(90deg) !important;
         transform-origin: top;
@@ -512,5 +512,3 @@ I fixed these errors and enhanced some of its features, making it more compatibl
     }
   }
 }
-
-
