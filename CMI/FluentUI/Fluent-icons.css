@@ -428,7 +428,7 @@ panelview .toolbarbutton-1,
         list-style-image: url("permissions.svg") !important;
         background-position: center !important;
       }
-      #zen-site-data-icon-button:is([starred],:active,:hover:active, [open])  >image {
+      #zen-site-data-icon-button:is([starred])  >image {
         list-style-image: url("permissions-fill.svg") !important;
         background-position: center !important;
       }
