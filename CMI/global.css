@@ -7,7 +7,7 @@
    
 :root {
   /* FluentUI */
-@media (-moz-pref("cmi-Switch-Icon-Package", 1)) {
+@media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
   --fp-contextmenu-menuitem-padding-inline: var(--fluentui-icons-leftmargin);
   --fp-contextmenu-menuicon-margin-inline: var(--fluentui-text-leftmargin);
   
