@@ -863,7 +863,9 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   }
 
   #context_moveTabToGroup,
-  #context_moveTabToNewGroup {
+  #context_moveTabToNewGroup,
+  #context_moveTabToSplitView,
+  #context_moveSplitViewToNewGroup {
     --menu-image: url("TabGroup-add.svg");
   }
 
@@ -874,7 +876,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
 
   #context-openlinkinusercontext-menu,
   menu[id="placesContext_open:newcontainertab"],
-  menu[id="placesContext_openContainer:tabs"] {
+  menu[id="placesContext_openContainer:tabs"],
+  #context_reopenInContainer {
     --menu-image: url("container-tab.svg");
   }
 
@@ -983,7 +986,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   menuitem[id="placesContext_show_bookmark:info"],
   menuitem[id="placesContext_show_folder:info"],
   menuitem[id="placesContext_show:info"],
-  #node-menu-edithtml {
+  #node-menu-edithtml,
+  #context_addNote {
     --menu-image: url("edit.svg");
   }
 
@@ -1024,16 +1028,13 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     --menu-image: url("pocket-outline.svg");
   }
 
-  #context_moveTabOptions {
+  #context_moveTabOptions,
+  #context_reverseSplitView {
     --menu-image: url("move-tab.svg");
   }
 
   .share-tab-url-item {
     --menu-image: url("share.svg");
-  }
-
-  #context_reopenInContainer {
-    --menu-image: url("container-tab.svg");
   }
 
   #context_closeTab,
@@ -1473,7 +1474,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   #context-zen-change-workspace-tab {
     --menu-image: url("move-tab.svg");
   }
-
+  #context_moveTabToSplitView,
+  #context_separateSplitView,
   #context_zenSplitTabs,
   #context-zenSplitLink {
     --menu-image: url("split.svg");
