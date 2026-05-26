@@ -987,7 +987,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   menuitem[id="placesContext_show_folder:info"],
   menuitem[id="placesContext_show:info"],
   #node-menu-edithtml,
-  #context_addNote {
+  #context_addNote,
+  #context_editNote {
     --menu-image: url("edit.svg");
   }
 
