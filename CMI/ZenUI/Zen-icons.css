@@ -1567,8 +1567,10 @@ This rule is used to remove the native "√" icon, making it convenient to inser
       padding-inline-start: 31px !important;
     }
 
-    /* Account END*/
-
+    /* Tools */
+    #appmenu-abouttranslations-button {
+      list-style-image: url('translations.svg') !important;
+    }
     #appmenu-developer-tools-view>toolbarbutton:nth-child(1) {
       list-style-image: url('developer.svg') !important;
     }
