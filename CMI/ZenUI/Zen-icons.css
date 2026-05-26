@@ -1501,7 +1501,7 @@ This rule is used to remove the native "√" icon, making it convenient to inser
       background-repeat: no-repeat !important;
 
       background-size: 16px !important;
-      background-position: 10px center !important;
+      background-position: 9px center !important;
 
       -moz-context-properties: fill, fill-opacity !important;
       fill: currentColor !important;
@@ -1512,7 +1512,7 @@ This rule is used to remove the native "√" icon, making it convenient to inser
       background-repeat: no-repeat !important;
 
       background-size: 16px !important;
-      background-position: 11px center !important;
+      background-position: 9px center !important;
 
       -moz-context-properties: fill, fill-opacity !important;
       fill: currentColor !important;
@@ -1539,7 +1539,7 @@ This rule is used to remove the native "√" icon, making it convenient to inser
       background-repeat: no-repeat !important;
 
       background-size: 16px !important;
-      background-position: 14px center !important;
+      background-position: 9px center !important;
 
       -moz-context-properties: fill, fill-opacity !important;
       fill: currentColor !important;
@@ -1551,7 +1551,7 @@ This rule is used to remove the native "√" icon, making it convenient to inser
       background-repeat: no-repeat !important;
 
       background-size: 16px !important;
-      background-position: 14px center !important;
+      background-position: 9px center !important;
 
       -moz-context-properties: fill, fill-opacity !important;
       fill: currentColor !important;
@@ -1559,12 +1559,12 @@ This rule is used to remove the native "√" icon, making it convenient to inser
 
     :is(toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"],
       toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"])>.toolbarbutton-icon+.toolbarbutton-text {
-      padding-inline-start: 36px !important;
+      padding-inline-start: 31px !important;
     }
 
     :is(toolbarbutton[data-l10n-id="appmenu-remote-tabs-show-inactive-tabs"],
       toolbarbutton[data-l10n-id="appmenu-remote-tabs-showmore"]):hover>.toolbarbutton-icon+.toolbarbutton-text {
-      padding-inline-start: 36px !important;
+      padding-inline-start: 31px !important;
     }
 
     /* Account END*/
