@@ -105,11 +105,11 @@ Cover the "Show more options" text (This mod has built-in localization for commo
 
 3.✨ `cmi-fold_tab_menu_item-enable`
 
-Enable the function of the folding tab menu:
+Enable the function of the folding tab-menu item:
 
 ⚠️:
 
-Please manually enable it through , as it may not be necessary for all users.
+Please manually enable it through `about:config` , as it may not be necessary for all users.
 
 Please do not attempt to collapse the "share" menu item, as it has no ID and thus may cause errors.
 

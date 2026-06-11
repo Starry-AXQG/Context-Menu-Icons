@@ -1609,7 +1609,48 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   .change-group-icon {
     --menu-image: url("image-save.svg");
   }
+/* zen boost */
+    #zen-boost-edit-rename {
+      --menu-image: url('edit.svg');
+    }
+    #zen-boost-edit-shuffle {
+      --menu-image: url('chrome://browser/skin/zen-icons/dice.svg');
+    }
+    #zen-boost-edit-reset {
+      --menu-image: url('media-loop.svg');
+    }
+    #zen-boost-load {
+      --menu-image: url('edit-undo.svg');
+    }
+    #zen-boost-save {
+      --menu-image: url('edit-redo.svg');
+    }
+    #zen-boost-edit-delete {
+      --menu-image: url('edit-delete.svg');
+    }
+    #context_zenSpaceRoutingSettings {
+      --menu-image: url('settings.svg');
+    }
+    /* zen Group(Adapt to Advanced-Tag-Groups) */
+    .change-group-color {
+      --menu-image: url('edit-theme.svg');
+    }
 
+    .rename-group {
+      --menu-image: url('edit.svg');
+    }
+
+    .ungroup-tabs {
+      --menu-image: url('close-all.svg');
+    }
+
+    .convert-group-to-folder {
+      --menu-image: url('edit-redo.svg');
+    }
+
+    .change-group-icon {
+      --menu-image: url('canvas.svg');
+    }
   /* zen Mods */
   #cmi-show-more-menu,
   #cmi-show-more-menu-tab {

@@ -68,6 +68,13 @@
 
   {
     "type": "checkbox",
+    "property": "cmi-Disable-BCM-Gradient-Effect",
+    "label": "✨ Disable Hover Activates Gradient Effect of Better-Context-Menu",
+    "defaultValue": false
+  },
+
+  {
+    "type": "checkbox",
     "property": "cmi-fold_menu_item-enable",
     "label": "✨ Enable CMI fold menu JS. (This will enable you to easily fold the menu items you don't want by hotkey. See github for more function guide)",
     "defaultValue": false
@@ -230,7 +237,7 @@
 },
 {
   "type": "text",
-  "label": "⚠️ 1. The following settings are used to adjust the default margin rules of CMI. \n You'd better make the modifications after fully understanding them. If necessary, you can revert to the default settings or request help from Github. \n 2. The default settings work well for most users. However, CMI's display might be affected slightly by other Sine Mods, different operating systems, or other Firefox variants. \n 3. To see the default values provided by CMI, clear the text input box.",
+  "label": "⚠️: \n 1. Please modify the following settings with caution, as they may affect the normal operation of CMI. \n 2. These settings are only for self-correction when your context menu displays any abnormality due to CMI. \n 3. To restore or view default settings, clear the corresponding text input box.",
   "margin": "15px 0 30px 0",
   "size": "15px"
 },
