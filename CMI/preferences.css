@@ -243,49 +243,93 @@ menuitem#context_zen-add-essential[badge]::after {
     --grayscale-filter-dark: grayscale(100%) invert(100%) brightness(125%);
     --grayscale-filter-light: grayscale(100%) invert(0%) brightness(100%);
   }
-  /* Dark */
-@media (-moz-pref("zen.view.window.scheme", 0)), (-moz-pref("browser.theme.toolbar-theme", 0)) {
-  :not(#context-back,#context-forward,#context-reload,#context-stop,#context-bookmarkpage) 
-  > .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+
+  /* unified exclude list */
+  :root {
+    --zen-exclude:
+      #context-back,
+      #context-forward,
+      #context-reload,
+      #context-stop,
+      #context-bookmarkpage,
+      menuitem[data-l10n-id="zen-panel-ui-workspaces-create"],
+      menuitem[data-l10n-id="zen-panel-ui-folder-create"],
+      menuitem[data-l10n-id="zen-panel-ui-new-empty-split"],
+      menuitem[data-l10n-id="tabs-toolbar-new-tab"];
+  }
+
+  /* Dark Mode */
+  @media (-moz-pref("zen.view.window.scheme", 0)),
+  (-moz-pref("browser.theme.toolbar-theme", 0)) {
+
+    :not(#context-back, #context-forward, #context-reload, #context-stop, #context-bookmarkpage,
+      menuitem[data-l10n-id="zen-panel-ui-workspaces-create"],
+      menuitem[data-l10n-id="zen-panel-ui-folder-create"],
+      menuitem[data-l10n-id="zen-panel-ui-new-empty-split"],
+      menuitem[data-l10n-id="tabs-toolbar-new-tab"])>.menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
       fill: var(--arrowpanel-icon-color);
       filter: var(--grayscale-filter-dark);
+    }
   }
-}
-  /* Light */
-  @media (-moz-pref("zen.view.window.scheme", 1)), (-moz-pref("browser.theme.toolbar-theme", 1)) {
-  :not(#context-back,#context-forward,#context-reload,#context-stop,#context-bookmarkpage) 
-  > .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+
+  /* Light Mode */
+  @media (-moz-pref("zen.view.window.scheme", 1)),
+  (-moz-pref("browser.theme.toolbar-theme", 1)) {
+
+    :not(#context-back, #context-forward, #context-reload, #context-stop, #context-bookmarkpage,
+      menuitem[data-l10n-id="zen-panel-ui-workspaces-create"],
+      menuitem[data-l10n-id="zen-panel-ui-folder-create"],
+      menuitem[data-l10n-id="zen-panel-ui-new-empty-split"],
+      menuitem[data-l10n-id="tabs-toolbar-new-tab"])>.menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
       fill: var(--arrowpanel-icon-color) !important;
       filter: var(--grayscale-filter-light);
     }
   }
-/* Auto Adapt theme for zen */
-@media (-moz-pref("zen.view.window.scheme", 2)) {
-  :root[zen-theme="dark"] :not(#context-back,#context-forward,#context-reload,#context-stop,#context-bookmarkpage) 
-  > .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
-    fill: var(--arrowpanel-icon-color) !important;
-    filter: var(--grayscale-filter-dark);
-  }
-  :root[zen-theme="light"] :not(#context-back,#context-forward,#context-reload,#context-stop,#context-bookmarkpage) 
-  > .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
-    fill: var(--arrowpanel-icon-color) !important;
-    filter: var(--grayscale-filter-light);
-  }
-}
-/* Auto Adapt theme for firefox */
-@media (-moz-pref("browser.theme.toolbar-theme", 2)) and (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
-  :root[zen-theme="dark"] :not(#context-back,#context-forward,#context-reload,#context-stop,#context-bookmarkpage) 
-  > .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
-    fill: var(--arrowpanel-icon-color) !important;
-    filter: var(--grayscale-filter-dark);
-  }
-  :root[zen-theme="light"] :not(#context-back,#context-forward,#context-reload,#context-stop,#context-bookmarkpage) 
-  > .menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
-    fill: var(--arrowpanel-icon-color) !important;
-    filter: var(--grayscale-filter-light);
-  }
-}
 
+  /* Auto theme switch */
+  /* Zen */
+  @media (-moz-pref("zen.view.window.scheme", 2)) {
+
+    :root[zen-theme="dark"] :not(#context-back, #context-forward, #context-reload, #context-stop, #context-bookmarkpage,
+      menuitem[data-l10n-id="zen-panel-ui-workspaces-create"],
+      menuitem[data-l10n-id="zen-panel-ui-folder-create"],
+      menuitem[data-l10n-id="zen-panel-ui-new-empty-split"],
+      menuitem[data-l10n-id="tabs-toolbar-new-tab"])>.menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+      fill: var(--arrowpanel-icon-color) !important;
+      filter: var(--grayscale-filter-dark);
+    }
+
+    :root[zen-theme="light"] :not(#context-back, #context-forward, #context-reload, #context-stop, #context-bookmarkpage,
+      menuitem[data-l10n-id="zen-panel-ui-workspaces-create"],
+      menuitem[data-l10n-id="zen-panel-ui-folder-create"],
+      menuitem[data-l10n-id="zen-panel-ui-new-empty-split"],
+      menuitem[data-l10n-id="tabs-toolbar-new-tab"])>.menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+      fill: var(--arrowpanel-icon-color) !important;
+      filter: var(--grayscale-filter-light);
+    }
+  }
+
+  /* Firefox 115+ (Gecko 115+) */
+  @media (-moz-pref("browser.theme.toolbar-theme", 2)) and (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
+
+    :root[zen-theme="dark"] :not(#context-back, #context-forward, #context-reload, #context-stop, #context-bookmarkpage,
+      menuitem[data-l10n-id="zen-panel-ui-workspaces-create"],
+      menuitem[data-l10n-id="zen-panel-ui-folder-create"],
+      menuitem[data-l10n-id="zen-panel-ui-new-empty-split"],
+      menuitem[data-l10n-id="tabs-toolbar-new-tab"])>.menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+      fill: var(--arrowpanel-icon-color) !important;
+      filter: var(--grayscale-filter-dark);
+    }
+
+    :root[zen-theme="light"] :not(#context-back, #context-forward, #context-reload, #context-stop, #context-bookmarkpage,
+      menuitem[data-l10n-id="zen-panel-ui-workspaces-create"],
+      menuitem[data-l10n-id="zen-panel-ui-folder-create"],
+      menuitem[data-l10n-id="zen-panel-ui-new-empty-split"],
+      menuitem[data-l10n-id="tabs-toolbar-new-tab"])>.menu-icon:not(.bookmark-item .menu-icon):not(toolbarbutton.bookmark-item .menu-icon) {
+      fill: var(--arrowpanel-icon-color) !important;
+      filter: var(--grayscale-filter-light);
+    }
+  }
 }
   
 
