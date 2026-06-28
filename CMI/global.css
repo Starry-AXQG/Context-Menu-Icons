@@ -351,9 +351,9 @@ box-sizing: border-box !important;
     height: var(--zen-cmenu-icon-size);
     */
     /* Adjust the position of the extension icons (left margin) */
-    margin-inline-start: var(--cmi-extension-icon-leftmargin);
+    margin-inline-start: var(--cmi-extension-icon-leftmargin) !important;
 
-    margin-inline-end: var(--zen-extensions-margin-right);
+    margin-inline-end: var(--zen-extensions-margin-right) !important;
     /*
     margin-block-start: var(--zen-cmenu-icon-margin-block);
     margin-block-end: var(--zen-cmenu-icon-margin-block);

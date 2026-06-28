@@ -1301,7 +1301,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
       --menu-image: url('pin.svg');
     }
 
-    #context_zen-add-essential {
+    #context_zen-add-essential,
+    #context_zen-edit-pinned-page {
       --menu-image: url('essential-add.svg');
     }
 
@@ -1383,7 +1384,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     #newbookmark,
     #newfolder,
     #newseparator,
-    #node-menu-add {
+    #node-menu-add,
+    #context_zen-add-domain-to-routing {
       --menu-image: url('plus.svg');
     }
 
