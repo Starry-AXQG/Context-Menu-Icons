@@ -122,9 +122,17 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     }
 
 
-
+    #appMenu-fxa-label2::before {
+      content: '' !important;
+      display: -moz-box !important;
+      height: 16px !important;
+      width: 16px !important;
+      background: var(--avatar-image-url) 0/16px !important;
+      scale: 1.25 !important;
+      border-radius: 99px !important;
+    }
+    
     @media (-moz-pref("cmi-Switch-Gecko-Branch", 0)) {
-
 
       .subviewbutton {
         background-image: var(--menu-image) !important;
@@ -133,16 +141,6 @@ This rule is used to remove the native "√" icon, making it convenient to inser
         background-repeat: no-repeat !important;
         -moz-context-properties: fill, fill-opacity !important;
         fill: currentColor !important;
-      }
-
-      #appMenu-fxa-label2::before {
-        content: '';
-        display: -moz-box;
-        height: 16px;
-        width: 16px;
-        background: var(--avatar-image-url) 0/16px;
-        scale: 1.25;
-        border-radius: 99px;
       }
 
       .private-browsing-indicator-icon {
