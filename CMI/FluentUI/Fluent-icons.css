@@ -93,16 +93,13 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     fill: currentColor !important;
   }
 
-  :not(:not(menubar) > menu, #ContentSelectDropdown)>#cmi-show-more-menupopup,
-  #cmi-show-more-menupopup-tab>menuitem,
+
   :not(:not(menubar) > menu, #ContentSelectDropdown)>menupopup>menuitem:not(.menuitem-iconic,
     [type="checkbox"],
     [type="radio"],
     .in-menulist,
     .in-menulist menuitem,
     .unified-nav-current),
-  :not(:not(menubar) > menu, #ContentSelectDropdown)>#cmi-show-more-menupopup,
-  #cmi-show-more-menupopup-tab,
   menupopup>menu:not(.menu-iconic,
     [type="checkbox"],
     [type="radio"],
@@ -120,6 +117,12 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     fill: currentColor !important;
   }
 
+  #context_reopenInContainerPopupMenu>menuitem:not(.menuitem-iconic,
+    [type="checkbox"],
+    [type="radio"],
+    .in-menulist,
+    .in-menulist menuitem,
+    .unified-nav-current),
   menuitem.sine-moved,
   menuitem[id$="-sine-clone"],
   menuitem[class*="sine"] {
@@ -1583,6 +1586,7 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     background-position: 11px center !important;
   }
 
+  menuitem[data-l10n-id="user-context-new-tab"],
   menuitem[command="Browser:NewUserContextTab"] {
     --menu-image: url('new-tab-image.svg');
   }

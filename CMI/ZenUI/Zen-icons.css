@@ -83,43 +83,46 @@ This rule is used to remove the native "√" icon, making it convenient to inser
       fill: currentColor !important;
     }
 
-    :not(:not(menubar) > menu, #ContentSelectDropdown)>#cmi-show-more-menupopup,
-    #cmi-show-more-menupopup-tab>menuitem,
-    :not(:not(menubar) > menu, #ContentSelectDropdown)>menupopup>menuitem:not(.menuitem-iconic,
-      [type="checkbox"],
-      [type="radio"],
-      .in-menulist,
-      .in-menulist menuitem,
-      .unified-nav-current),
-    :not(:not(menubar) > menu, #ContentSelectDropdown)>#cmi-show-more-menupopup,
-    #cmi-show-more-menupopup-tab,
-    menupopup>menu:not(.menu-iconic,
-      [type="checkbox"],
-      [type="radio"],
-      .in-menulist,
-      .in-menulist menu,
-      .unified-nav-current),
-    #toggle_toolbar-menubar,
-    #PanelUI-history toolbarbutton,
-    #unified-extensions-context-menu {
-      background-image: var(--menu-image) !important;
-      background-size: 16px !important;
-      background-position: var(--zen-contextmenu-menuitem-padding-inline) center !important;
-      background-repeat: no-repeat !important;
-      -moz-context-properties: fill, fill-opacity !important;
-      fill: currentColor !important;
-    }
 
-    menuitem.sine-moved,
-    menuitem[id$="-sine-clone"],
-    menuitem[class*="sine"] {
-      background-image: var(--menu-image) !important;
-      background-size: 16px !important;
-      background-position: var(--zen-contextmenu-menuitem-padding-inline) center !important;
-      background-repeat: no-repeat !important;
-      -moz-context-properties: fill, fill-opacity !important;
-      fill: currentColor !important;
-    }
+  :not(:not(menubar) > menu, #ContentSelectDropdown)>menupopup>menuitem:not(.menuitem-iconic,
+    [type="checkbox"],
+    [type="radio"],
+    .in-menulist,
+    .in-menulist menuitem,
+    .unified-nav-current),
+  menupopup>menu:not(.menu-iconic,
+    [type="checkbox"],
+    [type="radio"],
+    .in-menulist,
+    .in-menulist menu,
+    .unified-nav-current),
+  #toggle_toolbar-menubar,
+  #PanelUI-history toolbarbutton,
+  #unified-extensions-context-menu {
+    background-image: var(--menu-image) !important;
+    background-size: 16px !important;
+    background-position: var(--zen-contextmenu-menuitem-padding-inline) center !important;
+    background-repeat: no-repeat !important;
+    -moz-context-properties: fill, fill-opacity !important;
+    fill: currentColor !important;
+  }
+
+  #context_reopenInContainerPopupMenu>menuitem:not(.menuitem-iconic,
+    [type="checkbox"],
+    [type="radio"],
+    .in-menulist,
+    .in-menulist menuitem,
+    .unified-nav-current),
+  menuitem.sine-moved,
+  menuitem[id$="-sine-clone"],
+  menuitem[class*="sine"] {
+    background-image: var(--menu-image) !important;
+    background-size: 16px !important;
+    background-position: var(--zen-contextmenu-menuitem-padding-inline) center !important;
+    background-repeat: no-repeat !important;
+    -moz-context-properties: fill, fill-opacity !important;
+    fill: currentColor !important;
+  }
 
 
     #appMenu-fxa-label2::before {
@@ -1738,6 +1741,7 @@ This rule is used to remove the native "√" icon, making it convenient to inser
       background-position: 5px center !important;
     }
 
+    menuitem[data-l10n-id="user-context-new-tab"],
     menuitem[command="Browser:NewUserContextTab"] {
       --menu-image: url('tab.svg');
     }
