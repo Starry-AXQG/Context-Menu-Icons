@@ -391,7 +391,7 @@ I fixed these errors and enhanced some of its features, making it more compatibl
 
       @media (not (-moz-pref("cmi-bookmarks-theme-transparent"))) {
         #personal-bookmarks toolbarbutton.bookmark-item:not(#OtherBookmarks) {
-          border-radius: 11px !important;
+          border-radius: 12px !important;
           background-color: light-dark(rgba(255, 255, 255, 0.45), rgba(0, 0, 0, 0.55)) !important;
           height: 24px;
         }
@@ -416,19 +416,19 @@ I fixed these errors and enhanced some of its features, making it more compatibl
       #personal-bookmarks #PlacesToolbarItems>toolbarbutton.bookmark-item:not(.subviewbutton,
         [disabled],
         [open]):hover {
-        border-radius: 11px !important;
+        border-radius: 12px !important;
         scale: 1.05 !important;
       }
 
       #personal-bookmarks #PlacesToolbarItems>toolbarbutton.bookmark-item:not(.subviewbutton,
         [disabled]):hover:active {
-        border-radius: 11px !important;
+        border-radius: 12px !important;
         scale: 1.05 !important;
         filter: brightness(1.5);
       }
 
       #personal-bookmarks #PlacesToolbarItems>toolbarbutton.bookmark-item[open] {
-        border-radius: 11px !important;
+        border-radius: 12px !important;
         scale: 1.05 !important;
         filter: brightness(1.5);
       }
