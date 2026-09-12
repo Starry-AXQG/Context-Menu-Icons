@@ -1038,9 +1038,12 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     --menu-image: url("move-tab.svg");
   }
 
-  .share-tab-url-item {
-    --menu-image: url("share.svg");
-  }
+    .share-tab-url-item,
+    #context_zenShareWorkspace,
+    #context_zenShareFolder,
+    #context_zenShareSplitView {
+      --menu-image: url('share.svg');
+    }
 
   #context_closeTab,
   #context_closeDuplicateTabs,
@@ -1291,8 +1294,14 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   }
 
   /* Tools */
+  #appmenu-moreTools-button {
+      list-style-image: url('customize.svg') !important;
+  }
   #appmenu-abouttranslations-button {
       list-style-image: url('translations.svg') !important;
+  }
+  #appmenu-edit-pdf-button {
+      list-style-image: url('edit.svg') !important;
   }
   #appmenu-developer-tools-view>toolbarbutton:nth-child(1) {
     list-style-image: url('manage.svg') !important;
@@ -1330,6 +1339,9 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     list-style-image: url('extension.svg') !important;
   }
 
+  #appMenu_help_reportBrokenSite {
+    list-style-image: url('mail.svg') !important;
+  }
 
   #appMenu_feedbackPage {
     list-style-image: url('share.svg') !important;

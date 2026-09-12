@@ -23,7 +23,7 @@
 
   /* Base Hover Styling for Menu Items */
   :is(menu, menuitem, #appMenu-multiView toolbarbutton) {
-    border-radius: 8px !important;
+    border-radius: 12px !important;
   }
 
   /* Hide "New Tab" Option */
