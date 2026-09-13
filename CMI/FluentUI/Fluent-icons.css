@@ -93,7 +93,7 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     fill: currentColor !important;
   }
 
-
+/* main menu items */
   :not(:not(menubar) > menu, #ContentSelectDropdown)>menupopup>menuitem:not(.menuitem-iconic,
     [type="checkbox"],
     [type="radio"],
@@ -116,7 +116,7 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     -moz-context-properties: fill, fill-opacity !important;
     fill: currentColor !important;
   }
-
+/* sub menu items */
   #context_reopenInContainerPopupMenu>menuitem:not(.menuitem-iconic,
     [type="checkbox"],
     [type="radio"],
@@ -125,7 +125,13 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     .unified-nav-current),
   menuitem.sine-moved,
   menuitem[id$="-sine-clone"],
-  menuitem[class*="sine"] {
+  menuitem[class*="sine"],
+  #context_zenWorkspacesOpenInContainerTab>menupopup>menuitem:not(.menuitem-iconic,
+    [type="checkbox"],
+    [type="radio"],
+    .in-menulist,
+    .in-menulist menuitem,
+    .unified-nav-current) {
     background-image: var(--menu-image) !important;
     background-size: 16px !important;
     background-position: var(--fp-contextmenu-menuitem-padding-inline) center !important;
@@ -1599,7 +1605,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   }
 
   menuitem[data-l10n-id="user-context-new-tab"],
-  menuitem[command="Browser:NewUserContextTab"] {
+  menuitem[command="Browser:NewUserContextTab"],
+  #context_zenWorkspacesOpenInContainerTab > menupopup:nth-child(4) > menuitem:nth-child(1) {
     --menu-image: url('new-tab-image.svg');
   }
   #new-tab-button-popup > menuitem:nth-last-child(2),
