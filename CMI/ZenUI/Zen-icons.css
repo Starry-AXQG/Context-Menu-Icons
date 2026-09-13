@@ -1756,8 +1756,12 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     menuitem[command="Browser:NewUserContextTab"] {
       --menu-image: url('tab.svg');
     }
-
-    menuitem[command="Browser:OpenAboutContainers"] {
+    #new-tab-button-popup > menuitem:nth-last-child(2),
+    menuitem[data-l10n-id="user-context-add-container"] {
+      --menu-image: url('container-tab.svg');
+    }
+    #new-tab-button-popup > menuitem:nth-last-child(1),
+    menuitem[data-l10n-id="user-context-manage-containers"] {
       --menu-image: url('manage.svg');
     }
 
