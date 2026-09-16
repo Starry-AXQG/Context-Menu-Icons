@@ -636,28 +636,29 @@
   });
 
   // --- Touch / tap support ---
-  function getEventCoords(e) {
-    // PointerEvent: use clientX/Y
-    if (typeof e.clientX === 'number' && typeof e.clientY === 'number') {
-      return { x: e.clientX, y: e.clientY };
-    }
-    // TouchEvent: use first touch
-    if (e.touches && e.touches.length) {
-      return { x: e.touches[0].clientX, y: e.touches[0].clientY };
-    }
-    if (e.changedTouches && e.changedTouches.length) {
-      return { x: e.changedTouches[0].clientX, y: e.changedTouches[0].clientY };
-    }
-    // Click fallback
-    return { x: 0, y: 0 };
+  function eventIsFromNavOrToolbar(e) {
+    // DevTools can dispatch events whose client coordinates are relative to its
+    // own document. Do not feed those coordinates into this browser document's
+    // elementFromPoint(); determine the originating chrome element instead.
+    const path = typeof e.composedPath === 'function' ? e.composedPath() : [e.target];
+    return path.some((node) =>
+      node === nav || node === toolbar ||
+      (node instanceof Element && ((nav && nav.contains(node)) || (toolbar && toolbar.contains(node))))
+    );
+  }
+
+  function eventIsFromThisDocument(e) {
+    const target = typeof e.composedPath === 'function' ? e.composedPath()[0] : e.target;
+    return target === document || target?.ownerDocument === document;
   }
 
   function onGlobalPointerDown(e) {
     // while dragging we let drag logic own the visibility
     if (isDragging) return;
+    // Ignore interactions originating from DevTools or another embedded document.
+    if (!eventIsFromThisDocument(e)) return;
 
-    const { x, y } = getEventCoords(e);
-    const over = pointIsOverNavOrToolbar(x, y);
+    const over = eventIsFromNavOrToolbar(e);
 
     lastPointerDownTime = Date.now();
     lastPointerDownInside = !!over;
@@ -701,6 +702,7 @@
   // This is a safety net for pages that eat pointer events.
   window.addEventListener('pointerup', (e) => {
     if (isDragging) return;
+    if (!eventIsFromThisDocument(e)) return;
     // If the last pointerdown was outside, ensure hide after a microtask
     if (!lastPointerDownInside) setTimeout(() => showBookmarks(false), 10);
   }, true);
