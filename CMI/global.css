@@ -189,7 +189,7 @@ menupopup#context_reopenInContainerPopupMenu {
       ),
     /* 分组标题 */
     > menucaption {
-      padding-inline-start: var(--group-padding) !important;
+      padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
     }
   }
 }
@@ -237,7 +237,7 @@ menupopup#context_reopenInContainerPopupMenu {
       ),
     /* 分组标题 */
     > menucaption {
-      padding-inline-start: var(--group-padding) !important;
+      padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
     }
   }
 }

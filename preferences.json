@@ -287,15 +287,15 @@
     "type": "string",
     "property": "cmi-checkmark-margin-right_cover_1",
     "label": "The right margin of the checkmark icon(√) after some menu item is checked",
-    "defaultValue": "10px",
-    "placeholder": "default: 10px"
+    "defaultValue": "8px",
+    "placeholder": "default: 8px"
   },
   {
     "type": "string",
     "property": "cmi-non-checkmark-subitems-padding_1",
     "label": "When a checkmark item is selected among the context menu items, the margins of the other unselected menu items will be adjusted accordingly.",
-    "defaultValue": "24px",
-    "placeholder": "default: 24px"
+    "defaultValue": "16px",
+    "placeholder": "default: 16px"
   },
 
   {
@@ -351,8 +351,8 @@
     "type": "string",
     "property": "cmi-checkmark-margin-right_2",
     "label": "The right margin of the checkmark icon(√) in normal circumstances",
-    "defaultValue": "8px",
-    "placeholder": "default: 8px"
+    "defaultValue": "6px",
+    "placeholder": "default: 6px"
   },
   {
     "type": "string",
@@ -365,8 +365,8 @@
     "type": "string",
     "property": "cmi-non-checkmark-subitems-padding_2",
     "label": "When a checkmark item is selected among the context menu items, the margins of the other unselected menu items will be adjusted accordingly.",
-    "defaultValue": "24px",
-    "placeholder": "default: 24px"
+    "defaultValue": "14px",
+    "placeholder": "default: 14px"
   },
   {
     "type": "string",
