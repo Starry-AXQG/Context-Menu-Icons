@@ -301,28 +301,28 @@
   {
     "type": "string",
     "property": "cmi-extension-icon-leftmargin_1",
-    "label": "☑️ Optional: Advanced customization - The left margin of icons from browser extension in context menu",
-    "defaultValue": "0px",
-    "placeholder": "default: 0px(Disbale)"
+    "label": "Adjust the left margin of the ~icons~ of browser extensions items in context menu.",
+    "defaultValue": "-6px",
+    "placeholder": "default: -6px"
   },
   {
     "type": "string",
     "property": "cmi-menu-text-leftmargin_1",
-    "label": "☑️ Optional: Advanced customization - The left margin of menu text in context menu(This will simultaneously modify the margin rules that have already been in effect for CMI. You can re-adjust the margin rules of CMI)",
-    "defaultValue": "0px",
-    "placeholder": "default: 0px(Disbale)"
+    "label": "Adjust the left margin of the ~text~ of browser extensions items in context menu.",
+    "defaultValue": "2px",
+    "placeholder": "default: 2px"
   },
   {
     "type": "string",
     "property": "cmi-fluentui-icons-leftmargin",
-    "label": "☑️ Optional: Advanced customization - The left margin of FluentUI icons in context menu",
+    "label": "Adjust the left margin of the additional ~icons~ added by ~CMI~.",
     "defaultValue": "6px",
     "placeholder": "default: 6px"
   },
   {
     "type": "string",
     "property": "cmi-fluentui-text-leftmargin",
-    "label": "☑️ Optional: Advanced customization - The left margin of FluentUI menu text in context menu",
+    "label": "Adjust the ~text~ of the menu items that have additional icons added by ~CMI~",
     "defaultValue": "8px",
     "placeholder": "default: 8px"
   },
@@ -371,28 +371,28 @@
   {
     "type": "string",
     "property": "cmi-extension-icon-leftmargin_2",
-    "label": "☑️ Optional: Advanced customization - The left margin of icons from browser extension in context menu",
-    "defaultValue": "0px",
-    "placeholder": "default: 0px(Disbale)"
+    "label": "Adjust the left margin of the ~icons~ of browser extensions items in context menu",
+    "defaultValue": "-6px",
+    "placeholder": "default: -6px"
   },
   {
     "type": "string",
     "property": "cmi-menu-text-leftmargin_2",
-    "label": "☑️ Optional: Advanced customization - The left margin of menu text in context menu(This will simultaneously modify the margin rules that have already been in effect for CMI. You can re-adjust the margin rules of CMI)",
-    "defaultValue": "0px",
-    "placeholder": "default: 0px(Disbale)"
+    "label": "Adjust the left margin of the ~text~ of browser extensions items in context menu.",
+    "defaultValue": "2px",
+    "placeholder": "default: 2px"
   },
   {
     "type": "string",
     "property": "cmi-zenui-icons-leftmargin",
-    "label": "☑️ Optional: Advanced customization - The left margin of ZenUI icons in context menu",
+    "label": "Adjust the left margin of the additional ~icons~ added by ~CMI~.",
     "defaultValue": "6px",
     "placeholder": "default: 6px"
   },
   {
     "type": "string",
     "property": "cmi-zenui-text-leftmargin",
-    "label": "☑️ Optional: Advanced customization - The left margin of ZenUI menu text in context menu",
+    "label": "Adjust the ~text~ of the menu items that have additional icons added by ~CMI~.",
     "defaultValue": "12px",
     "placeholder": "default: 12px"
   },

@@ -363,13 +363,14 @@ box-sizing: border-box !important;
     padding: 0 !important;
   }
 
-  /* ==== Force all text within context menus that contain expansions to move to the right ( After that, the margin rules of CMI can be used for correction.) ==== */
-  menupopup > menuitem .menu-text,
-  menupopup > menu .menu-text {
+  /* ==== Perform additional processing on the text of the browser extension menu items) ==== */
+  menupopup > menuitem.menuitem-iconic > .menu-text,
+  menupopup > menu.menu-iconic > .menu-text {
     padding-inline-start: 0 !important; /* Reset the possible padding */
     margin-inline-start: 0 !important;  /* Reset the possible margin */
     /* The position of the menu text */
     padding-inline-start: var(--cmi-menu-text-leftmargin) !important;
+ 
   }
 
 }
