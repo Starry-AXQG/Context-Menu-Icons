@@ -237,7 +237,7 @@
 },
 {
   "type": "text",
-  "label": "⚠️: \n 1. If the icons from CMI and the browser extensions in the context menu do not align properly, please modify the following values (*The default settings do not guarantee perfect display in all environments*). \n 2. You can freely try out any value and observe the changes in the context menu. Keep doing this until you are satisfied.. \n 3. To restore or view default settings, clear the corresponding text input box.",
+  "label": "⚠️: \n 1. If the icons from CMI and the browser extensions in the context menu do not align properly, please modify the following values. (*The default settings do not guarantee perfect display in all environments*) \n 2. You can freely try out any value and observe the changes in the context menu. Keep doing this until you are satisfied. \n 3. To restore or view default settings, clear the corresponding text input box.",
   "margin": "15px 0 30px 0",
   "size": "15px"
 },
