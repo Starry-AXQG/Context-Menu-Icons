@@ -352,7 +352,7 @@
     "property": "cmi-checkmark-margin-right_2",
     "label": "The right margin of the checkmark icon(√) in normal circumstances",
     "defaultValue": "6px",
-    "placeholder": "default: 6px"
+    "placeholder": "default: 8px"
   },
   {
     "type": "string",
