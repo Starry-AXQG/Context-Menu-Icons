@@ -48,12 +48,12 @@ FluentUI和ZenUI两套图标包是独立的数值，请分别调整它们的边�
     --checkmark-height: 16px;
 
     --checkmark-margin-left: var(--cmi-checkmark-margin-left_1, 6px);
-    --checkmark-margin-left_cover: var(--cmi-checkmark-margin-left_cover_1, 8px);
+    --checkmark-margin-left_cover: var(--cmi-checkmark-margin-left_cover_1, 6px);
 
     --checkmark-margin-right: var(--cmi-checkmark-margin-right_1, 8px);
     --checkmark-margin-right_cover: var(--cmi-checkmark-margin-right_cover_1, 8px);
 
-    --Non-checkmark-subitems-padding: var(--cmi-non-checkmark-subitems-padding_1, 16px);
+    --Non-checkmark-subitems-padding: var(--cmi-non-checkmark-subitems-padding_1, 14px);
 
 /* ☑️ Optional: Advanced customization */
     /* The leftmargin of icons from browser extensions */

@@ -273,8 +273,8 @@
     "type": "string",
     "property": "cmi-checkmark-margin-left_cover_1",
     "label": "The left margin of the checkmark icon(√) after some menu item is checked",
-    "defaultValue": "8px",
-    "placeholder": "default: 8px"
+    "defaultValue": "6px",
+    "placeholder": "default: 6px"
   },
   {
     "type": "string",
@@ -294,8 +294,8 @@
     "type": "string",
     "property": "cmi-non-checkmark-subitems-padding_1",
     "label": "When a checkmark item is selected among the context menu items, the margins of the other unselected menu items will be adjusted accordingly.",
-    "defaultValue": "16px",
-    "placeholder": "default: 16px"
+    "defaultValue": "14px",
+    "placeholder": "default: 14px"
   },
 
   {

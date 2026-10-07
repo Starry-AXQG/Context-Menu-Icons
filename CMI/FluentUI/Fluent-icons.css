@@ -731,7 +731,11 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   menuitem[data-l10n-id="zen-boost-edit-delete"],
   menuitem[data-l10n-id="library-downloads-clear-all"],
   menu[data-l10n-id="library-history-clear"],
-  menuitem[data-l10n-id="library-downloads-menu-delete"] {
+  menuitem[data-l10n-id="library-downloads-menu-delete"],
+  menuitem[data-l10n-id="downloads-cmd-delete-file"],
+  menuitem[data-l10n-id="downloads-cmd-remove-from-history"],
+  menuitem[data-l10n-id="downloads-cmd-clear-list"],
+  menuitem[data-l10n-id="downloads-cmd-clear-downloads"] {
     --menu-image: url("edit-delete.svg");
   }
 
