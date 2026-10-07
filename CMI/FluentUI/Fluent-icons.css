@@ -709,7 +709,6 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   #placesContext_sortBy\:name {
     --menu-image: url("sort.svg");
   }
-
   #context-delete,
   .customize-context-removeExtension,
   #pageActionContextMenuRemoveExtension,
@@ -729,7 +728,10 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   #storage-tree-popup-delete-all,
   #storage-tree-popup-delete-all-session-cookies,
   menuitem[data-l10n-id="library-downloads-menu-trash"],
-  menuitem[data-l10n-id="zen-boost-edit-delete"] {
+  menuitem[data-l10n-id="zen-boost-edit-delete"],
+  menuitem[data-l10n-id="library-downloads-clear-all"],
+  menu[data-l10n-id="library-history-clear"],
+  menuitem[data-l10n-id="library-downloads-menu-delete"] {
     --menu-image: url("edit-delete.svg");
   }
 
@@ -828,7 +830,9 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   menuitem[data-l10n-id="downloads-cmd-copy-download-link"] {
     --menu-image: url("link.svg");
   }
-
+  menuitem[data-l10n-id="library-downloads-menu-hide"] {
+    --menu-image: url("hide.svg");
+  }
   #context-viewsource,
   #context-viewframesource,
   #context-viewpartialsource-selection {
@@ -1015,7 +1019,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   #BMB_bookmarksShowAll,
   .customize-context-manageExtension,
   #pageActionContextMenuManageExtension,
-  .unified-extensions-context-menu-manage-extension {
+  .unified-extensions-context-menu-manage-extension,
+  menuitem[data-l10n-id="library-open-legacy"] {
     --menu-image: url("manage.svg");
   }
 
