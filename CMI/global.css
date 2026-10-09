@@ -370,7 +370,28 @@ box-sizing: border-box !important;
     margin-inline-start: 0 !important;  /* Reset the possible margin */
     /* The position of the menu text */
     padding-inline-start: var(--cmi-menu-text-leftmargin) !important;
- 
+  }
+
+  /* ==== Align .unified-nav-current in #backForwardMenu with .unified-nav-back / .unified-nav-forward items ==== */
+  :is(menupopup, #backForwardMenu) > menuitem.unified-nav-current {
+    padding-inline-start: revert !important;
+    padding-left: revert !important;
+  }
+
+  :is(menupopup, #backForwardMenu) > menuitem.unified-nav-current::before {
+    margin-inline-start: var(--cmi-extension-icon-leftmargin, 0px) !important;
+    margin-inline-end: var(--space-small, 8px) !important;
+  }
+
+  @media (-moz-platform: linux) {
+    :is(menupopup, #backForwardMenu) > menuitem.unified-nav-current::before {
+      margin-inline-end: 0.5em !important;
+    }
+  }
+
+  :is(menupopup, #backForwardMenu) > menuitem.unified-nav-current > .menu-text {
+    padding-inline-start: var(--cmi-menu-text-leftmargin, 0px) !important;
+    margin-inline-start: 0 !important;
   }
 
 }

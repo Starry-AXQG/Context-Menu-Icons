@@ -31,7 +31,7 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   }
 
   /* ========== 勾选时：移除背景图 ========== */
-  :is(menuitem[type="checkbox"], menuitem[type="radio"])[checked] {
+  :is(menuitem[type="checkbox"], menuitem[type="radio"])[checked]:not(.unified-nav-current) {
     background-image: none !important;
     /* 保持不触碰间距 */
     padding-inline-start: unset !important;
