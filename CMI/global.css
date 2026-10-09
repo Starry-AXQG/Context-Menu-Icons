@@ -256,13 +256,13 @@ menupopup#context_reopenInContainerPopupMenu {
 
 /* 当 menupopup 下有被勾选的 checkbox、radio 时，
 给同层级未勾选且不是父菜单的 checkbox、radio 子项增加 padding */
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked])
-> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
+menupopup:not(#backForwardMenu):has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked])
+> menuitem:is([type="checkbox"], [type="radio"]):not(.menuitem-iconic, [class*="unified-nav"]):not([hidden]):not([checked]):not(:has(menupopup))
 > .menu-text,
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked])
-> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
+menupopup:not(#backForwardMenu):has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked])
+> menuitem:is([type="checkbox"], [type="radio"]):not(.menuitem-iconic, [class*="unified-nav"]):not([hidden]):not([checked]):not(:has(menupopup))
 > .menu-highlightable-text {
-padding-inline-start: calc(var(--Non-checkmark-subitems-padding) + 4px) !important;
+padding-inline-start: calc(var(--checkmark-margin-left) + var(--checkmark-width) + var(--checkmark-margin-right)) !important;
 box-sizing: border-box !important;
 }
 }
@@ -272,13 +272,13 @@ box-sizing: border-box !important;
 @media (-moz-platform: linux) {
 /* 当 menupopup 下有未被隐藏的 checkbox、radio 时，
 给同层级未勾选且不是父菜单的 checkbox、radio 子项增加 padding */
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
-> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
+menupopup:not(#backForwardMenu):has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
+> menuitem:is([type="checkbox"], [type="radio"]):not(.menuitem-iconic, [class*="unified-nav"]):not([hidden]):not([checked]):not(:has(menupopup))
 > .menu-text,
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
-> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
+menupopup:not(#backForwardMenu):has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
+> menuitem:is([type="checkbox"], [type="radio"]):not(.menuitem-iconic, [class*="unified-nav"]):not([hidden]):not([checked]):not(:has(menupopup))
 > .menu-highlightable-text {
-padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
+padding-inline-start: calc(var(--checkmark-margin-left) + var(--checkmark-width) + var(--checkmark-margin-right)) !important;
 box-sizing: border-box !important;
 }
 }

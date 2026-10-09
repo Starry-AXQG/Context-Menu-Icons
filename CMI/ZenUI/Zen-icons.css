@@ -1354,7 +1354,7 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     }
 
     #zen-context-menu-compact-mode,
-    #zen-context-menu-compact-mode-toggle {
+    #toolbar-context-menu > #zen-context-menu-compact-mode-toggle {
       --menu-image: url('sidebar.svg');
     }
 
