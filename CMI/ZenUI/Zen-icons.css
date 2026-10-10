@@ -1461,7 +1461,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     #context_unloadTab,
     #context_zenUnloadWorkspace,
     #context_zenFolderUnloadAll,
-    #context_zenUnloadAllOtherWorkspace {
+    #context_zenUnloadAllOtherWorkspace,
+    menuitem[data-l10n-id="library-media-turn-off"] {
       --menu-image: var(--zen-unload-icon);
     }
 
