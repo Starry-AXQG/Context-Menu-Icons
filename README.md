@@ -1,4 +1,6 @@
-<h1 align="center">Context-Menu-Icons</h1>
+
+https://github.com/user-attachments/assets/f15aefc6-7666-47d7-b669-d256bcc24ee4
+<img width="353" height="667" alt="PixPin_2026-10-17_23-40-58" src="https://github.com/user-attachments/assets/344297d9-b92b-4a44-b971-246c8f1a33b2" /><h1 align="center">Context-Menu-Icons</h1>
 <div align="center">
     <a href="https://zen-browser.app/">
         <img width="120" alt="zen-badge-dark" src="https://github.com/user-attachments/assets/d6ab3ddf-6630-4062-92d0-22497d2a3f9a" />
@@ -23,9 +25,16 @@ Demo image ( Support two sets of linear icons with different styles. FluentUI le
 
 ![PixPin_2025-07-06_21-04-53](https://github.com/user-attachments/assets/c2da0b31-b811-4c32-a245-e888d00562c7)
 
+<img width="353" height="667" alt="PixPin_2026-10-17_23-40-58" src="https://github.com/user-attachments/assets/a708e7aa-567b-4862-a1e5-ec8665d751e5" />
+<img width="356" height="675" alt="PixPin_2026-10-17_23-40-33" src="https://github.com/user-attachments/assets/9c10629d-cf83-4903-84b7-ad8716fef19d" />
+
+<img width="530" height="532" alt="PixPin_2026-10-17_23-40-04" src="https://github.com/user-attachments/assets/02a4c47b-f98d-4dc4-a5c5-c417c7b28980" />
+<img width="534" height="530" alt="PixPin_2026-10-17_23-41-14" src="https://github.com/user-attachments/assets/6a6c0cbc-a8de-4c6a-8d05-aaa4c54df6d5" />
+
+
 Demo for CMI-fold-menu-JS (Fold the unnecessary menu items like the context menu in Windows 11 for ease of use):
 
-https://github.com/user-attachments/assets/c64dfaef-c7a3-4834-a6c7-d98365218d43
+https://github.com/user-attachments/assets/d813ad3e-d63a-44f0-8502-12ad23c81dea
 
 # 📢 Announcement:
 This project will undergo frequent and continuous updates to ensure that it remains functional even after browser updates.
@@ -72,9 +81,7 @@ In CMI [v2.1](https://github.com/Starry-AXQG/Context-Menu-Icons/releases/tag/v2.
 
 Demo for CMI-fold-menu-JS:
 
-https://github.com/user-attachments/assets/c64dfaef-c7a3-4834-a6c7-d98365218d43
-
-
+https://github.com/user-attachments/assets/d813ad3e-d63a-44f0-8502-12ad23c81dea
 
 ### 🛠️ Configuration (For Advanced Users)
 
