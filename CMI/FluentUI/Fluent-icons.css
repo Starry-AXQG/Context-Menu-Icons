@@ -442,7 +442,10 @@ This rule is used to remove the native "√" icon, making it convenient to inser
       display: none;
     }
   }
-
+  #taskbar-tabs-button {
+    list-style-image: url("apps-add.svg") !important;
+    scale: 1.1;
+  }
   #sidebar-box[sidebarcommand="viewTabsSidebar"]>#sidebar-header>#sidebar-switcher-target>#sidebar-icon {
     list-style-image: url("send-to-device.svg") !important;
   }
