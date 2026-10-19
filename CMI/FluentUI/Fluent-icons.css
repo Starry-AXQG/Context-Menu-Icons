@@ -622,9 +622,11 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   }
 
   #context-undo,
+  menuitem[data-l10n-id="text-action-undo"],
   #context_undoCloseTab,
-  #toolbar-context-undoCloseTab {
-    --menu-image: url("edit-undo.svg");
+  #toolbar-context-undoCloseTab,
+  menuitem[data-l10n-id="library-history-menu-open"] {
+    --menu-image: url('edit-undo.svg');
   }
 
   #context_unloadTab,
@@ -722,7 +724,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   menuitem[data-l10n-id="downloads-cmd-delete-file"],
   menuitem[data-l10n-id="downloads-cmd-remove-from-history"],
   menuitem[data-l10n-id="downloads-cmd-clear-list"],
-  menuitem[data-l10n-id="downloads-cmd-clear-downloads"] {
+  menuitem[data-l10n-id="downloads-cmd-clear-downloads"],
+  menuitem[data-action="forget-site"] {
     --menu-image: url("edit-delete.svg");
   }
 
@@ -821,7 +824,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   menuitem[data-l10n-id="downloads-cmd-copy-download-link"] {
     --menu-image: url("link.svg");
   }
-  menuitem[data-l10n-id="library-downloads-menu-hide"] {
+  menuitem[data-l10n-id="library-downloads-menu-hide"],
+  menuitem[data-l10n-id="library-history-menu-forget"] {
     --menu-image: url("hide.svg");
   }
   #context-viewsource,
@@ -1011,7 +1015,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   .customize-context-manageExtension,
   #pageActionContextMenuManageExtension,
   .unified-extensions-context-menu-manage-extension,
-  menuitem[data-l10n-id="library-open-legacy"] {
+  menuitem[data-l10n-id="library-open-legacy"],
+  #context_zenManageWorkspaces {
     --menu-image: url("manage.svg");
   }
 
@@ -1456,10 +1461,6 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   }
 
   /* Textbox ContextMenu (2025.8.29 fix)*/
-  menuitem[data-l10n-id="text-action-undo"] {
-    --menu-image: url("edit-undo.svg");
-  }
-
   menuitem[data-l10n-id="text-action-redo"] {
     --menu-image: url("edit-redo.svg");
   }

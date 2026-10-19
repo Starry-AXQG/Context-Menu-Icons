@@ -969,7 +969,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     #context-undo,
     menuitem[data-l10n-id="text-action-undo"],
     #context_undoCloseTab,
-    #toolbar-context-undoCloseTab {
+    #toolbar-context-undoCloseTab,
+    menuitem[data-l10n-id="library-history-menu-open"] {
       --menu-image: url('edit-undo.svg');
     }
 
@@ -1045,7 +1046,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     menuitem[data-l10n-id="downloads-cmd-delete-file"],
     menuitem[data-l10n-id="downloads-cmd-remove-from-history"],
     menuitem[data-l10n-id="downloads-cmd-clear-list"],
-    menuitem[data-l10n-id="downloads-cmd-clear-downloads"] {
+    menuitem[data-l10n-id="downloads-cmd-clear-downloads"],
+    menuitem[data-action="forget-site"] {
       --menu-image: url('edit-delete.svg');
     }
 
@@ -1132,7 +1134,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     menuitem[data-l10n-id="downloads-cmd-copy-download-link"] {
       --menu-image: url('link.svg');
     }
-    menuitem[data-l10n-id="library-downloads-menu-hide"] {
+    menuitem[data-l10n-id="library-downloads-menu-hide"],
+    menuitem[data-l10n-id="library-history-menu-forget"] {
       --menu-image: var(--zen-hide-icon);
     }
     #context-openlinkincurrent,
@@ -1365,7 +1368,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     .customize-context-manageExtension,
     #pageActionContextMenuManageExtension,
     .unified-extensions-context-menu-manage-extension,
-    menuitem[data-l10n-id="library-open-legacy"] {
+    menuitem[data-l10n-id="library-open-legacy"],
+    #context_zenManageWorkspaces {
       --menu-image: url('manage.svg');
     }
 
