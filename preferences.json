@@ -5,7 +5,12 @@
     "margin": "30px 0 15px 0",
     "size": "20px"
   },
-
+  {
+    "type": "checkbox",
+    "property": "svg.context-properties.content.enabled",
+    "label": "( ⚠️ This option is merely verifies dependency configuration. Must enable if you want to use this mod normally. )",
+    "defaultValue": true
+  }
   {
     "type": "dropdown",
     "value": "number",
@@ -400,12 +405,6 @@
   "type": "separator",
   "label": "",
   "margin": "15px 0 15px 0"
-},
+}
 
-  {
-    "type": "checkbox",
-    "property": "svg.context-properties.content.enabled",
-    "label": "( ✅ This option is merely verifies dependency configuration. Keep it enabled if you want to use CMI normally. )",
-    "defaultValue": true
-  }
 ]
