@@ -10,15 +10,14 @@
 @media (not (-moz-pref("cmi-Switch-Icon-Package", 0))) and (not (-moz-pref("cmi-Switch-Icon-Package", 2))) {
   --fp-contextmenu-menuitem-padding-inline: var(--fluentui-icons-leftmargin);
   --fp-contextmenu-menuicon-margin-inline: var(--fluentui-text-leftmargin);
-  
-  --group-padding: var(--fp-contextmenu-menuicon-margin-inline);
 }
 
   --fp-arrowpanel-menuicon-margin-inline: 14px;
   --arrowpanel-menuitem-border-radius: 4px !important;
   --arrowpanel-menuitem-padding-block: 6px !important;
   --arrowpanel-menuitem-padding-inline: 10px !important;
-  
+
+  /* ZenUI */
 @media (-moz-pref("cmi-Switch-Icon-Package", 2)) {
   --fp-contextmenu-menuitem-padding-inline: 10px;
   --fp-contextmenu-menuicon-margin-inline: var(--zenui-text-leftmargin);
@@ -34,24 +33,14 @@ menuitem > .menu-iconic-text,
 /* 校正容器标签页(Container-Tabs)菜单 */
 menupopup#new-tab-button-popup,
 menupopup#zenWorkspaceMoreActions menupopup,
-menupopup#context_reopenInContainerPopupMenu {
-/* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
-> :is(menuitem, menu):not(
-    .menuitem-iconic,
-    .menu-iconic,
-
-    [type="checkbox"][checked],
-    [type="radio"][checked],
-
-    .in-menulist,
-    .in-menulist menuitem,
-    .in-menulist menu,
-    .unified-nav-current
-  ),
-/* 分组标题 */
-> menucaption {
-  padding-inline-start: var(--container-padding) !important;
-}
+menupopup#context_reopenInContainerPopupMenu,
+menupopup#context-openlinkinusercontext-popup {
+  /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
+  > :is(menuitem, menu):not(.menuitem-iconic,.menu-iconic,[type="checkbox"][checked],[type="radio"][checked],.in-menulist,.in-menulist menuitem,.in-menulist menu,.unified-nav-current),
+  /* 分组标题 */
+  > menucaption {
+    padding-inline-start: var(--container-padding) !important;
+  }
 }
 
 
@@ -64,27 +53,13 @@ menupopup#context_reopenInContainerPopupMenu {
      3. 排除：已勾选复选/单选、带图标、menulist 内的、unified-nav-current
   */
   :not(:not(menubar) > menu, #ContentSelectDropdown)
-    > menupopup:not(#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"],#viewButton > menupopup:nth-child(1),#blockedPopupOptions,.urlbarView-result-menu)
-    > menuitem:not(
-      .menuitem-iconic,
-      [type="checkbox"][checked],
-      [type="radio"][checked],
-      .in-menulist,
-      .in-menulist menuitem,
-      .unified-nav-current
-      ),
+    > menupopup:not(#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"],#viewButton > menupopup:nth-child(1),#blockedPopupOptions,.urlbarView-result-menu) 
+    > menuitem:not(.menuitem-iconic,[type="checkbox"][checked],[type="radio"][checked],.in-menulist,.in-menulist menuitem,.unified-nav-current),
+
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup:not(#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"],#viewButton > menupopup:nth-child(1),#blockedPopupOptions,.urlbarView-result-menu)
-    > menu:not(
-      .openintabs-menuitem,
+    > menu:not(.openintabs-menuitem,.menu-iconic,[type="checkbox"][checked],[type="radio"][checked],.in-menulist,.in-menulist menu,.unified-nav-current),
 
-      .menu-iconic,
-      [type="checkbox"][checked],
-      [type="radio"][checked],
-      .in-menulist,
-      .in-menulist menu,
-      .unified-nav-current
-      ),
   :not(:not(menubar) > menu, #ContentSelectDropdown)
     > menupopup:not(#zenCreateNewPopup,#new-tab-button-popup,#zenSiteDataActions,#pictureInPictureToggleContextMenu,menupopup[data-l10n-id="popup-notification-more-actions-button"],#viewButton > menupopup:nth-child(1),#blockedPopupOptions,.urlbarView-result-menu)
     > menucaption {
@@ -95,34 +70,12 @@ menupopup#context_reopenInContainerPopupMenu {
       ) !important;
   }
 
-  :is(
-  #cmi-show-more-menupopup,
-  #cmi-show-more-menupopup-tab
-  ) > menuitem:not(
-    .openintabs-menuitem,
-    .menuitem-iconic,
-    [type="checkbox"][checked],
-    [type="radio"][checked],
-    .in-menulist,
-    .in-menulist menuitem,
-    .unified-nav-current
-  ),
-  :is(
-  #cmi-show-more-menupopup,
-  #cmi-show-more-menupopup-tab
-  ) > menu:not(
-    .openintabs-menuitem,
-    .menu-iconic,
-    [type="checkbox"][checked],
-    [type="radio"][checked],
-    .in-menulist,
-    .in-menulist menu,
-    .unified-nav-current
-  ),
-  :is(
-  #cmi-show-more-menupopup,
-  #cmi-show-more-menupopup-tab
-  ) > menucaption {
+  :is(#cmi-show-more-menupopup,#cmi-show-more-menupopup-tab) >
+  menuitem:not(.openintabs-menuitem,.menuitem-iconic,[type="checkbox"][checked],[type="radio"][checked],.in-menulist,.in-menulist menuitem,.unified-nav-current),
+  :is(#cmi-show-more-menupopup,#cmi-show-more-menupopup-tab) >
+  menu:not(.openintabs-menuitem,.menu-iconic,[type="checkbox"][checked],[type="radio"][checked],.in-menulist,.in-menulist menu,.unified-nav-current),
+  :is(#cmi-show-more-menupopup,#cmi-show-more-menupopup-tab) >
+  menucaption {
   padding-inline-start: calc(
     var(--fp-contextmenu-menuitem-padding-inline)
     + var(--menuitem-padding-extra)
@@ -163,30 +116,7 @@ menupopup#context_reopenInContainerPopupMenu {
     --checkmark-margin-left: var(--checkmark-margin-left_cover);
     --checkmark-margin-right: var(--checkmark-margin-right_cover);
     /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
-    > :is(menuitem, menu):not(
-        .menuitem-iconic,
-        .menu-iconic,
-
-        [type="checkbox"][checked],
-        [type="radio"][checked],
-
-        .in-menulist,
-        .in-menulist menuitem,
-        .in-menulist menu,
-        .unified-nav-current
-      ),
-      > :is(menuitem, menu):not(
-        .menuitem-iconic,
-        .menu-iconic,
-
-        [type="checkbox"][checked],
-        [type="radio"][checked],
-
-        .in-menulist,
-        .in-menulist menuitem,
-        .in-menulist menu,
-        .unified-nav-current
-      ),
+    > :is(menuitem, menu):not(.menuitem-iconic,.menu-iconic,[type="checkbox"][checked],[type="radio"][checked],.in-menulist,.in-menulist menuitem,.in-menulist menu,.unified-nav-current),
     /* 分组标题 */
     > menucaption {
       padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
@@ -223,18 +153,7 @@ menupopup#context_reopenInContainerPopupMenu {
     --checkmark-margin-left: var(--checkmark-margin-left_cover);
     --checkmark-margin-right: var(--checkmark-margin-right_cover);
     /* 普通菜单项 & 子菜单容器，排除图标项、已勾选复选/单选、已分组和高亮项 */
-    > :is(menuitem, menu):not(
-        .menuitem-iconic,
-        .menu-iconic,
-
-        [type="checkbox"][checked],
-        [type="radio"][checked],
-
-        .in-menulist,
-        .in-menulist menuitem,
-        .in-menulist menu,
-        .unified-nav-current
-      ),
+    > :is(menuitem, menu):not(.menuitem-iconic,.menu-iconic,[type="checkbox"][checked],[type="radio"][checked],.in-menulist,.in-menulist menuitem,.in-menulist menu,.unified-nav-current),
     /* 分组标题 */
     > menucaption {
       padding-inline-start: var(--Non-checkmark-subitems-padding) !important;
@@ -262,9 +181,9 @@ menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[che
 menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked])
 > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
 > .menu-highlightable-text {
-padding-inline-start: calc(var(--Non-checkmark-subitems-padding) + 4px) !important;
-box-sizing: border-box !important;
-}
+  padding-inline-start: calc(var(--Non-checkmark-subitems-padding) + 4px) !important;
+  box-sizing: border-box !important;
+  }
 }
 
 
@@ -278,9 +197,9 @@ menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
 menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
 > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
 > .menu-highlightable-text {
-padding-inline-start: calc(var(--Non-checkmark-subitems-padding) + 4px) !important;
-box-sizing: border-box !important;
-}
+  padding-inline-start: calc(var(--Non-checkmark-subitems-padding) + 4px) !important;
+  box-sizing: border-box !important;
+  }
 }
 
 
