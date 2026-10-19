@@ -10,7 +10,7 @@
     "property": "svg.context-properties.content.enabled",
     "label": "( ⚠️ This option is merely verifies dependency configuration. Must enable if you want to use this mod normally. )",
     "defaultValue": true
-  }
+  },
   {
     "type": "dropdown",
     "value": "number",
