@@ -13,7 +13,7 @@
 
 - 🖼️ Add icons to context-menu items with two icon styles: FluentUI and ZenUI.
 - 🎨 Refine context-menu spacing and appearance.
-- ✅ Optionally hide unavailable menu items.
+- ✅ Optionally hide unavailable menu items. For example, when there are no tabs with the same title, the "Close Duplicate Tabs" menu option is displayed in gray by default, but this mod will hide it.
 - 📚 Fold less-used items into a **Show more options** submenu.
 - 🔖 Customize bookmark toolbar alignment, visibility, and auto-hide behavior.
 
