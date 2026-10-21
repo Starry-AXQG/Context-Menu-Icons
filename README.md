@@ -8,7 +8,7 @@
 <h2 align="center">Improve your context menu by adding icons, folding redundant menu items, and more. Support Firefox/Zen</h2>
 
 ## Main function:
-	- 🖼️ Add icons: Add appropriate icons to the context menu of the browser to make it easier to use
+	- 🖼️ Add icons: Add appropriate icons to the context menu of the browser to make it easier to use. Almost all menu items have icon support.
 	- 🖊️️️ Optimize the style: Optimize the style of the tab-Context-Menu to make it look more modern and concise.
 	- ✅️ Automatically manage menu items, allowing you to have them automatically hidden when they are unavailable.
 	- 📚 Fold menu items: Easily manage the menu items you don't frequently use and fold them to a place where you don't want to see them.
@@ -21,30 +21,21 @@
 
 Demo image ( Support two sets of linear icons with different styles. FluentUI left, ZenUI right):
 
-![PixPin_2025-07-06_21-04-53](https://github.com/user-attachments/assets/c2da0b31-b811-4c32-a245-e888d00562c7)
+<img width="1539" height="993" alt="zenUI" src="https://github.com/user-attachments/assets/5fa65f0f-ce17-438e-8c90-04863d254420" />
 
-<img width="353" height="667" alt="PixPin_2026-10-17_23-40-58" src="https://github.com/user-attachments/assets/a708e7aa-567b-4862-a1e5-ec8665d751e5" />
-<img width="356" height="675" alt="PixPin_2026-10-17_23-40-33" src="https://github.com/user-attachments/assets/9c10629d-cf83-4903-84b7-ad8716fef19d" />
+<img width="1539" height="993" alt="Fluent" src="https://github.com/user-attachments/assets/55219a33-8c18-431c-8d76-0436cc1df605" />
 
-<img width="530" height="532" alt="PixPin_2026-10-17_23-40-04" src="https://github.com/user-attachments/assets/02a4c47b-f98d-4dc4-a5c5-c417c7b28980" />
-<img width="534" height="530" alt="PixPin_2026-10-17_23-41-14" src="https://github.com/user-attachments/assets/6a6c0cbc-a8de-4c6a-8d05-aaa4c54df6d5" />
+Enable the fold menu feature:
+
+<img width="2559" height="1440" alt="off" src="https://github.com/user-attachments/assets/145bb738-4e63-443b-97a2-e40302d35884" />
+<img width="2559" height="1440" alt="CMI-on" src="https://github.com/user-attachments/assets/8214acf3-9b46-46e4-b9f9-1b44de0324a7" />
+<img width="2559" height="1440" alt="CMI-on (2)" src="https://github.com/user-attachments/assets/a1083640-6828-4aa1-85d4-5880a6fff966" />
 
 ---
 
 Demo for CMI-fold-menu-JS (Fold the unnecessary menu items like the context menu in Windows 11 for ease of use):
 
 https://github.com/user-attachments/assets/d813ad3e-d63a-44f0-8502-12ad23c81dea
-
-# 📢 Announcement:
-This project will undergo frequent and continuous updates to ensure that it remains functional even after browser updates.
-
-Added appropriate icons to the context menus of zenFolderand zenWorkspace(Zen v1.15b)  ✅
-
-✨Since version 1.4, you can choose from two sets of icon packs: ZenUI or FluentUI.
-
-If you are using Firefox v140 or Zen v1.14, please use the CMI v1.5.Otherwise, please use v1.4.1
-
-Now, it also supports usage on Firefox.(since mod v1.2.1)
 
 ---
 
