@@ -10,7 +10,9 @@
 (function () {
   "use strict";
 
-  const PREF_NAME = "cmi-welcome.has-shown";
+  // Bump this key so users who ran an earlier build with an invisible overlay
+  // are not incorrectly treated as having completed the guide.
+  const PREF_NAME = "cmi-welcome.v2.has-shown";
   const ROOT_ID = "cmi-welcome";
   const STRINGS = [
     {
@@ -43,20 +45,37 @@
     },
   ];
 
-  function shouldShow() {
+  function getPrefs() {
     try {
-      if (Services.prefs.getBoolPref(PREF_NAME, false)) return false;
-      Services.prefs.setBoolPref(PREF_NAME, true);
-      return true;
+      if (typeof Services !== "undefined" && Services.prefs) return Services.prefs;
     } catch (_) {
-      return false;
     }
+    try {
+      if (typeof ChromeUtils !== "undefined" && ChromeUtils.importESModule) {
+        return ChromeUtils.importESModule("resource://gre/modules/Services.sys.mjs").Services.prefs;
+      }
+    } catch (_) {
+    }
+    try {
+      if (typeof Components !== "undefined" && Components.utils) {
+        return Components.utils.import("resource://gre/modules/Services.jsm", {}).Services.prefs;
+      }
+    } catch (_) {
+    }
+    return null;
   }
 
   function createWelcome() {
-    if (document.getElementById(ROOT_ID) || !shouldShow()) return;
+    if (document.getElementById(ROOT_ID)) return;
+    const prefs = getPrefs();
+    if (prefs) {
+      try {
+        if (prefs.getBoolPref(PREF_NAME, false)) return;
+      } catch (_) {
+      }
+    }
 
-    const root = document.createElement("div");
+    const root = document.createElementNS("http://www.w3.org/1999/xhtml", "div");
     root.id = ROOT_ID;
     root.setAttribute("role", "dialog");
     root.setAttribute("aria-modal", "true");
@@ -97,6 +116,9 @@
       </section>`;
 
     document.documentElement.appendChild(root);
+    // Persist only after the overlay has been created, so a failed first run
+    // can be retried after the script is fixed or updated.
+    try { if (prefs) prefs.setBoolPref(PREF_NAME, true); } catch (_) {}
     let step = 0;
     const title = root.querySelector("#cmi-welcome-title");
     const eyebrow = root.querySelector(".cmi-welcome-eyebrow");
@@ -122,7 +144,7 @@
       back.disabled = step === 0;
       next.innerHTML = step === STRINGS.length - 1 ? 'Open Sine settings <span aria-hidden="true">→</span>' : 'Next <span aria-hidden="true">→</span>';
       dots.replaceChildren(...STRINGS.map((_, index) => {
-        const dot = document.createElement("span");
+        const dot = document.createElementNS("http://www.w3.org/1999/xhtml", "span");
         dot.className = index === step ? "is-active" : "";
         dot.setAttribute("aria-hidden", "true");
         return dot;
