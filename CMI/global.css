@@ -172,16 +172,25 @@ menupopup#context-openlinkinusercontext-popup {
    ========================================================= */
 
 @media not (-moz-platform: linux) {
-
 /* 当 menupopup 下有被勾选的 checkbox、radio 时，
 给同层级未勾选且不是父菜单的 checkbox、radio 子项增加 padding */
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked])
+menupopup:not(#zenWorkspaceMoreActions):has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked])
 > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
 > .menu-text,
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked])
+menupopup:not(#zenWorkspaceMoreActions):has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked])
 > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
 > .menu-highlightable-text {
   padding-inline-start: calc(var(--Non-checkmark-subitems-padding) + 4px) !important;
+  box-sizing: border-box !important;
+  }
+  
+menupopup#zenWorkspaceMoreActions:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked])
+> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
+> .menu-text,
+menupopup#zenWorkspaceMoreActions:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[checked])
+> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
+> .menu-highlightable-text {
+  padding-inline-start: calc(var(--Non-checkmark-subitems-padding) + 2px) !important;
   box-sizing: border-box !important;
   }
 }
@@ -191,15 +200,26 @@ menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden])[che
 @media (-moz-platform: linux) {
 /* 当 menupopup 下有未被隐藏的 checkbox、radio 时，
 给同层级未勾选且不是父菜单的 checkbox、radio 子项增加 padding */
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
+menupopup:not(#zenWorkspaceMoreActions):has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
 > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
 > .menu-text,
-menupopup:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
+menupopup:not(#zenWorkspaceMoreActions):has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
 > menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
 > .menu-highlightable-text {
   padding-inline-start: calc(var(--Non-checkmark-subitems-padding) + 4px) !important;
   box-sizing: border-box !important;
   }
+
+menupopup#zenWorkspaceMoreActions:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
+> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
+> .menu-text,
+menupopup#zenWorkspaceMoreActions:has(> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]))
+> menuitem:is([type="checkbox"], [type="radio"]):not([hidden]):not([checked]):not(:has(menupopup))
+> .menu-highlightable-text {
+  padding-inline-start: calc(var(--Non-checkmark-subitems-padding) + 2px) !important;
+  box-sizing: border-box !important;
+  }
+
 }
 
 
