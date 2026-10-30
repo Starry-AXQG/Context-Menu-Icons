@@ -110,6 +110,10 @@ The script also contains optional tab-menu folding preferences: `cmi-fold_tab_me
 2. Search for **Context Menu Icons** in Sine and select **Install**.
 3. Restart the browser if prompted.
 
+| --- |
+| ⚠️: If the mod is not working correctly, please open the configuration panel and ensure that this option is enabled. |
+| <img width="1918" height="1270" alt="PixPin_2026-10-30_23-23-09" src="https://github.com/user-attachments/assets/05012fe1-a4ca-4fcd-951c-372695f2bfdf" /> |
+
 ### Manual installation
 
 Manual installs require you to replace the files when you want to update.
@@ -117,7 +121,7 @@ Manual installs require you to replace the files when you want to update.
 1. Create a `chrome` folder in your browser profile. For Zen, see the [Live Editing guide](https://docs.zen-browser.app/guides/live-editing).
 2. Download the project using **Code → Download ZIP** or get a package from [Releases](https://github.com/Starry-AXQG/Context-Menu-Icons/releases).
 3. Copy the package contents into the profile's `chrome` folder.
-4. In Firefox, set `svg.context-properties.content.enabled` to `true` in `about:config`.
+4. Set `svg.context-properties.content.enabled` to `true` in `about:config`.
 5. Restart the browser.
 
 ---
