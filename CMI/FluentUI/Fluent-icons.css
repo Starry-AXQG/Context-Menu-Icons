@@ -111,8 +111,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
 /* sub menu items */
   :is(#context_reopenInContainerPopupMenu,#context-openlinkinusercontext-popup)>
   menuitem:not(.menuitem-iconic,[type="checkbox"],[type="radio"],.in-menulist,.in-menulist menuitem,.unified-nav-current),
-  #context_zenWorkspacesOpenInContainerTab>menupopup>
-  menuitem:not(.menuitem-iconic,[type="checkbox"],[type="radio"],.in-menulist,.in-menulist menuitem,.unified-nav-current)
+  :is(#context_zenWorkspacesOpenInContainerTab,#zen-toolbar-context-set-profile)>menupopup>
+  menuitem:not(.menuitem-iconic,[type="checkbox"],[type="radio"],.in-menulist,.in-menulist menuitem,.unified-nav-current),
   menuitem.sine-moved,
   menuitem[id$="-sine-clone"],
   menuitem[class*="sine"] {
@@ -893,7 +893,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   #context-openlinkinusercontext-menu,
   menu[id="placesContext_open:newcontainertab"],
   menu[id="placesContext_openContainer:tabs"],
-  #context_reopenInContainer {
+  #context_reopenInContainer,
+  #zen-toolbar-context-set-profile {
     --menu-image: url("container-tab.svg");
   }
 
@@ -1603,7 +1604,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   /* Container-Tabs Menu */
   menuitem[data-l10n-id="user-context-new-tab"],
   menuitem[command="Browser:NewUserContextTab"],
-  #context_zenWorkspacesOpenInContainerTab>menupopup:nth-child(4)>menuitem:nth-child(1) {
+  #context_zenWorkspacesOpenInContainerTab>menupopup:nth-child(4)>menuitem:nth-child(1),
+  #zen-toolbar-context-set-profile > menupopup > menuitem:nth-child(1) {
     --menu-image: url('new-tab-image.svg');
   }
 
