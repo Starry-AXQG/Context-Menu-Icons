@@ -978,7 +978,9 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     menuitem[data-l10n-id="text-action-redo"],
     #node-menu-scrollnodeintoview,
     #cMenu_findAgain,
-    #se-menu-gotoLine {
+    #se-menu-gotoLine,
+    #context_zenFolderToSpace,
+    #convert-folder-to-group {
       --menu-image: url('edit-redo.svg');
     }
 
@@ -1043,7 +1045,9 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     menuitem[data-l10n-id="downloads-cmd-remove-from-history"],
     menuitem[data-l10n-id="downloads-cmd-clear-list"],
     menuitem[data-l10n-id="downloads-cmd-clear-downloads"],
-    menuitem[data-action="forget-site"] {
+    menuitem[data-action="forget-site"],
+    #context_zenDeleteWorkspace,
+    #context_zenFolderDelete {
       --menu-image: url('edit-delete.svg');
     }
 
@@ -1068,7 +1072,10 @@ This rule is used to remove the native "√" icon, making it convenient to inser
       --menu-image: url("info.svg");
     }
 
-    #context-viewsource {
+    #context-viewsource,
+    #context-viewsource,
+    #context-viewframesource,
+    #context-viewpartialsource-selection {
       --menu-image: url('source-code.svg');
     }
 
@@ -1082,10 +1089,7 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     }
 
     #context-searchselect,
-    #context-visual-search {
-      --menu-image: url('search-glass.svg');
-    }
-
+    #context-visual-search,
     #context-searchselect-private {
       --menu-image: url('search-glass.svg');
     }
@@ -1136,7 +1140,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     }
     #context-openlinkincurrent,
     menuitem[data-l10n-id="library-media-menu-open"],
-    menuitem[data-l10n-id="library-downloads-menu-open"] {
+    menuitem[data-l10n-id="library-downloads-menu-open"],
+    #placesContext_open {
       --menu-image: url('ext-link.svg');
     }
 
@@ -1157,12 +1162,6 @@ This rule is used to remove the native "√" icon, making it convenient to inser
       list-style-image: url("translations.svg") !important;
     }
 
-    #context-viewsource,
-    #context-viewframesource,
-    #context-viewpartialsource-selection {
-      --menu-image: url('source-code.svg');
-    }
-
     #context-sendimage,
     #context-sendvideo,
     #context-sendaudio {
@@ -1171,7 +1170,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     }
 
     #context-setDesktopBackground,
-    .viewCustomizeToolbar {
+    .viewCustomizeToolbar,
+    #context_zenChangeWorkspaceTheme {
       --menu-image: url('customize.svg');
     }
 
@@ -1201,7 +1201,12 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     #placesContext_openContainer\:tabs,
     .openintabs-menuitem,
     #context-openlinknewtab,
-    #request-list-context-newtab {
+    #request-list-context-newtab,
+    menuitem[data-l10n-id="user-context-new-tab"],
+    menuitem[data-l10n-id="user-context-new-tab2"],
+    menuitem[command="Browser:NewUserContextTab"],
+    #context_zenWorkspacesOpenInContainerTab > menupopup:nth-child(4) > menuitem:nth-child(1),
+    #zen-toolbar-context-set-profile > menupopup > menuitem:nth-child(1) {
       --menu-image: url('tab.svg');
     }
 
@@ -1213,7 +1218,13 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     #context-openlinkinusercontext-menu,
     menu[id='placesContext_open:newcontainertab'],
     menu[id='placesContext_openContainer:tabs'],
-    #zen-toolbar-context-set-profile {
+    #zen-toolbar-context-set-profile,
+    #context_moveTabToGroup,
+    #context_moveTabToNewGroup,
+    #context_moveTabToSplitView,
+    #context_moveSplitViewToNewGroup,
+    #context_reopenInContainer,
+    #context_zenWorkspacesOpenInContainerTab {
       --menu-image: url('container-tab.svg');
     }
 
@@ -1355,7 +1366,10 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     #node-menu-edithtml,
     #context_addNote,
     #context_editNote,
-    menuitem[data-l10n-id="library-boosts-menu-edit"] {
+    menuitem[data-l10n-id="library-boosts-menu-edit"],
+    #context_zenEditWorkspace,
+    #context_zen-edit-tab-title,
+    #context_zenFolderRename {
       --menu-image: url('edit.svg');
     }
 
@@ -1385,7 +1399,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     #newbookmark,
     #newfolder,
     #newseparator,
-    #node-menu-add {
+    #node-menu-add,
+    menupopup#zenWorkspaceMoreActions>menuitem[data-l10n-id="zen-panel-ui-workspaces-create"] {
       --menu-image: url('plus.svg');
     }
 
@@ -1395,7 +1410,10 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     }
 
     #context_moveTabOptions,
-    #context_reverseSplitView {
+    #context_reverseSplitView,
+    #placesContext_sortBy\:name,
+    #context_zenReorderWorkspaces,
+    #context_zenChangeFolderSpace {
       --menu-image: url('move-tab.svg');
     }
 
@@ -1412,14 +1430,6 @@ This rule is used to remove the native "√" icon, making it convenient to inser
       --menu-image: url('share.svg');
     }
 
-    #context_moveTabToGroup,
-    #context_moveTabToNewGroup,
-    #context_moveTabToSplitView,
-    #context_moveSplitViewToNewGroup,
-    #context_reopenInContainer {
-      --menu-image: url('container-tab.svg');
-    }
-
     #context_closeTab,
     #context_closeDuplicateTabs,
     #orgClose,
@@ -1427,7 +1437,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
       --menu-image: url('close.svg');
     }
 
-    #context_closeTabOptions {
+    #context_closeTabOptions,
+    #context_zenFolderUnpack {
       --menu-image: url('close-all.svg');
     }
 
@@ -1442,19 +1453,6 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     .customize-context-reportExtension,
     .unified-extensions-context-menu-report-extension {
       --menu-image: url('report.svg');
-    }
-
-    /*
-      .wordmark::after {
-        content: 'Plus' !important;
-      }
-    */
-    #placesContext_open {
-      --menu-image: url('ext-link.svg');
-    }
-
-    #placesContext_sortBy\:name {
-      --menu-image: url('move-tab.svg');
     }
 
 
@@ -1671,45 +1669,8 @@ This rule is used to remove the native "√" icon, making it convenient to inser
       margin-inline-end: calc(var(--fp-enabled, 0) * 8px);
     }
 
-    /* zen Workspace */
-    #context_zenEditWorkspace,
-    #context_zen-edit-tab-title {
-      --menu-image: url('edit.svg');
-    }
-
     #context_zenEditWorkspaceIcon,
-    #context_zen-edit-tab-icon {
-      --menu-image: url('canvas.svg');
-    }
-
-    #context_zenChangeWorkspaceTheme {
-      --menu-image: url('customize.svg');
-    }
-
-    #context_zenWorkspacesOpenInContainerTab {
-      --menu-image: url('container-tab.svg');
-    }
-
-    #context_zenReorderWorkspaces {
-      --menu-image: url('move-tab.svg');
-    }
-
-    menupopup#zenWorkspaceMoreActions>menuitem[data-l10n-id="zen-panel-ui-workspaces-create"] {
-      /*
-      menuitem[data-l10n-id="zen-panel-ui-workspaces-create"] {
-      */
-      --menu-image: url('plus.svg');
-    }
-
-    #context_zenDeleteWorkspace {
-      --menu-image: url('edit-delete.svg');
-    }
-
-    /* zen Folder */
-    #context_zenFolderRename {
-      --menu-image: url('edit.svg');
-    }
-
+    #context_zen-edit-tab-icon,
     #context_zenFolderChangeIcon {
       --menu-image: url('canvas.svg');
     }
@@ -1723,28 +1684,10 @@ This rule is used to remove the native "√" icon, making it convenient to inser
       --menu-image: url('folder.svg');
     }
 
-    #context_zenFolderUnpack {
-      --menu-image: url('close-all.svg');
-    }
-
-    #context_zenChangeFolderSpace {
-      --menu-image: url('move-tab.svg');
-    }
-
-    #context_zenFolderToSpace,
-    #convert-folder-to-group {
-      --menu-image: url('edit-redo.svg');
-    }
-
-    #context_zenFolderDelete {
-      --menu-image: url('edit-delete.svg');
-    }
-
     #sidebar-reverse-position,
     #zen-toolbar-context-tabs-right {
       --menu-image: url('chrome://browser/skin/import.svg');
     }
-
 
     /* Container-Tabs Menu */
     menuitem[data-l10n-id="user-context-new-tab"],
@@ -1754,6 +1697,7 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     #zen-toolbar-context-set-profile > menupopup > menuitem:nth-child(1) {
       --menu-image: url('tab.svg');
     }
+
     #new-tab-button-popup > menuitem:nth-last-child(2),
     menuitem[data-l10n-id="user-context-add-container"],
     menuitem[data-l10n-id="user-context-add-container2"] {
