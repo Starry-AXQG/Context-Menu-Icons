@@ -186,7 +186,7 @@ These optional settings adjust alignment. Use the suffix `_1` for FluentUI or `_
 
 ## Compatibility
 
-CMI supports **Zen Browser** and **Firefox**. For Firefox, set `cmi-Switch-Gecko-Branch` to `0` and enable `svg.context-properties.content.enabled`. Check the [release notes](https://github.com/Starry-AXQG/Context-Menu-Icons/releases) for browser-version compatibility.
+CMI supports **Zen Browser** and **Firefox**. Regardless of the browser you use, make sure that the setting `about:config` for `svg.context-properties.content.enabled` is set to `true`. Check the [release notes](https://github.com/Starry-AXQG/Context-Menu-Icons/releases) for browser-version compatibility.
 
 ## License
 
