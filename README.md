@@ -110,8 +110,8 @@ The script also contains optional tab-menu folding preferences: `cmi-fold_tab_me
 2. Search for **Context Menu Icons** in Sine and select **Install**.
 3. Restart the browser if prompted.
 
-| --- |
 | ⚠️: If the mod is not working correctly, please open the configuration panel and ensure that this option is enabled. |
+| --- |
 | <img width="1918" height="1270" alt="PixPin_2026-10-30_23-23-09" src="https://github.com/user-attachments/assets/05012fe1-a4ca-4fcd-951c-372695f2bfdf" /> |
 
 ### Manual installation
