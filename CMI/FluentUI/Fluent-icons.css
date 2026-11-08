@@ -1571,7 +1571,31 @@ This rule is used to remove the native "√" icon, making it convenient to inser
     --menu-image: url('algorithm.svg');
   }
 
+
+  /* zen Mods */
+  #viewColumns,
+  #cmi-show-more-menu,
+  #cmi-show-more-menu-tab {
+    --menu-image: url('menu.svg');
+  }
+
+  #quicktabs-context-menuitem,
+  #quicktabs-tab-context-menuitem {
+    --menu-image: url('ext-link.svg');
+  }
+
+  #quicksearch-context-menuitem {
+    --menu-image: url('search-glass.svg');
+  }
+
+  #context_renameTab {
+    --menu-image: url('edit.svg');
+  }
+
   /* zen Group(Adapt to Advanced-Tag-Groups) */
+  #atg-group-selected-tabs {
+    --menu-image: url('container-tab.svg');
+  }
   .change-group-color {
     --menu-image: url('edit-theme.svg');
   }
@@ -1579,35 +1603,22 @@ This rule is used to remove the native "√" icon, making it convenient to inser
   .rename-group {
     --menu-image: url('edit.svg');
   }
-
-  .ungroup-tabs {
-    --menu-image: url('close-all.svg');
-  }
-
-  .convert-group-to-folder {
-    --menu-image: url('edit-redo.svg');
-  }
-
   .change-group-icon {
     --menu-image: url('canvas.svg');
   }
-
-  /* zen Mods */
-  #cmi-show-more-menu,
-  #cmi-show-more-menu-tab {
-    --menu-image: url("menu-bar.svg");
+  .remove-group-icon {
+    --menu-image: url('hide.svg');
   }
-
-  #quicktabs-context-menuitem,
-  #quicktabs-tab-context-menuitem {
-    --menu-image: url("ext-link.svg");
+  .move-group-to-space {
+    --menu-image: url('move-tab.svg');
   }
-
-  #quicksearch-context-menuitem {
-    --menu-image: url("search-glass.svg");
+  .ungroup-tabs {
+    --menu-image: url('folder-unpack.svg');
   }
-
-  #context_renameTab {
-    --menu-image: url("edit.svg");
+  .convert-group-to-folder {
+    --menu-image: url('edit-redo.svg');
+  }
+  .delete-group {
+    --menu-image: url('edit-delete.svg');
   }
 }
