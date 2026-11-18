@@ -94,6 +94,37 @@
   },
 
   {
+    "type": "string",
+    "property": "cmi-fold-menu-label",
+    "label": "🏷️ Label of the folded submenu (leave empty for the built-in localized label)",
+    "defaultValue": "",
+    "placeholder": "Show more options"
+  },
+
+  {
+    "type": "checkbox",
+    "property": "cmi-fold_tab_menu_item-enable",
+    "label": "✨ Enable folding in the tab context menu (optional)",
+    "defaultValue": false
+  },
+
+  {
+    "type": "string",
+    "property": "cmi-fold-tab-item-IDs",
+    "label": "🛠️ Tab-menu items to fold (comma or space separated)",
+    "defaultValue": "",
+    "placeholder": "tab-context-closeTab, tab-context-reloadTab"
+  },
+
+  {
+    "type": "string",
+    "property": "cmi-fold-tab-menu-label",
+    "label": "🏷️ Label of the folded tab submenu",
+    "defaultValue": "",
+    "placeholder": "Show more options"
+  },
+
+  {
     "type": "checkbox",
     "property": "cmi-Hide-Inactive-Items-TabContextMenu",
     "label": "✂️ Hide the inactive items in tab-Context-Menu (Enabling to make menu more concise)",
@@ -120,6 +151,14 @@
     "property": "cmi-menuseparator-opacity",
     "label": "Opacity of menu separator (Value range: 0~1, default: 0.5)",
     "defaultValue": "0.5"
+  },
+
+  {
+    "type": "string",
+    "property": "cmi-BCM-border-radius",
+    "label": "🔘 Corner radius of the enhanced context menu (CSS length, default: 12px)",
+    "defaultValue": "12px",
+    "placeholder": "12px"
   },
 
 {

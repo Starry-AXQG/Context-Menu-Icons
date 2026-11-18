@@ -15,18 +15,27 @@
             "include": [
                 "chrome://browser/content/browser.xhtml"
             ]
+        },
+        "JS/CMI-settings.uc.js": {
+            "name": "CMI Settings Panel",
+            "description": "Opens the HTML settings panel (CMI/settings/preferences.html) and lets it write, export and restore preferences.",
+            "include": [
+                "chrome://browser/content/browser.xhtml"
+            ],
+            "loadOrder": 20
         }
     },
     "preferences": "preferences.json",
+    "supportsUnload": true,
     "readme": "https://raw.githubusercontent.com/Starry-AXQG/Context-Menu-Icons/refs/heads/main/README.md",
     "author": "Starry-AXQG",
-    "version": "2.7.5.7",
+    "version": "2.7.6",
     "tags": [
         "Context Menu",
         "Icons",
         "Icon Pack"
     ],
     "createdAt": "2025-06-02",
-    "updatedAt": "2026-11-09",
+    "updatedAt": "2026-11-19",
     "fork": ["zen", "firefox"]
 }

@@ -1,5 +1,9 @@
 <h1 align="center">Context-Menu-Icons</h1>
 
+<p align="center">
+  <b>English</b> · <a href="README.zh-CN.md">简体中文</a>
+</p>
+
 <div align="center">
   <a href="https://zen-browser.app/">
     <img width="120" alt="Zen Browser" src="https://github.com/user-attachments/assets/d6ab3ddf-6630-4062-92d0-22497d2a3f9a" />
@@ -129,6 +133,26 @@ Manual installs require you to replace the files when you want to update.
 ## ⚙️ Preference settings
 
 Sine users can manage settings from the mod's page in Sine. For a manual install, open `about:config`, search for the preference, and add it if needed. Boolean options use `true` or `false`; numeric options use the values shown below. Most options are off by default unless indicated.
+
+### 🎛️ HTML settings panel
+
+CMI ships a full-page settings panel at `CMI/settings/preferences.html`. In Sine, press **Configure** on the Context Menu Icons card to open it.
+
+The panel builds itself from the tables on this page, so every preference listed below appears in it automatically. Changes are written to `about:config` immediately: most of them take effect right away, a few may need a browser restart. **Reset all settings** in the top-right corner restores every preference to the installation defaults shown in the tables below, and every row also has its own restore button.
+
+The **Configuration** card exports the current values to a `CMI-config-<date>.json` file and restores them later from that file. Nothing is written outside the profile's preferences.
+
+#### 🌍 Languages
+
+The interface ships with English, 简体中文, 繁體中文, 日本語, 한국어, Deutsch, Français, Español, Русский, Português (Brasil) and Italiano. By default the panel follows the browser UI language; the language picker in the top bar overrides it. The override is stored in the `language.config` preference (leave it unset to follow the browser again) and travels with an exported configuration file.
+
+#### 🖱️ Live preview
+
+Every time the real `contentAreaContextMenu` opens, the settings script records the entries it contained in `cmi-preview.snapshot`. The **Live preview** card replays that snapshot with the current CMI styling, so it shows the real item order, labels, icons, states and separators instead of an imitation. Right-click anywhere once to refresh it, and use **Open the real context menu** to see the native menu itself.
+
+#### 📖 Fold guide
+
+The **Fold menu** tab opens with the folding guide from this document, so the feature description, hotkeys and configuration notes are available without leaving the panel.
 
 ### Browser and context-menu settings
 

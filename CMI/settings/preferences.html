@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Context Menu Icons · Settings</title>
+    <link rel="stylesheet" href="panel.css" />
+    <script src="locales.js" defer></script>
+    <script src="js/core.js" defer></script>
+    <script src="js/schema.js" defer></script>
+    <script src="js/config.js" defer></script>
+    <script src="js/preview.js" defer></script>
+    <script src="js/ui.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="topbar-row">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect x="2.5" y="4.5" width="19" height="15" rx="3.4" />
+              <path d="M7 10h4M7 14h6" />
+              <circle cx="17.4" cy="10.2" r="1.4" />
+            </svg>
+          </span>
+          <span class="brand-text">
+            <strong>Context Menu Icons</strong>
+            <span class="brand-sub" id="brand-sub">…</span>
+          </span>
+        </div>
+
+        <div class="topbar-actions">
+          <label class="lang" title="">
+            <span class="lang-label" id="lang-label" data-i18n="language">Language</span>
+            <select id="lang-select" class="select" aria-labelledby="lang-label"></select>
+          </label>
+          <button id="btn-reset-all" class="btn btn-danger" type="button" data-i18n-title="resetAllTitle">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M8 2.4a5.6 5.6 0 1 0 4.1 1.8" />
+              <path d="M12.6 1.6v3.2H9.4" />
+            </svg>
+            <span class="btn-label" data-i18n="resetAll">Reset all settings</span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="tabs" id="tabs" role="tablist" aria-label="Settings"></nav>
+    </header>
+
+    <p id="banner" class="banner" hidden></p>
+
+    <main class="layout">
+      <div class="column" id="panels"></div>
+
+      <aside class="rail">
+        <section class="card rail-card preview-card">
+          <div class="rail-head">
+            <h2 data-i18n="previewTitle">Live preview</h2>
+            <span class="pill" id="preview-pack">—</span>
+          </div>
+          <div class="preview-stage">
+            <div class="preview-menu" id="preview-menu" aria-hidden="true"></div>
+            <p class="preview-empty" id="preview-empty" data-i18n="previewEmpty" hidden></p>
+          </div>
+          <p class="muted small rail-note" id="preview-note" data-i18n="previewNote"></p>
+          <button id="btn-native-menu" class="btn btn-ghost btn-block" type="button">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M2.6 3.4h10.8v9.2H2.6z" />
+              <path d="M5.4 6.4h5.2M5.4 9.4h3.4" />
+            </svg>
+            <span data-i18n="previewNative">Open the real context menu</span>
+          </button>
+        </section>
+
+        <section class="card rail-card">
+          <div class="rail-head">
+            <h2 data-i18n="configTitle">Configuration</h2>
+            <span class="pill" id="config-state">—</span>
+          </div>
+          <div class="rail-actions">
+            <button id="btn-export" class="btn btn-ghost" type="button" data-i18n="exportBtn" data-i18n-title="exportTitle">
+              Export
+            </button>
+            <button id="btn-import" class="btn btn-ghost" type="button" data-i18n="importBtn" data-i18n-title="importTitle">
+              Import
+            </button>
+            <button id="btn-restart" class="btn btn-ghost" type="button" data-i18n="restartBtn">
+              Restart browser
+            </button>
+          </div>
+          <input id="config-file" class="visually-hidden" type="file" accept="application/json,.json" />
+          <p class="muted small rail-note" id="config-note" data-i18n="configNote"></p>
+        </section>
+
+        <section class="card rail-card">
+          <div class="rail-head"><h2 data-i18n="aboutTitle">About</h2></div>
+          <p class="muted small">
+            <a class="link" href="https://github.com/Starry-AXQG/Context-Menu-Icons" data-i18n="projectHome"
+              >Project home</a
+            >
+            ·
+            <a class="link" href="https://github.com/CosmoCreeper/Sine">Sine</a>
+          </p>
+          <p class="muted small" id="about-build">—</p>
+        </section>
+      </aside>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <dialog id="confirm" class="confirm">
+      <form method="dialog">
+        <h3 id="confirm-title" data-i18n="confirmTitleDefault">Confirm</h3>
+        <p id="confirm-text"></p>
+        <div class="confirm-actions">
+          <button value="cancel" class="btn btn-ghost" id="confirm-cancel" data-i18n="confirmCancel">
+            Cancel
+          </button>
+          <button value="ok" class="btn btn-danger" id="confirm-ok">OK</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
